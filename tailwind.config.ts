@@ -52,6 +52,19 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // New Calpir Green Shades
+        "calpir-green": {
+          50: "hsl(var(--calpir-green-50))",
+          100: "hsl(var(--calpir-green-100))",
+          200: "hsl(var(--calpir-green-200))",
+          300: "hsl(var(--calpir-green-300))",
+          400: "hsl(var(--calpir-green-400))",
+          500: "hsl(var(--calpir-green-500))",
+          600: "hsl(var(--calpir-green-600))",
+          700: "hsl(var(--calpir-green-700))",
+          800: "hsl(var(--calpir-green-800))",
+          900: "hsl(var(--calpir-green-900))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -67,6 +80,7 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        "2xl": "1.5rem", // Added for more arched boxes
       },
       keyframes: {
         "accordion-down": {

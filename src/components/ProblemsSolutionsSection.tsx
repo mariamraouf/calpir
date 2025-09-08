@@ -4,36 +4,40 @@ import React from "react";
 import { DollarSign, Clock, Users, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const problems = [
+  {
+    title: "Expensive Individual Hires",
+    description: "Web developer ($5,000+), Designer ($3,000+), Marketing specialist ($4,000+), Operations manager ($6,000+)",
+    icon: DollarSign,
+    iconColor: "text-red-500", // Keep red for problems
+  },
+  {
+    title: "Months of Setup Time",
+    description: "3-6 months to coordinate everything, test systems, and get everything working together properly",
+    icon: Clock,
+    iconColor: "text-red-500",
+  },
+  {
+    title: "Managing Multiple People",
+    description: "Coordinating different freelancers, agencies, and specialists who don't communicate with each other",
+    icon: Users,
+    iconColor: "text-red-500",
+  },
+  {
+    title: "Technical Complexity",
+    description: "Integrating different tools, ensuring everything works together, and troubleshooting constant issues",
+    icon: Settings,
+    iconColor: "text-red-500",
+  },
+];
+
+const solutions = [
+  { label: "$1,500", detail: "vs $18,000+ individual hires" },
+  { label: "7 Days", detail: "vs 3-6 months setup time" },
+  { label: "1 Team", detail: "vs managing 5+ specialists" },
+];
+
 const ProblemsSolutionsSection = () => {
-  const problems = [
-    {
-      title: "Expensive Individual Hires",
-      description: "Web developer ($5,000+), Designer ($3,000+), Marketing specialist ($4,000+), Operations manager ($6,000+)",
-      icon: DollarSign,
-    },
-    {
-      title: "Months of Setup Time",
-      description: "3-6 months to coordinate everything, test systems, and get everything working together properly",
-      icon: Clock,
-    },
-    {
-      title: "Managing Multiple People",
-      description: "Coordinating different freelancers, agencies, and specialists who don't communicate with each other",
-      icon: Users,
-    },
-    {
-      title: "Technical Complexity",
-      description: "Integrating different tools, ensuring everything works together, and troubleshooting constant issues",
-      icon: Settings,
-    },
-  ];
-
-  const solutions = [
-    { label: "$1,500", detail: "vs $18,000+ individual hires" },
-    { label: "7 Days", detail: "vs 3-6 months setup time" },
-    { label: "1 Team", detail: "vs managing 5+ specialists" },
-  ];
-
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-gray-950">
       <div className="container">
@@ -53,9 +57,9 @@ const ProblemsSolutionsSection = () => {
           {problems.map((problem, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-6 bg-gray-50 dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-300 transform hover:scale-[1.02]"
+              className="flex flex-col items-center text-center p-6 bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
             >
-              <problem.icon className="h-12 w-12 text-red-500 mb-4" />
+              <problem.icon className={`h-12 w-12 mb-4 ${problem.iconColor}`} />
               <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{problem.title}</h3>
               <p className="text-gray-600 dark:text-gray-400">{problem.description}</p>
             </div>
@@ -76,16 +80,16 @@ const ProblemsSolutionsSection = () => {
           {solutions.map((solution, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-8 bg-blue-50 dark:bg-blue-950 rounded-lg shadow-md border border-blue-200 dark:border-blue-800 hover:shadow-xl transition-shadow duration-300 transform hover:scale-[1.02]"
+              className="flex flex-col items-center text-center p-8 bg-calpir-green-50 dark:bg-calpir-green-950 rounded-2xl shadow-lg border border-calpir-green-200 dark:border-calpir-green-800 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
             >
-              <p className="text-5xl font-extrabold text-blue-700 dark:text-blue-300 mb-2">{solution.label}</p>
+              <p className="text-5xl font-extrabold text-calpir-green-700 dark:text-calpir-green-300 mb-2">{solution.label}</p>
               <p className="text-lg text-gray-700 dark:text-gray-200">{solution.detail}</p>
             </div>
           ))}
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-3 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+          <Button size="lg" className="bg-calpir-green-600 hover:bg-calpir-green-700 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
             Start Your Startup Package Today
           </Button>
         </div>

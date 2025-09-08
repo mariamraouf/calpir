@@ -14,6 +14,7 @@ const solutions = [
       "Content Management",
       "Performance Optimization",
     ],
+    iconColor: "text-calpir-green-600",
   },
   {
     icon: Palette,
@@ -25,6 +26,7 @@ const solutions = [
       "Marketing Materials",
       "Visual Identity",
     ],
+    iconColor: "text-calpir-green-500",
   },
   {
     icon: TrendingUp,
@@ -35,6 +37,7 @@ const solutions = [
       "Social Media Setup",
       "Analytics Tracking",
     ],
+    iconColor: "text-calpir-green-700",
   },
 ];
 
@@ -53,15 +56,15 @@ const BusinessSolutionsSection = () => {
           {solutions.map((solution, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300 transform hover:scale-[1.02]"
+              className="flex flex-col items-center text-center p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
             >
-              <solution.icon className="h-12 w-12 text-blue-600 mb-4" />
+              <solution.icon className={`h-12 w-12 mb-4 ${solution.iconColor}`} />
               <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{solution.title}</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">{solution.description}</p>
               <ul className="list-none space-y-2 text-left w-full">
                 {solution.features.map((feature, fIndex) => (
                   <li key={fIndex} className="flex items-center text-gray-700 dark:text-gray-300">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-calpir-green-500 mr-2 flex-shrink-0" />
                     {feature}
                   </li>
                 ))}

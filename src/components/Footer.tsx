@@ -19,13 +19,13 @@ const Footer = () => {
           </p>
           <div className="space-y-2 text-sm">
             <p className="flex items-center">
-              <Mail className="h-4 w-4 mr-2 text-blue-400" /> <a href="mailto:hello@calpirsolutions.com" className="hover:text-white transition-colors">hello@calpirsolutions.com</a>
+              <Mail className="h-4 w-4 mr-2 text-calpir-green-400" /> <a href="mailto:hello@calpirsolutions.com" className="hover:text-white transition-colors">hello@calpirsolutions.com</a>
             </p>
             <p className="flex items-center">
-              <Phone className="h-4 w-4 mr-2 text-blue-400" /> <a href="tel:(555) 123-4567" className="hover:text-white transition-colors">(555) 123-4567</a>
+              <Phone className="h-4 w-4 mr-2 text-calpir-green-400" /> <a href="tel:(555) 123-4567" className="hover:text-white transition-colors">(555) 123-4567</a>
             </p>
             <p className="flex items-center">
-              <MessageSquare className="h-4 w-4 mr-2 text-blue-400" /> <span className="hover:text-white transition-colors">24/7 Live Chat</span>
+              <MessageSquare className="h-4 w-4 mr-2 text-calpir-green-400" /> <span className="hover:text-white transition-colors">24/7 Live Chat</span>
             </p>
           </div>
         </div>

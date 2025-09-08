@@ -44,13 +44,13 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={link.href}
-              className="text-sm font-medium transition-colors hover:text-blue-600 hover:scale-105 transform duration-300"
+              className="text-sm font-medium transition-colors hover:text-calpir-green-600 hover:scale-105 transform duration-300"
             >
               {link.name}
             </Link>
           ))}
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center text-sm font-medium transition-colors hover:text-blue-600 focus:outline-none hover:scale-105 transform duration-300">
+            <DropdownMenuTrigger className="flex items-center text-sm font-medium transition-colors hover:text-calpir-green-600 focus:outline-none hover:scale-105 transform duration-300">
               Services <ChevronDown className="ml-1 h-4 w-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -63,7 +63,7 @@ const Navbar = () => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          <Button asChild>
+          <Button asChild className="bg-calpir-green-600 hover:bg-calpir-green-700 text-white">
             <Link to="/contact">Get Started</Link>
           </Button>
         </nav>
@@ -81,13 +81,13 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="text-lg font-medium hover:text-blue-600 transition-colors duration-200"
+                  className="text-lg font-medium hover:text-calpir-green-600 transition-colors duration-200"
                 >
                   {link.name}
                 </Link>
               ))}
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center text-lg font-medium hover:text-blue-600 focus:outline-none w-full justify-between transition-colors duration-200">
+                <DropdownMenuTrigger className="flex items-center text-lg font-medium hover:text-calpir-green-600 focus:outline-none w-full justify-between transition-colors duration-200">
                   Services <ChevronDown className="ml-1 h-5 w-5" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-full">
@@ -100,7 +100,7 @@ const Navbar = () => {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
-              <Button asChild className="w-full">
+              <Button asChild className="w-full bg-calpir-green-600 hover:bg-calpir-green-700 text-white">
                 <Link to="/contact">Get Started</Link>
               </Button>
             </div>

@@ -6,43 +6,43 @@ import {
 } from "lucide-react";
 
 const integrations = [
-  { name: "ClickUp", icon: ClipboardList },
-  { name: "Slack", icon: MessageSquare },
-  { name: "Google Drive", icon: HardDrive },
-  { name: "OneDrive", icon: Cloud },
-  { name: "SharePoint", icon: Share2 },
-  { name: "Outlook Calendar", icon: Calendar },
-  { name: "Google Calendar", icon: Calendar },
-  { name: "Zoom", icon: Video },
-  { name: "Zapier", icon: Zap },
-  { name: "Make", icon: Cog },
-  { name: "Jira", icon: Kanban },
-  { name: "HubSpot", icon: Target },
-  { name: "Notion", icon: FileText },
-  { name: "Trello", icon: Pin },
-  { name: "Asana", icon: CheckCircle },
-  { name: "DocuSign", icon: Signature },
-  { name: "Microsoft Teams", icon: Users },
-  { name: "Gmail", icon: Mail },
-  { name: "Outlook", icon: Mail },
-  { name: "Salesforce", icon: Cloud },
-  { name: "Monday.com", icon: Kanban }, // Changed to Kanban for project management
-  { name: "Zoho CRM", icon: UserPlus },
-  { name: "Pipedrive", icon: GitBranch },
-  { name: "Calendly", icon: Calendar },
-  { name: "Typeform", icon: FormInput },
-  { name: "Airtable", icon: Database },
-  { name: "Stripe", icon: CreditCard },
-  { name: "PayPal", icon: DollarSign },
-  { name: "QuickBooks", icon: BarChart },
-  { name: "Xero", icon: Wallet },
-  { name: "Intercom", icon: MessageSquare }, // Changed to MessageSquare for chat
-  { name: "Mailchimp", icon: Mailbox },
-  { name: "Klaviyo", icon: MailOpen },
-  { name: "Google Analytics", icon: BarChart2 },
-  { name: "Figma", icon: Figma },
-  { name: "Loom", icon: Film },
-  { name: "LinkedIn", icon: Linkedin },
+  { name: "ClickUp", icon: ClipboardList, color: "text-calpir-green-600" },
+  { name: "Slack", icon: MessageSquare, color: "text-calpir-green-500" },
+  { name: "Google Drive", icon: HardDrive, color: "text-calpir-green-700" },
+  { name: "OneDrive", icon: Cloud, color: "text-calpir-green-400" },
+  { name: "SharePoint", icon: Share2, color: "text-calpir-green-800" },
+  { name: "Outlook Calendar", icon: Calendar, color: "text-calpir-green-500" },
+  { name: "Google Calendar", icon: Calendar, color: "text-calpir-green-600" },
+  { name: "Zoom", icon: Video, color: "text-calpir-green-700" },
+  { name: "Zapier", icon: Zap, color: "text-calpir-green-400" },
+  { name: "Make", icon: Cog, color: "text-calpir-green-800" },
+  { name: "Jira", icon: Kanban, color: "text-calpir-green-500" },
+  { name: "HubSpot", icon: Target, color: "text-calpir-green-600" },
+  { name: "Notion", icon: FileText, color: "text-calpir-green-700" },
+  { name: "Trello", icon: Pin, color: "text-calpir-green-400" },
+  { name: "Asana", icon: CheckCircle, color: "text-calpir-green-800" },
+  { name: "DocuSign", icon: Signature, color: "text-calpir-green-500" },
+  { name: "Microsoft Teams", icon: Users, color: "text-calpir-green-600" },
+  { name: "Gmail", icon: Mail, color: "text-calpir-green-700" },
+  { name: "Outlook", icon: Mail, color: "text-calpir-green-400" },
+  { name: "Salesforce", icon: Cloud, color: "text-calpir-green-800" },
+  { name: "Monday.com", icon: Kanban, color: "text-calpir-green-500" },
+  { name: "Zoho CRM", icon: UserPlus, color: "text-calpir-green-600" },
+  { name: "Pipedrive", icon: GitBranch, color: "text-calpir-green-700" },
+  { name: "Calendly", icon: Calendar, color: "text-calpir-green-400" },
+  { name: "Typeform", icon: FormInput, color: "text-calpir-green-800" },
+  { name: "Airtable", icon: Database, color: "text-calpir-green-500" },
+  { name: "Stripe", icon: CreditCard, color: "text-calpir-green-600" },
+  { name: "PayPal", icon: DollarSign, color: "text-calpir-green-700" },
+  { name: "QuickBooks", icon: BarChart, color: "text-calpir-green-400" },
+  { name: "Xero", icon: Wallet, color: "text-calpir-green-800" },
+  { name: "Intercom", icon: MessageSquare, color: "text-calpir-green-500" },
+  { name: "Mailchimp", icon: Mailbox, color: "text-calpir-green-600" },
+  { name: "Klaviyo", icon: MailOpen, color: "text-calpir-green-700" },
+  { name: "Google Analytics", icon: BarChart2, color: "text-calpir-green-400" },
+  { name: "Figma", icon: Figma, color: "text-calpir-green-800" },
+  { name: "Loom", icon: Film, color: "text-calpir-green-500" },
+  { name: "LinkedIn", icon: Linkedin, color: "text-calpir-green-600" },
 ];
 
 const IntegrationsSection = () => {
@@ -61,9 +61,9 @@ const IntegrationsSection = () => {
             {[...integrations, ...integrations, ...integrations].map((integration, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-32 md:w-40 p-4 flex flex-col items-center justify-center text-center mx-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 transform hover:scale-[1.05]"
+                className="flex-shrink-0 w-32 md:w-40 p-4 flex flex-col items-center justify-center text-center mx-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
               >
-                <integration.icon className="h-10 w-10 text-blue-600 mb-2" />
+                <integration.icon className={`h-10 w-10 mb-2 ${integration.color}`} />
                 <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{integration.name}</span>
               </div>
             ))}

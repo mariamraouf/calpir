@@ -43,8 +43,8 @@ const About = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {coreServices.map((service, index) => (
-              <div key={index} className="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-sm">
-                <CheckCircle className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
+              <div key={index} className="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg">
+                <CheckCircle className="h-5 w-5 text-calpir-green-600 mr-3 flex-shrink-0" />
                 <span className="text-lg text-gray-800 dark:text-gray-200">{service}</span>
               </div>
             ))}
@@ -56,16 +56,16 @@ const About = () => {
             Our Delivery Promise
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-            <div className="p-6 bg-blue-50 dark:bg-blue-950 rounded-lg shadow-md">
-              <h3 className="text-2xl font-semibold text-blue-700 dark:text-blue-300 mb-2">Starter Package</h3>
+            <div className="p-6 bg-calpir-green-50 dark:bg-calpir-green-950 rounded-2xl shadow-lg">
+              <h3 className="text-2xl font-semibold text-calpir-green-700 dark:text-calpir-green-300 mb-2">Starter Package</h3>
               <p className="text-xl font-bold text-gray-800 dark:text-gray-200">7 Days</p>
             </div>
-            <div className="p-6 bg-blue-50 dark:bg-blue-950 rounded-lg shadow-md">
-              <h3 className="text-2xl font-semibold text-blue-700 dark:text-blue-300 mb-2">Growth Package</h3>
+            <div className="p-6 bg-calpir-green-50 dark:bg-calpir-green-950 rounded-2xl shadow-lg">
+              <h3 className="text-2xl font-semibold text-calpir-green-700 dark:text-calpir-green-300 mb-2">Growth Package</h3>
               <p className="text-xl font-bold text-gray-800 dark:text-gray-200">14 Days</p>
             </div>
-            <div className="p-6 bg-blue-50 dark:bg-blue-950 rounded-lg shadow-md">
-              <h3 className="text-2xl font-semibold text-blue-700 dark:text-blue-300 mb-2">Ultimate Package</h3>
+            <div className="p-6 bg-calpir-green-50 dark:bg-calpir-green-950 rounded-2xl shadow-lg">
+              <h3 className="text-2xl font-semibold text-calpir-green-700 dark:text-calpir-green-300 mb-2">Ultimate Package</h3>
               <p className="text-xl font-bold text-gray-800 dark:text-gray-200">28 Days</p>
             </div>
           </div>

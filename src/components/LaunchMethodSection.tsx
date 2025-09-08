@@ -9,18 +9,21 @@ const steps = [
     icon: Lightbulb,
     title: "Strategy & Planning",
     description: "30-minute free consultation to understand your business goals and needs. Once you decide to work with us, we provide a 1-hour consultation to deep dive into your requirements and develop your custom strategy.",
+    iconColor: "text-calpir-green-600",
   },
   {
     number: "02",
     icon: Code,
     title: "Development & Creation",
     description: "Our developer teams build your website, our designers create your branding, and our specialists develop your marketing materials using proven frameworks.",
+    iconColor: "text-calpir-green-500",
   },
   {
     number: "03",
     icon: Rocket,
     title: "Integration & Launch",
     description: "We integrate all systems, test everything, prepare for launch, and provide ongoing support to ensure your business success.",
+    iconColor: "text-calpir-green-700",
   },
 ];
 
@@ -39,13 +42,13 @@ const LaunchMethodSection = () => {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="relative flex flex-col items-center text-center p-8 bg-gray-50 dark:bg-gray-900 rounded-lg shadow-md border border-gray-200 dark:border-gray-800 hover:shadow-xl transition-shadow duration-300 transform hover:scale-[1.02]"
+              className="relative flex flex-col items-center text-center p-8 bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
             >
-              <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-blue-600 text-white rounded-full h-12 w-12 flex items-center justify-center text-xl font-bold shadow-lg">
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-calpir-green-600 text-white rounded-full h-12 w-12 flex items-center justify-center text-xl font-bold shadow-lg">
                 {step.number}
               </div>
               <div className="mt-8">
-                <step.icon className="h-10 w-10 text-blue-600 mb-4" />
+                <step.icon className={`h-10 w-10 mb-4 ${step.iconColor}`} />
                 <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{step.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400">{step.description}</p>
               </div>

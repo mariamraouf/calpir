@@ -18,6 +18,7 @@ const servicesData = [
       "Standard Operating Procedures (SOPs) documentation",
       "Inter-departmental communication setup",
     ],
+    iconColor: "text-calpir-green-600",
   },
   {
     id: "project-management",
@@ -30,6 +31,7 @@ const servicesData = [
       "Task management and tracking setup",
       "Reporting and analytics dashboards",
     ],
+    iconColor: "text-calpir-green-500",
   },
   {
     id: "hr-recruiting",
@@ -42,6 +44,7 @@ const servicesData = [
       "Onboarding and offboarding workflows",
       "HR policy and compliance guidance",
     ],
+    iconColor: "text-calpir-green-700",
   },
   {
     id: "website-building",
@@ -54,6 +57,7 @@ const servicesData = [
       "SEO optimization for better visibility",
       "Secure and reliable hosting solutions",
     ],
+    iconColor: "text-calpir-green-400",
   },
   {
     id: "accounting",
@@ -66,6 +70,7 @@ const servicesData = [
       "Integration with payment gateways (e.g., Stripe, PayPal)",
       "Basic financial reporting",
     ],
+    iconColor: "text-calpir-green-800",
   },
   {
     id: "social-media",
@@ -78,6 +83,7 @@ const servicesData = [
       "Post design and scheduling",
       "Audience engagement strategies",
     ],
+    iconColor: "text-calpir-green-500",
   },
   {
     id: "email-systems",
@@ -90,6 +96,7 @@ const servicesData = [
       "Automated email sequences (welcome, abandoned cart, etc.)",
       "List management and segmentation",
     ],
+    iconColor: "text-calpir-green-600",
   },
   {
     id: "crm-setup",
@@ -102,6 +109,7 @@ const servicesData = [
       "Customer data migration",
       "Reporting and analytics for customer insights",
     ],
+    iconColor: "text-calpir-green-700",
   },
   {
     id: "integrations",
@@ -114,6 +122,7 @@ const servicesData = [
       "Data synchronization between platforms",
       "Custom automation workflows (e.g., Zapier, Make)",
     ],
+    iconColor: "text-calpir-green-400",
   },
   {
     id: "design-branding",
@@ -126,6 +135,7 @@ const servicesData = [
       "Website visual design",
       "Brand voice and messaging development",
     ],
+    iconColor: "text-calpir-green-800",
   },
   {
     id: "analytics",
@@ -138,6 +148,7 @@ const servicesData = [
       "Key Performance Indicator (KPI) tracking",
       "Monthly performance reports and recommendations",
     ],
+    iconColor: "text-calpir-green-500",
   },
   {
     id: "migrations",
@@ -150,6 +161,7 @@ const servicesData = [
       "User training and support during transition",
       "Post-migration optimization",
     ],
+    iconColor: "text-calpir-green-600",
   },
   {
     id: "security-basics",
@@ -162,6 +174,7 @@ const servicesData = [
       "Data backup strategies",
       "Security best practices guidance",
     ],
+    iconColor: "text-calpir-green-700",
   },
 ];
 
@@ -181,9 +194,9 @@ const Services = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {servicesData.map((service) => (
-            <section key={service.id} id={service.id} className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300 transform hover:scale-[1.01]">
+            <section key={service.id} id={service.id} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
               <div className="flex items-center mb-6">
-                <service.icon className="h-12 w-12 text-blue-600 mr-4 flex-shrink-0" />
+                <service.icon className={`h-12 w-12 mr-4 flex-shrink-0 ${service.iconColor}`} />
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{service.title}</h2>
                   <p className="text-md text-gray-600 dark:text-gray-400">{service.description}</p>
@@ -192,7 +205,7 @@ const Services = () => {
               <ul className="list-none space-y-3 text-left">
                 {service.details.map((detail, index) => (
                   <li key={index} className="flex items-start text-gray-700 dark:text-gray-300">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-calpir-green-500 mr-2 flex-shrink-0 mt-1" />
                     <span>{detail}</span>
                   </li>
                 ))}

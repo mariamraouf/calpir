@@ -79,17 +79,17 @@ const PricingPackagesSection = () => {
           {packages.map((pkg, index) => (
             <div
               key={index}
-              className={`flex flex-col p-8 rounded-lg shadow-xl border-2 ${
+              className={`flex flex-col p-8 rounded-2xl shadow-lg border-2 ${
                 pkg.highlight
-                  ? "border-blue-600 bg-blue-50 dark:bg-blue-950"
+                  ? "border-calpir-green-600 bg-calpir-green-50 dark:bg-calpir-green-950"
                   : "border-gray-200 bg-white dark:bg-gray-800"
-              } transition-all duration-300 hover:scale-[1.02]`}
+              } transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
             >
               {pkg.tag && (
                 <span
                   className={`inline-block px-4 py-1 rounded-full text-xs font-semibold mb-4 ${
                     pkg.highlight
-                      ? "bg-blue-600 text-white"
+                      ? "bg-calpir-green-600 text-white"
                       : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
                   }`}
                 >
@@ -97,19 +97,19 @@ const PricingPackagesSection = () => {
                 </span>
               )}
               <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{pkg.name}</h3>
-              <p className="text-4xl font-extrabold text-blue-700 dark:text-blue-300 mb-4">{pkg.price}</p>
+              <p className="text-4xl font-extrabold text-calpir-green-700 dark:text-calpir-green-300 mb-4">{pkg.price}</p>
               <p className="text-gray-600 dark:text-gray-400 mb-6 flex-grow">{pkg.description}</p>
 
               <ul className="list-none space-y-3 text-left mb-8">
                 {pkg.features.slice(0, 5).map((feature, fIndex) => ( // Show only first 5 features as a summary
                   <li key={fIndex} className="flex items-start text-gray-700 dark:text-gray-300">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-calpir-green-500 mr-2 flex-shrink-0 mt-1" />
                     <span>{feature}</span>
                   </li>
                 ))}
                 {pkg.features.length > 5 && (
                   <li className="flex items-start text-gray-700 dark:text-gray-300">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-calpir-green-500 mr-2 flex-shrink-0 mt-1" />
                     <span>...and more!</span>
                   </li>
                 )}
@@ -118,10 +118,10 @@ const PricingPackagesSection = () => {
               <Button
                 asChild
                 size="lg"
-                className={`w-full text-lg px-8 py-3 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${
+                className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${
                   pkg.highlight
-                    ? "bg-blue-600 hover:bg-blue-700 text-white"
-                    : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-blue-600 dark:hover:bg-blue-700"
+                    ? "bg-calpir-green-600 hover:bg-calpir-green-700 text-white"
+                    : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-calpir-green-600 dark:hover:bg-calpir-green-700"
                 }`}
               >
                 <Link to="/pricing">View Details</Link>

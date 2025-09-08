@@ -47,7 +47,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+          <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
             <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Send Us a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -98,32 +98,32 @@ const Contact = () => {
                   className="mt-1"
                 />
               </div>
-              <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg py-3 rounded-md transition-all duration-300">
+              <Button type="submit" className="w-full bg-calpir-green-600 hover:bg-calpir-green-700 text-white text-lg py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-2xl">
                 Send Message
               </Button>
             </form>
           </div>
 
           {/* Contact Information */}
-          <div className="bg-gray-50 dark:bg-gray-900 p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 flex flex-col justify-center">
+          <div className="bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 flex flex-col justify-center">
             <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Contact Information</h2>
             <div className="space-y-6">
               <div className="flex items-center">
-                <Mail className="h-6 w-6 text-blue-600 mr-4" />
+                <Mail className="h-6 w-6 text-calpir-green-600 mr-4" />
                 <div>
                   <p className="font-semibold text-gray-900 dark:text-white">Email Us</p>
-                  <a href="mailto:hello@calpirsolutions.com" className="text-blue-600 hover:underline dark:text-blue-400">hello@calpirsolutions.com</a>
+                  <a href="mailto:hello@calpirsolutions.com" className="text-calpir-green-600 hover:underline dark:text-calpir-green-400">hello@calpirsolutions.com</a>
                 </div>
               </div>
               <div className="flex items-center">
-                <Phone className="h-6 w-6 text-blue-600 mr-4" />
+                <Phone className="h-6 w-6 text-calpir-green-600 mr-4" />
                 <div>
                   <p className="font-semibold text-gray-900 dark:text-white">Call Us</p>
-                  <a href="tel:+15551234567" className="text-blue-600 hover:underline dark:text-blue-400">(555) 123-4567</a>
+                  <a href="tel:+15551234567" className="text-calpir-green-600 hover:underline dark:text-calpir-green-400">(555) 123-4567</a>
                 </div>
               </div>
               <div className="flex items-center">
-                <MapPin className="h-6 w-6 text-blue-600 mr-4" />
+                <MapPin className="h-6 w-6 text-calpir-green-600 mr-4" />
                 <div>
                   <p className="font-semibold text-gray-900 dark:text-white">Our Location</p>
                   <p className="text-gray-700 dark:text-gray-300">123 Business Ave, Suite 100, City, State 12345</p>
