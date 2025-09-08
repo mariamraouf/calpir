@@ -1,60 +1,64 @@
 "use client";
 
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 
 const packages = [
   {
-    name: "Startup Package",
-    tag: "Best for Startups",
-    price: "$1,500",
-    description: "Perfect for solo entrepreneurs and small startups with tight budgets",
+    name: "Starter Package",
+    tag: "Best for Solo Entrepreneurs",
+    price: "$1,499",
+    description: "Perfect for solo entrepreneurs and small startups with tight budgets.",
     features: [
-      "Professional website + branding",
-      "Basic email system setup",
-      "1 month social media content",
-      "Business document templates",
-      "7-day complete setup",
-      "Basic support for 30 days",
-      "Basic project management tool setup",
-      "Payment processing integration",
+      "Website: Up to 5 pages (build/redesign)",
+      "Project Management: Basic setup (up to 2 workspace spaces, simple tasks)",
+      "Migration: Move to 1 platform (e.g., CRM/project tool, data import)",
+      "Social Media: Setup on 2 platforms + 5 designs or posts",
+      "CRM: Basic contact tracking",
+      "Accounting: Simple invoicing",
+      "Integrations: Up to 2 connections",
+      "Analytics: Basic monthly summary",
+      "HR/Recruiting: Templates + basic global strategy",
     ],
     highlight: false,
   },
   {
-    name: "Professional Package",
+    name: "Growth Package",
     tag: "Most Popular",
-    price: "$3,000",
-    description: "Complete business operations suite for growing businesses",
+    price: "$2,999",
+    description: "Scaling startups or businesses upgrading platforms—more depth for growth/transitions.",
     features: [
-      "Everything in Startup Package",
-      "Full branding + marketing materials",
-      "Advanced CRM system setup & training",
-      "Phone system integration",
-      "3 months social media content",
-      "Financial management setup",
-      "Priority support for 90 days",
-      "Advanced automation workflows",
-      "Team collaboration tools",
+      "Everything in Starter, plus:",
+      "Website: Up to 10 pages (Including SEO)",
+      "Project Management: Enhanced setup (Up to 5 workspaces, basic automations)",
+      "Migration: Move to 2-3 platforms (e.g., CRM + project tool)",
+      "Social Media: Setup on 5 platforms + 10 designs/posts (1-month plan)",
+      "CRM: Advanced CRM with automation",
+      "Accounting: Expense tracking",
+      "Integrations: Up to 5 connections",
+      "Analytics: Monthly detailed insights",
+      "HR/Recruiting: Job postings on 2 global sites",
     ],
     highlight: true,
   },
   {
-    name: "Enterprise Package",
+    name: "Ultimate Package",
     tag: "Enterprise Level",
-    price: "$5,000+",
-    description: "Premium features + ongoing support for established businesses",
+    price: "$5,999+",
+    description: "Funded startups or businesses needing premium setups/migrations—advanced features, dedicated manager (1-month email/check-ins).",
     features: [
-      "Everything in Professional Package",
-      "Advanced automation workflows",
-      "Premium CRM with analytics",
-      "Priority support & consultation",
-      "Custom integrations",
-      "Dedicated account manager",
-      "6 months content + strategy",
-      "Staff recruitment assistance",
-      "Advanced reporting & analytics",
+      "Everything in Growth, plus:",
+      "Website: Unlimited pages (custom features/advanced SEO)",
+      "Project Management: Advanced setup (unlimited workspaces, full automations)",
+      "Migration: Move to multiple platforms (unlimited, full stack overhaul)",
+      "Social Media: Setup on 5+ platforms + 20 designs/posts per month (3-month plan)",
+      "CRM: Predictive automation",
+      "Accounting: Forecasting tools",
+      "Integrations: Unlimited as needed",
+      "Analytics: Weekly insights/recommendations",
+      "HR/Recruiting: Full strategy + sourcing for 1 global role",
     ],
     highlight: false,
   },
@@ -97,15 +101,22 @@ const PricingPackagesSection = () => {
               <p className="text-gray-600 dark:text-gray-400 mb-6 flex-grow">{pkg.description}</p>
 
               <ul className="list-none space-y-3 text-left mb-8">
-                {pkg.features.map((feature, fIndex) => (
+                {pkg.features.slice(0, 5).map((feature, fIndex) => ( // Show only first 5 features as a summary
                   <li key={fIndex} className="flex items-start text-gray-700 dark:text-gray-300">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-1" />
                     <span>{feature}</span>
                   </li>
                 ))}
+                {pkg.features.length > 5 && (
+                  <li className="flex items-start text-gray-700 dark:text-gray-300">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                    <span>...and more!</span>
+                  </li>
+                )}
               </ul>
 
               <Button
+                asChild
                 size="lg"
                 className={`w-full text-lg px-8 py-3 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${
                   pkg.highlight
@@ -113,7 +124,7 @@ const PricingPackagesSection = () => {
                     : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-blue-600 dark:hover:bg-blue-700"
                 }`}
               >
-                Get Started
+                <Link to="/pricing">View Details</Link>
               </Button>
             </div>
           ))}

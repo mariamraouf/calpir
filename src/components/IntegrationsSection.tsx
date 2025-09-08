@@ -2,44 +2,47 @@
 
 import React from "react";
 import {
-  ClipboardList, Mail, Briefcase, MessageSquare, Video, Target, Cloud,
-  Pin, CheckCircle, FileText, Mailbox, CreditCard, DollarSign, BarChart,
-  ShoppingCart, Newspaper, Zap, Calendar, Box, Palette, Image, Smartphone,
-  Bird, MessageCircle, Headphones, Leaf, TrendingUp, Database, FormInput,
-  Film
+  ClipboardList, MessageSquare, HardDrive, Cloud, Share2, Calendar, Video, Zap, Cog, Kanban, Target, FileText, Pin, CheckCircle, Signature, Users, Mail, UserPlus, GitBranch, FormInput, Database, CreditCard, DollarSign, BarChart, Wallet, Mailbox, MailOpen, BarChart2, Figma, Film, Linkedin
 } from "lucide-react";
 
 const integrations = [
   { name: "ClickUp", icon: ClipboardList },
-  { name: "Google Workspace", icon: Mail },
-  { name: "Microsoft 365", icon: Briefcase },
   { name: "Slack", icon: MessageSquare },
+  { name: "Google Drive", icon: HardDrive },
+  { name: "OneDrive", icon: Cloud },
+  { name: "SharePoint", icon: Share2 },
+  { name: "Outlook Calendar", icon: Calendar },
+  { name: "Google Calendar", icon: Calendar },
   { name: "Zoom", icon: Video },
+  { name: "Zapier", icon: Zap },
+  { name: "Make", icon: Cog },
+  { name: "Jira", icon: Kanban },
   { name: "HubSpot", icon: Target },
-  { name: "Salesforce", icon: Cloud },
+  { name: "Notion", icon: FileText },
   { name: "Trello", icon: Pin },
   { name: "Asana", icon: CheckCircle },
-  { name: "Notion", icon: FileText },
-  { name: "Mailchimp", icon: Mailbox },
+  { name: "DocuSign", icon: Signature },
+  { name: "Microsoft Teams", icon: Users },
+  { name: "Gmail", icon: Mail },
+  { name: "Outlook", icon: Mail },
+  { name: "Salesforce", icon: Cloud },
+  { name: "Monday.com", icon: Kanban }, // Changed to Kanban for project management
+  { name: "Zoho CRM", icon: UserPlus },
+  { name: "Pipedrive", icon: GitBranch },
+  { name: "Calendly", icon: Calendar },
+  { name: "Typeform", icon: FormInput },
+  { name: "Airtable", icon: Database },
   { name: "Stripe", icon: CreditCard },
   { name: "PayPal", icon: DollarSign },
   { name: "QuickBooks", icon: BarChart },
-  { name: "Shopify", icon: ShoppingCart },
-  { name: "WordPress", icon: Newspaper },
-  { name: "Zapier", icon: Zap },
-  { name: "Calendly", icon: Calendar },
-  { name: "Dropbox", icon: Box },
-  { name: "Adobe Creative", icon: Palette },
-  { name: "Canva", icon: Image },
-  { name: "Buffer", icon: Smartphone },
-  { name: "Hootsuite", icon: Bird },
-  { name: "Intercom", icon: MessageCircle },
-  { name: "Zendesk", icon: Headphones },
-  { name: "Freshworks", icon: Leaf },
-  { name: "Monday.com", icon: TrendingUp },
-  { name: "Airtable", icon: Database },
-  { name: "Typeform", icon: FormInput },
+  { name: "Xero", icon: Wallet },
+  { name: "Intercom", icon: MessageSquare }, // Changed to MessageSquare for chat
+  { name: "Mailchimp", icon: Mailbox },
+  { name: "Klaviyo", icon: MailOpen },
+  { name: "Google Analytics", icon: BarChart2 },
+  { name: "Figma", icon: Figma },
   { name: "Loom", icon: Film },
+  { name: "LinkedIn", icon: Linkedin },
 ];
 
 const IntegrationsSection = () => {

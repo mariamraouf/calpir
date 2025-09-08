@@ -8,7 +8,7 @@ const steps = [
     number: "01",
     icon: Lightbulb,
     title: "Strategy & Planning",
-    description: "15-minute consultation to understand your business goals, target market, and requirements. We analyze your market and develop your custom strategy.",
+    description: "30-minute free consultation to understand your business goals and needs. Once you decide to work with us, we provide a 1-hour consultation to deep dive into your requirements and develop your custom strategy.",
   },
   {
     number: "02",

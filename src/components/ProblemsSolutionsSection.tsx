@@ -44,6 +44,8 @@ const ProblemsSolutionsSection = () => {
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Building a business from scratch is expensive, time-consuming, and overwhelming. You need to hire multiple specialists, coordinate different systems, and spend months just to get basic operations running.
+            <br /><br />
+            We match you with the platforms that best suit your budget, and our team knows all the tips and tricks to save you money.
           </p>
         </div>
 

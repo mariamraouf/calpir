@@ -6,51 +6,80 @@ import { PlusCircle } from "lucide-react";
 
 const addOnsCategories = [
   {
-    name: "Social Media Content",
+    name: "Social Media Expansion",
     items: [
-      { posts: "10 Posts/Month", price: "$297", description: "Professional social media posts with graphics" },
-      { posts: "20 Posts/Month", price: "$497", description: "Enhanced content with stories and engagement" },
-      { posts: "30 Posts/Month", price: "$697", description: "Full social media management with analytics" },
+      { posts: "10 Posts/Month", price: "$199", description: "Professional social media posts with graphics" },
+      { posts: "20 Posts/Month", price: "$349", description: "Enhanced content with stories and engagement" },
+      { posts: "30 Posts/Month", price: "$499", description: "Full social media management with analytics" },
     ],
   },
   {
-    name: "Video Content",
+    name: "Email Marketing",
     items: [
-      { posts: "Basic Video Package", price: "$497", description: "2 promotional videos per month" },
-      { posts: "Standard Video Package", price: "$897", description: "4 videos + social media clips" },
-      { posts: "Premium Video Package", price: "$1,297", description: "8 videos + full video marketing strategy" },
+      { posts: "Email Marketing Setup", price: "$499", description: "One-time complete email automation system" },
+      { posts: "3 Campaigns/Month", price: "$599", description: "Management for 3 email campaigns monthly" },
+      { posts: "5 Campaigns/Month", price: "$699", description: "Management for 5 email campaigns monthly" },
     ],
   },
   {
-    name: "Marketing Campaigns",
+    name: "Analytics Upgrades",
     items: [
-      { posts: "Email Marketing Setup", price: "$397", description: "Complete email automation system" },
-      { posts: "Ad Campaign Management", price: "$797", description: "Google & Facebook ads management" },
-      { posts: "Full Marketing Strategy", price: "$1,497", description: "Complete marketing plan + execution" },
-    ],
-  },
-  {
-    name: "Advanced Analytics",
-    items: [
-      { posts: "Basic Reporting", price: "$197", description: "Monthly performance reports" },
-      { posts: "Advanced Analytics", price: "$397", description: "Detailed insights + recommendations" },
-      { posts: "Custom Dashboards", price: "$697", description: "Real-time business intelligence" },
-    ],
-  },
-  {
-    name: "Staff Recruitment",
-    items: [
-      { posts: "Job Posting Setup", price: "$297", description: "Professional job listings on major platforms" },
-      { posts: "Candidate Screening", price: "$597", description: "Initial screening + interview coordination" },
-      { posts: "Full Recruitment Service", price: "$1,297", description: "End-to-end hiring process management" },
+      { posts: "Monthly Insights", price: "$199", description: "Monthly performance reports" },
+      { posts: "Monthly Recommendations", price: "$249", description: "Detailed insights + recommendations" },
+      { posts: "Real-time Analytics", price: "$399", description: "Real-time business intelligence" },
     ],
   },
   {
     name: "Ongoing Support",
     items: [
-      { posts: "Monthly Check-ins", price: "$197", description: "Monthly strategy calls + support" },
-      { posts: "Weekly Support", price: "$397", description: "Weekly calls + priority support" },
-      { posts: "Dedicated Account Manager", price: "$797", description: "Personal business advisor + unlimited support" },
+      { posts: "Monthly Emails", price: "$199", description: "Monthly strategy emails + support" },
+      { posts: "Weekly Calls", price: "$499", description: "Weekly calls + priority support" },
+    ],
+  },
+  {
+    name: "Staff Recruitment (Global)",
+    items: [
+      { posts: "1 Role", price: "$450", description: "Assistance with recruiting for one global role" },
+      { posts: "2 Roles", price: "$700", description: "Assistance with recruiting for two global roles" },
+      { posts: "3 Roles", price: "$900", description: "Assistance with recruiting for three global roles" },
+      { posts: "Unlimited (3 months)", price: "$4,999", description: "Unlimited recruitment assistance for 3 months" },
+    ],
+  },
+  {
+    name: "Extra Integrations",
+    items: [
+      { posts: "Per Integration", price: "$199", description: "Setup and configuration for each additional platform integration" },
+    ],
+  },
+  {
+    name: "Website Expansions",
+    items: [
+      { posts: "Per Page", price: "$199", description: "Development for each additional website page" },
+      { posts: "E-commerce Functionality", price: "$499", description: "Setup for e-commerce capabilities" },
+    ],
+  },
+  {
+    name: "HR Customizations",
+    items: [
+      { posts: "One-time Setup", price: "$299", description: "Custom HR system setup and configuration" },
+    ],
+  },
+  {
+    name: "Training Sessions",
+    items: [
+      { posts: "Per Hour", price: "$199", description: "Dedicated training sessions for your team" },
+    ],
+  },
+  {
+    name: "Custom Automations",
+    items: [
+      { posts: "For 5+ Automations", price: "$299", description: "Setup for 5 or more custom automation workflows" },
+    ],
+  },
+  {
+    name: "Security Basics",
+    items: [
+      { posts: "One-time Setup", price: "$299", description: "Basic security configurations and recommendations" },
     ],
   },
 ];

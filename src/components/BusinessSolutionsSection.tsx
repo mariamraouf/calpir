@@ -4,17 +4,7 @@ import React from "react";
 import { Globe, Layout, Palette, TrendingUp, CheckCircle } from "lucide-react";
 
 const solutions = [
-  {
-    icon: Globe,
-    title: "Business Operations Setup",
-    description: "Complete business infrastructure, systems, and operational frameworks",
-    features: [
-      "Business Registration",
-      "Legal Documentation",
-      "Financial Systems",
-      "Compliance Setup",
-    ],
-  },
+  // Removed "Business Operations Setup" as requested
   {
     icon: Layout,
     title: "Website Development",
@@ -45,7 +35,7 @@ const solutions = [
       "Email Automation",
       "Social Media Setup",
       "Analytics Tracking",
-      "Lead Generation",
+      // Removed "Lead Generation" as requested
     ],
   },
 ];
@@ -61,7 +51,7 @@ const BusinessSolutionsSection = () => {
           Everything your business needs to launch successfully, from operations setup to marketing automation.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Changed to 3 columns as one solution was removed */}
           {solutions.map((solution, index) => (
             <div
               key={index}
