@@ -18,13 +18,27 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
-        <IntegrationsSection />
-        <ProblemsSolutionsSection />
-        <BusinessSolutionsSection />
-        <LaunchMethodSection />
-        <AddOnsSection />
-        <PricingPackagesSection />
-        <CtaSection />
+        <div className="animate-fade-in-up delay-200">
+          <IntegrationsSection />
+        </div>
+        <div className="animate-fade-in-up delay-400">
+          <ProblemsSolutionsSection />
+        </div>
+        <div className="animate-fade-in-up delay-600">
+          <BusinessSolutionsSection />
+        </div>
+        <div className="animate-fade-in-up delay-800">
+          <LaunchMethodSection />
+        </div>
+        <div className="animate-fade-in-up delay-1000">
+          <AddOnsSection />
+        </div>
+        <div className="animate-fade-in-up delay-1200">
+          <PricingPackagesSection />
+        </div>
+        <div className="animate-fade-in-up delay-1400">
+          <CtaSection />
+        </div>
       </main>
       <Footer />
       <MadeWithDyad />

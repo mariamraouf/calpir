@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="container grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* Company Info */}
         <div className="col-span-full md:col-span-1">
-          <Link to="/" className="flex items-center space-x-2 font-bold text-2xl text-white mb-4">
+          <Link to="/" className="flex items-center space-x-2 font-bold text-2xl text-white mb-4 transition-transform duration-300 hover:scale-105">
             <img src="/calpir-logo.png" alt="Calpir Logo" className="h-8 w-8" />
             <span className="text-white">Calpir</span>
           </Link>
@@ -19,13 +19,13 @@ const Footer = () => {
           </p>
           <div className="space-y-2 text-sm">
             <p className="flex items-center">
-              <Mail className="h-4 w-4 mr-2 text-blue-400" /> hello@calpirsolutions.com
+              <Mail className="h-4 w-4 mr-2 text-blue-400" /> <a href="mailto:hello@calpirsolutions.com" className="hover:text-white transition-colors">hello@calpirsolutions.com</a>
             </p>
             <p className="flex items-center">
-              <Phone className="h-4 w-4 mr-2 text-blue-400" /> (555) 123-4567
+              <Phone className="h-4 w-4 mr-2 text-blue-400" /> <a href="tel:(555) 123-4567" className="hover:text-white transition-colors">(555) 123-4567</a>
             </p>
             <p className="flex items-center">
-              <MessageSquare className="h-4 w-4 mr-2 text-blue-400" /> 24/7 Live Chat
+              <MessageSquare className="h-4 w-4 mr-2 text-blue-400" /> <span className="hover:text-white transition-colors">24/7 Live Chat</span>
             </p>
           </div>
         </div>
@@ -34,10 +34,10 @@ const Footer = () => {
         <div>
           <h4 className="text-lg font-semibold text-white mb-4">Services</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="#services" className="hover:text-white transition-colors">Business Operations Setup</a></li>
-            <li><a href="#services" className="hover:text-white transition-colors">Website Development</a></li>
-            <li><a href="#services" className="hover:text-white transition-colors">Brand Identity</a></li>
-            <li><a href="#services" className="hover:text-white transition-colors">Marketing Systems</a></li>
+            <li><a href="/services#operations-flows" className="hover:text-white transition-colors">Business Operations Setup</a></li>
+            <li><a href="/services#website-building" className="hover:text-white transition-colors">Website Development</a></li>
+            <li><a href="/services#design-branding" className="hover:text-white transition-colors">Brand Identity</a></li>
+            <li><a href="/services#social-media" className="hover:text-white transition-colors">Marketing Systems</a></li>
           </ul>
         </div>
 
@@ -45,8 +45,8 @@ const Footer = () => {
         <div>
           <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
-            <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+            <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
+            <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             <li><Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
             <li><Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link></li>
           </ul>

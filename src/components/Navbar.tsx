@@ -25,7 +25,8 @@ const Navbar = () => {
     { name: "CRM Setup & Optimization", href: "/services#crm-setup" },
     { name: "Platform Integrations", href: "/services#integrations" },
     { name: "Design & Branding", href: "/services#design-branding" },
-    { name: "Analytics & Reporting", href: "/services#analytics" },
+    { name: "Analytics & Reporting",
+      href: "/services#analytics" },
     { name: "Software Migrations", href: "/services#migrations" },
     { name: "Security Basics Setup", href: "/services#security-basics" },
   ];
@@ -33,7 +34,7 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2 font-bold text-lg">
+        <Link to="/" className="flex items-center space-x-2 font-bold text-lg transition-transform duration-300 hover:scale-105">
           <img src="/calpir-logo.png" alt="Calpir Logo" className="h-8 w-8" />
           <span className="text-gray-900 dark:text-white">Calpir</span>
         </Link>
@@ -43,19 +44,19 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={link.href}
-              className="text-sm font-medium transition-colors hover:text-blue-600"
+              className="text-sm font-medium transition-colors hover:text-blue-600 hover:scale-105 transform duration-300"
             >
               {link.name}
             </Link>
           ))}
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center text-sm font-medium transition-colors hover:text-blue-600 focus:outline-none">
+            <DropdownMenuTrigger className="flex items-center text-sm font-medium transition-colors hover:text-blue-600 focus:outline-none hover:scale-105 transform duration-300">
               Services <ChevronDown className="ml-1 h-4 w-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               {serviceDropdownLinks.map((link) => (
                 <DropdownMenuItem key={link.name} asChild>
-                  <a href={link.href} className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
+                  <a href={link.href} className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
                     {link.name}
                   </a>
                 </DropdownMenuItem>
@@ -69,7 +70,7 @@ const Navbar = () => {
 
         <Sheet>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="outline" size="icon">
+            <Button variant="outline" size="icon" className="transition-transform duration-300 hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-700">
               <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
@@ -80,19 +81,19 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="text-lg font-medium hover:text-blue-600"
+                  className="text-lg font-medium hover:text-blue-600 transition-colors duration-200"
                 >
                   {link.name}
                 </Link>
               ))}
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center text-lg font-medium hover:text-blue-600 focus:outline-none w-full justify-between">
+                <DropdownMenuTrigger className="flex items-center text-lg font-medium hover:text-blue-600 focus:outline-none w-full justify-between transition-colors duration-200">
                   Services <ChevronDown className="ml-1 h-5 w-5" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-full">
                   {serviceDropdownLinks.map((link) => (
                     <DropdownMenuItem key={link.name} asChild>
-                      <a href={link.href} className="block px-4 py-2 text-base text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <a href={link.href} className="block px-4 py-2 text-base text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
                         {link.name}
                       </a>
                     </DropdownMenuItem>
