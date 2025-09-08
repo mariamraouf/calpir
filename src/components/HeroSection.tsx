@@ -7,6 +7,11 @@ const HeroSection = () => {
   return (
     <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-r from-blue-600 to-purple-600 text-white overflow-hidden">
       <div className="container relative z-10 text-center">
+        <img
+          src="/calpir-logo.png"
+          alt="Calpir Logo"
+          className="h-24 w-24 mx-auto mb-8 animate-bounce-slow"
+        />
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 animate-fade-in-up">
           Launch Your Dream Business in 7 Days
         </h1>
