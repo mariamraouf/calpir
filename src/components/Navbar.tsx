@@ -34,7 +34,8 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center space-x-2 font-bold text-lg">
-          <span className="text-blue-600">C</span> Calpir Solutions
+          <img src="/calpir-logo.png" alt="Calpir Logo" className="h-8 w-8" />
+          <span className="text-gray-900 dark:text-white">Calpir</span>
         </Link>
 
         <nav className="hidden md:flex items-center space-x-6">

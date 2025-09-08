@@ -11,7 +11,8 @@ const Footer = () => {
         {/* Company Info */}
         <div className="col-span-full md:col-span-1">
           <Link to="/" className="flex items-center space-x-2 font-bold text-2xl text-white mb-4">
-            <span className="text-blue-500">C</span> Calpir Solutions
+            <img src="/calpir-logo.png" alt="Calpir Logo" className="h-8 w-8" />
+            <span className="text-white">Calpir</span>
           </Link>
           <p className="text-sm leading-relaxed mb-4">
             Empowering entrepreneurs to launch successful businesses with proven systems, comprehensive operations setup, and strategic business frameworks.
@@ -58,7 +59,7 @@ const Footer = () => {
       </div>
 
       <div className="container border-t border-gray-700 mt-12 pt-8 text-center text-sm text-gray-500">
-        <p>© 2024 Calpir Solutions. All rights reserved. Complete Business Operations Service.</p>
+        <p>© 2024 Calpir. All rights reserved. Complete Business Operations Service.</p>
         <p className="mt-1">Made in Bolt</p>
       </div>
     </footer>
