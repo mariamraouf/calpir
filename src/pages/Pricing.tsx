@@ -153,7 +153,7 @@ const Pricing = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow container py-16 md:py-24">
+      <main className="flex-grow container py-16 md:py-24 animate-fade-in-up">
         <section className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
             Detailed Pricing & Packages

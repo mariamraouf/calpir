@@ -24,13 +24,13 @@ const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow container py-16 md:py-24">
+      <main className="flex-grow container py-16 md:py-24 animate-fade-in-up">
         <section className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-            About Calpir Solutions
+            About Calpir
           </h1>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Calpir Solutions provides all-in-one setup and software migration services for startups and businesses, saving time, money, and effort. We handle operations, HR, websites, social media, and more, with a 7-day setup for our Starter package. Our expertise in 300+ platforms ensures tailored recommendations, and we build or migrate your processes seamlessly. Whether launching or switching software, we make it easy.
+            Calpir provides all-in-one setup and software migration services for startups and businesses, saving time, money, and effort. We handle operations, HR, websites, social media, and more, with a 7-day setup for our Starter package. Our expertise in 300+ platforms ensures tailored recommendations, and we build or migrate your processes seamlessly. Whether launching or switching software, we make it easy.
           </p>
           <p className="text-md text-gray-500 dark:text-gray-400 mt-8 italic">
             Disclaimer: We configure your chosen platforms; clients are responsible for any subscription costs.
