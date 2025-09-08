@@ -61,7 +61,7 @@ const IntegrationsSection = () => {
             {[...integrations, ...integrations, ...integrations].map((integration, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-32 md:w-40 p-4 flex flex-col items-center justify-center text-center mx-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="flex-shrink-0 w-32 md:w-40 p-4 flex flex-col items-center justify-center text-center mx-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 transform hover:scale-[1.05]"
               >
                 <integration.icon className="h-10 w-10 text-blue-600 mb-2" />
                 <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{integration.name}</span>

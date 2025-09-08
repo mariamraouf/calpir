@@ -4,7 +4,6 @@ import React from "react";
 import { Globe, Layout, Palette, TrendingUp, CheckCircle } from "lucide-react";
 
 const solutions = [
-  // Removed "Business Operations Setup" as requested
   {
     icon: Layout,
     title: "Website Development",
@@ -35,7 +34,6 @@ const solutions = [
       "Email Automation",
       "Social Media Setup",
       "Analytics Tracking",
-      // Removed "Lead Generation" as requested
     ],
   },
 ];
@@ -51,11 +49,11 @@ const BusinessSolutionsSection = () => {
           Everything your business needs to launch successfully, from operations setup to marketing automation.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Changed to 3 columns as one solution was removed */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {solutions.map((solution, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300"
+              className="flex flex-col items-center text-center p-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300 transform hover:scale-[1.02]"
             >
               <solution.icon className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{solution.title}</h3>

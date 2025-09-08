@@ -39,7 +39,7 @@ const LaunchMethodSection = () => {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="relative flex flex-col items-center text-center p-8 bg-gray-50 dark:bg-gray-900 rounded-lg shadow-md border border-gray-200 dark:border-gray-800 hover:shadow-xl transition-shadow duration-300"
+              className="relative flex flex-col items-center text-center p-8 bg-gray-50 dark:bg-gray-900 rounded-lg shadow-md border border-gray-200 dark:border-gray-800 hover:shadow-xl transition-shadow duration-300 transform hover:scale-[1.02]"
             >
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-blue-600 text-white rounded-full h-12 w-12 flex items-center justify-center text-xl font-bold shadow-lg">
                 {step.number}

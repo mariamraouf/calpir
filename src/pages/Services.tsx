@@ -181,7 +181,7 @@ const Services = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {servicesData.map((service) => (
-            <section key={service.id} id={service.id} className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+            <section key={service.id} id={service.id} className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300 transform hover:scale-[1.01]">
               <div className="flex items-center mb-6">
                 <service.icon className="h-12 w-12 text-blue-600 mr-4 flex-shrink-0" />
                 <div>

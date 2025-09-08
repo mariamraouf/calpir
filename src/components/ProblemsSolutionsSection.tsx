@@ -53,7 +53,7 @@ const ProblemsSolutionsSection = () => {
           {problems.map((problem, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-6 bg-gray-50 dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-800"
+              className="flex flex-col items-center text-center p-6 bg-gray-50 dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-300 transform hover:scale-[1.02]"
             >
               <problem.icon className="h-12 w-12 text-red-500 mb-4" />
               <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{problem.title}</h3>
@@ -76,7 +76,7 @@ const ProblemsSolutionsSection = () => {
           {solutions.map((solution, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-8 bg-blue-50 dark:bg-blue-950 rounded-lg shadow-md border border-blue-200 dark:border-blue-800"
+              className="flex flex-col items-center text-center p-8 bg-blue-50 dark:bg-blue-950 rounded-lg shadow-md border border-blue-200 dark:border-blue-800 hover:shadow-xl transition-shadow duration-300 transform hover:scale-[1.02]"
             >
               <p className="text-5xl font-extrabold text-blue-700 dark:text-blue-300 mb-2">{solution.label}</p>
               <p className="text-lg text-gray-700 dark:text-gray-200">{solution.detail}</p>

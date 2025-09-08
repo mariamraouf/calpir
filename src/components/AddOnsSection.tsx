@@ -97,7 +97,7 @@ const AddOnsSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {addOnsCategories.map((category, catIndex) => (
-            <div key={catIndex} className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+            <div key={catIndex} className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-[1.01] transition-transform duration-300">
               <h3 className="text-2xl font-bold mb-6 text-blue-600 dark:text-blue-400">{category.name}</h3>
               <div className="space-y-6">
                 {category.items.map((item, itemIndex) => (
