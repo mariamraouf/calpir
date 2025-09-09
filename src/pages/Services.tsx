@@ -4,12 +4,12 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail } from "lucide-react"; // Changed Globe to FileText
+import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail } from "lucide-react";
 
 const servicesData = [
   {
     id: "operations-flows",
-    icon: FileText, // Changed to FileText
+    icon: FileText, // Corrected to FileText
     title: "Operations Flows Setup",
     description: "Streamline your business processes with efficient and automated operational workflows.",
     details: [

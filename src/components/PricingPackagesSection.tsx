@@ -120,8 +120,8 @@ const PricingPackagesSection = () => {
                 size="lg"
                 className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${
                   pkg.highlight
-                    ? "bg-primary hover:bg-calpir-green-700 text-white"
-                    : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700"
+                    ? "bg-primary hover:bg-calpir-green-700 text-white hover:text-white"
+                    : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white"
                 }`}
               >
                 <Link to="/pricing">View Details</Link>

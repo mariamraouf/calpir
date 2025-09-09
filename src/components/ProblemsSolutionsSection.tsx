@@ -89,7 +89,7 @@ const ProblemsSolutionsSection = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+          <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
             Start Your Startup Package Today
           </Button>
         </div>

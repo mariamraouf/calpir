@@ -63,7 +63,7 @@ const Navbar = () => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          <Button asChild className="bg-primary hover:bg-calpir-green-700 text-white">
+          <Button asChild className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white">
             <Link to="/contact">Get Started</Link>
           </Button>
         </nav>
@@ -100,7 +100,7 @@ const Navbar = () => {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
-              <Button asChild className="w-full bg-primary hover:bg-calpir-green-700 text-white">
+              <Button asChild className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white">
                 <Link to="/contact">Get Started</Link>
               </Button>
             </div>

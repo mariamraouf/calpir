@@ -213,8 +213,8 @@ const Pricing = () => {
                   size="lg"
                   className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${
                     pkg.highlight
-                      ? "bg-primary hover:bg-calpir-green-700 text-white"
-                      : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700"
+                      ? "bg-primary hover:bg-calpir-green-700 text-white hover:text-white"
+                      : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white"
                   }`}
                 >
                   Get Started
@@ -244,7 +244,7 @@ const Pricing = () => {
                       </div>
                       <div className="flex items-center space-x-4">
                         <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
-                        <Button variant="outline" className="text-primary border-primary hover:bg-calpir-green-50 dark:text-calpir-green-400 dark:border-calpir-green-400 dark:hover:bg-calpir-green-900">
+                        <Button variant="outline" className="text-primary border-primary hover:bg-calpir-green-50 dark:text-calpir-green-400 dark:border-calpir-green-400 dark:hover:bg-calpir-green-900 hover:text-primary dark:hover:text-calpir-green-400">
                           <PlusCircle className="h-4 w-4 mr-2" /> Add to Package
                         </Button>
                       </div>
@@ -261,7 +261,7 @@ const Pricing = () => {
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
               Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
             </p>
-            <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+            <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
               Request Custom Quote
             </Button>
           </div>
