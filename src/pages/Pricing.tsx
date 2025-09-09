@@ -172,10 +172,10 @@ const addOnsCategories = [
   },
 ];
 
-const Pricing = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpenBuildMyBusinessForm: (open: boolean) => void; setOpenCustomQuoteForm: (open: boolean) => void }) => {
+const Pricing = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />
+      <Navbar />
       <main className="flex-grow container py-16 md:py-24">
         <section className="text-center mb-16 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
@@ -227,17 +227,18 @@ const Pricing = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOp
                   ))}
                 </ul>
 
-                <Button
-                  size="lg"
-                  className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow ${
-                    pkg.highlight
-                      ? "bg-primary hover:bg-calpir-green-700 text-white hover:text-white"
-                      : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white"
-                  }`}
-                  onClick={() => setOpenBuildMyBusinessForm(true)} // Direct to primary form
-                >
-                  Get Started
-                </Button>
+                <Link to="/build-my-business"> {/* Changed to Link */}
+                  <Button
+                    size="lg"
+                    className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow ${
+                      pkg.highlight
+                        ? "bg-primary hover:bg-calpir-green-700 text-white hover:text-white"
+                        : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white"
+                    }`}
+                  >
+                    Get Started
+                  </Button>
+                </Link>
               </div>
             ))}
           </div>
@@ -279,17 +280,18 @@ const Pricing = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOp
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-8">
               Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
             </p>
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
-              onClick={() => setOpenBuildMyBusinessForm(true)} // Direct to primary form for custom package
-            >
-              Request Custom Quote
-            </Button>
+            <Link to="/get-a-quote"> {/* Changed to Link */}
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
+              >
+                Request Custom Quote
+              </Button>
+            </Link>
           </div>
         </section>
       </main>
-      <Footer setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />
+      <Footer />
       <MadeWithDyad />
     </div>
   );

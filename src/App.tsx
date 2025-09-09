@@ -9,17 +9,13 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
-import BuildMyBusinessForm from "@/components/BuildMyBusinessForm";
-import CustomQuoteForm from "@/components/CustomQuoteForm";
-import { Dialog } from "@/components/ui/dialog";
-import React, { useState } from "react";
+import BuildMyBusinessPage from "./pages/BuildMyBusinessPage"; // New import
+import CustomQuotePage from "./pages/CustomQuotePage"; // New import
+import React from "react";
 
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [openBuildMyBusinessForm, setOpenBuildMyBusinessForm] = useState(false);
-  const [openCustomQuoteForm, setOpenCustomQuoteForm] = useState(false);
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -27,25 +23,17 @@ const App = () => {
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Index setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />} />
-            <Route path="/about" element={<About setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />} />
-            <Route path="/services" element={<Services setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />} />
-            <Route path="/pricing" element={<Pricing setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />} />
-            <Route path="/contact" element={<Contact setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />} />
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/build-my-business" element={<BuildMyBusinessPage />} /> {/* New route */}
+            <Route path="/get-a-quote" element={<CustomQuotePage />} /> {/* New route */}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
-
-        {/* Build My Business Form Dialog */}
-        <Dialog open={openBuildMyBusinessForm} onOpenChange={setOpenBuildMyBusinessForm}>
-          <BuildMyBusinessForm setOpen={setOpenBuildMyBusinessForm} />
-        </Dialog>
-
-        {/* Custom Quote Form Dialog */}
-        <Dialog open={openCustomQuoteForm} onOpenChange={setOpenCustomQuoteForm}>
-          <CustomQuoteForm setOpen={setOpenCustomQuoteForm} />
-        </Dialog>
       </TooltipProvider>
     </QueryClientProvider>
   );

@@ -108,7 +108,7 @@ const SecondaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) 
             required
           />
           <Label htmlFor="consent">
-            I agree to Calpir’s <Link to="/privacy-policy" className="text-primary hover:underline" onClick={() => setOpen(false)}>Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary hover:underline" onClick={() => setOpen(false)}>Terms of Service</Link> <span className="text-red-500">*</span>
+            I agree to Calpir’s <Link to="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary hover:underline">Terms of Service</Link> <span className="text-red-500">*</span>
           </Label>
         </div>
 

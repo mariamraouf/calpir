@@ -14,17 +14,17 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Button } from "@/components/ui/button"; // Import Button
 import { Link } from "react-router-dom"; // Import Link
 
-const Index = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpenBuildMyBusinessForm: (open: boolean) => void; setOpenCustomQuoteForm: (open: boolean) => void }) => {
+const Index = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />
+      <Navbar />
       <main className="flex-grow">
-        <HeroSection setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />
+        <HeroSection />
         <div className="animate-fade-in-up delay-200">
           <IntegrationsSection />
         </div>
         <div className="animate-fade-in-up delay-400">
-          <ProblemsSolutionsSection setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} />
+          <ProblemsSolutionsSection />
         </div>
         <div className="animate-fade-in-up delay-600">
           <BusinessSolutionsSection />
@@ -33,17 +33,17 @@ const Index = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpen
           <LaunchMethodSection />
         </div>
         <div className="animate-fade-in-up delay-1000">
-          <PricingPackagesSection setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} />
+          <PricingPackagesSection />
         </div>
         <div className="animate-fade-in-up delay-1200">
-          <AddOnsSection setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />
+          <AddOnsSection />
         </div>
         {/* The "Build My Package" section has been moved into AddOnsSection.tsx */}
         <div className="animate-fade-in-up delay-1400">
-          <CtaSection setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} />
+          <CtaSection />
         </div>
       </main>
-      <Footer setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />
+      <Footer />
       <MadeWithDyad />
     </div>
   );

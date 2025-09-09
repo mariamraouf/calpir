@@ -180,10 +180,10 @@ const servicesData = [
   },
 ];
 
-const Services = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpenBuildMyBusinessForm: (open: boolean) => void; setOpenCustomQuoteForm: (open: boolean) => void }) => {
+const Services = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />
+      <Navbar />
       <main className="flex-grow container py-16 md:py-24">
         <section className="text-center mb-16 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
@@ -213,13 +213,14 @@ const Services = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setO
                 ))}
               </ul>
               <div className="text-center mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
-                <Button
-                  size="lg"
-                  className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
-                  onClick={() => setOpenCustomQuoteForm(true)}
-                >
-                  Get a Free Consultation
-                </Button>
+                <Link to="/get-a-quote"> {/* Changed to Link */}
+                  <Button
+                    size="lg"
+                    className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
+                  >
+                    Get a Free Consultation
+                  </Button>
+                </Link>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
                   Consult with our experts and get to know the best platforms suitable for your business.
                 </p>
@@ -228,7 +229,7 @@ const Services = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setO
           ))}
         </div>
       </main>
-      <Footer setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />
+      <Footer />
       <MadeWithDyad />
     </div>
   );

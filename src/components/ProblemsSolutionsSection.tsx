@@ -3,6 +3,7 @@
 import React from "react";
 import { DollarSign, Clock, Users, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom"; // Import Link
 
 const problems = [
   {
@@ -37,7 +38,7 @@ const solutions = [
   { label: "1 Team", detail: "vs managing 5+ specialists" },
 ];
 
-const ProblemsSolutionsSection = ({ setOpenBuildMyBusinessForm }: { setOpenBuildMyBusinessForm: (open: boolean) => void }) => {
+const ProblemsSolutionsSection = () => { // Removed setOpenBuildMyBusinessForm prop
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-gray-950">
       <div className="container">
@@ -91,13 +92,14 @@ const ProblemsSolutionsSection = ({ setOpenBuildMyBusinessForm }: { setOpenBuild
         </div>
 
         <div className="text-center animate-bounce-pop delay-1200">
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
-            onClick={() => setOpenBuildMyBusinessForm(true)}
-          >
-            Start Your Startup Package Today
-          </Button>
+          <Link to="/build-my-business"> {/* Changed to Link */}
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
+            >
+              Start Your Startup Package Today
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

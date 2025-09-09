@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Mail, Phone, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button"; // Import Button
 
-const Footer = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpenBuildMyBusinessForm: (open: boolean) => void; setOpenCustomQuoteForm: (open: boolean) => void }) => {
+const Footer = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
   return (
     <footer className="bg-foreground dark:bg-gray-950 text-gray-300 py-16 md:py-20">
       <div className="container grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -58,22 +58,24 @@ const Footer = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpe
           <h4 className="text-lg font-semibold text-white mb-4">Quick Actions</h4>
           <ul className="space-y-2 text-sm">
             <li>
-              <Button
-                variant="link"
-                className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
-                onClick={() => setOpenBuildMyBusinessForm(true)}
-              >
-                Build My Business
-              </Button>
+              <Link to="/build-my-business"> {/* Changed to Link */}
+                <Button
+                  variant="link"
+                  className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
+                >
+                  Build My Business
+                </Button>
+              </Link>
             </li>
             <li>
-              <Button
-                variant="link"
-                className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
-                onClick={() => setOpenCustomQuoteForm(true)}
-              >
-                Get a Free Consultation
-              </Button>
+              <Link to="/get-a-quote"> {/* Changed to Link */}
+                <Button
+                  variant="link"
+                  className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
+                >
+                  Get a Free Consultation
+                </Button>
+              </Link>
             </li>
           </ul>
         </div>

@@ -7,7 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Menu, ChevronDown } from "lucide-react";
 
-const Navbar = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpenBuildMyBusinessForm?: (open: boolean) => void; setOpenCustomQuoteForm?: (open: boolean) => void }) => {
+const Navbar = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
   const mainNavLinks = [
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" }, // Services is now a regular link
@@ -37,12 +37,13 @@ const Navbar = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpe
               {link.name}
             </NavLink>
           ))}
-          <Button
-            className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
-            onClick={() => setOpenBuildMyBusinessForm && setOpenBuildMyBusinessForm(true)}
-          >
-            Get Started
-          </Button>
+          <Link to="/build-my-business"> {/* Changed to Link */}
+            <Button
+              className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
+            >
+              Get Started
+            </Button>
+          </Link>
         </nav>
 
         <Sheet>
@@ -67,12 +68,13 @@ const Navbar = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpe
                   {link.name}
                 </NavLink>
               ))}
-              <Button
-                className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
-                onClick={() => setOpenBuildMyBusinessForm && setOpenBuildMyBusinessForm(true)}
-              >
-                Get Started
-              </Button>
+              <Link to="/build-my-business"> {/* Changed to Link */}
+                <Button
+                  className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
+                >
+                  Get Started
+                </Button>
+              </Link>
             </div>
           </SheetContent>
         </Sheet>

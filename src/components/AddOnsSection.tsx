@@ -107,7 +107,7 @@ const addOnsCategories = [
   },
 ];
 
-const AddOnsSection = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpenBuildMyBusinessForm: (open: boolean) => void; setOpenCustomQuoteForm: (open: boolean) => void }) => {
+const AddOnsSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
   return (
     <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container text-center">
@@ -134,13 +134,14 @@ const AddOnsSection = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: {
                     </div>
                     <div className="flex items-center space-x-4">
                       <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
-                      <Button
-                        size="sm"
-                        className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-sm px-4 py-2 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
-                        onClick={() => setOpenBuildMyBusinessForm(true)}
-                      >
-                        Pick & Include
-                      </Button>
+                      <Link to="/build-my-business"> {/* Changed to Link */}
+                        <Button
+                          size="sm"
+                          className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-sm px-4 py-2 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
+                        >
+                          Pick & Include
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 ))}
@@ -158,13 +159,14 @@ const AddOnsSection = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: {
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10">
             Combine our core packages with powerful add-ons to create the perfect launch plan for your business.
           </p>
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
-            onClick={() => setOpenBuildMyBusinessForm(true)}
-          >
-            Build My Package
-          </Button>
+          <Link to="/build-my-business"> {/* Changed to Link */}
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
+            >
+              Build My Package
+            </Button>
+          </Link>
         </div>
 
         {/* Original "Custom Add-On Packages Available" section - now simplified and without a box */}
@@ -175,13 +177,14 @@ const AddOnsSection = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: {
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-6">
             Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
           </p>
-          <Button
-            variant="outline"
-            className="text-primary border-primary hover:bg-primary hover:text-white text-md px-6 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
-            onClick={() => setOpenCustomQuoteForm(true)}
-          >
-            Request Custom Quote
-          </Button>
+          <Link to="/get-a-quote"> {/* Changed to Link */}
+            <Button
+              variant="outline"
+              className="text-primary border-primary hover:bg-primary hover:text-white text-md px-6 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+            >
+              Request Custom Quote
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
