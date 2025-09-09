@@ -159,12 +159,12 @@ const AddOnsSection = () => {
           </Button>
         </div>
 
-        {/* Original "Custom Add-On Packages Available" section - now simplified */}
-        <div className="mt-16 text-center p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 max-w-4xl mx-auto">
-          <p className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
+        {/* Original "Custom Add-On Packages Available" section - now simplified and without a box */}
+        <div className="mt-16 text-center max-w-4xl mx-auto py-8">
+          <p className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
             Custom Add-On Packages Available
           </p>
-          <p className="text-md text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-6">
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-6">
             Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
           </p>
           <Button asChild variant="outline" className="text-primary border-primary hover:bg-primary hover:text-white text-md px-6 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105">
