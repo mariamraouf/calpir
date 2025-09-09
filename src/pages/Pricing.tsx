@@ -4,7 +4,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { CheckCircle, PlusCircle, BarChart2, Users, Headphones } from "lucide-react"; // Added icons for Add-ons
+import { CheckCircle, PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Globe, Code, Shield, Layout, DollarSign, BookOpen, Settings, Clock } from "lucide-react"; // Added new icons
 import { Button } from "@/components/ui/button"; // Import Button component
 import { Link } from "react-router-dom"; // Import Link for navigation
 
@@ -73,6 +73,8 @@ const packages = [
 const addOnsCategories = [
   {
     name: "Social Media Expansion",
+    icon: Share2, // New icon
+    iconColor: "text-palette-red-400", // New color
     items: [
       { posts: "10 Posts/Month", price: "$199", description: "Professional social media posts with graphics" },
       { posts: "20 Posts/Month", price: "$349", description: "Enhanced content with stories and engagement" },
@@ -81,6 +83,8 @@ const addOnsCategories = [
   },
   {
     name: "Email Marketing",
+    icon: Mail, // New icon
+    iconColor: "text-palette-orange-500", // New color
     items: [
       { posts: "Email Marketing Setup", price: "$499", description: "One-time complete email automation system" },
       { posts: "3 Campaigns/Month", price: "$599", description: "Management for 3 email campaigns monthly" },
@@ -89,8 +93,8 @@ const addOnsCategories = [
   },
   {
     name: "Analytics Upgrades",
-    icon: BarChart2, // Icon for Analytics Upgrades
-    iconColor: "text-palette-blue-500", // Blue as per screenshot
+    icon: BarChart2, // Existing icon
+    iconColor: "text-palette-blue-500", // Existing color
     items: [
       { posts: "Monthly Insights", price: "$199", description: "Monthly performance reports" },
       { posts: "Monthly Recommendations", price: "$249", description: "Detailed insights + recommendations" },
@@ -99,8 +103,8 @@ const addOnsCategories = [
   },
   {
     name: "Ongoing Support",
-    icon: Headphones, // Icon for Ongoing Support
-    iconColor: "text-palette-purple-400", // Purple as per screenshot
+    icon: Headphones, // Existing icon
+    iconColor: "text-palette-purple-400", // Existing color
     items: [
       { posts: "Monthly Emails", price: "$199", description: "Monthly strategy emails + support" },
       { posts: "Weekly Calls", price: "$499", description: "Weekly calls + priority support" },
@@ -108,8 +112,8 @@ const addOnsCategories = [
   },
   {
     name: "Staff Recruitment (Global)",
-    icon: Users, // Icon for Staff Recruitment
-    iconColor: "text-primary", // Green as per screenshot
+    icon: Users, // Existing icon
+    iconColor: "text-primary", // Existing color
     items: [
       { posts: "1 Role", price: "$450", description: "Assistance with recruiting for one global role" },
       { posts: "2 Roles", price: "$700", description: "Assistance with recruiting for two global roles" },
@@ -119,12 +123,16 @@ const addOnsCategories = [
   },
   {
     name: "Extra Integrations",
+    icon: PlusCircle, // New icon
+    iconColor: "text-palette-blue-600", // New color
     items: [
       { posts: "Per Integration", price: "$199", description: "Setup and configuration for each additional platform integration" },
     ],
   },
   {
     name: "Website Expansions",
+    icon: Layout, // New icon
+    iconColor: "text-palette-purple-500", // New color
     items: [
       { posts: "Per Page", price: "$199", description: "Development for each additional website page" },
       { posts: "E-commerce Functionality", price: "$499", description: "Setup for e-commerce capabilities" },
@@ -132,24 +140,32 @@ const addOnsCategories = [
   },
   {
     name: "HR Customizations",
+    icon: Settings, // New icon
+    iconColor: "text-palette-yellow-400", // New color
     items: [
       { posts: "One-time Setup", price: "$299", description: "Custom HR system setup and configuration" },
     ],
   },
   {
     name: "Training Sessions",
+    icon: BookOpen, // New icon
+    iconColor: "text-calpir-green-600", // New color
     items: [
       { posts: "Per Hour", price: "$199", description: "Dedicated training sessions for your team" },
     ],
   },
   {
     name: "Custom Automations",
+    icon: Code, // New icon
+    iconColor: "text-palette-orange-400", // New color
     items: [
       { posts: "For 5+ Automations", price: "$299", description: "Setup for 5 or more custom automation workflows" },
     ],
   },
   {
     name: "Security Basics",
+    icon: Shield, // New icon
+    iconColor: "text-palette-red-500", // New color
     items: [
       { posts: "One-time Setup", price: "$299", description: "Basic security configurations and recommendations" },
     ],
