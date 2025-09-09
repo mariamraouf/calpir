@@ -26,7 +26,7 @@ const servicesData = [
     title: "Project Management Setup",
     description: "Implement robust project management systems to keep your projects on track and teams coordinated.",
     details: [
-      "Tool selection and configuration (e.g., ClickUp, Asana, Jira)",
+      "Tool selection and configuration", // Amended
       "Project template creation",
       "Task management and tracking setup",
       "Reporting and analytics dashboards",
@@ -39,7 +39,7 @@ const servicesData = [
     title: "HR & Recruiting (Global Focus)",
     description: "Build a strong global team with our comprehensive HR and recruitment solutions.",
     details: [
-      "Global hiring strategy development",
+      "Contracts and NDA drafting with e-signatures", // Replaced
       "Applicant Tracking System (ATS) setup",
       "Onboarding and offboarding workflows",
       "HR policy and compliance guidance",
@@ -67,7 +67,7 @@ const servicesData = [
     details: [
       "Chart of accounts configuration",
       "Invoicing and expense tracking setup",
-      "Integration with payment gateways (e.g., Stripe, PayPal)",
+      "Integration with payment gateways", // Amended
       "Basic financial reporting",
     ],
     iconColor: "text-palette-yellow-400", // Diverse color
@@ -91,9 +91,9 @@ const servicesData = [
     title: "Email Systems & Automation",
     description: "Develop effective email marketing and communication strategies.",
     details: [
-      "Email platform setup (e.g., Mailchimp, Klaviyo)",
+      "Email platform setup", // Amended
       "Email template design",
-      "Automated email sequences (welcome, abandoned cart, etc.)",
+      "Automated email sequences", // Amended
       "List management and segmentation",
     ],
     iconColor: "text-primary", // Primary green
@@ -104,7 +104,7 @@ const servicesData = [
     title: "CRM Setup & Optimization",
     description: "Implement Customer Relationship Management (CRM) systems to enhance customer interactions.",
     details: [
-      "CRM platform selection and configuration (e.g., HubSpot, Salesforce)",
+      "CRM platform selection and configuration", // Amended
       "Sales pipeline setup",
       "Customer data migration",
       "Reporting and analytics for customer insights",
@@ -118,9 +118,9 @@ const servicesData = [
     description: "Connect your essential business tools for seamless data flow and automation.",
     details: [
       "Integration strategy and planning",
-      "API and webhook configurations",
+      "Advanced integration setup", // Amended from "API and webhook configurations"
       "Data synchronization between platforms",
-      "Custom automation workflows (e.g., Zapier, Make)",
+      "Custom automation workflows", // Amended
     ],
     iconColor: "text-palette-orange-400", // Diverse color
   },
@@ -131,7 +131,7 @@ const servicesData = [
     description: "Craft a compelling brand identity that resonates with your target audience.",
     details: [
       "Logo design and brand guidelines",
-      "Marketing collateral design (e.g., business cards, brochures)",
+      "Marketing collateral design", // No change requested for this specific item
       "Website visual design",
       "Brand voice and messaging development",
     ],
