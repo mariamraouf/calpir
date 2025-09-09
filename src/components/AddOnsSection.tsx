@@ -159,17 +159,16 @@ const AddOnsSection = () => {
           </Button>
         </div>
 
-        {/* Original "Custom Add-On Packages Available" section */}
-        <div className="mt-16 text-center p-6 rounded-2xl shadow-xl animate-fade-in-up delay-800
-                    bg-gradient-to-br from-calpir-green-50 to-palette-blue-50 dark:from-calpir-green-950 dark:to-palette-blue-950 max-w-4xl mx-auto">
-          <h3 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+        {/* Original "Custom Add-On Packages Available" section - now simplified */}
+        <div className="mt-16 text-center p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 max-w-4xl mx-auto">
+          <p className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
             Custom Add-On Packages Available
-          </h3>
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-xl mx-auto mb-8">
+          </p>
+          <p className="text-md text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-6">
             Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
           </p>
-          <Button size="lg" className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow">
-            Request Custom Quote
+          <Button asChild variant="outline" className="text-primary border-primary hover:bg-primary hover:text-white text-md px-6 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+            <Link to="/contact">Request Custom Quote</Link>
           </Button>
         </div>
       </div>
