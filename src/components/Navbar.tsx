@@ -40,6 +40,16 @@ const Navbar = () => {
         </Link>
 
         <nav className="hidden md:flex items-center space-x-6">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `relative text-sm font-medium transition-colors duration-300 hover:text-primary hover:scale-110 transform ${
+                isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
+              } after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 hover:after:w-full after:transition-all after:duration-300`
+            }
+          >
+            Home
+          </NavLink>
           {mainNavLinks.map((link) => (
             <NavLink
               key={link.name}
@@ -54,10 +64,19 @@ const Navbar = () => {
             </NavLink>
           ))}
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center text-sm font-medium transition-colors hover:text-primary focus:outline-none hover:scale-110 transform duration-300 relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 hover:after:w-full after:transition-all after:duration-300">
-              Services <ChevronDown className="ml-1 h-4 w-4" />
+            <DropdownMenuTrigger asChild>
+              <NavLink
+                to="/services"
+                className={({ isActive }) =>
+                  `flex items-center text-sm font-medium transition-colors hover:text-primary focus:outline-none hover:scale-110 transform duration-300 relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 hover:after:w-full after:transition-all after:duration-300 ${
+                    isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
+                  }`
+                }
+              >
+                Services <ChevronDown className="ml-1 h-4 w-4" />
+              </NavLink>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="animate-slide-down-fade"> {/* Added animation */}
+            <DropdownMenuContent className="animate-slide-down-fade">
               {serviceDropdownLinks.map((link) => (
                 <DropdownMenuItem key={link.name} asChild>
                   <a href={link.href} className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
@@ -79,8 +98,18 @@ const Navbar = () => {
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="animate-slide-in-right"> {/* Added animation */}
+          <SheetContent side="right" className="animate-slide-in-right">
             <div className="flex flex-col space-y-4 pt-6">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `text-lg font-medium hover:text-primary transition-colors duration-200 ${
+                    isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
+                  } transform hover:scale-105`
+                }
+              >
+                Home
+              </NavLink>
               {mainNavLinks.map((link) => (
                 <NavLink
                   key={link.name}
@@ -95,10 +124,19 @@ const Navbar = () => {
                 </NavLink>
               ))}
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center text-lg font-medium hover:text-primary focus:outline-none w-full justify-between transition-colors duration-200 transform hover:scale-105">
-                  Services <ChevronDown className="ml-1 h-5 w-5" />
+                <DropdownMenuTrigger asChild>
+                  <NavLink
+                    to="/services"
+                    className={({ isActive }) =>
+                      `flex items-center text-lg font-medium hover:text-primary focus:outline-none w-full justify-between transition-colors duration-200 transform hover:scale-105 ${
+                        isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
+                      }`
+                    }
+                  >
+                    Services <ChevronDown className="ml-1 h-5 w-5" />
+                  </NavLink>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-full animate-slide-down-fade"> {/* Added animation */}
+                <DropdownMenuContent className="w-full animate-slide-down-fade">
                   {serviceDropdownLinks.map((link) => (
                     <DropdownMenuItem key={link.name} asChild>
                       <a href={link.href} className="block px-4 py-2 text-base text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
