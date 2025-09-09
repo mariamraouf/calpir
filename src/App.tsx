@@ -11,8 +11,6 @@ import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import BuildMyBusinessForm from "@/components/BuildMyBusinessForm";
 import CustomQuoteForm from "@/components/CustomQuoteForm";
-import Navbar from "@/components/Navbar"; // Import Navbar
-import Footer from "@/components/Footer"; // Import Footer
 import { Dialog } from "@/components/ui/dialog";
 import React, { useState } from "react";
 
@@ -28,11 +26,6 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          {/* Pass setters to Navbar */}
-          <Navbar
-            setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm}
-            setOpenCustomQuoteForm={setOpenCustomQuoteForm}
-          />
           <Routes>
             <Route path="/" element={<Index setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />} />
             <Route path="/about" element={<About />} />
@@ -42,11 +35,6 @@ const App = () => {
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-          {/* Pass setters to Footer */}
-          <Footer
-            setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm}
-            setOpenCustomQuoteForm={setOpenCustomQuoteForm}
-          />
         </BrowserRouter>
 
         {/* Build My Business Form Dialog */}

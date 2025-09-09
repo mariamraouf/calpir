@@ -4,7 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Mail, Phone, MessageSquare } from "lucide-react";
 
-const Footer = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpenBuildMyBusinessForm?: (open: boolean) => void; setOpenCustomQuoteForm?: (open: boolean) => void }) => {
+const Footer = () => {
   return (
     <footer className="bg-foreground dark:bg-gray-950 text-gray-300 py-16 md:py-20">
       <div className="container grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -52,27 +52,9 @@ const Footer = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpe
           </ul>
         </div>
 
-        {/* New Quick Actions / Forms Links */}
-        <div className="animate-fade-in-up delay-400">
-          <h4 className="text-lg font-semibold text-white mb-4">Quick Actions</h4>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <button
-                onClick={() => setOpenBuildMyBusinessForm && setOpenBuildMyBusinessForm(true)}
-                className="text-left hover:text-white transition-colors w-full"
-              >
-                Build My Business
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => setOpenCustomQuoteForm && setOpenCustomQuoteForm(true)}
-                className="text-left hover:text-white transition-colors w-full"
-              >
-                Get a Custom Quote
-              </button>
-            </li>
-          </ul>
+        {/* Placeholder for future content or another column */}
+        <div className="hidden md:block animate-fade-in-up delay-400">
+          {/* Can add another section here if needed */}
         </div>
       </div>
 
