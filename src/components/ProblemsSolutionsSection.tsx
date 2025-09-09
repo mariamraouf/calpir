@@ -80,16 +80,16 @@ const ProblemsSolutionsSection = () => {
           {solutions.map((solution, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-8 bg-calpir-green-50 dark:bg-calpir-green-950 rounded-2xl shadow-lg border border-calpir-green-200 dark:border-calpir-green-800 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
+              className="flex flex-col items-center text-center p-8 bg-palette-blue-50 dark:bg-palette-blue-950 rounded-2xl shadow-lg border border-palette-blue-200 dark:border-palette-blue-800 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
             >
-              <p className="text-5xl font-extrabold text-calpir-green-700 dark:text-calpir-green-300 mb-2">{solution.label}</p>
+              <p className="text-5xl font-extrabold text-primary dark:text-palette-blue-300 mb-2">{solution.label}</p>
               <p className="text-lg text-gray-700 dark:text-gray-200">{solution.detail}</p>
             </div>
           ))}
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="bg-calpir-green-600 hover:bg-calpir-green-700 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+          <Button size="lg" className="bg-primary hover:bg-palette-blue-700 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
             Start Your Startup Package Today
           </Button>
         </div>

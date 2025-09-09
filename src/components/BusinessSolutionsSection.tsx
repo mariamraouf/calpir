@@ -14,7 +14,7 @@ const solutions = [
       "Content Management",
       "Performance Optimization",
     ],
-    iconColor: "text-calpir-green-600",
+    iconColor: "text-palette-blue-600",
   },
   {
     icon: Palette,
@@ -26,7 +26,7 @@ const solutions = [
       "Marketing Materials",
       "Visual Identity",
     ],
-    iconColor: "text-calpir-green-500",
+    iconColor: "text-palette-orange-500",
   },
   {
     icon: TrendingUp,
@@ -37,7 +37,7 @@ const solutions = [
       "Social Media Setup",
       "Analytics Tracking",
     ],
-    iconColor: "text-calpir-green-700",
+    iconColor: "text-palette-blue-700",
   },
 ];
 
@@ -64,7 +64,7 @@ const BusinessSolutionsSection = () => {
               <ul className="list-none space-y-2 text-left w-full">
                 {solution.features.map((feature, fIndex) => (
                   <li key={fIndex} className="flex items-center text-gray-700 dark:text-gray-300">
-                    <CheckCircle className="h-4 w-4 text-calpir-green-500 mr-2 flex-shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-palette-blue-500 mr-2 flex-shrink-0" />
                     {feature}
                   </li>
                 ))}

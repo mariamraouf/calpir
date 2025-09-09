@@ -13,39 +13,49 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* New Green Primary Palette (HSL for #0c6002 is approx 115 96% 19%) */
-    --primary: 115 96% 19%; /* #0c6002 */
-    --primary-foreground: 210 40% 98%; /* White/light gray for contrast */
+    /* New Primary Blue Palette (HSL for a professional blue) */
+    --primary: 210 90% 40%; /* A vibrant, professional blue */
+    --primary-foreground: 0 0% 100%; /* White for contrast */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 20% 90%; /* Light gray-blue */
+    --secondary-foreground: 210 40% 10%; /* Dark gray-blue */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 10% 95%; /* Very light gray */
+    --muted-foreground: 210 10% 40%; /* Medium gray */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* New Accent Orange Palette */
+    --accent: 30 90% 50%; /* A vibrant orange */
+    --accent-foreground: 0 0% 100%; /* White for contrast */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 210 90% 40%; /* Use primary blue for ring */
 
     --radius: 0.5rem;
 
-    /* Calpir Green Shades */
-    --calpir-green-50: 115 96% 95%;
-    --calpir-green-100: 115 96% 90%;
-    --calpir-green-200: 115 96% 80%;
-    --calpir-green-300: 115 96% 70%;
-    --calpir-green-400: 115 96% 60%;
-    --calpir-green-500: 115 96% 50%;
-    --calpir-green-600: 115 96% 40%;
-    --calpir-green-700: 115 96% 30%;
-    --calpir-green-800: 115 96% 20%;
-    --calpir-green-900: 115 96% 10%; /* Darkest green */
+    /* Additional shades for varied icons/elements */
+    --palette-blue-100: 210 90% 95%;
+    --palette-blue-200: 210 90% 85%;
+    --palette-blue-300: 210 90% 75%;
+    --palette-blue-400: 210 90% 65%;
+    --palette-blue-500: 210 90% 55%;
+    --palette-blue-600: 210 90% 45%;
+    --palette-blue-700: 210 90% 35%;
+    --palette-blue-800: 210 90% 25%;
+    --palette-blue-900: 210 90% 15%;
+
+    --palette-orange-100: 30 90% 95%;
+    --palette-orange-200: 30 90% 85%;
+    --palette-orange-300: 30 90% 75%;
+    --palette-orange-400: 30 90% 65%;
+    --palette-orange-500: 30 90% 55%;
+    --palette-orange-600: 30 90% 45%;
+    --palette-orange-700: 30 90% 35%;
+    --palette-orange-800: 30 90% 25%;
+    --palette-orange-900: 30 90% 15%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -67,37 +77,47 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    /* New Green Primary Palette for Dark Mode */
-    --primary: 115 96% 19%; /* #0c6002 */
-    --primary-foreground: 210 40% 98%; /* White/light gray for contrast */
+    /* New Primary Blue Palette for Dark Mode */
+    --primary: 210 90% 60%; /* Lighter blue for dark mode */
+    --primary-foreground: 222.2 47.4% 11.2%; /* Dark text for contrast */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%; /* Darker gray-blue */
+    --secondary-foreground: 210 40% 98%; /* Light text */
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* New Accent Orange Palette for Dark Mode */
+    --accent: 30 90% 60%; /* Lighter orange for dark mode */
+    --accent-foreground: 222.2 47.4% 11.2%; /* Dark text for contrast */
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 210 90% 60%; /* Use primary blue for ring */
 
-    /* Calpir Green Shades for Dark Mode */
-    --calpir-green-50: 115 96% 95%;
-    --calpir-green-100: 115 96% 90%;
-    --calpir-green-200: 115 96% 80%;
-    --calpir-green-300: 115 96% 70%;
-    --calpir-green-400: 115 96% 60%;
-    --calpir-green-500: 115 96% 50%;
-    --calpir-green-600: 115 96% 40%;
-    --calpir-green-700: 115 96% 30%;
-    --calpir-green-800: 115 96% 20%;
-    --calpir-green-900: 115 96% 10%; /* Darkest green */
+    /* Additional shades for varied icons/elements in dark mode */
+    --palette-blue-100: 210 90% 15%;
+    --palette-blue-200: 210 90% 25%;
+    --palette-blue-300: 210 90% 35%;
+    --palette-blue-400: 210 90% 45%;
+    --palette-blue-500: 210 90% 55%;
+    --palette-blue-600: 210 90% 65%;
+    --palette-blue-700: 210 90% 75%;
+    --palette-blue-800: 210 90% 85%;
+    --palette-blue-900: 210 90% 95%;
+
+    --palette-orange-100: 30 90% 15%;
+    --palette-orange-200: 30 90% 25%;
+    --palette-orange-300: 30 90% 35%;
+    --palette-orange-400: 30 90% 45%;
+    --palette-orange-500: 30 90% 55%;
+    --palette-orange-600: 30 90% 65%;
+    --palette-orange-700: 30 90% 75%;
+    --palette-orange-800: 30 90% 85%;
+    --palette-orange-900: 30 90% 95%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;

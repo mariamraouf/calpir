@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-r from-calpir-green-700 to-calpir-green-900 text-white overflow-hidden">
+    <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-r from-palette-blue-700 to-palette-blue-900 text-white overflow-hidden">
       <div className="container relative z-10 text-center">
         <img
           src="/calpir-logo.png"
@@ -19,10 +19,10 @@ const HeroSection = () => {
           Complete business operations setup: Website, branding, systems, and automation. Transform your idea into a thriving business with proven frameworks.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-400">
-          <Button size="lg" className="bg-white text-calpir-green-700 hover:bg-gray-100 text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl">
+          <Button size="lg" className="bg-white text-primary hover:bg-gray-100 text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl">
             Start My Business
           </Button>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-calpir-green-700 text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl">
+          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl">
             See How It Works
           </Button>
         </div>

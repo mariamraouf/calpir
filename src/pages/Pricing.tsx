@@ -173,7 +173,7 @@ const Pricing = () => {
                 key={index}
                 className={`flex flex-col p-8 rounded-2xl shadow-lg border-2 ${
                   pkg.highlight
-                    ? "border-calpir-green-600 bg-calpir-green-50 dark:bg-calpir-green-950"
+                    ? "border-primary bg-palette-blue-50 dark:bg-palette-blue-950"
                     : "border-gray-200 bg-white dark:bg-gray-800"
                 } transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
               >
@@ -181,7 +181,7 @@ const Pricing = () => {
                   <span
                     className={`inline-block px-4 py-1 rounded-full text-xs font-semibold mb-4 ${
                       pkg.highlight
-                        ? "bg-calpir-green-600 text-white"
+                        ? "bg-primary text-white"
                         : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
                     }`}
                   >
@@ -189,7 +189,7 @@ const Pricing = () => {
                   </span>
                 )}
                 <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{pkg.name}</h3>
-                <p className="text-4xl font-extrabold text-calpir-green-700 dark:text-calpir-green-300 mb-4">{pkg.price}</p>
+                <p className="text-4xl font-extrabold text-primary dark:text-palette-blue-300 mb-4">{pkg.price}</p>
                 <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">{pkg.description}</p>
                 <p className="text-md font-semibold text-gray-800 dark:text-gray-200 mb-6">Delivery: {pkg.delivery}</p>
 
@@ -197,7 +197,7 @@ const Pricing = () => {
                 <ul className="list-none space-y-3 text-left mb-8">
                   {pkg.inclusions.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start text-gray-700 dark:text-gray-300">
-                      <CheckCircle className="h-5 w-5 text-calpir-green-500 mr-2 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-palette-blue-500 mr-2 flex-shrink-0 mt-1" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -207,8 +207,8 @@ const Pricing = () => {
                   size="lg"
                   className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${
                     pkg.highlight
-                      ? "bg-calpir-green-600 hover:bg-calpir-green-700 text-white"
-                      : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-calpir-green-600 dark:hover:bg-calpir-green-700"
+                      ? "bg-primary hover:bg-palette-blue-700 text-white"
+                      : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-palette-blue-700"
                   }`}
                 >
                   Get Started
@@ -225,7 +225,7 @@ const Pricing = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {addOnsCategories.map((category, catIndex) => (
               <div key={catIndex} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-transform duration-300 hover:shadow-2xl">
-                <h3 className="text-2xl font-bold mb-6 text-calpir-green-600 dark:text-calpir-green-400">{category.name}</h3>
+                <h3 className="text-2xl font-bold mb-6 text-primary dark:text-palette-blue-400">{category.name}</h3>
                 <div className="space-y-6">
                   {category.items.map((item, itemIndex) => (
                     <div key={itemIndex} className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0">
@@ -234,8 +234,8 @@ const Pricing = () => {
                         <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
                       </div>
                       <div className="flex items-center space-x-4">
-                        <span className="text-xl font-bold text-calpir-green-700 dark:text-calpir-green-300">{item.price}</span>
-                        <Button variant="outline" className="text-calpir-green-600 border-calpir-green-600 hover:bg-calpir-green-50 dark:text-calpir-green-400 dark:border-calpir-green-400 dark:hover:bg-calpir-green-900">
+                        <span className="text-xl font-bold text-primary dark:text-palette-blue-300">{item.price}</span>
+                        <Button variant="outline" className="text-primary border-primary hover:bg-palette-blue-50 dark:text-palette-blue-400 dark:border-palette-blue-400 dark:hover:bg-palette-blue-900">
                           <PlusCircle className="h-4 w-4 mr-2" /> Add to Package
                         </Button>
                       </div>
@@ -252,7 +252,7 @@ const Pricing = () => {
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
               Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
             </p>
-            <Button size="lg" className="bg-calpir-green-600 hover:bg-calpir-green-700 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+            <Button size="lg" className="bg-primary hover:bg-palette-blue-700 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
               Request Custom Quote
             </Button>
           </div>

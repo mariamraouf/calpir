@@ -18,7 +18,7 @@ const servicesData = [
       "Standard Operating Procedures (SOPs) documentation",
       "Inter-departmental communication setup",
     ],
-    iconColor: "text-calpir-green-600",
+    iconColor: "text-palette-blue-600",
   },
   {
     id: "project-management",
@@ -31,7 +31,7 @@ const servicesData = [
       "Task management and tracking setup",
       "Reporting and analytics dashboards",
     ],
-    iconColor: "text-calpir-green-500",
+    iconColor: "text-palette-orange-500",
   },
   {
     id: "hr-recruiting",
@@ -44,7 +44,7 @@ const servicesData = [
       "Onboarding and offboarding workflows",
       "HR policy and compliance guidance",
     ],
-    iconColor: "text-calpir-green-700",
+    iconColor: "text-palette-blue-700",
   },
   {
     id: "website-building",
@@ -57,7 +57,7 @@ const servicesData = [
       "SEO optimization for better visibility",
       "Secure and reliable hosting solutions",
     ],
-    iconColor: "text-calpir-green-400",
+    iconColor: "text-palette-orange-400",
   },
   {
     id: "accounting",
@@ -70,7 +70,7 @@ const servicesData = [
       "Integration with payment gateways (e.g., Stripe, PayPal)",
       "Basic financial reporting",
     ],
-    iconColor: "text-calpir-green-800",
+    iconColor: "text-palette-blue-800",
   },
   {
     id: "social-media",
@@ -83,7 +83,7 @@ const servicesData = [
       "Post design and scheduling",
       "Audience engagement strategies",
     ],
-    iconColor: "text-calpir-green-500",
+    iconColor: "text-palette-orange-500",
   },
   {
     id: "email-systems",
@@ -96,7 +96,7 @@ const servicesData = [
       "Automated email sequences (welcome, abandoned cart, etc.)",
       "List management and segmentation",
     ],
-    iconColor: "text-calpir-green-600",
+    iconColor: "text-palette-blue-600",
   },
   {
     id: "crm-setup",
@@ -109,7 +109,7 @@ const servicesData = [
       "Customer data migration",
       "Reporting and analytics for customer insights",
     ],
-    iconColor: "text-calpir-green-700",
+    iconColor: "text-palette-orange-700",
   },
   {
     id: "integrations",
@@ -122,7 +122,7 @@ const servicesData = [
       "Data synchronization between platforms",
       "Custom automation workflows (e.g., Zapier, Make)",
     ],
-    iconColor: "text-calpir-green-400",
+    iconColor: "text-palette-blue-400",
   },
   {
     id: "design-branding",
@@ -134,8 +134,9 @@ const servicesData = [
       "Marketing collateral design (e.g., business cards, brochures)",
       "Website visual design",
       "Brand voice and messaging development",
+      "Brand voice and messaging development",
     ],
-    iconColor: "text-calpir-green-800",
+    iconColor: "text-palette-orange-800",
   },
   {
     id: "analytics",
@@ -148,7 +149,7 @@ const servicesData = [
       "Key Performance Indicator (KPI) tracking",
       "Monthly performance reports and recommendations",
     ],
-    iconColor: "text-calpir-green-500",
+    iconColor: "text-palette-blue-500",
   },
   {
     id: "migrations",
@@ -161,7 +162,7 @@ const servicesData = [
       "User training and support during transition",
       "Post-migration optimization",
     ],
-    iconColor: "text-calpir-green-600",
+    iconColor: "text-palette-orange-600",
   },
   {
     id: "security-basics",
@@ -174,7 +175,7 @@ const servicesData = [
       "Data backup strategies",
       "Security best practices guidance",
     ],
-    iconColor: "text-calpir-green-700",
+    iconColor: "text-palette-blue-700",
   },
 ];
 
@@ -205,7 +206,7 @@ const Services = () => {
               <ul className="list-none space-y-3 text-left">
                 {service.details.map((detail, index) => (
                   <li key={index} className="flex items-start text-gray-700 dark:text-gray-300">
-                    <CheckCircle className="h-5 w-5 text-calpir-green-500 mr-2 flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-palette-blue-500 mr-2 flex-shrink-0 mt-1" />
                     <span>{detail}</span>
                   </li>
                 ))}

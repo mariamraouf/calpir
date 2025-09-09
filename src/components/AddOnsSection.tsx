@@ -98,7 +98,7 @@ const AddOnsSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {addOnsCategories.map((category, catIndex) => (
             <div key={catIndex} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-transform duration-300 hover:shadow-2xl">
-              <h3 className="text-2xl font-bold mb-6 text-calpir-green-600 dark:text-calpir-green-400">{category.name}</h3>
+              <h3 className="text-2xl font-bold mb-6 text-primary dark:text-palette-blue-400">{category.name}</h3>
               <div className="space-y-6">
                 {category.items.map((item, itemIndex) => (
                   <div key={itemIndex} className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0">
@@ -107,8 +107,8 @@ const AddOnsSection = () => {
                       <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
                     </div>
                     <div className="flex items-center space-x-4">
-                      <span className="text-xl font-bold text-calpir-green-700 dark:text-calpir-green-300">{item.price}</span>
-                      <Button variant="outline" className="text-calpir-green-600 border-calpir-green-600 hover:bg-calpir-green-50 dark:text-calpir-green-400 dark:border-calpir-green-400 dark:hover:bg-calpir-green-900">
+                      <span className="text-xl font-bold text-primary dark:text-palette-blue-300">{item.price}</span>
+                      <Button variant="outline" className="text-primary border-primary hover:bg-palette-blue-50 dark:text-palette-blue-400 dark:border-palette-blue-400 dark:hover:bg-palette-blue-900">
                         <PlusCircle className="h-4 w-4 mr-2" /> Add to Package
                       </Button>
                     </div>
@@ -126,7 +126,7 @@ const AddOnsSection = () => {
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
             Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
           </p>
-          <Button size="lg" className="bg-calpir-green-600 hover:bg-calpir-green-700 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+          <Button size="lg" className="bg-primary hover:bg-palette-blue-700 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
             Request Custom Quote
           </Button>
         </div>
