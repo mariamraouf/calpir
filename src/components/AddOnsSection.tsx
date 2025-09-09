@@ -151,7 +151,7 @@ const AddOnsSection = () => {
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10">
             Combine our core packages with powerful add-ons to create the perfect launch plan for your business.
           </p>
-          <Button asChild size="lg" className="bg-palette-blue-900 text-white hover:bg-palette-blue-800 hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-xl">
+          <Button asChild size="lg" className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow">
             <Link to="/contact">Build My Package</Link>
           </Button>
         </div>
