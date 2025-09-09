@@ -56,21 +56,26 @@ const Footer = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpe
         {/* Quick Actions / Forms */}
         <div className="animate-fade-in-up delay-400">
           <h4 className="text-lg font-semibold text-white mb-4">Quick Actions</h4>
-          <div className="space-y-4">
-            <Button
-              className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-md py-2 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
-              onClick={() => setOpenBuildMyBusinessForm(true)}
-            >
-              Build My Business
-            </Button>
-            <Button
-              variant="outline"
-              className="w-full text-primary border-primary hover:bg-primary hover:text-white text-md py-2 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105"
-              onClick={() => setOpenCustomQuoteForm(true)}
-            >
-              Get a Free Consultation
-            </Button>
-          </div>
+          <ul className="space-y-2 text-sm">
+            <li>
+              <Button
+                variant="link"
+                className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
+                onClick={() => setOpenBuildMyBusinessForm(true)}
+              >
+                Build My Business
+              </Button>
+            </li>
+            <li>
+              <Button
+                variant="link"
+                className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
+                onClick={() => setOpenCustomQuoteForm(true)}
+              >
+                Get a Free Consultation
+              </Button>
+            </li>
+          </ul>
         </div>
       </div>
 

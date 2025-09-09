@@ -1,127 +1,54 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Textarea } from "@/components/ui/textarea";
+import { DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog";
 import { toast } from "sonner";
-import { Link } from "react-router-dom";
 
 const CustomQuoteForm = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phoneNumber: "",
-    businessType: "",
-    inquiryType: "",
-    briefDescription: "",
-    consent: false,
-  });
-
-  const handleChange = (id: string, value: string | boolean) => {
-    setFormData((prev) => ({ ...prev, [id]: value }));
-  };
-
-  const handleSelectChange = (id: string) => (value: string) => {
-    handleChange(id, value);
-  };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.consent) {
-      toast.error("Please agree to the Privacy Policy and Terms of Service.");
-      return;
-    }
-    console.log("Custom Quote Form Submitted:", formData);
-    toast.success("Your inquiry has been sent! We'll get back to you soon.");
+    // Handle form submission logic here
+    console.log("Custom Quote Form submitted!");
+    toast.success("Your custom quote request has been sent!");
     setOpen(false); // Close the dialog
-    // Reset form
-    setFormData({
-      fullName: "", email: "", phoneNumber: "", businessType: "", inquiryType: "", briefDescription: "", consent: false,
-    });
   };
 
   return (
-    <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
+    <DialogContent className="sm:max-w-[425px]">
       <DialogHeader>
-        <DialogTitle className="text-2xl font-bold text-gray-900 dark:text-white">Custom Quote</DialogTitle>
-        <DialogDescription className="text-gray-600 dark:text-gray-300">
-          Tell us a bit about what you need, and we'll be in touch.
+        <DialogTitle>Get a Free Consultation / Custom Quote</DialogTitle>
+        <DialogDescription>
+          Tell us your specific needs and we'll provide a tailored quote.
         </DialogDescription>
       </DialogHeader>
-      <form onSubmit={handleSubmit} className="grid gap-6 py-4">
-        <div>
-          <Label htmlFor="fullName">Full Name <span className="text-red-500">*</span></Label>
-          <Input id="fullName" value={formData.fullName} onChange={(e) => handleChange("fullName", e.target.value)} required />
-        </div>
-        <div>
-          <Label htmlFor="email">Email Address <span className="text-red-500">*</span></Label>
-          <Input id="email" type="email" placeholder="Your Email" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} required />
-        </div>
-        <div>
-          <Label htmlFor="phoneNumber">Phone Number (Optional)</Label>
-          <Input id="phoneNumber" type="tel" placeholder="Your Phone Number" value={formData.phoneNumber} onChange={(e) => handleChange("phoneNumber", e.target.value)} />
-        </div>
-        <div>
-          <Label htmlFor="businessType">Business Type (Optional)</Label>
-          <Select onValueChange={handleSelectChange("businessType")} value={formData.businessType}>
-            <SelectTrigger id="businessType">
-              <SelectValue placeholder="Select business type" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="Solo Entrepreneur">Solo Entrepreneur</SelectItem>
-              <SelectItem value="Small Startup">Small Startup</SelectItem>
-              <SelectItem value="Scaling Startup">Scaling Startup</SelectItem>
-              <SelectItem value="Funded Business">Funded Business</SelectItem>
-              <SelectItem value="Non-Profit">Non-Profit</SelectItem>
-              <SelectItem value="E-commerce Business">E-commerce Business</SelectItem>
-              <SelectItem value="Service-Based Business">Service-Based Business</SelectItem>
-              <SelectItem value="Product-Based Business">Product-Based Business</SelectItem>
-              <SelectItem value="Consulting Firm">Consulting Firm</SelectItem>
-              <SelectItem value="Agency">Agency</SelectItem>
-              <SelectItem value="Other">Other</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-        <div>
-          <Label>Inquiry Type <span className="text-red-500">*</span></Label>
-          <RadioGroup onValueChange={handleSelectChange("inquiryType")} value={formData.inquiryType} required>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="Free Consultation" id="inquiry-consultation" />
-              <Label htmlFor="inquiry-consultation">Free Consultation</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="Custom Quote" id="inquiry-quote" />
-              <Label htmlFor="inquiry-quote">Custom Quote</Label>
-            </div>
-          </RadioGroup>
-        </div>
-        <div>
-          <Label htmlFor="briefDescription">Brief Description (Optional)</Label>
-          <Textarea id="briefDescription" placeholder="Tell us about your business or what you’re looking for..." value={formData.briefDescription} onChange={(e) => handleChange("briefDescription", e.target.value)} rows={4} />
-        </div>
-
-        <div className="flex items-center space-x-2">
-          <Checkbox
-            id="consent"
-            checked={formData.consent}
-            onCheckedChange={(checked) => handleChange("consent", checked as boolean)}
-            required
-          />
-          <Label htmlFor="consent">
-            I agree to Calpir’s <Link to="/privacy-policy" className="text-primary hover:underline" onClick={() => setOpen(false)}>Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary hover:underline" onClick={() => setOpen(false)}>Terms of Service</Link> <span className="text-red-500">*</span>
+      <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+        <div className="grid grid-cols-4 items-center gap-4">
+          <Label htmlFor="name" className="text-right">
+            Name
           </Label>
+          <Input id="name" defaultValue="" placeholder="Your Name" className="col-span-3" />
         </div>
-
+        <div className="grid grid-cols-4 items-center gap-4">
+          <Label htmlFor="email" className="text-right">
+            Email
+          </Label>
+          <Input id="email" defaultValue="" placeholder="Your Email" className="col-span-3" />
+        </div>
+        <div className="grid grid-cols-4 items-center gap-4">
+          <Label htmlFor="requirements" className="text-right">
+            Requirements
+          </Label>
+          <Textarea id="requirements" placeholder="Describe your project requirements..." className="col-span-3" />
+        </div>
         <DialogFooter>
-          <Button type="submit" className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:animate-button-glow">
-            {formData.inquiryType === "Custom Quote" ? "Get Quote" : "Request Consultation"}
-          </Button>
+          <Button type="submit">Request Quote</Button>
+          <DialogClose asChild>
+            <Button type="button" variant="secondary">
+              Cancel
+            </Button>
+          </DialogClose>
         </DialogFooter>
       </form>
     </DialogContent>
