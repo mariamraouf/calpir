@@ -9,16 +9,16 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
-import PrimaryFormDialog from "@/components/PrimaryFormDialog";
-import SecondaryFormDialog from "@/components/SecondaryFormDialog";
+import BuildMyBusinessForm from "@/components/BuildMyBusinessForm";
+import CustomQuoteForm from "@/components/CustomQuoteForm";
 import { Dialog } from "@/components/ui/dialog";
 import React, { useState } from "react";
 
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [openPrimaryForm, setOpenPrimaryForm] = useState(false);
-  const [openSecondaryForm, setOpenSecondaryForm] = useState(false);
+  const [openBuildMyBusinessForm, setOpenBuildMyBusinessForm] = useState(false);
+  const [openCustomQuoteForm, setOpenCustomQuoteForm] = useState(false);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -27,24 +27,24 @@ const App = () => {
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Index setOpenPrimaryForm={setOpenPrimaryForm} setOpenSecondaryForm={setOpenSecondaryForm} />} />
+            <Route path="/" element={<Index setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />} />
             <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services setOpenSecondaryForm={setOpenSecondaryForm} />} />
-            <Route path="/pricing" element={<Pricing setOpenPrimaryForm={setOpenPrimaryForm} />} />
+            <Route path="/services" element={<Services setOpenCustomQuoteForm={setOpenCustomQuoteForm} />} />
+            <Route path="/pricing" element={<Pricing setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} />} />
             <Route path="/contact" element={<Contact />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
 
-        {/* Primary Form Dialog */}
-        <Dialog open={openPrimaryForm} onOpenChange={setOpenPrimaryForm}>
-          <PrimaryFormDialog setOpen={setOpenPrimaryForm} />
+        {/* Build My Business Form Dialog */}
+        <Dialog open={openBuildMyBusinessForm} onOpenChange={setOpenBuildMyBusinessForm}>
+          <BuildMyBusinessForm setOpen={setOpenBuildMyBusinessForm} />
         </Dialog>
 
-        {/* Secondary Form Dialog */}
-        <Dialog open={openSecondaryForm} onOpenChange={setOpenSecondaryForm}>
-          <SecondaryFormDialog setOpen={setOpenSecondaryForm} />
+        {/* Custom Quote Form Dialog */}
+        <Dialog open={openCustomQuoteForm} onOpenChange={setOpenCustomQuoteForm}>
+          <CustomQuoteForm setOpen={setOpenCustomQuoteForm} />
         </Dialog>
       </TooltipProvider>
     </QueryClientProvider>

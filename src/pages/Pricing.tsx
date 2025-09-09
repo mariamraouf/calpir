@@ -172,7 +172,7 @@ const addOnsCategories = [
   },
 ];
 
-const Pricing = ({ setOpenPrimaryForm }: { setOpenPrimaryForm: (open: boolean) => void }) => {
+const Pricing = ({ setOpenBuildMyBusinessForm }: { setOpenBuildMyBusinessForm: (open: boolean) => void }) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -234,7 +234,7 @@ const Pricing = ({ setOpenPrimaryForm }: { setOpenPrimaryForm: (open: boolean) =
                       ? "bg-primary hover:bg-calpir-green-700 text-white hover:text-white"
                       : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white"
                   }`}
-                  onClick={() => setOpenPrimaryForm(true)} // Direct to primary form
+                  onClick={() => setOpenBuildMyBusinessForm(true)} // Direct to primary form
                 >
                   Get Started
                 </Button>
@@ -282,7 +282,7 @@ const Pricing = ({ setOpenPrimaryForm }: { setOpenPrimaryForm: (open: boolean) =
             <Button
               size="lg"
               className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
-              onClick={() => setOpenPrimaryForm(true)} // Direct to primary form for custom package
+              onClick={() => setOpenBuildMyBusinessForm(true)} // Direct to primary form for custom package
             >
               Request Custom Quote
             </Button>

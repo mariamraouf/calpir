@@ -180,7 +180,7 @@ const servicesData = [
   },
 ];
 
-const Services = ({ setOpenSecondaryForm }: { setOpenSecondaryForm: (open: boolean) => void }) => {
+const Services = ({ setOpenCustomQuoteForm }: { setOpenCustomQuoteForm: (open: boolean) => void }) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -216,7 +216,7 @@ const Services = ({ setOpenSecondaryForm }: { setOpenSecondaryForm: (open: boole
                 <Button
                   size="lg"
                   className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
-                  onClick={() => setOpenSecondaryForm(true)}
+                  onClick={() => setOpenCustomQuoteForm(true)}
                 >
                   Get a Free Consultation
                 </Button>

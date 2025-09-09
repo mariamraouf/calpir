@@ -14,17 +14,17 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Button } from "@/components/ui/button"; // Import Button
 import { Link } from "react-router-dom"; // Import Link
 
-const Index = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPrimaryForm: (open: boolean) => void; setOpenSecondaryForm: (open: boolean) => void }) => {
+const Index = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpenBuildMyBusinessForm: (open: boolean) => void; setOpenCustomQuoteForm: (open: boolean) => void }) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        <HeroSection setOpenPrimaryForm={setOpenPrimaryForm} setOpenSecondaryForm={setOpenSecondaryForm} />
+        <HeroSection setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />
         <div className="animate-fade-in-up delay-200">
           <IntegrationsSection />
         </div>
         <div className="animate-fade-in-up delay-400">
-          <ProblemsSolutionsSection setOpenPrimaryForm={setOpenPrimaryForm} />
+          <ProblemsSolutionsSection setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} />
         </div>
         <div className="animate-fade-in-up delay-600">
           <BusinessSolutionsSection />
@@ -33,14 +33,14 @@ const Index = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPrimaryFor
           <LaunchMethodSection />
         </div>
         <div className="animate-fade-in-up delay-1000">
-          <PricingPackagesSection setOpenPrimaryForm={setOpenPrimaryForm} />
+          <PricingPackagesSection setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} />
         </div>
         <div className="animate-fade-in-up delay-1200">
-          <AddOnsSection setOpenPrimaryForm={setOpenPrimaryForm} setOpenSecondaryForm={setOpenSecondaryForm} />
+          <AddOnsSection setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />
         </div>
         {/* The "Build My Package" section has been moved into AddOnsSection.tsx */}
         <div className="animate-fade-in-up delay-1400">
-          <CtaSection setOpenPrimaryForm={setOpenPrimaryForm} />
+          <CtaSection setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} />
         </div>
       </main>
       <Footer />
