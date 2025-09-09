@@ -4,8 +4,9 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { Button } from "@/components/ui/button";
 import { CheckCircle, PlusCircle, BarChart2, Users, Headphones } from "lucide-react"; // Added icons for Add-ons
+import { Button } from "@/components/ui/button"; // Import Button component
+import { Link } from "react-router-dom"; // Import Link for navigation
 
 const packages = [
   {
@@ -255,14 +256,15 @@ const Pricing = () => {
               </div>
             ))}
           </div>
-          <div className="mt-16 text-center animate-fade-in-up delay-2000">
+          <div className="mt-16 text-center p-6 rounded-2xl shadow-xl animate-fade-in-up delay-2000
+                    bg-gradient-to-br from-calpir-green-50 to-palette-blue-50 dark:from-calpir-green-950 dark:to-palette-blue-950 max-w-4xl mx-auto">
             <p className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">
               Custom Add-On Packages Available
             </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-8">
               Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
             </p>
-            <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow">
+            <Button size="lg" className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow">
               Request Custom Quote
             </Button>
           </div>
