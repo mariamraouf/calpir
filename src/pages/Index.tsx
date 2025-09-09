@@ -31,10 +31,10 @@ const Index = () => {
           <LaunchMethodSection />
         </div>
         <div className="animate-fade-in-up delay-1000">
-          <AddOnsSection />
+          <PricingPackagesSection /> {/* Moved before AddOnsSection */}
         </div>
         <div className="animate-fade-in-up delay-1200">
-          <PricingPackagesSection />
+          <AddOnsSection />
         </div>
         <div className="animate-fade-in-up delay-1400">
           <CtaSection />
