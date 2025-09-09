@@ -38,11 +38,10 @@ const Navbar = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPrimaryFo
             </NavLink>
           ))}
           <Button
-            asChild
             className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
             onClick={() => setOpenPrimaryForm && setOpenPrimaryForm(true)}
           >
-            <Link to="#">Get Started</Link>
+            Get Started
           </Button>
         </nav>
 
@@ -69,11 +68,10 @@ const Navbar = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPrimaryFo
                 </NavLink>
               ))}
               <Button
-                asChild
                 className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
                 onClick={() => setOpenPrimaryForm && setOpenPrimaryForm(true)}
               >
-                <Link to="#">Get Started</Link>
+                Get Started
               </Button>
             </div>
           </SheetContent>

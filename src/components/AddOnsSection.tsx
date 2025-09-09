@@ -135,12 +135,11 @@ const AddOnsSection = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPr
                     <div className="flex items-center space-x-4">
                       <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
                       <Button
-                        asChild
                         size="sm"
                         className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-sm px-4 py-2 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
                         onClick={() => setOpenPrimaryForm(true)}
                       >
-                        <Link to="/contact">Pick & Include</Link>
+                        Pick & Include
                       </Button>
                     </div>
                   </div>
@@ -160,30 +159,28 @@ const AddOnsSection = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPr
             Combine our core packages with powerful add-ons to create the perfect launch plan for your business.
           </p>
           <Button
-            asChild
             size="lg"
             className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
             onClick={() => setOpenPrimaryForm(true)}
           >
-            <Link to="/contact">Build My Package</Link>
+            Build My Package
           </Button>
         </div>
 
         {/* Original "Custom Add-On Packages Available" section - now simplified and without a box */}
         <div className="mt-16 text-center max-w-4xl mx-auto py-8">
-          <p className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
+          <p className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
             Custom Add-On Packages Available
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-6">
             Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
           </p>
           <Button
-            asChild
             variant="outline"
             className="text-primary border-primary hover:bg-primary hover:text-white text-md px-6 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
             onClick={() => setOpenSecondaryForm(true)}
           >
-            <Link to="/contact">Request Custom Quote</Link>
+            Request Custom Quote
           </Button>
         </div>
       </div>

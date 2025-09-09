@@ -234,7 +234,7 @@ const Pricing = ({ setOpenPrimaryForm }: { setOpenPrimaryForm: (open: boolean) =
                       ? "bg-primary hover:bg-calpir-green-700 text-white hover:text-white"
                       : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white"
                   }`}
-                  onClick={() => setOpenPrimaryForm(true)}
+                  onClick={() => setOpenPrimaryForm(true)} // Direct to primary form
                 >
                   Get Started
                 </Button>

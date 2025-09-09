@@ -125,7 +125,7 @@ const PricingPackagesSection = ({ setOpenPrimaryForm }: { setOpenPrimaryForm: (o
                 }`}
                 onClick={() => setOpenPrimaryForm(true)}
               >
-                <Link to="/pricing">View Details</Link>
+                Get Started
               </Button>
             </div>
           ))}
