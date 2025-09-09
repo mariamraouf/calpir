@@ -128,7 +128,7 @@ const AddOnsSection = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center animate-fade-in-up delay-600">
+        <div className="mt-16 text-center p-8 bg-calpir-green-50 dark:bg-calpir-green-950 rounded-2xl shadow-xl border border-calpir-green-200 dark:border-calpir-green-800 animate-fade-in-up delay-600">
           <p className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">
             Custom Add-On Packages Available
           </p>
