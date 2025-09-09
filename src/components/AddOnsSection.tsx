@@ -134,6 +134,9 @@ const AddOnsSection = () => {
                     </div>
                     <div className="flex items-center space-x-4">
                       <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
+                      <Button asChild size="sm" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-sm px-4 py-2 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow">
+                        <Link to="/contact">Pick & Include</Link>
+                      </Button>
                     </div>
                   </div>
                 ))}
