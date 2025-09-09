@@ -7,7 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Menu, ChevronDown } from "lucide-react";
 
-const Navbar = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPrimaryForm?: (open: boolean) => void; setOpenSecondaryForm?: (open: boolean) => void }) => {
+const Navbar = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpenBuildMyBusinessForm?: (open: boolean) => void; setOpenCustomQuoteForm?: (open: boolean) => void }) => {
   const mainNavLinks = [
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" }, // Services is now a regular link
@@ -39,7 +39,7 @@ const Navbar = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPrimaryFo
           ))}
           <Button
             className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
-            onClick={() => setOpenPrimaryForm && setOpenPrimaryForm(true)}
+            onClick={() => setOpenBuildMyBusinessForm && setOpenBuildMyBusinessForm(true)}
           >
             Get Started
           </Button>
@@ -69,7 +69,7 @@ const Navbar = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPrimaryFo
               ))}
               <Button
                 className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
-                onClick={() => setOpenPrimaryForm && setOpenPrimaryForm(true)}
+                onClick={() => setOpenBuildMyBusinessForm && setOpenBuildMyBusinessForm(true)}
               >
                 Get Started
               </Button>
