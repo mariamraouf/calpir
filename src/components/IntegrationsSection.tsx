@@ -4,49 +4,49 @@ import React from "react";
 
 const integrations = [
   // Prioritized Integrations
-  { name: "ClickUp", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/clickup.svg" },
-  { name: "Slack", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/slack.svg" },
-  { name: "Google Drive", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googledrive.svg" },
-  { name: "Google Calendar", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlecalendar.svg" },
-  { name: "Gmail", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gmail.svg" },
-  { name: "Google Analytics", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googleanalytics.svg" },
-  { name: "OneDrive", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftonedrive.svg" },
-  { name: "SharePoint", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftsharepoint.svg" },
-  { name: "Outlook Calendar", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftoutlook.svg" },
-  { name: "Microsoft Teams", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftteams.svg" },
-  { name: "Outlook", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftoutlook.svg" },
-  { name: "HubSpot", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/hubspot.svg" },
-  { name: "GoHighLevel", imageSrc: "/logos/gohighlevel.svg" }, // Placeholder
-  { name: "Trello", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/trello.svg" },
-  { name: "Xero", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xero.svg" },
-  { name: "Mailchimp", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/mailchimp.svg" },
-  { name: "Intercom", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/intercom.svg" },
-  { name: "ERP", imageSrc: "/logos/erp.svg" }, // Placeholder
-  { name: "Zapier", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/zapier.svg" },
-  { name: "Make", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/integromat.svg" }, // Make is Integromat in simple-icons
-  { name: "ChatGPT", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg" }, // OpenAI for ChatGPT
-  { name: "Claude", imageSrc: "/logos/claude.svg" }, // Placeholder
+  { name: "ClickUp", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/clickup.svg", gradient: "linear-gradient(135deg, #7B68EE, #FF6B9D)" },
+  { name: "Slack", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/slack.svg", gradient: "linear-gradient(45deg, #E01E5A, #36C5F0, #2EB67D, #ECB22E)" },
+  { name: "Google Drive", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googledrive.svg", gradient: "linear-gradient(135deg, #4285F4, #34A853, #FBBC04)" },
+  { name: "Google Calendar", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlecalendar.svg", gradient: "linear-gradient(135deg, #4285F4, #34A853)" },
+  { name: "Gmail", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gmail.svg", gradient: "linear-gradient(135deg, #EA4335, #FBBC04, #34A853)" },
+  { name: "Google Analytics", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googleanalytics.svg", gradient: "linear-gradient(135deg, #F9AB00, #E37400)" },
+  { name: "OneDrive", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftonedrive.svg", gradient: "linear-gradient(135deg, #0078D4, #00BCF2)" },
+  { name: "SharePoint", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftsharepoint.svg", gradient: "linear-gradient(135deg, #0078D4, #106EBE)" },
+  { name: "Outlook Calendar", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftoutlook.svg", gradient: "linear-gradient(135deg, #0078D4, #0063B1)" },
+  { name: "Microsoft Teams", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftteams.svg", gradient: "linear-gradient(135deg, #6264A7, #464775)" },
+  { name: "Outlook", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftoutlook.svg", gradient: "linear-gradient(135deg, #0078D4, #0063B1)" },
+  { name: "HubSpot", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/hubspot.svg", gradient: "linear-gradient(135deg, #FF7A59, #FF5C35)" },
+  { name: "GoHighLevel", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gohighlevel.svg", gradient: "linear-gradient(135deg, #4CAF50, #8BC34A)" },
+  { name: "Trello", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/trello.svg", gradient: "linear-gradient(135deg, #0079BF, #026AA7)" },
+  { name: "Xero", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xero.svg", gradient: "linear-gradient(135deg, #13B5EA, #00A4DB)" },
+  { name: "Mailchimp", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/mailchimp.svg", gradient: "linear-gradient(135deg, #FFE01B, #FFD60D)" },
+  { name: "Intercom", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/intercom.svg", gradient: "linear-gradient(135deg, #1F8DED, #0073E6)" },
+  { name: "ERP", iconUrl: "/logos/erp.svg", gradient: "linear-gradient(135deg, #795548, #A1887F)" },
+  { name: "Zapier", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/zapier.svg", gradient: "linear-gradient(135deg, #FF4A00, #FF6B35)" },
+  { name: "Make", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/integromat.svg", gradient: "linear-gradient(135deg, #6C5CE7, #A29BFE)" },
+  { name: "ChatGPT", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg", gradient: "linear-gradient(135deg, #10A37F, #008060)" },
+  { name: "Claude", iconUrl: "/logos/claude.svg", gradient: "linear-gradient(135deg, #8A2BE2, #9370DB)" },
 
-  // Other Integrations (remaining from previous list, re-ordered)
-  { name: "Zoom", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/zoom.svg" },
-  { name: "Jira", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/jira.svg" },
-  { name: "Notion", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/notion.svg" },
-  { name: "Asana", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/asana.svg" },
-  { name: "DocuSign", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/docusign.svg" },
-  { name: "Salesforce", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/salesforce.svg" },
-  { name: "Monday.com", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/mondaydotcom.svg" },
-  { name: "Zoho CRM", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/zoho.svg" },
-  { name: "Pipedrive", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/pipedrive.svg" },
-  { name: "Calendly", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/calendly.svg" },
-  { name: "Typeform", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/typeform.svg" },
-  { name: "Airtable", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/airtable.svg" },
-  { name: "Stripe", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/stripe.svg" },
-  { name: "PayPal", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/paypal.svg" },
-  { name: "QuickBooks", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/quickbooks.svg" },
-  { name: "Klaviyo", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/klaviyo.svg" },
-  { name: "Figma", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/figma.svg" },
-  { name: "Loom", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/loom.svg" },
-  { name: "LinkedIn", imageSrc: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg" },
+  // Other Integrations
+  { name: "Zoom", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/zoom.svg", gradient: "linear-gradient(135deg, #2D8CFF, #0066CC)" },
+  { name: "Jira", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/jira.svg", gradient: "linear-gradient(135deg, #0052CC, #2684FF)" },
+  { name: "Notion", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/notion.svg", gradient: "linear-gradient(135deg, #000000, #37352F)" },
+  { name: "Asana", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/asana.svg", gradient: "linear-gradient(135deg, #F06A6A, #F37A7A)" },
+  { name: "DocuSign", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/docusign.svg", gradient: "linear-gradient(135deg, #FFCC00, #FFB700)" },
+  { name: "Salesforce", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/salesforce.svg", gradient: "linear-gradient(135deg, #00A1E0, #0099E0)" },
+  { name: "Monday.com", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/mondaydotcom.svg", gradient: "linear-gradient(135deg, #FF3D71, #FC0366)" },
+  { name: "Zoho CRM", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/zoho.svg", gradient: "linear-gradient(135deg, #C9302C, #E74C3C)" },
+  { name: "Pipedrive", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/pipedrive.svg", gradient: "linear-gradient(135deg, #1A82E2, #007BFF)" },
+  { name: "Calendly", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/calendly.svg", gradient: "linear-gradient(135deg, #006BFF, #0057D9)" },
+  { name: "Typeform", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/typeform.svg", gradient: "linear-gradient(135deg, #262627, #000000)" },
+  { name: "Airtable", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/airtable.svg", gradient: "linear-gradient(135deg, #FCB400, #FFCC02)" },
+  { name: "Stripe", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/stripe.svg", gradient: "linear-gradient(135deg, #635BFF, #4F46E5)" },
+  { name: "PayPal", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/paypal.svg", gradient: "linear-gradient(135deg, #00457C, #0070BA)" },
+  { name: "QuickBooks", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/quickbooks.svg", gradient: "linear-gradient(135deg, #0077C5, #2CA01C)" },
+  { name: "Klaviyo", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/klaviyo.svg", gradient: "linear-gradient(135deg, #FB7A00, #E85D00)" },
+  { name: "Figma", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/figma.svg", gradient: "linear-gradient(135deg, #F24E1E, #A259FF, #1ABCFE, #0ACF83, #FF7262)" },
+  { name: "Loom", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/loom.svg", gradient: "linear-gradient(135deg, #625DF5, #5048E5)" },
+  { name: "LinkedIn", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg", gradient: "linear-gradient(135deg, #0A66C2, #004182)" },
 ];
 
 const IntegrationsSection = () => {
@@ -67,7 +67,16 @@ const IntegrationsSection = () => {
                 key={index}
                 className="flex-shrink-0 w-32 md:w-40 p-4 flex flex-col items-center justify-center text-center mx-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-110"
               >
-                <img src={integration.imageSrc} alt={integration.name} className="h-10 w-10 mb-2 object-contain" />
+                <div
+                  className="h-10 w-10 mb-2"
+                  style={{
+                    background: integration.gradient,
+                    WebkitMask: `url(${integration.iconUrl}) no-repeat center`,
+                    mask: `url(${integration.iconUrl}) no-repeat center`,
+                    WebkitMaskSize: 'contain',
+                    maskSize: 'contain',
+                  }}
+                ></div>
                 <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{integration.name}</span>
               </div>
             ))}
