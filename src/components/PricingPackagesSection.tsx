@@ -64,7 +64,7 @@ const packages = [
   },
 ];
 
-const PricingPackagesSection = ({ setOpenPrimaryForm }: { setOpenPrimaryForm: (open: boolean) => void }) => {
+const PricingPackagesSection = ({ setOpenBuildMyBusinessForm }: { setOpenBuildMyBusinessForm: (open: boolean) => void }) => {
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-gray-950" id="pricing">
       <div className="container text-center">
@@ -123,7 +123,7 @@ const PricingPackagesSection = ({ setOpenPrimaryForm }: { setOpenPrimaryForm: (o
                     ? "bg-primary hover:bg-calpir-green-700 text-white hover:text-white"
                     : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white"
                 }`}
-                onClick={() => setOpenPrimaryForm(true)}
+                onClick={() => setOpenBuildMyBusinessForm(true)}
               >
                 Get Started
               </Button>

@@ -4,7 +4,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Rocket } from "lucide-react";
 
-const CtaSection = ({ setOpenPrimaryForm }: { setOpenPrimaryForm: (open: boolean) => void }) => {
+const CtaSection = ({ setOpenBuildMyBusinessForm }: { setOpenBuildMyBusinessForm: (open: boolean) => void }) => {
   return (
     <section className="py-16 md:py-24 bg-gradient-to-r from-foreground to-calpir-green-900 text-white text-center">
       <div className="container">
@@ -18,7 +18,7 @@ const CtaSection = ({ setOpenPrimaryForm }: { setOpenPrimaryForm: (open: boolean
         <Button
           size="lg"
           className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-10 py-4 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
-          onClick={() => setOpenPrimaryForm(true)}
+          onClick={() => setOpenBuildMyBusinessForm(true)}
         >
           Start Your 7-Day Business Launch
         </Button>

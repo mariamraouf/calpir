@@ -107,7 +107,7 @@ const addOnsCategories = [
   },
 ];
 
-const AddOnsSection = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPrimaryForm: (open: boolean) => void; setOpenSecondaryForm: (open: boolean) => void }) => {
+const AddOnsSection = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpenBuildMyBusinessForm: (open: boolean) => void; setOpenCustomQuoteForm: (open: boolean) => void }) => {
   return (
     <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container text-center">
@@ -137,7 +137,7 @@ const AddOnsSection = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPr
                       <Button
                         size="sm"
                         className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-sm px-4 py-2 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
-                        onClick={() => setOpenPrimaryForm(true)}
+                        onClick={() => setOpenBuildMyBusinessForm(true)}
                       >
                         Pick & Include
                       </Button>
@@ -161,7 +161,7 @@ const AddOnsSection = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPr
           <Button
             size="lg"
             className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
-            onClick={() => setOpenPrimaryForm(true)}
+            onClick={() => setOpenBuildMyBusinessForm(true)}
           >
             Build My Package
           </Button>
@@ -178,7 +178,7 @@ const AddOnsSection = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPr
           <Button
             variant="outline"
             className="text-primary border-primary hover:bg-primary hover:text-white text-md px-6 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
-            onClick={() => setOpenSecondaryForm(true)}
+            onClick={() => setOpenCustomQuoteForm(true)}
           >
             Request Custom Quote
           </Button>
