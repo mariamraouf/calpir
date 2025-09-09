@@ -117,9 +117,7 @@ const AddOnsSection = () => {
                     </div>
                     <div className="flex items-center space-x-4">
                       <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
-                      <Button variant="outline" className="text-primary border-primary hover:bg-calpir-green-50 dark:text-calpir-green-400 dark:border-calpir-green-400 dark:hover:bg-calpir-green-900 hover:text-primary dark:hover:text-calpir-green-400 hover:animate-button-glow transform hover:scale-110">
-                        <PlusCircle className="h-4 w-4 mr-2" /> Build My Package
-                      </Button>
+                      {/* Removed individual "Build My Package" button */}
                     </div>
                   </div>
                 ))}
