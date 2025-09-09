@@ -7,34 +7,13 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Menu, ChevronDown } from "lucide-react";
 
-const Navbar = () => {
+const Navbar = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPrimaryForm?: (open: boolean) => void; setOpenSecondaryForm?: (open: boolean) => void }) => {
   const mainNavLinks = [
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" }, // Services is now a regular link
     { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
   ];
-
-  // The serviceDropdownLinks are no longer needed for the main navigation,
-  // but I'll keep them commented out in case they are needed elsewhere or for future reference.
-  /*
-  const serviceDropdownLinks = [
-    { name: "Operations Flows Setup", href: "/services#operations-flows" },
-    { name: "Project Management Setup", href: "/services#project-management" },
-    { name: "HR & Recruiting", href: "/services#hr-recruiting" },
-    { name: "Website Building & Hosting", href: "/services#website-building" },
-    { name: "Accounting System Setup", href: "/services#accounting" },
-    { name: "Social Media Management", href: "/services#social-media" },
-    { name: "Email Systems & Automation", href: "/services#email-systems" },
-    { name: "CRM Setup & Optimization", href: "/services#crm-setup" },
-    { name: "Platform Integrations", href: "/services#integrations" },
-    { name: "Design & Branding", href: "/services#design-branding" },
-    { name: "Analytics & Reporting",
-      href: "/services#analytics" },
-    { name: "Software Migrations", href: "/services#migrations" },
-    { name: "Security Basics Setup", href: "/services#security-basics" },
-  ];
-  */
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -58,8 +37,12 @@ const Navbar = () => {
               {link.name}
             </NavLink>
           ))}
-          <Button asChild className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110">
-            <Link to="/contact">Get Started</Link>
+          <Button
+            asChild
+            className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
+            onClick={() => setOpenPrimaryForm && setOpenPrimaryForm(true)}
+          >
+            <Link to="#">Get Started</Link>
           </Button>
         </nav>
 
@@ -85,8 +68,12 @@ const Navbar = () => {
                   {link.name}
                 </NavLink>
               ))}
-              <Button asChild className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110">
-                <Link to="/contact">Get Started</Link>
+              <Button
+                asChild
+                className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
+                onClick={() => setOpenPrimaryForm && setOpenPrimaryForm(true)}
+              >
+                <Link to="#">Get Started</Link>
               </Button>
             </div>
           </SheetContent>

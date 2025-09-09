@@ -172,7 +172,7 @@ const addOnsCategories = [
   },
 ];
 
-const Pricing = () => {
+const Pricing = ({ setOpenPrimaryForm }: { setOpenPrimaryForm: (open: boolean) => void }) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -234,6 +234,7 @@ const Pricing = () => {
                       ? "bg-primary hover:bg-calpir-green-700 text-white hover:text-white"
                       : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white"
                   }`}
+                  onClick={() => setOpenPrimaryForm(true)}
                 >
                   Get Started
                 </Button>
@@ -278,7 +279,11 @@ const Pricing = () => {
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-8">
               Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
             </p>
-            <Button size="lg" className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
+              onClick={() => setOpenPrimaryForm(true)} // Direct to primary form for custom package
+            >
               Request Custom Quote
             </Button>
           </div>

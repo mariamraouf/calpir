@@ -3,7 +3,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 
-const HeroSection = () => {
+const HeroSection = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPrimaryForm: (open: boolean) => void; setOpenSecondaryForm: (open: boolean) => void }) => {
   return (
     <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-r from-foreground to-calpir-green-900 text-white overflow-hidden">
       {/* Video Background */}
@@ -32,10 +32,18 @@ const HeroSection = () => {
           Start Your Business Smoothly! Create a Sleek Website, Develop Strong Branding, Set Up Efficient Systems, and Simplify with Automation. Turn Your Idea into Success Using Proven Methods.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-400">
-          <Button size="lg" className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow">
+          <Button
+            size="lg"
+            className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
+            onClick={() => setOpenPrimaryForm(true)}
+          >
             Start My Business
           </Button>
-          <Button size="lg" className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow">
+          <Button
+            size="lg"
+            className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
+            onClick={() => setOpenSecondaryForm(true)}
+          >
             Get a Free Consultation
           </Button>
         </div>

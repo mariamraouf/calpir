@@ -107,7 +107,7 @@ const addOnsCategories = [
   },
 ];
 
-const AddOnsSection = () => {
+const AddOnsSection = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPrimaryForm: (open: boolean) => void; setOpenSecondaryForm: (open: boolean) => void }) => {
   return (
     <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container text-center">
@@ -134,7 +134,12 @@ const AddOnsSection = () => {
                     </div>
                     <div className="flex items-center space-x-4">
                       <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
-                      <Button asChild size="sm" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-sm px-4 py-2 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow">
+                      <Button
+                        asChild
+                        size="sm"
+                        className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-sm px-4 py-2 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
+                        onClick={() => setOpenPrimaryForm(true)}
+                      >
                         <Link to="/contact">Pick & Include</Link>
                       </Button>
                     </div>
@@ -154,7 +159,12 @@ const AddOnsSection = () => {
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10">
             Combine our core packages with powerful add-ons to create the perfect launch plan for your business.
           </p>
-          <Button asChild size="lg" className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow">
+          <Button
+            asChild
+            size="lg"
+            className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
+            onClick={() => setOpenPrimaryForm(true)}
+          >
             <Link to="/contact">Build My Package</Link>
           </Button>
         </div>
@@ -167,7 +177,12 @@ const AddOnsSection = () => {
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-6">
             Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
           </p>
-          <Button asChild variant="outline" className="text-primary border-primary hover:bg-primary hover:text-white text-md px-6 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+          <Button
+            asChild
+            variant="outline"
+            className="text-primary border-primary hover:bg-primary hover:text-white text-md px-6 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+            onClick={() => setOpenSecondaryForm(true)}
+          >
             <Link to="/contact">Request Custom Quote</Link>
           </Button>
         </div>

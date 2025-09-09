@@ -37,7 +37,7 @@ const solutions = [
   { label: "1 Team", detail: "vs managing 5+ specialists" },
 ];
 
-const ProblemsSolutionsSection = () => {
+const ProblemsSolutionsSection = ({ setOpenPrimaryForm }: { setOpenPrimaryForm: (open: boolean) => void }) => {
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-gray-950">
       <div className="container">
@@ -91,7 +91,11 @@ const ProblemsSolutionsSection = () => {
         </div>
 
         <div className="text-center animate-bounce-pop delay-1200">
-          <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow">
+          <Button
+            size="lg"
+            className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
+            onClick={() => setOpenPrimaryForm(true)}
+          >
             Start Your Startup Package Today
           </Button>
         </div>

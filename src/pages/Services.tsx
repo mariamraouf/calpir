@@ -180,7 +180,7 @@ const servicesData = [
   },
 ];
 
-const Services = () => {
+const Services = ({ setOpenSecondaryForm }: { setOpenSecondaryForm: (open: boolean) => void }) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -213,8 +213,12 @@ const Services = () => {
                 ))}
               </ul>
               <div className="text-center mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
-                <Button asChild size="lg" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow">
-                  <Link to="/contact">Get a Free Consultation</Link>
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
+                  onClick={() => setOpenSecondaryForm(true)}
+                >
+                  Get a Free Consultation
                 </Button>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
                   Consult with our experts and get to know the best platforms suitable for your business.

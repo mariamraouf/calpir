@@ -64,7 +64,7 @@ const packages = [
   },
 ];
 
-const PricingPackagesSection = () => {
+const PricingPackagesSection = ({ setOpenPrimaryForm }: { setOpenPrimaryForm: (open: boolean) => void }) => {
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-gray-950" id="pricing">
       <div className="container text-center">
@@ -117,13 +117,13 @@ const PricingPackagesSection = () => {
               </ul>
 
               <Button
-                asChild
                 size="lg"
                 className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow ${
                   pkg.highlight
                     ? "bg-primary hover:bg-calpir-green-700 text-white hover:text-white"
                     : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white"
                 }`}
+                onClick={() => setOpenPrimaryForm(true)}
               >
                 <Link to="/pricing">View Details</Link>
               </Button>

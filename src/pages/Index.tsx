@@ -14,17 +14,17 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Button } from "@/components/ui/button"; // Import Button
 import { Link } from "react-router-dom"; // Import Link
 
-const Index = () => {
+const Index = ({ setOpenPrimaryForm, setOpenSecondaryForm }: { setOpenPrimaryForm: (open: boolean) => void; setOpenSecondaryForm: (open: boolean) => void }) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        <HeroSection />
+        <HeroSection setOpenPrimaryForm={setOpenPrimaryForm} setOpenSecondaryForm={setOpenSecondaryForm} />
         <div className="animate-fade-in-up delay-200">
           <IntegrationsSection />
         </div>
         <div className="animate-fade-in-up delay-400">
-          <ProblemsSolutionsSection />
+          <ProblemsSolutionsSection setOpenPrimaryForm={setOpenPrimaryForm} />
         </div>
         <div className="animate-fade-in-up delay-600">
           <BusinessSolutionsSection />
@@ -33,14 +33,14 @@ const Index = () => {
           <LaunchMethodSection />
         </div>
         <div className="animate-fade-in-up delay-1000">
-          <PricingPackagesSection />
+          <PricingPackagesSection setOpenPrimaryForm={setOpenPrimaryForm} />
         </div>
         <div className="animate-fade-in-up delay-1200">
-          <AddOnsSection />
+          <AddOnsSection setOpenPrimaryForm={setOpenPrimaryForm} setOpenSecondaryForm={setOpenSecondaryForm} />
         </div>
         {/* The "Build My Package" section has been moved into AddOnsSection.tsx */}
         <div className="animate-fade-in-up delay-1400">
-          <CtaSection />
+          <CtaSection setOpenPrimaryForm={setOpenPrimaryForm} />
         </div>
       </main>
       <Footer />
