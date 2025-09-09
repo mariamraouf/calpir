@@ -35,19 +35,19 @@ const Contact = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow container py-16 md:py-24 animate-fade-in-up">
-        <section className="text-center mb-16">
+      <main className="flex-grow container py-16 md:py-24">
+        <section className="text-center mb-16 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
             Get in Touch
           </h1>
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed delay-200">
             Have questions or ready to launch your business? Fill out the form below or reach out to us directly.
           </p>
         </section>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+          <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 animate-slide-in-left delay-300">
             <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Send Us a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -59,7 +59,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="mt-1"
+                  className="mt-1 focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-200"
                 />
               </div>
               <div>
@@ -71,7 +71,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="mt-1"
+                  className="mt-1 focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-200"
                 />
               </div>
               <div>
@@ -83,7 +83,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="mt-1"
+                  className="mt-1 focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-200"
                 />
               </div>
               <div>
@@ -95,17 +95,17 @@ const Contact = () => {
                   onChange={handleChange}
                   rows={5}
                   required
-                  className="mt-1"
+                  className="mt-1 focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-200"
                 />
               </div>
-              <Button type="submit" className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-2xl">
+              <Button type="submit" className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:animate-button-glow">
                 Send Message
               </Button>
             </form>
           </div>
 
           {/* Contact Information */}
-          <div className="bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 flex flex-col justify-center">
+          <div className="bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 flex flex-col justify-center animate-slide-in-right delay-400">
             <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Contact Information</h2>
             <div className="space-y-6">
               <div className="flex items-center">

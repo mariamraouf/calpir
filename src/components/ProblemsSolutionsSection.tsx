@@ -43,10 +43,10 @@ const ProblemsSolutionsSection = () => {
       <div className="container">
         {/* Problems Section */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up">
             We Know How Hard It Is for Startups
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200">
             Building a business from scratch is expensive, time-consuming, and overwhelming. You need to hire multiple specialists, coordinate different systems, and spend months just to get basic operations running.
             <br /><br />
             We match you with the platforms that best suit your budget, and our team knows all the tips and tricks to save you money.
@@ -57,7 +57,8 @@ const ProblemsSolutionsSection = () => {
           {problems.map((problem, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-6 bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
+              className="flex flex-col items-center text-center p-6 bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 animate-zoom-in"
+              style={{ animationDelay: `${0.3 + index * 0.15}s` }}
             >
               <problem.icon className={`h-12 w-12 mb-4 ${problem.iconColor}`} />
               <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{problem.title}</h3>
@@ -68,10 +69,10 @@ const ProblemsSolutionsSection = () => {
 
         {/* Solutions Section */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up delay-600">
             We Make It Easy for You
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10">
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10 animate-fade-in-up delay-700">
             Instead of hiring 5+ different specialists and spending months coordinating everything, get your complete business setup in just 7 days with our proven systems and experienced team.
           </p>
         </div>
@@ -80,7 +81,8 @@ const ProblemsSolutionsSection = () => {
           {solutions.map((solution, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-8 bg-calpir-green-50 dark:bg-calpir-green-950 rounded-2xl shadow-lg border border-calpir-green-200 dark:border-calpir-green-800 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
+              className="flex flex-col items-center text-center p-8 bg-calpir-green-50 dark:bg-calpir-green-950 rounded-2xl shadow-lg border border-calpir-green-200 dark:border-calpir-green-800 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 animate-slide-in-up"
+              style={{ animationDelay: `${0.8 + index * 0.15}s` }}
             >
               <p className="text-5xl font-extrabold text-primary dark:text-calpir-green-300 mb-2">{solution.label}</p>
               <p className="text-lg text-gray-700 dark:text-gray-200">{solution.detail}</p>
@@ -88,8 +90,8 @@ const ProblemsSolutionsSection = () => {
           ))}
         </div>
 
-        <div className="text-center">
-          <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+        <div className="text-center animate-fade-in-up delay-1200">
+          <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow">
             Start Your Startup Package Today
           </Button>
         </div>

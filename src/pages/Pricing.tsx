@@ -159,18 +159,18 @@ const Pricing = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow container py-16 md:py-24 animate-fade-in-up">
-        <section className="text-center mb-16">
+      <main className="flex-grow container py-16 md:py-24">
+        <section className="text-center mb-16 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
             Detailed Pricing & Packages
           </h1>
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed delay-200">
             Choose the package that best fits your business needs. All packages are one-time setup/migration fees; clients are responsible for any tool subscriptions. Prices are globally affordable.
           </p>
         </section>
 
         <section className="mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white animate-fade-in-up delay-300">
             Our Core Packages
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -181,7 +181,8 @@ const Pricing = () => {
                   pkg.highlight
                     ? "border-primary bg-calpir-green-50 dark:bg-calpir-green-950"
                     : "border-gray-200 bg-white dark:bg-gray-800"
-                } transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
+                } transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-zoom-in`}
+                style={{ animationDelay: `${0.4 + index * 0.15}s` }}
               >
                 {pkg.tag && (
                   <span
@@ -202,7 +203,7 @@ const Pricing = () => {
                 <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Inclusions:</h4>
                 <ul className="list-none space-y-3 text-left mb-8">
                   {pkg.inclusions.map((feature, fIndex) => (
-                    <li key={fIndex} className="flex items-start text-gray-700 dark:text-gray-300">
+                    <li key={fIndex} className="flex items-start text-gray-700 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.5 + index * 0.15 + fIndex * 0.05}s` }}>
                       <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                       <span>{feature}</span>
                     </li>
@@ -211,7 +212,7 @@ const Pricing = () => {
 
                 <Button
                   size="lg"
-                  className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${
+                  className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow ${
                     pkg.highlight
                       ? "bg-primary hover:bg-calpir-green-700 text-white hover:text-white"
                       : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white"
@@ -225,26 +226,26 @@ const Pricing = () => {
         </section>
 
         <section>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white animate-fade-in-up delay-1000">
             Enhance Your Package with Add-Ons
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {addOnsCategories.map((category, catIndex) => (
-              <div key={catIndex} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-transform duration-300 hover:shadow-2xl">
+              <div key={catIndex} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-transform duration-300 hover:shadow-2xl animate-slide-in-left" style={{ animationDelay: `${1.1 + catIndex * 0.15}s` }}>
                 <div className="flex items-center mb-6">
                   {category.icon && <category.icon className={`h-8 w-8 mr-3 ${category.iconColor}`} />}
                   <h3 className="text-2xl font-bold text-primary dark:text-calpir-green-400">{category.name}</h3>
                 </div>
                 <div className="space-y-6">
                   {category.items.map((item, itemIndex) => (
-                    <div key={itemIndex} className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0">
+                    <div key={itemIndex} className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${1.2 + catIndex * 0.15 + itemIndex * 0.05}s` }}>
                       <div className="text-left mb-2 sm:mb-0 sm:mr-4">
                         <p className="text-lg font-semibold text-gray-900 dark:text-white">{item.posts}</p>
                         <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
                       </div>
                       <div className="flex items-center space-x-4">
                         <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
-                        <Button variant="outline" className="text-primary border-primary hover:bg-calpir-green-50 dark:text-calpir-green-400 dark:border-calpir-green-400 dark:hover:bg-calpir-green-900 hover:text-primary dark:hover:text-calpir-green-400">
+                        <Button variant="outline" className="text-primary border-primary hover:bg-calpir-green-50 dark:text-calpir-green-400 dark:border-calpir-green-400 dark:hover:bg-calpir-green-900 hover:text-primary dark:hover:text-calpir-green-400 hover:animate-button-glow">
                           <PlusCircle className="h-4 w-4 mr-2" /> Add to Package
                         </Button>
                       </div>
@@ -254,14 +255,14 @@ const Pricing = () => {
               </div>
             ))}
           </div>
-          <div className="mt-16 text-center">
+          <div className="mt-16 text-center animate-fade-in-up delay-2000">
             <p className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">
               Custom Add-On Packages Available
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
               Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
             </p>
-            <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+            <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow">
               Request Custom Quote
             </Button>
           </div>

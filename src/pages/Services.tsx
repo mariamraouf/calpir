@@ -182,19 +182,19 @@ const Services = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow container py-16 md:py-24 animate-fade-in-up">
-        <section className="text-center mb-16">
+      <main className="flex-grow container py-16 md:py-24">
+        <section className="text-center mb-16 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
             Our Comprehensive Services
           </h1>
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed delay-200">
             Calpir offers a full suite of services designed to launch, optimize, and scale your business operations. From initial setup to ongoing support, we cover every aspect to ensure your success.
           </p>
         </section>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {servicesData.map((service) => (
-            <section key={service.id} id={service.id} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
+          {servicesData.map((service, index) => (
+            <section key={service.id} id={service.id} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 animate-slide-in-left" style={{ animationDelay: `${0.3 + index * 0.1}s` }}>
               <div className="flex items-center mb-6">
                 <service.icon className={`h-12 w-12 mr-4 flex-shrink-0 ${service.iconColor}`} />
                 <div>
@@ -203,8 +203,8 @@ const Services = () => {
                 </div>
               </div>
               <ul className="list-none space-y-3 text-left">
-                {service.details.map((detail, index) => (
-                  <li key={index} className="flex items-start text-gray-700 dark:text-gray-300">
+                {service.details.map((detail, detailIndex) => (
+                  <li key={detailIndex} className="flex items-start text-gray-700 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.1 + detailIndex * 0.05}s` }}>
                     <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                     <span>{detail}</span>
                   </li>

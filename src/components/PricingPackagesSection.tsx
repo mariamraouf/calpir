@@ -68,10 +68,10 @@ const PricingPackagesSection = () => {
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-gray-950" id="pricing">
       <div className="container text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up">
           Choose Your Launch Package
         </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12">
+        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in-up delay-200">
           Select the perfect package to launch your business with our proven systems and frameworks.
         </p>
 
@@ -83,7 +83,8 @@ const PricingPackagesSection = () => {
                 pkg.highlight
                   ? "border-primary bg-calpir-green-50 dark:bg-calpir-green-950"
                   : "border-gray-200 bg-white dark:bg-gray-800"
-              } transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
+              } transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-zoom-in`}
+              style={{ animationDelay: `${0.3 + index * 0.15}s` }}
             >
               {pkg.tag && (
                 <span
@@ -102,13 +103,13 @@ const PricingPackagesSection = () => {
 
               <ul className="list-none space-y-3 text-left mb-8">
                 {pkg.features.slice(0, 5).map((feature, fIndex) => ( // Show only first 5 features as a summary
-                  <li key={fIndex} className="flex items-start text-gray-700 dark:text-gray-300">
+                  <li key={fIndex} className="flex items-start text-gray-700 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.15 + fIndex * 0.05}s` }}>
                     <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                     <span>{feature}</span>
                   </li>
                 ))}
                 {pkg.features.length > 5 && (
-                  <li className="flex items-start text-gray-700 dark:text-gray-300">
+                  <li className="flex items-start text-gray-700 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.15 + 5 * 0.05}s` }}>
                     <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                     <span>...and more!</span>
                   </li>
@@ -118,7 +119,7 @@ const PricingPackagesSection = () => {
               <Button
                 asChild
                 size="lg"
-                className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${
+                className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:animate-button-glow ${
                   pkg.highlight
                     ? "bg-primary hover:bg-calpir-green-700 text-white hover:text-white"
                     : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white"

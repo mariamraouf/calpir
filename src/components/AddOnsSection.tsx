@@ -94,30 +94,30 @@ const AddOnsSection = () => {
   return (
     <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up">
           Enhance Your Package with Add-Ons
         </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12">
+        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in-up delay-200">
           Scale your business operations with our professional add-on services. Each service is designed to grow with your business needs.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {addOnsCategories.map((category, catIndex) => (
-            <div key={catIndex} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-transform duration-300 hover:shadow-2xl">
+            <div key={catIndex} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-transform duration-300 hover:shadow-2xl animate-slide-in-left" style={{ animationDelay: `${0.3 + catIndex * 0.15}s` }}>
               <div className="flex items-center mb-6">
                 {category.icon && <category.icon className={`h-8 w-8 mr-3 ${category.iconColor}`} />}
                 <h3 className="text-2xl font-bold text-primary dark:text-calpir-green-400">{category.name}</h3>
               </div>
               <div className="space-y-6">
                 {category.items.map((item, itemIndex) => (
-                  <div key={itemIndex} className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0">
+                  <div key={itemIndex} className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${0.4 + catIndex * 0.15 + itemIndex * 0.05}s` }}>
                     <div className="text-left mb-2 sm:mb-0 sm:mr-4">
                       <p className="text-lg font-semibold text-gray-900 dark:text-white">{item.posts}</p>
                       <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
                     </div>
                     <div className="flex items-center space-x-4">
                       <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
-                      <Button variant="outline" className="text-primary border-primary hover:bg-calpir-green-50 dark:text-calpir-green-400 dark:border-calpir-green-400 dark:hover:bg-calpir-green-900 hover:text-primary dark:hover:text-calpir-green-400">
+                      <Button variant="outline" className="text-primary border-primary hover:bg-calpir-green-50 dark:text-calpir-green-400 dark:border-calpir-green-400 dark:hover:bg-calpir-green-900 hover:text-primary dark:hover:text-calpir-green-400 hover:animate-button-glow">
                         <PlusCircle className="h-4 w-4 mr-2" /> Add to Package
                       </Button>
                     </div>
@@ -128,14 +128,14 @@ const AddOnsSection = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-center animate-fade-in-up delay-600">
           <p className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">
             Custom Add-On Packages Available
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
             Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
           </p>
-          <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+          <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow">
             Request Custom Quote
           </Button>
         </div>
