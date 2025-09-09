@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom"; // Import NavLink
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -41,19 +41,23 @@ const Navbar = () => {
 
         <nav className="hidden md:flex items-center space-x-6">
           {mainNavLinks.map((link) => (
-            <Link
+            <NavLink
               key={link.name}
               to={link.href}
-              className="text-sm font-medium transition-colors hover:text-primary hover:scale-105 transform duration-300"
+              className={({ isActive }) =>
+                `relative text-sm font-medium transition-colors duration-300 hover:text-primary hover:scale-105 transform ${
+                  isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
+                } after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 hover:after:w-full after:transition-all after:duration-300`
+              }
             >
               {link.name}
-            </Link>
+            </NavLink>
           ))}
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center text-sm font-medium transition-colors hover:text-primary focus:outline-none hover:scale-105 transform duration-300">
+            <DropdownMenuTrigger className="flex items-center text-sm font-medium transition-colors hover:text-primary focus:outline-none hover:scale-105 transform duration-300 relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 hover:after:w-full after:transition-all after:duration-300">
               Services <ChevronDown className="ml-1 h-4 w-4" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
+            <DropdownMenuContent className="animate-slide-down-fade"> {/* Added animation */}
               {serviceDropdownLinks.map((link) => (
                 <DropdownMenuItem key={link.name} asChild>
                   <a href={link.href} className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
@@ -75,22 +79,26 @@ const Navbar = () => {
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right">
+          <SheetContent side="right" className="animate-slide-in-right"> {/* Added animation */}
             <div className="flex flex-col space-y-4 pt-6">
               {mainNavLinks.map((link) => (
-                <Link
+                <NavLink
                   key={link.name}
                   to={link.href}
-                  className="text-lg font-medium hover:text-primary transition-colors duration-200"
+                  className={({ isActive }) =>
+                    `text-lg font-medium hover:text-primary transition-colors duration-200 ${
+                      isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
+                    }`
+                  }
                 >
                   {link.name}
-                </Link>
+                </NavLink>
               ))}
               <DropdownMenu>
                 <DropdownMenuTrigger className="flex items-center text-lg font-medium hover:text-primary focus:outline-none w-full justify-between transition-colors duration-200">
                   Services <ChevronDown className="ml-1 h-5 w-5" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-full">
+                <DropdownMenuContent className="w-full animate-slide-down-fade"> {/* Added animation */}
                   {serviceDropdownLinks.map((link) => (
                     <DropdownMenuItem key={link.name} asChild>
                       <a href={link.href} className="block px-4 py-2 text-base text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
