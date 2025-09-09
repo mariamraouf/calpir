@@ -46,10 +46,10 @@ const IntegrationsSection = () => {
   return (
     <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up">
           300+ Platform Integrations
         </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
+        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12 animate-fade-in-up delay-200">
           We integrate your business with the tools you need to succeed. From project management to payment processing, we've got you covered.
         </p>
 
@@ -58,7 +58,7 @@ const IntegrationsSection = () => {
             {[...integrations, ...integrations, ...integrations].map((integration, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-32 md:w-40 p-4 flex flex-col items-center justify-center text-center mx-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
+                className="flex-shrink-0 w-32 md:w-40 p-4 flex flex-col items-center justify-center text-center mx-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-110"
               >
                 <img src={integration.imageSrc} alt={integration.name} className="h-10 w-10 mb-2 object-contain" />
                 <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{integration.name}</span>
@@ -67,7 +67,7 @@ const IntegrationsSection = () => {
           </div>
         </div>
 
-        <p className="mt-8 text-md text-gray-500 dark:text-gray-400">
+        <p className="mt-8 text-md text-gray-500 dark:text-gray-400 animate-fade-in-up delay-400">
           ✨ New integrations added weekly
         </p>
       </div>

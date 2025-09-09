@@ -42,7 +42,7 @@ const LaunchMethodSection = () => {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="relative flex flex-col items-center text-center p-8 bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 animate-fade-in-up"
+              className="relative flex flex-col items-center text-center p-8 bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-110 animate-fade-in-up"
               style={{ animationDelay: `${0.3 + index * 0.2}s` }}
             >
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-white rounded-full h-12 w-12 flex items-center justify-center text-xl font-bold shadow-lg animate-zoom-in" style={{ animationDelay: `${0.4 + index * 0.2}s` }}>

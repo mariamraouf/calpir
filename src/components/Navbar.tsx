@@ -34,7 +34,7 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2 font-bold text-lg transition-transform duration-300 hover:scale-105">
+        <Link to="/" className="flex items-center space-x-2 font-bold text-lg transition-transform duration-300 hover:scale-110">
           <img src="/calpir-logo.png" alt="Calpir Logo" className="h-8 w-8" />
           <span className="text-foreground">Calpir</span>
         </Link>
@@ -45,7 +45,7 @@ const Navbar = () => {
               key={link.name}
               to={link.href}
               className={({ isActive }) =>
-                `relative text-sm font-medium transition-colors duration-300 hover:text-primary hover:scale-105 transform ${
+                `relative text-sm font-medium transition-colors duration-300 hover:text-primary hover:scale-110 transform ${
                   isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
                 } after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 hover:after:w-full after:transition-all after:duration-300`
               }
@@ -54,7 +54,7 @@ const Navbar = () => {
             </NavLink>
           ))}
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center text-sm font-medium transition-colors hover:text-primary focus:outline-none hover:scale-105 transform duration-300 relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 hover:after:w-full after:transition-all after:duration-300">
+            <DropdownMenuTrigger className="flex items-center text-sm font-medium transition-colors hover:text-primary focus:outline-none hover:scale-110 transform duration-300 relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 hover:after:w-full after:transition-all after:duration-300">
               Services <ChevronDown className="ml-1 h-4 w-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="animate-slide-down-fade"> {/* Added animation */}
@@ -67,14 +67,14 @@ const Navbar = () => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          <Button asChild className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow">
+          <Button asChild className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110">
             <Link to="/contact">Get Started</Link>
           </Button>
         </nav>
 
         <Sheet>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="outline" size="icon" className="transition-transform duration-300 hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-700">
+            <Button variant="outline" size="icon" className="transition-transform duration-300 hover:scale-110 hover:bg-gray-100 dark:hover:bg-gray-700">
               <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
@@ -88,14 +88,14 @@ const Navbar = () => {
                   className={({ isActive }) =>
                     `text-lg font-medium hover:text-primary transition-colors duration-200 ${
                       isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
-                    }`
+                    } transform hover:scale-105`
                   }
                 >
                   {link.name}
                 </NavLink>
               ))}
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center text-lg font-medium hover:text-primary focus:outline-none w-full justify-between transition-colors duration-200">
+                <DropdownMenuTrigger className="flex items-center text-lg font-medium hover:text-primary focus:outline-none w-full justify-between transition-colors duration-200 transform hover:scale-105">
                   Services <ChevronDown className="ml-1 h-5 w-5" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-full animate-slide-down-fade"> {/* Added animation */}
@@ -108,7 +108,7 @@ const Navbar = () => {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
-              <Button asChild className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow">
+              <Button asChild className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110">
                 <Link to="/contact">Get Started</Link>
               </Button>
             </div>

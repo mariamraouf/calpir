@@ -98,7 +98,7 @@ const Contact = () => {
                   className="mt-1 focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-200"
                 />
               </div>
-              <Button type="submit" className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:animate-button-glow">
+              <Button type="submit" className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:animate-button-glow transform hover:scale-110">
                 Send Message
               </Button>
             </form>

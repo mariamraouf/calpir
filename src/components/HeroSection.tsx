@@ -32,10 +32,10 @@ const HeroSection = () => {
           Complete business operations setup: Website, branding, systems, and automation. Transform your idea into a thriving business with proven frameworks.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-400">
-          <Button size="lg" className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:animate-button-glow">
+          <Button size="lg" className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow">
             Start My Business
           </Button>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:animate-button-glow">
+          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow">
             See How It Works
           </Button>
         </div>

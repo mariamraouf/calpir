@@ -83,7 +83,7 @@ const PricingPackagesSection = () => {
                 pkg.highlight
                   ? "border-primary bg-calpir-green-50 dark:bg-calpir-green-950"
                   : "border-gray-200 bg-white dark:bg-gray-800"
-              } transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-zoom-in`}
+              } transition-all duration-300 hover:scale-110 hover:shadow-2xl animate-zoom-in`}
               style={{ animationDelay: `${0.3 + index * 0.15}s` }}
             >
               {pkg.tag && (
@@ -119,7 +119,7 @@ const PricingPackagesSection = () => {
               <Button
                 asChild
                 size="lg"
-                className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:animate-button-glow ${
+                className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow ${
                   pkg.highlight
                     ? "bg-primary hover:bg-calpir-green-700 text-white hover:text-white"
                     : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white"

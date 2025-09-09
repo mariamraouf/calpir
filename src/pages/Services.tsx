@@ -194,7 +194,7 @@ const Services = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {servicesData.map((service, index) => (
-            <section key={service.id} id={service.id} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 animate-slide-in-left" style={{ animationDelay: `${0.3 + index * 0.1}s` }}>
+            <section key={service.id} id={service.id} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-110 animate-slide-in-left" style={{ animationDelay: `${0.3 + index * 0.1}s` }}>
               <div className="flex items-center mb-6">
                 <service.icon className={`h-12 w-12 mr-4 flex-shrink-0 ${service.iconColor}`} />
                 <div>

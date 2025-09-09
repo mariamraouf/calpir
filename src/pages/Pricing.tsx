@@ -181,7 +181,7 @@ const Pricing = () => {
                   pkg.highlight
                     ? "border-primary bg-calpir-green-50 dark:bg-calpir-green-950"
                     : "border-gray-200 bg-white dark:bg-gray-800"
-                } transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-zoom-in`}
+                } transition-all duration-300 hover:scale-110 hover:shadow-2xl animate-zoom-in`}
                 style={{ animationDelay: `${0.4 + index * 0.15}s` }}
               >
                 {pkg.tag && (
@@ -212,7 +212,7 @@ const Pricing = () => {
 
                 <Button
                   size="lg"
-                  className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow ${
+                  className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow ${
                     pkg.highlight
                       ? "bg-primary hover:bg-calpir-green-700 text-white hover:text-white"
                       : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white"
@@ -231,7 +231,7 @@ const Pricing = () => {
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {addOnsCategories.map((category, catIndex) => (
-              <div key={catIndex} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-transform duration-300 hover:shadow-2xl animate-slide-in-left" style={{ animationDelay: `${1.1 + catIndex * 0.15}s` }}>
+              <div key={catIndex} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-110 transition-transform duration-300 hover:shadow-2xl animate-slide-in-left" style={{ animationDelay: `${1.1 + catIndex * 0.15}s` }}>
                 <div className="flex items-center mb-6">
                   {category.icon && <category.icon className={`h-8 w-8 mr-3 ${category.iconColor}`} />}
                   <h3 className="text-2xl font-bold text-primary dark:text-calpir-green-400">{category.name}</h3>
@@ -245,7 +245,7 @@ const Pricing = () => {
                       </div>
                       <div className="flex items-center space-x-4">
                         <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
-                        <Button variant="outline" className="text-primary border-primary hover:bg-calpir-green-50 dark:text-calpir-green-400 dark:border-calpir-green-400 dark:hover:bg-calpir-green-900 hover:text-primary dark:hover:text-calpir-green-400 hover:animate-button-glow">
+                        <Button variant="outline" className="text-primary border-primary hover:bg-calpir-green-50 dark:text-calpir-green-400 dark:border-calpir-green-400 dark:hover:bg-calpir-green-900 hover:text-primary dark:hover:text-calpir-green-400 hover:animate-button-glow transform hover:scale-110">
                           <PlusCircle className="h-4 w-4 mr-2" /> Add to Package
                         </Button>
                       </div>
@@ -262,7 +262,7 @@ const Pricing = () => {
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
               Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
             </p>
-            <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow">
+            <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow">
               Request Custom Quote
             </Button>
           </div>

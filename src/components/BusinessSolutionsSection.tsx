@@ -69,7 +69,7 @@ const BusinessSolutionsSection = () => {
           {solutions.map((solution, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 animate-zoom-in"
+              className="flex flex-col items-center text-center p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-110 animate-zoom-in"
               style={{ animationDelay: `${0.3 + index * 0.1}s` }}
             >
               <solution.icon className={`h-12 w-12 mb-4 ${solution.iconColor}`} />

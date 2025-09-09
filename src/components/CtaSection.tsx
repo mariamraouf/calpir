@@ -15,7 +15,7 @@ const CtaSection = () => {
         <p className="text-lg md:text-xl max-w-3xl mx-auto mb-10 opacity-90 animate-fade-in-up delay-200">
           Join hundreds of successful entrepreneurs who chose Calpir Solutions to transform their ideas into thriving businesses in just 7 days.
         </p>
-        <Button size="lg" className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-10 py-4 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:animate-button-glow">
+        <Button size="lg" className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-10 py-4 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow">
           Start Your 7-Day Business Launch
         </Button>
       </div>
