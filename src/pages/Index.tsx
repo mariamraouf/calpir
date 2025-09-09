@@ -17,7 +17,7 @@ import { Link } from "react-router-dom"; // Import Link
 const Index = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpenBuildMyBusinessForm: (open: boolean) => void; setOpenCustomQuoteForm: (open: boolean) => void }) => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
+      <Navbar setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />
       <main className="flex-grow">
         <HeroSection setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />
         <div className="animate-fade-in-up delay-200">
@@ -43,7 +43,7 @@ const Index = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpen
           <CtaSection setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} />
         </div>
       </main>
-      <Footer />
+      <Footer setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />
       <MadeWithDyad />
     </div>
   );

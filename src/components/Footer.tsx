@@ -3,8 +3,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Mail, Phone, MessageSquare } from "lucide-react";
+import { Button } from "@/components/ui/button"; // Import Button
 
-const Footer = () => {
+const Footer = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpenBuildMyBusinessForm: (open: boolean) => void; setOpenCustomQuoteForm: (open: boolean) => void }) => {
   return (
     <footer className="bg-foreground dark:bg-gray-950 text-gray-300 py-16 md:py-20">
       <div className="container grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -52,9 +53,24 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Placeholder for future content or another column */}
-        <div className="hidden md:block animate-fade-in-up delay-400">
-          {/* Can add another section here if needed */}
+        {/* Quick Actions / Forms */}
+        <div className="animate-fade-in-up delay-400">
+          <h4 className="text-lg font-semibold text-white mb-4">Quick Actions</h4>
+          <div className="space-y-4">
+            <Button
+              className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-md py-2 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
+              onClick={() => setOpenBuildMyBusinessForm(true)}
+            >
+              Build My Business
+            </Button>
+            <Button
+              variant="outline"
+              className="w-full text-primary border-primary hover:bg-primary hover:text-white text-md py-2 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105"
+              onClick={() => setOpenCustomQuoteForm(true)}
+            >
+              Get a Free Consultation
+            </Button>
+          </div>
         </div>
       </div>
 

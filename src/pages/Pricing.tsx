@@ -172,10 +172,10 @@ const addOnsCategories = [
   },
 ];
 
-const Pricing = ({ setOpenBuildMyBusinessForm }: { setOpenBuildMyBusinessForm: (open: boolean) => void }) => {
+const Pricing = ({ setOpenBuildMyBusinessForm, setOpenCustomQuoteForm }: { setOpenBuildMyBusinessForm: (open: boolean) => void; setOpenCustomQuoteForm: (open: boolean) => void }) => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
+      <Navbar setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />
       <main className="flex-grow container py-16 md:py-24">
         <section className="text-center mb-16 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
@@ -289,7 +289,7 @@ const Pricing = ({ setOpenBuildMyBusinessForm }: { setOpenBuildMyBusinessForm: (
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />
       <MadeWithDyad />
     </div>
   );

@@ -28,10 +28,10 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services setOpenCustomQuoteForm={setOpenCustomQuoteForm} />} />
-            <Route path="/pricing" element={<Pricing setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />} />
+            <Route path="/services" element={<Services setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />} />
+            <Route path="/pricing" element={<Pricing setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />} />
+            <Route path="/contact" element={<Contact setOpenBuildMyBusinessForm={setOpenBuildMyBusinessForm} setOpenCustomQuoteForm={setOpenCustomQuoteForm} />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
