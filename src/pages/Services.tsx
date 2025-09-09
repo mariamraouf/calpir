@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button"; // Import Button component
+import { Link } from "react-router-dom"; // Import Link for navigation
 
 const servicesData = [
   {
@@ -202,7 +204,7 @@ const Services = () => {
                   <p className="text-md text-gray-600 dark:text-gray-400">{service.description}</p>
                 </div>
               </div>
-              <ul className="list-none space-y-3 text-left">
+              <ul className="list-none space-y-3 text-left mb-8">
                 {service.details.map((detail, detailIndex) => (
                   <li key={detailIndex} className="flex items-start text-gray-700 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.1 + detailIndex * 0.05}s` }}>
                     <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
@@ -210,6 +212,14 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
+              <div className="text-center mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
+                <Button asChild size="lg" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow">
+                  <Link to="/contact">Get a Free Consultation</Link>
+                </Button>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
+                  Consult with our experts and get to know the best platforms suitable for your business.
+                </p>
+              </div>
             </section>
           ))}
         </div>
