@@ -5,18 +5,6 @@ import { FileText, Layout, Palette, TrendingUp, CheckCircle } from "lucide-react
 
 const solutions = [
   {
-    icon: FileText, // Changed to FileText as per screenshot
-    title: "Business Operations Setup", // Changed title as per screenshot
-    description: "Complete business infrastructure, systems, and operational frameworks", // Updated description
-    features: [ // Updated features as per screenshot
-      "Business Registration",
-      "Legal Documentation",
-      "Financial Systems",
-      "Compliance Setup",
-    ],
-    iconColor: "text-calpir-green-700", // Green as per screenshot
-  },
-  {
     icon: Layout,
     title: "Website Development",
     description: "Professional websites with modern design and functionality",
