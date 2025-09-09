@@ -36,7 +36,7 @@ const HeroSection = () => {
             Start My Business
           </Button>
           <Button size="lg" className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow">
-            See How It Works
+            Get a Free Consultation
           </Button>
         </div>
       </div>
