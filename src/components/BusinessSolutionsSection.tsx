@@ -1,9 +1,21 @@
 "use client";
 
 import React from "react";
-import { FileText, Layout, Palette, TrendingUp, CheckCircle } from "lucide-react"; // Changed Globe to FileText for Business Operations Setup icon
+import { FileText, Layout, Palette, TrendingUp, CheckCircle, Briefcase } from "lucide-react"; // Added Briefcase icon
 
 const solutions = [
+  {
+    icon: Briefcase, // Using Briefcase icon for Project Management
+    title: "Project Management",
+    description: "Efficiently manage projects and tasks with robust systems.",
+    features: [
+      "Task Tracking",
+      "Workflow Automation",
+      "Team Collaboration",
+      "Reporting & Analytics",
+    ],
+    iconColor: "text-calpir-green-700", // Using primary green for this new section
+  },
   {
     icon: Layout,
     title: "Website Development",
