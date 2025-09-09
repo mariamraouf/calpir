@@ -3,6 +3,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { PlusCircle, BarChart2, Users, Headphones } from "lucide-react"; // Added icons for Add-ons
+import { Link } from "react-router-dom"; // Import Link for navigation
 
 const addOnsCategories = [
   {
@@ -117,7 +118,6 @@ const AddOnsSection = () => {
                     </div>
                     <div className="flex items-center space-x-4">
                       <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
-                      {/* Removed individual "Build My Package" button */}
                     </div>
                   </div>
                 ))}
@@ -126,7 +126,22 @@ const AddOnsSection = () => {
           ))}
         </div>
 
+        {/* Moved "Build My Package" button here */}
         <div className="mt-16 text-center p-6 rounded-2xl shadow-xl animate-fade-in-up delay-600
+                    bg-gradient-to-br from-calpir-green-50 to-palette-blue-50 dark:from-calpir-green-950 dark:to-palette-blue-950 max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
+            Ready to Customize Your Business Solution?
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10">
+            Combine our core packages with powerful add-ons to create the perfect launch plan for your business.
+          </p>
+          <Button asChild size="lg" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow">
+            <Link to="/contact">Build My Package</Link>
+          </Button>
+        </div>
+
+        {/* Original "Custom Add-On Packages Available" section */}
+        <div className="mt-16 text-center p-6 rounded-2xl shadow-xl animate-fade-in-up delay-800
                     bg-gradient-to-br from-calpir-green-50 to-palette-blue-50 dark:from-calpir-green-950 dark:to-palette-blue-950 max-w-4xl mx-auto">
           <h3 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
             Custom Add-On Packages Available
