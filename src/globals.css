@@ -4,17 +4,17 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 100%; /* White */
+    --foreground: 218 32% 15%; /* #182234 */
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 218 32% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 218 32% 15%;
 
-    /* New Primary Blue Palette (HSL for a professional blue) */
-    --primary: 210 90% 40%; /* A vibrant, professional blue */
+    /* Main Primary Green Palette (#099268) */
+    --primary: 165 86% 30%; /* #099268 */
     --primary-foreground: 0 0% 100%; /* White for contrast */
 
     --secondary: 210 20% 90%; /* Light gray-blue */
@@ -23,7 +23,7 @@
     --muted: 210 10% 95%; /* Very light gray */
     --muted-foreground: 210 10% 40%; /* Medium gray */
 
-    /* New Accent Orange Palette */
+    /* Accent colors for diverse elements */
     --accent: 30 90% 50%; /* A vibrant orange */
     --accent-foreground: 0 0% 100%; /* White for contrast */
 
@@ -32,30 +32,77 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 210 90% 40%; /* Use primary blue for ring */
+    --ring: 165 86% 30%; /* Use primary green for ring */
 
     --radius: 0.5rem;
 
-    /* Additional shades for varied icons/elements */
-    --palette-blue-100: 210 90% 95%;
-    --palette-blue-200: 210 90% 85%;
-    --palette-blue-300: 210 90% 75%;
-    --palette-blue-400: 210 90% 65%;
-    --palette-blue-500: 210 90% 55%;
-    --palette-blue-600: 210 90% 45%;
-    --palette-blue-700: 210 90% 35%;
-    --palette-blue-800: 210 90% 25%;
-    --palette-blue-900: 210 90% 15%;
+    /* Calpir Green Shades (based on #099268) */
+    --calpir-green-50: 165 86% 95%;
+    --calpir-green-100: 165 86% 90%;
+    --calpir-green-200: 165 86% 80%;
+    --calpir-green-300: 165 86% 70%;
+    --calpir-green-400: 165 86% 60%;
+    --calpir-green-500: 165 86% 50%;
+    --calpir-green-600: 165 86% 40%;
+    --calpir-green-700: 165 86% 30%; /* This is #099268 */
+    --calpir-green-800: 165 86% 20%;
+    --calpir-green-900: 165 86% 10%;
 
-    --palette-orange-100: 30 90% 95%;
-    --palette-orange-200: 30 90% 85%;
-    --palette-orange-300: 30 90% 75%;
-    --palette-orange-400: 30 90% 65%;
-    --palette-orange-500: 30 90% 55%;
-    --palette-orange-600: 30 90% 45%;
-    --palette-orange-700: 30 90% 35%;
-    --palette-orange-800: 30 90% 25%;
-    --palette-orange-900: 30 90% 15%;
+    /* Diverse Palette Colors from screenshots */
+    --palette-blue-50: 210 90% 95%;
+    --palette-blue-100: 210 90% 90%;
+    --palette-blue-200: 210 90% 80%;
+    --palette-blue-300: 210 90% 70%;
+    --palette-blue-400: 210 90% 60%;
+    --palette-blue-500: 210 90% 50%; /* Used for Website Development icon */
+    --palette-blue-600: 210 90% 40%;
+    --palette-blue-700: 210 90% 30%;
+    --palette-blue-800: 210 90% 20%;
+    --palette-blue-900: 210 90% 10%;
+
+    --palette-purple-50: 270 70% 95%;
+    --palette-purple-100: 270 70% 90%;
+    --palette-purple-200: 270 70% 80%;
+    --palette-purple-300: 270 70% 70%;
+    --palette-purple-400: 270 70% 60%; /* Used for Brand Identity, Technical Complexity, Ongoing Support */
+    --palette-purple-500: 270 70% 50%;
+    --palette-purple-600: 270 70% 40%;
+    --palette-purple-700: 270 70% 30%;
+    --palette-purple-800: 270 70% 20%;
+    --palette-purple-900: 270 70% 10%;
+
+    --palette-orange-50: 30 90% 95%;
+    --palette-orange-100: 30 90% 90%;
+    --palette-orange-200: 30 90% 80%;
+    --palette-orange-300: 30 90% 70%;
+    --palette-orange-400: 30 90% 60%;
+    --palette-orange-500: 30 90% 50%; /* Used for Marketing Systems, Months of Setup Time */
+    --palette-orange-600: 30 90% 40%;
+    --palette-orange-700: 30 90% 30%;
+    --palette-orange-800: 30 90% 20%;
+    --palette-orange-900: 30 90% 10%;
+
+    --palette-red-50: 0 80% 95%;
+    --palette-red-100: 0 80% 90%;
+    --palette-red-200: 0 80% 80%;
+    --palette-red-300: 0 80% 70%;
+    --palette-red-400: 0 80% 60%; /* Used for Expensive Individual Hires */
+    --palette-red-500: 0 80% 50%;
+    --palette-red-600: 0 80% 40%;
+    --palette-red-700: 0 80% 30%;
+    --palette-red-800: 0 80% 20%;
+    --palette-red-900: 0 80% 10%;
+
+    --palette-yellow-50: 45 90% 95%;
+    --palette-yellow-100: 45 90% 90%;
+    --palette-yellow-200: 45 90% 80%;
+    --palette-yellow-300: 45 90% 70%;
+    --palette-yellow-400: 45 90% 60%; /* Used for Managing Multiple People */
+    --palette-yellow-500: 45 90% 50%;
+    --palette-yellow-600: 45 90% 40%;
+    --palette-yellow-700: 45 90% 30%;
+    --palette-yellow-800: 45 90% 20%;
+    --palette-yellow-900: 45 90% 10%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -68,18 +115,18 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 218 32% 15%; /* #182234 */
+    --foreground: 0 0% 100%; /* White */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 218 32% 15%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 218 32% 15%;
+    --popover-foreground: 0 0% 100%;
 
-    /* New Primary Blue Palette for Dark Mode */
-    --primary: 210 90% 60%; /* Lighter blue for dark mode */
-    --primary-foreground: 222.2 47.4% 11.2%; /* Dark text for contrast */
+    /* Main Primary Green Palette for Dark Mode (#099268) */
+    --primary: 165 86% 30%; /* #099268 */
+    --primary-foreground: 0 0% 100%; /* White for contrast */
 
     --secondary: 217.2 32.6% 17.5%; /* Darker gray-blue */
     --secondary-foreground: 210 40% 98%; /* Light text */
@@ -87,7 +134,7 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    /* New Accent Orange Palette for Dark Mode */
+    /* Accent colors for diverse elements in Dark Mode */
     --accent: 30 90% 60%; /* Lighter orange for dark mode */
     --accent-foreground: 222.2 47.4% 11.2%; /* Dark text for contrast */
 
@@ -96,28 +143,63 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 210 90% 60%; /* Use primary blue for ring */
+    --ring: 165 86% 30%; /* Use primary green for ring */
 
-    /* Additional shades for varied icons/elements in dark mode */
-    --palette-blue-100: 210 90% 15%;
-    --palette-blue-200: 210 90% 25%;
-    --palette-blue-300: 210 90% 35%;
-    --palette-blue-400: 210 90% 45%;
-    --palette-blue-500: 210 90% 55%;
-    --palette-blue-600: 210 90% 65%;
-    --palette-blue-700: 210 90% 75%;
-    --palette-blue-800: 210 90% 85%;
-    --palette-blue-900: 210 90% 95%;
+    /* Diverse Palette Colors from screenshots for Dark Mode */
+    --palette-blue-50: 210 90% 15%;
+    --palette-blue-100: 210 90% 25%;
+    --palette-blue-200: 210 90% 35%;
+    --palette-blue-300: 210 90% 45%;
+    --palette-blue-400: 210 90% 55%;
+    --palette-blue-500: 210 90% 65%; /* Adjusted for dark mode visibility */
+    --palette-blue-600: 210 90% 75%;
+    --palette-blue-700: 210 90% 85%;
+    --palette-blue-800: 210 90% 95%;
+    --palette-blue-900: 210 90% 98%;
 
-    --palette-orange-100: 30 90% 15%;
-    --palette-orange-200: 30 90% 25%;
-    --palette-orange-300: 30 90% 35%;
-    --palette-orange-400: 30 90% 45%;
-    --palette-orange-500: 30 90% 55%;
-    --palette-orange-600: 30 90% 65%;
-    --palette-orange-700: 30 90% 75%;
-    --palette-orange-800: 30 90% 85%;
-    --palette-orange-900: 30 90% 95%;
+    --palette-purple-50: 270 70% 15%;
+    --palette-purple-100: 270 70% 25%;
+    --palette-purple-200: 270 70% 35%;
+    --palette-purple-300: 270 70% 45%;
+    --palette-purple-400: 270 70% 55%; /* Adjusted for dark mode visibility */
+    --palette-purple-500: 270 70% 65%;
+    --palette-purple-600: 270 70% 75%;
+    --palette-purple-700: 270 70% 85%;
+    --palette-purple-800: 270 70% 95%;
+    --palette-purple-900: 270 70% 98%;
+
+    --palette-orange-50: 30 90% 15%;
+    --palette-orange-100: 30 90% 25%;
+    --palette-orange-200: 30 90% 35%;
+    --palette-orange-300: 30 90% 45%;
+    --palette-orange-400: 30 90% 55%;
+    --palette-orange-500: 30 90% 65%; /* Adjusted for dark mode visibility */
+    --palette-orange-600: 30 90% 75%;
+    --palette-orange-700: 30 90% 85%;
+    --palette-orange-800: 30 90% 95%;
+    --palette-orange-900: 30 90% 98%;
+
+    --palette-red-50: 0 80% 15%;
+    --palette-red-100: 0 80% 25%;
+    --palette-red-200: 0 80% 35%;
+    --palette-red-300: 0 80% 45%;
+    --palette-red-400: 0 80% 55%; /* Adjusted for dark mode visibility */
+    --palette-red-500: 0 80% 65%;
+    --palette-red-600: 0 80% 75%;
+    --palette-red-700: 0 80% 85%;
+    --palette-red-800: 0 80% 95%;
+    --palette-red-900: 0 80% 98%;
+
+    --palette-yellow-50: 45 90% 15%;
+    --palette-yellow-100: 45 90% 25%;
+    --palette-yellow-200: 45 90% 35%;
+    --palette-yellow-300: 45 90% 45%;
+    --palette-yellow-400: 45 90% 55%; /* Adjusted for dark mode visibility */
+    --palette-yellow-500: 45 90% 65%;
+    --palette-yellow-600: 45 90% 75%;
+    --palette-yellow-700: 45 90% 85%;
+    --palette-yellow-800: 45 90% 95%;
+    --palette-yellow-900: 45 90% 98%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;

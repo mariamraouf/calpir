@@ -56,16 +56,16 @@ const About = () => {
             Our Delivery Promise
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-            <div className="p-6 bg-palette-blue-50 dark:bg-palette-blue-950 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-semibold text-primary dark:text-palette-blue-300 mb-2">Starter Package</h3>
+            <div className="p-6 bg-calpir-green-50 dark:bg-calpir-green-950 rounded-2xl shadow-lg">
+              <h3 className="text-2xl font-semibold text-primary dark:text-calpir-green-300 mb-2">Starter Package</h3>
               <p className="text-xl font-bold text-gray-800 dark:text-gray-200">7 Days</p>
             </div>
-            <div className="p-6 bg-palette-blue-50 dark:bg-palette-blue-950 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-semibold text-primary dark:text-palette-blue-300 mb-2">Growth Package</h3>
+            <div className="p-6 bg-calpir-green-50 dark:bg-calpir-green-950 rounded-2xl shadow-lg">
+              <h3 className="text-2xl font-semibold text-primary dark:text-calpir-green-300 mb-2">Growth Package</h3>
               <p className="text-xl font-bold text-gray-800 dark:text-gray-200">14 Days</p>
             </div>
-            <div className="p-6 bg-palette-blue-50 dark:bg-palette-blue-950 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-semibold text-primary dark:text-palette-blue-300 mb-2">Ultimate Package</h3>
+            <div className="p-6 bg-calpir-green-50 dark:bg-calpir-green-950 rounded-2xl shadow-lg">
+              <h3 className="text-2xl font-semibold text-primary dark:text-calpir-green-300 mb-2">Ultimate Package</h3>
               <p className="text-xl font-bold text-gray-800 dark:text-gray-200">28 Days</p>
             </div>
           </div>

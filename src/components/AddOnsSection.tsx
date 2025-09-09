@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { PlusCircle } from "lucide-react";
+import { PlusCircle, BarChart2, Users, Headphones } from "lucide-react"; // Added icons for Add-ons
 
 const addOnsCategories = [
   {
@@ -23,6 +23,8 @@ const addOnsCategories = [
   },
   {
     name: "Analytics Upgrades",
+    icon: BarChart2, // Icon for Analytics Upgrades
+    iconColor: "text-palette-blue-500", // Blue as per screenshot
     items: [
       { posts: "Monthly Insights", price: "$199", description: "Monthly performance reports" },
       { posts: "Monthly Recommendations", price: "$249", description: "Detailed insights + recommendations" },
@@ -31,6 +33,8 @@ const addOnsCategories = [
   },
   {
     name: "Ongoing Support",
+    icon: Headphones, // Icon for Ongoing Support
+    iconColor: "text-palette-purple-400", // Purple as per screenshot
     items: [
       { posts: "Monthly Emails", price: "$199", description: "Monthly strategy emails + support" },
       { posts: "Weekly Calls", price: "$499", description: "Weekly calls + priority support" },
@@ -38,6 +42,8 @@ const addOnsCategories = [
   },
   {
     name: "Staff Recruitment (Global)",
+    icon: Users, // Icon for Staff Recruitment
+    iconColor: "text-calpir-green-700", // Green as per screenshot
     items: [
       { posts: "1 Role", price: "$450", description: "Assistance with recruiting for one global role" },
       { posts: "2 Roles", price: "$700", description: "Assistance with recruiting for two global roles" },
@@ -98,7 +104,10 @@ const AddOnsSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {addOnsCategories.map((category, catIndex) => (
             <div key={catIndex} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-transform duration-300 hover:shadow-2xl">
-              <h3 className="text-2xl font-bold mb-6 text-primary dark:text-palette-blue-400">{category.name}</h3>
+              <div className="flex items-center mb-6">
+                {category.icon && <category.icon className={`h-8 w-8 mr-3 ${category.iconColor}`} />}
+                <h3 className="text-2xl font-bold text-primary dark:text-calpir-green-400">{category.name}</h3>
+              </div>
               <div className="space-y-6">
                 {category.items.map((item, itemIndex) => (
                   <div key={itemIndex} className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0">
@@ -107,8 +116,8 @@ const AddOnsSection = () => {
                       <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
                     </div>
                     <div className="flex items-center space-x-4">
-                      <span className="text-xl font-bold text-primary dark:text-palette-blue-300">{item.price}</span>
-                      <Button variant="outline" className="text-primary border-primary hover:bg-palette-blue-50 dark:text-palette-blue-400 dark:border-palette-blue-400 dark:hover:bg-palette-blue-900">
+                      <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
+                      <Button variant="outline" className="text-primary border-primary hover:bg-calpir-green-50 dark:text-calpir-green-400 dark:border-calpir-green-400 dark:hover:bg-calpir-green-900">
                         <PlusCircle className="h-4 w-4 mr-2" /> Add to Package
                       </Button>
                     </div>
@@ -126,7 +135,7 @@ const AddOnsSection = () => {
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
             Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
           </p>
-          <Button size="lg" className="bg-primary hover:bg-palette-blue-700 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+          <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
             Request Custom Quote
           </Button>
         </div>

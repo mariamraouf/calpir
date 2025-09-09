@@ -6,7 +6,7 @@ import { Rocket } from "lucide-react";
 
 const CtaSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-r from-palette-blue-700 to-palette-blue-900 text-white text-center">
+    <section className="py-16 md:py-24 bg-gradient-to-r from-foreground to-calpir-green-900 text-white text-center">
       <div className="container">
         <Rocket className="h-20 w-20 mx-auto mb-6 text-white animate-bounce-slow" />
         <h2 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">

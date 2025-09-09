@@ -6,7 +6,7 @@ import { Mail, Phone, MessageSquare } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 dark:bg-gray-950 text-gray-300 py-16 md:py-20">
+    <footer className="bg-foreground dark:bg-gray-950 text-gray-300 py-16 md:py-20">
       <div className="container grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* Company Info */}
         <div className="col-span-full md:col-span-1">

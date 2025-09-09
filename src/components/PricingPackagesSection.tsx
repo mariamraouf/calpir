@@ -81,7 +81,7 @@ const PricingPackagesSection = () => {
               key={index}
               className={`flex flex-col p-8 rounded-2xl shadow-lg border-2 ${
                 pkg.highlight
-                  ? "border-primary bg-palette-blue-50 dark:bg-palette-blue-950"
+                  ? "border-primary bg-calpir-green-50 dark:bg-calpir-green-950"
                   : "border-gray-200 bg-white dark:bg-gray-800"
               } transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
             >
@@ -97,19 +97,19 @@ const PricingPackagesSection = () => {
                 </span>
               )}
               <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{pkg.name}</h3>
-              <p className="text-4xl font-extrabold text-primary dark:text-palette-blue-300 mb-4">{pkg.price}</p>
+              <p className="text-4xl font-extrabold text-primary dark:text-calpir-green-300 mb-4">{pkg.price}</p>
               <p className="text-gray-600 dark:text-gray-400 mb-6 flex-grow">{pkg.description}</p>
 
               <ul className="list-none space-y-3 text-left mb-8">
                 {pkg.features.slice(0, 5).map((feature, fIndex) => ( // Show only first 5 features as a summary
                   <li key={fIndex} className="flex items-start text-gray-700 dark:text-gray-300">
-                    <CheckCircle className="h-5 w-5 text-palette-blue-500 mr-2 flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                     <span>{feature}</span>
                   </li>
                 ))}
                 {pkg.features.length > 5 && (
                   <li className="flex items-start text-gray-700 dark:text-gray-300">
-                    <CheckCircle className="h-5 w-5 text-palette-blue-500 mr-2 flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                     <span>...and more!</span>
                   </li>
                 )}
@@ -120,8 +120,8 @@ const PricingPackagesSection = () => {
                 size="lg"
                 className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${
                   pkg.highlight
-                    ? "bg-primary hover:bg-palette-blue-700 text-white"
-                    : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-palette-blue-700"
+                    ? "bg-primary hover:bg-calpir-green-700 text-white"
+                    : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700"
                 }`}
               >
                 <Link to="/pricing">View Details</Link>

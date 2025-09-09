@@ -5,7 +5,7 @@ import {
   ClipboardList, MessageSquare, HardDrive, Cloud, Share2, Calendar, Video, Zap, Cog, Kanban, Target, FileText, Pin, CheckCircle, Signature, Users, Mail, UserPlus, GitBranch, FormInput, Database, CreditCard, DollarSign, BarChart, Wallet, Mailbox, MailOpen, BarChart2, Figma, Film, Linkedin
 } from "lucide-react";
 
-const integrationIcons = [
+const integrations = [
   { name: "ClickUp", icon: ClipboardList },
   { name: "Slack", icon: MessageSquare },
   { name: "Google Drive", icon: HardDrive },
@@ -46,11 +46,12 @@ const integrationIcons = [
 ];
 
 const iconColors = [
-  "text-primary",
-  "text-accent",
+  "text-primary", // Green
   "text-palette-blue-500",
+  "text-palette-purple-400",
   "text-palette-orange-500",
-  "text-secondary-foreground",
+  "text-palette-red-400",
+  "text-palette-yellow-400",
 ];
 
 const IntegrationsSection = () => {
@@ -66,7 +67,7 @@ const IntegrationsSection = () => {
 
         <div className="relative overflow-hidden py-8">
           <div className="flex animate-scroll-integrations">
-            {[...integrationIcons, ...integrationIcons, ...integrationIcons].map((integration, index) => (
+            {[...integrations, ...integrations, ...integrations].map((integration, index) => (
               <div
                 key={index}
                 className="flex-shrink-0 w-32 md:w-40 p-4 flex flex-col items-center justify-center text-center mx-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"

@@ -4,12 +4,12 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { CheckCircle, Globe, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail } from "lucide-react";
+import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail } from "lucide-react"; // Changed Globe to FileText
 
 const servicesData = [
   {
     id: "operations-flows",
-    icon: Globe,
+    icon: FileText, // Changed to FileText
     title: "Operations Flows Setup",
     description: "Streamline your business processes with efficient and automated operational workflows.",
     details: [
@@ -18,7 +18,7 @@ const servicesData = [
       "Standard Operating Procedures (SOPs) documentation",
       "Inter-departmental communication setup",
     ],
-    iconColor: "text-palette-blue-600",
+    iconColor: "text-primary", // Primary green
   },
   {
     id: "project-management",
@@ -31,7 +31,7 @@ const servicesData = [
       "Task management and tracking setup",
       "Reporting and analytics dashboards",
     ],
-    iconColor: "text-palette-orange-500",
+    iconColor: "text-palette-orange-500", // Diverse color
   },
   {
     id: "hr-recruiting",
@@ -44,7 +44,7 @@ const servicesData = [
       "Onboarding and offboarding workflows",
       "HR policy and compliance guidance",
     ],
-    iconColor: "text-palette-blue-700",
+    iconColor: "text-primary", // Primary green
   },
   {
     id: "website-building",
@@ -57,7 +57,7 @@ const servicesData = [
       "SEO optimization for better visibility",
       "Secure and reliable hosting solutions",
     ],
-    iconColor: "text-palette-orange-400",
+    iconColor: "text-palette-blue-500", // Diverse color
   },
   {
     id: "accounting",
@@ -70,7 +70,7 @@ const servicesData = [
       "Integration with payment gateways (e.g., Stripe, PayPal)",
       "Basic financial reporting",
     ],
-    iconColor: "text-palette-blue-800",
+    iconColor: "text-palette-yellow-400", // Diverse color
   },
   {
     id: "social-media",
@@ -83,7 +83,7 @@ const servicesData = [
       "Post design and scheduling",
       "Audience engagement strategies",
     ],
-    iconColor: "text-palette-orange-500",
+    iconColor: "text-palette-purple-400", // Diverse color
   },
   {
     id: "email-systems",
@@ -96,7 +96,7 @@ const servicesData = [
       "Automated email sequences (welcome, abandoned cart, etc.)",
       "List management and segmentation",
     ],
-    iconColor: "text-palette-blue-600",
+    iconColor: "text-primary", // Primary green
   },
   {
     id: "crm-setup",
@@ -109,7 +109,7 @@ const servicesData = [
       "Customer data migration",
       "Reporting and analytics for customer insights",
     ],
-    iconColor: "text-palette-orange-700",
+    iconColor: "text-palette-blue-600", // Diverse color
   },
   {
     id: "integrations",
@@ -122,7 +122,7 @@ const servicesData = [
       "Data synchronization between platforms",
       "Custom automation workflows (e.g., Zapier, Make)",
     ],
-    iconColor: "text-palette-blue-400",
+    iconColor: "text-palette-orange-400", // Diverse color
   },
   {
     id: "design-branding",
@@ -134,9 +134,8 @@ const servicesData = [
       "Marketing collateral design (e.g., business cards, brochures)",
       "Website visual design",
       "Brand voice and messaging development",
-      "Brand voice and messaging development",
     ],
-    iconColor: "text-palette-orange-800",
+    iconColor: "text-palette-purple-500", // Diverse color
   },
   {
     id: "analytics",
@@ -149,7 +148,7 @@ const servicesData = [
       "Key Performance Indicator (KPI) tracking",
       "Monthly performance reports and recommendations",
     ],
-    iconColor: "text-palette-blue-500",
+    iconColor: "text-primary", // Primary green
   },
   {
     id: "migrations",
@@ -162,7 +161,7 @@ const servicesData = [
       "User training and support during transition",
       "Post-migration optimization",
     ],
-    iconColor: "text-palette-orange-600",
+    iconColor: "text-palette-red-400", // Diverse color
   },
   {
     id: "security-basics",
@@ -175,7 +174,7 @@ const servicesData = [
       "Data backup strategies",
       "Security best practices guidance",
     ],
-    iconColor: "text-palette-blue-700",
+    iconColor: "text-palette-blue-700", // Diverse color
   },
 ];
 
@@ -206,7 +205,7 @@ const Services = () => {
               <ul className="list-none space-y-3 text-left">
                 {service.details.map((detail, index) => (
                   <li key={index} className="flex items-start text-gray-700 dark:text-gray-300">
-                    <CheckCircle className="h-5 w-5 text-palette-blue-500 mr-2 flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                     <span>{detail}</span>
                   </li>
                 ))}

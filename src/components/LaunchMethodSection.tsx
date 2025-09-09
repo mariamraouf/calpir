@@ -9,21 +9,21 @@ const steps = [
     icon: Lightbulb,
     title: "Strategy & Planning",
     description: "30-minute free consultation to understand your business goals and needs. Once you decide to work with us, we provide a 1-hour consultation to deep dive into your requirements and develop your custom strategy.",
-    iconColor: "text-palette-blue-600",
+    iconColor: "text-palette-blue-600", // Diverse color
   },
   {
     number: "02",
     icon: Code,
     title: "Development & Creation",
     description: "Our developer teams build your website, our designers create your branding, and our specialists develop your marketing materials using proven frameworks.",
-    iconColor: "text-palette-orange-500",
+    iconColor: "text-palette-orange-500", // Diverse color
   },
   {
     number: "03",
     icon: Rocket,
     title: "Integration & Launch",
     description: "We integrate all systems, test everything, prepare for launch, and provide ongoing support to ensure your business success.",
-    iconColor: "text-palette-blue-700",
+    iconColor: "text-calpir-green-700", // Primary green
   },
 ];
 

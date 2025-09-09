@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-r from-palette-blue-700 to-palette-blue-900 text-white overflow-hidden">
+    <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-r from-foreground to-calpir-green-900 text-white overflow-hidden">
       <div className="container relative z-10 text-center">
         <img
           src="/calpir-logo.png"

@@ -9,25 +9,25 @@ const problems = [
     title: "Expensive Individual Hires",
     description: "Web developer ($5,000+), Designer ($3,000+), Marketing specialist ($4,000+), Operations manager ($6,000+)",
     icon: DollarSign,
-    iconColor: "text-red-500", // Keep red for problems
+    iconColor: "text-palette-red-400", // Red as per screenshot
   },
   {
     title: "Months of Setup Time",
     description: "3-6 months to coordinate everything, test systems, and get everything working together properly",
     icon: Clock,
-    iconColor: "text-red-500",
+    iconColor: "text-palette-orange-500", // Orange as per screenshot
   },
   {
     title: "Managing Multiple People",
     description: "Coordinating different freelancers, agencies, and specialists who don't communicate with each other",
     icon: Users,
-    iconColor: "text-red-500",
+    iconColor: "text-palette-yellow-400", // Yellow/Gold as per screenshot
   },
   {
     title: "Technical Complexity",
     description: "Integrating different tools, ensuring everything works together, and troubleshooting constant issues",
     icon: Settings,
-    iconColor: "text-red-500",
+    iconColor: "text-palette-purple-400", // Purple as per screenshot
   },
 ];
 
@@ -80,16 +80,16 @@ const ProblemsSolutionsSection = () => {
           {solutions.map((solution, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-8 bg-palette-blue-50 dark:bg-palette-blue-950 rounded-2xl shadow-lg border border-palette-blue-200 dark:border-palette-blue-800 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
+              className="flex flex-col items-center text-center p-8 bg-calpir-green-50 dark:bg-calpir-green-950 rounded-2xl shadow-lg border border-calpir-green-200 dark:border-calpir-green-800 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
             >
-              <p className="text-5xl font-extrabold text-primary dark:text-palette-blue-300 mb-2">{solution.label}</p>
+              <p className="text-5xl font-extrabold text-primary dark:text-calpir-green-300 mb-2">{solution.label}</p>
               <p className="text-lg text-gray-700 dark:text-gray-200">{solution.detail}</p>
             </div>
           ))}
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="bg-primary hover:bg-palette-blue-700 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+          <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
             Start Your Startup Package Today
           </Button>
         </div>

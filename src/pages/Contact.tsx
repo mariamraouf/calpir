@@ -98,7 +98,7 @@ const Contact = () => {
                   className="mt-1"
                 />
               </div>
-              <Button type="submit" className="w-full bg-primary hover:bg-palette-blue-700 text-white text-lg py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-2xl">
+              <Button type="submit" className="w-full bg-primary hover:bg-calpir-green-700 text-white text-lg py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-2xl">
                 Send Message
               </Button>
             </form>
@@ -112,14 +112,14 @@ const Contact = () => {
                 <Mail className="h-6 w-6 text-primary mr-4" />
                 <div>
                   <p className="font-semibold text-gray-900 dark:text-white">Email Us</p>
-                  <a href="mailto:hello@calpirsolutions.com" className="text-primary hover:underline dark:text-palette-blue-400">hello@calpirsolutions.com</a>
+                  <a href="mailto:hello@calpirsolutions.com" className="text-primary hover:underline dark:text-calpir-green-400">hello@calpirsolutions.com</a>
                 </div>
               </div>
               <div className="flex items-center">
                 <Phone className="h-6 w-6 text-primary mr-4" />
                 <div>
                   <p className="font-semibold text-gray-900 dark:text-white">Call Us</p>
-                  <a href="tel:+15551234567" className="text-primary hover:underline dark:text-palette-blue-400">(555) 123-4567</a>
+                  <a href="tel:+15551234567" className="text-primary hover:underline dark:text-calpir-green-400">(555) 123-4567</a>
                 </div>
               </div>
               <div className="flex items-center">

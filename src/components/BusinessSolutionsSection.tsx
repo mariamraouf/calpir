@@ -1,9 +1,21 @@
 "use client";
 
 import React from "react";
-import { Globe, Layout, Palette, TrendingUp, CheckCircle } from "lucide-react";
+import { FileText, Layout, Palette, TrendingUp, CheckCircle } from "lucide-react"; // Changed Globe to FileText for Business Operations Setup icon
 
 const solutions = [
+  {
+    icon: FileText, // Changed to FileText as per screenshot
+    title: "Business Operations Setup", // Changed title as per screenshot
+    description: "Complete business infrastructure, systems, and operational frameworks", // Updated description
+    features: [ // Updated features as per screenshot
+      "Business Registration",
+      "Legal Documentation",
+      "Financial Systems",
+      "Compliance Setup",
+    ],
+    iconColor: "text-calpir-green-700", // Green as per screenshot
+  },
   {
     icon: Layout,
     title: "Website Development",
@@ -14,7 +26,7 @@ const solutions = [
       "Content Management",
       "Performance Optimization",
     ],
-    iconColor: "text-palette-blue-600",
+    iconColor: "text-palette-blue-500", // Blue as per screenshot
   },
   {
     icon: Palette,
@@ -26,7 +38,7 @@ const solutions = [
       "Marketing Materials",
       "Visual Identity",
     ],
-    iconColor: "text-palette-orange-500",
+    iconColor: "text-palette-purple-400", // Purple as per screenshot
   },
   {
     icon: TrendingUp,
@@ -36,8 +48,9 @@ const solutions = [
       "Email Automation",
       "Social Media Setup",
       "Analytics Tracking",
+      "Lead Generation", // Added as per screenshot
     ],
-    iconColor: "text-palette-blue-700",
+    iconColor: "text-palette-orange-500", // Orange as per screenshot
   },
 ];
 
@@ -52,7 +65,7 @@ const BusinessSolutionsSection = () => {
           Everything your business needs to launch successfully, from operations setup to marketing automation.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {solutions.map((solution, index) => (
             <div
               key={index}
@@ -64,7 +77,7 @@ const BusinessSolutionsSection = () => {
               <ul className="list-none space-y-2 text-left w-full">
                 {solution.features.map((feature, fIndex) => (
                   <li key={fIndex} className="flex items-center text-gray-700 dark:text-gray-300">
-                    <CheckCircle className="h-4 w-4 text-palette-blue-500 mr-2 flex-shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
                     {feature}
                   </li>
                 ))}
