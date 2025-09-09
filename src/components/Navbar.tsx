@@ -10,10 +10,14 @@ import { Menu, ChevronDown } from "lucide-react";
 const Navbar = () => {
   const mainNavLinks = [
     { name: "About", href: "/about" },
+    { name: "Services", href: "/services" }, // Services is now a regular link
     { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
   ];
 
+  // The serviceDropdownLinks are no longer needed for the main navigation,
+  // but I'll keep them commented out in case they are needed elsewhere or for future reference.
+  /*
   const serviceDropdownLinks = [
     { name: "Operations Flows Setup", href: "/services#operations-flows" },
     { name: "Project Management Setup", href: "/services#project-management" },
@@ -30,6 +34,7 @@ const Navbar = () => {
     { name: "Software Migrations", href: "/services#migrations" },
     { name: "Security Basics Setup", href: "/services#security-basics" },
   ];
+  */
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -40,16 +45,6 @@ const Navbar = () => {
         </Link>
 
         <nav className="hidden md:flex items-center space-x-6">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `relative text-sm font-medium transition-colors duration-300 hover:text-primary hover:scale-110 transform ${
-                isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
-              } after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 hover:after:w-full after:transition-all after:duration-300`
-            }
-          >
-            Home
-          </NavLink>
           {mainNavLinks.map((link) => (
             <NavLink
               key={link.name}
@@ -63,29 +58,6 @@ const Navbar = () => {
               {link.name}
             </NavLink>
           ))}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <NavLink
-                to="/services"
-                className={({ isActive }) =>
-                  `flex items-center text-sm font-medium transition-colors hover:text-primary focus:outline-none hover:scale-110 transform duration-300 relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 hover:after:w-full after:transition-all after:duration-300 ${
-                    isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
-                  }`
-                }
-              >
-                Services <ChevronDown className="ml-1 h-4 w-4" />
-              </NavLink>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="animate-slide-down-fade">
-              {serviceDropdownLinks.map((link) => (
-                <DropdownMenuItem key={link.name} asChild>
-                  <a href={link.href} className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
-                    {link.name}
-                  </a>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
           <Button asChild className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110">
             <Link to="/contact">Get Started</Link>
           </Button>
@@ -100,16 +72,6 @@ const Navbar = () => {
           </SheetTrigger>
           <SheetContent side="right" className="animate-slide-in-right">
             <div className="flex flex-col space-y-4 pt-6">
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  `text-lg font-medium hover:text-primary transition-colors duration-200 ${
-                    isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
-                  } transform hover:scale-105`
-                }
-              >
-                Home
-              </NavLink>
               {mainNavLinks.map((link) => (
                 <NavLink
                   key={link.name}
@@ -123,29 +85,6 @@ const Navbar = () => {
                   {link.name}
                 </NavLink>
               ))}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <NavLink
-                    to="/services"
-                    className={({ isActive }) =>
-                      `flex items-center text-lg font-medium hover:text-primary focus:outline-none w-full justify-between transition-colors duration-200 transform hover:scale-105 ${
-                        isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
-                      }`
-                    }
-                  >
-                    Services <ChevronDown className="ml-1 h-5 w-5" />
-                  </NavLink>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-full animate-slide-down-fade">
-                  {serviceDropdownLinks.map((link) => (
-                    <DropdownMenuItem key={link.name} asChild>
-                      <a href={link.href} className="block px-4 py-2 text-base text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
-                        {link.name}
-                      </a>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
               <Button asChild className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110">
                 <Link to="/contact">Get Started</Link>
               </Button>
