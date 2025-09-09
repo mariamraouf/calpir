@@ -69,9 +69,6 @@ const About = () => {
               <p className="text-xl font-bold text-gray-800 dark:text-gray-200">28 Days</p>
             </div>
           </div>
-          <p className="text-md text-gray-600 dark:text-gray-400 mt-8 animate-fade-in-up delay-1800">
-            AI is used internally to enhance our "expert team" work, ensuring efficient and high-quality delivery.
-          </p>
         </section>
       </main>
       <Footer />
