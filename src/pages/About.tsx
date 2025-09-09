@@ -19,6 +19,7 @@ const About = () => {
     "Integrations",
     "Design/branding",
     "Analytics",
+    "Marketing", // Added Marketing
   ];
 
   return (
