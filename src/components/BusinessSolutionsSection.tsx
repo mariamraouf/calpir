@@ -48,7 +48,7 @@ const solutions = [
       "Email Automation",
       "Social Media Setup",
       "Analytics Tracking",
-      "Lead Generation", // Added as per screenshot
+      // "Lead Generation", // Removed as per user request
     ],
     iconColor: "text-palette-orange-500", // Orange as per screenshot
   },
