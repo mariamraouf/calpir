@@ -35,7 +35,7 @@ const HeroSection = () => {
           <Button size="lg" className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:animate-button-glow">
             Start My Business
           </Button>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-primary hover:text-primary-foreground text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:animate-button-glow">
+          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:animate-button-glow">
             See How It Works
           </Button>
         </div>
