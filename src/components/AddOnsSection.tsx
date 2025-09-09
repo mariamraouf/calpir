@@ -157,8 +157,8 @@ const AddOnsSection = () => {
         </div>
 
         {/* Original "Custom Add-On Packages Available" section */}
-        <div className="mt-16 text-center p-4 rounded-2xl shadow-xl animate-fade-in-up delay-800
-                    bg-gradient-to-br from-calpir-green-50 to-palette-blue-50 dark:from-calpir-green-950 dark:to-palette-blue-950 max-w-2xl mx-auto">
+        <div className="mt-16 text-center p-6 rounded-2xl shadow-xl animate-fade-in-up delay-800
+                    bg-gradient-to-br from-calpir-green-50 to-palette-blue-50 dark:from-calpir-green-950 dark:to-palette-blue-950 max-w-4xl mx-auto">
           <h3 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
             Custom Add-On Packages Available
           </h3>
