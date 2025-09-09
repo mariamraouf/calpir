@@ -128,14 +128,15 @@ const AddOnsSection = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center p-8 bg-calpir-green-50 dark:bg-calpir-green-950 rounded-2xl shadow-xl border border-calpir-green-200 dark:border-calpir-green-800 animate-fade-in-up delay-600">
-          <p className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">
+        <div className="mt-16 text-center p-8 rounded-2xl shadow-xl animate-fade-in-up delay-600
+                    bg-gradient-to-br from-calpir-green-50 to-palette-blue-50 dark:from-calpir-green-950 dark:to-palette-blue-950">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
             Custom Add-On Packages Available
-          </p>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+          </h3>
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-8">
             Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
           </p>
-          <Button size="lg" className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow">
+          <Button size="lg" className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow">
             Request Custom Quote
           </Button>
         </div>
