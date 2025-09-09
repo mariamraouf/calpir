@@ -60,7 +60,6 @@ const Footer = () => {
 
       <div className="container border-t border-gray-700 mt-12 pt-8 text-center text-sm text-gray-500 animate-fade-in-up delay-500">
         <p>© 2024 Calpir. All rights reserved. Complete Business Operations Service.</p>
-        <p className="mt-1">Made in Bolt</p>
       </div>
     </footer>
   );
