@@ -160,25 +160,6 @@ const AddOnsSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCust
           ))}
         </div>
 
-        {/* Moved "Build My Package" button here */}
-        <div className="mt-16 text-center p-6 rounded-2xl shadow-xl animate-fade-in-up delay-600
-                    bg-gradient-to-br from-calpir-green-50 to-palette-blue-50 dark:from-calpir-green-950 dark:to-palette-blue-950 max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
-            Ready to Customize Your Business Solution?
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10">
-            Combine our core packages with powerful add-ons to create the perfect launch plan for your business.
-          </p>
-          <Link to="/build-my-business"> {/* Changed to Link */}
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
-            >
-              Build My Package
-            </Button>
-          </Link>
-        </div>
-
         {/* Original "Custom Add-On Packages Available" section - now simplified and without a box */}
         <div className="mt-16 text-center max-w-4xl mx-auto py-8">
           <p className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">

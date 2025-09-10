@@ -263,8 +263,8 @@ const PackageComparisonTable = () => {
               <TableCell key={pkgIndex} className="p-4 text-center">
                 <Link to="/build-my-business">
                   <Button
-                    size="lg"
-                    className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-md px-4 py-2 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
+                    size="lg" // Changed to lg
+                    className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow" // Adjusted text and padding
                   >
                     Start My Package
                   </Button>
