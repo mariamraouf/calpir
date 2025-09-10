@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-// Removed CheckCircle as we are now displaying specific text details
 import {
   Table,
   TableBody,
@@ -11,7 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-// Define the structure for a package (simplified for table comparison)
+// Define the structure for a package
 interface Package {
   name: string;
   features: string[]; // List of features included in the package
@@ -65,7 +64,7 @@ const packages: Package[] = [
   },
 ];
 
-// Simplified list of features for the comparison table rows
+// List of features for the comparison table rows
 const comparisonFeatures = [
   "Website Development",
   "Project Management Setup",
