@@ -2,55 +2,60 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { PlayCircle } from "lucide-react"; // Re-adding PlayCircle for consistency, though the video is removed.
 import { Link } from "react-router-dom"; // Import Link
 
-const HeroSection = () => {
+const HeroSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
   return (
-    <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-br from-calpir-green-50 to-palette-blue-50 dark:from-calpir-green-950 dark:to-palette-blue-950 overflow-hidden">
-      {/* Original Background blobs */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-palette-orange-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-palette-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+    <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-r from-foreground to-calpir-green-900 text-white overflow-hidden">
+      {/* Video Background */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover opacity-20"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-      <div className="container relative z-10 flex flex-col lg:flex-row items-center lg:justify-between gap-12">
-        {/* Left Content - Original text and buttons */}
-        <div className="lg:w-1/2 text-center lg:text-left">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 text-gray-900 dark:text-white animate-fade-in-up">
-            Launch Your Business in <span className="text-primary">7 Days</span>
-          </h1>
-          <p className="text-lg md:text-xl max-w-2xl lg:max-w-none mx-auto lg:mx-0 mb-10 text-gray-600 dark:text-gray-300 opacity-90 animate-fade-in-up delay-200">
-            Calpir provides all-in-one setup and software migration services for startups and businesses, saving time, money, and effort.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 animate-fade-in-up delay-400">
-            <Link to="/build-my-business">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
-              >
-                Start Your Startup Package
-              </Button>
-            </Link>
-            <a href="https://calendly.com/your-calpir-consultation" target="_blank" rel="noopener noreferrer">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-white dark:border-calpir-green-300 dark:text-calpir-green-300 dark:hover:bg-calpir-green-700 dark:hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl"
-              >
-                Book a Free Consultation
-              </Button>
-            </a>
-          </div>
+      <div className="container relative z-10 text-center">
+        <img
+          src="/calpir-logo.png"
+          alt="Calpir Logo"
+          className="h-24 w-24 mx-auto mb-8 animate-bounce-slow"
+        />
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 animate-fade-in-up">
+          Launch Your Dream Business in 7 Days
+        </h1>
+        <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-10 opacity-90 animate-fade-in-up delay-200">
+          Start Your Business Smoothly! Create a Sleek Website, Develop Strong Branding, Set Up Efficient Systems, and Simplify with Automation. Turn Your Idea into Success Using Proven Methods.
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-400">
+          <Link to="/build-my-business"> {/* Changed to Link */}
+            <Button
+              size="lg"
+              className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
+            >
+              Start My Business
+            </Button>
+          </Link>
+          <a href="https://calendly.com/your-calpir-consultation" target="_blank" rel="noopener noreferrer"> {/* Changed to external link */}
+            <Button
+              size="lg"
+              className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
+            >
+              Get a Free Consultation
+            </Button>
+          </a>
         </div>
-
-        {/* Right Content - Bigger, bouncing Calpir logo */}
-        <div className="lg:w-1/2 flex justify-center items-center relative h-80 w-80 md:h-96 md:w-96 animate-zoom-in delay-600">
-          <img
-            src="/calpir-logo.png"
-            alt="Calpir Logo"
-            className="h-64 w-64 md:h-80 md:w-80 animate-bounce-slow" // Bigger and bouncing logo
-          />
-        </div>
+      </div>
+      {/* Background shapes for visual interest */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white opacity-10 rounded-full mix-blend-overlay animate-blob"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-white opacity-10 rounded-full mix-blend-overlay animate-blob animation-delay-2000"></div>
+        <div className="absolute top-1/2 right-1/4 w-72 h-72 bg-white opacity-10 rounded-full mix-blend-overlay animate-blob animation-delay-4000"></div>
       </div>
     </section>
   );
