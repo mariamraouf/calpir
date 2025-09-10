@@ -2,141 +2,122 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Globe, Code, Shield, Layout, DollarSign, BookOpen, Settings, Clock, TrendingUp } from "lucide-react";
+import { PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Globe, Code, Shield, Layout, DollarSign, BookOpen, Settings, Clock, TrendingUp, Briefcase, FileText, Palette, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const addOnsCategories = [
+const serviceCategories = [
   {
-    name: "Social Media Expansion",
-    icon: Share2,
-    iconColor: "text-palette-red-400",
-    items: [
-      { posts: "10 Posts/Month", price: "$199", description: "Professional social media posts with graphics" },
-      { posts: "20 Posts/Month", price: "$349", description: "Enhanced content with stories and engagement" },
-      { posts: "30 Posts/Month", price: "$499", description: "Full social media management with analytics" },
+    name: "Digital Foundation Services",
+    description: "Build your online presence and connect with your audience.",
+    icon: Globe,
+    subcategories: [
+      {
+        name: "Website & Online Presence",
+        icon: Layout,
+        iconColor: "text-palette-blue-500",
+        items: [
+          { service: "Website Building & Hosting", investment: "$999", description: "Custom design, 5-10 pages, hosting, mobile-friendly" },
+          { service: "Additional Website Pages", investment: "$199/page", description: "Professional page development" },
+          { service: "E-commerce Functionality", investment: "$699", description: "Complete online store setup" },
+          { service: "SEO Optimization", investment: "$599", description: "Search engine visibility boost" },
+        ],
+      },
+      {
+        name: "Social Media & Marketing",
+        icon: Share2,
+        iconColor: "text-palette-red-400",
+        items: [
+          { service: "Social Media Management Setup", investment: "$799", description: "2-5 platforms, strategy, content calendar" },
+          { service: "Design & Branding Package", investment: "$1,299", description: "Logo, brand guidelines, marketing materials" },
+          { service: "Email Systems & Automation", investment: "$899", description: "Complete email marketing system" },
+        ],
+      },
     ],
   },
   {
-    name: "Email Marketing",
-    icon: Mail,
-    iconColor: "text-palette-orange-500",
-    items: [
-      { posts: "Email Marketing Setup", price: "$499", description: "One-time complete email automation system" },
-      { posts: "3 Campaigns/Month", price: "$599", description: "Management for 3 email campaigns monthly" },
-      { posts: "5 Campaigns/Month", price: "$699", description: "Management for 5 email campaigns monthly" },
+    name: "Operations & Management Services",
+    description: "Streamline your business processes and enhance efficiency.",
+    icon: Briefcase,
+    subcategories: [
+      {
+        name: "Business Systems",
+        icon: Settings,
+        iconColor: "text-palette-yellow-400",
+        items: [
+          { service: "Project Management Setup", investment: "$799", description: "Complete PM system with templates" },
+          { service: "Operations Flows Setup", investment: "$1,199", description: "Process mapping, SOPs, workflow automation" },
+          { service: "CRM Setup & Optimization", investment: "$899", description: "Sales pipeline, customer management system" },
+          { service: "Accounting System Setup", investment: "$699", description: "Financial management, invoicing, reporting" },
+          { service: "Analytics & Reporting", investment: "$799", description: "Business intelligence dashboards" },
+        ],
+      },
+      {
+        name: "Platform & Integration Services",
+        icon: Lightbulb,
+        iconColor: "text-palette-orange-400",
+        items: [
+          { service: "Platform Integrations", investment: "$299/integration", description: "Connect your business tools" },
+          { service: "Software Migrations", investment: "$599-$1,499", description: "Seamless platform transitions" },
+          { service: "Custom Automations", investment: "$599", description: "5+ workflow automations" },
+          { service: "Security Basics Setup", investment: "$599", description: "Data protection & security measures" },
+        ],
+      },
     ],
   },
   {
-    name: "Analytics Upgrades",
-    icon: BarChart2,
-    iconColor: "text-palette-blue-500",
-    items: [
-      { posts: "Monthly Insights", price: "$199", description: "Monthly performance reports" },
-      { posts: "Monthly Recommendations", price: "$249", description: "Detailed insights + recommendations" },
-      { posts: "Real-time Analytics", price: "$399", description: "Real-time business intelligence" },
-    ],
-  },
-  {
-    name: "Business Automations",
-    icon: Code,
-    iconColor: "text-palette-orange-400",
-    items: [
-      { posts: "Basic Automation Setup", price: "$299", description: "Setup for 1-3 simple automation workflows" },
-      { posts: "Advanced Automation Package", price: "$599", description: "Setup for 5+ complex automation workflows" },
-      { posts: "Custom Automation Development", price: "$999", description: "Tailored automation solutions for unique business needs" },
-    ],
-  },
-  {
-    name: "Ongoing Support",
-    icon: Headphones,
-    iconColor: "text-palette-purple-400",
-    items: [
-      { posts: "Monthly Support Package", price: "$299", description: "Ongoing email support and monthly check-ins" },
-    ],
-  },
-  {
-    name: "Staff Recruitment (Global)",
+    name: "Human Resources Services",
+    description: "Build and manage your team effectively.",
     icon: Users,
-    iconColor: "text-calpir-green-700",
-    items: [
-      { posts: "Single Role Recruitment", price: "$599", description: "Assistance with recruiting for one global role" },
-      { posts: "Multi-Role Recruitment", price: "$999", description: "Comprehensive support for recruiting multiple global roles" },
-      { posts: "Comprehensive Recruitment (3 months)", price: "$2,999", description: "Unlimited recruitment assistance for 3 months" },
+    subcategories: [
+      {
+        name: "HR Foundation",
+        icon: Users,
+        iconColor: "text-calpir-green-700",
+        items: [
+          { service: "HR & Recruiting System", investment: "$1,299", description: "ATS, contracts, compliance, onboarding" },
+          { service: "Time Tracking System Setup", investment: "$399", description: "Productivity monitoring, project hours" },
+          { service: "Performance Management", investment: "$699", description: "Goal setting, review system" },
+        ],
+      },
+      {
+        name: "Talent Acquisition",
+        icon: Users,
+        iconColor: "text-calpir-green-600",
+        items: [
+          { service: "Single Role Recruitment", investment: "$599", description: "Complete hiring for 1 position" },
+          { service: "Multi-Role Recruitment", investment: "$999", description: "Hiring support for 2-3 positions" },
+          { service: "Comprehensive Recruitment (3 months)", investment: "$2,999", description: "Unlimited hiring assistance" },
+        ],
+      },
     ],
   },
   {
-    name: "Performance Management",
-    icon: TrendingUp,
-    iconColor: "text-palette-blue-600",
-    items: [
-      { posts: "Performance Management Setup", price: "$699", description: "Setup for employee performance tracking, reviews, and goal setting" },
-    ],
-  },
-  {
-    name: "Extra Integrations",
-    icon: PlusCircle,
-    iconColor: "text-palette-blue-600",
-    items: [
-      { posts: "Per Integration", price: "$199", description: "Setup and configuration for each additional platform integration" },
-    ],
-  },
-  {
-    name: "Website Expansions",
-    icon: Layout,
-    iconColor: "text-palette-purple-500",
-    items: [
-      { posts: "Additional Website Pages", price: "$199", description: "Development for each additional website page" },
-      { posts: "E-commerce Functionality", price: "$699", description: "Setup for e-commerce capabilities" },
-    ],
-  },
-  {
-    name: "SEO Optimization",
-    icon: Globe,
-    iconColor: "text-palette-blue-700",
-    items: [
-      { posts: "SEO Optimization Package", price: "$599", description: "Improve your website's visibility on search engines" },
-    ],
-  },
-  {
-    name: "HR Customizations",
-    icon: Settings,
-    iconColor: "text-palette-yellow-400",
-    items: [
-      { posts: "One-time Setup", price: "$299", description: "Custom HR system setup and configuration" },
-    ],
-  },
-  {
-    name: "Training Sessions",
+    name: "Training & Support Services",
+    description: "Empower your team and ensure continuous smooth operations.",
     icon: BookOpen,
-    iconColor: "text-calpir-green-600",
-    items: [
-      { posts: "Basic Training Sessions", price: "$299", description: "Introductory training for new systems and tools (per hour)" },
-    ],
-  },
-  {
-    name: "Security Basics",
-    icon: Shield,
-    iconColor: "text-palette-red-500",
-    items: [
-      { posts: "One-time Setup", price: "$299", description: "Basic security configurations and recommendations" },
-    ],
-  },
-  {
-    name: "Time Tracking",
-    icon: Clock,
-    iconColor: "text-palette-orange-500",
-    items: [
-      { posts: "Basic Setup", price: "$149", description: "Initial setup of a time tracking tool for small teams" },
-      { posts: "Advanced Setup & Reporting", price: "$299", description: "Comprehensive setup with custom reports and integrations" },
-      { posts: "Team Training & Optimization", price: "$399", description: "Training sessions for your team and workflow optimization" },
-    ],
-  },
-  {
-    name: "Domain Registration",
-    icon: Globe,
-    iconColor: "text-palette-blue-500",
-    items: [
-      { posts: "Domain Registration & Setup", price: "$49", description: "Assistance with registering and setting up your business domain" },
+    subcategories: [
+      {
+        name: "Team Development",
+        icon: BookOpen,
+        iconColor: "text-calpir-green-600",
+        items: [
+          { service: "Basic Training Sessions", investment: "$299/hour", description: "Essential system training" },
+          { service: "Advanced Systems Training", investment: "$399/hour", description: "Specialized business systems" },
+          { service: "Custom Workshop Development", investment: "$1,299", description: "Tailored training programs" },
+          { service: "Team Certification Program", investment: "$2,999", description: "Comprehensive team certification" },
+          { service: "Comprehensive Training Program", investment: "$1,499", description: "Multi-day training with documentation" },
+        ],
+      },
+      {
+        name: "Ongoing Partnership",
+        icon: Headphones,
+        iconColor: "text-palette-purple-400",
+        items: [
+          { service: "Monthly Support Package", investment: "$299/month", description: "Strategy emails + system support" },
+          { service: "Premium Support Package", investment: "$599/month", description: "Weekly calls + priority assistance" },
+          { service: "Ongoing Security Monitoring", investment: "$299/month", description: "Continuous security oversight" },
+        ],
+      },
     ],
   },
 ];
@@ -146,36 +127,40 @@ const AddOnsSection = () => {
     <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up">
-          Enhance Your Package with Add-Ons
+          Choose Only What Your Business Needs
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in-up delay-200">
-          Scale your business operations with our professional add-on services. Each service is designed to grow with your business needs.
+          Select individual services to build your perfect solution, no packages required.
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {addOnsCategories.map((category, catIndex) => (
-            <div key={catIndex} className="flex flex-col bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-110 transition-transform duration-300 hover:shadow-2xl animate-slide-in-left" style={{ animationDelay: `${0.3 + catIndex * 0.15}s` }}>
-              <div className="flex items-center mb-6">
-                {category.icon && <category.icon className={`h-8 w-8 mr-3 flex-shrink-0 ${category.iconColor}`} />}
-                <h3 className="text-2xl font-bold text-primary dark:text-calpir-green-400">{category.name}</h3>
+        <div className="grid grid-cols-1 gap-16">
+          {serviceCategories.map((category, catIndex) => (
+            <div key={catIndex} className="animate-fade-in-up" style={{ animationDelay: `${0.3 + catIndex * 0.15}s` }}>
+              <div className="flex items-center justify-center mb-8">
+                {category.icon && <category.icon className={`h-12 w-12 mr-4 text-primary dark:text-calpir-green-400`} />}
+                <h3 className="text-3xl font-bold text-gray-900 dark:text-white">{category.name}</h3>
               </div>
-              <div className="space-y-6 flex-grow">
-                {category.items.map((item, itemIndex) => (
-                  <div key={itemIndex} className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${0.4 + catIndex * 0.15 + itemIndex * 0.05}s` }}>
-                    <div className="text-left mb-2 sm:mb-0 sm:mr-4">
-                      <p className="text-lg font-semibold text-gray-900 dark:text-white">{item.posts}</p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
+              <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-10">{category.description}</p>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8">
+                {category.subcategories.map((subCategory, subCatIndex) => (
+                  <div key={subCatIndex} className="flex flex-col bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-transform duration-300 hover:shadow-2xl">
+                    <div className="flex items-center mb-6">
+                      {subCategory.icon && <subCategory.icon className={`h-8 w-8 mr-3 flex-shrink-0 ${subCategory.iconColor}`} />}
+                      <h4 className="text-xl font-bold text-primary dark:text-calpir-green-400">{subCategory.name}</h4>
                     </div>
-                    <div className="flex items-center space-x-4">
-                      <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
-                      <Link to="/build-my-business">
-                        <Button
-                          size="sm"
-                          className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-sm px-4 py-2 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
-                        >
-                          Pick & Include
-                        </Button>
-                      </Link>
+                    <div className="space-y-6 flex-grow">
+                      {subCategory.items.map((item, itemIndex) => (
+                        <div key={itemIndex} className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0">
+                          <div className="text-left mb-2 sm:mb-0 sm:mr-4">
+                            <p className="text-lg font-semibold text-gray-900 dark:text-white">{item.service}</p>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
+                          </div>
+                          <span className="text-xl font-bold text-primary dark:text-calpir-green-300 flex-shrink-0">
+                            {item.investment}
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 ))}
@@ -184,20 +169,19 @@ const AddOnsSection = () => {
           ))}
         </div>
 
-        {/* Original "Custom Add-On Packages Available" section - now simplified and without a box */}
-        <div className="mt-16 text-center max-w-4xl mx-auto py-8">
+        <div className="mt-20 text-center max-w-4xl mx-auto py-8">
           <p className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-            Custom Add-On Packages & Specific Platform Setups Available
+            Ready to build your custom solution?
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-6">
-            Need something specific, or a setup for a single platform not listed? We can create custom solutions tailored to your business needs. Contact us to discuss your requirements.
+            Contact us today to discuss your specific needs and get a tailored plan.
           </p>
           <Link to="/get-a-quote">
             <Button
-              variant="outline"
-              className="text-primary border-primary hover:bg-primary hover:text-white text-md px-6 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+              size="lg"
+              className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
             >
-              Request Custom Set Up
+              Request a Custom Set Up
             </Button>
           </Link>
         </div>

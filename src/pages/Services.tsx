@@ -4,125 +4,23 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail, Headphones, Puzzle, Clock, Globe, Code } from "lucide-react";
+import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail, Headphones, Puzzle, Clock, Globe, Code, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const servicesData = [
   {
-    id: "operations-flows",
-    icon: FileText,
-    title: "Operations Flows Setup",
-    description: "Streamline your business processes with efficient and automated operational workflows.",
-    details: [
-      "Process mapping and optimization",
-      "Workflow automation setup",
-      "Standard Operating Procedures (SOPs) documentation",
-      "Inter-departmental communication setup",
-    ],
-    iconColor: "text-primary",
-  },
-  {
-    id: "business-automations",
-    icon: Code,
-    title: "Business Automations",
-    description: "Automate repetitive tasks and complex workflows to boost efficiency and reduce manual effort.",
-    details: [
-      "Custom automation strategy and design",
-      "Integration of automation tools (e.g., Zapier, Make.com)",
-      "Setup of multi-step workflows",
-      "Automated reporting and data synchronization",
-    ],
-    iconColor: "text-palette-orange-400",
-  },
-  {
-    id: "project-management",
-    icon: Briefcase,
-    title: "Project Management Setup",
-    description: "Implement robust project management systems to keep your projects on track and teams coordinated.",
-    details: [
-      "Tool selection and configuration",
-      "Project template creation",
-      "Task management and tracking setup",
-      "Reporting and analytics dashboards",
-    ],
-    iconColor: "text-palette-orange-500",
-  },
-  {
-    id: "performance-management",
-    icon: TrendingUp,
-    title: "Performance Management",
-    description: "Set up systems for employee performance tracking, reviews, and goal setting to foster growth.",
-    details: [
-      "Performance review system setup",
-      "Goal setting and OKR tracking",
-      "Feedback and recognition programs",
-      "Employee development plans",
-    ],
-    iconColor: "text-palette-blue-600",
-  },
-  {
-    id: "hr-recruiting",
-    icon: Users,
-    title: "HR & Recruiting (Global Focus)",
-    description: "Build a strong global team with our comprehensive HR and recruitment solutions.",
-    details: [
-      "Contracts and NDA drafting with e-signatures",
-      "Applicant Tracking System (ATS) setup",
-      "Onboarding and offboarding workflows",
-      "HR policy and compliance guidance",
-    ],
-    iconColor: "text-primary",
-  },
-  {
-    id: "single-role-recruitment",
-    icon: Users,
-    title: "Single Role Recruitment",
-    description: "Assistance with recruiting for one global role, from job posting to initial screening.",
-    details: [
-      "Job description optimization",
-      "Posting on global job boards",
-      "Candidate sourcing and initial screening",
-      "Interview coordination and support",
-    ],
-    iconColor: "text-calpir-green-700",
-  },
-  {
-    id: "multi-role-recruitment",
-    icon: Users,
-    title: "Multi-Role Recruitment",
-    description: "Comprehensive support for recruiting multiple global roles simultaneously.",
-    details: [
-      "Strategic recruitment planning for multiple roles",
-      "Volume candidate sourcing and management",
-      "Streamlined interview processes",
-      "Offer management and negotiation support",
-    ],
-    iconColor: "text-calpir-green-600",
-  },
-  {
-    id: "comprehensive-recruitment",
-    icon: Users,
-    title: "Comprehensive Recruitment (3 months)",
-    description: "Dedicated recruitment partnership for three months, offering unlimited hiring support.",
-    details: [
-      "Full-cycle recruitment for unlimited roles",
-      "Dedicated recruitment specialist",
-      "Employer branding support",
-      "Talent pipeline development",
-    ],
-    iconColor: "text-calpir-green-500",
-  },
-  {
     id: "website-building",
     icon: Layout,
     title: "Website Building & Hosting",
+    investment: "$999",
     description: "Create a professional, high-performing website tailored to your business needs, including domain registration.",
     details: [
       "Custom website design and development",
-      "Responsive and mobile-friendly layouts",
+      "5-10 pages included",
       "Secure and reliable hosting solutions",
       "Domain registration and setup",
+      "Responsive and mobile-friendly layouts",
     ],
     iconColor: "text-palette-blue-500",
   },
@@ -130,6 +28,7 @@ const servicesData = [
     id: "additional-website-pages",
     icon: Layout,
     title: "Additional Website Pages",
+    investment: "$199/page",
     description: "Expand your website with professionally designed and developed extra pages.",
     details: [
       "Custom design for new pages",
@@ -143,6 +42,7 @@ const servicesData = [
     id: "ecommerce-functionality",
     icon: DollarSign,
     title: "E-commerce Functionality",
+    investment: "$699",
     description: "Integrate robust e-commerce capabilities into your website for online sales.",
     details: [
       "Product catalog setup and management",
@@ -156,6 +56,7 @@ const servicesData = [
     id: "seo-optimization",
     icon: Globe,
     title: "SEO Optimization",
+    investment: "$599",
     description: "Improve your website's visibility on search engines to attract more organic traffic.",
     details: [
       "Keyword research and analysis",
@@ -166,74 +67,24 @@ const servicesData = [
     iconColor: "text-palette-blue-700",
   },
   {
-    id: "accounting",
-    icon: DollarSign,
-    title: "Accounting System Setup",
-    description: "Set up efficient accounting systems for seamless financial management.",
-    details: [
-      "Chart of accounts configuration",
-      "Invoicing and expense tracking setup",
-      "Integration with payment gateways",
-      "Basic financial reporting",
-    ],
-    iconColor: "text-palette-yellow-400",
-  },
-  {
-    id: "social-media",
-    icon: Palette,
-    title: "Social Media Management",
+    id: "social-media-management-setup",
+    icon: Share2,
+    title: "Social Media Management Setup",
+    investment: "$799",
     description: "Establish and manage your brand's presence across key social media platforms.",
     details: [
-      "Platform setup and optimization",
+      "Setup on 2-5 platforms",
       "Content strategy and calendar development",
       "Post design and scheduling",
       "Audience engagement strategies",
     ],
-    iconColor: "text-palette-purple-400",
-  },
-  {
-    id: "email-systems",
-    icon: Mail,
-    title: "Email Systems & Automation",
-    description: "Develop effective email marketing and communication strategies.",
-    details: [
-      "Email platform setup",
-      "Email template design",
-      "Automated email sequences",
-      "List management and segmentation",
-    ],
-    iconColor: "text-primary",
-  },
-  {
-    id: "crm-setup",
-    icon: Settings,
-    title: "CRM Setup & Optimization",
-    description: "Implement Customer Relationship Management (CRM) systems to enhance customer interactions.",
-    details: [
-      "CRM platform selection and configuration",
-      "Sales pipeline setup",
-      "Customer data migration",
-      "Reporting and analytics for customer insights",
-    ],
-    iconColor: "text-palette-blue-600",
-  },
-  {
-    id: "integrations",
-    icon: Lightbulb,
-    title: "Platform Integrations",
-    description: "Connect your essential business tools for seamless data flow and automation.",
-    details: [
-      "Integration strategy and planning",
-      "Advanced integration setup",
-      "Data synchronization between platforms",
-      "Custom automation workflows",
-    ],
-    iconColor: "text-palette-orange-400",
+    iconColor: "text-palette-red-400",
   },
   {
     id: "design-branding",
     icon: Palette,
-    title: "Design & Branding",
+    title: "Design & Branding Package",
+    investment: "$1,299",
     description: "Craft a compelling brand identity that resonates with your target audience.",
     details: [
       "Logo design and brand guidelines",
@@ -244,9 +95,80 @@ const servicesData = [
     iconColor: "text-palette-purple-500",
   },
   {
+    id: "email-systems",
+    icon: Mail,
+    title: "Email Systems & Automation",
+    investment: "$899",
+    description: "Develop effective email marketing and communication strategies.",
+    details: [
+      "Email platform setup",
+      "Email template design",
+      "Automated email sequences",
+      "List management and segmentation",
+    ],
+    iconColor: "text-primary",
+  },
+  {
+    id: "project-management",
+    icon: Briefcase,
+    title: "Project Management Setup",
+    investment: "$799",
+    description: "Implement robust project management systems to keep your projects on track and teams coordinated.",
+    details: [
+      "Tool selection and configuration",
+      "Project template creation",
+      "Task management and tracking setup",
+      "Reporting and analytics dashboards",
+    ],
+    iconColor: "text-palette-orange-500",
+  },
+  {
+    id: "operations-flows",
+    icon: FileText,
+    title: "Operations Flows Setup",
+    investment: "$1,199",
+    description: "Streamline your business processes with efficient and automated operational workflows.",
+    details: [
+      "Process mapping and optimization",
+      "Workflow automation setup",
+      "Standard Operating Procedures (SOPs) documentation",
+      "Inter-departmental communication setup",
+    ],
+    iconColor: "text-primary",
+  },
+  {
+    id: "crm-setup",
+    icon: Settings,
+    title: "CRM Setup & Optimization",
+    investment: "$899",
+    description: "Implement Customer Relationship Management (CRM) systems to enhance customer interactions.",
+    details: [
+      "CRM platform selection and configuration",
+      "Sales pipeline setup",
+      "Customer data migration",
+      "Reporting and analytics for customer insights",
+    ],
+    iconColor: "text-palette-blue-600",
+  },
+  {
+    id: "accounting",
+    icon: DollarSign,
+    title: "Accounting System Setup",
+    investment: "$699",
+    description: "Set up efficient accounting systems for seamless financial management.",
+    details: [
+      "Chart of accounts configuration",
+      "Invoicing and expense tracking setup",
+      "Integration with payment gateways",
+      "Basic financial reporting",
+    ],
+    iconColor: "text-palette-yellow-400",
+  },
+  {
     id: "analytics",
     icon: TrendingUp,
     title: "Analytics & Reporting",
+    investment: "$799",
     description: "Gain valuable insights into your business performance with robust analytics setup.",
     details: [
       "Google Analytics setup and configuration",
@@ -257,9 +179,24 @@ const servicesData = [
     iconColor: "text-primary",
   },
   {
+    id: "integrations",
+    icon: Lightbulb,
+    title: "Platform Integrations",
+    investment: "$299/integration",
+    description: "Connect your essential business tools for seamless data flow and automation.",
+    details: [
+      "Integration strategy and planning",
+      "Advanced integration setup",
+      "Data synchronization between platforms",
+      "Custom automation workflows",
+    ],
+    iconColor: "text-palette-orange-400",
+  },
+  {
     id: "migrations",
     icon: BookOpen,
     title: "Software Migrations",
+    investment: "$599-$1,499",
     description: "Seamlessly transition your data and workflows to new platforms.",
     details: [
       "Data export and import management",
@@ -270,9 +207,24 @@ const servicesData = [
     iconColor: "text-palette-red-400",
   },
   {
+    id: "custom-automations",
+    icon: Code,
+    title: "Custom Automations",
+    investment: "$599",
+    description: "Automate repetitive tasks and complex workflows to boost efficiency and reduce manual effort.",
+    details: [
+      "Custom automation strategy and design",
+      "Integration of automation tools (e.g., Zapier, Make.com)",
+      "Setup of multi-step workflows (5+ automations)",
+      "Automated reporting and data synchronization",
+    ],
+    iconColor: "text-palette-orange-400",
+  },
+  {
     id: "security-basics",
     icon: Shield,
     title: "Security Basics Setup",
+    investment: "$599",
     description: "Implement fundamental security measures to protect your business data.",
     details: [
       "Basic website security configurations",
@@ -283,9 +235,24 @@ const servicesData = [
     iconColor: "text-palette-blue-700",
   },
   {
+    id: "hr-recruiting-system",
+    icon: Users,
+    title: "HR & Recruiting System",
+    investment: "$1,299",
+    description: "Build a strong global team with our comprehensive HR and recruitment solutions.",
+    details: [
+      "Applicant Tracking System (ATS) setup",
+      "Contracts and NDA drafting with e-signatures",
+      "Onboarding and offboarding workflows",
+      "HR policy and compliance guidance",
+    ],
+    iconColor: "text-primary",
+  },
+  {
     id: "time-tracking",
     icon: Clock,
     title: "Time Tracking System Setup",
+    investment: "$399",
     description: "Implement efficient time tracking solutions to monitor productivity and manage project hours accurately.",
     details: [
       "Time tracking tool selection and configuration",
@@ -296,9 +263,66 @@ const servicesData = [
     iconColor: "text-palette-orange-500",
   },
   {
+    id: "performance-management",
+    icon: TrendingUp,
+    title: "Performance Management",
+    investment: "$699",
+    description: "Set up systems for employee performance tracking, reviews, and goal setting to foster growth.",
+    details: [
+      "Performance review system setup",
+      "Goal setting and OKR tracking",
+      "Feedback and recognition programs",
+      "Employee development plans",
+    ],
+    iconColor: "text-palette-blue-600",
+  },
+  {
+    id: "single-role-recruitment",
+    icon: Users,
+    title: "Single Role Recruitment",
+    investment: "$599",
+    description: "Assistance with recruiting for one global role, from job posting to initial screening.",
+    details: [
+      "Job description optimization",
+      "Posting on global job boards",
+      "Candidate sourcing and initial screening",
+      "Interview coordination and support",
+    ],
+    iconColor: "text-calpir-green-700",
+  },
+  {
+    id: "multi-role-recruitment",
+    icon: Users,
+    title: "Multi-Role Recruitment",
+    investment: "$999",
+    description: "Comprehensive support for recruiting multiple global roles simultaneously.",
+    details: [
+      "Strategic recruitment planning for multiple roles",
+      "Volume candidate sourcing and management",
+      "Streamlined interview processes",
+      "Offer management and negotiation support",
+    ],
+    iconColor: "text-calpir-green-600",
+  },
+  {
+    id: "comprehensive-recruitment",
+    icon: Users,
+    title: "Comprehensive Recruitment (3 months)",
+    investment: "$2,999",
+    description: "Dedicated recruitment partnership for three months, offering unlimited hiring support.",
+    details: [
+      "Full-cycle recruitment for unlimited roles",
+      "Dedicated recruitment specialist",
+      "Employer branding support",
+      "Talent pipeline development",
+    ],
+    iconColor: "text-calpir-green-500",
+  },
+  {
     id: "basic-training-sessions",
     icon: BookOpen,
     title: "Basic Training Sessions",
+    investment: "$299/hour",
     description: "Introductory training to get your team familiar with new systems and tools.",
     details: [
       "1-hour live online session",
@@ -306,6 +330,104 @@ const servicesData = [
       "Access to recorded session",
     ],
     iconColor: "text-calpir-green-600",
+  },
+  {
+    id: "advanced-systems-training",
+    icon: BookOpen,
+    title: "Advanced Systems Training",
+    investment: "$399/hour",
+    description: "In-depth training for complex systems, advanced features, and custom workflows.",
+    details: [
+      "2-hour live online session",
+      "Customized curriculum based on your setup",
+      "Advanced tips and best practices",
+      "Dedicated follow-up support",
+    ],
+    iconColor: "text-calpir-green-700",
+  },
+  {
+    id: "custom-workshop-development",
+    icon: BookOpen,
+    title: "Custom Workshop Development",
+    investment: "$1,299",
+    description: "Tailored workshop designed to address specific team needs and challenges.",
+    details: [
+      "Full-day interactive workshop (virtual or on-site)",
+      "Custom exercises and case studies",
+      "Comprehensive training materials",
+      "Post-workshop consultation",
+    ],
+    iconColor: "text-calpir-green-800",
+  },
+  {
+    id: "team-certification-program",
+    icon: BookOpen,
+    title: "Team Certification Program",
+    investment: "$2,999",
+    description: "Certify your team members on new platforms and systems with a structured program.",
+    details: [
+      "Multi-module training program",
+      "Quizzes and practical assessments",
+      "Official certification upon completion",
+      "Ongoing access to learning resources",
+    ],
+    iconColor: "text-calpir-green-900",
+  },
+  {
+    id: "comprehensive-training-program",
+    icon: BookOpen,
+    title: "Comprehensive Training Program",
+    investment: "$1,499",
+    description: "An all-encompassing training solution for full team adoption and mastery of new systems.",
+    details: [
+      "Customized training roadmap",
+      "Blended learning approach (live, self-paced)",
+      "Dedicated training manager",
+      "Performance tracking and reporting",
+    ],
+    iconColor: "text-calpir-green-900",
+  },
+  {
+    id: "monthly-support-package",
+    icon: Headphones,
+    title: "Monthly Support Package",
+    investment: "$299/month",
+    description: "Ongoing email support and monthly check-ins to ensure smooth operations.",
+    details: [
+      "Priority email support",
+      "Monthly 30-minute strategy call",
+      "System health checks",
+      "Minor adjustments and updates",
+    ],
+    iconColor: "text-palette-purple-400",
+  },
+  {
+    id: "premium-support-package",
+    icon: Headphones,
+    title: "Premium Support Package",
+    investment: "$599/month",
+    description: "Dedicated weekly calls and priority support for critical business needs.",
+    details: [
+      "Dedicated support manager",
+      "Weekly 1-hour strategy calls",
+      "24/7 emergency support",
+      "Proactive system monitoring and optimization",
+    ],
+    iconColor: "text-palette-purple-500",
+  },
+  {
+    id: "ongoing-security-monitoring",
+    icon: Shield,
+    title: "Ongoing Security Monitoring",
+    investment: "$299/month",
+    description: "Continuous monitoring and proactive measures to protect your business from threats.",
+    details: [
+      "Real-time threat detection",
+      "Vulnerability assessments",
+      "Security incident response planning",
+      "Regular security reports and recommendations",
+    ],
+    iconColor: "text-palette-red-500",
   },
 ];
 
@@ -333,6 +455,9 @@ const Services = () => {
                   <p className="text-md text-gray-600 dark:text-gray-400">{service.description}</p>
                 </div>
               </div>
+              <div className="text-right mb-6">
+                <span className="text-3xl font-extrabold text-primary dark:text-calpir-green-300">{service.investment}</span>
+              </div>
               <ul className="list-none space-y-3 text-left mb-8">
                 {service.details.map((detail, detailIndex) => (
                   <li key={detailIndex} className="flex items-start text-gray-700 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.1 + detailIndex * 0.05}s` }}>
@@ -358,7 +483,6 @@ const Services = () => {
           ))}
         </div>
 
-        {/* New section for custom platform setups */}
         <section className="mt-20 text-center p-8 rounded-2xl shadow-xl animate-fade-in-up delay-1500
                     bg-gradient-to-br from-palette-blue-50 to-calpir-green-50 dark:from-palette-blue-950 dark:to-calpir-green-950 max-w-4xl mx-auto">
           <Puzzle className="h-16 w-16 mx-auto mb-6 text-primary dark:text-calpir-green-300 animate-bounce-slow" />
