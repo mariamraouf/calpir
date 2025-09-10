@@ -194,7 +194,7 @@ const comparisonFeatures = [
 const PackageComparisonTable = () => {
   return (
     <div className="overflow-x-auto rounded-2xl border border-palette-blue-100 dark:border-gray-700 shadow-lg bg-white dark:bg-gray-800 animate-fade-in-up delay-1000">
-      <Table className="w-full text-left">
+      <Table className="w-full text-left table-fixed"> {/* Added table-fixed here */}
         <TableHeader className="bg-gray-100 dark:bg-gray-900">
           <TableRow className="border-b border-palette-blue-100 dark:border-gray-700">
             <TableHead className="min-w-[200px] p-4 text-lg font-semibold text-gray-900 dark:text-white">Features</TableHead>
