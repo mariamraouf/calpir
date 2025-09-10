@@ -41,7 +41,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Freedcamp", logo: "https://logo.clearbit.com/freedcamp.com?size=50" },
       { name: "Paymo", logo: "https://logo.clearbit.com/paymoapp.com?size=50" },
       { name: "Avaza", logo: "https://logo.clearbit.com/avaza.com?size=50" },
-      { name: "Nifty", logo: "https://logo.clearbit.com/nifty.pm?size=50" }, // Fixed logo URL
+      { name: "Nifty", logo: "https://logo.clearbit.com/nifty.pm?size=50" },
       { name: "Hive", logo: "https://logo.clearbit.com/hive.com?size=50" },
       { name: "MeisterTask", logo: "https://logo.clearbit.com/meistertask.com?size=50" },
       { name: "Ganttic", logo: "https://logo.clearbit.com/ganttic.com?size=50" },
@@ -87,11 +87,9 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Factorial", logo: "https://logo.clearbit.com/factorialhr.com?size=50" },
       { name: "15Five", logo: "https://logo.clearbit.com/15five.com?size=50" },
       { name: "Culture Amp", logo: "https://logo.clearbit.com/cultureamp.com?size=50" },
-      { name: "Bob", logo: "https://logo.clearbit.com/hibob.com?size=50" },
-      { name: "Freshteam", logo: "https://logo.clearbit.com/freshteam.com?size=50" },
+      { name: "Freshteam", logo: "https://logo.clearbit.com/freshteam.com?size=50" }, // Verified logo URL
       { name: "Lattice", logo: "https://logo.clearbit.com/lattice.com?size=50" },
       { name: "Mindbody Business", logo: "https://logo.clearbit.com/mindbodyonline.com?size=50" },
-      { name: "HiBob", logo: "https://logo.clearbit.com/hibob.com?size=50" },
       { name: "GoCo", logo: "https://logo.clearbit.com/goco.io?size=50" },
       { name: "Sage HR", logo: "https://logo.clearbit.com/sage.com?size=50" },
       { name: "CharlieHR", logo: "https://logo.clearbit.com/charliehr.com?size=50" },
@@ -196,7 +194,7 @@ const initialPlatformCategories: PlatformCategory[] = [
   {
     name: "Email & Communication",
     platforms: [
-      { name: "Google Workspace", logo: "https://logo.clearbit.com/workspace.google.com?size=50" }, // Fixed logo URL
+      { name: "Google Workspace", logo: "https://logo.clearbit.com/workspace.google.com?size=50" },
       { name: "Microsoft 365", logo: "https://logo.clearbit.com/microsoft.com?size=50" },
       { name: "Slack", logo: "https://logo.clearbit.com/slack.com?size=50" },
       { name: "Zoom", logo: "https://logo.clearbit.com/zoom.us?size=50" },
@@ -212,7 +210,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Spike", logo: "https://logo.clearbit.com/spikenow.com?size=50" },
       { name: "Superhuman", logo: "https://logo.clearbit.com/superhuman.com?size=50" },
       { name: "Hey", logo: "https://logo.clearbit.com/hey.com?size=50" },
-      { name: "Brevo", logo: "https://logo.clearbit.com/brevo.com?size=50" }, // Fixed logo URL
+      { name: "Brevo", logo: "https://logo.clearbit.com/brevo.com?size=50" },
       { name: "Mailchimp", logo: "https://logo.clearbit.com/mailchimp.com?size=50" },
       { name: "Constant Contact", logo: "https://logo.clearbit.com/constantcontact.com?size=50" },
       { name: "GetResponse", logo: "https://logo.clearbit.com/getresponse.com?size=50" },
@@ -236,10 +234,10 @@ const initialPlatformCategories: PlatformCategory[] = [
     name: "Social Media Platforms",
     platforms: [
       { name: "Instagram", logo: "https://logo.clearbit.com/instagram.com?size=50" },
-      { name: "Facebook", logo: "https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" },
+      { name: "Facebook", logo: "https://logo.clearbit.com/facebook.com?size=50" }, // Fixed logo URL
       { name: "X", logo: "https://logo.clearbit.com/x.com?size=50" },
       { name: "LinkedIn", logo: "https://logo.clearbit.com/linkedin.com?size=50" },
-      { name: "TikTok", logo: "https://sf-tb-sg.ibytedtos.com/obj/ies-fe-bee/bee_prod/biz_177/tiktok_logo_black.svg" },
+      { name: "TikTok", logo: "https://logo.clearbit.com/tiktok.com?size=50" }, // Fixed logo URL
       { name: "YouTube", logo: "https://logo.clearbit.com/youtube.com?size=50" },
       { name: "Pinterest", logo: "https://logo.clearbit.com/pinterest.com?size=50" },
       { name: "Snapchat", logo: "https://logo.clearbit.com/snapchat.com?size=50" },
@@ -256,12 +254,12 @@ const initialPlatformCategories: PlatformCategory[] = [
   {
     name: "E-Signature",
     platforms: [
-      { name: "Adobe Acrobat Sign", logo: "https://logo.clearbit.com/acrobat.adobe.com?size=50" }, // Fixed logo URL
+      { name: "Adobe Acrobat Sign", logo: "https://logo.clearbit.com/acrobat.adobe.com?size=50" },
       { name: "DocuSign", logo: "https://logo.clearbit.com/docusign.com?size=50" },
       { name: "SignNow", logo: "https://logo.clearbit.com/signnow.com?size=50" },
       { name: "PandaDoc", logo: "https://logo.clearbit.com/pandadoc.com?size=50" },
       { name: "HelloSign (Dropbox Sign)", logo: "https://logo.clearbit.com/hellosign.com?size=50" },
-      { name: "RightSignature", logo: "https://logo.clearbit.com/rightsignature.com?size=50" }, // Fixed logo URL
+      { name: "RightSignature", logo: "https://logo.clearbit.com/rightsignature.com?size=50" },
       { name: "SignRequest", logo: "https://logo.clearbit.com/signrequest.com?size=50" },
       { name: "eSignatures.io", logo: "https://logo.clearbit.com/esignatures.io?size=50" },
       { name: "Signeasy", logo: "https://logo.clearbit.com/signeasy.com?size=50" },
@@ -330,7 +328,7 @@ const initialPlatformCategories: PlatformCategory[] = [
   {
     name: "Analytics & SEO",
     platforms: [
-      { name: "Google Analytics", logo: "https://logo.clearbit.com/analytics.google.com?size=50" }, // Fixed logo URL
+      { name: "Google Analytics", logo: "https://logo.clearbit.com/analytics.google.com?size=50" },
       { name: "Mixpanel", logo: "https://logo.clearbit.com/mixpanel.com?size=50" },
       { name: "Amplitude", logo: "https://logo.clearbit.com/amplitude.com?size=50" },
       { name: "Hotjar", logo: "https://logo.clearbit.com/hotjar.com?size=50" },
@@ -362,6 +360,8 @@ const platformsToRemove = [
   "Medium",
   "Google Search Console",
   "Docupilot",
+  "Bob", // Removed
+  "HiBob", // Removed
 ];
 
 const updatedPlatformCategories = initialPlatformCategories
