@@ -87,7 +87,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Factorial", logo: "https://logo.clearbit.com/factorialhr.com?size=50" },
       { name: "15Five", logo: "https://logo.clearbit.com/15five.com?size=50" },
       { name: "Culture Amp", logo: "https://logo.clearbit.com/cultureamp.com?size=50" },
-      { name: "Freshteam", logo: "https://logo.clearbit.com/freshteam.com?size=50" }, // Verified logo URL
+      { name: "Freshteam", logo: "https://logo.clearbit.com/freshteam.com?size=50" },
       { name: "Lattice", logo: "https://logo.clearbit.com/lattice.com?size=50" },
       { name: "Mindbody Business", logo: "https://logo.clearbit.com/mindbodyonline.com?size=50" },
       { name: "GoCo", logo: "https://logo.clearbit.com/goco.io?size=50" },
@@ -234,10 +234,10 @@ const initialPlatformCategories: PlatformCategory[] = [
     name: "Social Media Platforms",
     platforms: [
       { name: "Instagram", logo: "https://logo.clearbit.com/instagram.com?size=50" },
-      { name: "Facebook", logo: "https://logo.clearbit.com/facebook.com?size=50" }, // Fixed logo URL
+      { name: "Facebook", logo: "https://logo.clearbit.com/facebook.com?size=50" },
       { name: "X", logo: "https://logo.clearbit.com/x.com?size=50" },
       { name: "LinkedIn", logo: "https://logo.clearbit.com/linkedin.com?size=50" },
-      { name: "TikTok", logo: "https://logo.clearbit.com/tiktok.com?size=50" }, // Fixed logo URL
+      { name: "TikTok", logo: "https://logo.clearbit.com/tiktok.com?size=50" },
       { name: "YouTube", logo: "https://logo.clearbit.com/youtube.com?size=50" },
       { name: "Pinterest", logo: "https://logo.clearbit.com/pinterest.com?size=50" },
       { name: "Snapchat", logo: "https://logo.clearbit.com/snapchat.com?size=50" },
@@ -360,8 +360,6 @@ const platformsToRemove = [
   "Medium",
   "Google Search Console",
   "Docupilot",
-  "Bob", // Removed
-  "HiBob", // Removed
 ];
 
 const updatedPlatformCategories = initialPlatformCategories
@@ -382,6 +380,33 @@ updatedPlatformCategories.push({
     { name: "Teamlogger", logo: "https://logo.clearbit.com/teamlogger.com?size=50" },
     { name: "Tempo", logo: "https://logo.clearbit.com/tempo.io?size=50" },
     { name: "Hubstaff", logo: "https://logo.clearbit.com/hubstaff.com?size=50" },
+  ],
+});
+
+// Add the new "AI and Automations" category
+updatedPlatformCategories.push({
+  name: "AI and Automations",
+  platforms: [
+    { name: "ChatGPT", logo: "https://logo.clearbit.com/openai.com?size=50" },
+    { name: "Claude", logo: "https://logo.clearbit.com/anthropic.com?size=50" },
+    { name: "Grok", logo: "https://logo.clearbit.com/x.ai?size=50" },
+    { name: "Zapier", logo: "https://logo.clearbit.com/zapier.com?size=50" },
+    { name: "Make.com", logo: "https://logo.clearbit.com/make.com?size=50" },
+    { name: "ClickUp Brain", logo: "https://logo.clearbit.com/clickup.com?size=50" },
+    { name: "Bard (Gemini)", logo: "https://logo.clearbit.com/gemini.google.com?size=50" },
+    { name: "Microsoft Copilot", logo: "https://logo.clearbit.com/microsoft.com?size=50" },
+    { name: "UiPath", logo: "https://logo.clearbit.com/uipath.com?size=50" },
+    { name: "Automation Anywhere", logo: "https://logo.clearbit.com/automationanywhere.com?size=50" },
+    { name: "Power Automate", logo: "https://logo.clearbit.com/microsoft.com?size=50" },
+    { name: "Integrately", logo: "https://logo.clearbit.com/integrately.com?size=50" },
+    { name: "ActiveCampaign Automation", logo: "https://logo.clearbit.com/activecampaign.com?size=50" },
+    { name: "Zoho Flow", logo: "https://logo.clearbit.com/zoho.com?size=50" },
+    { name: "IFTTT", logo: "https://logo.clearbit.com/ifttt.com?size=50" },
+    { name: "Tray.io", logo: "https://logo.clearbit.com/tray.io?size=50" },
+    { name: "Workato", logo: "https://logo.clearbit.com/workato.com?size=50" },
+    { name: "Appian", logo: "https://logo.clearbit.com/appian.com?size=50" },
+    { name: "Pega Systems", logo: "https://logo.clearbit.com/pega.com?size=50" },
+    { name: "ServiceNow", logo: "https://logo.clearbit.com/servicenow.com?size=50" },
   ],
 });
 

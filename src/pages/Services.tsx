@@ -4,7 +4,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail, Headphones, Puzzle } from "lucide-react"; // Added Puzzle icon
+import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail, Headphones, Puzzle, Clock } from "lucide-react"; // Added Clock icon
 import { Button } from "@/components/ui/button"; // Import Button component
 import { Link } from "react-router-dom"; // Import Link for navigation
 
@@ -200,6 +200,19 @@ const servicesData = [
       "User guides and documentation",
     ],
     iconColor: "text-calpir-green-600",
+  },
+  {
+    id: "time-tracking", // New service ID
+    icon: Clock, // Using Clock icon
+    title: "Time Tracking System Setup",
+    description: "Implement efficient time tracking solutions to monitor productivity and manage project hours accurately.",
+    details: [
+      "Time tracking tool selection and configuration",
+      "Automated time logging setup",
+      "Reporting for project hours and team activity",
+      "Integration with project management and payroll systems",
+    ],
+    iconColor: "text-palette-orange-500", // Using an appropriate color
   },
 ];
 

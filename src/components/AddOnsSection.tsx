@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Globe, Code, Shield, Layout, DollarSign, BookOpen, Settings, Clock } from "lucide-react"; // Added new icons
+import { PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Globe, Code, Shield, Layout, DollarSign, BookOpen, Settings, Clock } from "lucide-react"; // Added Clock icon
 import { Link } from "react-router-dom"; // Import Link for navigation
 
 const addOnsCategories = [
@@ -103,6 +103,16 @@ const addOnsCategories = [
     iconColor: "text-palette-red-500", // New color
     items: [
       { posts: "One-time Setup", price: "$299", description: "Basic security configurations and recommendations" },
+    ],
+  },
+  {
+    name: "Time Tracking", // New Add-on Category
+    icon: Clock,
+    iconColor: "text-palette-orange-500",
+    items: [
+      { posts: "Basic Setup", price: "$149", description: "Initial setup of a time tracking tool for small teams" },
+      { posts: "Advanced Setup & Reporting", price: "$299", description: "Comprehensive setup with custom reports and integrations" },
+      { posts: "Team Training & Optimization", price: "$399", description: "Training sessions for your team and workflow optimization" },
     ],
   },
 ];
