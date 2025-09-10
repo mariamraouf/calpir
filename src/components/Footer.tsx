@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import { Mail, Phone, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button"; // Import Button
 
-const Footer = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
+const Footer = () => {
   return (
     <footer className="bg-foreground dark:bg-gray-950 text-gray-300 py-16 md:py-20">
-      <div className="container grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className="container grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Company Info */}
         <div className="col-span-full md:col-span-1 animate-fade-in-up">
           <Link to="/" className="flex items-center space-x-2 font-bold text-2xl text-white mb-4 transition-transform duration-300 hover:scale-110">
@@ -16,7 +16,7 @@ const Footer = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuote
             <span className="text-white">Calpir</span>
           </Link>
           <p className="text-sm leading-relaxed mb-4">
-            Empowering entrepreneurs to launch successful businesses with proven systems, comprehensive operations setup, and strategic business frameworks.
+            Your partner in launching and scaling successful businesses with strategic operations and proven frameworks.
           </p>
           <div className="space-y-2 text-sm">
             <p className="flex items-center">
@@ -29,17 +29,6 @@ const Footer = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuote
               <MessageSquare className="h-4 w-4 mr-2 text-primary" /> <span className="hover:text-white transition-colors">24/7 Live Chat</span>
             </p>
           </div>
-        </div>
-
-        {/* Services Links */}
-        <div className="animate-fade-in-up delay-200">
-          <h4 className="text-lg font-semibold text-white mb-4">Services</h4>
-          <ul className="space-y-2 text-sm">
-            <li><a href="/services#operations-flows" className="hover:text-white transition-colors">Business Operations Setup</a></li>
-            <li><a href="/services#website-building" className="hover:text-white transition-colors">Website Development</a></li>
-            <li><a href="/services#design-branding" className="hover:text-white transition-colors">Brand Identity</a></li>
-            <li><a href="/services#social-media" className="hover:text-white transition-colors">Marketing Systems</a></li>
-          </ul>
         </div>
 
         {/* Company Links */}
@@ -58,7 +47,7 @@ const Footer = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuote
           <h4 className="text-lg font-semibold text-white mb-4">Quick Actions</h4>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link to="/build-my-business"> {/* Changed to Link */}
+              <Link to="/build-my-business">
                 <Button
                   variant="link"
                   className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
@@ -68,14 +57,24 @@ const Footer = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuote
               </Link>
             </li>
             <li>
-              <Link to="/get-a-quote"> {/* Changed to Link */}
+              <Link to="/get-a-quote">
+                <Button
+                  variant="link"
+                  className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
+                >
+                  Request a Custom Quote
+                </Button>
+              </Link>
+            </li>
+            <li>
+              <a href="https://calendly.com/your-calpir-consultation" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="link"
                   className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
                 >
                   Get a Free Consultation
                 </Button>
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

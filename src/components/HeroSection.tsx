@@ -41,14 +41,14 @@ const HeroSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustom
               Start My Business
             </Button>
           </Link>
-          <Link to="/get-a-quote"> {/* Changed to Link */}
+          <a href="https://calendly.com/your-calpir-consultation" target="_blank" rel="noopener noreferrer"> {/* Changed to external link */}
             <Button
               size="lg"
               className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
             >
               Get a Free Consultation
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
       {/* Background shapes for visual interest */}

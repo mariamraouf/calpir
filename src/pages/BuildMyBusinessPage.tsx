@@ -114,13 +114,12 @@ const BuildMyBusinessPage = () => {
     handleChange(id, value);
   };
 
-  const handleCheckboxChange = (id: string, checked: boolean, field: "addOnInterests" | "primaryGoals" | "systemPriorities") => {
-    const itemId = id.replace(/^(addOn-|goal-|priority-)/, ""); // Extract original ID from "addOn-id", "goal-id", or "priority-id"
+  const handleCheckboxChange = (value: string, checked: boolean, field: "addOnInterests" | "primaryGoals" | "systemPriorities") => {
     handleChange(
       field,
       checked
-        ? [...formData[field], itemId]
-        : formData[field].filter((item) => item !== itemId)
+        ? [...formData[field], value]
+        : formData[field].filter((item) => item !== value)
     );
   };
 
@@ -160,7 +159,7 @@ const BuildMyBusinessPage = () => {
         </section>
 
         <div className="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 animate-fade-in-up delay-300">
-          <form onSubmit={handleSubmit} className="grid gap-8 py-4"> {/* Increased gap for more space */}
+          <form onSubmit={handleSubmit} className="grid gap-8 py-4">
             {/* Contact Information */}
             <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">1. Contact Information</h3>
@@ -279,7 +278,7 @@ const BuildMyBusinessPage = () => {
                       <Checkbox
                         id={`priority-${priority}`}
                         checked={formData.systemPriorities.includes(priority)}
-                        onCheckedChange={(checked) => handleCheckboxChange(`priority-${priority}`, checked as boolean, "systemPriorities")}
+                        onCheckedChange={(checked) => handleCheckboxChange(priority, checked as boolean, "systemPriorities")}
                       />
                       <Label htmlFor={`priority-${priority}`}>{priority}</Label>
                     </div>
@@ -301,8 +300,8 @@ const BuildMyBusinessPage = () => {
                   <Label htmlFor="package-growth">Growth ($2,999)</Label>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="Ultimate ($5,999+)" id="package-ultimate" />
-                  <Label htmlFor="package-ultimate">Ultimate ($5,999+)</Label>
+                  <RadioGroupItem value="Ultimate ($5,999)" id="package-ultimate" />
+                  <Label htmlFor="package-ultimate">Ultimate ($5,999)</Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="Not Sure" id="package-not-sure" />
@@ -330,13 +329,13 @@ const BuildMyBusinessPage = () => {
             {/* Add-On Interests */}
             <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">5. Add-On Interests</h3>
-              <div className="grid grid-cols-1 gap-4"> {/* Increased gap for more space */}
+              <div className="grid grid-cols-1 gap-4">
                 {addOnsOptions.map((addOn) => (
                   <div key={addOn.id} className="flex items-center space-x-2">
                     <Checkbox
                       id={`addOn-${addOn.id}`}
                       checked={formData.addOnInterests.includes(addOn.id)}
-                      onCheckedChange={(checked) => handleCheckboxChange(`addOn-${addOn.id}`, checked as boolean, "addOnInterests")}
+                      onCheckedChange={(checked) => handleCheckboxChange(addOn.id, checked as boolean, "addOnInterests")}
                     />
                     <Label htmlFor={`addOn-${addOn.id}`} className="flex-grow">
                       {addOn.label}
@@ -367,7 +366,7 @@ const BuildMyBusinessPage = () => {
                     <Checkbox
                       id="goal-website-development"
                       checked={formData.primaryGoals.includes("Website Development")}
-                      onCheckedChange={(checked) => handleCheckboxChange("goal-website-development", checked as boolean, "primaryGoals")}
+                      onCheckedChange={(checked) => handleCheckboxChange("Website Development", checked as boolean, "primaryGoals")}
                     />
                     <Label htmlFor="goal-website-development">Website Development</Label>
                   </div>
@@ -375,7 +374,7 @@ const BuildMyBusinessPage = () => {
                     <Checkbox
                       id="goal-brand-identity"
                       checked={formData.primaryGoals.includes("Brand Identity")}
-                      onCheckedChange={(checked) => handleCheckboxChange("goal-brand-identity", checked as boolean, "primaryGoals")}
+                      onCheckedChange={(checked) => handleCheckboxChange("Brand Identity", checked as boolean, "primaryGoals")}
                     />
                     <Label htmlFor="goal-brand-identity">Brand Identity</Label>
                   </div>
@@ -383,7 +382,7 @@ const BuildMyBusinessPage = () => {
                     <Checkbox
                       id="goal-marketing-systems"
                       checked={formData.primaryGoals.includes("Marketing Systems")}
-                      onCheckedChange={(checked) => handleCheckboxChange("goal-marketing-systems", checked as boolean, "primaryGoals")}
+                      onCheckedChange={(checked) => handleCheckboxChange("Marketing Systems", checked as boolean, "primaryGoals")}
                     />
                     <Label htmlFor="goal-marketing-systems">Marketing Systems</Label>
                   </div>
@@ -391,7 +390,7 @@ const BuildMyBusinessPage = () => {
                     <Checkbox
                       id="goal-project-management-setup"
                       checked={formData.primaryGoals.includes("Project Management Setup")}
-                      onCheckedChange={(checked) => handleCheckboxChange("goal-project-management-setup", checked as boolean, "primaryGoals")}
+                      onCheckedChange={(checked) => handleCheckboxChange("Project Management Setup", checked as boolean, "primaryGoals")}
                     />
                     <Label htmlFor="goal-project-management-setup">Project Management Setup</Label>
                   </div>
@@ -399,7 +398,7 @@ const BuildMyBusinessPage = () => {
                     <Checkbox
                       id="goal-hr-operations-setup"
                       checked={formData.primaryGoals.includes("HR & Operations Setup")}
-                      onCheckedChange={(checked) => handleCheckboxChange("goal-hr-operations-setup", checked as boolean, "primaryGoals")}
+                      onCheckedChange={(checked) => handleCheckboxChange("HR & Operations Setup", checked as boolean, "primaryGoals")}
                     />
                     <Label htmlFor="goal-hr-operations-setup">HR & Operations Setup</Label>
                   </div>
@@ -407,7 +406,7 @@ const BuildMyBusinessPage = () => {
                     <Checkbox
                       id="goal-other"
                       checked={formData.primaryGoals.includes("Other")}
-                      onCheckedChange={(checked) => handleCheckboxChange("goal-other", checked as boolean, "primaryGoals")}
+                      onCheckedChange={(checked) => handleCheckboxChange("Other", checked as boolean, "primaryGoals")}
                     />
                     <Label htmlFor="goal-other">Other</Label>
                   </div>

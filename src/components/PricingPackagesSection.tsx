@@ -46,7 +46,7 @@ const packages = [
   {
     name: "Ultimate Package",
     tag: "Enterprise Level",
-    price: "$5,999+",
+    price: "$5,999",
     description: "Funded startups or businesses needing premium setups/migrations—advanced features, dedicated manager (1-month email/check-ins).",
     features: [
       "Everything in Growth, plus:",

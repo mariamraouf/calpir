@@ -237,14 +237,14 @@ const Services = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuo
                 ))}
               </ul>
               <div className="text-center mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
-                <Link to="/get-a-quote"> {/* Changed to Link */}
+                <a href="https://calendly.com/your-calpir-consultation" target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
                     className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
                   >
                     Get a Free Consultation
                   </Button>
-                </Link>
+                </a>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
                   Consult with our experts and get to know the best platforms suitable for your business.
                 </p>

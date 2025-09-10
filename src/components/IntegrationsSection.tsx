@@ -54,7 +54,7 @@ const IntegrationsSection = () => {
     <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up">
-          300+ Platform Integrations
+          300+ Platform Setups
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12 animate-fade-in-up delay-200">
           We integrate your business with the tools you need to succeed. From project management to payment processing, we've got you covered.

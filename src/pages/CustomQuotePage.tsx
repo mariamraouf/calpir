@@ -9,7 +9,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
@@ -20,7 +19,6 @@ const CustomQuotePage = () => {
     email: "",
     phoneNumber: "",
     businessType: "",
-    inquiryType: "",
     briefDescription: "",
     consent: false,
   });
@@ -39,11 +37,11 @@ const CustomQuotePage = () => {
       toast.error("Please agree to the Privacy Policy and Terms of Service.");
       return;
     }
-    console.log("Secondary Form Submitted:", formData);
+    console.log("Custom Quote Form Submitted:", formData);
     toast.success("Your inquiry has been sent! We'll get back to you soon.");
     // Reset form
     setFormData({
-      fullName: "", email: "", phoneNumber: "", businessType: "", inquiryType: "", briefDescription: "", consent: false,
+      fullName: "", email: "", phoneNumber: "", businessType: "", briefDescription: "", consent: false,
     });
   };
 
@@ -53,10 +51,10 @@ const CustomQuotePage = () => {
       <main className="flex-grow container py-16 md:py-24">
         <section className="text-center mb-16 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-            Get a Free Consultation / Custom Quote
+            Request a Custom Quote
           </h1>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed delay-200">
-            Tell us a bit about what you need, and we'll be in touch.
+            Tell us a bit about what you need, and we'll provide a custom quote.
           </p>
         </section>
 
@@ -71,11 +69,11 @@ const CustomQuotePage = () => {
               <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} required />
             </div>
             <div>
-              <Label htmlFor="phoneNumber">Phone Number (Optional)</Label>
+              <Label htmlFor="phoneNumber">Phone Number</Label>
               <Input id="phoneNumber" type="tel" value={formData.phoneNumber} onChange={(e) => handleChange("phoneNumber", e.target.value)} />
             </div>
             <div>
-              <Label htmlFor="businessType">Business Type (Optional)</Label>
+              <Label htmlFor="businessType">Business Type</Label>
               <Select onValueChange={handleSelectChange("businessType")} value={formData.businessType}>
                 <SelectTrigger id="businessType">
                   <SelectValue placeholder="Select business type" />
@@ -90,20 +88,7 @@ const CustomQuotePage = () => {
               </Select>
             </div>
             <div>
-              <Label>Inquiry Type <span className="text-red-500">*</span></Label>
-              <RadioGroup onValueChange={handleSelectChange("inquiryType")} value={formData.inquiryType} required>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="Free Consultation" id="inquiry-consultation" />
-                  <Label htmlFor="inquiry-consultation">Free Consultation</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="Custom Quote" id="inquiry-quote" />
-                  <Label htmlFor="inquiry-quote">Custom Quote</Label>
-                </div>
-              </RadioGroup>
-            </div>
-            <div>
-              <Label htmlFor="briefDescription">Brief Description (Optional)</Label>
+              <Label htmlFor="briefDescription">Brief Description</Label>
               <Textarea id="briefDescription" placeholder="Tell us about your business or what you’re looking for..." value={formData.briefDescription} onChange={(e) => handleChange("briefDescription", e.target.value)} rows={4} />
             </div>
 
@@ -121,7 +106,7 @@ const CustomQuotePage = () => {
 
             <div className="mt-6">
               <Button type="submit" className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:animate-button-glow">
-                {formData.inquiryType === "Custom Quote" ? "Get Quote" : "Request Consultation"}
+                Get Quote
               </Button>
             </div>
           </form>
