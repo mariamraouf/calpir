@@ -11,7 +11,8 @@ import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import BuildMyBusinessPage from "./pages/BuildMyBusinessPage";
 import CustomQuotePage from "./pages/CustomQuotePage";
-import Platforms from "./pages/Platforms"; // New import
+import Platforms from "./pages/Platforms";
+import ScrollToTop from "./components/ScrollToTop"; // Import the new component
 import React from "react";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop /> {/* Add ScrollToTop here */}
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
@@ -31,7 +33,7 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/build-my-business" element={<BuildMyBusinessPage />} />
             <Route path="/get-a-quote" element={<CustomQuotePage />} />
-            <Route path="/platforms" element={<Platforms />} /> {/* New route */}
+            <Route path="/platforms" element={<Platforms />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
