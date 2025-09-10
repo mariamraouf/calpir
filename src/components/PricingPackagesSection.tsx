@@ -3,7 +3,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react"; // Import ArrowRight icon
 
 const packages = [
   {
@@ -64,14 +64,14 @@ const packages = [
   },
 ];
 
-const PricingPackagesSection = () => { // Removed setOpenBuildMyBusinessForm prop
+const PricingPackagesSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-white dark:bg-gray-950" id="pricing">
+    <section className="py-16 md:py-24 bg-background dark:bg-background" id="pricing"> {/* Darker background */}
       <div className="container text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground dark:text-foreground animate-fade-in-up"> {/* White text */}
           Choose Your Launch Package
         </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in-up delay-200">
+        <p className="text-lg text-gray-300 dark:text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in-up delay-200"> {/* Lighter gray text */}
           Select the perfect package to launch your business with our proven systems and frameworks.
         </p>
 
@@ -81,8 +81,8 @@ const PricingPackagesSection = () => { // Removed setOpenBuildMyBusinessForm pro
               key={index}
               className={`flex flex-col p-8 rounded-2xl shadow-lg border-2 ${
                 pkg.highlight
-                  ? "border-primary bg-calpir-green-50 dark:bg-calpir-green-950"
-                  : "border-gray-200 bg-white dark:bg-gray-800"
+                  ? "border-primary bg-calpir-green-950 dark:bg-calpir-green-950" /* Darker highlight background */
+                  : "border-gray-700 bg-gray-800 dark:bg-gray-800" /* Darker card, border */
               } transition-all duration-300 hover:scale-110 hover:shadow-2xl animate-zoom-in`}
               style={{ animationDelay: `${0.3 + index * 0.15}s` }}
             >
@@ -91,38 +91,38 @@ const PricingPackagesSection = () => { // Removed setOpenBuildMyBusinessForm pro
                   className={`inline-block px-4 py-1 rounded-full text-xs font-semibold mb-4 ${
                     pkg.highlight
                       ? "bg-primary text-white"
-                      : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
+                      : "bg-gray-700 text-gray-200 dark:bg-gray-700 dark:text-gray-200" /* Darker tag */
                   }`}
                 >
                   {pkg.tag}
                 </span>
               )}
-              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{pkg.name}</h3>
+              <h3 className="text-2xl font-bold mb-2 text-white dark:text-white">{pkg.name}</h3> {/* White text */}
               <p className="text-4xl font-extrabold text-primary dark:text-calpir-green-300 mb-4">{pkg.price}</p>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 flex-grow">{pkg.description}</p>
+              <p className="text-gray-400 dark:text-gray-400 mb-6 flex-grow">{pkg.description}</p> {/* Lighter gray text */}
 
               <ul className="list-none space-y-3 text-left mb-8">
                 {pkg.features.slice(0, 5).map((feature, fIndex) => ( // Show only first 5 features as a summary
-                  <li key={fIndex} className="flex items-start text-gray-700 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.15 + fIndex * 0.05}s` }}>
+                  <li key={fIndex} className="flex items-start text-gray-300 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.15 + fIndex * 0.05}s` }}> {/* Lighter text */}
                     <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                     <span>{feature}</span>
                   </li>
                 ))}
                 {pkg.features.length > 5 && (
-                  <li className="flex items-start text-gray-700 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.15 + 5 * 0.05}s` }}>
+                  <li className="flex items-start text-gray-300 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.15 + 5 * 0.05}s` }}> {/* Lighter text */}
                     <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                     <span>...and more!</span>
                   </li>
                 )}
               </ul>
 
-              <Link to="/build-my-business"> {/* Changed to Link */}
+              <Link to="/build-my-business">
                 <Button
                   size="lg"
                   className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow ${
                     pkg.highlight
                       ? "bg-primary hover:bg-calpir-green-700 text-white hover:text-white"
-                      : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white"
+                      : "bg-gray-700 hover:bg-gray-600 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white" /* Darker button for non-highlighted */
                   }`}
                 >
                   Get Started
@@ -130,6 +130,20 @@ const PricingPackagesSection = () => { // Removed setOpenBuildMyBusinessForm pro
               </Link>
             </div>
           ))}
+        </div>
+
+        {/* New Package Comparison Table Button */}
+        <div className="mt-16 text-center animate-fade-in-up delay-1000">
+          <Link to="/pricing">
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-primary border-primary hover:bg-primary hover:text-white text-lg px-8 py-3 rounded-2xl transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg flex items-center justify-center mx-auto"
+            >
+              Package Comparison Table
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
