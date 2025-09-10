@@ -18,14 +18,14 @@ interface PlatformCategory {
   platforms: Platform[];
 }
 
-const platformCategories: PlatformCategory[] = [
+const initialPlatformCategories: PlatformCategory[] = [
   {
     name: "Project Management",
     platforms: [
       { name: "Asana", logo: "https://logo.clearbit.com/asana.com?size=50" },
       { name: "Monday.com", logo: "https://logo.clearbit.com/monday.com?size=50" },
       { name: "Trello", logo: "https://logo.clearbit.com/trello.com?size=50" },
-      { name: "Jira", logo: "https://logo.clearbit.com/atlassian.com/jira?size=50" },
+      { name: "Jira", logo: "https://logo.clearbit.com/atlassian.com?size=50" }, // Amended
       { name: "ClickUp", logo: "https://logo.clearbit.com/clickup.com?size=50" },
       { name: "Basecamp", logo: "https://logo.clearbit.com/basecamp.com?size=50" },
       { name: "Wrike", logo: "https://logo.clearbit.com/wrike.com?size=50" },
@@ -41,7 +41,7 @@ const platformCategories: PlatformCategory[] = [
       { name: "Freedcamp", logo: "https://logo.clearbit.com/freedcamp.com?size=50" },
       { name: "Paymo", logo: "https://logo.clearbit.com/paymoapp.com?size=50" },
       { name: "Avaza", logo: "https://logo.clearbit.com/avaza.com?size=50" },
-      { name: "Nifty", logo: "https://logo.clearbit.com/nifty.pm?size=50" },
+      { name: "Nifty", logo: "https://logo.clearbit.com/niftypm.com?size=50" }, // Amended
       { name: "Hive", logo: "https://logo.clearbit.com/hive.com?size=50" },
       { name: "MeisterTask", logo: "https://logo.clearbit.com/meistertask.com?size=50" },
       { name: "Ganttic", logo: "https://logo.clearbit.com/ganttic.com?size=50" },
@@ -53,7 +53,6 @@ const platformCategories: PlatformCategory[] = [
       { name: "Plaky", logo: "https://logo.clearbit.com/plaky.com?size=50" },
       { name: "Ninety", logo: "https://logo.clearbit.com/ninety.io?size=50" },
       { name: "Lark", logo: "https://logo.clearbit.com/larksuite.com?size=50" },
-      { name: "DeskTrack", logo: "https://logo.clearbit.com/desktrack.com?size=50" },
       { name: "Zoho Projects", logo: "https://logo.clearbit.com/zoho.com?size=50" },
       { name: "Kanban Tool", logo: "https://logo.clearbit.com/kanbantool.com?size=50" },
       { name: "Redbooth", logo: "https://logo.clearbit.com/redbooth.com?size=50" },
@@ -172,11 +171,9 @@ const platformCategories: PlatformCategory[] = [
       { name: "Akaunting", logo: "https://logo.clearbit.com/akaunting.com?size=50" },
       { name: "GnuCash", logo: "https://logo.clearbit.com/gnucash.org?size=50" },
       { name: "Manager.io", logo: "https://logo.clearbit.com/manager.io?size=50" },
-      { name: "Harvest", logo: "https://logo.clearbit.com/getharvest.com?size=50" },
       { name: "Float", logo: "https://logo.clearbit.com/floatapp.com?size=50" },
       { name: "QuickFile", logo: "https://logo.clearbit.com/quickfile.co.uk?size=50" },
       { name: "ClearBooks", logo: "https://logo.clearbit.com/clearbooks.co.uk?size=50" },
-      { name: "FreeAccountingSoftware", logo: "https://logo.clearbit.com/freeaccountingsolutions.com?size=50" },
       { name: "Bookipi", logo: "https://logo.clearbit.com/bookipi.com?size=50" },
       { name: "ContaSim", logo: "https://logo.clearbit.com/contasimple.com?size=50" },
       { name: "InvoiceNinja", logo: "https://logo.clearbit.com/invoiceninja.com?size=50" },
@@ -188,7 +185,7 @@ const platformCategories: PlatformCategory[] = [
       { name: "Odoo Accounting", logo: "https://logo.clearbit.com/odoo.com?size=50" },
       { name: "TallyPrime", logo: "https://logo.clearbit.com/tallysolutions.com?size=50" },
       { name: "AlignBooks", logo: "https://logo.clearbit.com/alignbooks.com?size=50" },
-      { name: "ProfitBooks", logo: "https://logo.clearbit.com/profitbooks.in?size=50" },
+      { name: "ProfitBooks", logo: "https://logo.clearbit.com/profitbooks.net?size=50" }, // Amended
       { name: "Sunrise", logo: "https://logo.clearbit.com/sunriseapp.com?size=50" },
       { name: "WaveApps", logo: "https://logo.clearbit.com/waveapps.com?size=50" },
       { name: "Zoho Expense", logo: "https://logo.clearbit.com/zoho.com?size=50" },
@@ -199,7 +196,7 @@ const platformCategories: PlatformCategory[] = [
   {
     name: "Email & Communication",
     platforms: [
-      { name: "Google Workspace", logo: "https://logo.clearbit.com/google.com?size=50" },
+      { name: "Google Workspace", logo: "https://logo.clearbit.com/google.com?size=50" }, // Amended
       { name: "Microsoft 365", logo: "https://logo.clearbit.com/microsoft.com?size=50" },
       { name: "Slack", logo: "https://logo.clearbit.com/slack.com?size=50" },
       { name: "Zoom", logo: "https://logo.clearbit.com/zoom.us?size=50" },
@@ -215,10 +212,9 @@ const platformCategories: PlatformCategory[] = [
       { name: "Spike", logo: "https://logo.clearbit.com/spikenow.com?size=50" },
       { name: "Superhuman", logo: "https://logo.clearbit.com/superhuman.com?size=50" },
       { name: "Hey", logo: "https://logo.clearbit.com/hey.com?size=50" },
-      { name: "Sendinblue", logo: "https://logo.clearbit.com/sendinblue.com?size=50" },
+      { name: "Brevo", logo: "https://logo.clearbit.com/brevo.com?size=50" }, // Amended (was Sendinblue)
       { name: "Mailchimp", logo: "https://logo.clearbit.com/mailchimp.com?size=50" },
       { name: "Constant Contact", logo: "https://logo.clearbit.com/constantcontact.com?size=50" },
-      { name: "Brevo", logo: "https://logo.clearbit.com/brevo.com?size=50" },
       { name: "GetResponse", logo: "https://logo.clearbit.com/getresponse.com?size=50" },
       { name: "ActiveCampaign", logo: "https://logo.clearbit.com/activecampaign.com?size=50" },
       { name: "AWeber", logo: "https://logo.clearbit.com/aweber.com?size=50" },
@@ -237,59 +233,13 @@ const platformCategories: PlatformCategory[] = [
     ],
   },
   {
-    name: "Website Building & Hosting",
-    platforms: [
-      { name: "Wix", logo: "https://logo.clearbit.com/wix.com?size=50" },
-      { name: "Squarespace", logo: "https://logo.clearbit.com/squarespace.com?size=50" },
-      { name: "Shopify", logo: "https://logo.clearbit.com/shopify.com?size=50" },
-      { name: "Webflow", logo: "https://logo.clearbit.com/webflow.com?size=50" },
-      { name: "Hostinger", logo: "https://logo.clearbit.com/hostinger.com?size=50" },
-      { name: "SiteGround", logo: "https://logo.clearbit.com/siteground.com?size=50" },
-      { name: "Bluehost", logo: "https://logo.clearbit.com/bluehost.com?size=50" },
-      { name: "Weebly", logo: "https://logo.clearbit.com/weebly.com?size=50" },
-      { name: "Carrd", logo: "https://logo.clearbit.com/carrd.co?size=50" },
-      { name: "Bubble", logo: "https://logo.clearbit.com/bubble.io?size=50" },
-      { name: "Framer", logo: "https://logo.clearbit.com/framer.com?size=50" },
-      { name: "Tilda", logo: "https://logo.clearbit.com/tilda.cc?size=50" },
-      { name: "Jimdo", logo: "https://logo.clearbit.com/jimdo.com?size=50" },
-      { name: "Strikingly", logo: "https://logo.clearbit.com/strikingly.com?size=50" },
-      { name: "Ucraft", logo: "https://logo.clearbit.com/ucraft.com?size=50" },
-      { name: "Duda", logo: "https://logo.clearbit.com/duda.co?size=50" },
-      { name: "Webnode", logo: "https://logo.clearbit.com/webnode.com?size=50" },
-      { name: "Zyro", logo: "https://logo.clearbit.com/zyro.com?size=50" },
-      { name: "GoDaddy", logo: "https://logo.clearbit.com/godaddy.com?size=50" },
-      { name: "DreamHost", logo: "https://logo.clearbit.com/dreamhost.com?size=50" },
-      { name: "WP Engine", logo: "https://logo.clearbit.com/wpengine.com?size=50" },
-      { name: "InMotion Hosting", logo: "https://logo.clearbit.com/inmotionhosting.com?size=50" },
-      { name: "A2 Hosting", logo: "https://logo.clearbit.com/a2hosting.com?size=50" },
-      { name: "Namecheap", logo: "https://logo.clearbit.com/namecheap.com?size=50" },
-      { name: "Ionos", logo: "https://logo.clearbit.com/ionos.com?size=50" },
-      { name: "FastComet", logo: "https://logo.clearbit.com/fastcomet.com?size=50" },
-      { name: "GreenGeeks", logo: "https://logo.clearbit.com/greengeeks.com?size=50" },
-      { name: "HostGator", logo: "https://logo.clearbit.com/hostgator.com?size=50" },
-      { name: "Web.com", logo: "https://logo.clearbit.com/web.com?size=50" },
-      { name: "BigCommerce", logo: "https://logo.clearbit.com/bigcommerce.com?size=50" },
-      { name: "Squarespace Commerce", logo: "https://logo.clearbit.com/squarespace.com?size=50" },
-      { name: "Volusion", logo: "https://logo.clearbit.com/volusion.com?size=50" },
-      { name: "Shift4Shop", logo: "https://logo.clearbit.com/shift4shop.com?size=50" },
-      { name: "Ecwid", logo: "https://logo.clearbit.com/ecwid.com?size=50" },
-      { name: "BigScoots", logo: "https://logo.clearbit.com/bigscoots.com?size=50" },
-      { name: "Cloudways", logo: "https://logo.clearbit.com/cloudways.com?size=50" },
-      { name: "Kinsta", logo: "https://logo.clearbit.com/kinsta.com?size=50" },
-      { name: "Site123", logo: "https://logo.clearbit.com/site123.com?size=50" },
-      { name: "Zoho Sites", logo: "https://logo.clearbit.com/zoho.com?size=50" },
-      { name: "Seobility", logo: "https://logo.clearbit.com/seobility.net?size=50" },
-      { name: "Webstarts", logo: "https://logo.clearbit.com/webstarts.com?size=50" },
-    ],
-  },
-  {
     name: "Social Media Platforms",
     platforms: [
       { name: "Instagram", logo: "https://logo.clearbit.com/instagram.com?size=50" },
-      { name: "Facebook", logo: "https://logo.clearbit.com/facebook.com?size=50" },
+      { name: "Facebook", logo: "https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" }, // Amended
       { name: "X", logo: "https://logo.clearbit.com/x.com?size=50" },
       { name: "LinkedIn", logo: "https://logo.clearbit.com/linkedin.com?size=50" },
-      { name: "TikTok", logo: "https://logo.clearbit.com/tiktok.com?size=50" },
+      { name: "TikTok", logo: "https://sf-tb-sg.ibytedtos.com/obj/ies-fe-bee/bee_prod/biz_177/tiktok_logo_black.svg" }, // Amended
       { name: "YouTube", logo: "https://logo.clearbit.com/youtube.com?size=50" },
       { name: "Pinterest", logo: "https://logo.clearbit.com/pinterest.com?size=50" },
       { name: "Snapchat", logo: "https://logo.clearbit.com/snapchat.com?size=50" },
@@ -300,22 +250,18 @@ const platformCategories: PlatformCategory[] = [
       { name: "Telegram", logo: "https://logo.clearbit.com/telegram.org?size=50" },
       { name: "Discord", logo: "https://logo.clearbit.com/discord.com?size=50" },
       { name: "Vimeo", logo: "https://logo.clearbit.com/vimeo.com?size=50" },
-      { name: "Twitch", logo: "https://logo.clearbit.com/twitch.tv?size=50" },
       { name: "Patreon", logo: "https://logo.clearbit.com/patreon.com?size=50" },
-      { name: "Clubhouse", logo: "https://logo.clearbit.com/clubhouse.com?size=50" },
-      { name: "Quora", logo: "https://logo.clearbit.com/quora.com?size=50" },
-      { name: "Medium", logo: "https://logo.clearbit.com/medium.com?size=50" },
     ],
   },
   {
     name: "E-Signature",
     platforms: [
-      { name: "Adobe Acrobat Sign", logo: "https://logo.clearbit.com/adobe.com?size=50" },
+      { name: "Adobe Acrobat Sign", logo: "https://logo.clearbit.com/adobe.com?size=50" }, // Amended
       { name: "DocuSign", logo: "https://logo.clearbit.com/docusign.com?size=50" },
       { name: "SignNow", logo: "https://logo.clearbit.com/signnow.com?size=50" },
       { name: "PandaDoc", logo: "https://logo.clearbit.com/pandadoc.com?size=50" },
       { name: "HelloSign (Dropbox Sign)", logo: "https://logo.clearbit.com/hellosign.com?size=50" },
-      { name: "RightSignature", logo: "https://logo.clearbit.com/rights.com?size=50" },
+      { name: "RightSignature", logo: "https://logo.clearbit.com/rightsignature.com?size=50" }, // Amended
       { name: "SignRequest", logo: "https://logo.clearbit.com/signrequest.com?size=50" },
       { name: "eSignatures.io", logo: "https://logo.clearbit.com/esignatures.io?size=50" },
       { name: "Signeasy", logo: "https://logo.clearbit.com/signeasy.com?size=50" },
@@ -323,7 +269,6 @@ const platformCategories: PlatformCategory[] = [
       { name: "GetAccept", logo: "https://logo.clearbit.com/getaccept.com?size=50" },
       { name: "OneSpan Sign", logo: "https://logo.clearbit.com/onespan.com?size=50" },
       { name: "airSlate SignNow", logo: "https://logo.clearbit.com/airslate.com?size=50" },
-      { name: "Docupilot", logo: "https://logo.clearbit.com/docupilot.com?size=50" },
       { name: "Jotform Sign", logo: "https://logo.clearbit.com/jotform.com?size=50" },
       { name: "Xodo Sign", logo: "https://logo.clearbit.com/xodo.com?size=50" },
       { name: "Signaturely", logo: "https://logo.clearbit.com/signaturely.com?size=50" },
@@ -385,7 +330,7 @@ const platformCategories: PlatformCategory[] = [
   {
     name: "Analytics & SEO",
     platforms: [
-      { name: "Google Analytics", logo: "https://logo.clearbit.com/google.com?size=50" },
+      { name: "Google Analytics", logo: "https://logo.clearbit.com/google.com?size=50" }, // Amended
       { name: "Mixpanel", logo: "https://logo.clearbit.com/mixpanel.com?size=50" },
       { name: "Amplitude", logo: "https://logo.clearbit.com/amplitude.com?size=50" },
       { name: "Hotjar", logo: "https://logo.clearbit.com/hotjar.com?size=50" },
@@ -403,11 +348,102 @@ const platformCategories: PlatformCategory[] = [
       { name: "RankMath", logo: "https://logo.clearbit.com/rankmath.com?size=50" },
       { name: "Yoast", logo: "https://logo.clearbit.com/yoast.com?size=50" },
       { name: "Screaming Frog", logo: "https://logo.clearbit.com/screamingfrog.co.uk?size=50" },
-      { name: "Google Search Console", logo: "https://logo.clearbit.com/google.com?size=50" },
       { name: "Seobility", logo: "https://logo.clearbit.com/seobility.net?size=50" },
     ],
   },
 ];
+
+const platformsToRemove = [
+  "DeskTrack",
+  "FreeAccountingSoftware",
+  "Quora",
+  "Twitch",
+  "Clubhouse",
+  "Medium",
+  "Google Search Console",
+  "Docupilot",
+];
+
+const updatedPlatformCategories = initialPlatformCategories
+  .filter(category => category.name !== "Website Building & Hosting") // Remove entire category
+  .map(category => ({
+    ...category,
+    platforms: category.platforms.filter(platform => !platformsToRemove.includes(platform.name))
+  }))
+  .map(category => {
+    // Apply specific amendments
+    if (category.name === "Project Management") {
+      return {
+        ...category,
+        platforms: category.platforms.map(platform => {
+          if (platform.name === "Jira") return { ...platform, logo: "https://logo.clearbit.com/atlassian.com?size=50" };
+          if (platform.name === "Nifty") return { ...platform, logo: "https://logo.clearbit.com/niftypm.com?size=50" };
+          return platform;
+        })
+      };
+    }
+    if (category.name === "Accounting & Finance") {
+      return {
+        ...category,
+        platforms: category.platforms.map(platform => {
+          if (platform.name === "ProfitBooks") return { ...platform, logo: "https://logo.clearbit.com/profitbooks.net?size=50" };
+          return platform;
+        })
+      };
+    }
+    if (category.name === "Social Media Platforms") {
+      return {
+        ...category,
+        platforms: category.platforms.map(platform => {
+          if (platform.name === "Facebook") return { ...platform, logo: "https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" };
+          if (platform.name === "TikTok") return { ...platform, logo: "https://sf-tb-sg.ibytedtos.com/obj/ies-fe-bee/bee_prod/biz_177/tiktok_logo_black.svg" };
+          return platform;
+        })
+      };
+    }
+    if (category.name === "Analytics & SEO") {
+      return {
+        ...category,
+        platforms: category.platforms.map(platform => {
+          if (platform.name === "Google Analytics") return { ...platform, logo: "https://logo.clearbit.com/google.com?size=50" };
+          return platform;
+        })
+      };
+    }
+    if (category.name === "E-Signature") {
+      return {
+        ...category,
+        platforms: category.platforms.map(platform => {
+          if (platform.name === "Adobe Acrobat Sign") return { ...platform, logo: "https://logo.clearbit.com/adobe.com?size=50" };
+          if (platform.name === "RightSignature") return { ...platform, logo: "https://logo.clearbit.com/rightsignature.com?size=50" };
+          return platform;
+        })
+      };
+    }
+    if (category.name === "Email & Communication") {
+      return {
+        ...category,
+        platforms: category.platforms.map(platform => {
+          if (platform.name === "Sendinblue") return { name: "Brevo", logo: "https://logo.clearbit.com/brevo.com?size=50" }; // Renamed
+          if (platform.name === "Google Workspace") return { ...platform, logo: "https://logo.clearbit.com/google.com?size=50" };
+          return platform;
+        })
+      };
+    }
+    return category;
+  });
+
+// Add the new "Time Tracking" category
+updatedPlatformCategories.push({
+  name: "Time Tracking",
+  platforms: [
+    { name: "Toggl", logo: "https://logo.clearbit.com/toggl.com?size=50" },
+    { name: "Clockify", logo: "https://logo.clearbit.com/clockify.me?size=50" },
+    { name: "Harvest", logo: "https://logo.clearbit.com/getharvest.com?size=50" },
+    { name: "Time Doctor", logo: "https://logo.clearbit.com/timedoctor.com?size=50" },
+  ],
+});
+
 
 const Platforms = () => {
   return (
@@ -424,7 +460,7 @@ const Platforms = () => {
         </section>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {platformCategories.map((category, catIndex) => (
+          {updatedPlatformCategories.map((category, catIndex) => (
             <div
               key={catIndex}
               className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 animate-fade-in-up"
@@ -444,7 +480,7 @@ const Platforms = () => {
                         src={platform.logo}
                         alt={platform.name}
                         title={platform.name}
-                        className="h-8 w-8 mb-2 object-contain filter grayscale-0 opacity-100 hover:grayscale hover:opacity-60 transition-all duration-300" // Changed here
+                        className="h-8 w-8 mb-2 object-contain filter grayscale-0 opacity-100 hover:grayscale hover:opacity-60 transition-all duration-300"
                         onError={(e) => {
                           e.currentTarget.onerror = null; // Prevent infinite loop if placeholder also fails
                           e.currentTarget.src = 'https://via.placeholder.com/50?text=Logo';
