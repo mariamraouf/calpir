@@ -9,19 +9,22 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { CheckCircle } from "lucide-react"; // Import CheckCircle icon
 
 // Define the structure for a package
 interface Package {
   name: string;
-  price: string; // Added price property
+  price: string;
   features: string[]; // List of features included in the package
 }
 
-// Define the packages data (simplified from Pricing.tsx for comparison logic)
+// Define the packages data
 const packages: Package[] = [
   {
     name: "Starter Package",
-    price: "$1,499", // Price added
+    price: "$1,499",
     features: [
       "Website: Up to 5 pages (build/redesign)",
       "Project Management: Basic setup (up to 2 workspace spaces, simple tasks)",
@@ -36,7 +39,7 @@ const packages: Package[] = [
   },
   {
     name: "Growth Package",
-    price: "$2,999", // Price added
+    price: "$2,999",
     features: [
       "Everything in Starter, plus:",
       "Website: Up to 10 pages (Including SEO)",
@@ -52,7 +55,7 @@ const packages: Package[] = [
   },
   {
     name: "Ultimate Package",
-    price: "$5,999", // Price added
+    price: "$5,999",
     features: [
       "Everything in Growth, plus:",
       "Website: Unlimited pages (custom features/advanced SEO)",
@@ -68,58 +71,31 @@ const packages: Package[] = [
   },
 ];
 
-// List of features for the comparison table rows
+// List of features for the comparison table rows, with a key for matching
 const comparisonFeatures = [
-  "Website Development",
-  "Project Management Setup",
-  "Platform Migration",
-  "Social Media Setup & Content",
-  "CRM Setup",
-  "Accounting System Setup",
-  "Platform Integrations",
-  "Analytics & Reporting",
-  "HR & Recruiting Support",
+  { key: "Website", label: "Website Development" },
+  { key: "Project Management", label: "Project Management Setup" },
+  { key: "Migration", label: "Platform Migration" },
+  { key: "Social Media", label: "Social Media Setup & Content" },
+  { key: "CRM", label: "CRM Setup" },
+  { key: "Accounting", label: "Accounting System Setup" },
+  { key: "Integrations", label: "Platform Integrations" },
+  { key: "Analytics", label: "Analytics & Reporting" },
+  { key: "HR/Recruiting", label: "HR & Recruiting Support" },
 ];
 
 // Helper function to extract specific detail for a feature from a package
-const getFeatureDetail = (featureKey: string, pkg: Package): string => {
-  const findDetail = (prefix: string) => {
-    // Find the feature line that starts with the prefix
-    const featureLine = pkg.features.find(f => f.startsWith(prefix));
-    // If found, return the part after the prefix, trimmed. Otherwise, return empty string.
-    return featureLine ? featureLine.replace(prefix, '').trim() : '';
-  };
-
-  switch (featureKey) {
-    case "Website Development":
-      return findDetail("Website:");
-    case "Project Management Setup":
-      return findDetail("Project Management:");
-    case "Platform Migration":
-      return findDetail("Migration:");
-    case "Social Media Setup & Content":
-      return findDetail("Social Media:");
-    case "CRM Setup":
-      return findDetail("CRM:");
-    case "Accounting System Setup":
-      return findDetail("Accounting:");
-    case "Platform Integrations":
-      return findDetail("Integrations:");
-    case "Analytics & Reporting":
-      return findDetail("Analytics:");
-    case "HR & Recruiting Support":
-      return findDetail("HR/Recruiting:");
-    default:
-      return ""; // Return empty string if feature key doesn't match
-  }
+const getFeatureDetail = (featureKey: string, pkg: Package): string | null => {
+  const featureLine = pkg.features.find(f => f.startsWith(featureKey + ":"));
+  return featureLine ? featureLine.replace(featureKey + ":", '').trim() : null;
 };
 
 const PackageComparisonTable = () => {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg bg-white dark:bg-gray-800 animate-fade-in-up delay-1000">
+    <div className="overflow-x-auto rounded-2xl border border-palette-blue-100 dark:border-gray-700 shadow-lg bg-white dark:bg-gray-800 animate-fade-in-up delay-1000">
       <Table className="w-full text-left">
         <TableHeader className="bg-gray-100 dark:bg-gray-900">
-          <TableRow className="border-b border-gray-200 dark:border-gray-700">
+          <TableRow className="border-b border-palette-blue-100 dark:border-gray-700">
             <TableHead className="min-w-[200px] p-4 text-lg font-semibold text-gray-900 dark:text-white">Features</TableHead>
             {packages.map((pkg, index) => (
               <TableHead key={index} className="p-4 text-center text-lg font-semibold text-primary dark:text-calpir-green-300">
@@ -130,7 +106,7 @@ const PackageComparisonTable = () => {
         </TableHeader>
         <TableBody>
           {/* Price Row */}
-          <TableRow className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+          <TableRow className="border-b border-palette-blue-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
             <TableCell className="p-4 font-bold text-lg text-gray-900 dark:text-white">Price</TableCell>
             {packages.map((pkg, pkgIndex) => (
               <TableCell key={pkgIndex} className="p-4 text-center text-2xl font-extrabold text-primary dark:text-calpir-green-300">
@@ -139,19 +115,44 @@ const PackageComparisonTable = () => {
             ))}
           </TableRow>
           {/* Other Features Rows */}
-          {comparisonFeatures.map((feature, featureIndex) => (
-            <TableRow key={featureIndex} className="border-b border-gray-200 dark:border-gray-700 last:border-b-0 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-              <TableCell className="p-4 font-medium text-gray-800 dark:text-gray-200">{feature}</TableCell>
+          {comparisonFeatures.map((featureItem, featureIndex) => (
+            <TableRow key={featureIndex} className="border-b border-palette-blue-100 dark:border-gray-700 last:border-b-0 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+              <TableCell className="p-4 font-medium text-gray-800 dark:text-gray-200">{featureItem.label}</TableCell>
               {packages.map((pkg, pkgIndex) => {
-                const detail = getFeatureDetail(feature, pkg);
+                const detail = getFeatureDetail(featureItem.key, pkg);
                 return (
                   <TableCell key={pkgIndex} className="p-4 text-center text-gray-700 dark:text-gray-300">
-                    {detail ? detail : <span className="text-gray-500">-</span>}
+                    {detail ? (
+                      <div className="flex items-center justify-center space-x-2">
+                        <CheckCircle className="h-5 w-5 text-calpir-green-500" />
+                        <span className="text-sm text-gray-800 dark:text-gray-200">{detail}</span>
+                      </div>
+                    ) : (
+                      <div className="flex items-center justify-center">
+                        <span className="h-5 w-5 flex items-center justify-center text-palette-orange-500 text-xl font-bold">-</span>
+                      </div>
+                    )}
                   </TableCell>
                 );
               })}
             </TableRow>
           ))}
+          {/* Buttons Row */}
+          <TableRow className="bg-gray-100 dark:bg-gray-900 border-t border-palette-blue-100 dark:border-gray-700">
+            <TableCell className="p-4"></TableCell> {/* Empty cell for the features column */}
+            {packages.map((pkg, pkgIndex) => (
+              <TableCell key={pkgIndex} className="p-4 text-center">
+                <Link to="/build-my-business">
+                  <Button
+                    size="lg"
+                    className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-md px-4 py-2 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
+                  >
+                    Start My Package
+                  </Button>
+                </Link>
+              </TableCell>
+            ))}
+          </TableRow>
         </TableBody>
       </Table>
     </div>
