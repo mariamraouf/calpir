@@ -69,13 +69,11 @@ const TermsOfService = () => {
 
           <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">9. Contact Information</h2>
           <p className="mb-4">
-            If you have any questions about these Terms, please contact us at <a href="mailto:hello@calpirsolutions.com" className="text-primary hover:underline">hello@calpirsolutions.com</a>.
+            If you have any questions about these Terms, please contact us at <a href="mailto:hello@calpir.com" className="text-primary hover:underline">hello@calpir.com</a>.
           </p>
 
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-8 italic">
             These Terms of Service were last updated on: **October 26, 2024**.
-            <br />
-            **Disclaimer:** This is a template. Please consult with a legal professional to draft Terms of Service specific to your business.
           </p>
         </div>
       </main>

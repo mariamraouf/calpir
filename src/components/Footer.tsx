@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MessageSquare } from "lucide-react";
+import { Mail, Linkedin, Instagram } from "lucide-react"; // Added Linkedin and Instagram icons
 import { Button } from "@/components/ui/button"; // Import Button
 
 const Footer = () => {
@@ -20,14 +20,16 @@ const Footer = () => {
           </p>
           <div className="space-y-2 text-sm">
             <p className="flex items-center">
-              <Mail className="h-4 w-4 mr-2 text-primary" /> <a href="mailto:hello@calpirsolutions.com" className="hover:text-white transition-colors">hello@calpirsolutions.com</a>
+              <Mail className="h-4 w-4 mr-2 text-primary" /> <a href="mailto:hello@calpir.com" className="hover:text-white transition-colors">hello@calpir.com</a>
             </p>
-            <p className="flex items-center">
-              <Phone className="h-4 w-4 mr-2 text-primary" /> <a href="tel:(555) 123-4567" className="hover:text-white transition-colors">(555) 123-4567</a>
-            </p>
-            <p className="flex items-center">
-              <MessageSquare className="h-4 w-4 mr-2 text-primary" /> <span className="hover:text-white transition-colors">24/7 Live Chat</span>
-            </p>
+            <div className="flex items-center space-x-4 mt-4"> {/* New div for social icons */}
+              <a href="https://www.linkedin.com/company/calpir" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a href="https://www.instagram.com/calpir" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                <Instagram className="h-5 w-5" />
+              </a>
+            </div>
           </div>
         </div>
 

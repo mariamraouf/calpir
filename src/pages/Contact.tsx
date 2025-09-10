@@ -112,14 +112,7 @@ const Contact = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuot
                 <Mail className="h-6 w-6 text-primary mr-4" />
                 <div>
                   <p className="font-semibold text-gray-900 dark:text-white">Email Us</p>
-                  <a href="mailto:hello@calpirsolutions.com" className="text-primary hover:underline dark:text-calpir-green-400">hello@calpirsolutions.com</a>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <Phone className="h-6 w-6 text-primary mr-4" />
-                <div>
-                  <p className="font-semibold text-gray-900 dark:text-white">Call Us</p>
-                  <a href="tel:+15551234567" className="text-primary hover:underline dark:text-calpir-green-400">(555) 123-4567</a>
+                  <a href="mailto:hello@calpir.com" className="text-primary hover:underline dark:text-calpir-green-400">hello@calpir.com</a>
                 </div>
               </div>
               <div className="flex items-center">

@@ -59,8 +59,6 @@ const PrivacyPolicy = () => {
 
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-8 italic">
             This Privacy Policy was last updated on: **October 26, 2024**.
-            <br />
-            **Disclaimer:** This is a template. Please consult with a legal professional to draft a Privacy Policy specific to your business.
           </p>
         </div>
       </main>
