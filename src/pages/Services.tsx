@@ -38,20 +38,7 @@ const servicesData = [
     ],
     iconColor: "text-palette-blue-400",
   },
-  {
-    id: "ecommerce-functionality",
-    icon: DollarSign,
-    title: "E-commerce Functionality",
-    investment: "$699",
-    description: "Integrate robust e-commerce capabilities into your website for online sales.",
-    details: [
-      "Product catalog setup and management",
-      "Secure payment gateway integration",
-      "Shopping cart and checkout optimization",
-      "Inventory management features",
-    ],
-    iconColor: "text-palette-yellow-400",
-  },
+  // E-commerce Functionality service removed as requested
   {
     id: "seo-optimization",
     icon: Globe,
@@ -73,7 +60,7 @@ const servicesData = [
     investment: "$799",
     description: "Establish and manage your brand's presence across key social media platforms.",
     details: [
-      "Setup on 2-5 platforms",
+      "Setup on 2 platforms", // Amended as requested
       "Content strategy and calendar development",
       "Post design and scheduling",
       "Audience engagement strategies",
@@ -214,26 +201,13 @@ const servicesData = [
     description: "Automate repetitive tasks and complex workflows to boost efficiency and reduce manual effort.",
     details: [
       "Custom automation strategy and design",
-      "Integration of automation tools (e.g., Zapier, Make.com)",
+      "Integration of automation tools", // Removed "(e.g., Zapier, Make.com)" as requested
       "Setup of multi-step workflows (5+ automations)",
       "Automated reporting and data synchronization",
     ],
     iconColor: "text-palette-orange-400",
   },
-  {
-    id: "security-basics",
-    icon: Shield,
-    title: "Security Basics Setup",
-    investment: "$599",
-    description: "Implement fundamental security measures to protect your business data.",
-    details: [
-      "Basic website security configurations",
-      "User access management setup",
-      "Data backup strategies",
-      "Security best practices guidance",
-    ],
-    iconColor: "text-palette-blue-700",
-  },
+  // Security Basics Setup removed as requested
   {
     id: "hr-recruiting-system",
     icon: Users,
@@ -331,62 +305,10 @@ const servicesData = [
     ],
     iconColor: "text-calpir-green-600",
   },
-  {
-    id: "advanced-systems-training",
-    icon: BookOpen,
-    title: "Advanced Systems Training",
-    investment: "$399/hour",
-    description: "In-depth training for complex systems, advanced features, and custom workflows.",
-    details: [
-      "2-hour live online session",
-      "Customized curriculum based on your setup",
-      "Advanced tips and best practices",
-      "Dedicated follow-up support",
-    ],
-    iconColor: "text-calpir-green-700",
-  },
-  {
-    id: "custom-workshop-development",
-    icon: BookOpen,
-    title: "Custom Workshop Development",
-    investment: "$1,299",
-    description: "Tailored workshop designed to address specific team needs and challenges.",
-    details: [
-      "Full-day interactive workshop (virtual or on-site)",
-      "Custom exercises and case studies",
-      "Comprehensive training materials",
-      "Post-workshop consultation",
-    ],
-    iconColor: "text-calpir-green-800",
-  },
-  {
-    id: "team-certification-program",
-    icon: BookOpen,
-    title: "Team Certification Program",
-    investment: "$2,999",
-    description: "Certify your team members on new platforms and systems with a structured program.",
-    details: [
-      "Multi-module training program",
-      "Quizzes and practical assessments",
-      "Official certification upon completion",
-      "Ongoing access to learning resources",
-    ],
-    iconColor: "text-calpir-green-900",
-  },
-  {
-    id: "comprehensive-training-program",
-    icon: BookOpen,
-    title: "Comprehensive Training Program",
-    investment: "$1,499",
-    description: "An all-encompassing training solution for full team adoption and mastery of new systems.",
-    details: [
-      "Customized training roadmap",
-      "Blended learning approach (live, self-paced)",
-      "Dedicated training manager",
-      "Performance tracking and reporting",
-    ],
-    iconColor: "text-calpir-green-900",
-  },
+  // Advanced Systems Training removed as requested
+  // Custom Workshop Development removed as requested
+  // Team Certification Program removed as requested
+  // Comprehensive Training Program removed as requested
   {
     id: "monthly-support-package",
     icon: Headphones,
@@ -415,20 +337,7 @@ const servicesData = [
     ],
     iconColor: "text-palette-purple-500",
   },
-  {
-    id: "ongoing-security-monitoring",
-    icon: Shield,
-    title: "Ongoing Security Monitoring",
-    investment: "$299/month",
-    description: "Continuous monitoring and proactive measures to protect your business from threats.",
-    details: [
-      "Real-time threat detection",
-      "Vulnerability assessments",
-      "Security incident response planning",
-      "Regular security reports and recommendations",
-    ],
-    iconColor: "text-palette-red-500",
-  },
+  // Ongoing Security Monitoring removed as requested
 ];
 
 const Services = () => {
