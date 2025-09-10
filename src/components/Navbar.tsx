@@ -1,16 +1,17 @@
 "use client";
 
 import React from "react";
-import { NavLink, Link } from "react-router-dom"; // Import NavLink
+import { NavLink, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Menu, ChevronDown } from "lucide-react";
 
-const Navbar = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
+const Navbar = () => {
   const mainNavLinks = [
     { name: "About", href: "/about" },
-    { name: "Services", href: "/services" }, // Services is now a regular link
+    { name: "Services", href: "/services" },
+    { name: "Platforms", href: "/platforms" }, // New link
     { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
   ];
@@ -37,7 +38,7 @@ const Navbar = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuote
               {link.name}
             </NavLink>
           ))}
-          <Link to="/build-my-business"> {/* Changed to Link */}
+          <Link to="/build-my-business">
             <Button
               className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
             >
@@ -68,7 +69,7 @@ const Navbar = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuote
                   {link.name}
                 </NavLink>
               ))}
-              <Link to="/build-my-business"> {/* Changed to Link */}
+              <Link to="/build-my-business">
                 <Button
                   className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
                 >
