@@ -264,7 +264,7 @@ const PackageComparisonTable = () => {
                 <Link to="/build-my-business">
                   <Button
                     size="lg"
-                    className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
+                    className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-10 py-4 rounded-2xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
                   >
                     Start My Package
                   </Button>
