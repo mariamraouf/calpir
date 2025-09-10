@@ -10,8 +10,7 @@ import { Menu, ChevronDown } from "lucide-react";
 const Navbar = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
   const mainNavLinks = [
     { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Platforms", href: "/platforms" }, // New link
+    { name: "Services", href: "/services" }, // Services is now a regular link
     { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
   ];
@@ -38,7 +37,7 @@ const Navbar = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuote
               {link.name}
             </NavLink>
           ))}
-          <Link to="/build-my-business">
+          <Link to="/build-my-business"> {/* Changed to Link */}
             <Button
               className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
             >
@@ -69,7 +68,7 @@ const Navbar = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuote
                   {link.name}
                 </NavLink>
               ))}
-              <Link to="/build-my-business">
+              <Link to="/build-my-business"> {/* Changed to Link */}
                 <Button
                   className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
                 >

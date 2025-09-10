@@ -9,9 +9,8 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
-import BuildMyBusinessPage from "./pages/BuildMyBusinessPage";
-import CustomQuotePage from "./pages/CustomQuotePage";
-import Platforms from "./pages/Platforms"; // New import
+import BuildMyBusinessPage from "./pages/BuildMyBusinessPage"; // New import
+import CustomQuotePage from "./pages/CustomQuotePage"; // New import
 import React from "react";
 
 const queryClient = new QueryClient();
@@ -29,9 +28,8 @@ const App = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/build-my-business" element={<BuildMyBusinessPage />} />
-            <Route path="/get-a-quote" element={<CustomQuotePage />} />
-            <Route path="/platforms" element={<Platforms />} /> {/* New route */}
+            <Route path="/build-my-business" element={<BuildMyBusinessPage />} /> {/* New route */}
+            <Route path="/get-a-quote" element={<CustomQuotePage />} /> {/* New route */}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
