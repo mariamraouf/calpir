@@ -13,82 +13,183 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { CheckCircle } from "lucide-react"; // Import CheckCircle icon
 
-// Define the structure for a package
+// Define the structure for a package with nested features
 interface Package {
   name: string;
   price: string;
-  features: string[]; // List of features included in the package
+  digitalPresence: {
+    websiteDevelopment: string;
+    hostingDomain: boolean;
+    seoOptimization: boolean;
+    socialMediaSetup: string;
+  };
+  businessOperations: {
+    projectManagement: string;
+    crmSetup: string;
+    accountingSystem: string;
+    platformMigration: string;
+    integrations: string;
+    analyticsReporting: string;
+    businessAutomations: boolean;
+    sops: boolean;
+    payroll: boolean;
+    performanceManagement: boolean;
+  };
+  humanResources: {
+    employeeProfiles: boolean;
+    legalTemplates: string;
+    recruitingSupport: string;
+    advancedHrSystem: string;
+    onboardingOffboardingWorkflows: string | boolean;
+    timeTracking: string;
+    timeAttendanceTracking: string;
+    employeeEngagementSurveys: boolean;
+  };
 }
 
-// Define the packages data
+// Define the packages data based on the new structure
 const packages: Package[] = [
   {
     name: "Starter Package",
     price: "$1,499",
-    features: [
-      "Website: Up to 5 pages (build/redesign)",
-      "Project Management: Basic setup (up to 2 workspace spaces, simple tasks)",
-      "Migration: Move to 1 platform (e.g., CRM/project tool, data import)",
-      "Social Media: Setup on 2 platforms + 5 designs or posts",
-      "CRM: Basic contact tracking",
-      "Accounting: Simple invoicing",
-      "Integrations: Up to 2 connections",
-      "Analytics: Basic monthly summary",
-      "HR/Recruiting: Templates + basic global strategy",
-    ],
+    digitalPresence: {
+      websiteDevelopment: "5 pages",
+      hostingDomain: true,
+      seoOptimization: false,
+      socialMediaSetup: "2 platforms + 5 posts",
+    },
+    businessOperations: {
+      projectManagement: "Basic (2 workspaces)",
+      crmSetup: "Basic contact tracking",
+      accountingSystem: "Simple invoicing",
+      platformMigration: "1 platform",
+      integrations: "2 connections",
+      analyticsReporting: "Monthly summary",
+      businessAutomations: false,
+      sops: false,
+      payroll: false,
+      performanceManagement: false,
+    },
+    humanResources: {
+      employeeProfiles: true,
+      legalTemplates: "Contract draft only",
+      recruitingSupport: "Job templates",
+      advancedHrSystem: "",
+      onboardingOffboardingWorkflows: "",
+      timeTracking: "Basic time tracking",
+      timeAttendanceTracking: "Basic Tracking",
+      employeeEngagementSurveys: false,
+    },
   },
   {
     name: "Growth Package",
     price: "$2,999",
-    features: [
-      "Everything in Starter, plus:",
-      "Website: Up to 10 pages (Including SEO)",
-      "Project Management: Enhanced setup (Up to 5 workspaces, basic automations)",
-      "Migration: Move to 2-3 platforms (e.g., CRM + project tool)",
-      "Social Media: Setup on 5 platforms + 10 designs/posts (1-month plan)",
-      "CRM: Advanced CRM with automation",
-      "Accounting: Expense tracking",
-      "Integrations: Up to 5 connections",
-      "Analytics: Monthly detailed insights",
-      "HR/Recruiting: Job postings on 2 global sites",
-    ],
+    digitalPresence: {
+      websiteDevelopment: "10 pages",
+      hostingDomain: true,
+      seoOptimization: true,
+      socialMediaSetup: "5 platforms + 10 posts",
+    },
+    businessOperations: {
+      projectManagement: "Enhanced (5 workspaces)",
+      crmSetup: "Advanced with automation",
+      accountingSystem: "Expense tracking",
+      platformMigration: "2-3 platforms",
+      integrations: "5 connections",
+      analyticsReporting: "Monthly insights + Recommendation",
+      businessAutomations: true,
+      sops: true,
+      payroll: false,
+      performanceManagement: false,
+    },
+    humanResources: {
+      employeeProfiles: true,
+      legalTemplates: "✓", // Representing true as "✓" for display
+      recruitingSupport: "Job postings on 2 global sites",
+      advancedHrSystem: "ATS & talent pipeline",
+      onboardingOffboardingWorkflows: "Basic checklist",
+      timeTracking: "Advanced timetracking with reports",
+      timeAttendanceTracking: "Advanced Tracking",
+      employeeEngagementSurveys: false,
+    },
   },
   {
     name: "Ultimate Package",
     price: "$5,999",
-    features: [
-      "Everything in Growth, plus:",
-      "Website: Unlimited pages (custom features/advanced SEO)",
-      "Project Management: Advanced setup (unlimited workspaces, full automations)",
-      "Migration: Move to multiple platforms (unlimited, full stack overhaul)",
-      "Social Media: Setup on 5+ platforms + 20 designs/posts per month (3-month plan)",
-      "CRM: Predictive automation",
-      "Accounting: Forecasting tools",
-      "Integrations: Unlimited as needed",
-      "Analytics: Weekly insights/recommendations",
-      "HR/Recruiting: Full strategy + sourcing for 1 global role",
-    ],
+    digitalPresence: {
+      websiteDevelopment: "Unlimited pages",
+      hostingDomain: true,
+      seoOptimization: true,
+      socialMediaSetup: "5+ platforms + 20 posts",
+    },
+    businessOperations: {
+      projectManagement: "Advanced (unlimited)",
+      crmSetup: "Predictive automation",
+      accountingSystem: "Forecasting tools",
+      platformMigration: "Multiple platforms",
+      integrations: "Unlimited",
+      analyticsReporting: "Weekly insights + Recommendation",
+      businessAutomations: true,
+      sops: true,
+      payroll: true,
+      performanceManagement: true,
+    },
+    humanResources: {
+      employeeProfiles: true,
+      legalTemplates: "✓", // Representing true as "✓" for display
+      recruitingSupport: "Full strategy + sourcing for 1 global role",
+      advancedHrSystem: "Scalable ATS system",
+      onboardingOffboardingWorkflows: true, // Representing true as "✓" for display
+      timeTracking: "Advanced timetracking with reports and dashboard",
+      timeAttendanceTracking: "Advanced Tracking",
+      employeeEngagementSurveys: true,
+    },
   },
 ];
 
-// List of features for the comparison table rows, with a key for matching
+// List of features for the comparison table rows, grouped by category
 const comparisonFeatures = [
-  { key: "Website", label: "Website Development" },
-  { key: "Project Management", label: "Project Management Setup" },
-  { key: "Migration", label: "Platform Migration" },
-  { key: "Social Media", label: "Social Media Setup & Content" },
-  { key: "CRM", label: "CRM Setup" },
-  { key: "Accounting", label: "Accounting System Setup" },
-  { key: "Integrations", label: "Platform Integrations" },
-  { key: "Analytics", label: "Analytics & Reporting" },
-  { key: "HR/Recruiting", label: "HR & Recruiting Support" },
+  {
+    category: "🌐 Digital Presence",
+    key: "digitalPresence",
+    features: [
+      { key: "websiteDevelopment", label: "Website Development" },
+      { key: "hostingDomain", label: "Hosting & Domain" },
+      { key: "seoOptimization", label: "SEO Optimization" },
+      { key: "socialMediaSetup", label: "Social Media Setup" },
+    ],
+  },
+  {
+    category: "💼 Business Operations",
+    key: "businessOperations",
+    features: [
+      { key: "projectManagement", label: "Project Management" },
+      { key: "crmSetup", label: "CRM Setup" },
+      { key: "accountingSystem", label: "Accounting System" },
+      { key: "platformMigration", label: "Platform Migration" },
+      { key: "integrations", label: "Integrations" },
+      { key: "analyticsReporting", label: "Analytics & Reporting" },
+      { key: "businessAutomations", label: "Business Automations" },
+      { key: "sops", label: "SOPs" },
+      { key: "payroll", label: "Payroll" },
+      { key: "performanceManagement", label: "Performance Management" },
+    ],
+  },
+  {
+    category: "👥 Human Resources",
+    key: "humanResources",
+    features: [
+      { key: "employeeProfiles", label: "Employee Profiles" },
+      { key: "legalTemplates", label: "Legal Templates (Contracts, NDAs, Handbook)" },
+      { key: "recruitingSupport", label: "Recruiting Support" },
+      { key: "advancedHrSystem", label: "Advanced HR System" },
+      { key: "onboardingOffboardingWorkflows", label: "Onboarding/Offboarding Workflows" },
+      { key: "timeTracking", label: "Time Tracking" },
+      { key: "timeAttendanceTracking", label: "Time/Attendance Tracking" },
+      { key: "employeeEngagementSurveys", label: "Employee Engagement Surveys" },
+    ],
+  },
 ];
-
-// Helper function to extract specific detail for a feature from a package
-const getFeatureDetail = (featureKey: string, pkg: Package): string | null => {
-  const featureLine = pkg.features.find(f => f.startsWith(featureKey + ":"));
-  return featureLine ? featureLine.replace(featureKey + ":", '').trim() : null;
-};
 
 const PackageComparisonTable = () => {
   return (
@@ -114,29 +215,47 @@ const PackageComparisonTable = () => {
               </TableCell>
             ))}
           </TableRow>
-          {/* Other Features Rows */}
-          {comparisonFeatures.map((featureItem, featureIndex) => (
-            <TableRow key={featureIndex} className="border-b border-palette-blue-100 dark:border-gray-700 last:border-b-0 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-              <TableCell className="p-4 font-medium text-gray-800 dark:text-gray-200">{featureItem.label}</TableCell>
-              {packages.map((pkg, pkgIndex) => {
-                const detail = getFeatureDetail(featureItem.key, pkg);
-                return (
-                  <TableCell key={pkgIndex} className="p-4 text-center text-gray-700 dark:text-gray-300">
-                    {detail ? (
-                      <div className="flex items-center justify-center space-x-2">
-                        <CheckCircle className="h-5 w-5 text-calpir-green-500" />
-                        <span className="text-sm text-gray-800 dark:text-gray-200">{detail}</span>
-                      </div>
-                    ) : (
-                      <div className="flex items-center justify-center">
-                        <span className="h-5 w-5 flex items-center justify-center text-palette-orange-500 text-xl font-bold">-</span>
-                      </div>
-                    )}
-                  </TableCell>
-                );
-              })}
-            </TableRow>
+
+          {/* Render categorized features */}
+          {comparisonFeatures.map((categoryGroup, categoryIndex) => (
+            <React.Fragment key={categoryIndex}>
+              <TableRow className="bg-gray-50 dark:bg-gray-900 border-b border-palette-blue-100 dark:border-gray-700">
+                <TableCell colSpan={packages.length + 1} className="p-4 text-xl font-bold text-gray-900 dark:text-white">
+                  {categoryGroup.category}
+                </TableCell>
+              </TableRow>
+              {categoryGroup.features.map((featureItem, featureIndex) => (
+                <TableRow key={`${categoryGroup.key}-${featureIndex}`} className="border-b border-palette-blue-100 dark:border-gray-700 last:border-b-0 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+                  <TableCell className="p-4 font-medium text-gray-800 dark:text-gray-200">{featureItem.label}</TableCell>
+                  {packages.map((pkg, pkgIndex) => {
+                    // Access the feature value from the nested package structure
+                    const categoryData = pkg[categoryGroup.key as keyof Package];
+                    const featureValue = categoryData ? (categoryData as any)[featureItem.key] : null;
+
+                    return (
+                      <TableCell key={pkgIndex} className="p-4 text-center text-gray-700 dark:text-gray-300">
+                        {featureValue === true ? (
+                          <div className="flex items-center justify-center">
+                            <CheckCircle className="h-5 w-5 text-calpir-green-500" />
+                          </div>
+                        ) : featureValue === false || featureValue === "" || featureValue === null ? (
+                          <div className="flex items-center justify-center">
+                            <span className="h-5 w-5 flex items-center justify-center text-palette-orange-500 text-xl font-bold">-</span>
+                          </div>
+                        ) : (
+                          <div className="flex items-center justify-center space-x-2">
+                            <CheckCircle className="h-5 w-5 text-calpir-green-500" />
+                            <span className="text-sm text-gray-800 dark:text-gray-200">{featureValue}</span>
+                          </div>
+                        )}
+                      </TableCell>
+                    );
+                  })}
+                </TableRow>
+              ))}
+            </React.Fragment>
           ))}
+
           {/* Buttons Row */}
           <TableRow className="bg-gray-100 dark:bg-gray-900 border-t border-palette-blue-100 dark:border-gray-700">
             <TableCell className="p-4"></TableCell> {/* Empty cell for the features column */}
