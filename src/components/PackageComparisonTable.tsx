@@ -13,6 +13,7 @@ import {
 // Define the structure for a package
 interface Package {
   name: string;
+  price: string; // Added price property
   features: string[]; // List of features included in the package
 }
 
@@ -20,6 +21,7 @@ interface Package {
 const packages: Package[] = [
   {
     name: "Starter Package",
+    price: "$1,499", // Price added
     features: [
       "Website: Up to 5 pages (build/redesign)",
       "Project Management: Basic setup (up to 2 workspace spaces, simple tasks)",
@@ -34,6 +36,7 @@ const packages: Package[] = [
   },
   {
     name: "Growth Package",
+    price: "$2,999", // Price added
     features: [
       "Everything in Starter, plus:",
       "Website: Up to 10 pages (Including SEO)",
@@ -49,6 +52,7 @@ const packages: Package[] = [
   },
   {
     name: "Ultimate Package",
+    price: "$5,999", // Price added
     features: [
       "Everything in Growth, plus:",
       "Website: Unlimited pages (custom features/advanced SEO)",
@@ -112,11 +116,11 @@ const getFeatureDetail = (featureKey: string, pkg: Package): string => {
 
 const PackageComparisonTable = () => {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-gray-700 shadow-lg bg-gray-800 dark:bg-gray-800 animate-fade-in-up delay-1000">
+    <div className="overflow-x-auto rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg bg-white dark:bg-gray-800 animate-fade-in-up delay-1000">
       <Table className="w-full text-left">
-        <TableHeader className="bg-gray-900 dark:bg-gray-900">
-          <TableRow className="border-b border-gray-700">
-            <TableHead className="min-w-[200px] p-4 text-lg font-semibold text-white dark:text-white">Features</TableHead>
+        <TableHeader className="bg-gray-100 dark:bg-gray-900">
+          <TableRow className="border-b border-gray-200 dark:border-gray-700">
+            <TableHead className="min-w-[200px] p-4 text-lg font-semibold text-gray-900 dark:text-white">Features</TableHead>
             {packages.map((pkg, index) => (
               <TableHead key={index} className="p-4 text-center text-lg font-semibold text-primary dark:text-calpir-green-300">
                 {pkg.name.replace(" Package", "")}
@@ -125,14 +129,24 @@ const PackageComparisonTable = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
+          {/* Price Row */}
+          <TableRow className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+            <TableCell className="p-4 font-bold text-lg text-gray-900 dark:text-white">Price</TableCell>
+            {packages.map((pkg, pkgIndex) => (
+              <TableCell key={pkgIndex} className="p-4 text-center text-2xl font-extrabold text-primary dark:text-calpir-green-300">
+                {pkg.price}
+              </TableCell>
+            ))}
+          </TableRow>
+          {/* Other Features Rows */}
           {comparisonFeatures.map((feature, featureIndex) => (
-            <TableRow key={featureIndex} className="border-b border-gray-700 last:border-b-0 hover:bg-gray-700 dark:hover:bg-gray-700 transition-colors duration-200">
-              <TableCell className="p-4 font-medium text-gray-200 dark:text-gray-200">{feature}</TableCell>
+            <TableRow key={featureIndex} className="border-b border-gray-200 dark:border-gray-700 last:border-b-0 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+              <TableCell className="p-4 font-medium text-gray-800 dark:text-gray-200">{feature}</TableCell>
               {packages.map((pkg, pkgIndex) => {
                 const detail = getFeatureDetail(feature, pkg);
                 return (
-                  <TableCell key={pkgIndex} className="p-4 text-center text-gray-300 dark:text-gray-300">
-                    {detail ? detail : <span className="text-gray-500">-</span>} {/* Display detail or a dash */}
+                  <TableCell key={pkgIndex} className="p-4 text-center text-gray-700 dark:text-gray-300">
+                    {detail ? detail : <span className="text-gray-500">-</span>}
                   </TableCell>
                 );
               })}
