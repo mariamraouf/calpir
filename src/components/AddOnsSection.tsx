@@ -2,14 +2,14 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Globe, Code, Shield, Layout, DollarSign, BookOpen, Settings, Clock } from "lucide-react"; // Added Clock icon
+import { PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Globe, Code, Shield, Layout, DollarSign, BookOpen, Settings, Clock, TrendingUp } from "lucide-react"; // Added Globe, Code, TrendingUp icons
 import { Link } from "react-router-dom"; // Import Link for navigation
 
 const addOnsCategories = [
   {
     name: "Social Media Expansion",
-    icon: Share2, // New icon
-    iconColor: "text-palette-red-400", // New color
+    icon: Share2,
+    iconColor: "text-palette-red-400",
     items: [
       { posts: "10 Posts/Month", price: "$199", description: "Professional social media posts with graphics" },
       { posts: "20 Posts/Month", price: "$349", description: "Enhanced content with stories and engagement" },
@@ -18,8 +18,8 @@ const addOnsCategories = [
   },
   {
     name: "Email Marketing",
-    icon: Mail, // New icon
-    iconColor: "text-palette-orange-500", // New color
+    icon: Mail,
+    iconColor: "text-palette-orange-500",
     items: [
       { posts: "Email Marketing Setup", price: "$499", description: "One-time complete email automation system" },
       { posts: "3 Campaigns/Month", price: "$599", description: "Management for 3 email campaigns monthly" },
@@ -28,8 +28,8 @@ const addOnsCategories = [
   },
   {
     name: "Analytics Upgrades",
-    icon: BarChart2, // Existing icon
-    iconColor: "text-palette-blue-500", // Existing color
+    icon: BarChart2,
+    iconColor: "text-palette-blue-500",
     items: [
       { posts: "Monthly Insights", price: "$199", description: "Monthly performance reports" },
       { posts: "Monthly Recommendations", price: "$249", description: "Detailed insights + recommendations" },
@@ -37,76 +37,98 @@ const addOnsCategories = [
     ],
   },
   {
-    name: "Ongoing Support",
-    icon: Headphones, // Existing icon
-    iconColor: "text-palette-purple-400", // Existing color
+    name: "Business Automations",
+    icon: Code,
+    iconColor: "text-palette-orange-400",
     items: [
-      { posts: "Monthly Emails", price: "$199", description: "Monthly strategy emails + support" },
-      { posts: "Weekly Calls", price: "$499", description: "Weekly calls + priority support" },
+      { posts: "Basic Automation Setup", price: "$299", description: "Setup for 1-3 simple automation workflows" },
+      { posts: "Advanced Automation Package", price: "$599", description: "Setup for 5+ complex automation workflows" },
+      { posts: "Custom Automation Development", price: "$999", description: "Tailored automation solutions for unique business needs" },
+    ],
+  },
+  {
+    name: "Ongoing Support",
+    icon: Headphones,
+    iconColor: "text-palette-purple-400",
+    items: [
+      { posts: "Monthly Support Package", price: "$299", description: "Ongoing email support and monthly check-ins" },
+      { posts: "Premium Support Package", price: "$599", description: "Dedicated weekly calls and priority support" },
     ],
   },
   {
     name: "Staff Recruitment (Global)",
-    icon: Users, // Existing icon
-    iconColor: "text-calpir-green-700", // Existing color
+    icon: Users,
+    iconColor: "text-calpir-green-700",
     items: [
-      { posts: "1 Role", price: "$450", description: "Assistance with recruiting for one global role" },
-      { posts: "2 Roles", price: "$700", description: "Assistance with recruiting for two global roles" },
-      { posts: "3 Roles", price: "$900", description: "Assistance with recruiting for three global roles" },
-      { posts: "Unlimited (3 months)", price: "$4,999", description: "Unlimited recruitment assistance for 3 months" },
+      { posts: "Single Role Recruitment", price: "$599", description: "Assistance with recruiting for one global role" },
+      { posts: "Multi-Role Recruitment", price: "$999", description: "Comprehensive support for recruiting multiple global roles" },
+      { posts: "Comprehensive Recruitment (3 months)", price: "$2,999", description: "Unlimited recruitment assistance for 3 months" },
+    ],
+  },
+  {
+    name: "Performance Management",
+    icon: TrendingUp,
+    iconColor: "text-palette-blue-600",
+    items: [
+      { posts: "Performance Management Setup", price: "$699", description: "Setup for employee performance tracking, reviews, and goal setting" },
     ],
   },
   {
     name: "Extra Integrations",
-    icon: PlusCircle, // New icon
-    iconColor: "text-palette-blue-600", // New color
+    icon: PlusCircle,
+    iconColor: "text-palette-blue-600",
     items: [
       { posts: "Per Integration", price: "$199", description: "Setup and configuration for each additional platform integration" },
     ],
   },
   {
     name: "Website Expansions",
-    icon: Layout, // New icon
-    iconColor: "text-palette-purple-500", // New color
+    icon: Layout,
+    iconColor: "text-palette-purple-500",
     items: [
-      { posts: "Per Page", price: "$199", description: "Development for each additional website page" },
-      { posts: "E-commerce Functionality", price: "$499", description: "Setup for e-commerce capabilities" },
+      { posts: "Additional Website Pages", price: "$199", description: "Development for each additional website page" },
+      { posts: "E-commerce Functionality", price: "$699", description: "Setup for e-commerce capabilities" },
+    ],
+  },
+  {
+    name: "SEO Optimization",
+    icon: Globe,
+    iconColor: "text-palette-blue-700",
+    items: [
+      { posts: "SEO Optimization Package", price: "$599", description: "Improve your website's visibility on search engines" },
     ],
   },
   {
     name: "HR Customizations",
-    icon: Settings, // New icon
-    iconColor: "text-palette-yellow-400", // New color
+    icon: Settings,
+    iconColor: "text-palette-yellow-400",
     items: [
       { posts: "One-time Setup", price: "$299", description: "Custom HR system setup and configuration" },
     ],
   },
   {
     name: "Training Sessions",
-    icon: BookOpen, // New icon
-    iconColor: "text-calpir-green-600", // New color
+    icon: BookOpen,
+    iconColor: "text-calpir-green-600",
     items: [
-      { posts: "Per Hour", price: "$199", description: "Dedicated training sessions for your team" },
-    ],
-  },
-  {
-    name: "Custom Automations",
-    icon: Code, // New icon
-    iconColor: "text-palette-orange-400", // New color
-    items: [
-      { posts: "For 5+ Automations", price: "$299", description: "Setup for 5 or more custom automation workflows" },
+      { posts: "Basic Training Sessions", price: "$299", description: "Introductory training for new systems and tools (per hour)" },
+      { posts: "Advanced Systems Training", price: "$399", description: "In-depth training for complex systems and advanced features (per hour)" },
+      { posts: "Custom Workshop Development", price: "$1,299", description: "Tailored workshop designed to address specific team needs" },
+      { posts: "Team Certification Program", price: "$2,999", description: "Certify your team members on new platforms and systems" },
+      { posts: "Comprehensive Training Program", price: "$1,499", description: "All-encompassing training solution for full team adoption" },
     ],
   },
   {
     name: "Security Basics",
-    icon: Shield, // New icon
-    iconColor: "text-palette-red-500", // New color
+    icon: Shield,
+    iconColor: "text-palette-red-500",
     items: [
       { posts: "One-time Setup", price: "$299", description: "Basic security configurations and recommendations" },
+      { posts: "Ongoing Security Monitoring", price: "$299/month", description: "Continuous monitoring and proactive measures to protect your business" },
     ],
   },
   {
-    name: "Time Tracking", // New Add-on Category
+    name: "Time Tracking",
     icon: Clock,
     iconColor: "text-palette-orange-500",
     items: [
@@ -115,9 +137,17 @@ const addOnsCategories = [
       { posts: "Team Training & Optimization", price: "$399", description: "Training sessions for your team and workflow optimization" },
     ],
   },
+  {
+    name: "Domain Registration",
+    icon: Globe,
+    iconColor: "text-palette-blue-500",
+    items: [
+      { posts: "Domain Registration & Setup", price: "$49", description: "Assistance with registering and setting up your business domain" },
+    ],
+  },
 ];
 
-const AddOnsSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
+const AddOnsSection = () => {
   return (
     <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container text-center">
@@ -144,7 +174,7 @@ const AddOnsSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCust
                     </div>
                     <div className="flex items-center space-x-4">
                       <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
-                      <Link to="/build-my-business"> {/* Changed to Link */}
+                      <Link to="/build-my-business">
                         <Button
                           size="sm"
                           className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-sm px-4 py-2 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
@@ -168,7 +198,7 @@ const AddOnsSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCust
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-6">
             Need something specific, or a setup for a single platform not listed? We can create custom solutions tailored to your business needs. Contact us to discuss your requirements.
           </p>
-          <Link to="/get-a-quote"> {/* Changed to Link */}
+          <Link to="/get-a-quote">
             <Button
               variant="outline"
               className="text-primary border-primary hover:bg-primary hover:text-white text-md px-6 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"

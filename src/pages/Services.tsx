@@ -4,7 +4,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail, Headphones, Puzzle, Clock } from "lucide-react"; // Added Clock icon
+import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail, Headphones, Puzzle, Clock, Globe, Code } from "lucide-react"; // Added Globe and Code icons
 import { Button } from "@/components/ui/button"; // Import Button component
 import { Link } from "react-router-dom"; // Import Link for navigation
 
@@ -23,6 +23,19 @@ const servicesData = [
     iconColor: "text-primary",
   },
   {
+    id: "business-automations",
+    icon: Code,
+    title: "Business Automations",
+    description: "Automate repetitive tasks and complex workflows to boost efficiency and reduce manual effort.",
+    details: [
+      "Custom automation strategy and design",
+      "Integration of automation tools (e.g., Zapier, Make.com)",
+      "Setup of multi-step workflows",
+      "Automated reporting and data synchronization",
+    ],
+    iconColor: "text-palette-orange-400",
+  },
+  {
     id: "project-management",
     icon: Briefcase,
     title: "Project Management Setup",
@@ -34,6 +47,19 @@ const servicesData = [
       "Reporting and analytics dashboards",
     ],
     iconColor: "text-palette-orange-500",
+  },
+  {
+    id: "performance-management",
+    icon: TrendingUp,
+    title: "Performance Management",
+    description: "Set up systems for employee performance tracking, reviews, and goal setting to foster growth.",
+    details: [
+      "Performance review system setup",
+      "Goal setting and OKR tracking",
+      "Feedback and recognition programs",
+      "Employee development plans",
+    ],
+    iconColor: "text-palette-blue-600",
   },
   {
     id: "hr-recruiting",
@@ -49,17 +75,95 @@ const servicesData = [
     iconColor: "text-primary",
   },
   {
+    id: "single-role-recruitment",
+    icon: Users,
+    title: "Single Role Recruitment",
+    description: "Assistance with recruiting for one global role, from job posting to initial screening.",
+    details: [
+      "Job description optimization",
+      "Posting on global job boards",
+      "Candidate sourcing and initial screening",
+      "Interview coordination and support",
+    ],
+    iconColor: "text-calpir-green-700",
+  },
+  {
+    id: "multi-role-recruitment",
+    icon: Users,
+    title: "Multi-Role Recruitment",
+    description: "Comprehensive support for recruiting multiple global roles simultaneously.",
+    details: [
+      "Strategic recruitment planning for multiple roles",
+      "Volume candidate sourcing and management",
+      "Streamlined interview processes",
+      "Offer management and negotiation support",
+    ],
+    iconColor: "text-calpir-green-600",
+  },
+  {
+    id: "comprehensive-recruitment",
+    icon: Users,
+    title: "Comprehensive Recruitment (3 months)",
+    description: "Dedicated recruitment partnership for three months, offering unlimited hiring support.",
+    details: [
+      "Full-cycle recruitment for unlimited roles",
+      "Dedicated recruitment specialist",
+      "Employer branding support",
+      "Talent pipeline development",
+    ],
+    iconColor: "text-calpir-green-500",
+  },
+  {
     id: "website-building",
     icon: Layout,
     title: "Website Building & Hosting",
-    description: "Create a professional, high-performing website tailored to your business needs.",
+    description: "Create a professional, high-performing website tailored to your business needs, including domain registration.",
     details: [
       "Custom website design and development",
       "Responsive and mobile-friendly layouts",
-      "SEO optimization for better visibility",
       "Secure and reliable hosting solutions",
+      "Domain registration and setup",
     ],
     iconColor: "text-palette-blue-500",
+  },
+  {
+    id: "additional-website-pages",
+    icon: Layout,
+    title: "Additional Website Pages",
+    description: "Expand your website with professionally designed and developed extra pages.",
+    details: [
+      "Custom design for new pages",
+      "Content integration and optimization",
+      "Seamless navigation integration",
+      "Responsive design for all devices",
+    ],
+    iconColor: "text-palette-blue-400",
+  },
+  {
+    id: "ecommerce-functionality",
+    icon: DollarSign,
+    title: "E-commerce Functionality",
+    description: "Integrate robust e-commerce capabilities into your website for online sales.",
+    details: [
+      "Product catalog setup and management",
+      "Secure payment gateway integration",
+      "Shopping cart and checkout optimization",
+      "Inventory management features",
+    ],
+    iconColor: "text-palette-yellow-400",
+  },
+  {
+    id: "seo-optimization",
+    icon: Globe,
+    title: "SEO Optimization",
+    description: "Improve your website's visibility on search engines to attract more organic traffic.",
+    details: [
+      "Keyword research and analysis",
+      "On-page SEO optimization (meta tags, content)",
+      "Technical SEO audit and fixes",
+      "Local SEO strategies (if applicable)",
+    ],
+    iconColor: "text-palette-blue-700",
   },
   {
     id: "accounting",
@@ -179,31 +283,8 @@ const servicesData = [
     iconColor: "text-palette-blue-700",
   },
   {
-    id: "ongoing-support",
-    icon: Headphones,
-    title: "Ongoing Support",
-    description: "Continuous support and maintenance for your business systems.",
-    details: [
-      "Monthly strategy emails + support",
-      "Weekly calls + priority support",
-    ],
-    iconColor: "text-palette-purple-400",
-  },
-  {
-    id: "training-sessions",
-    icon: BookOpen,
-    title: "Training Sessions",
-    description: "Dedicated training to empower your team with new systems and tools.",
-    details: [
-      "Customized training modules",
-      "Hands-on workshops",
-      "User guides and documentation",
-    ],
-    iconColor: "text-calpir-green-600",
-  },
-  {
-    id: "time-tracking", // New service ID
-    icon: Clock, // Using Clock icon
+    id: "time-tracking",
+    icon: Clock,
     title: "Time Tracking System Setup",
     description: "Implement efficient time tracking solutions to monitor productivity and manage project hours accurately.",
     details: [
@@ -212,7 +293,110 @@ const servicesData = [
       "Reporting for project hours and team activity",
       "Integration with project management and payroll systems",
     ],
-    iconColor: "text-palette-orange-500", // Using an appropriate color
+    iconColor: "text-palette-orange-500",
+  },
+  {
+    id: "basic-training-sessions",
+    icon: BookOpen,
+    title: "Basic Training Sessions",
+    description: "Introductory training to get your team familiar with new systems and tools.",
+    details: [
+      "1-hour live online session",
+      "Q&A and basic troubleshooting",
+      "Access to recorded session",
+    ],
+    iconColor: "text-calpir-green-600",
+  },
+  {
+    id: "advanced-systems-training",
+    icon: BookOpen,
+    title: "Advanced Systems Training",
+    description: "In-depth training for complex systems, advanced features, and custom workflows.",
+    details: [
+      "2-hour live online session",
+      "Customized curriculum based on your setup",
+      "Advanced tips and best practices",
+      "Dedicated follow-up support",
+    ],
+    iconColor: "text-calpir-green-700",
+  },
+  {
+    id: "custom-workshop-development",
+    icon: BookOpen,
+    title: "Custom Workshop Development",
+    description: "Tailored workshop designed to address specific team needs and challenges.",
+    details: [
+      "Full-day interactive workshop (virtual or on-site)",
+      "Custom exercises and case studies",
+      "Comprehensive training materials",
+      "Post-workshop consultation",
+    ],
+    iconColor: "text-calpir-green-800",
+  },
+  {
+    id: "team-certification-program",
+    icon: BookOpen,
+    title: "Team Certification Program",
+    description: "Certify your team members on new platforms and systems with a structured program.",
+    details: [
+      "Multi-module training program",
+      "Quizzes and practical assessments",
+      "Official certification upon completion",
+      "Ongoing access to learning resources",
+    ],
+    iconColor: "text-calpir-green-900",
+  },
+  {
+    id: "comprehensive-training-program",
+    icon: BookOpen,
+    title: "Comprehensive Training Program",
+    description: "An all-encompassing training solution for full team adoption and mastery of new systems.",
+    details: [
+      "Customized training roadmap",
+      "Blended learning approach (live, self-paced)",
+      "Dedicated training manager",
+      "Performance tracking and reporting",
+    ],
+    iconColor: "text-calpir-green-900",
+  },
+  {
+    id: "monthly-support-package",
+    icon: Headphones,
+    title: "Monthly Support Package",
+    description: "Ongoing email support and monthly check-ins to ensure smooth operations.",
+    details: [
+      "Priority email support",
+      "Monthly 30-minute strategy call",
+      "System health checks",
+      "Minor adjustments and updates",
+    ],
+    iconColor: "text-palette-purple-400",
+  },
+  {
+    id: "premium-support-package",
+    icon: Headphones,
+    title: "Premium Support Package",
+    description: "Dedicated weekly calls and priority support for critical business needs.",
+    details: [
+      "Dedicated support manager",
+      "Weekly 1-hour strategy calls",
+      "24/7 emergency support",
+      "Proactive system monitoring and optimization",
+    ],
+    iconColor: "text-palette-purple-500",
+  },
+  {
+    id: "ongoing-security-monitoring",
+    icon: Shield,
+    title: "Ongoing Security Monitoring",
+    description: "Continuous monitoring and proactive measures to protect your business from threats.",
+    details: [
+      "Real-time threat detection",
+      "Vulnerability assessments",
+      "Security incident response planning",
+      "Regular security reports and recommendations",
+    ],
+    iconColor: "text-palette-red-500",
   },
 ];
 

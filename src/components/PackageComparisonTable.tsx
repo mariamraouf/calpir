@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { CheckCircle, XCircle } from "lucide-react"; // Import XCircle icon
+import { CheckCircle, XCircle } from "lucide-react";
 
 // Define the structure for a package with nested features
 interface Package {
@@ -20,8 +20,11 @@ interface Package {
   digitalPresence: {
     websiteDevelopment: string;
     hostingDomain: boolean;
+    domainRegistration: boolean; // New
     seoOptimization: boolean;
     socialMediaSetup: string;
+    additionalWebsitePages: string | boolean; // New
+    ecommerceFunctionality: boolean; // New
   };
   businessOperations: {
     projectManagement: string;
@@ -30,20 +33,35 @@ interface Package {
     platformMigration: string;
     integrations: string;
     analyticsReporting: string;
-    businessAutomations: boolean;
+    businessAutomations: string | boolean; // Changed to allow string
     sops: boolean;
     payroll: boolean;
-    performanceManagement: boolean;
+    performanceManagement: boolean; // New
   };
   humanResources: {
     employeeProfiles: boolean;
     legalTemplates: string;
     recruitingSupport: string;
+    singleRoleRecruitment: boolean; // New
+    multiRoleRecruitment: boolean; // New
+    comprehensiveRecruitment: boolean; // New
     advancedHrSystem: string;
     onboardingOffboardingWorkflows: string | boolean;
-    timeTracking: string | boolean; // Changed to allow boolean
-    timeAttendanceTracking: string | boolean; // Changed to allow boolean
+    timeTracking: string | boolean;
+    timeAttendanceTracking: string | boolean;
     employeeEngagementSurveys: boolean;
+  };
+  training: { // New category
+    basicTrainingSessions: boolean;
+    advancedSystemsTraining: boolean;
+    customWorkshopDevelopment: boolean;
+    teamCertificationProgram: boolean;
+    comprehensiveTrainingProgram: boolean;
+  };
+  support: { // New category
+    monthlySupportPackage: boolean;
+    premiumSupportPackage: boolean;
+    ongoingSecurityMonitoring: boolean;
   };
 }
 
@@ -55,8 +73,11 @@ const packages: Package[] = [
     digitalPresence: {
       websiteDevelopment: "5 pages",
       hostingDomain: true,
+      domainRegistration: true,
       seoOptimization: false,
       socialMediaSetup: "2 platforms + 5 posts",
+      additionalWebsitePages: false,
+      ecommerceFunctionality: false,
     },
     businessOperations: {
       projectManagement: "Basic (2 workspaces)",
@@ -74,11 +95,26 @@ const packages: Package[] = [
       employeeProfiles: true,
       legalTemplates: "Contract draft only",
       recruitingSupport: "Job templates",
+      singleRoleRecruitment: false,
+      multiRoleRecruitment: false,
+      comprehensiveRecruitment: false,
       advancedHrSystem: "",
-      onboardingOffboardingWorkflows: "",
-      timeTracking: false, // Changed from "Basic time tracking" to false
-      timeAttendanceTracking: false, // Changed from true to false
+      onboardingOffboardingWorkflows: false,
+      timeTracking: false,
+      timeAttendanceTracking: false,
       employeeEngagementSurveys: false,
+    },
+    training: {
+      basicTrainingSessions: false,
+      advancedSystemsTraining: false,
+      customWorkshopDevelopment: false,
+      teamCertificationProgram: false,
+      comprehensiveTrainingProgram: false,
+    },
+    support: {
+      monthlySupportPackage: false,
+      premiumSupportPackage: false,
+      ongoingSecurityMonitoring: false,
     },
   },
   {
@@ -87,8 +123,11 @@ const packages: Package[] = [
     digitalPresence: {
       websiteDevelopment: "10 pages",
       hostingDomain: true,
+      domainRegistration: true,
       seoOptimization: true,
       socialMediaSetup: "5 platforms + 10 posts",
+      additionalWebsitePages: "Up to 5 pages",
+      ecommerceFunctionality: false,
     },
     businessOperations: {
       projectManagement: "Enhanced (5 workspaces)",
@@ -97,20 +136,35 @@ const packages: Package[] = [
       platformMigration: "2-3 platforms",
       integrations: "5 connections",
       analyticsReporting: "Monthly insights + Recommendation",
-      businessAutomations: true,
+      businessAutomations: "Basic Automation Setup",
       sops: true,
       payroll: false,
       performanceManagement: false,
     },
     humanResources: {
       employeeProfiles: true,
-      legalTemplates: "✓", // Representing true as "✓" for display
+      legalTemplates: "✓",
       recruitingSupport: "Job postings on 2 global sites",
+      singleRoleRecruitment: false,
+      multiRoleRecruitment: false,
+      comprehensiveRecruitment: false,
       advancedHrSystem: "ATS & talent pipeline",
-      onboardingOffboardingWorkflows: true, // Changed from "Basic checklist" to true
+      onboardingOffboardingWorkflows: true,
       timeTracking: "Advanced timetracking with reports",
-      timeAttendanceTracking: true, // Changed from "Advanced Tracking" to true
+      timeAttendanceTracking: true,
       employeeEngagementSurveys: false,
+    },
+    training: {
+      basicTrainingSessions: true,
+      advancedSystemsTraining: false,
+      customWorkshopDevelopment: false,
+      teamCertificationProgram: false,
+      comprehensiveTrainingProgram: false,
+    },
+    support: {
+      monthlySupportPackage: true,
+      premiumSupportPackage: false,
+      ongoingSecurityMonitoring: false,
     },
   },
   {
@@ -119,8 +173,11 @@ const packages: Package[] = [
     digitalPresence: {
       websiteDevelopment: "Unlimited pages",
       hostingDomain: true,
+      domainRegistration: true,
       seoOptimization: true,
       socialMediaSetup: "5+ platforms + 20 posts",
+      additionalWebsitePages: "Unlimited pages",
+      ecommerceFunctionality: true,
     },
     businessOperations: {
       projectManagement: "Advanced (unlimited)",
@@ -129,20 +186,35 @@ const packages: Package[] = [
       platformMigration: "Multiple platforms",
       integrations: "Unlimited",
       analyticsReporting: "Weekly insights + Recommendation",
-      businessAutomations: true,
+      businessAutomations: "Advanced Automation Package",
       sops: true,
       payroll: true,
       performanceManagement: true,
     },
     humanResources: {
       employeeProfiles: true,
-      legalTemplates: "✓", // Representing true as "✓" for display
+      legalTemplates: "✓",
       recruitingSupport: "Full strategy + sourcing for 1 global role",
+      singleRoleRecruitment: true,
+      multiRoleRecruitment: false,
+      comprehensiveRecruitment: false,
       advancedHrSystem: "Scalable ATS system",
-      onboardingOffboardingWorkflows: true, // Representing true as "✓" for display
+      onboardingOffboardingWorkflows: true,
       timeTracking: "Advanced timetracking with reports and dashboard",
       timeAttendanceTracking: "Advanced Tracking",
       employeeEngagementSurveys: true,
+    },
+    training: {
+      basicTrainingSessions: true,
+      advancedSystemsTraining: true,
+      customWorkshopDevelopment: false,
+      teamCertificationProgram: false,
+      comprehensiveTrainingProgram: false,
+    },
+    support: {
+      monthlySupportPackage: true,
+      premiumSupportPackage: true,
+      ongoingSecurityMonitoring: true,
     },
   },
 ];
@@ -155,8 +227,11 @@ const comparisonFeatures = [
     features: [
       { key: "websiteDevelopment", label: "Website Development" },
       { key: "hostingDomain", label: "Hosting & Domain" },
+      { key: "domainRegistration", label: "Domain Registration" },
       { key: "seoOptimization", label: "SEO Optimization" },
       { key: "socialMediaSetup", label: "Social Media Setup" },
+      { key: "additionalWebsitePages", label: "Additional Website Pages" },
+      { key: "ecommerceFunctionality", label: "E-commerce Functionality" },
     ],
   },
   {
@@ -182,6 +257,9 @@ const comparisonFeatures = [
       { key: "employeeProfiles", label: "Employee Profiles" },
       { key: "legalTemplates", label: "Legal Templates (Contracts, NDAs, Handbook)" },
       { key: "recruitingSupport", label: "Recruiting Support" },
+      { key: "singleRoleRecruitment", label: "Single Role Recruitment" },
+      { key: "multiRoleRecruitment", label: "Multi-Role Recruitment" },
+      { key: "comprehensiveRecruitment", label: "Comprehensive Recruitment (3 months)" },
       { key: "advancedHrSystem", label: "Advanced HR System" },
       { key: "onboardingOffboardingWorkflows", label: "Onboarding/Offboarding Workflows" },
       { key: "timeTracking", label: "Time Tracking" },
@@ -189,12 +267,32 @@ const comparisonFeatures = [
       { key: "employeeEngagementSurveys", label: "Employee Engagement Surveys" },
     ],
   },
+  {
+    category: "Training",
+    key: "training",
+    features: [
+      { key: "basicTrainingSessions", label: "Basic Training Sessions" },
+      { key: "advancedSystemsTraining", label: "Advanced Systems Training" },
+      { key: "customWorkshopDevelopment", label: "Custom Workshop Development" },
+      { key: "teamCertificationProgram", label: "Team Certification Program" },
+      { key: "comprehensiveTrainingProgram", label: "Comprehensive Training Program" },
+    ],
+  },
+  {
+    category: "Support & Security",
+    key: "support",
+    features: [
+      { key: "monthlySupportPackage", label: "Monthly Support Package" },
+      { key: "premiumSupportPackage", label: "Premium Support Package" },
+      { key: "ongoingSecurityMonitoring", label: "Ongoing Security Monitoring" },
+    ],
+  },
 ];
 
 const PackageComparisonTable = () => {
   return (
     <div className="overflow-x-auto rounded-2xl border border-palette-blue-100 dark:border-gray-700 shadow-lg bg-white dark:bg-gray-800 animate-fade-in-up delay-1000">
-      <Table className="w-full text-left table-fixed"> {/* Added table-fixed here */}
+      <Table className="w-full text-left table-fixed">
         <TableHeader className="bg-gray-100 dark:bg-gray-900">
           <TableRow className="border-b border-palette-blue-100 dark:border-gray-700">
             <TableHead className="min-w-[200px] p-4 text-lg font-semibold text-gray-900 dark:text-white">Features</TableHead>
@@ -240,7 +338,7 @@ const PackageComparisonTable = () => {
                           </div>
                         ) : featureValue === false || featureValue === "" || featureValue === null ? (
                           <div className="flex items-center justify-center">
-                            <XCircle className="h-5 w-5 text-palette-red-500" /> {/* Changed to red XCircle */}
+                            <XCircle className="h-5 w-5 text-palette-red-500" />
                           </div>
                         ) : (
                           <div className="flex items-center justify-center space-x-2">
@@ -258,7 +356,7 @@ const PackageComparisonTable = () => {
 
           {/* Buttons Row */}
           <TableRow className="bg-gray-100 dark:bg-gray-900 border-t border-palette-blue-100 dark:border-gray-700">
-            <TableCell className="p-4"></TableCell> {/* Empty cell for the features column */}
+            <TableCell className="p-4"></TableCell>
             {packages.map((pkg, pkgIndex) => (
               <TableCell key={pkgIndex} className="p-4 text-center">
                 <Link to="/build-my-business">

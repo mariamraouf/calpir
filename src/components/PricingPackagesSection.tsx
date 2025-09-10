@@ -12,15 +12,14 @@ const packages = [
     price: "$1,499",
     description: "Perfect for solo entrepreneurs and small startups with tight budgets.",
     features: [
-      "Website: Up to 5 pages (build/redesign)",
-      "Project Management: Basic setup (up to 2 workspace spaces, simple tasks)",
-      "Migration: Move to 1 platform (e.g., CRM/project tool, data import)",
-      "Social Media: Setup on 2 platforms + 5 designs or posts",
+      "Website: Up to 5 pages, Hosting & Domain",
+      "Project Management: Basic setup (2 workspaces)",
       "CRM: Basic contact tracking",
       "Accounting: Simple invoicing",
+      "Social Media: Setup on 2 platforms + 5 posts",
+      "HR/Recruiting: Employee profiles, Job templates",
       "Integrations: Up to 2 connections",
-      "Analytics: Basic monthly summary",
-      "HR/Recruiting: Templates + basic global strategy",
+      "Analytics: Monthly summary",
     ],
     highlight: false,
   },
@@ -31,15 +30,17 @@ const packages = [
     description: "Scaling startups or businesses upgrading platforms—more depth for growth/transitions.",
     features: [
       "Everything in Starter, plus:",
-      "Website: Up to 10 pages (Including SEO)",
-      "Project Management: Enhanced setup (Up to 5 workspaces, basic automations)",
-      "Migration: Move to 2-3 platforms (e.g., CRM + project tool)",
-      "Social Media: Setup on 5 platforms + 10 designs/posts (1-month plan)",
-      "CRM: Advanced CRM with automation",
+      "Website: Up to 10 pages, SEO Optimization, Up to 5 additional pages",
+      "Project Management: Enhanced setup (5 workspaces)",
+      "CRM: Advanced with automation",
       "Accounting: Expense tracking",
+      "Social Media: Setup on 5 platforms + 10 posts",
+      "HR/Recruiting: Legal templates, Job postings on 2 global sites, ATS & talent pipeline",
+      "Business Automations: Basic Automation Setup",
       "Integrations: Up to 5 connections",
-      "Analytics: Monthly detailed insights",
-      "HR/Recruiting: Job postings on 2 global sites",
+      "Analytics: Monthly detailed insights + Recommendations",
+      "Training: Basic Training Sessions",
+      "Support: Monthly Support Package",
     ],
     highlight: true,
   },
@@ -50,21 +51,25 @@ const packages = [
     description: "Funded startups or businesses needing premium setups/migrations—advanced features, dedicated manager (1-month email/check-ins).",
     features: [
       "Everything in Growth, plus:",
-      "Website: Unlimited pages (custom features/advanced SEO)",
-      "Project Management: Advanced setup (unlimited workspaces, full automations)",
-      "Migration: Move to multiple platforms (unlimited, full stack overhaul)",
-      "Social Media: Setup on 5+ platforms + 20 designs/posts per month (3-month plan)",
+      "Website: Unlimited pages, E-commerce Functionality",
+      "Project Management: Advanced setup (unlimited workspaces)",
       "CRM: Predictive automation",
       "Accounting: Forecasting tools",
-      "Integrations: Unlimited as needed",
-      "Analytics: Weekly insights/recommendations",
-      "HR/Recruiting: Full strategy + sourcing for 1 global role",
+      "Social Media: Setup on 5+ platforms + 20 posts",
+      "HR/Recruiting: Full strategy + sourcing for 1 global role, Single Role Recruitment, Scalable ATS system",
+      "Business Automations: Advanced Automation Package",
+      "Performance Management: Full setup",
+      "Integrations: Unlimited",
+      "Analytics: Weekly insights + Recommendations",
+      "Training: Advanced Systems Training",
+      "Support: Premium Support Package, Ongoing Security Monitoring",
+      "Payroll & Performance Management",
     ],
     highlight: false,
   },
 ];
 
-const PricingPackagesSection = () => { // Removed setOpenBuildMyBusinessForm prop
+const PricingPackagesSection = () => {
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-gray-950" id="pricing">
       <div className="container text-center">
@@ -102,7 +107,7 @@ const PricingPackagesSection = () => { // Removed setOpenBuildMyBusinessForm pro
               <p className="text-gray-600 dark:text-gray-400 mb-6 flex-grow">{pkg.description}</p>
 
               <ul className="list-none space-y-3 text-left mb-8">
-                {pkg.features.slice(0, 5).map((feature, fIndex) => ( // Show only first 5 features as a summary
+                {pkg.features.slice(0, 5).map((feature, fIndex) => (
                   <li key={fIndex} className="flex items-start text-gray-700 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.15 + fIndex * 0.05}s` }}>
                     <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                     <span>{feature}</span>
@@ -116,7 +121,7 @@ const PricingPackagesSection = () => { // Removed setOpenBuildMyBusinessForm pro
                 )}
               </ul>
 
-              <Link to="/build-my-business"> {/* Changed to Link */}
+              <Link to="/build-my-business">
                 <Button
                   size="lg"
                   className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow ${
