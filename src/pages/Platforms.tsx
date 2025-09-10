@@ -444,7 +444,7 @@ const Platforms = () => {
                         src={platform.logo}
                         alt={platform.name}
                         title={platform.name}
-                        className="h-8 w-8 mb-2 object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                        className="h-8 w-8 mb-2 object-contain filter grayscale-0 opacity-100 hover:grayscale hover:opacity-60 transition-all duration-300" // Changed here
                         onError={(e) => {
                           e.currentTarget.onerror = null; // Prevent infinite loop if placeholder also fails
                           e.currentTarget.src = 'https://via.placeholder.com/50?text=Logo';
