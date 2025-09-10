@@ -38,7 +38,6 @@ const servicesData = [
     ],
     iconColor: "text-palette-blue-400",
   },
-  // E-commerce Functionality service removed as requested
   {
     id: "seo-optimization",
     icon: Globe,
@@ -60,7 +59,7 @@ const servicesData = [
     investment: "$799",
     description: "Establish and manage your brand's presence across key social media platforms.",
     details: [
-      "Setup on 2 platforms", // Amended as requested
+      "Setup on 2 platforms",
       "Content strategy and calendar development",
       "Post design and scheduling",
       "Audience engagement strategies",
@@ -169,7 +168,7 @@ const servicesData = [
     id: "integrations",
     icon: Lightbulb,
     title: "Platform Integrations",
-    investment: "$299/integration",
+    investment: "$199/integration", // Price updated
     description: "Connect your essential business tools for seamless data flow and automation.",
     details: [
       "Integration strategy and planning",
@@ -197,17 +196,16 @@ const servicesData = [
     id: "custom-automations",
     icon: Code,
     title: "Custom Automations",
-    investment: "$599",
+    investment: "$299", // Price updated
     description: "Automate repetitive tasks and complex workflows to boost efficiency and reduce manual effort.",
     details: [
       "Custom automation strategy and design",
-      "Integration of automation tools", // Removed "(e.g., Zapier, Make.com)" as requested
+      "Integration of automation tools",
       "Setup of multi-step workflows (5+ automations)",
       "Automated reporting and data synchronization",
     ],
     iconColor: "text-palette-orange-400",
   },
-  // Security Basics Setup removed as requested
   {
     id: "hr-recruiting-system",
     icon: Users,
@@ -226,8 +224,8 @@ const servicesData = [
     id: "time-tracking",
     icon: Clock,
     title: "Time Tracking System Setup",
-    investment: "$399",
-    description: "Implement efficient time tracking solutions to monitor productivity and manage project hours accurately.",
+    investment: "$299", // Price updated
+    description: "Comprehensive setup of a time tracking tool with custom reports and integrations.", // Description updated
     details: [
       "Time tracking tool selection and configuration",
       "Automated time logging setup",
@@ -254,7 +252,7 @@ const servicesData = [
     id: "single-role-recruitment",
     icon: Users,
     title: "Single Role Recruitment",
-    investment: "$599",
+    investment: "$450", // Price updated
     description: "Assistance with recruiting for one global role, from job posting to initial screening.",
     details: [
       "Job description optimization",
@@ -268,7 +266,7 @@ const servicesData = [
     id: "multi-role-recruitment",
     icon: Users,
     title: "Multi-Role Recruitment",
-    investment: "$999",
+    investment: "$700", // Price updated
     description: "Comprehensive support for recruiting multiple global roles simultaneously.",
     details: [
       "Strategic recruitment planning for multiple roles",
@@ -282,7 +280,7 @@ const servicesData = [
     id: "comprehensive-recruitment",
     icon: Users,
     title: "Comprehensive Recruitment (3 months)",
-    investment: "$2,999",
+    investment: "$4,999", // Price updated
     description: "Dedicated recruitment partnership for three months, offering unlimited hiring support.",
     details: [
       "Full-cycle recruitment for unlimited roles",
@@ -296,7 +294,7 @@ const servicesData = [
     id: "basic-training-sessions",
     icon: BookOpen,
     title: "Basic Training Sessions",
-    investment: "$299/hour",
+    investment: "$199/hour", // Price updated
     description: "Introductory training to get your team familiar with new systems and tools.",
     details: [
       "1-hour live online session",
@@ -305,15 +303,11 @@ const servicesData = [
     ],
     iconColor: "text-calpir-green-600",
   },
-  // Advanced Systems Training removed as requested
-  // Custom Workshop Development removed as requested
-  // Team Certification Program removed as requested
-  // Comprehensive Training Program removed as requested
   {
     id: "monthly-support-package",
     icon: Headphones,
     title: "Monthly Support Package",
-    investment: "$299/month",
+    investment: "$199/month", // Price updated
     description: "Ongoing email support and monthly check-ins to ensure smooth operations.",
     details: [
       "Priority email support",
@@ -327,7 +321,7 @@ const servicesData = [
     id: "premium-support-package",
     icon: Headphones,
     title: "Premium Support Package",
-    investment: "$599/month",
+    investment: "$499/month", // Price updated
     description: "Dedicated weekly calls and priority support for critical business needs.",
     details: [
       "Dedicated support manager",
@@ -337,7 +331,6 @@ const servicesData = [
     ],
     iconColor: "text-palette-purple-500",
   },
-  // Ongoing Security Monitoring removed as requested
 ];
 
 const Services = () => {
