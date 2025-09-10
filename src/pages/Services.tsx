@@ -4,9 +4,9 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail, Headphones, Puzzle, Clock, Globe, Code } from "lucide-react"; // Added Globe and Code icons
-import { Button } from "@/components/ui/button"; // Import Button component
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail, Headphones, Puzzle, Clock, Globe, Code } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const servicesData = [
   {
@@ -306,97 +306,6 @@ const servicesData = [
       "Access to recorded session",
     ],
     iconColor: "text-calpir-green-600",
-  },
-  {
-    id: "advanced-systems-training",
-    icon: BookOpen,
-    title: "Advanced Systems Training",
-    description: "In-depth training for complex systems, advanced features, and custom workflows.",
-    details: [
-      "2-hour live online session",
-      "Customized curriculum based on your setup",
-      "Advanced tips and best practices",
-      "Dedicated follow-up support",
-    ],
-    iconColor: "text-calpir-green-700",
-  },
-  {
-    id: "custom-workshop-development",
-    icon: BookOpen,
-    title: "Custom Workshop Development",
-    description: "Tailored workshop designed to address specific team needs and challenges.",
-    details: [
-      "Full-day interactive workshop (virtual or on-site)",
-      "Custom exercises and case studies",
-      "Comprehensive training materials",
-      "Post-workshop consultation",
-    ],
-    iconColor: "text-calpir-green-800",
-  },
-  {
-    id: "team-certification-program",
-    icon: BookOpen,
-    title: "Team Certification Program",
-    description: "Certify your team members on new platforms and systems with a structured program.",
-    details: [
-      "Multi-module training program",
-      "Quizzes and practical assessments",
-      "Official certification upon completion",
-      "Ongoing access to learning resources",
-    ],
-    iconColor: "text-calpir-green-900",
-  },
-  {
-    id: "comprehensive-training-program",
-    icon: BookOpen,
-    title: "Comprehensive Training Program",
-    description: "An all-encompassing training solution for full team adoption and mastery of new systems.",
-    details: [
-      "Customized training roadmap",
-      "Blended learning approach (live, self-paced)",
-      "Dedicated training manager",
-      "Performance tracking and reporting",
-    ],
-    iconColor: "text-calpir-green-900",
-  },
-  {
-    id: "monthly-support-package",
-    icon: Headphones,
-    title: "Monthly Support Package",
-    description: "Ongoing email support and monthly check-ins to ensure smooth operations.",
-    details: [
-      "Priority email support",
-      "Monthly 30-minute strategy call",
-      "System health checks",
-      "Minor adjustments and updates",
-    ],
-    iconColor: "text-palette-purple-400",
-  },
-  {
-    id: "premium-support-package",
-    icon: Headphones,
-    title: "Premium Support Package",
-    description: "Dedicated weekly calls and priority support for critical business needs.",
-    details: [
-      "Dedicated support manager",
-      "Weekly 1-hour strategy calls",
-      "24/7 emergency support",
-      "Proactive system monitoring and optimization",
-    ],
-    iconColor: "text-palette-purple-500",
-  },
-  {
-    id: "ongoing-security-monitoring",
-    icon: Shield,
-    title: "Ongoing Security Monitoring",
-    description: "Continuous monitoring and proactive measures to protect your business from threats.",
-    details: [
-      "Real-time threat detection",
-      "Vulnerability assessments",
-      "Security incident response planning",
-      "Regular security reports and recommendations",
-    ],
-    iconColor: "text-palette-red-500",
   },
 ];
 

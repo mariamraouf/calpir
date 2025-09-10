@@ -2,8 +2,8 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Globe, Code, Shield, Layout, DollarSign, BookOpen, Settings, Clock, TrendingUp } from "lucide-react"; // Added Globe, Code, TrendingUp icons
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Globe, Code, Shield, Layout, DollarSign, BookOpen, Settings, Clock, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const addOnsCategories = [
   {
@@ -52,7 +52,6 @@ const addOnsCategories = [
     iconColor: "text-palette-purple-400",
     items: [
       { posts: "Monthly Support Package", price: "$299", description: "Ongoing email support and monthly check-ins" },
-      { posts: "Premium Support Package", price: "$599", description: "Dedicated weekly calls and priority support" },
     ],
   },
   {
@@ -112,10 +111,6 @@ const addOnsCategories = [
     iconColor: "text-calpir-green-600",
     items: [
       { posts: "Basic Training Sessions", price: "$299", description: "Introductory training for new systems and tools (per hour)" },
-      { posts: "Advanced Systems Training", price: "$399", description: "In-depth training for complex systems and advanced features (per hour)" },
-      { posts: "Custom Workshop Development", price: "$1,299", description: "Tailored workshop designed to address specific team needs" },
-      { posts: "Team Certification Program", price: "$2,999", description: "Certify your team members on new platforms and systems" },
-      { posts: "Comprehensive Training Program", price: "$1,499", description: "All-encompassing training solution for full team adoption" },
     ],
   },
   {
@@ -124,7 +119,6 @@ const addOnsCategories = [
     iconColor: "text-palette-red-500",
     items: [
       { posts: "One-time Setup", price: "$299", description: "Basic security configurations and recommendations" },
-      { posts: "Ongoing Security Monitoring", price: "$299/month", description: "Continuous monitoring and proactive measures to protect your business" },
     ],
   },
   {

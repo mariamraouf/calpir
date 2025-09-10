@@ -40,7 +40,7 @@ const packages = [
       "Integrations: Up to 5 connections",
       "Analytics: Monthly detailed insights + Recommendations",
       "Training: Basic Training Sessions",
-      "Support: Monthly Support Package",
+      "Support: Monthly Support Package", // Keeping this for now as it's still in AddOnsSection
     ],
     highlight: true,
   },
@@ -61,8 +61,8 @@ const packages = [
       "Performance Management: Full setup",
       "Integrations: Unlimited",
       "Analytics: Weekly insights + Recommendations",
-      "Training: Advanced Systems Training",
-      "Support: Premium Support Package, Ongoing Security Monitoring",
+      "Training: Basic Training Sessions", // Only basic training remains
+      "Support: Monthly Support Package", // Keeping this for now as it's still in AddOnsSection
       "Payroll & Performance Management",
     ],
     highlight: false,

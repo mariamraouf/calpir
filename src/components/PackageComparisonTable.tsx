@@ -20,11 +20,11 @@ interface Package {
   digitalPresence: {
     websiteDevelopment: string;
     hostingDomain: boolean;
-    domainRegistration: boolean; // New
+    domainRegistration: boolean;
     seoOptimization: boolean;
     socialMediaSetup: string;
-    additionalWebsitePages: string | boolean; // New
-    ecommerceFunctionality: boolean; // New
+    additionalWebsitePages: string | boolean;
+    ecommerceFunctionality: boolean;
   };
   businessOperations: {
     projectManagement: string;
@@ -33,35 +33,26 @@ interface Package {
     platformMigration: string;
     integrations: string;
     analyticsReporting: string;
-    businessAutomations: string | boolean; // Changed to allow string
+    businessAutomations: string | boolean;
     sops: boolean;
     payroll: boolean;
-    performanceManagement: boolean; // New
+    performanceManagement: boolean;
   };
   humanResources: {
     employeeProfiles: boolean;
     legalTemplates: string;
     recruitingSupport: string;
-    singleRoleRecruitment: boolean; // New
-    multiRoleRecruitment: boolean; // New
-    comprehensiveRecruitment: boolean; // New
+    singleRoleRecruitment: boolean;
+    multiRoleRecruitment: boolean;
+    comprehensiveRecruitment: boolean;
     advancedHrSystem: string;
     onboardingOffboardingWorkflows: string | boolean;
     timeTracking: string | boolean;
     timeAttendanceTracking: string | boolean;
     employeeEngagementSurveys: boolean;
   };
-  training: { // New category
+  training: { // Only basic training sessions remain
     basicTrainingSessions: boolean;
-    advancedSystemsTraining: boolean;
-    customWorkshopDevelopment: boolean;
-    teamCertificationProgram: boolean;
-    comprehensiveTrainingProgram: boolean;
-  };
-  support: { // New category
-    monthlySupportPackage: boolean;
-    premiumSupportPackage: boolean;
-    ongoingSecurityMonitoring: boolean;
   };
 }
 
@@ -106,15 +97,6 @@ const packages: Package[] = [
     },
     training: {
       basicTrainingSessions: false,
-      advancedSystemsTraining: false,
-      customWorkshopDevelopment: false,
-      teamCertificationProgram: false,
-      comprehensiveTrainingProgram: false,
-    },
-    support: {
-      monthlySupportPackage: false,
-      premiumSupportPackage: false,
-      ongoingSecurityMonitoring: false,
     },
   },
   {
@@ -156,15 +138,6 @@ const packages: Package[] = [
     },
     training: {
       basicTrainingSessions: true,
-      advancedSystemsTraining: false,
-      customWorkshopDevelopment: false,
-      teamCertificationProgram: false,
-      comprehensiveTrainingProgram: false,
-    },
-    support: {
-      monthlySupportPackage: true,
-      premiumSupportPackage: false,
-      ongoingSecurityMonitoring: false,
     },
   },
   {
@@ -206,15 +179,6 @@ const packages: Package[] = [
     },
     training: {
       basicTrainingSessions: true,
-      advancedSystemsTraining: true,
-      customWorkshopDevelopment: false,
-      teamCertificationProgram: false,
-      comprehensiveTrainingProgram: false,
-    },
-    support: {
-      monthlySupportPackage: true,
-      premiumSupportPackage: true,
-      ongoingSecurityMonitoring: true,
     },
   },
 ];
@@ -272,19 +236,6 @@ const comparisonFeatures = [
     key: "training",
     features: [
       { key: "basicTrainingSessions", label: "Basic Training Sessions" },
-      { key: "advancedSystemsTraining", label: "Advanced Systems Training" },
-      { key: "customWorkshopDevelopment", label: "Custom Workshop Development" },
-      { key: "teamCertificationProgram", label: "Team Certification Program" },
-      { key: "comprehensiveTrainingProgram", label: "Comprehensive Training Program" },
-    ],
-  },
-  {
-    category: "Support & Security",
-    key: "support",
-    features: [
-      { key: "monthlySupportPackage", label: "Monthly Support Package" },
-      { key: "premiumSupportPackage", label: "Premium Support Package" },
-      { key: "ongoingSecurityMonitoring", label: "Ongoing Security Monitoring" },
     ],
   },
 ];
