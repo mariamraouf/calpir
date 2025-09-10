@@ -54,7 +54,7 @@ const CustomQuotePage = () => {
             Request a Custom Quote
           </h1>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed delay-200">
-            Tell us a bit about what you need, and we'll provide a custom quote.
+            Tell us a bit about what you need, including specific platform setups or integrations not listed in our standard packages or add-ons, and we'll provide a custom quote.
           </p>
         </section>
 
@@ -89,7 +89,7 @@ const CustomQuotePage = () => {
             </div>
             <div>
               <Label htmlFor="briefDescription">Brief Description</Label>
-              <Textarea id="briefDescription" placeholder="Tell us about your business or what you’re looking for..." value={formData.briefDescription} onChange={(e) => handleChange("briefDescription", e.target.value)} rows={4} />
+              <Textarea id="briefDescription" placeholder="Tell us about your business or what you’re looking for, including any specific platforms you need set up..." value={formData.briefDescription} onChange={(e) => handleChange("briefDescription", e.target.value)} rows={4} />
             </div>
 
             <div className="flex items-center space-x-2">
