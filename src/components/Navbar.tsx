@@ -1,39 +1,23 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Menu, ChevronDown } from "lucide-react";
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const mainNavLinks = [
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "Platforms", href: "/platforms" },
+    { name: "Platforms", href: "/platforms" }, // New link
     { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-      isScrolled ? "bg-background/80 backdrop-blur-md border-b border-gray-700 shadow-lg" : "bg-transparent"
-    }`}>
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center space-x-2 font-bold text-lg transition-transform duration-300 hover:scale-110">
           <img src="/calpir-logo.png" alt="Calpir Logo" className="h-8 w-8" />
@@ -46,8 +30,8 @@ const Navbar = () => {
               key={link.name}
               to={link.href}
               className={({ isActive }) =>
-                `relative text-sm font-medium transition-colors duration-300 hover:text-primary hover:scale-105 transform ${
-                  isActive ? "text-primary dark:text-calpir-green-300" : "text-gray-300 hover:text-white"
+                `relative text-sm font-medium transition-colors duration-300 hover:text-primary hover:scale-110 transform ${
+                  isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
                 } after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 hover:after:w-full after:transition-all after:duration-300`
               }
             >
@@ -56,7 +40,7 @@ const Navbar = () => {
           ))}
           <Link to="/build-my-business">
             <Button
-              className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-105"
+              className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
             >
               Get Started
             </Button>
@@ -65,12 +49,12 @@ const Navbar = () => {
 
         <Sheet>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="outline" size="icon" className="transition-transform duration-300 hover:scale-110 hover:bg-gray-700 dark:hover:bg-gray-700 text-white border-gray-600">
+            <Button variant="outline" size="icon" className="transition-transform duration-300 hover:scale-110 hover:bg-gray-100 dark:hover:bg-gray-700">
               <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="animate-slide-in-right bg-background border-l border-gray-700">
+          <SheetContent side="right" className="animate-slide-in-right">
             <div className="flex flex-col space-y-4 pt-6">
               {mainNavLinks.map((link) => (
                 <NavLink
@@ -87,7 +71,7 @@ const Navbar = () => {
               ))}
               <Link to="/build-my-business">
                 <Button
-                  className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-105"
+                  className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
                 >
                   Get Started
                 </Button>

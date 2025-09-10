@@ -117,34 +117,34 @@ const addOnsCategories = [
   },
 ];
 
-const AddOnsSection = () => {
+const AddOnsSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
   return (
-    <section className="py-16 md:py-24 bg-gray-950 dark:bg-gray-950"> {/* Darker background */}
+    <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white animate-fade-in-up"> {/* White text */}
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up">
           Enhance Your Package with Add-Ons
         </h2>
-        <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in-up delay-200"> {/* Lighter gray text */}
+        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in-up delay-200">
           Scale your business operations with our professional add-on services. Each service is designed to grow with your business needs.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {addOnsCategories.map((category, catIndex) => (
-            <div key={catIndex} className="flex flex-col bg-gray-800 dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-700 dark:border-gray-700 transform hover:scale-110 transition-transform duration-300 hover:shadow-2xl animate-slide-in-left" style={{ animationDelay: `${0.3 + catIndex * 0.15}s` }}> {/* Darker card, border */}
+            <div key={catIndex} className="flex flex-col bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-110 transition-transform duration-300 hover:shadow-2xl animate-slide-in-left" style={{ animationDelay: `${0.3 + catIndex * 0.15}s` }}>
               <div className="flex items-center mb-6">
                 {category.icon && <category.icon className={`h-8 w-8 mr-3 flex-shrink-0 ${category.iconColor}`} />}
                 <h3 className="text-2xl font-bold text-primary dark:text-calpir-green-400">{category.name}</h3>
               </div>
               <div className="space-y-6 flex-grow">
                 {category.items.map((item, itemIndex) => (
-                  <div key={itemIndex} className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-700 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${0.4 + catIndex * 0.15 + itemIndex * 0.05}s` }}> {/* Darker border */}
+                  <div key={itemIndex} className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${0.4 + catIndex * 0.15 + itemIndex * 0.05}s` }}>
                     <div className="text-left mb-2 sm:mb-0 sm:mr-4">
-                      <p className="text-lg font-semibold text-white dark:text-white">{item.posts}</p> {/* White text */}
-                      <p className="text-sm text-gray-400 dark:text-gray-400">{item.description}</p> {/* Lighter gray text */}
+                      <p className="text-lg font-semibold text-gray-900 dark:text-white">{item.posts}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
                     </div>
                     <div className="flex items-center space-x-4">
                       <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
-                      <Link to="/build-my-business">
+                      <Link to="/build-my-business"> {/* Changed to Link */}
                         <Button
                           size="sm"
                           className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-sm px-4 py-2 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
@@ -162,14 +162,14 @@ const AddOnsSection = () => {
 
         {/* Moved "Build My Package" button here */}
         <div className="mt-16 text-center p-6 rounded-2xl shadow-xl animate-fade-in-up delay-600
-                    bg-gradient-to-br from-calpir-green-950 to-palette-blue-950 dark:from-calpir-green-950 dark:to-palette-blue-950 max-w-4xl mx-auto border border-gray-700"> {/* Darker gradient, border */}
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white dark:text-white"> {/* White text */}
+                    bg-gradient-to-br from-calpir-green-50 to-palette-blue-50 dark:from-calpir-green-950 dark:to-palette-blue-950 max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
             Ready to Customize Your Business Solution?
           </h2>
-          <p className="text-lg text-gray-300 dark:text-gray-300 max-w-3xl mx-auto mb-10"> {/* Lighter gray text */}
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10">
             Combine our core packages with powerful add-ons to create the perfect launch plan for your business.
           </p>
-          <Link to="/build-my-business">
+          <Link to="/build-my-business"> {/* Changed to Link */}
             <Button
               size="lg"
               className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
@@ -181,13 +181,13 @@ const AddOnsSection = () => {
 
         {/* Original "Custom Add-On Packages Available" section - now simplified and without a box */}
         <div className="mt-16 text-center max-w-4xl mx-auto py-8">
-          <p className="text-xl font-semibold mb-4 text-white dark:text-white"> {/* White text */}
+          <p className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
             Custom Add-On Packages & Specific Platform Setups Available
           </p>
-          <p className="text-lg text-gray-300 dark:text-gray-300 max-w-xl mx-auto mb-6"> {/* Lighter gray text */}
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-6">
             Need something specific, or a setup for a single platform not listed? We can create custom solutions tailored to your business needs. Contact us to discuss your requirements.
           </p>
-          <Link to="/get-a-quote">
+          <Link to="/get-a-quote"> {/* Changed to Link */}
             <Button
               variant="outline"
               className="text-primary border-primary hover:bg-primary hover:text-white text-md px-6 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"

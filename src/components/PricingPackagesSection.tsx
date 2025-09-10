@@ -64,14 +64,14 @@ const packages = [
   },
 ];
 
-const PricingPackagesSection = () => {
+const PricingPackagesSection = () => { // Removed setOpenBuildMyBusinessForm prop
   return (
-    <section className="py-16 md:py-24 bg-background dark:bg-background" id="pricing"> {/* Darker background */}
+    <section className="py-16 md:py-24 bg-white dark:bg-gray-950" id="pricing">
       <div className="container text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground dark:text-foreground animate-fade-in-up"> {/* White text */}
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up">
           Choose Your Launch Package
         </h2>
-        <p className="text-lg text-gray-300 dark:text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in-up delay-200"> {/* Lighter gray text */}
+        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in-up delay-200">
           Select the perfect package to launch your business with our proven systems and frameworks.
         </p>
 
@@ -81,8 +81,8 @@ const PricingPackagesSection = () => {
               key={index}
               className={`flex flex-col p-8 rounded-2xl shadow-lg border-2 ${
                 pkg.highlight
-                  ? "border-primary bg-calpir-green-950 dark:bg-calpir-green-950" /* Darker highlight background */
-                  : "border-gray-700 bg-gray-800 dark:bg-gray-800" /* Darker card, border */
+                  ? "border-primary bg-calpir-green-50 dark:bg-calpir-green-950"
+                  : "border-gray-200 bg-white dark:bg-gray-800"
               } transition-all duration-300 hover:scale-110 hover:shadow-2xl animate-zoom-in`}
               style={{ animationDelay: `${0.3 + index * 0.15}s` }}
             >
@@ -91,38 +91,38 @@ const PricingPackagesSection = () => {
                   className={`inline-block px-4 py-1 rounded-full text-xs font-semibold mb-4 ${
                     pkg.highlight
                       ? "bg-primary text-white"
-                      : "bg-gray-700 text-gray-200 dark:bg-gray-700 dark:text-gray-200" /* Darker tag */
+                      : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
                   }`}
                 >
                   {pkg.tag}
                 </span>
               )}
-              <h3 className="text-2xl font-bold mb-2 text-white dark:text-white">{pkg.name}</h3> {/* White text */}
+              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{pkg.name}</h3>
               <p className="text-4xl font-extrabold text-primary dark:text-calpir-green-300 mb-4">{pkg.price}</p>
-              <p className="text-gray-400 dark:text-gray-400 mb-6 flex-grow">{pkg.description}</p> {/* Lighter gray text */}
+              <p className="text-gray-600 dark:text-gray-400 mb-6 flex-grow">{pkg.description}</p>
 
               <ul className="list-none space-y-3 text-left mb-8">
                 {pkg.features.slice(0, 5).map((feature, fIndex) => ( // Show only first 5 features as a summary
-                  <li key={fIndex} className="flex items-start text-gray-300 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.15 + fIndex * 0.05}s` }}> {/* Lighter text */}
+                  <li key={fIndex} className="flex items-start text-gray-700 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.15 + fIndex * 0.05}s` }}>
                     <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                     <span>{feature}</span>
                   </li>
                 ))}
                 {pkg.features.length > 5 && (
-                  <li className="flex items-start text-gray-300 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.15 + 5 * 0.05}s` }}> {/* Lighter text */}
+                  <li className="flex items-start text-gray-700 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.15 + 5 * 0.05}s` }}>
                     <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                     <span>...and more!</span>
                   </li>
                 )}
               </ul>
 
-              <Link to="/build-my-business">
+              <Link to="/build-my-business"> {/* Changed to Link */}
                 <Button
                   size="lg"
                   className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow ${
                     pkg.highlight
                       ? "bg-primary hover:bg-calpir-green-700 text-white hover:text-white"
-                      : "bg-gray-700 hover:bg-gray-600 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white" /* Darker button for non-highlighted */
+                      : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white"
                   }`}
                 >
                   Get Started

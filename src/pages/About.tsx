@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { CheckCircle } from "lucide-react";
 
-const About = () => {
+const About = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
   const coreServices = [
     "Operations flows",
     "Project management",
@@ -44,9 +44,9 @@ const About = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {coreServices.map((service, index) => (
-              <div key={index} className="flex items-center p-4 bg-gray-900 dark:bg-gray-900 rounded-2xl shadow-lg border border-gray-700 dark:border-gray-700 animate-slide-in-left transform hover:scale-105 transition-transform duration-300" style={{ animationDelay: `${0.6 + index * 0.1}s` }}> {/* Darker card, border */}
+              <div key={index} className="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg animate-slide-in-left transform hover:scale-105 transition-transform duration-300" style={{ animationDelay: `${0.6 + index * 0.1}s` }}>
                 <CheckCircle className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
-                <span className="text-lg text-gray-200 dark:text-gray-200">{service}</span> {/* Lighter text */}
+                <span className="text-lg text-gray-800 dark:text-gray-200">{service}</span>
               </div>
             ))}
           </div>
@@ -57,17 +57,17 @@ const About = () => {
             Our Delivery Promise
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-            <div className="p-6 bg-calpir-green-950 dark:bg-calpir-green-950 rounded-2xl shadow-lg border border-calpir-green-700 animate-zoom-in transform hover:scale-110 transition-transform duration-300" style={{ animationDelay: `1.3s` }}> {/* Darker card, border */}
+            <div className="p-6 bg-calpir-green-50 dark:bg-calpir-green-950 rounded-2xl shadow-lg animate-zoom-in transform hover:scale-110 transition-transform duration-300" style={{ animationDelay: `1.3s` }}>
               <h3 className="text-2xl font-semibold text-primary dark:text-calpir-green-300 mb-2">Starter Package</h3>
-              <p className="text-xl font-bold text-gray-200 dark:text-gray-200">7 Days</p> {/* Lighter text */}
+              <p className="text-xl font-bold text-gray-800 dark:text-gray-200">7 Days</p>
             </div>
-            <div className="p-6 bg-calpir-green-950 dark:bg-calpir-green-950 rounded-2xl shadow-lg border border-calpir-green-700 animate-zoom-in transform hover:scale-110 transition-transform duration-300" style={{ animationDelay: `1.45s` }}> {/* Darker card, border */}
+            <div className="p-6 bg-calpir-green-50 dark:bg-calpir-green-950 rounded-2xl shadow-lg animate-zoom-in transform hover:scale-110 transition-transform duration-300" style={{ animationDelay: `1.45s` }}>
               <h3 className="text-2xl font-semibold text-primary dark:text-calpir-green-300 mb-2">Growth Package</h3>
-              <p className="text-xl font-bold text-gray-200 dark:text-gray-200">14 Days</p> {/* Lighter text */}
+              <p className="text-xl font-bold text-gray-800 dark:text-gray-200">14 Days</p>
             </div>
-            <div className="p-6 bg-calpir-green-950 dark:bg-calpir-green-950 rounded-2xl shadow-lg border border-calpir-green-700 animate-zoom-in transform hover:scale-110 transition-transform duration-300" style={{ animationDelay: `1.6s` }}> {/* Darker card, border */}
+            <div className="p-6 bg-calpir-green-50 dark:bg-calpir-green-950 rounded-2xl shadow-lg animate-zoom-in transform hover:scale-110 transition-transform duration-300" style={{ animationDelay: `1.6s` }}>
               <h3 className="text-2xl font-semibold text-primary dark:text-calpir-green-300 mb-2">Ultimate Package</h3>
-              <p className="text-xl font-bold text-gray-200 dark:text-gray-200">28 Days</p> {/* Lighter text */}
+              <p className="text-xl font-bold text-gray-800 dark:text-gray-200">28 Days</p>
             </div>
           </div>
         </section>

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"; // Import Button
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-950 dark:bg-gray-950 text-gray-300 py-16 md:py-20 border-t border-gray-800"> {/* Darker background, border */}
+    <footer className="bg-foreground dark:bg-gray-950 text-gray-300 py-16 md:py-20">
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Company Info */}
         <div className="col-span-full md:col-span-1 animate-fade-in-up">
@@ -15,7 +15,7 @@ const Footer = () => {
             <img src="/calpir-logo.png" alt="Calpir Logo" className="h-8 w-8" />
             <span className="text-white">Calpir</span>
           </Link>
-          <p className="text-sm leading-relaxed mb-4 text-gray-400"> {/* Lighter gray text */}
+          <p className="text-sm leading-relaxed mb-4">
             Your partner in launching and scaling successful businesses with strategic operations and proven frameworks.
           </p>
           <div className="space-y-2 text-sm">
@@ -23,10 +23,10 @@ const Footer = () => {
               <Mail className="h-4 w-4 mr-2 text-primary" /> <a href="mailto:hello@calpir.com" className="hover:text-white transition-colors">hello@calpir.com</a>
             </p>
             <div className="flex items-center space-x-4 mt-4"> {/* New div for social icons */}
-              <a href="https://www.linkedin.com/company/calpir" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"> {/* Lighter gray icons */}
+              <a href="https://www.linkedin.com/company/calpir" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://www.instagram.com/calpir" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"> {/* Lighter gray icons */}
+              <a href="https://www.instagram.com/calpir" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -35,24 +35,24 @@ const Footer = () => {
 
         {/* Company Links */}
         <div className="animate-fade-in-up delay-300">
-          <h4 className="text-lg font-semibold text-white mb-4">Company</h4> {/* White text */}
+          <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li> {/* Lighter gray text */}
-            <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li> {/* Lighter gray text */}
-            <li><Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link></li> {/* Lighter gray text */}
-            <li><Link to="/terms-of-service" className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link></li> {/* Lighter gray text */}
+            <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
+            <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+            <li><Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+            <li><Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link></li>
           </ul>
         </div>
 
         {/* Quick Actions / Forms */}
         <div className="animate-fade-in-up delay-400">
-          <h4 className="text-lg font-semibold text-white mb-4">Quick Actions</h4> {/* White text */}
+          <h4 className="text-lg font-semibold text-white mb-4">Quick Actions</h4>
           <ul className="space-y-2 text-sm">
             <li>
               <Link to="/build-my-business">
                 <Button
                   variant="link"
-                  className="p-0 h-auto text-gray-400 hover:text-white transition-colors justify-start text-sm" /* Lighter gray text */
+                  className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
                 >
                   Build My Business
                 </Button>
@@ -62,7 +62,7 @@ const Footer = () => {
               <Link to="/get-a-quote">
                 <Button
                   variant="link"
-                  className="p-0 h-auto text-gray-400 hover:text-white transition-colors justify-start text-sm" /* Lighter gray text */
+                  className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
                 >
                   Request a Custom Set Up
                 </Button>
@@ -72,7 +72,7 @@ const Footer = () => {
               <a href="https://calendly.com/your-calpir-consultation" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="link"
-                  className="p-0 h-auto text-gray-400 hover:text-white transition-colors justify-start text-sm" /* Lighter gray text */
+                  className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
                 >
                   Get a Free Consultation
                 </Button>
@@ -82,7 +82,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="container border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-500 animate-fade-in-up delay-500"> {/* Darker border, lighter gray text */}
+      <div className="container border-t border-gray-700 mt-12 pt-8 text-center text-sm text-gray-500 animate-fade-in-up delay-500">
         <p>© 2024 Calpir. All rights reserved. Complete Business Operations Service.</p>
       </div>
     </footer>
