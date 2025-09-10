@@ -42,7 +42,7 @@ interface Package {
     advancedHrSystem: string;
     onboardingOffboardingWorkflows: string | boolean;
     timeTracking: string;
-    timeAttendanceTracking: string;
+    timeAttendanceTracking: string | boolean; // Changed to allow boolean
     employeeEngagementSurveys: boolean;
   };
 }
@@ -77,7 +77,7 @@ const packages: Package[] = [
       advancedHrSystem: "",
       onboardingOffboardingWorkflows: "",
       timeTracking: "Basic time tracking",
-      timeAttendanceTracking: "Basic Tracking",
+      timeAttendanceTracking: true, // Changed from "Basic Tracking" to true
       employeeEngagementSurveys: false,
     },
   },
@@ -107,9 +107,9 @@ const packages: Package[] = [
       legalTemplates: "✓", // Representing true as "✓" for display
       recruitingSupport: "Job postings on 2 global sites",
       advancedHrSystem: "ATS & talent pipeline",
-      onboardingOffboardingWorkflows: "Basic checklist",
+      onboardingOffboardingWorkflows: true, // Changed from "Basic checklist" to true
       timeTracking: "Advanced timetracking with reports",
-      timeAttendanceTracking: "Advanced Tracking",
+      timeAttendanceTracking: true, // Changed from "Advanced Tracking" to true
       employeeEngagementSurveys: false,
     },
   },
