@@ -4,9 +4,9 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { CheckCircle, PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Globe, Code, Shield, Layout, DollarSign, BookOpen, Settings, Clock } from "lucide-react"; // Added new icons
-import { Button } from "@/components/ui/button"; // Import Button component
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { CheckCircle, PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Globe, Code, Shield, Layout, DollarSign, BookOpen, Settings, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const packages = [
   {
@@ -73,8 +73,8 @@ const packages = [
 const addOnsCategories = [
   {
     name: "Social Media Expansion",
-    icon: Share2, // New icon
-    iconColor: "text-palette-red-400", // New color
+    icon: Share2,
+    iconColor: "text-palette-red-400",
     items: [
       { posts: "10 Posts/Month", price: "$199", description: "Professional social media posts with graphics" },
       { posts: "20 Posts/Month", price: "$349", description: "Enhanced content with stories and engagement" },
@@ -83,8 +83,8 @@ const addOnsCategories = [
   },
   {
     name: "Email Marketing",
-    icon: Mail, // New icon
-    iconColor: "text-palette-orange-500", // New color
+    icon: Mail,
+    iconColor: "text-palette-orange-500",
     items: [
       { posts: "Email Marketing Setup", price: "$499", description: "One-time complete email automation system" },
       { posts: "3 Campaigns/Month", price: "$599", description: "Management for 3 email campaigns monthly" },
@@ -93,8 +93,8 @@ const addOnsCategories = [
   },
   {
     name: "Analytics Upgrades",
-    icon: BarChart2, // Existing icon
-    iconColor: "text-palette-blue-500", // Existing color
+    icon: BarChart2,
+    iconColor: "text-palette-blue-500",
     items: [
       { posts: "Monthly Insights", price: "$199", description: "Monthly performance reports" },
       { posts: "Monthly Recommendations", price: "$249", description: "Detailed insights + recommendations" },
@@ -103,8 +103,8 @@ const addOnsCategories = [
   },
   {
     name: "Ongoing Support",
-    icon: Headphones, // Existing icon
-    iconColor: "text-palette-purple-400", // Existing color
+    icon: Headphones,
+    iconColor: "text-palette-purple-400",
     items: [
       { posts: "Monthly Emails", price: "$199", description: "Monthly strategy emails + support" },
       { posts: "Weekly Calls", price: "$499", description: "Weekly calls + priority support" },
@@ -112,8 +112,8 @@ const addOnsCategories = [
   },
   {
     name: "Staff Recruitment (Global)",
-    icon: Users, // Existing icon
-    iconColor: "text-primary", // Existing color
+    icon: Users,
+    iconColor: "text-primary",
     items: [
       { posts: "1 Role", price: "$450", description: "Assistance with recruiting for one global role" },
       { posts: "2 Roles", price: "$700", description: "Assistance with recruiting for two global roles" },
@@ -123,16 +123,16 @@ const addOnsCategories = [
   },
   {
     name: "Extra Integrations",
-    icon: PlusCircle, // New icon
-    iconColor: "text-palette-blue-600", // New color
+    icon: PlusCircle,
+    iconColor: "text-palette-blue-600",
     items: [
       { posts: "Per Integration", price: "$199", description: "Setup and configuration for each additional platform integration" },
     ],
   },
   {
     name: "Website Expansions",
-    icon: Layout, // New icon
-    iconColor: "text-palette-purple-500", // New color
+    icon: Layout,
+    iconColor: "text-palette-purple-500",
     items: [
       { posts: "Per Page", price: "$199", description: "Development for each additional website page" },
       { posts: "E-commerce Functionality", price: "$499", description: "Setup for e-commerce capabilities" },
@@ -140,39 +140,39 @@ const addOnsCategories = [
   },
   {
     name: "HR Customizations",
-    icon: Settings, // New icon
-    iconColor: "text-palette-yellow-400", // New color
+    icon: Settings,
+    iconColor: "text-palette-yellow-400",
     items: [
       { posts: "One-time Setup", price: "$299", description: "Custom HR system setup and configuration" },
     ],
   },
   {
     name: "Training Sessions",
-    icon: BookOpen, // New icon
-    iconColor: "text-calpir-green-600", // New color
+    icon: BookOpen,
+    iconColor: "text-calpir-green-600",
     items: [
       { posts: "Per Hour", price: "$199", description: "Dedicated training sessions for your team" },
     ],
   },
   {
     name: "Custom Automations",
-    icon: Code, // New icon
-    iconColor: "text-palette-orange-400", // New color
+    icon: Code,
+    iconColor: "text-palette-orange-400",
     items: [
       { posts: "For 5+ Automations", price: "$299", description: "Setup for 5 or more custom automation workflows" },
     ],
   },
   {
     name: "Security Basics",
-    icon: Shield, // New icon
-    iconColor: "text-palette-red-500", // New color
+    icon: Shield,
+    iconColor: "text-palette-red-500",
     items: [
       { posts: "One-time Setup", price: "$299", description: "Basic security configurations and recommendations" },
     ],
   },
 ];
 
-const Pricing = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
+const Pricing = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -227,7 +227,7 @@ const Pricing = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuot
                   ))}
                 </ul>
 
-                <Link to="/build-my-business"> {/* Changed to Link */}
+                <Link to="/build-my-business">
                   <Button
                     size="lg"
                     className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow ${
@@ -264,7 +264,6 @@ const Pricing = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuot
                       </div>
                       <div className="flex items-center space-x-4">
                         <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
-                        {/* Removed individual "Build My Package" button */}
                       </div>
                     </div>
                   ))}
@@ -275,12 +274,12 @@ const Pricing = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuot
           <div className="mt-16 text-center p-6 rounded-2xl shadow-xl animate-fade-in-up delay-2000
                     bg-gradient-to-br from-calpir-green-50 to-palette-blue-50 dark:from-calpir-green-950 dark:to-palette-blue-950 max-w-4xl mx-auto">
             <p className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">
-              Custom Add-On Packages Available
+              Custom Add-On Packages & Platform Setups Available
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-8">
-              Need something specific? We can create custom add-on packages tailored to your business needs. Contact us to discuss your requirements.
+              Need something specific, or a setup for a single platform not listed? We can create custom solutions tailored to your business needs. Contact us to discuss your requirements.
             </p>
-            <Link to="/get-a-quote"> {/* Changed to Link */}
+            <Link to="/get-a-quote">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"

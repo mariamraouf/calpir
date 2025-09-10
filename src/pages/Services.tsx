@@ -4,14 +4,14 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail, Headphones } from "lucide-react";
+import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail, Headphones, Puzzle } from "lucide-react"; // Added Puzzle icon
 import { Button } from "@/components/ui/button"; // Import Button component
 import { Link } from "react-router-dom"; // Import Link for navigation
 
 const servicesData = [
   {
     id: "operations-flows",
-    icon: FileText, // Corrected to FileText
+    icon: FileText,
     title: "Operations Flows Setup",
     description: "Streamline your business processes with efficient and automated operational workflows.",
     details: [
@@ -20,7 +20,7 @@ const servicesData = [
       "Standard Operating Procedures (SOPs) documentation",
       "Inter-departmental communication setup",
     ],
-    iconColor: "text-primary", // Primary green
+    iconColor: "text-primary",
   },
   {
     id: "project-management",
@@ -28,12 +28,12 @@ const servicesData = [
     title: "Project Management Setup",
     description: "Implement robust project management systems to keep your projects on track and teams coordinated.",
     details: [
-      "Tool selection and configuration", // Amended
+      "Tool selection and configuration",
       "Project template creation",
       "Task management and tracking setup",
       "Reporting and analytics dashboards",
     ],
-    iconColor: "text-palette-orange-500", // Diverse color
+    iconColor: "text-palette-orange-500",
   },
   {
     id: "hr-recruiting",
@@ -41,12 +41,12 @@ const servicesData = [
     title: "HR & Recruiting (Global Focus)",
     description: "Build a strong global team with our comprehensive HR and recruitment solutions.",
     details: [
-      "Contracts and NDA drafting with e-signatures", // Replaced
+      "Contracts and NDA drafting with e-signatures",
       "Applicant Tracking System (ATS) setup",
       "Onboarding and offboarding workflows",
       "HR policy and compliance guidance",
     ],
-    iconColor: "text-primary", // Primary green
+    iconColor: "text-primary",
   },
   {
     id: "website-building",
@@ -59,7 +59,7 @@ const servicesData = [
       "SEO optimization for better visibility",
       "Secure and reliable hosting solutions",
     ],
-    iconColor: "text-palette-blue-500", // Diverse color
+    iconColor: "text-palette-blue-500",
   },
   {
     id: "accounting",
@@ -69,10 +69,10 @@ const servicesData = [
     details: [
       "Chart of accounts configuration",
       "Invoicing and expense tracking setup",
-      "Integration with payment gateways", // Amended
+      "Integration with payment gateways",
       "Basic financial reporting",
     ],
-    iconColor: "text-palette-yellow-400", // Diverse color
+    iconColor: "text-palette-yellow-400",
   },
   {
     id: "social-media",
@@ -85,7 +85,7 @@ const servicesData = [
       "Post design and scheduling",
       "Audience engagement strategies",
     ],
-    iconColor: "text-palette-purple-400", // Diverse color
+    iconColor: "text-palette-purple-400",
   },
   {
     id: "email-systems",
@@ -93,12 +93,12 @@ const servicesData = [
     title: "Email Systems & Automation",
     description: "Develop effective email marketing and communication strategies.",
     details: [
-      "Email platform setup", // Amended
+      "Email platform setup",
       "Email template design",
-      "Automated email sequences", // Amended
+      "Automated email sequences",
       "List management and segmentation",
     ],
-    iconColor: "text-primary", // Primary green
+    iconColor: "text-primary",
   },
   {
     id: "crm-setup",
@@ -106,12 +106,12 @@ const servicesData = [
     title: "CRM Setup & Optimization",
     description: "Implement Customer Relationship Management (CRM) systems to enhance customer interactions.",
     details: [
-      "CRM platform selection and configuration", // Amended
+      "CRM platform selection and configuration",
       "Sales pipeline setup",
       "Customer data migration",
       "Reporting and analytics for customer insights",
     ],
-    iconColor: "text-palette-blue-600", // Diverse color
+    iconColor: "text-palette-blue-600",
   },
   {
     id: "integrations",
@@ -120,11 +120,11 @@ const servicesData = [
     description: "Connect your essential business tools for seamless data flow and automation.",
     details: [
       "Integration strategy and planning",
-      "Advanced integration setup", // Amended from "API and webhook configurations"
+      "Advanced integration setup",
       "Data synchronization between platforms",
-      "Custom automation workflows", // Amended
+      "Custom automation workflows",
     ],
-    iconColor: "text-palette-orange-400", // Diverse color
+    iconColor: "text-palette-orange-400",
   },
   {
     id: "design-branding",
@@ -133,11 +133,11 @@ const servicesData = [
     description: "Craft a compelling brand identity that resonates with your target audience.",
     details: [
       "Logo design and brand guidelines",
-      "Marketing collateral design", // No change requested for this specific item
+      "Marketing collateral design",
       "Website visual design",
       "Brand voice and messaging development",
     ],
-    iconColor: "text-palette-purple-500", // Diverse color
+    iconColor: "text-palette-purple-500",
   },
   {
     id: "analytics",
@@ -150,7 +150,7 @@ const servicesData = [
       "Key Performance Indicator (KPI) tracking",
       "Monthly performance reports and recommendations",
     ],
-    iconColor: "text-primary", // Primary green
+    iconColor: "text-primary",
   },
   {
     id: "migrations",
@@ -163,7 +163,7 @@ const servicesData = [
       "User training and support during transition",
       "Post-migration optimization",
     ],
-    iconColor: "text-palette-red-400", // Diverse color
+    iconColor: "text-palette-red-400",
   },
   {
     id: "security-basics",
@@ -176,9 +176,8 @@ const servicesData = [
       "Data backup strategies",
       "Security best practices guidance",
     ],
-    iconColor: "text-palette-blue-700", // Diverse color
+    iconColor: "text-palette-blue-700",
   },
-  // Assuming these are services that might be linked from add-ons, even if not full sections
   {
     id: "ongoing-support",
     icon: Headphones,
@@ -204,7 +203,7 @@ const servicesData = [
   },
 ];
 
-const Services = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
+const Services = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -252,6 +251,26 @@ const Services = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuo
             </section>
           ))}
         </div>
+
+        {/* New section for custom platform setups */}
+        <section className="mt-20 text-center p-8 rounded-2xl shadow-xl animate-fade-in-up delay-1500
+                    bg-gradient-to-br from-palette-blue-50 to-calpir-green-50 dark:from-palette-blue-950 dark:to-calpir-green-950 max-w-4xl mx-auto">
+          <Puzzle className="h-16 w-16 mx-auto mb-6 text-primary dark:text-calpir-green-300 animate-bounce-slow" />
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+            Need a Specific Platform Setup?
+          </h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+            If your business requires a specific platform setup or integration not explicitly listed in our packages or add-ons, we can still help! Our team specializes in tailoring solutions to your unique needs.
+          </p>
+          <Link to="/get-a-quote">
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
+            >
+              Request a Custom Quote
+            </Button>
+          </Link>
+        </section>
       </main>
       <Footer />
       <MadeWithDyad />
