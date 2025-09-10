@@ -41,7 +41,7 @@ interface Package {
     recruitingSupport: string;
     advancedHrSystem: string;
     onboardingOffboardingWorkflows: string | boolean;
-    timeTracking: string;
+    timeTracking: string | boolean; // Changed to allow boolean
     timeAttendanceTracking: string | boolean; // Changed to allow boolean
     employeeEngagementSurveys: boolean;
   };
@@ -76,8 +76,8 @@ const packages: Package[] = [
       recruitingSupport: "Job templates",
       advancedHrSystem: "",
       onboardingOffboardingWorkflows: "",
-      timeTracking: "Basic time tracking",
-      timeAttendanceTracking: true, // Changed from "Basic Tracking" to true
+      timeTracking: false, // Changed from "Basic time tracking" to false
+      timeAttendanceTracking: false, // Changed from true to false
       employeeEngagementSurveys: false,
     },
   },
@@ -263,8 +263,8 @@ const PackageComparisonTable = () => {
               <TableCell key={pkgIndex} className="p-4 text-center">
                 <Link to="/build-my-business">
                   <Button
-                    size="lg" // Changed to lg
-                    className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow" // Adjusted text and padding
+                    size="lg"
+                    className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
                   >
                     Start My Package
                   </Button>

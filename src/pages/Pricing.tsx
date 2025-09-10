@@ -141,16 +141,7 @@ const Pricing = () => {
           </h2>
           {/* Render the new comparison table */}
           <PackageComparisonTable />
-          <div className="mt-10 text-center animate-fade-in-up delay-1200">
-            <Link to="/build-my-business">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
-              >
-                Build My Package
-              </Button>
-            </Link>
-          </div>
+          {/* Removed the "Build My Package" button as requested */}
         </section>
 
         <section>
