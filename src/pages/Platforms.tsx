@@ -25,7 +25,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Asana", logo: "https://logo.clearbit.com/asana.com?size=50" },
       { name: "Monday.com", logo: "https://logo.clearbit.com/monday.com?size=50" },
       { name: "Trello", logo: "https://logo.clearbit.com/trello.com?size=50" },
-      { name: "Jira", logo: "https://logo.clearbit.com/atlassian.com?size=50" }, // Amended
+      { name: "Jira", logo: "https://logo.clearbit.com/atlassian.com?size=50" }, // Fixed logo URL
       { name: "ClickUp", logo: "https://logo.clearbit.com/clickup.com?size=50" },
       { name: "Basecamp", logo: "https://logo.clearbit.com/basecamp.com?size=50" },
       { name: "Wrike", logo: "https://logo.clearbit.com/wrike.com?size=50" },
@@ -41,7 +41,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Freedcamp", logo: "https://logo.clearbit.com/freedcamp.com?size=50" },
       { name: "Paymo", logo: "https://logo.clearbit.com/paymoapp.com?size=50" },
       { name: "Avaza", logo: "https://logo.clearbit.com/avaza.com?size=50" },
-      { name: "Nifty", logo: "https://logo.clearbit.com/niftypm.com?size=50" }, // Amended
+      { name: "Nifty", logo: "https://logo.clearbit.com/nifty.pm?size=50" }, // Fixed logo URL
       { name: "Hive", logo: "https://logo.clearbit.com/hive.com?size=50" },
       { name: "MeisterTask", logo: "https://logo.clearbit.com/meistertask.com?size=50" },
       { name: "Ganttic", logo: "https://logo.clearbit.com/ganttic.com?size=50" },
@@ -185,7 +185,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Odoo Accounting", logo: "https://logo.clearbit.com/odoo.com?size=50" },
       { name: "TallyPrime", logo: "https://logo.clearbit.com/tallysolutions.com?size=50" },
       { name: "AlignBooks", logo: "https://logo.clearbit.com/alignbooks.com?size=50" },
-      { name: "ProfitBooks", logo: "https://logo.clearbit.com/profitbooks.net?size=50" }, // Amended
+      { name: "ProfitBooks", logo: "https://logo.clearbit.com/profitbooks.net?size=50" }, // Fixed logo URL
       { name: "Sunrise", logo: "https://logo.clearbit.com/sunriseapp.com?size=50" },
       { name: "WaveApps", logo: "https://logo.clearbit.com/waveapps.com?size=50" },
       { name: "Zoho Expense", logo: "https://logo.clearbit.com/zoho.com?size=50" },
@@ -196,7 +196,7 @@ const initialPlatformCategories: PlatformCategory[] = [
   {
     name: "Email & Communication",
     platforms: [
-      { name: "Google Workspace", logo: "https://logo.clearbit.com/google.com?size=50" }, // Amended
+      { name: "Google Workspace", logo: "https://logo.clearbit.com/google.com?size=50" }, // Fixed logo URL
       { name: "Microsoft 365", logo: "https://logo.clearbit.com/microsoft.com?size=50" },
       { name: "Slack", logo: "https://logo.clearbit.com/slack.com?size=50" },
       { name: "Zoom", logo: "https://logo.clearbit.com/zoom.us?size=50" },
@@ -212,7 +212,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Spike", logo: "https://logo.clearbit.com/spikenow.com?size=50" },
       { name: "Superhuman", logo: "https://logo.clearbit.com/superhuman.com?size=50" },
       { name: "Hey", logo: "https://logo.clearbit.com/hey.com?size=50" },
-      { name: "Brevo", logo: "https://logo.clearbit.com/brevo.com?size=50" }, // Amended (was Sendinblue)
+      { name: "Brevo", logo: "https://logo.clearbit.com/brevo.com?size=50" }, // Fixed logo URL (was Sendinblue)
       { name: "Mailchimp", logo: "https://logo.clearbit.com/mailchimp.com?size=50" },
       { name: "Constant Contact", logo: "https://logo.clearbit.com/constantcontact.com?size=50" },
       { name: "GetResponse", logo: "https://logo.clearbit.com/getresponse.com?size=50" },
@@ -236,10 +236,10 @@ const initialPlatformCategories: PlatformCategory[] = [
     name: "Social Media Platforms",
     platforms: [
       { name: "Instagram", logo: "https://logo.clearbit.com/instagram.com?size=50" },
-      { name: "Facebook", logo: "https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" }, // Amended
+      { name: "Facebook", logo: "https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" }, // Fixed logo URL
       { name: "X", logo: "https://logo.clearbit.com/x.com?size=50" },
       { name: "LinkedIn", logo: "https://logo.clearbit.com/linkedin.com?size=50" },
-      { name: "TikTok", logo: "https://sf-tb-sg.ibytedtos.com/obj/ies-fe-bee/bee_prod/biz_177/tiktok_logo_black.svg" }, // Amended
+      { name: "TikTok", logo: "https://sf-tb-sg.ibytedtos.com/obj/ies-fe-bee/bee_prod/biz_177/tiktok_logo_black.svg" }, // Fixed logo URL
       { name: "YouTube", logo: "https://logo.clearbit.com/youtube.com?size=50" },
       { name: "Pinterest", logo: "https://logo.clearbit.com/pinterest.com?size=50" },
       { name: "Snapchat", logo: "https://logo.clearbit.com/snapchat.com?size=50" },
@@ -256,12 +256,12 @@ const initialPlatformCategories: PlatformCategory[] = [
   {
     name: "E-Signature",
     platforms: [
-      { name: "Adobe Acrobat Sign", logo: "https://logo.clearbit.com/adobe.com?size=50" }, // Amended
+      { name: "Adobe Acrobat Sign", logo: "https://logo.clearbit.com/adobe.com?size=50" }, // Fixed logo URL
       { name: "DocuSign", logo: "https://logo.clearbit.com/docusign.com?size=50" },
       { name: "SignNow", logo: "https://logo.clearbit.com/signnow.com?size=50" },
       { name: "PandaDoc", logo: "https://logo.clearbit.com/pandadoc.com?size=50" },
       { name: "HelloSign (Dropbox Sign)", logo: "https://logo.clearbit.com/hellosign.com?size=50" },
-      { name: "RightSignature", logo: "https://logo.clearbit.com/rightsignature.com?size=50" }, // Amended
+      { name: "RightSignature", logo: "https://logo.clearbit.com/rightsignature.com?size=50" }, // Fixed logo URL
       { name: "SignRequest", logo: "https://logo.clearbit.com/signrequest.com?size=50" },
       { name: "eSignatures.io", logo: "https://logo.clearbit.com/esignatures.io?size=50" },
       { name: "Signeasy", logo: "https://logo.clearbit.com/signeasy.com?size=50" },
@@ -330,7 +330,7 @@ const initialPlatformCategories: PlatformCategory[] = [
   {
     name: "Analytics & SEO",
     platforms: [
-      { name: "Google Analytics", logo: "https://logo.clearbit.com/google.com?size=50" }, // Amended
+      { name: "Google Analytics", logo: "https://logo.clearbit.com/google.com?size=50" }, // Fixed logo URL
       { name: "Mixpanel", logo: "https://logo.clearbit.com/mixpanel.com?size=50" },
       { name: "Amplitude", logo: "https://logo.clearbit.com/amplitude.com?size=50" },
       { name: "Hotjar", logo: "https://logo.clearbit.com/hotjar.com?size=50" },
@@ -369,69 +369,7 @@ const updatedPlatformCategories = initialPlatformCategories
   .map(category => ({
     ...category,
     platforms: category.platforms.filter(platform => !platformsToRemove.includes(platform.name))
-  }))
-  .map(category => {
-    // Apply specific amendments
-    if (category.name === "Project Management") {
-      return {
-        ...category,
-        platforms: category.platforms.map(platform => {
-          if (platform.name === "Jira") return { ...platform, logo: "https://logo.clearbit.com/atlassian.com?size=50" };
-          if (platform.name === "Nifty") return { ...platform, logo: "https://logo.clearbit.com/niftypm.com?size=50" };
-          return platform;
-        })
-      };
-    }
-    if (category.name === "Accounting & Finance") {
-      return {
-        ...category,
-        platforms: category.platforms.map(platform => {
-          if (platform.name === "ProfitBooks") return { ...platform, logo: "https://logo.clearbit.com/profitbooks.net?size=50" };
-          return platform;
-        })
-      };
-    }
-    if (category.name === "Social Media Platforms") {
-      return {
-        ...category,
-        platforms: category.platforms.map(platform => {
-          if (platform.name === "Facebook") return { ...platform, logo: "https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" };
-          if (platform.name === "TikTok") return { ...platform, logo: "https://sf-tb-sg.ibytedtos.com/obj/ies-fe-bee/bee_prod/biz_177/tiktok_logo_black.svg" };
-          return platform;
-        })
-      };
-    }
-    if (category.name === "Analytics & SEO") {
-      return {
-        ...category,
-        platforms: category.platforms.map(platform => {
-          if (platform.name === "Google Analytics") return { ...platform, logo: "https://logo.clearbit.com/google.com?size=50" };
-          return platform;
-        })
-      };
-    }
-    if (category.name === "E-Signature") {
-      return {
-        ...category,
-        platforms: category.platforms.map(platform => {
-          if (platform.name === "Adobe Acrobat Sign") return { ...platform, logo: "https://logo.clearbit.com/adobe.com?size=50" };
-          if (platform.name === "RightSignature") return { ...platform, logo: "https://logo.clearbit.com/rightsignature.com?size=50" };
-          return platform;
-        })
-      };
-    }
-    if (category.name === "Email & Communication") {
-      return {
-        ...category,
-        platforms: category.platforms.map(platform => {
-          if (platform.name === "Sendinblue") return { name: "Brevo", logo: "https://logo.clearbit.com/brevo.com?size=50" }; // Renamed
-          if (platform.name === "Google Workspace") return { ...platform, logo: "https://logo.clearbit.com/google.com?size=50" };
-          return platform;
-        })
-      };
-    }
-    return category;
-  });
+  }));
 
 // Add the new "Time Tracking" category
 updatedPlatformCategories.push({
@@ -441,6 +379,9 @@ updatedPlatformCategories.push({
     { name: "Clockify", logo: "https://logo.clearbit.com/clockify.me?size=50" },
     { name: "Harvest", logo: "https://logo.clearbit.com/getharvest.com?size=50" },
     { name: "Time Doctor", logo: "https://logo.clearbit.com/timedoctor.com?size=50" },
+    { name: "Teamlogger", logo: "https://logo.clearbit.com/teamlogger.com?size=50" },
+    { name: "Tempo", logo: "https://logo.clearbit.com/tempo.io?size=50" },
+    { name: "Hubstaff", logo: "https://logo.clearbit.com/hubstaff.com?size=50" },
   ],
 });
 
