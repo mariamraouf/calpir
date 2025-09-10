@@ -12,7 +12,9 @@ import Contact from "./pages/Contact";
 import BuildMyBusinessPage from "./pages/BuildMyBusinessPage";
 import CustomQuotePage from "./pages/CustomQuotePage";
 import Platforms from "./pages/Platforms";
-import ScrollToTop from "./components/ScrollToTop"; // Import the new component
+import PrivacyPolicy from "./pages/PrivacyPolicy"; // Import new page
+import TermsOfService from "./pages/TermsOfService"; // Import new page
+import ScrollToTop from "./components/ScrollToTop";
 import React from "react";
 
 const queryClient = new QueryClient();
@@ -24,7 +26,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <ScrollToTop /> {/* Add ScrollToTop here */}
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
@@ -34,6 +36,8 @@ const App = () => {
             <Route path="/build-my-business" element={<BuildMyBusinessPage />} />
             <Route path="/get-a-quote" element={<CustomQuotePage />} />
             <Route path="/platforms" element={<Platforms />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} /> {/* New route */}
+            <Route path="/terms-of-service" element={<TermsOfService />} /> {/* New route */}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
