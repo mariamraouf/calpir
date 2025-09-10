@@ -4,7 +4,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail } from "lucide-react";
+import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button"; // Import Button component
 import { Link } from "react-router-dom"; // Import Link for navigation
 
@@ -177,6 +177,30 @@ const servicesData = [
       "Security best practices guidance",
     ],
     iconColor: "text-palette-blue-700", // Diverse color
+  },
+  // Assuming these are services that might be linked from add-ons, even if not full sections
+  {
+    id: "ongoing-support",
+    icon: Headphones,
+    title: "Ongoing Support",
+    description: "Continuous support and maintenance for your business systems.",
+    details: [
+      "Monthly strategy emails + support",
+      "Weekly calls + priority support",
+    ],
+    iconColor: "text-palette-purple-400",
+  },
+  {
+    id: "training-sessions",
+    icon: BookOpen,
+    title: "Training Sessions",
+    description: "Dedicated training to empower your team with new systems and tools.",
+    details: [
+      "Customized training modules",
+      "Hands-on workshops",
+      "User guides and documentation",
+    ],
+    iconColor: "text-calpir-green-600",
   },
 ];
 

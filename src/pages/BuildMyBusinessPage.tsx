@@ -16,17 +16,47 @@ import { Link } from "react-router-dom";
 
 // Data for add-ons (simplified for form, full list is in AddOnsSection)
 const addOnsOptions = [
-  { id: "socialMedia", label: "Social Media Expansion (e.g., 10 Posts/Month - $199)" },
-  { id: "emailMarketing", label: "Email Marketing Setup ($499)" },
-  { id: "analyticsUpgrades", label: "Analytics Upgrades (e.g., Monthly Insights - $199)" },
-  { id: "ongoingSupport", label: "Ongoing Support (e.g., Monthly Emails - $199)" },
-  { id: "staffRecruitment", label: "Staff Recruitment (Global) (e.g., 1 Role - $450)" },
-  { id: "extraIntegrations", label: "Extra Integrations (Per Integration - $199)" },
-  { id: "websiteExpansions", label: "Website Expansions (e.g., Per Page - $199)" },
-  { id: "hrCustomizations", label: "HR Customizations (One-time Setup - $299)" },
-  { id: "trainingSessions", label: "Training Sessions (Per Hour - $199)" },
-  { id: "customAutomations", label: "Custom Automations (For 5+ Automations - $299)" },
-  { id: "securityBasics", label: "Security Basics (One-time Setup - $299)" },
+  { id: "social-media", label: "Social Media Expansion", serviceId: "social-media" },
+  { id: "email-marketing", label: "Email Marketing Setup", serviceId: "email-systems" },
+  { id: "analytics-upgrades", label: "Analytics Upgrades", serviceId: "analytics" },
+  { id: "ongoing-support", label: "Ongoing Support", serviceId: "ongoing-support" }, // Assuming an ID for ongoing support if it were a service
+  { id: "staff-recruitment", label: "Staff Recruitment (Global)", serviceId: "hr-recruiting" },
+  { id: "extra-integrations", label: "Extra Integrations", serviceId: "integrations" },
+  { id: "website-expansions", label: "Website Expansions", serviceId: "website-building" },
+  { id: "hr-customizations", label: "HR Customizations", serviceId: "hr-recruiting" },
+  { id: "training-sessions", label: "Training Sessions", serviceId: "training-sessions" }, // Assuming an ID for training sessions
+  { id: "custom-automations", label: "Custom Automations", serviceId: "operations-flows" },
+  { id: "security-basics", label: "Security Basics", serviceId: "security-basics" },
+];
+
+const industryOptions = [
+  "Technology and AI",
+  "Marketing and Consulting",
+  "Retail/Wholesale",
+  "Agriculture",
+  "Construction",
+  "Manufacturing",
+  "Transportation",
+  "Finance and Insurance",
+  "Real Estate",
+  "Healthcare",
+  "Education",
+  "Hospitality",
+  "Arts and Entertainment",
+  "Other Services",
+  "Other",
+];
+
+const systemPriorities = [
+  "Organized",
+  "Automated",
+  "Limited Access",
+  "Scalable",
+  "Cost-Effective",
+  "User-Friendly",
+  "Secure",
+  "Integrated",
+  "Customizable",
 ];
 
 const BuildMyBusinessPage = () => {
@@ -35,20 +65,23 @@ const BuildMyBusinessPage = () => {
     email: "",
     phoneNumber: "",
     companyName: "",
+    existingWebsite: "", // New field
+    countryOfHeadquarters: "", // New field
     businessType: "",
     industry: "",
     otherIndustry: "",
     businessStage: "",
+    businessOperationModel: "", // New field
     packagePreference: "",
     budgetRange: "",
     addOnInterests: [] as string[],
     addOnRequirements: "",
     primaryGoals: [] as string[],
     otherPrimaryGoal: "",
-    timeline: "",
+    currentSystems: "", // New field
+    preferredPlatforms: "", // New field
+    systemPriorities: [] as string[], // New field
     additionalDetails: "",
-    contactMethod: "",
-    preferredTime: "",
     consent: false,
   });
 
@@ -60,26 +93,14 @@ const BuildMyBusinessPage = () => {
     handleChange(id, value);
   };
 
-  const handleCheckboxChange = (id: string, checked: boolean) => {
-    if (id.startsWith("addOn-")) {
-      const addOnId = id.replace("addOn-", "");
-      handleChange(
-        "addOnInterests",
-        checked
-          ? [...formData.addOnInterests, addOnId]
-          : formData.addOnInterests.filter((item) => item !== addOnId)
-      );
-    } else if (id.startsWith("goal-")) {
-      const goalId = id.replace("goal-", "");
-      handleChange(
-        "primaryGoals",
-        checked
-          ? [...formData.primaryGoals, goalId]
-          : formData.primaryGoals.filter((item) => item !== goalId)
-      );
-    } else {
-      handleChange(id, checked);
-    }
+  const handleCheckboxChange = (id: string, checked: boolean, field: "addOnInterests" | "primaryGoals" | "systemPriorities") => {
+    const itemId = id.split('-').slice(1).join('-'); // Extract original ID from "addOn-id" or "goal-id"
+    handleChange(
+      field,
+      checked
+        ? [...formData[field], itemId]
+        : formData[field].filter((item) => item !== itemId)
+    );
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -92,9 +113,11 @@ const BuildMyBusinessPage = () => {
     toast.success("Your business launch inquiry has been sent! We'll be in touch soon.");
     // Reset form
     setFormData({
-      fullName: "", email: "", phoneNumber: "", companyName: "", businessType: "", industry: "", otherIndustry: "",
-      businessStage: "", packagePreference: "", budgetRange: "", addOnInterests: [], addOnRequirements: "",
-      primaryGoals: [], otherPrimaryGoal: "", timeline: "", additionalDetails: "", contactMethod: "", preferredTime: "", consent: false,
+      fullName: "", email: "", phoneNumber: "", companyName: "", existingWebsite: "", countryOfHeadquarters: "",
+      businessType: "", industry: "", otherIndustry: "", businessStage: "", businessOperationModel: "",
+      packagePreference: "", budgetRange: "", addOnInterests: [], addOnRequirements: "",
+      primaryGoals: [], otherPrimaryGoal: "", currentSystems: "", preferredPlatforms: "", systemPriorities: [],
+      additionalDetails: "", consent: false,
     });
   };
 
@@ -128,6 +151,10 @@ const BuildMyBusinessPage = () => {
               <Input id="phoneNumber" type="tel" value={formData.phoneNumber} onChange={(e) => handleChange("phoneNumber", e.target.value)} />
               <Label htmlFor="companyName">Company Name (Optional)</Label>
               <Input id="companyName" value={formData.companyName} onChange={(e) => handleChange("companyName", e.target.value)} />
+              <Label htmlFor="existingWebsite">Existing Website Link (Optional)</Label>
+              <Input id="existingWebsite" type="url" placeholder="https://yourwebsite.com" value={formData.existingWebsite} onChange={(e) => handleChange("existingWebsite", e.target.value)} />
+              <Label htmlFor="countryOfHeadquarters">Country of Headquarters <span className="text-red-500">*</span></Label>
+              <Input id="countryOfHeadquarters" value={formData.countryOfHeadquarters} onChange={(e) => handleChange("countryOfHeadquarters", e.target.value)} required />
             </div>
 
             {/* Business Details */}
@@ -146,17 +173,15 @@ const BuildMyBusinessPage = () => {
                   <SelectItem value="Other">Other</SelectItem>
                 </SelectContent>
               </Select>
-              <Label htmlFor="industry">Industry (Optional)</Label>
-              <Select onValueChange={handleSelectChange("industry")} value={formData.industry}>
+              <Label htmlFor="industry">Industry <span className="text-red-500">*</span></Label>
+              <Select onValueChange={handleSelectChange("industry")} value={formData.industry} required>
                 <SelectTrigger id="industry">
                   <SelectValue placeholder="Select industry" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="Tech">Tech</SelectItem>
-                  <SelectItem value="E-commerce">E-commerce</SelectItem>
-                  <SelectItem value="Consulting">Consulting</SelectItem>
-                  <SelectItem value="Creative">Creative</SelectItem>
-                  <SelectItem value="Other">Other</SelectItem>
+                  {industryOptions.map((option) => (
+                    <SelectItem key={option} value={option}>{option}</SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
               {showOtherIndustryInput && (
@@ -177,11 +202,48 @@ const BuildMyBusinessPage = () => {
                   <SelectItem value="Established (3+ years)">Established (3+ years)</SelectItem>
                 </SelectContent>
               </Select>
+              <Label>Business Operation Model <span className="text-red-500">*</span></Label>
+              <RadioGroup onValueChange={handleSelectChange("businessOperationModel")} value={formData.businessOperationModel} required>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="Remote" id="op-remote" />
+                  <Label htmlFor="op-remote">Remote</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="Hybrid" id="op-hybrid" />
+                  <Label htmlFor="op-hybrid">Hybrid</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="On-site" id="op-on-site" />
+                  <Label htmlFor="op-on-site">On-site</Label>
+                </div>
+              </RadioGroup>
+            </div>
+
+            {/* Current & Preferred Systems */}
+            <div className="space-y-2">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">3. Systems & Platforms</h3>
+              <Label htmlFor="currentSystems">Current Systems/Software Used (Optional)</Label>
+              <Textarea id="currentSystems" placeholder="e.g., HubSpot, ClickUp, QuickBooks" value={formData.currentSystems} onChange={(e) => handleChange("currentSystems", e.target.value)} rows={3} />
+              <Label htmlFor="preferredPlatforms">Preferred Platforms/Software (Optional)</Label>
+              <Textarea id="preferredPlatforms" placeholder="e.g., Salesforce, Asana, Xero" value={formData.preferredPlatforms} onChange={(e) => handleChange("preferredPlatforms", e.target.value)} rows={3} />
+              <Label>Key System Priorities <span className="text-red-500">*</span></Label>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {systemPriorities.map((priority) => (
+                  <div key={priority} className="flex items-center space-x-2">
+                    <Checkbox
+                      id={`priority-${priority}`}
+                      checked={formData.systemPriorities.includes(priority)}
+                      onCheckedChange={(checked) => handleCheckboxChange(`priority-${priority}`, checked as boolean, "systemPriorities")}
+                    />
+                    <Label htmlFor={`priority-${priority}`}>{priority}</Label>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Package Selection */}
             <div className="space-y-2">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">3. Package Preference <span className="text-red-500">*</span></h3>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">4. Package Preference <span className="text-red-500">*</span></h3>
               <RadioGroup onValueChange={handleSelectChange("packagePreference")} value={formData.packagePreference} required>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="Starter ($1,499)" id="package-starter" />
@@ -220,16 +282,23 @@ const BuildMyBusinessPage = () => {
 
             {/* Add-On Interests */}
             <div className="space-y-2">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">4. Add-On Interests (Optional)</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">5. Add-On Interests (Optional)</h3>
+              <div className="grid grid-cols-1 gap-2">
                 {addOnsOptions.map((addOn) => (
                   <div key={addOn.id} className="flex items-center space-x-2">
                     <Checkbox
                       id={`addOn-${addOn.id}`}
                       checked={formData.addOnInterests.includes(addOn.id)}
-                      onCheckedChange={(checked) => handleCheckboxChange(`addOn-${addOn.id}`, checked as boolean)}
+                      onCheckedChange={(checked) => handleCheckboxChange(`addOn-${addOn.id}`, checked as boolean, "addOnInterests")}
                     />
-                    <Label htmlFor={`addOn-${addOn.id}`}>{addOn.label}</Label>
+                    <Label htmlFor={`addOn-${addOn.id}`}>
+                      {addOn.label}
+                      {addOn.serviceId && (
+                        <Link to={`/services#${addOn.serviceId}`} className="text-primary hover:underline ml-2 text-sm" target="_blank" rel="noopener noreferrer">
+                          (Learn More)
+                        </Link>
+                      )}
+                    </Label>
                   </div>
                 ))}
               </div>
@@ -241,16 +310,16 @@ const BuildMyBusinessPage = () => {
               )}
             </div>
 
-            {/* Project Goals and Timeline */}
+            {/* Project Goals */}
             <div className="space-y-2">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">5. Project Goals and Timeline <span className="text-red-500">*</span></h3>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">6. Project Goals <span className="text-red-500">*</span></h3>
               <Label>Primary Goal(s) <span className="text-red-500">*</span></Label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div className="flex items-center space-x-2">
                   <Checkbox
                     id="goal-website"
                     checked={formData.primaryGoals.includes("Website Development")}
-                    onCheckedChange={(checked) => handleCheckboxChange("goal-website", checked as boolean)}
+                    onCheckedChange={(checked) => handleCheckboxChange("goal-website", checked as boolean, "primaryGoals")}
                   />
                   <Label htmlFor="goal-website">Website Development</Label>
                 </div>
@@ -258,7 +327,7 @@ const BuildMyBusinessPage = () => {
                   <Checkbox
                     id="goal-brand"
                     checked={formData.primaryGoals.includes("Brand Identity")}
-                    onCheckedChange={(checked) => handleCheckboxChange("goal-brand", checked as boolean)}
+                    onCheckedChange={(checked) => handleCheckboxChange("goal-brand", checked as boolean, "primaryGoals")}
                   />
                   <Label htmlFor="goal-brand">Brand Identity</Label>
                 </div>
@@ -266,7 +335,7 @@ const BuildMyBusinessPage = () => {
                   <Checkbox
                     id="goal-marketing"
                     checked={formData.primaryGoals.includes("Marketing Systems")}
-                    onCheckedChange={(checked) => handleCheckboxChange("goal-marketing", checked as boolean)}
+                    onCheckedChange={(checked) => handleCheckboxChange("goal-marketing", checked as boolean, "primaryGoals")}
                   />
                   <Label htmlFor="goal-marketing">Marketing Systems</Label>
                 </div>
@@ -274,15 +343,23 @@ const BuildMyBusinessPage = () => {
                   <Checkbox
                     id="goal-project"
                     checked={formData.primaryGoals.includes("Project Management Setup")}
-                    onCheckedChange={(checked) => handleCheckboxChange("goal-project", checked as boolean)}
+                    onCheckedChange={(checked) => handleCheckboxChange("goal-project", checked as boolean, "primaryGoals")}
                   />
                   <Label htmlFor="goal-project">Project Management Setup</Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Checkbox
+                    id="goal-hr-operations"
+                    checked={formData.primaryGoals.includes("HR & Operations Setup")}
+                    onCheckedChange={(checked) => handleCheckboxChange("goal-hr-operations", checked as boolean, "primaryGoals")}
+                  />
+                  <Label htmlFor="goal-hr-operations">HR & Operations Setup</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Checkbox
                     id="goal-other"
                     checked={formData.primaryGoals.includes("Other")}
-                    onCheckedChange={(checked) => handleCheckboxChange("goal-other", checked as boolean)}
+                    onCheckedChange={(checked) => handleCheckboxChange("goal-other", checked as boolean, "primaryGoals")}
                   />
                   <Label htmlFor="goal-other">Other</Label>
                 </div>
@@ -293,41 +370,8 @@ const BuildMyBusinessPage = () => {
                   <Input id="otherPrimaryGoal" value={formData.otherPrimaryGoal} onChange={(e) => handleChange("otherPrimaryGoal", e.target.value)} />
                 </>
               )}
-              <Label htmlFor="timeline">Timeline <span className="text-red-500">*</span></Label>
-              <Select onValueChange={handleSelectChange("timeline")} value={formData.timeline} required>
-                <SelectTrigger id="timeline">
-                  <SelectValue placeholder="Select timeline" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="Within 7 Days">Within 7 Days</SelectItem>
-                  <SelectItem value="1-2 Weeks">1-2 Weeks</SelectItem>
-                  <SelectItem value="1 Month">1 Month</SelectItem>
-                  <SelectItem value="Flexible">Flexible</SelectItem>
-                </SelectContent>
-              </Select>
               <Label htmlFor="additionalDetails">Additional Details (Optional)</Label>
               <Textarea id="additionalDetails" value={formData.additionalDetails} onChange={(e) => handleChange("additionalDetails", e.target.value)} rows={4} />
-            </div>
-
-            {/* Consultation Preference */}
-            <div className="space-y-2">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">6. Consultation Preference <span className="text-red-500">*</span></h3>
-              <RadioGroup onValueChange={handleSelectChange("contactMethod")} value={formData.contactMethod} required>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="Email" id="contact-email" />
-                  <Label htmlFor="contact-email">Email</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="Phone" id="contact-phone" />
-                  <Label htmlFor="contact-phone">Phone</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="Video Call (e.g., Zoom)" id="contact-video" />
-                  <Label htmlFor="contact-video">Video Call (e.g., Zoom)</Label>
-                </div>
-              </RadioGroup>
-              <Label htmlFor="preferredTime">Preferred Time (Optional)</Label>
-              <Input id="preferredTime" placeholder="e.g., Weekdays after 2 PM EST" value={formData.preferredTime} onChange={(e) => handleChange("preferredTime", e.target.value)} />
             </div>
 
             {/* Submission and Consent */}
