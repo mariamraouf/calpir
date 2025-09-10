@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { CheckCircle } from "lucide-react"; // Import CheckCircle icon
+import { CheckCircle, XCircle } from "lucide-react"; // Import XCircle icon
 
 // Define the structure for a package with nested features
 interface Package {
@@ -234,13 +234,13 @@ const PackageComparisonTable = () => {
 
                     return (
                       <TableCell key={pkgIndex} className="p-4 text-center text-gray-700 dark:text-gray-300">
-                        {featureValue === true ? (
+                        {featureValue === true || featureValue === "✓" ? (
                           <div className="flex items-center justify-center">
                             <CheckCircle className="h-5 w-5 text-calpir-green-500" />
                           </div>
                         ) : featureValue === false || featureValue === "" || featureValue === null ? (
                           <div className="flex items-center justify-center">
-                            <span className="h-5 w-5 flex items-center justify-center text-palette-orange-500 text-xl font-bold">-</span>
+                            <XCircle className="h-5 w-5 text-palette-red-500" /> {/* Changed to red XCircle */}
                           </div>
                         ) : (
                           <div className="flex items-center justify-center space-x-2">
