@@ -4,10 +4,9 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { CheckCircle, PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Globe, Code, Shield, Layout, DollarSign, BookOpen, Settings, Clock, ArrowRight, Puzzle } from "lucide-react";
+import { CheckCircle, PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Globe, Code, Shield, Layout, DollarSign, BookOpen, Settings, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import PackageComparisonTable from "@/components/PackageComparisonTable"; // Import the new component
 
 const packages = [
   {
@@ -207,8 +206,8 @@ const Pricing = () => {
                 key={index}
                 className={`flex flex-col p-8 rounded-2xl shadow-lg border-2 ${
                   pkg.highlight
-                    ? "border-primary bg-calpir-green-950 dark:bg-calpir-green-950" /* Darker highlight background */
-                    : "border-gray-700 bg-gray-800 dark:bg-gray-800" /* Darker card, border */
+                    ? "border-primary bg-calpir-green-50 dark:bg-calpir-green-950"
+                    : "border-gray-200 bg-white dark:bg-gray-800"
                 } transition-all duration-300 hover:scale-110 hover:shadow-2xl animate-zoom-in`}
                 style={{ animationDelay: `${0.4 + index * 0.15}s` }}
               >
@@ -217,21 +216,21 @@ const Pricing = () => {
                     className={`inline-block px-4 py-1 rounded-full text-xs font-semibold mb-4 ${
                       pkg.highlight
                         ? "bg-primary text-white"
-                        : "bg-gray-700 text-gray-200 dark:bg-gray-700 dark:text-gray-200" /* Darker tag */
+                        : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
                     }`}
                   >
                     {pkg.tag}
                   </span>
                 )}
-                <h3 className="text-2xl font-bold mb-2 text-white dark:text-white">{pkg.name}</h3> {/* White text */}
+                <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{pkg.name}</h3>
                 <p className="text-4xl font-extrabold text-primary dark:text-calpir-green-300 mb-4">{pkg.price}</p>
-                <p className="text-gray-400 dark:text-gray-400 mb-4 flex-grow">{pkg.description}</p> {/* Lighter gray text */}
-                <p className="text-md font-semibold text-gray-200 dark:text-gray-200 mb-6">Delivery: {pkg.delivery}</p> {/* Lighter text */}
+                <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">{pkg.description}</p>
+                <p className="text-md font-semibold text-gray-800 dark:text-gray-200 mb-6">Delivery: {pkg.delivery}</p>
 
-                <h4 className="text-xl font-semibold text-white dark:text-white mb-4">Inclusions:</h4> {/* White text */}
+                <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Inclusions:</h4>
                 <ul className="list-none space-y-3 text-left mb-8">
                   {pkg.inclusions.map((feature, fIndex) => (
-                    <li key={fIndex} className="flex items-start text-gray-300 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.5 + index * 0.15 + fIndex * 0.05}s` }}> {/* Lighter text */}
+                    <li key={fIndex} className="flex items-start text-gray-700 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.5 + index * 0.15 + fIndex * 0.05}s` }}>
                       <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                       <span>{feature}</span>
                     </li>
@@ -244,7 +243,7 @@ const Pricing = () => {
                     className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow ${
                       pkg.highlight
                         ? "bg-primary hover:bg-calpir-green-700 text-white hover:text-white"
-                        : "bg-gray-700 hover:bg-gray-600 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white" /* Darker button for non-highlighted */
+                        : "bg-gray-800 hover:bg-gray-900 text-white dark:bg-primary dark:hover:bg-calpir-green-700 dark:hover:text-white"
                     }`}
                   >
                     Get Started
@@ -255,31 +254,23 @@ const Pricing = () => {
           </div>
         </section>
 
-        {/* Package Comparison Table */}
-        <section className="mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white animate-fade-in-up delay-800">
-            Package Feature Comparison
-          </h2>
-          <PackageComparisonTable />
-        </section>
-
         <section>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white animate-fade-in-up delay-1000">
             Enhance Your Package with Add-Ons
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {addOnsCategories.map((category, catIndex) => (
-              <div key={catIndex} className="bg-gray-800 dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-700 dark:border-gray-700 transform hover:scale-110 transition-transform duration-300 hover:shadow-2xl animate-slide-in-left" style={{ animationDelay: `${1.1 + catIndex * 0.15}s` }}> {/* Darker card, border */}
+              <div key={catIndex} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-110 transition-transform duration-300 hover:shadow-2xl animate-slide-in-left" style={{ animationDelay: `${1.1 + catIndex * 0.15}s` }}>
                 <div className="flex items-center mb-6">
                   {category.icon && <category.icon className={`h-8 w-8 mr-3 ${category.iconColor}`} />}
                   <h3 className="text-2xl font-bold text-primary dark:text-calpir-green-400">{category.name}</h3>
                 </div>
                 <div className="space-y-6">
                   {category.items.map((item, itemIndex) => (
-                    <div key={itemIndex} className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-700 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${1.2 + catIndex * 0.15 + itemIndex * 0.05}s` }}> {/* Darker border */}
+                    <div key={itemIndex} className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${1.2 + catIndex * 0.15 + itemIndex * 0.05}s` }}>
                       <div className="text-left mb-2 sm:mb-0 sm:mr-4">
-                        <p className="text-lg font-semibold text-white dark:text-white">{item.posts}</p> {/* White text */}
-                        <p className="text-sm text-gray-400 dark:text-gray-400">{item.description}</p> {/* Lighter gray text */}
+                        <p className="text-lg font-semibold text-gray-900 dark:text-white">{item.posts}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
                       </div>
                       <div className="flex items-center space-x-4">
                         <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
@@ -291,11 +282,11 @@ const Pricing = () => {
             ))}
           </div>
           <div className="mt-16 text-center p-6 rounded-2xl shadow-xl animate-fade-in-up delay-2000
-                    bg-gradient-to-br from-calpir-green-950 to-palette-blue-950 dark:from-calpir-green-950 dark:to-palette-blue-950 max-w-4xl mx-auto border border-gray-700"> {/* Darker gradient, border */}
-            <p className="text-xl font-semibold mb-6 text-white dark:text-white"> {/* White text */}
+                    bg-gradient-to-br from-calpir-green-50 to-palette-blue-50 dark:from-calpir-green-950 dark:to-palette-blue-950 max-w-4xl mx-auto">
+            <p className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">
               Custom Add-On Packages & Platform Setups Available
             </p>
-            <p className="text-lg text-gray-300 dark:text-gray-300 max-w-xl mx-auto mb-8"> {/* Lighter gray text */}
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-8">
               Need something specific, or a setup for a single platform not listed? We can create custom solutions tailored to your business needs. Contact us to discuss your requirements.
             </p>
             <Link to="/get-a-quote">
