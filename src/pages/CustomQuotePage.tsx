@@ -37,7 +37,7 @@ const CustomQuotePage = () => {
       toast.error("Please agree to the Privacy Policy and Terms of Service.");
       return;
     }
-    console.log("Custom Quote Form Submitted:", formData);
+    console.log("Custom Set Up Form Submitted:", formData);
     toast.success("Your inquiry has been sent! We'll get back to you soon.");
     // Reset form
     setFormData({
@@ -51,10 +51,10 @@ const CustomQuotePage = () => {
       <main className="flex-grow container py-16 md:py-24">
         <section className="text-center mb-16 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-            Request a Custom Quote
+            Request a Custom Set Up
           </h1>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed delay-200">
-            Tell us a bit about what you need, including specific platform setups or integrations not listed in our standard packages or add-ons, and we'll provide a custom quote.
+            Tell us a bit about what you need, including specific platform setups or integrations not listed in our standard packages or add-ons, and we'll provide a custom solution.
           </p>
         </section>
 
@@ -106,7 +106,7 @@ const CustomQuotePage = () => {
 
             <div className="mt-6">
               <Button type="submit" className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:animate-button-glow">
-                Get Quote
+                Request Set Up
               </Button>
             </div>
           </form>

@@ -62,7 +62,7 @@ const Footer = () => {
                   variant="link"
                   className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
                 >
-                  Request a Custom Quote
+                  Request a Custom Set Up
                 </Button>
               </Link>
             </li>

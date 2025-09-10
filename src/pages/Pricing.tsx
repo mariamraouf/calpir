@@ -284,7 +284,7 @@ const Pricing = () => {
                 size="lg"
                 className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
               >
-                Request Custom Quote
+                Request Custom Set Up
               </Button>
             </Link>
           </div>

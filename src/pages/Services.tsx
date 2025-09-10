@@ -267,7 +267,7 @@ const Services = () => {
               size="lg"
               className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
             >
-              Request a Custom Quote
+              Request a Custom Set Up
             </Button>
           </Link>
         </section>

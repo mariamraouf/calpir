@@ -182,7 +182,7 @@ const AddOnsSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCust
               variant="outline"
               className="text-primary border-primary hover:bg-primary hover:text-white text-md px-6 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
             >
-              Request Custom Quote
+              Request Custom Set Up
             </Button>
           </Link>
         </div>
