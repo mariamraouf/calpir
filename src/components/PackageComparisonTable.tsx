@@ -150,7 +150,7 @@ const packages: Package[] = [
 // List of features for the comparison table rows, grouped by category
 const comparisonFeatures = [
   {
-    category: "🌐 Digital Presence",
+    category: "Digital Presence",
     key: "digitalPresence",
     features: [
       { key: "websiteDevelopment", label: "Website Development" },
@@ -160,7 +160,7 @@ const comparisonFeatures = [
     ],
   },
   {
-    category: "💼 Business Operations",
+    category: "Business Operations",
     key: "businessOperations",
     features: [
       { key: "projectManagement", label: "Project Management" },
@@ -176,7 +176,7 @@ const comparisonFeatures = [
     ],
   },
   {
-    category: "👥 Human Resources",
+    category: "Human Resources",
     key: "humanResources",
     features: [
       { key: "employeeProfiles", label: "Employee Profiles" },
