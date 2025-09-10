@@ -199,8 +199,8 @@ const platformCategories: PlatformCategory[] = [
   {
     name: "Email & Communication",
     platforms: [
-      { name: "Google Workspace (Gmail, Meet, Chat, Calendar, Drive, Docs, Sheets, Slides, Keep, Contacts)", logo: "https://logo.clearbit.com/google.com?size=50" },
-      { name: "Microsoft 365 (Outlook, Teams, OneDrive, OneNote, Word, Excel, PowerPoint, Publisher, SharePoint)", logo: "https://logo.clearbit.com/microsoft.com?size=50" },
+      { name: "Google Workspace", logo: "https://logo.clearbit.com/google.com?size=50" },
+      { name: "Microsoft Suite", logo: "https://logo.clearbit.com/microsoft.com?size=50" },
       { name: "Slack", logo: "https://logo.clearbit.com/slack.com?size=50" },
       { name: "Zoom", logo: "https://logo.clearbit.com/zoom.us?size=50" },
       { name: "Zoho Mail", logo: "https://logo.clearbit.com/zoho.com?size=50" },
