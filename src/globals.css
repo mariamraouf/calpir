@@ -353,7 +353,60 @@
   animation-delay: 4s;
 }
 
-/* Removed Marquee Animation Styles */
+/* New Marquee Animation Styles */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  /* background: #f8f8f8; */ /* Removed specific background to use Tailwind's bg-white/dark:bg-gray-800 */
+  padding: 10px 0;
+}
+.marquee {
+  display: inline-block;
+  animation: marquee 60s linear infinite; /* Adjusted duration for smoother scroll with more logos */
+}
+.marquee:hover {
+  animation-play-state: paused; /* Pause on hover */
+}
+.marquee img {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  vertical-align: middle;
+  object-fit: contain;
+  filter: grayscale(100%); /* Make logos grayscale */
+  opacity: 0.6; /* Reduce opacity */
+  transition: filter 0.3s ease, opacity 0.3s ease; /* Smooth transition for hover */
+}
+.marquee img:hover {
+  filter: grayscale(0%); /* Color on hover */
+  opacity: 1; /* Full opacity on hover */
+}
+
+/* Fallback for missing logos */
+.marquee img[onerror] {
+  content: url('https://via.placeholder.com/50?text=Logo'); /* Generic placeholder */
+}
+
+/* Responsive: Stack logos on small screens */
+@media (max-width: 768px) {
+  .marquee img {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* Scrolls half the content width */
+  }
+}
+
+/* End New Marquee Animation Styles */
 
 
 @keyframes bounce-slow {
