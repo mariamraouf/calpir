@@ -381,19 +381,6 @@
   animation: bounce-slow 3s infinite ease-in-out;
 }
 
-@keyframes super-bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-25px); /* More pronounced bounce */
-  }
-}
-
-.animate-super-bounce {
-  animation: super-bounce 2.5s infinite ease-in-out; /* Slightly faster and more bounce */
-}
-
 @keyframes slide-down-fade {
   from {
     opacity: 0;
