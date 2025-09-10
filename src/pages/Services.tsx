@@ -232,23 +232,23 @@ const Services = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {servicesData.map((service, index) => (
-            <section key={service.id} id={service.id} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-110 animate-slide-in-left" style={{ animationDelay: `${0.3 + index * 0.1}s` }}>
+            <section key={service.id} id={service.id} className="bg-gray-800 dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-700 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-110 animate-slide-in-left" style={{ animationDelay: `${0.3 + index * 0.1}s` }}> {/* Darker card, border */}
               <div className="flex items-center mb-6">
                 <service.icon className={`h-12 w-12 mr-4 flex-shrink-0 ${service.iconColor}`} />
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{service.title}</h2>
-                  <p className="text-md text-gray-600 dark:text-gray-400">{service.description}</p>
+                  <h2 className="text-2xl font-bold text-white dark:text-white">{service.title}</h2> {/* White text */}
+                  <p className="text-md text-gray-400 dark:text-gray-400">{service.description}</p> {/* Lighter gray text */}
                 </div>
               </div>
               <ul className="list-none space-y-3 text-left mb-8">
                 {service.details.map((detail, detailIndex) => (
-                  <li key={detailIndex} className="flex items-start text-gray-700 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.1 + detailIndex * 0.05}s` }}>
+                  <li key={detailIndex} className="flex items-start text-gray-300 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.1 + detailIndex * 0.05}s` }}> {/* Lighter text */}
                     <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                     <span>{detail}</span>
                   </li>
                 ))}
               </ul>
-              <div className="text-center mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
+              <div className="text-center mt-auto pt-6 border-t border-gray-700 dark:border-gray-700"> {/* Darker border */}
                 <a href="https://calendly.com/your-calpir-consultation" target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
@@ -257,7 +257,7 @@ const Services = () => {
                     Get a Free Consultation
                   </Button>
                 </a>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
+                <p className="text-sm text-gray-400 dark:text-gray-400 mt-4"> {/* Lighter gray text */}
                   Consult with our experts and get to know the best platforms suitable for your business.
                 </p>
               </div>
@@ -267,12 +267,12 @@ const Services = () => {
 
         {/* New section for custom platform setups */}
         <section className="mt-20 text-center p-8 rounded-2xl shadow-xl animate-fade-in-up delay-1500
-                    bg-gradient-to-br from-palette-blue-50 to-calpir-green-50 dark:from-palette-blue-950 dark:to-calpir-green-950 max-w-4xl mx-auto">
+                    bg-gradient-to-br from-palette-blue-950 to-calpir-green-950 dark:from-palette-blue-950 dark:to-calpir-green-950 max-w-4xl mx-auto border border-gray-700"> {/* Darker gradient, border */}
           <Puzzle className="h-16 w-16 mx-auto mb-6 text-primary dark:text-calpir-green-300 animate-bounce-slow" />
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white dark:text-white"> {/* White text */}
             Need a Specific Platform Setup?
           </h2>
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-lg text-gray-300 dark:text-gray-300 max-w-3xl mx-auto mb-8"> {/* Lighter gray text */}
             If your business requires a specific platform setup or integration not explicitly listed in our packages or add-ons, we can still help! Our team specializes in tailoring solutions to your unique needs.
           </p>
           <Link to="/get-a-quote">
