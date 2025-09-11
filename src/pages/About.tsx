@@ -36,7 +36,7 @@ const About = () => {
           ]}
         />
 
-        <section className="container py-16 md:py-24 mb-16">
+        <section className="container py-16 md:py-24 mb-8"> {/* Changed mb-16 to mb-8 */}
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white animate-fade-in-up delay-500">
             Our Core Services
           </h2>
