@@ -30,7 +30,7 @@ const Navbar = () => {
               key={link.name}
               to={link.href}
               className={({ isActive }) =>
-                `relative text-sm font-medium transition-colors duration-300 hover:text-primary hover:scale-110 transform ${
+                `relative text-base font-semibold transition-colors duration-300 hover:text-primary hover:scale-110 transform ${
                   isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
                 } after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 hover:after:w-full after:transition-all after:duration-300`
               }
@@ -61,7 +61,7 @@ const Navbar = () => {
                   key={link.name}
                   to={link.href}
                   className={({ isActive }) =>
-                    `text-lg font-medium hover:text-primary transition-colors duration-200 ${
+                    `text-lg font-semibold hover:text-primary transition-colors duration-200 ${
                       isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
                     } transform hover:scale-105`
                   }
