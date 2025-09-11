@@ -64,7 +64,7 @@ const PageHeader = ({ title, highlightWord, description, buttons, className }: P
                     className={`text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:animate-button-glow ${
                       button.variant === "primary"
                         ? "bg-primary hover:bg-calpir-green-700 text-white"
-                        : "border-2 border-primary text-primary hover:bg-calpir-green-50 dark:text-calpir-green-300 dark:border-calpir-green-300 dark:hover:bg-calpir-green-900"
+                        : "border-2 border-primary text-foreground dark:text-white hover:bg-calpir-green-50 dark:border-calpir-green-300 dark:hover:bg-calpir-green-900"
                     }`}
                   >
                     {button.text}
@@ -77,7 +77,7 @@ const PageHeader = ({ title, highlightWord, description, buttons, className }: P
                     className={`text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:animate-button-glow ${
                       button.variant === "primary"
                         ? "bg-primary hover:bg-calpir-green-700 text-white"
-                        : "border-2 border-primary text-primary hover:bg-calpir-green-50 dark:text-calpir-green-300 dark:border-calpir-green-300 dark:hover:bg-calpir-green-900"
+                        : "border-2 border-primary text-foreground dark:text-white hover:bg-calpir-green-50 dark:border-calpir-green-300 dark:hover:bg-calpir-green-900"
                     }`}
                   >
                     {button.text}
