@@ -463,39 +463,45 @@ const Pricing = () => {
         />
 
         {/* Navigation Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16 animate-fade-in-up delay-300 container py-8">
-          <a href="#complete-packages">
-            <Button size="lg" 
-              className="text-lg px-6 py-3 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
-              bg-primary text-white hover:bg-calpir-green-700 dark:bg-primary dark:text-white dark:hover:bg-calpir-green-700 shadow-md
-              data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg">
-              Complete Packages
-            </Button>
-          </a>
-          <a href="#package-add-ons">
-            <Button size="lg" 
-              className="text-lg px-6 py-3 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
-              bg-primary text-white hover:bg-calpir-green-700 dark:bg-primary dark:text-white dark:hover:bg-calpir-green-700 shadow-md
-              data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg">
-              Package Add-ons
-            </Button>
-          </a>
-          <a href="#individual-services">
-            <Button size="lg" 
-              className="text-lg px-6 py-3 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
-              bg-primary text-white hover:bg-calpir-green-700 dark:bg-primary dark:text-white dark:hover:bg-calpir-green-700 shadow-md
-              data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg">
-              Individual Services
-            </Button>
-          </a>
-          <a href="#custom-solutions">
-            <Button size="lg" 
-              className="text-lg px-6 py-3 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
-              bg-primary text-white hover:bg-calpir-green-700 dark:bg-primary dark:text-white dark:hover:bg-calpir-green-700 shadow-md
-              data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg">
-              Custom Solutions
-            </Button>
-          </a>
+        <div className="flex justify-center mb-16 animate-fade-in-up delay-300 container py-8">
+          <div className="inline-flex items-center justify-center rounded-full bg-white dark:bg-gray-800 p-1 shadow-xl border border-gray-200 dark:border-gray-700 gap-1">
+            <a href="#complete-packages">
+              <Button
+                className="text-lg px-6 py-2 rounded-full transition-colors duration-200
+                text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700
+                data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
+              >
+                Complete Packages
+              </Button>
+            </a>
+            <a href="#package-add-ons">
+              <Button
+                className="text-lg px-6 py-2 rounded-full transition-colors duration-200
+                text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700
+                data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
+              >
+                Package Add-ons
+              </Button>
+            </a>
+            <a href="#individual-services">
+              <Button
+                className="text-lg px-6 py-2 rounded-full transition-colors duration-200
+                text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700
+                data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
+              >
+                Individual Services
+              </Button>
+            </a>
+            <a href="#custom-solutions">
+              <Button
+                className="text-lg px-6 py-2 rounded-full transition-colors duration-200
+                text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700
+                data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
+              >
+                Custom Solutions
+              </Button>
+            </a>
+          </div>
         </div>
 
         {/* Section 1: Complete Business Packages */}
