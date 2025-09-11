@@ -39,7 +39,7 @@ const Index = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteF
             <Link to="/pricing#complete-packages">
               <Button
                 size="lg" 
-                className="bg-primary text-white hover:bg-calpir-green-700 text-xl px-12 py-6 rounded-2xl shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
+                className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-xl px-12 py-6 rounded-2xl shadow-xl transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
               >
                 Package Comparison Table <ArrowRight className="ml-4 h-7 w-7" /> {/* Larger icon and margin */}
               </Button>
