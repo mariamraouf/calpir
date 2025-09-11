@@ -35,11 +35,11 @@ const Index = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteF
         </div>
         <div className="animate-fade-in-up delay-1000">
           <PricingPackagesSection />
-          <div className="text-center mt-12 mb-16 animate-fade-in-up delay-1100">
+          <div className="text-center mt-8 mb-8 animate-fade-in-up delay-1100"> {/* Adjusted mt-12 to mt-8 and mb-16 to mb-8 */}
             <Link to="/pricing#complete-packages">
               <Button
                 size="lg"
-                className="border-primary text-primary hover:bg-primary hover:text-white text-lg px-10 py-4 rounded-2xl shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow animate-pulse-glow dark:text-calpir-green-300 dark:border-calpir-green-300 dark:hover:bg-calpir-green-700"
+                className="border-primary bg-primary text-white hover:bg-calpir-green-700 hover:text-white text-lg px-10 py-4 rounded-2xl shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow animate-pulse-glow dark:text-white dark:border-calpir-green-300 dark:hover:bg-calpir-green-700"
               >
                 Package Comparison Table <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
