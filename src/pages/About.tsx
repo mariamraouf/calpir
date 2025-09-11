@@ -5,8 +5,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { CheckCircle } from "lucide-react";
+import PageHeader from "@/components/PageHeader"; // Import PageHeader
 
-const About = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
+const About = () => {
   const coreServices = [
     "Operations flows",
     "Project management",
@@ -25,20 +26,17 @@ const About = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteF
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow container py-16 md:py-24">
-        <section className="text-center mb-16 animate-fade-in-up">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-            About Calpir
-          </h1>
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed delay-200">
-            Calpir provides all-in-one setup and software migration services for startups and businesses, saving time, money, and effort. We handle operations, HR, websites, social media, and more, with a 7-day setup for our Starter package. Our expertise in 300+ platforms ensures tailored recommendations, and we build or migrate your processes seamlessly. Whether launching or switching software, we make it easy.
-          </p>
-          <p className="text-md text-gray-500 dark:text-gray-400 mt-8 italic delay-400">
-            Disclaimer: We configure your chosen platforms; clients are responsible for any subscription costs.
-          </p>
-        </section>
+      <main className="flex-grow">
+        <PageHeader
+          title="About Calpir"
+          description="Calpir provides all-in-one setup and software migration services for startups and businesses, saving time, money, and effort. We handle operations, HR, websites, social media, and more, with a 7-day setup for our Starter package. Our expertise in 300+ platforms ensures tailored recommendations, and we build or migrate your processes seamlessly. Whether launching or switching software, we make it easy."
+          buttons={[
+            { text: "Start My Business", href: "/build-my-business", variant: "primary" },
+            { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
+          ]}
+        />
 
-        <section className="mb-16">
+        <section className="container py-16 md:py-24 mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white animate-fade-in-up delay-500">
             Our Core Services
           </h2>
@@ -52,7 +50,7 @@ const About = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteF
           </div>
         </section>
 
-        <section className="text-center mb-16">
+        <section className="container py-16 md:py-24 text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white animate-fade-in-up delay-1200">
             Our Delivery Promise
           </h2>

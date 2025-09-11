@@ -7,6 +7,7 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Puzzle } from "lucide-react";
+import PageHeader from "@/components/PageHeader"; // Import PageHeader
 
 interface Platform {
   name: string;
@@ -415,75 +416,78 @@ const Platforms = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow container py-16 md:py-24">
-        <section className="text-center mb-16 animate-fade-in-up">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-            Platforms We Master
-          </h1>
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed delay-200">
-            Our expertise spans a vast array of industry-leading and niche platforms. If you don't see your preferred tool, just ask!
-          </p>
-        </section>
+      <main className="flex-grow">
+        <PageHeader
+          title="Platforms We Master"
+          highlightWord="Master"
+          description="Our expertise spans a vast array of industry-leading and niche platforms. If you don't see your preferred tool, just ask!"
+          buttons={[
+            { text: "Request a Custom Set Up", href: "/get-a-quote", variant: "primary" },
+            { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
+          ]}
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {updatedPlatformCategories.map((category, catIndex) => (
-            <div
-              key={catIndex}
-              className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 animate-fade-in-up"
-              style={{ animationDelay: `${0.3 + catIndex * 0.1}s` }}
-            >
-              <h2 className="text-2xl font-bold text-primary dark:text-calpir-green-400 mb-6 border-b pb-4 border-gray-200 dark:border-gray-700">
-                {category.name}
-              </h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                {category.platforms.map((platform, pIndex) => (
-                  <div
-                    key={pIndex}
-                    className="flex flex-col items-center text-center p-3 rounded-lg bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 transform hover:scale-105"
-                  >
-                    {platform.logo ? (
-                      <img
-                        src={platform.logo}
-                        alt={platform.name}
-                        title={platform.name}
-                        className="h-8 w-8 mb-2 object-contain filter grayscale-0 opacity-100 hover:grayscale hover:opacity-60 transition-all duration-300"
-                        onError={(e) => {
-                          e.currentTarget.onerror = null; // Prevent infinite loop if placeholder also fails
-                          e.currentTarget.src = 'https://via.placeholder.com/50?text=Logo';
-                        }}
-                      />
-                    ) : (
-                      <div className="h-8 w-8 mb-2 flex items-center justify-center text-gray-500 dark:text-gray-400">
-                        <Puzzle className="h-6 w-6" /> {/* Placeholder icon */}
-                      </div>
-                    )}
-                    <span className="text-sm font-medium text-gray-800 dark:text-gray-200 leading-tight">
-                      {platform.name}
-                    </span>
-                  </div>
-                ))}
+        <section className="container py-16 md:py-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {updatedPlatformCategories.map((category, catIndex) => (
+              <div
+                key={catIndex}
+                className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 animate-fade-in-up"
+                style={{ animationDelay: `${0.3 + catIndex * 0.1}s` }}
+              >
+                <h2 className="text-2xl font-bold text-primary dark:text-calpir-green-400 mb-6 border-b pb-4 border-gray-200 dark:border-gray-700">
+                  {category.name}
+                </h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                  {category.platforms.map((platform, pIndex) => (
+                    <div
+                      key={pIndex}
+                      className="flex flex-col items-center text-center p-3 rounded-lg bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 transform hover:scale-105"
+                    >
+                      {platform.logo ? (
+                        <img
+                          src={platform.logo}
+                          alt={platform.name}
+                          title={platform.name}
+                          className="h-8 w-8 mb-2 object-contain filter grayscale-0 opacity-100 hover:grayscale hover:opacity-60 transition-all duration-300"
+                          onError={(e) => {
+                            e.currentTarget.onerror = null; // Prevent infinite loop if placeholder also fails
+                            e.currentTarget.src = 'https://via.placeholder.com/50?text=Logo';
+                          }}
+                        />
+                      ) : (
+                        <div className="h-8 w-8 mb-2 flex items-center justify-center text-gray-500 dark:text-gray-400">
+                          <Puzzle className="h-6 w-6" /> {/* Placeholder icon */}
+                        </div>
+                      )}
+                      <span className="text-sm font-medium text-gray-800 dark:text-gray-200 leading-tight">
+                        {platform.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <section className="mt-20 text-center p-8 rounded-2xl shadow-xl animate-fade-in-up delay-1500
-                    bg-gradient-to-br from-palette-blue-50 to-calpir-green-50 dark:from-palette-blue-950 dark:to-calpir-green-950 max-w-4xl mx-auto">
-          <Puzzle className="h-16 w-16 mx-auto mb-6 text-primary dark:text-calpir-green-300 animate-bounce-slow" />
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            Don't See Your Platform Listed?
-          </h2>
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Our expertise isn't limited to this list. If you have a specific platform or unique setup in mind, we can create a custom solution tailored just for you.
-          </p>
-          <Link to="/get-a-quote">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
-            >
-              Request a Custom Set Up
-            </Button>
-          </Link>
+          <section className="mt-20 text-center p-8 rounded-2xl shadow-xl animate-fade-in-up delay-1500
+                      bg-gradient-to-br from-palette-blue-50 to-calpir-green-50 dark:from-palette-blue-950 dark:to-calpir-green-950 max-w-4xl mx-auto">
+            <Puzzle className="h-16 w-16 mx-auto mb-6 text-primary dark:text-calpir-green-300 animate-bounce-slow" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+              Don't See Your Platform Listed?
+            </h2>
+            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+              Our expertise isn't limited to this list. If you have a specific platform or unique setup in mind, we can create a custom solution tailored just for you.
+            </p>
+            <Link to="/get-a-quote">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
+              >
+                Request a Custom Set Up
+              </Button>
+            </Link>
+          </section>
         </section>
       </main>
       <Footer />

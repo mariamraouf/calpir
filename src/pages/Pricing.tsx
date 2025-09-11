@@ -8,6 +8,7 @@ import { PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Code, Shield, L
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import PackageComparisonTable from "@/components/PackageComparisonTable"; // Import the new component
+import PageHeader from "@/components/PageHeader"; // Import PageHeader
 
 // Re-using servicesData from Services.tsx for Individual Services section
 const servicesData = [
@@ -450,42 +451,51 @@ const Pricing = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow container py-16 md:py-24">
-        <section className="text-center mb-16 animate-fade-in-up">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-            Transparent Pricing for Every Business Stage
-          </h1>
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed delay-200">
-            Find the perfect solution for your business with our clear and flexible pricing. All packages are one-time setup/migration fees; clients are responsible for any tool subscriptions. Prices are globally affordable.
-          </p>
-        </section>
+      <main className="flex-grow">
+        <PageHeader
+          title="Transparent Pricing for Every Business Stage"
+          highlightWord="Pricing"
+          description="Find the perfect solution for your business with our clear and flexible pricing. All packages are one-time setup/migration fees; clients are responsible for any tool subscriptions. Prices are globally affordable."
+          buttons={[
+            { text: "Start My Business", href: "/build-my-business", variant: "primary" },
+            { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
+          ]}
+        />
 
         {/* Navigation Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16 animate-fade-in-up delay-300">
+        <div className="flex flex-wrap justify-center gap-4 mb-16 animate-fade-in-up delay-300 container py-8">
           <a href="#complete-packages">
-            <Button size="lg" variant="outline" className="text-primary border-primary hover:bg-primary hover:text-white dark:text-calpir-green-300 dark:border-calpir-green-300 dark:hover:bg-calpir-green-700 px-6 py-3 text-lg">
+            <Button size="lg" variant="ghost" className="text-lg px-6 py-3 rounded-2xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
+              data-[state=active]:bg-palette-orange-500 data-[state=active]:text-white data-[state=active]:shadow-lg
+              text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
               Complete Packages
             </Button>
           </a>
-          <a href="#package-add-ons"> {/* Updated href for reordered section */}
-            <Button size="lg" variant="outline" className="text-primary border-primary hover:bg-primary hover:text-white dark:text-calpir-green-300 dark:border-calpir-green-300 dark:hover:bg-calpir-green-700 px-6 py-3 text-lg">
+          <a href="#package-add-ons">
+            <Button size="lg" variant="ghost" className="text-lg px-6 py-3 rounded-2xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
+              data-[state=active]:bg-palette-orange-500 data-[state=active]:text-white data-[state=active]:shadow-lg
+              text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
               Package Add-ons
             </Button>
           </a>
-          <a href="#individual-services"> {/* Updated href for reordered section */}
-            <Button size="lg" variant="outline" className="text-primary border-primary hover:bg-primary hover:text-white dark:text-calpir-green-300 dark:border-calpir-green-300 dark:hover:bg-calpir-green-700 px-6 py-3 text-lg">
+          <a href="#individual-services">
+            <Button size="lg" variant="ghost" className="text-lg px-6 py-3 rounded-2xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
+              data-[state=active]:bg-palette-orange-500 data-[state=active]:text-white data-[state=active]:shadow-lg
+              text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
               Individual Services
             </Button>
           </a>
           <a href="#custom-solutions">
-            <Button size="lg" variant="outline" className="text-primary border-primary hover:bg-primary hover:text-white dark:text-calpir-green-300 dark:border-calpir-green-300 dark:hover:bg-calpir-green-700 px-6 py-3 text-lg">
+            <Button size="lg" variant="ghost" className="text-lg px-6 py-3 rounded-2xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
+              data-[state=active]:bg-palette-orange-500 data-[state=active]:text-white data-[state=active]:shadow-lg
+              text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
               Custom Solutions
             </Button>
           </a>
         </div>
 
         {/* Section 1: Complete Business Packages */}
-        <section id="complete-packages" className="mb-20">
+        <section id="complete-packages" className="mb-20 container">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white animate-fade-in-up delay-400">
             Complete Business Packages
           </h2>
@@ -493,7 +503,7 @@ const Pricing = () => {
         </section>
 
         {/* Section 3: Package Add-ons (Moved before Individual Services) */}
-        <section id="package-add-ons" className="mb-20">
+        <section id="package-add-ons" className="mb-20 container">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white animate-fade-in-up delay-1000">
             Enhance Your Package with Add-Ons
           </h2>
@@ -523,7 +533,7 @@ const Pricing = () => {
         </section>
 
         {/* Section 2: Individual Services (Moved after Package Add-ons) */}
-        <section id="individual-services" className="mb-20">
+        <section id="individual-services" className="mb-20 container">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white animate-fade-in-up delay-500">
             Individual Services
           </h2>
