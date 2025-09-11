@@ -469,7 +469,7 @@ const Pricing = () => {
               <a href="#complete-packages">
                 <Button
                   className="text-lg px-6 py-2 rounded-full transition-colors duration-200
-                  text-primary dark:text-calpir-green-300 hover:bg-calpir-green-50 dark:hover:bg-calpir-green-900
+                  text-white hover:bg-calpir-green-50 dark:hover:bg-calpir-green-900
                   data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
                 >
                   Complete Packages
@@ -478,7 +478,7 @@ const Pricing = () => {
               <a href="#package-add-ons">
                 <Button
                   className="text-lg px-6 py-2 rounded-full transition-colors duration-200
-                  text-primary dark:text-calpir-green-300 hover:bg-calpir-green-50 dark:hover:bg-calpir-green-900
+                  text-white hover:bg-calpir-green-50 dark:hover:bg-calpir-green-900
                   data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
                 >
                   Package Add-ons
@@ -487,7 +487,7 @@ const Pricing = () => {
               <a href="#individual-services">
                 <Button
                   className="text-lg px-6 py-2 rounded-full transition-colors duration-200
-                  text-primary dark:text-calpir-green-300 hover:bg-calpir-green-50 dark:hover:bg-calpir-green-900
+                  text-white hover:bg-calpir-green-50 dark:hover:bg-calpir-green-900
                   data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
                 >
                   Individual Services
@@ -496,7 +496,7 @@ const Pricing = () => {
               <a href="#custom-solutions">
                 <Button
                   className="text-lg px-6 py-2 rounded-full transition-colors duration-200
-                  text-primary dark:text-calpir-green-300 hover:bg-calpir-green-50 dark:hover:bg-calpir-green-900
+                  text-white hover:bg-calpir-green-50 dark:hover:bg-calpir-green-900
                   data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
                 >
                   Custom Solutions
