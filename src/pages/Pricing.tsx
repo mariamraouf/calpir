@@ -462,47 +462,51 @@ const Pricing = () => {
           ]}
         />
 
-        {/* Navigation Buttons */}
-        <div className="flex justify-center mb-16 animate-fade-in-up delay-300 container py-8">
-          <div className="inline-flex items-center justify-center rounded-full bg-white dark:bg-gray-800 p-1 shadow-xl border border-gray-200 dark:border-gray-700 gap-1">
-            <a href="#complete-packages">
-              <Button
-                className="text-lg px-6 py-2 rounded-full transition-colors duration-200
-                text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700
-                data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
-              >
-                Complete Packages
-              </Button>
-            </a>
-            <a href="#package-add-ons">
-              <Button
-                className="text-lg px-6 py-2 rounded-full transition-colors duration-200
-                text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700
-                data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
-              >
-                Package Add-ons
-              </Button>
-            </a>
-            <a href="#individual-services">
-              <Button
-                className="text-lg px-6 py-2 rounded-full transition-colors duration-200
-                text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700
-                data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
-              >
-                Individual Services
-              </Button>
-            </a>
-            <a href="#custom-solutions">
-              <Button
-                className="text-lg px-6 py-2 rounded-full transition-colors duration-200
-                text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700
-                data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
-              >
-                Custom Solutions
-              </Button>
-            </a>
+        {/* Navigation Buttons - Now Sticky */}
+        <div className="sticky top-[80px] z-40 w-full bg-background dark:bg-gray-950 py-4 shadow-sm">
+          <div className="container flex justify-center animate-fade-in-up delay-300">
+            <div className="inline-flex items-center justify-center rounded-full bg-white dark:bg-gray-800 p-1 shadow-xl border border-gray-200 dark:border-gray-700 gap-1">
+              <a href="#complete-packages">
+                <Button
+                  className="text-lg px-6 py-2 rounded-full transition-colors duration-200
+                  text-primary dark:text-calpir-green-300 hover:bg-calpir-green-50 dark:hover:bg-calpir-green-900
+                  data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
+                >
+                  Complete Packages
+                </Button>
+              </a>
+              <a href="#package-add-ons">
+                <Button
+                  className="text-lg px-6 py-2 rounded-full transition-colors duration-200
+                  text-primary dark:text-calpir-green-300 hover:bg-calpir-green-50 dark:hover:bg-calpir-green-900
+                  data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
+                >
+                  Package Add-ons
+                </Button>
+              </a>
+              <a href="#individual-services">
+                <Button
+                  className="text-lg px-6 py-2 rounded-full transition-colors duration-200
+                  text-primary dark:text-calpir-green-300 hover:bg-calpir-green-50 dark:hover:bg-calpir-green-900
+                  data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
+                >
+                  Individual Services
+                </Button>
+              </a>
+              <a href="#custom-solutions">
+                <Button
+                  className="text-lg px-6 py-2 rounded-full transition-colors duration-200
+                  text-primary dark:text-calpir-green-300 hover:bg-calpir-green-50 dark:hover:bg-calpir-green-900
+                  data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
+                >
+                  Custom Solutions
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
+        {/* Add a div to provide spacing below the sticky nav when it's not sticking */}
+        <div className="mb-16"></div>
 
         {/* Section 1: Complete Business Packages */}
         <section id="complete-packages" className="mb-20 container scroll-mt-24">
