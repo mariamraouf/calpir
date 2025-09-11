@@ -135,7 +135,7 @@ const AddOnsSection = () => {
               View All Services
             </Button>
           </Link>
-          <Link to="/pricing#add-ons">
+          <Link to="/pricing#package-add-ons">
             <Button
               size="lg"
               variant="outline"
@@ -146,48 +146,7 @@ const AddOnsSection = () => {
           </Link>
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up delay-400">
-          Choose Only What Your Business Needs
-        </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in-up delay-500">
-          Select individual services to build your perfect solution, no packages required.
-        </p>
-
-        <div className="grid grid-cols-1 gap-16">
-          {serviceCategories.map((category, catIndex) => (
-            <div key={catIndex} className="animate-fade-in-up" style={{ animationDelay: `${0.6 + catIndex * 0.15}s` }}>
-              <div className="flex items-center justify-center mb-8">
-                {category.icon && <category.icon className={`h-12 w-12 mr-4 text-primary dark:text-calpir-green-400`} />}
-                <h3 className="text-3xl font-bold text-gray-900 dark:text-white">{category.name}</h3>
-              </div>
-              <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-10">{category.description}</p>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8">
-                {category.subcategories.map((subCategory, subCatIndex) => (
-                  <div key={subCatIndex} className="flex flex-col bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-transform duration-300 hover:shadow-2xl">
-                    <div className="flex items-center mb-6">
-                      {subCategory.icon && <subCategory.icon className={`h-8 w-8 mr-3 flex-shrink-0 ${subCategory.iconColor}`} />}
-                      <h4 className="text-xl font-bold text-primary dark:text-calpir-green-400">{subCategory.name}</h4>
-                    </div>
-                    <div className="space-y-6 flex-grow">
-                      {subCategory.items.map((item, itemIndex) => (
-                        <div key={itemIndex} className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0">
-                          <div className="text-left mb-2 sm:mb-0 sm:mr-4">
-                            <p className="text-lg font-semibold text-gray-900 dark:text-white">{item.service}</p>
-                            <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
-                          </div>
-                          <span className="text-xl font-bold text-primary dark:text-calpir-green-300 flex-shrink-0">
-                            {item.investment}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Removed the detailed individual services section */}
 
         <div className="mt-20 text-center max-w-4xl mx-auto py-8">
           <p className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
