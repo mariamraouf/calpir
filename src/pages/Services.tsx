@@ -53,10 +53,10 @@ const servicesData = [
     iconColor: "text-palette-blue-700",
   },
   {
-    id: "social-media-management-setup",
+    id: "social-media-setup", // Standardized name
     icon: Share2,
-    title: "Social Media Management Setup",
-    investment: "$799",
+    title: "Social Media Setup", // Standardized name
+    investment: "$499 for 2 platforms", // Updated pricing
     description: "Establish and manage your brand's presence across key social media platforms.",
     details: [
       "Setup on 2 platforms",
@@ -83,8 +83,8 @@ const servicesData = [
   {
     id: "email-systems",
     icon: Mail,
-    title: "Email Systems & Automation",
-    investment: "$899",
+    title: "Email Systems & Automation Setup", // Standardized name
+    investment: "$499", // Updated pricing
     description: "Develop effective email marketing and communication strategies.",
     details: [
       "Email platform setup",
@@ -340,10 +340,13 @@ const Services = () => {
       <main className="flex-grow container py-16 md:py-24">
         <section className="text-center mb-16 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-            Our Comprehensive Services
+            Individual Business Services
           </h1>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed delay-200">
-            Calpir offers a full suite of services designed to launch, optimize, and scale your business operations. From initial setup to ongoing support, we cover every aspect to ensure your success.
+            Need specific business solutions without a full package? Choose from our comprehensive individual services.
+          </p>
+          <p className="text-md text-gray-500 dark:text-gray-400 mt-4 italic delay-400">
+            Note: These services are also available as package add-ons at different pricing.
           </p>
         </section>
 

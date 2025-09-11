@@ -27,9 +27,9 @@ const serviceCategories = [
         icon: Share2,
         iconColor: "text-palette-red-400",
         items: [
-          { service: "Social Media Management Setup", investment: "$799", description: "2-5 platforms, strategy, content calendar" },
+          { service: "Social Media Setup", investment: "$499 for 2 platforms", description: "2-5 platforms, strategy, content calendar" }, // Standardized name and pricing
           { service: "Design & Branding Package", investment: "$1,299", description: "Logo, brand guidelines, marketing materials" },
-          { service: "Email Systems & Automation", investment: "$499", description: "Complete email marketing system setup" },
+          { service: "Email Systems & Automation Setup", investment: "$499", description: "Complete email marketing system setup" }, // Standardized name and pricing
         ],
       },
     ],
@@ -121,15 +121,41 @@ const AddOnsSection = () => {
     <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up">
+          Not Ready for a Full Package?
+        </h2>
+        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 animate-fade-in-up delay-200">
+          Choose individual services or enhance your package with add-ons to perfectly fit your business needs.
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12 animate-fade-in-up delay-300">
+          <Link to="/services">
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
+            >
+              View All Services
+            </Button>
+          </Link>
+          <Link to="/pricing#add-ons">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow dark:text-calpir-green-300 dark:border-calpir-green-300 dark:hover:bg-calpir-green-700"
+            >
+              View Add-ons
+            </Button>
+          </Link>
+        </div>
+
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up delay-400">
           Choose Only What Your Business Needs
         </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in-up delay-200">
+        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in-up delay-500">
           Select individual services to build your perfect solution, no packages required.
         </p>
 
         <div className="grid grid-cols-1 gap-16">
           {serviceCategories.map((category, catIndex) => (
-            <div key={catIndex} className="animate-fade-in-up" style={{ animationDelay: `${0.3 + catIndex * 0.15}s` }}>
+            <div key={catIndex} className="animate-fade-in-up" style={{ animationDelay: `${0.6 + catIndex * 0.15}s` }}>
               <div className="flex items-center justify-center mb-8">
                 {category.icon && <category.icon className={`h-12 w-12 mr-4 text-primary dark:text-calpir-green-400`} />}
                 <h3 className="text-3xl font-bold text-gray-900 dark:text-white">{category.name}</h3>

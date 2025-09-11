@@ -14,8 +14,10 @@ import { Link } from "react-router-dom";
 
 // Data for add-ons (simplified for form, full list is in AddOnsSection)
 const addOnsOptions = [
-  { id: "socialMedia", label: "Social Media Expansion (e.g., 10 Posts/Month - $199)" },
-  { id: "emailMarketing", label: "Email Systems & Automation Setup ($499)" }, // Standardized name
+  { id: "socialMedia10Posts", label: "Social Media Content: 10 Posts/Month ($199)" },
+  { id: "socialMedia20Posts", label: "Social Media Content: 20 Posts/Month ($349)" },
+  { id: "socialMedia30Posts", label: "Social Media Content: 30 Posts/Month ($499)" },
+  { id: "emailMarketingSetup", label: "Email Systems & Automation Setup ($499)" }, // Standardized name and pricing
   { id: "analyticsUpgrades", label: "Analytics Upgrades (e.g., Monthly Insights - $199)" },
   { id: "ongoingSupport", label: "Ongoing Support (e.g., Monthly Emails - $199)" },
   { id: "staffRecruitment", label: "Staff Recruitment (Global) (e.g., 1 Role - $450)" },

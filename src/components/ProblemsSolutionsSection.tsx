@@ -50,7 +50,7 @@ const ProblemsSolutionsSection = () => { // Removed setOpenBuildMyBusinessForm p
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200">
             Building a business from scratch is expensive, time-consuming, and overwhelming. You need to hire multiple specialists, coordinate different systems, and spend months just to get basic operations running.
             <br /><br />
-            We help you select the platforms that best suit your budget, and our team provides cost-saving tips and efficient setup for your chosen package or custom solution.
+            Choose complete packages or individual services that fit your budget, and our team provides cost-saving tips and efficient setup for your chosen solution.
           </p>
         </div>
 

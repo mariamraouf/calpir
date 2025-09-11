@@ -16,11 +16,11 @@ import { Link } from "react-router-dom";
 
 // Data for add-ons (brief description with pricing and serviceId for linking)
 const addOnsOptions = [
-  { id: "social-media-10-posts", label: "Social Media Expansion: 10 Posts/Month ($199)", serviceId: "social-media-management-setup" },
-  { id: "social-media-20-posts", label: "Social Media Expansion: 20 Posts/Month ($349)", serviceId: "social-media-management-setup" },
-  { id: "social-media-30-posts", label: "Social Media Expansion: 30 Posts/Month ($499)", serviceId: "social-media-management-setup" },
+  { id: "social-media-10-posts", label: "Social Media Content: 10 Posts/Month ($199)", serviceId: "social-media-setup" }, // Standardized name
+  { id: "social-media-20-posts", label: "Social Media Content: 20 Posts/Month ($349)", serviceId: "social-media-setup" }, // Standardized name
+  { id: "social-media-30-posts", label: "Social Media Content: 30 Posts/Month ($499)", serviceId: "social-media-setup" }, // Standardized name
 
-  { id: "email-marketing-setup", label: "Email Systems & Automation Setup ($499)", serviceId: "email-systems" }, // Standardized name
+  { id: "email-marketing-setup", label: "Email Systems & Automation Setup ($499)", serviceId: "email-systems" }, // Standardized name and pricing
   { id: "email-marketing-3-campaigns", label: "Email Marketing: 3 Campaigns/Month ($599)", serviceId: "email-systems" },
   { id: "email-marketing-5-campaigns", label: "Email Marketing: 5 Campaigns/Month ($699)", serviceId: "email-systems" },
 
