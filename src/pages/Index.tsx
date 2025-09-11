@@ -35,6 +35,7 @@ const Index = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteF
         </div>
         <div className="animate-fade-in-up delay-1000">
           <PricingPackagesSection />
+          {/* Moved the Package Comparison Table button here */}
           <div className="text-center mt-12 animate-fade-in-up delay-1100">
             <Link to="/pricing#complete-packages">
               <Button

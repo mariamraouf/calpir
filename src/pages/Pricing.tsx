@@ -467,7 +467,7 @@ const Pricing = () => {
           <a href="#complete-packages">
             <Button size="lg" 
               className="text-lg px-6 py-3 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
-              bg-calpir-green-100 dark:bg-calpir-green-900 text-gray-900 dark:text-white hover:bg-calpir-green-200 dark:hover:bg-calpir-green-800 shadow-md
+              bg-primary text-white hover:bg-calpir-green-700 dark:bg-primary dark:text-white dark:hover:bg-calpir-green-700 shadow-md
               data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg">
               Complete Packages
             </Button>
@@ -475,7 +475,7 @@ const Pricing = () => {
           <a href="#package-add-ons">
             <Button size="lg" 
               className="text-lg px-6 py-3 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
-              bg-calpir-green-100 dark:bg-calpir-green-900 text-gray-900 dark:text-white hover:bg-calpir-green-200 dark:hover:bg-calpir-green-800 shadow-md
+              bg-primary text-white hover:bg-calpir-green-700 dark:bg-primary dark:text-white dark:hover:bg-calpir-green-700 shadow-md
               data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg">
               Package Add-ons
             </Button>
@@ -483,7 +483,7 @@ const Pricing = () => {
           <a href="#individual-services">
             <Button size="lg" 
               className="text-lg px-6 py-3 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
-              bg-calpir-green-100 dark:bg-calpir-green-900 text-gray-900 dark:text-white hover:bg-calpir-green-200 dark:hover:bg-calpir-green-800 shadow-md
+              bg-primary text-white hover:bg-calpir-green-700 dark:bg-primary dark:text-white dark:hover:bg-calpir-green-700 shadow-md
               data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg">
               Individual Services
             </Button>
@@ -491,7 +491,7 @@ const Pricing = () => {
           <a href="#custom-solutions">
             <Button size="lg" 
               className="text-lg px-6 py-3 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
-              bg-calpir-green-100 dark:bg-calpir-green-900 text-gray-900 dark:text-white hover:bg-calpir-green-200 dark:hover:bg-calpir-green-800 shadow-md
+              bg-primary text-white hover:bg-calpir-green-700 dark:bg-primary dark:text-white dark:hover:bg-calpir-green-700 shadow-md
               data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg">
               Custom Solutions
             </Button>
