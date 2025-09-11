@@ -13,6 +13,7 @@ import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Button } from "@/components/ui/button"; // Import Button
 import { Link } from "react-router-dom"; // Import Link
+import { ArrowRight } from "lucide-react"; // Import ArrowRight icon
 
 const Index = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
   return (
@@ -34,6 +35,17 @@ const Index = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteF
         </div>
         <div className="animate-fade-in-up delay-1000">
           <PricingPackagesSection />
+          <div className="text-center mt-12 animate-fade-in-up delay-1100">
+            <Link to="/pricing#complete-packages">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow dark:text-calpir-green-300 dark:border-calpir-green-300 dark:hover:bg-calpir-green-700"
+              >
+                Package Comparison Table <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
         </div>
         <div className="animate-fade-in-up delay-1200">
           <AddOnsSection />

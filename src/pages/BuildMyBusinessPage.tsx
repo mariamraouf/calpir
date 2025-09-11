@@ -21,8 +21,6 @@ const addOnsOptions = [
   { id: "social-media-30-posts", label: "Social Media Content: 30 Posts/Month ($499)", serviceId: "social-media-setup" }, // Standardized name
 
   { id: "email-marketing-setup", label: "Email Systems & Automation Setup ($499)", serviceId: "email-systems" }, // Standardized name and pricing
-  { id: "email-marketing-3-campaigns", label: "Email Marketing: 3 Campaigns/Month ($599)", serviceId: "email-systems" },
-  { id: "email-marketing-5-campaigns", label: "Email Marketing: 5 Campaigns/Month ($699)", serviceId: "email-systems" },
 
   { id: "analytics-monthly-insights", label: "Analytics Upgrades: Monthly Insights ($199)", serviceId: "analytics" },
   { id: "analytics-monthly-recommendations", label: "Analytics Upgrades: Monthly Recommendations ($249)", serviceId: "analytics" },
@@ -31,9 +29,9 @@ const addOnsOptions = [
   { id: "ongoing-support-monthly-emails", label: "Ongoing Support: Monthly Emails ($199)", serviceId: "monthly-support-package" },
   { id: "ongoing-support-weekly-calls", label: "Ongoing Support: Weekly Calls ($499)", serviceId: "premium-support-package" },
 
-  { id: "staff-recruitment-1-role", label: "Staff Recruitment (Global): 1 Role ($450)", serviceId: "single-role-recruitment" },
-  { id: "staff-recruitment-2-roles", label: "Staff Recruitment (Global): 2 Roles ($700)", serviceId: "multi-role-recruitment" },
-  { id: "staff-recruitment-3-roles", label: "Staff Recruitment (Global): 3 Roles ($900)", serviceId: "multi-role-recruitment" },
+  { id: "staff-recruitment-1-role", label: "Staff Recruitment (Global): 1 Role ($449)", serviceId: "single-role-recruitment" }, // Price updated
+  { id: "staff-recruitment-2-roles", label: "Staff Recruitment (Global): 2 Roles ($699)", serviceId: "multi-role-recruitment" }, // Price updated
+  { id: "staff-recruitment-3-roles", label: "Staff Recruitment (Global): 3 Roles ($899)", serviceId: "multi-role-recruitment" }, // Price updated
   { id: "staff-recruitment-unlimited", label: "Staff Recruitment (Global): Unlimited (3 months) ($4,999)", serviceId: "comprehensive-recruitment" },
 
   { id: "extra-integrations-per", label: "Extra Integrations: Per Integration ($199)", serviceId: "integrations" },

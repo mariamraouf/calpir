@@ -12,14 +12,15 @@ const packages = [
     price: "$1,499",
     description: "Perfect for solo entrepreneurs and small startups with tight budgets.",
     features: [
-      "Website: Up to 5 pages, Hosting & Domain",
-      "Project Management: Basic setup (2 workspaces)",
-      "CRM: Basic contact tracking",
-      "Accounting: Simple invoicing",
-      "Social Media: Setup on 2 platforms + 5 posts",
-      "HR/Recruiting: Employee profiles, Job templates",
-      "Integrations: Up to 2 connections",
-      "Analytics: Monthly summary",
+      "Customized Website (5 pages)",
+      "Basic CRM & project management",
+      "Social media setup (2 platforms)",
+      "Simple invoicing",
+      "Email Systems & Automation Setup", // Added for consistency
+      "Basic HR/Recruiting tools", // Added for consistency
+      "Up to 2 Integrations", // Added for consistency
+      "Monthly Analytics Summary", // Added for consistency
+      "...and more!",
     ],
     highlight: false,
   },
@@ -29,18 +30,19 @@ const packages = [
     price: "$2,999",
     description: "Scaling startups or businesses upgrading platforms—more depth for growth/transitions.",
     features: [
-      "Everything in Starter, plus:",
-      "Website: Up to 10 pages, SEO Optimization, Up to 5 additional pages",
-      "Project Management: Enhanced setup (5 workspaces)",
-      "CRM: Advanced with automation",
-      "Accounting: Expense tracking",
-      "Social Media: Setup on 5 platforms + 10 posts",
-      "HR/Recruiting: Legal templates, Job postings on 2 global sites, ATS & talent pipeline",
-      "Business Automations: Basic Automation Setup",
-      "Integrations: Up to 5 connections",
-      "Analytics: Monthly detailed insights + Recommendations",
-      "Training: Basic Training Sessions",
-      "Support: Monthly Support Package",
+      "Everything in Starter +",
+      "Customized Website (10 pages)",
+      "SEO Optimization",
+      "Advanced CRM and project management tools",
+      "Expense tracking",
+      "Social media setup (5 platforms + 10 posts)", // Added for consistency
+      "Advanced HR/Recruiting (ATS, legal templates)", // Added for consistency
+      "Basic Business Automations", // Added for consistency
+      "Up to 5 Integrations", // Added for consistency
+      "Monthly Detailed Analytics + Recommendations", // Added for consistency
+      "Basic Training Sessions", // Added for consistency
+      "Monthly Support Package", // Added for consistency
+      "...and more!",
     ],
     highlight: true,
   },
@@ -50,20 +52,18 @@ const packages = [
     price: "$5,999",
     description: "Funded startups or businesses needing premium setups/migrations—advanced features, dedicated manager (1-month email/check-ins).",
     features: [
-      "Everything in Growth, plus:",
-      "Website: Unlimited pages, E-commerce Functionality",
-      "Project Management: Advanced setup (unlimited workspaces)",
-      "CRM: Predictive automation",
-      "Accounting: Forecasting tools",
-      "Social Media: Setup on 5+ platforms + 20 posts",
-      "HR/Recruiting: Full strategy + sourcing for 1 global role, Single Role Recruitment, Scalable ATS system",
-      "Business Automations: Advanced Automation Package",
-      "Performance Management: Full setup",
-      "Integrations: Unlimited",
-      "Analytics: Weekly insights + Recommendations",
-      "Training: Basic Training Sessions",
-      "Support: Monthly Support Package",
-      "Payroll & Performance Management",
+      "Everything in Growth +",
+      "Customized Website (Unlimited pages)",
+      "E-commerce Functionality", // Added for consistency
+      "Advanced automation & forecasting",
+      "Unlimited project workspaces",
+      "Social media setup (5+ platforms + 20 posts)", // Added for consistency
+      "Full HR strategy + sourcing for 1 global role", // Added for consistency
+      "Performance Management", // Added for consistency
+      "Unlimited Integrations", // Added for consistency
+      "Weekly Detailed Analytics + Recommendations", // Added for consistency
+      "Weekly Support Package", // Added for consistency
+      "...and more!",
     ],
     highlight: false,
   },

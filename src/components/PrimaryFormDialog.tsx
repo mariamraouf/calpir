@@ -20,7 +20,7 @@ const addOnsOptions = [
   { id: "emailMarketingSetup", label: "Email Systems & Automation Setup ($499)" }, // Standardized name and pricing
   { id: "analyticsUpgrades", label: "Analytics Upgrades (e.g., Monthly Insights - $199)" },
   { id: "ongoingSupport", label: "Ongoing Support (e.g., Monthly Emails - $199)" },
-  { id: "staffRecruitment", label: "Staff Recruitment (Global) (e.g., 1 Role - $450)" },
+  { id: "staffRecruitment", label: "Staff Recruitment (Global) (e.g., 1 Role - $449)" }, // Price updated
   { id: "extraIntegrations", label: "Extra Integrations (Per Integration - $199)" },
   { id: "websiteExpansions", label: "Website Expansions (e.g., Per Page - $199)" },
   { id: "hrCustomizations", label: "HR Customizations (One-time Setup - $299)" },
@@ -187,8 +187,8 @@ const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) =>
               <Label htmlFor="package-growth">Growth ($2,999)</Label>
             </div>
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="Ultimate ($5,999+)" id="package-ultimate" />
-              <Label htmlFor="package-ultimate">Ultimate ($5,999+)</Label>
+              <RadioGroupItem value="Ultimate ($5,999)" id="package-ultimate" />
+              <Label htmlFor="package-ultimate">Ultimate ($5,999)</Label>
             </div>
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="Not Sure" id="package-not-sure" />

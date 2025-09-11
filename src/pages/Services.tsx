@@ -56,7 +56,7 @@ const servicesData = [
     id: "social-media-setup", // Standardized name
     icon: Share2,
     title: "Social Media Setup", // Standardized name
-    investment: "$499 for 2 platforms", // Updated pricing
+    investment: "$499", // Updated pricing
     description: "Establish and manage your brand's presence across key social media platforms.",
     details: [
       "Setup on 2 platforms",
@@ -252,7 +252,7 @@ const servicesData = [
     id: "single-role-recruitment",
     icon: Users,
     title: "Single Role Recruitment",
-    investment: "$450",
+    investment: "$449", // Changed from $450 to $449
     description: "Assistance with recruiting for one global role, from job posting to initial screening.",
     details: [
       "Job description optimization",
@@ -266,7 +266,7 @@ const servicesData = [
     id: "multi-role-recruitment",
     icon: Users,
     title: "Multi-Role Recruitment",
-    investment: "$700",
+    investment: "$699", // Changed from $700 to $699
     description: "Comprehensive support for recruiting multiple global roles simultaneously.",
     details: [
       "Strategic recruitment planning for multiple roles",
@@ -320,7 +320,7 @@ const servicesData = [
   {
     id: "premium-support-package",
     icon: Headphones,
-    title: "Premium Support Package",
+    title: "Weekly Support Package", // Changed title
     investment: "$499/month",
     description: "Dedicated weekly calls and priority support for critical business needs.",
     details: [
@@ -346,7 +346,7 @@ const Services = () => {
             Need specific business solutions without a full package? Choose from our comprehensive individual services.
           </p>
           <p className="text-md text-gray-500 dark:text-gray-400 mt-4 italic delay-400">
-            Note: These services are also available as package add-ons at different pricing.
+            These services are also available as package add-ons at different pricing.
           </p>
         </section>
 
@@ -377,12 +377,9 @@ const Services = () => {
                     size="lg"
                     className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
                   >
-                    Get a Free Consultation
+                    Get Started
                   </Button>
                 </a>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
-                  Consult with our experts and get to know the best platforms suitable for your business.
-                </p>
               </div>
             </section>
           ))}
@@ -392,7 +389,7 @@ const Services = () => {
                     bg-gradient-to-br from-palette-blue-50 to-calpir-green-50 dark:from-palette-blue-950 dark:to-calpir-green-950 max-w-4xl mx-auto">
           <Puzzle className="h-16 w-16 mx-auto mb-6 text-primary dark:text-calpir-green-300 animate-bounce-slow" />
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            Need a Specific Platform Setup?
+            Need a Specific Setup?
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
             If your business requires a specific platform setup or integration not explicitly listed in our packages or add-ons, we can still help! Our team specializes in tailoring solutions to your unique needs.

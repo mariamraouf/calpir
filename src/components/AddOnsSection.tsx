@@ -148,22 +148,7 @@ const AddOnsSection = () => {
 
         {/* Removed the detailed individual services section */}
 
-        <div className="mt-20 text-center max-w-4xl mx-auto py-8">
-          <p className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-            Ready to build your custom solution?
-          </p>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-6">
-            Contact us today to discuss your specific needs and get a tailored plan.
-          </p>
-          <Link to="/get-a-quote">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
-            >
-              Request a Custom Set Up
-            </Button>
-          </Link>
-        </div>
+        {/* Removed the "Ready to build your custom solution?" section */}
       </div>
     </section>
   );
