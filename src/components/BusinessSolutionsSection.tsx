@@ -45,10 +45,10 @@ const solutions = [
     title: "Marketing Systems",
     description: "Automated marketing workflows and customer acquisition systems",
     features: [
-      "Email Automation",
-      "Social Media Setup",
+      "Email Marketing System Setup", // Updated name
+      "Social Media System Setup", // Updated name
       "Analytics Tracking",
-      "Brand Messaging", // Added Brand Messaging
+      "Brand Messaging",
     ],
     iconColor: "text-palette-orange-500", // Orange as per screenshot
   },
