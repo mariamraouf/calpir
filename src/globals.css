@@ -325,6 +325,23 @@
   animation: button-glow 0.3s ease-in-out forwards;
 }
 
+/* New animation for continuous pulse glow */
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 5px hsl(var(--primary) / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px hsl(var(--primary) / 0.4);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
 
 @keyframes blob {
   0% {
