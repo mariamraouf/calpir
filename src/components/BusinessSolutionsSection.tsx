@@ -30,7 +30,7 @@ const solutions = [
   },
   {
     icon: Palette,
-    title: "Brand Identity Design",
+    title: "Design & Branding Package", // Standardized name
     description: "Complete branding package with logos, guidelines, and materials",
     features: [
       "Logo Design",

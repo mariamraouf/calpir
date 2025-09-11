@@ -16,11 +16,11 @@ import { Link } from "react-router-dom";
 
 // Data for add-ons (brief description with pricing and serviceId for linking)
 const addOnsOptions = [
-  { id: "social-media-10-posts", label: "Social Media Expansion: 10 Posts/Month ($199)", serviceId: "social-media" },
-  { id: "social-media-20-posts", label: "Social Media Expansion: 20 Posts/Month ($349)", serviceId: "social-media" },
-  { id: "social-media-30-posts", label: "Social Media Expansion: 30 Posts/Month ($499)", serviceId: "social-media" },
+  { id: "social-media-10-posts", label: "Social Media Expansion: 10 Posts/Month ($199)", serviceId: "social-media-management-setup" },
+  { id: "social-media-20-posts", label: "Social Media Expansion: 20 Posts/Month ($349)", serviceId: "social-media-management-setup" },
+  { id: "social-media-30-posts", label: "Social Media Expansion: 30 Posts/Month ($499)", serviceId: "social-media-management-setup" },
 
-  { id: "email-marketing-setup", label: "Email Marketing Setup ($499)", serviceId: "email-systems" },
+  { id: "email-marketing-setup", label: "Email Systems & Automation Setup ($499)", serviceId: "email-systems" }, // Standardized name
   { id: "email-marketing-3-campaigns", label: "Email Marketing: 3 Campaigns/Month ($599)", serviceId: "email-systems" },
   { id: "email-marketing-5-campaigns", label: "Email Marketing: 5 Campaigns/Month ($699)", serviceId: "email-systems" },
 
@@ -28,24 +28,24 @@ const addOnsOptions = [
   { id: "analytics-monthly-recommendations", label: "Analytics Upgrades: Monthly Recommendations ($249)", serviceId: "analytics" },
   { id: "analytics-real-time", label: "Analytics Upgrades: Real-time Analytics ($399)", serviceId: "analytics" },
 
-  { id: "ongoing-support-monthly-emails", label: "Ongoing Support: Monthly Emails ($199)", serviceId: "ongoing-support" },
-  { id: "ongoing-support-weekly-calls", label: "Ongoing Support: Weekly Calls ($499)", serviceId: "ongoing-support" },
+  { id: "ongoing-support-monthly-emails", label: "Ongoing Support: Monthly Emails ($199)", serviceId: "monthly-support-package" },
+  { id: "ongoing-support-weekly-calls", label: "Ongoing Support: Weekly Calls ($499)", serviceId: "premium-support-package" },
 
-  { id: "staff-recruitment-1-role", label: "Staff Recruitment (Global): 1 Role ($450)", serviceId: "hr-recruiting" },
-  { id: "staff-recruitment-2-roles", label: "Staff Recruitment (Global): 2 Roles ($700)", serviceId: "hr-recruiting" },
-  { id: "staff-recruitment-3-roles", label: "Staff Recruitment (Global): 3 Roles ($900)", serviceId: "hr-recruiting" },
-  { id: "staff-recruitment-unlimited", label: "Staff Recruitment (Global): Unlimited (3 months) ($4,999)", serviceId: "hr-recruiting" },
+  { id: "staff-recruitment-1-role", label: "Staff Recruitment (Global): 1 Role ($450)", serviceId: "single-role-recruitment" },
+  { id: "staff-recruitment-2-roles", label: "Staff Recruitment (Global): 2 Roles ($700)", serviceId: "multi-role-recruitment" },
+  { id: "staff-recruitment-3-roles", label: "Staff Recruitment (Global): 3 Roles ($900)", serviceId: "multi-role-recruitment" },
+  { id: "staff-recruitment-unlimited", label: "Staff Recruitment (Global): Unlimited (3 months) ($4,999)", serviceId: "comprehensive-recruitment" },
 
   { id: "extra-integrations-per", label: "Extra Integrations: Per Integration ($199)", serviceId: "integrations" },
 
-  { id: "website-expansions-per-page", label: "Website Expansions: Per Page ($199)", serviceId: "website-building" },
-  { id: "website-expansions-ecommerce", label: "Website Expansions: E-commerce Functionality ($499)", serviceId: "website-building" },
+  { id: "website-expansions-per-page", label: "Website Expansions: Per Page ($199)", serviceId: "additional-website-pages" },
+  { id: "website-expansions-ecommerce", label: "Website Expansions: E-commerce Functionality ($499)", serviceId: "ecommerce-functionality" },
 
-  { id: "hr-customizations-setup", label: "HR Customizations: One-time Setup ($299)", serviceId: "hr-recruiting" },
+  { id: "hr-customizations-setup", label: "HR Customizations: One-time Setup ($299)", serviceId: "hr-recruiting-system" },
 
-  { id: "training-sessions-per-hour", label: "Training Sessions: Per Hour ($199)", serviceId: "training-sessions" },
+  { id: "training-sessions-per-hour", label: "Training Sessions: Per Hour ($199)", serviceId: "basic-training-sessions" },
 
-  { id: "custom-automations-5-plus", label: "Custom Automations: For 5+ Automations ($299)", serviceId: "operations-flows" },
+  { id: "custom-automations-5-plus", label: "Custom Automations: For 5+ Automations ($299)", serviceId: "custom-automations" },
 
   { id: "security-basics-setup", label: "Security Basics: One-time Setup ($299)", serviceId: "security-basics" },
 ];
@@ -373,10 +373,10 @@ const BuildMyBusinessPage = () => {
                   <div className="flex items-center space-x-2">
                     <Checkbox
                       id="goal-brand-identity"
-                      checked={formData.primaryGoals.includes("Brand Identity")}
-                      onCheckedChange={(checked) => handleCheckboxChange("Brand Identity", checked as boolean, "primaryGoals")}
+                      checked={formData.primaryGoals.includes("Design & Branding Package")} // Standardized name
+                      onCheckedChange={(checked) => handleCheckboxChange("Design & Branding Package", checked as boolean, "primaryGoals")}
                     />
-                    <Label htmlFor="goal-brand-identity">Brand Identity</Label>
+                    <Label htmlFor="goal-brand-identity">Design & Branding Package</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Checkbox

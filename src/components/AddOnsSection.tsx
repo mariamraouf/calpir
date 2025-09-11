@@ -18,7 +18,7 @@ const serviceCategories = [
         items: [
           { service: "Website Building & Hosting", investment: "$999", description: "Custom design, 5-10 pages, hosting, mobile-friendly" },
           { service: "Additional Website Pages", investment: "$199/page", description: "Professional page development" },
-          { service: "E-commerce Functionality", investment: "$499", description: "Complete online store setup" }, // Price updated
+          { service: "E-commerce Functionality", investment: "$499", description: "Complete online store setup" },
           { service: "SEO Optimization", investment: "$599", description: "Search engine visibility boost" },
         ],
       },
@@ -29,7 +29,7 @@ const serviceCategories = [
         items: [
           { service: "Social Media Management Setup", investment: "$799", description: "2-5 platforms, strategy, content calendar" },
           { service: "Design & Branding Package", investment: "$1,299", description: "Logo, brand guidelines, marketing materials" },
-          { service: "Email Systems & Automation", investment: "$499", description: "Complete email marketing system setup" }, // Price and description updated
+          { service: "Email Systems & Automation", investment: "$499", description: "Complete email marketing system setup" },
         ],
       },
     ],
@@ -45,7 +45,7 @@ const serviceCategories = [
         iconColor: "text-palette-yellow-400",
         items: [
           { service: "Project Management Setup", investment: "$799", description: "Complete PM system with templates" },
-          { service: "Operations Flows Setup", investment: "$1,199", description: "Process mapping, SOPs, workflow automation" },
+          { service: "Operations Flows Setup", investment: "$1,199", description: "Process mapping, Standard Operating Procedures (SOPs), workflow automation" },
           { service: "CRM Setup & Optimization", investment: "$899", description: "Sales pipeline, customer management system" },
           { service: "Accounting System Setup", investment: "$699", description: "Financial management, invoicing, reporting" },
           { service: "Analytics & Reporting", investment: "$799", description: "Business intelligence dashboards" },
@@ -56,10 +56,9 @@ const serviceCategories = [
         icon: Lightbulb,
         iconColor: "text-palette-orange-400",
         items: [
-          { service: "Platform Integrations", investment: "$199/integration", description: "Connect your business tools" }, // Price updated
-          { service: "Software Migrations", investment: "$599-$1,499", description: "Seamless platform transitions" },
-          { service: "Custom Automations", investment: "$299", description: "5+ workflow automations" }, // Price updated
-          // Security Basics Setup removed
+          { service: "Platform Integrations", investment: "$199/integration", description: "Connect your business tools" },
+          { service: "Software Migrations", investment: "$599-$1,499", description: "Seamless platform transitions (price varies based on complexity and number of platforms)" },
+          { service: "Custom Automations", investment: "$299", description: "5+ workflow automations" },
         ],
       },
     ],
@@ -74,8 +73,8 @@ const serviceCategories = [
         icon: Users,
         iconColor: "text-calpir-green-700",
         items: [
-          { service: "HR & Recruiting System", investment: "$1,299", description: "ATS, contracts, compliance, onboarding" },
-          { service: "Time Tracking System Setup", investment: "$299", description: "Productivity monitoring, project hours" }, // Price updated
+          { service: "HR & Recruiting System", investment: "$1,299", description: "Applicant Tracking System (ATS), contracts, compliance, onboarding" },
+          { service: "Time Tracking System Setup", investment: "$299", description: "Productivity monitoring, project hours" },
           { service: "Performance Management", investment: "$699", description: "Goal setting, review system" },
         ],
       },
@@ -84,9 +83,9 @@ const serviceCategories = [
         icon: Users,
         iconColor: "text-calpir-green-600",
         items: [
-          { service: "Single Role Recruitment", investment: "$450", description: "Complete hiring for 1 position" }, // Price updated
-          { service: "Multi-Role Recruitment", investment: "$700", description: "Hiring support for 2-3 positions" }, // Price updated
-          { service: "Comprehensive Recruitment (3 months)", investment: "$4,999", description: "Unlimited hiring assistance" }, // Price updated
+          { service: "Single Role Recruitment", investment: "$450", description: "Complete hiring for 1 position" },
+          { service: "Multi-Role Recruitment", investment: "$700", description: "Hiring support for 2-3 positions" },
+          { service: "Comprehensive Recruitment (3 months)", investment: "$4,999", description: "Unlimited hiring assistance" },
         ],
       },
     ],
@@ -101,11 +100,7 @@ const serviceCategories = [
         icon: BookOpen,
         iconColor: "text-calpir-green-600",
         items: [
-          { service: "Basic Training Sessions", investment: "$199/hour", description: "Essential system training" }, // Price updated
-          // Advanced Systems Training removed
-          // Custom Workshop Development removed
-          // Team Certification Program removed
-          // Comprehensive Training Program removed
+          { service: "Basic Training Sessions", investment: "$199/hour", description: "Essential system training" },
         ],
       },
       {
@@ -113,9 +108,8 @@ const serviceCategories = [
         icon: Headphones,
         iconColor: "text-palette-purple-400",
         items: [
-          { service: "Monthly Support Package", investment: "$199/month", description: "Strategy emails + system support" }, // Price updated
-          { service: "Premium Support Package", investment: "$499/month", description: "Weekly calls + priority assistance" }, // Price updated
-          // Ongoing Security Monitoring removed
+          { service: "Monthly Support Package", investment: "$199/month", description: "Strategy emails + system support" },
+          { service: "Premium Support Package", investment: "$499/month", description: "Weekly calls + priority assistance" },
         ],
       },
     ],

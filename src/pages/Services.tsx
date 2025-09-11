@@ -168,7 +168,7 @@ const servicesData = [
     id: "integrations",
     icon: Lightbulb,
     title: "Platform Integrations",
-    investment: "$199/integration", // Price updated
+    investment: "$199/integration",
     description: "Connect your essential business tools for seamless data flow and automation.",
     details: [
       "Integration strategy and planning",
@@ -183,7 +183,7 @@ const servicesData = [
     icon: BookOpen,
     title: "Software Migrations",
     investment: "$599-$1,499",
-    description: "Seamlessly transition your data and workflows to new platforms.",
+    description: "Seamlessly transition your data and workflows to new platforms. (Price varies based on complexity and number of platforms)",
     details: [
       "Data export and import management",
       "Workflow recreation on new platforms",
@@ -196,7 +196,7 @@ const servicesData = [
     id: "custom-automations",
     icon: Code,
     title: "Custom Automations",
-    investment: "$299", // Price updated
+    investment: "$299",
     description: "Automate repetitive tasks and complex workflows to boost efficiency and reduce manual effort.",
     details: [
       "Custom automation strategy and design",
@@ -224,8 +224,8 @@ const servicesData = [
     id: "time-tracking",
     icon: Clock,
     title: "Time Tracking System Setup",
-    investment: "$299", // Price updated
-    description: "Comprehensive setup of a time tracking tool with custom reports and integrations.", // Description updated
+    investment: "$299",
+    description: "Comprehensive setup of a time tracking tool with custom reports and integrations.",
     details: [
       "Time tracking tool selection and configuration",
       "Automated time logging setup",
@@ -252,7 +252,7 @@ const servicesData = [
     id: "single-role-recruitment",
     icon: Users,
     title: "Single Role Recruitment",
-    investment: "$450", // Price updated
+    investment: "$450",
     description: "Assistance with recruiting for one global role, from job posting to initial screening.",
     details: [
       "Job description optimization",
@@ -266,7 +266,7 @@ const servicesData = [
     id: "multi-role-recruitment",
     icon: Users,
     title: "Multi-Role Recruitment",
-    investment: "$700", // Price updated
+    investment: "$700",
     description: "Comprehensive support for recruiting multiple global roles simultaneously.",
     details: [
       "Strategic recruitment planning for multiple roles",
@@ -280,7 +280,7 @@ const servicesData = [
     id: "comprehensive-recruitment",
     icon: Users,
     title: "Comprehensive Recruitment (3 months)",
-    investment: "$4,999", // Price updated
+    investment: "$4,999",
     description: "Dedicated recruitment partnership for three months, offering unlimited hiring support.",
     details: [
       "Full-cycle recruitment for unlimited roles",
@@ -294,7 +294,7 @@ const servicesData = [
     id: "basic-training-sessions",
     icon: BookOpen,
     title: "Basic Training Sessions",
-    investment: "$199/hour", // Price updated
+    investment: "$199/hour",
     description: "Introductory training to get your team familiar with new systems and tools.",
     details: [
       "1-hour live online session",
@@ -307,7 +307,7 @@ const servicesData = [
     id: "monthly-support-package",
     icon: Headphones,
     title: "Monthly Support Package",
-    investment: "$199/month", // Price updated
+    investment: "$199/month",
     description: "Ongoing email support and monthly check-ins to ensure smooth operations.",
     details: [
       "Priority email support",
@@ -321,7 +321,7 @@ const servicesData = [
     id: "premium-support-package",
     icon: Headphones,
     title: "Premium Support Package",
-    investment: "$499/month", // Price updated
+    investment: "$499/month",
     description: "Dedicated weekly calls and priority support for critical business needs.",
     details: [
       "Dedicated support manager",

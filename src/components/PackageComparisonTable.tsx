@@ -209,7 +209,7 @@ const comparisonFeatures = [
       { key: "integrations", label: "Integrations" },
       { key: "analyticsReporting", label: "Analytics & Reporting" },
       { key: "businessAutomations", label: "Business Automations" },
-      { key: "sops", label: "SOPs" },
+      { key: "sops", label: "Standard Operating Procedures (SOPs)" }, // Expanded abbreviation
       { key: "payroll", label: "Payroll" },
       { key: "performanceManagement", label: "Performance Management" },
     ],
@@ -224,7 +224,7 @@ const comparisonFeatures = [
       { key: "singleRoleRecruitment", label: "Single Role Recruitment" },
       { key: "multiRoleRecruitment", label: "Multi-Role Recruitment" },
       { key: "comprehensiveRecruitment", label: "Comprehensive Recruitment (3 months)" },
-      { key: "advancedHrSystem", label: "Advanced HR System" },
+      { key: "advancedHrSystem", label: "Advanced HR System (Applicant Tracking System - ATS)" }, // Expanded abbreviation
       { key: "onboardingOffboardingWorkflows", label: "Onboarding/Offboarding Workflows" },
       { key: "timeTracking", label: "Time Tracking" },
       { key: "timeAttendanceTracking", label: "Time/Attendance Tracking" },

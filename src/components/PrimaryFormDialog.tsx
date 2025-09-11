@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 // Data for add-ons (simplified for form, full list is in AddOnsSection)
 const addOnsOptions = [
   { id: "socialMedia", label: "Social Media Expansion (e.g., 10 Posts/Month - $199)" },
-  { id: "emailMarketing", label: "Email Marketing Setup ($499)" },
+  { id: "emailMarketing", label: "Email Systems & Automation Setup ($499)" }, // Standardized name
   { id: "analyticsUpgrades", label: "Analytics Upgrades (e.g., Monthly Insights - $199)" },
   { id: "ongoingSupport", label: "Ongoing Support (e.g., Monthly Emails - $199)" },
   { id: "staffRecruitment", label: "Staff Recruitment (Global) (e.g., 1 Role - $450)" },
@@ -250,10 +250,10 @@ const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) =>
             <div className="flex items-center space-x-2">
               <Checkbox
                 id="goal-brand"
-                checked={formData.primaryGoals.includes("Brand Identity")}
+                checked={formData.primaryGoals.includes("Design & Branding Package")} // Standardized name
                 onCheckedChange={(checked) => handleCheckboxChange("goal-brand", checked as boolean)}
               />
-              <Label htmlFor="goal-brand">Brand Identity</Label>
+              <Label htmlFor="goal-brand">Design & Branding Package</Label>
             </div>
             <div className="flex items-center space-x-2">
               <Checkbox

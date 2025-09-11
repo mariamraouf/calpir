@@ -67,7 +67,7 @@ const IntegrationsSection = () => {
         </div>
 
         <p className="mt-8 text-md text-gray-500 dark:text-gray-400 animate-fade-in-up delay-400">
-          ✨ New integrations added weekly
+          ✨ New integrations added weekly!
         </p>
       </div>
     </section>
