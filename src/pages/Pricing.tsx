@@ -599,7 +599,7 @@ const Pricing = () => {
         </section>
 
         {/* Section 4: Custom Solutions */}
-        <section id="custom-solutions" className="mt-20 text-center p-8 rounded-2xl shadow-xl animate-fade-in-up delay-2000
+        <section id="custom-solutions" className="mt-20 mb-20 text-center p-8 rounded-2xl shadow-xl animate-fade-in-up delay-2000
                     bg-gradient-to-br from-calpir-green-50 to-palette-blue-50 dark:from-calpir-green-950 dark:to-palette-blue-950 max-w-4xl mx-auto scroll-mt-24">
           <Puzzle className="h-16 w-16 mx-auto mb-6 text-primary dark:text-calpir-green-300 animate-bounce-slow" />
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
