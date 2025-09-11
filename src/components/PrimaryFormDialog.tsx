@@ -14,25 +14,17 @@ import { Link } from "react-router-dom";
 
 // Data for add-ons (simplified for form, full list is in AddOnsSection)
 const addOnsOptions = [
-  { id: "socialMediaExpansion10Posts", label: "Social Media Expansion: 10 Posts/Month ($199/month)" },
-  { id: "socialMediaExpansion20Posts", label: "Social Media Expansion: 20 Posts/Month ($349/month)" },
-  { id: "socialMediaExpansion30Posts", label: "Social Media Expansion: 30 Posts/Month ($499/month)" },
-  { id: "emailMarketingSystemSetup", label: "Email Marketing System Setup ($899)" }, // Updated to match individual service
-  { id: "analyticsMonthlyInsights", label: "Analytics Upgrades: Monthly Insights ($199/month)" },
-  { id: "analyticsMonthlyRecommendations", label: "Analytics Upgrades: Monthly Recommendations ($249/month)" },
-  { id: "monthlySupportPackage", label: "Ongoing Support: Monthly Emails ($199/month)" },
-  { id: "weeklySupportPackage", label: "Ongoing Support: Weekly Calls ($499/month)" }, // New add-on
-  { id: "singleRoleRecruitment", label: "Staff Recruitment (Global): 1 Role ($450)" },
-  { id: "multiRoleRecruitment", label: "Staff Recruitment (Global): 2 Roles ($700)" },
-  { id: "comprehensiveRecruitment", label: "Staff Recruitment (Global): Unlimited (3 months) ($4,999)" },
-  { id: "integrations", label: "Extra Integrations (Per Integration - $199)" },
-  { id: "additionalWebsitePages", label: "Website Expansions (Per Page - $199)" },
-  { id: "ecommerceFunctionality", label: "Website Expansions: E-commerce Functionality ($499)" },
+  { id: "socialMedia", label: "Social Media Expansion (e.g., 10 Posts/Month - $199)" },
+  { id: "emailMarketing", label: "Email Marketing Setup ($499)" },
+  { id: "analyticsUpgrades", label: "Analytics Upgrades (e.g., Monthly Insights - $199)" },
+  { id: "ongoingSupport", label: "Ongoing Support (e.g., Monthly Emails - $199)" },
+  { id: "staffRecruitment", label: "Staff Recruitment (Global) (e.g., 1 Role - $450)" },
+  { id: "extraIntegrations", label: "Extra Integrations (Per Integration - $199)" },
+  { id: "websiteExpansions", label: "Website Expansions (e.g., Per Page - $199)" },
   { id: "hrCustomizations", label: "HR Customizations (One-time Setup - $299)" },
-  { id: "basicTrainingSessions", label: "Training Sessions (Per Hour - $199)" },
+  { id: "trainingSessions", label: "Training Sessions (Per Hour - $199)" },
   { id: "customAutomations", label: "Custom Automations (For 5+ Automations - $299)" },
-  { id: "securityBasicsSetup", label: "Security Basics (One-time Setup - $299)" },
-  { id: "timeTrackingSystemSetup", label: "Time Tracking System Setup ($299)" }, // Updated to match individual service
+  { id: "securityBasics", label: "Security Basics (One-time Setup - $299)" },
 ];
 
 const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) => {

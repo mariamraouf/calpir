@@ -21,18 +21,10 @@ interface Package {
     websiteDevelopment: string;
     hostingDomain: boolean;
     domainRegistration: boolean;
-    seoOptimization: string | boolean;
-    socialMediaSystemSetup: string;
-    socialMediaExpansion10Posts: boolean;
-    socialMediaExpansion20Posts: boolean;
-    socialMediaExpansion30Posts: boolean;
+    seoOptimization: boolean;
+    socialMediaSetup: string;
     additionalWebsitePages: string | boolean;
     ecommerceFunctionality: boolean;
-    brandIdentityDesign: string | boolean;
-    basicEmailSetup: boolean; // Removed as individual service, but might be part of package description
-    emailMarketingSystemSetup: string | boolean;
-    emailMarketing3Campaigns: boolean; // Removed
-    emailMarketing5Campaigns: boolean; // Removed
   };
   businessOperations: {
     projectManagement: string;
@@ -41,14 +33,10 @@ interface Package {
     platformMigration: string;
     integrations: string;
     analyticsReporting: string;
-    analyticsMonthlyInsights: boolean;
-    analyticsMonthlyRecommendations: boolean;
-    analyticsRealTime: boolean; // Removed
     businessAutomations: string | boolean;
     sops: boolean;
     payroll: boolean;
     performanceManagement: boolean;
-    securityBasicsSetup: boolean;
   };
   humanResources: {
     employeeProfiles: boolean;
@@ -59,15 +47,12 @@ interface Package {
     comprehensiveRecruitment: boolean;
     advancedHrSystem: string;
     onboardingOffboardingWorkflows: string | boolean;
-    timeTrackingBasicSetup: boolean; // Removed
-    timeTrackingAdvancedSetup: boolean; // Removed
-    timeTrackingTeamTraining: boolean; // Removed
+    timeTracking: string | boolean;
+    timeAttendanceTracking: string | boolean;
     employeeEngagementSurveys: boolean;
   };
-  training: {
+  training: { // Only basic training sessions remain
     basicTrainingSessions: boolean;
-    monthlySupportPackage: boolean;
-    weeklySupportPackage: boolean; // New
   };
 }
 
@@ -81,17 +66,9 @@ const packages: Package[] = [
       hostingDomain: true,
       domainRegistration: true,
       seoOptimization: false,
-      socialMediaSystemSetup: "2 platforms",
-      socialMediaExpansion10Posts: false,
-      socialMediaExpansion20Posts: false,
-      socialMediaExpansion30Posts: false,
+      socialMediaSetup: "2 platforms + 5 posts",
       additionalWebsitePages: false,
       ecommerceFunctionality: false,
-      brandIdentityDesign: false,
-      basicEmailSetup: true, // Still part of package description
-      emailMarketingSystemSetup: false,
-      emailMarketing3Campaigns: false,
-      emailMarketing5Campaigns: false,
     },
     businessOperations: {
       projectManagement: "Basic (2 workspaces)",
@@ -100,14 +77,10 @@ const packages: Package[] = [
       platformMigration: "1 platform",
       integrations: "2 connections",
       analyticsReporting: "Monthly summary",
-      analyticsMonthlyInsights: false,
-      analyticsMonthlyRecommendations: false,
-      analyticsRealTime: false,
       businessAutomations: false,
       sops: false,
       payroll: false,
       performanceManagement: false,
-      securityBasicsSetup: false,
     },
     humanResources: {
       employeeProfiles: true,
@@ -118,15 +91,12 @@ const packages: Package[] = [
       comprehensiveRecruitment: false,
       advancedHrSystem: "",
       onboardingOffboardingWorkflows: false,
-      timeTrackingBasicSetup: false,
-      timeTrackingAdvancedSetup: false,
-      timeTrackingTeamTraining: false,
+      timeTracking: false,
+      timeAttendanceTracking: false,
       employeeEngagementSurveys: false,
     },
     training: {
       basicTrainingSessions: false,
-      monthlySupportPackage: false,
-      weeklySupportPackage: false,
     },
   },
   {
@@ -137,17 +107,9 @@ const packages: Package[] = [
       hostingDomain: true,
       domainRegistration: true,
       seoOptimization: true,
-      socialMediaSystemSetup: "5 platforms",
-      socialMediaExpansion10Posts: true,
-      socialMediaExpansion20Posts: false,
-      socialMediaExpansion30Posts: false,
+      socialMediaSetup: "5 platforms + 10 posts",
       additionalWebsitePages: "Up to 5 pages",
       ecommerceFunctionality: false,
-      brandIdentityDesign: true,
-      basicEmailSetup: false,
-      emailMarketingSystemSetup: true,
-      emailMarketing3Campaigns: false,
-      emailMarketing5Campaigns: false,
     },
     businessOperations: {
       projectManagement: "Enhanced (5 workspaces)",
@@ -155,15 +117,11 @@ const packages: Package[] = [
       accountingSystem: "Expense tracking",
       platformMigration: "2-3 platforms",
       integrations: "5 connections",
-      analyticsReporting: "Monthly insights",
-      analyticsMonthlyInsights: true,
-      analyticsMonthlyRecommendations: false,
-      analyticsRealTime: false,
+      analyticsReporting: "Monthly insights + Recommendation",
       businessAutomations: "Basic Automation Setup",
       sops: true,
       payroll: false,
       performanceManagement: false,
-      securityBasicsSetup: false,
     },
     humanResources: {
       employeeProfiles: true,
@@ -174,15 +132,12 @@ const packages: Package[] = [
       comprehensiveRecruitment: false,
       advancedHrSystem: "ATS & talent pipeline",
       onboardingOffboardingWorkflows: true,
-      timeTrackingBasicSetup: false,
-      timeTrackingAdvancedSetup: false,
-      timeTrackingTeamTraining: false,
+      timeTracking: "Advanced timetracking with reports",
+      timeAttendanceTracking: true,
       employeeEngagementSurveys: false,
     },
     training: {
       basicTrainingSessions: true,
-      monthlySupportPackage: true,
-      weeklySupportPackage: false,
     },
   },
   {
@@ -193,17 +148,9 @@ const packages: Package[] = [
       hostingDomain: true,
       domainRegistration: true,
       seoOptimization: true,
-      socialMediaSystemSetup: "5+ platforms",
-      socialMediaExpansion10Posts: true,
-      socialMediaExpansion20Posts: true,
-      socialMediaExpansion30Posts: true,
+      socialMediaSetup: "5+ platforms + 20 posts",
       additionalWebsitePages: "Unlimited pages",
       ecommerceFunctionality: true,
-      brandIdentityDesign: true,
-      basicEmailSetup: false,
-      emailMarketingSystemSetup: true,
-      emailMarketing3Campaigns: true,
-      emailMarketing5Campaigns: true,
     },
     businessOperations: {
       projectManagement: "Advanced (unlimited)",
@@ -211,15 +158,11 @@ const packages: Package[] = [
       accountingSystem: "Forecasting tools",
       platformMigration: "Multiple platforms",
       integrations: "Unlimited",
-      analyticsReporting: "Weekly insights",
-      analyticsMonthlyInsights: true,
-      analyticsMonthlyRecommendations: true,
-      analyticsRealTime: true,
+      analyticsReporting: "Weekly insights + Recommendation",
       businessAutomations: "Advanced Automation Package",
       sops: true,
       payroll: true,
       performanceManagement: true,
-      securityBasicsSetup: true,
     },
     humanResources: {
       employeeProfiles: true,
@@ -230,15 +173,12 @@ const packages: Package[] = [
       comprehensiveRecruitment: false,
       advancedHrSystem: "Scalable ATS system",
       onboardingOffboardingWorkflows: true,
-      timeTrackingBasicSetup: true,
-      timeTrackingAdvancedSetup: true,
-      timeTrackingTeamTraining: true,
+      timeTracking: "Advanced timetracking with reports and dashboard",
+      timeAttendanceTracking: "Advanced Tracking",
       employeeEngagementSurveys: true,
     },
     training: {
       basicTrainingSessions: true,
-      monthlySupportPackage: true,
-      weeklySupportPackage: true, // Replaced Premium with Weekly
     },
   },
 ];
@@ -253,17 +193,9 @@ const comparisonFeatures = [
       { key: "hostingDomain", label: "Hosting & Domain" },
       { key: "domainRegistration", label: "Domain Registration" },
       { key: "seoOptimization", label: "SEO Optimization" },
-      { key: "socialMediaSystemSetup", label: "Social Media System Setup" },
-      { key: "socialMediaExpansion10Posts", label: "Social Media: 10 Posts/Month" },
-      { key: "socialMediaExpansion20Posts", label: "Social Media: 20 Posts/Month" },
-      { key: "socialMediaExpansion30Posts", label: "Social Media: 30 Posts/Month" },
+      { key: "socialMediaSetup", label: "Social Media Setup" },
       { key: "additionalWebsitePages", label: "Additional Website Pages" },
       { key: "ecommerceFunctionality", label: "E-commerce Functionality" },
-      { key: "brandIdentityDesign", label: "Brand Identity Design" },
-      { key: "basicEmailSetup", label: "Email Marketing: Basic Setup" },
-      { key: "emailMarketingSystemSetup", label: "Email Marketing System Setup" },
-      // Removed: emailMarketing3Campaigns
-      // Removed: emailMarketing5Campaigns
     ],
   },
   {
@@ -271,19 +203,15 @@ const comparisonFeatures = [
     key: "businessOperations",
     features: [
       { key: "projectManagement", label: "Project Management" },
-      { key: "crmSetup", label: "CRM Setup & Optimization" },
+      { key: "crmSetup", label: "CRM Setup" },
       { key: "accountingSystem", label: "Accounting System" },
       { key: "platformMigration", label: "Platform Migration" },
-      { key: "integrations", label: "Platform Integrations" },
+      { key: "integrations", label: "Integrations" },
       { key: "analyticsReporting", label: "Analytics & Reporting" },
-      { key: "analyticsMonthlyInsights", label: "Analytics: Monthly Insights" },
-      { key: "analyticsMonthlyRecommendations", label: "Analytics: Monthly Recommendations" },
-      // Removed: analyticsRealTime
-      { key: "businessAutomations", label: "Custom Automations" },
+      { key: "businessAutomations", label: "Business Automations" },
       { key: "sops", label: "SOPs" },
       { key: "payroll", label: "Payroll" },
       { key: "performanceManagement", label: "Performance Management" },
-      { key: "securityBasicsSetup", label: "Security Basics Setup" },
     ],
   },
   {
@@ -298,19 +226,16 @@ const comparisonFeatures = [
       { key: "comprehensiveRecruitment", label: "Comprehensive Recruitment (3 months)" },
       { key: "advancedHrSystem", label: "Advanced HR System" },
       { key: "onboardingOffboardingWorkflows", label: "Onboarding/Offboarding Workflows" },
-      // Removed: timeTrackingBasicSetup
-      // Removed: timeTrackingAdvancedSetup
-      // Removed: timeTrackingTeamTraining
+      { key: "timeTracking", label: "Time Tracking" },
+      { key: "timeAttendanceTracking", label: "Time/Attendance Tracking" },
       { key: "employeeEngagementSurveys", label: "Employee Engagement Surveys" },
     ],
   },
   {
-    category: "Training & Support",
+    category: "Training",
     key: "training",
     features: [
       { key: "basicTrainingSessions", label: "Basic Training Sessions" },
-      { key: "monthlySupportPackage", label: "Monthly Support Package" },
-      { key: "weeklySupportPackage", label: "Weekly Support Package" }, // New
     ],
   },
 ];

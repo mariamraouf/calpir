@@ -16,36 +16,38 @@ import { Link } from "react-router-dom";
 
 // Data for add-ons (brief description with pricing and serviceId for linking)
 const addOnsOptions = [
-  { id: "socialMediaExpansion10Posts", label: "Social Media Expansion: 10 Posts/Month ($199/month)", serviceId: "social-media-expansion-10-posts" },
-  { id: "socialMediaExpansion20Posts", label: "Social Media Expansion: 20 Posts/Month ($349/month)", serviceId: "social-media-expansion-20-posts" },
-  { id: "socialMediaExpansion30Posts", label: "Social Media Expansion: 30 Posts/Month ($499/month)", serviceId: "social-media-expansion-30-posts" },
+  { id: "social-media-10-posts", label: "Social Media Expansion: 10 Posts/Month ($199)", serviceId: "social-media" },
+  { id: "social-media-20-posts", label: "Social Media Expansion: 20 Posts/Month ($349)", serviceId: "social-media" },
+  { id: "social-media-30-posts", label: "Social Media Expansion: 30 Posts/Month ($499)", serviceId: "social-media" },
 
-  { id: "emailMarketingSystemSetup", label: "Email Marketing System Setup ($899)", serviceId: "email-marketing-system-setup" }, // Updated to match individual service
+  { id: "email-marketing-setup", label: "Email Marketing Setup ($499)", serviceId: "email-systems" },
+  { id: "email-marketing-3-campaigns", label: "Email Marketing: 3 Campaigns/Month ($599)", serviceId: "email-systems" },
+  { id: "email-marketing-5-campaigns", label: "Email Marketing: 5 Campaigns/Month ($699)", serviceId: "email-systems" },
 
-  { id: "analyticsMonthlyInsights", label: "Analytics Upgrades: Monthly Insights ($199/month)", serviceId: "analytics-monthly-insights" },
-  { id: "analyticsMonthlyRecommendations", label: "Analytics Upgrades: Monthly Recommendations ($249/month)", serviceId: "analytics-monthly-recommendations" },
+  { id: "analytics-monthly-insights", label: "Analytics Upgrades: Monthly Insights ($199)", serviceId: "analytics" },
+  { id: "analytics-monthly-recommendations", label: "Analytics Upgrades: Monthly Recommendations ($249)", serviceId: "analytics" },
+  { id: "analytics-real-time", label: "Analytics Upgrades: Real-time Analytics ($399)", serviceId: "analytics" },
 
-  { id: "monthlySupportPackage", label: "Ongoing Support: Monthly Emails ($199/month)", serviceId: "monthly-support-package" },
-  { id: "weeklySupportPackage", label: "Ongoing Support: Weekly Calls ($499/month)", serviceId: "weekly-support-package" }, // New add-on
+  { id: "ongoing-support-monthly-emails", label: "Ongoing Support: Monthly Emails ($199)", serviceId: "ongoing-support" },
+  { id: "ongoing-support-weekly-calls", label: "Ongoing Support: Weekly Calls ($499)", serviceId: "ongoing-support" },
 
-  { id: "singleRoleRecruitment", label: "Staff Recruitment (Global): 1 Role ($450)", serviceId: "single-role-recruitment" },
-  { id: "multiRoleRecruitment", label: "Staff Recruitment (Global): 2 Roles ($700)", serviceId: "multi-role-recruitment" },
-  { id: "comprehensiveRecruitment", label: "Staff Recruitment (Global): Unlimited (3 months) ($4,999)", serviceId: "comprehensive-recruitment" },
+  { id: "staff-recruitment-1-role", label: "Staff Recruitment (Global): 1 Role ($450)", serviceId: "hr-recruiting" },
+  { id: "staff-recruitment-2-roles", label: "Staff Recruitment (Global): 2 Roles ($700)", serviceId: "hr-recruiting" },
+  { id: "staff-recruitment-3-roles", label: "Staff Recruitment (Global): 3 Roles ($900)", serviceId: "hr-recruiting" },
+  { id: "staff-recruitment-unlimited", label: "Staff Recruitment (Global): Unlimited (3 months) ($4,999)", serviceId: "hr-recruiting" },
 
-  { id: "integrations", label: "Extra Integrations: Per Integration ($199)", serviceId: "integrations" },
+  { id: "extra-integrations-per", label: "Extra Integrations: Per Integration ($199)", serviceId: "integrations" },
 
-  { id: "additionalWebsitePages", label: "Website Expansions: Per Page ($199)", serviceId: "additional-website-pages" },
-  { id: "ecommerceFunctionality", label: "Website Expansions: E-commerce Functionality ($499)", serviceId: "ecommerce-functionality" },
+  { id: "website-expansions-per-page", label: "Website Expansions: Per Page ($199)", serviceId: "website-building" },
+  { id: "website-expansions-ecommerce", label: "Website Expansions: E-commerce Functionality ($499)", serviceId: "website-building" },
 
-  { id: "hrCustomizations", label: "HR Customizations: One-time Setup ($299)", serviceId: "hr-recruiting-system" }, // Linked to HR & Recruiting System for now
+  { id: "hr-customizations-setup", label: "HR Customizations: One-time Setup ($299)", serviceId: "hr-recruiting" },
 
-  { id: "basicTrainingSessions", label: "Training Sessions: Per Hour ($199)", serviceId: "basic-training-sessions" },
+  { id: "training-sessions-per-hour", label: "Training Sessions: Per Hour ($199)", serviceId: "training-sessions" },
 
-  { id: "customAutomations", label: "Custom Automations: For 5+ Automations ($299)", serviceId: "custom-automations" },
+  { id: "custom-automations-5-plus", label: "Custom Automations: For 5+ Automations ($299)", serviceId: "operations-flows" },
 
-  { id: "securityBasicsSetup", label: "Security Basics: One-time Setup ($299)", serviceId: "security-basics-setup" },
-
-  { id: "timeTrackingSystemSetup", label: "Time Tracking System Setup ($299)", serviceId: "time-tracking" }, // Updated to match individual service
+  { id: "security-basics-setup", label: "Security Basics: One-time Setup ($299)", serviceId: "security-basics" },
 ];
 
 const industryOptions = [

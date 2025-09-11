@@ -11,7 +11,7 @@ const Navbar = () => {
   const mainNavLinks = [
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "Platforms", href: "/platforms" },
+    { name: "Platforms", href: "/platforms" }, // New link
     { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
   ];

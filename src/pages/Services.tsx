@@ -4,7 +4,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail, Headphones, Puzzle, Clock, Globe, Code, Share2, BarChart2 } from "lucide-react";
+import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail, Headphones, Puzzle, Clock, Globe, Code, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -14,7 +14,7 @@ const servicesData = [
     icon: Layout,
     title: "Website Building & Hosting",
     investment: "$999",
-    description: "Create a professional, high-performing website tailored to your business needs, including domain registration (5-10 pages).",
+    description: "Create a professional, high-performing website tailored to your business needs, including domain registration.",
     details: [
       "Custom website design and development",
       "5-10 pages included",
@@ -39,20 +39,6 @@ const servicesData = [
     iconColor: "text-palette-blue-400",
   },
   {
-    id: "ecommerce-functionality",
-    icon: DollarSign,
-    title: "E-commerce Functionality",
-    investment: "$499",
-    description: "Set up comprehensive e-commerce capabilities for your website, enabling online sales and product management.",
-    details: [
-      "Product catalog setup",
-      "Shopping cart and checkout configuration",
-      "Payment gateway integration",
-      "Order management system setup",
-    ],
-    iconColor: "text-palette-yellow-400",
-  },
-  {
     id: "seo-optimization",
     icon: Globe,
     title: "SEO Optimization",
@@ -67,11 +53,11 @@ const servicesData = [
     iconColor: "text-palette-blue-700",
   },
   {
-    id: "social-media-system-setup",
+    id: "social-media-management-setup",
     icon: Share2,
-    title: "Social Media System Setup",
+    title: "Social Media Management Setup",
     investment: "$799",
-    description: "Establish and manage your brand's presence across key social media platforms (setup for 2 platforms).",
+    description: "Establish and manage your brand's presence across key social media platforms.",
     details: [
       "Setup on 2 platforms",
       "Content strategy and calendar development",
@@ -81,51 +67,9 @@ const servicesData = [
     iconColor: "text-palette-red-400",
   },
   {
-    id: "social-media-expansion-10-posts",
-    icon: Share2,
-    title: "Social Media Expansion: 10 Posts/Month",
-    investment: "$199/month",
-    description: "Ongoing professional social media posts with graphics to maintain an active presence.",
-    details: [
-      "10 custom-designed posts per month",
-      "Content creation and scheduling",
-      "Platform-specific optimization",
-      "Basic engagement monitoring",
-    ],
-    iconColor: "text-palette-red-300",
-  },
-  {
-    id: "social-media-expansion-20-posts",
-    icon: Share2,
-    title: "Social Media Expansion: 20 Posts/Month",
-    investment: "$349/month",
-    description: "Enhanced social media content with stories and increased engagement for a more dynamic presence.",
-    details: [
-      "20 custom-designed posts per month",
-      "Includes stories/reels content",
-      "Advanced scheduling and analytics",
-      "Proactive engagement strategies",
-    ],
-    iconColor: "text-palette-red-500",
-  },
-  {
-    id: "social-media-expansion-30-posts",
-    icon: Share2,
-    title: "Social Media Expansion: 30 Posts/Month",
-    investment: "$499/month",
-    description: "Full social media management with comprehensive content, analytics, and community engagement.",
-    details: [
-      "30 custom-designed posts per month",
-      "Full content calendar management",
-      "Detailed monthly performance reports",
-      "Community management and interaction",
-    ],
-    iconColor: "text-palette-red-600",
-  },
-  {
-    id: "brand-identity-design",
+    id: "design-branding",
     icon: Palette,
-    title: "Brand Identity Design",
+    title: "Design & Branding Package",
     investment: "$1,299",
     description: "Craft a compelling brand identity that resonates with your target audience.",
     details: [
@@ -137,23 +81,19 @@ const servicesData = [
     iconColor: "text-palette-purple-500",
   },
   {
-    id: "email-marketing-system-setup",
+    id: "email-systems",
     icon: Mail,
-    title: "Email Marketing System Setup",
+    title: "Email Systems & Automation",
     investment: "$899",
-    description: "Develop comprehensive email marketing and communication strategies with advanced automation.",
+    description: "Develop effective email marketing and communication strategies.",
     details: [
-      "Advanced email platform setup",
-      "Custom email template design",
-      "Complex automated email sequences (e.g., welcome, abandoned cart)",
-      "Advanced list management and segmentation",
-      "Integration with CRM and other tools",
+      "Email platform setup",
+      "Email template design",
+      "Automated email sequences",
+      "List management and segmentation",
     ],
     iconColor: "text-primary",
   },
-  // Removed: Basic Email Setup
-  // Removed: Email Marketing: 3 Campaigns/Month
-  // Removed: Email Marketing: 5 Campaigns/Month
   {
     id: "project-management",
     icon: Briefcase,
@@ -225,39 +165,10 @@ const servicesData = [
     iconColor: "text-primary",
   },
   {
-    id: "analytics-monthly-insights",
-    icon: BarChart2,
-    title: "Analytics Upgrades: Monthly Insights",
-    investment: "$199/month",
-    description: "Receive monthly performance reports to track your business's key metrics.",
-    details: [
-      "Monthly data compilation and analysis",
-      "Key metric tracking and visualization",
-      "Summary of performance trends",
-      "Delivered via email report",
-    ],
-    iconColor: "text-palette-blue-300",
-  },
-  {
-    id: "analytics-monthly-recommendations",
-    icon: BarChart2,
-    title: "Analytics Upgrades: Monthly Recommendations",
-    investment: "$249/month",
-    description: "Detailed insights and actionable recommendations based on your monthly performance data.",
-    details: [
-      "All features of Monthly Insights",
-      "In-depth analysis of data trends",
-      "Actionable strategies for improvement",
-      "Consultation call to discuss recommendations",
-    ],
-    iconColor: "text-palette-blue-400",
-  },
-  // Removed: Analytics Upgrades: Real-time Analytics
-  {
     id: "integrations",
     icon: Lightbulb,
     title: "Platform Integrations",
-    investment: "$199/integration",
+    investment: "$199/integration", // Price updated
     description: "Connect your essential business tools for seamless data flow and automation.",
     details: [
       "Integration strategy and planning",
@@ -285,8 +196,8 @@ const servicesData = [
     id: "custom-automations",
     icon: Code,
     title: "Custom Automations",
-    investment: "$299",
-    description: "Automate repetitive tasks and complex workflows to boost efficiency and reduce manual effort (for 5+ automations).",
+    investment: "$299", // Price updated
+    description: "Automate repetitive tasks and complex workflows to boost efficiency and reduce manual effort.",
     details: [
       "Custom automation strategy and design",
       "Integration of automation tools",
@@ -294,20 +205,6 @@ const servicesData = [
       "Automated reporting and data synchronization",
     ],
     iconColor: "text-palette-orange-400",
-  },
-  {
-    id: "security-basics-setup",
-    icon: Shield,
-    title: "Security Basics Setup",
-    investment: "$299",
-    description: "One-time setup of fundamental security configurations and recommendations for your business systems.",
-    details: [
-      "Password manager setup",
-      "Two-factor authentication (2FA) implementation",
-      "Basic data backup recommendations",
-      "Security best practices guidance",
-    ],
-    iconColor: "text-palette-red-500",
   },
   {
     id: "hr-recruiting-system",
@@ -327,8 +224,8 @@ const servicesData = [
     id: "time-tracking",
     icon: Clock,
     title: "Time Tracking System Setup",
-    investment: "$299",
-    description: "Comprehensive setup of a time tracking tool with custom reports and integrations.",
+    investment: "$299", // Price updated
+    description: "Comprehensive setup of a time tracking tool with custom reports and integrations.", // Description updated
     details: [
       "Time tracking tool selection and configuration",
       "Automated time logging setup",
@@ -337,9 +234,6 @@ const servicesData = [
     ],
     iconColor: "text-palette-orange-500",
   },
-  // Removed: Time Tracking: Basic Setup (this was already removed in previous step, but keeping it here for clarity)
-  // Removed: Time Tracking: Advanced Setup & Reporting
-  // Removed: Time Tracking: Team Training & Optimization
   {
     id: "performance-management",
     icon: TrendingUp,
@@ -358,7 +252,7 @@ const servicesData = [
     id: "single-role-recruitment",
     icon: Users,
     title: "Single Role Recruitment",
-    investment: "$450",
+    investment: "$450", // Price updated
     description: "Assistance with recruiting for one global role, from job posting to initial screening.",
     details: [
       "Job description optimization",
@@ -372,7 +266,7 @@ const servicesData = [
     id: "multi-role-recruitment",
     icon: Users,
     title: "Multi-Role Recruitment",
-    investment: "$700",
+    investment: "$700", // Price updated
     description: "Comprehensive support for recruiting multiple global roles simultaneously.",
     details: [
       "Strategic recruitment planning for multiple roles",
@@ -386,7 +280,7 @@ const servicesData = [
     id: "comprehensive-recruitment",
     icon: Users,
     title: "Comprehensive Recruitment (3 months)",
-    investment: "$4,999",
+    investment: "$4,999", // Price updated
     description: "Dedicated recruitment partnership for three months, offering unlimited hiring support.",
     details: [
       "Full-cycle recruitment for unlimited roles",
@@ -400,7 +294,7 @@ const servicesData = [
     id: "basic-training-sessions",
     icon: BookOpen,
     title: "Basic Training Sessions",
-    investment: "$199/hour",
+    investment: "$199/hour", // Price updated
     description: "Introductory training to get your team familiar with new systems and tools.",
     details: [
       "1-hour live online session",
@@ -413,7 +307,7 @@ const servicesData = [
     id: "monthly-support-package",
     icon: Headphones,
     title: "Monthly Support Package",
-    investment: "$199/month",
+    investment: "$199/month", // Price updated
     description: "Ongoing email support and monthly check-ins to ensure smooth operations.",
     details: [
       "Priority email support",
@@ -424,10 +318,10 @@ const servicesData = [
     iconColor: "text-palette-purple-400",
   },
   {
-    id: "weekly-support-package", // New service
+    id: "premium-support-package",
     icon: Headphones,
-    title: "Weekly Support Package",
-    investment: "$499/month",
+    title: "Premium Support Package",
+    investment: "$499/month", // Price updated
     description: "Dedicated weekly calls and priority support for critical business needs.",
     details: [
       "Dedicated support manager",
@@ -446,18 +340,16 @@ const Services = () => {
       <main className="flex-grow container py-16 md:py-24">
         <section className="text-center mb-16 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-            Individual Business Services
+            Our Comprehensive Services
           </h1>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed delay-200">
-            Need specific business solutions without a full package? Choose from our comprehensive individual services.
-            <br />
-            <span className="text-md text-gray-500 dark:text-gray-400 italic">Note: These services are also available as package add-ons at different pricing.</span>
+            Calpir offers a full suite of services designed to launch, optimize, and scale your business operations. From initial setup to ongoing support, we cover every aspect to ensure your success.
           </p>
         </section>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {servicesData.map((service, index) => (
-            <section key={service.id} id={service.id} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-110 animate-slide-in-left" style={{ animationDelay: `${0.3 + index * 0.05}s` }}>
+            <section key={service.id} id={service.id} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-110 animate-slide-in-left" style={{ animationDelay: `${0.3 + index * 0.1}s` }}>
               <div className="flex items-center mb-6">
                 <service.icon className={`h-12 w-12 mr-4 flex-shrink-0 ${service.iconColor}`} />
                 <div>
@@ -470,7 +362,7 @@ const Services = () => {
               </div>
               <ul className="list-none space-y-3 text-left mb-8">
                 {service.details.map((detail, detailIndex) => (
-                  <li key={detailIndex} className="flex items-start text-gray-700 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.05 + detailIndex * 0.02}s` }}>
+                  <li key={detailIndex} className="flex items-start text-gray-700 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.1 + detailIndex * 0.05}s` }}>
                     <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                     <span>{detail}</span>
                   </li>
@@ -494,7 +386,7 @@ const Services = () => {
         </div>
 
         <section className="mt-20 text-center p-8 rounded-2xl shadow-xl animate-fade-in-up delay-1500
-                    bg-gradient-to-br from-palette-blue-50 to-calpir-green-50 dark:from-palette-blue-950 dark:to-palette-blue-950 max-w-4xl mx-auto">
+                    bg-gradient-to-br from-palette-blue-50 to-calpir-green-50 dark:from-palette-blue-950 dark:to-calpir-green-950 max-w-4xl mx-auto">
           <Puzzle className="h-16 w-16 mx-auto mb-6 text-primary dark:text-calpir-green-300 animate-bounce-slow" />
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
             Need a Specific Platform Setup?
