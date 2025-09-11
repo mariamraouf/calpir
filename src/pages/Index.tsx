@@ -38,10 +38,10 @@ const Index = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteF
           <div className="text-center mt-12 animate-fade-in-up delay-1100">
             <Link to="/pricing#complete-packages">
               <Button
-                size="lg" // Changed to 'lg' as 'xl' is not a valid size prop, styling handled by className
-                className="border-primary text-primary hover:bg-primary hover:text-white text-xl px-10 py-5 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow dark:text-calpir-green-300 dark:border-calpir-green-300 dark:hover:bg-calpir-green-700"
+                size="lg" 
+                className="border-primary text-primary hover:bg-primary hover:text-white text-xl px-12 py-6 rounded-2xl shadow-xl transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow dark:text-calpir-green-300 dark:border-calpir-green-300 dark:hover:bg-calpir-green-700"
               >
-                Package Comparison Table <ArrowRight className="ml-3 h-6 w-6" /> {/* Larger icon and margin */}
+                Package Comparison Table <ArrowRight className="ml-4 h-7 w-7" /> {/* Larger icon and margin */}
               </Button>
             </Link>
           </div>

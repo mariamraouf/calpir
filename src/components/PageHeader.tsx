@@ -23,7 +23,7 @@ const PageHeader = ({ title, highlightWord, description, buttons, className }: P
   const titleParts = highlightWord ? title.split(new RegExp(`(${highlightWord})`, 'gi')) : [title];
 
   return (
-    <section className={`relative w-full py-20 md:py-28 lg:py-36 bg-calpir-green-50 dark:bg-gray-950 overflow-hidden ${className}`}>
+    <section className={`relative w-full py-20 md:py-28 lg:py-36 bg-gray-100 dark:bg-gray-950 overflow-hidden ${className}`}>
       {/* Background pattern - using a subtle gradient for now, can be replaced with SVG if needed */}
       <div className="absolute inset-0 z-0 opacity-20" style={{
         backgroundImage: `radial-gradient(circle at 10% 20%, hsl(var(--palette-orange-50)) 0%, transparent 50%),
@@ -43,7 +43,7 @@ const PageHeader = ({ title, highlightWord, description, buttons, className }: P
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-foreground dark:text-white animate-fade-in-up">
           {titleParts.map((part, index) =>
             part === highlightWord ? (
-              <span key={index} className="text-palette-orange-500 dark:text-palette-orange-400">
+              <span key={index} className="text-primary dark:text-calpir-green-300">
                 {part}
               </span>
             ) : (
@@ -63,8 +63,8 @@ const PageHeader = ({ title, highlightWord, description, buttons, className }: P
                     size="lg"
                     className={`text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:animate-button-glow ${
                       button.variant === "primary"
-                        ? "bg-palette-orange-500 hover:bg-palette-orange-600 text-white"
-                        : "border-2 border-palette-blue-500 text-palette-blue-700 hover:bg-palette-blue-50 dark:text-palette-blue-300 dark:border-palette-blue-300 dark:hover:bg-palette-blue-900"
+                        ? "bg-primary hover:bg-calpir-green-700 text-white"
+                        : "border-2 border-primary text-primary hover:bg-calpir-green-50 dark:text-calpir-green-300 dark:border-calpir-green-300 dark:hover:bg-calpir-green-900"
                     }`}
                   >
                     {button.text}
@@ -76,8 +76,8 @@ const PageHeader = ({ title, highlightWord, description, buttons, className }: P
                     size="lg"
                     className={`text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:animate-button-glow ${
                       button.variant === "primary"
-                        ? "bg-palette-orange-500 hover:bg-palette-orange-600 text-white"
-                        : "border-2 border-palette-blue-500 text-palette-blue-700 hover:bg-palette-blue-50 dark:text-palette-blue-300 dark:border-palette-blue-300 dark:hover:bg-palette-blue-900"
+                        ? "bg-primary hover:bg-calpir-green-700 text-white"
+                        : "border-2 border-primary text-primary hover:bg-calpir-green-50 dark:text-calpir-green-300 dark:border-calpir-green-300 dark:hover:bg-calpir-green-900"
                     }`}
                   >
                     {button.text}

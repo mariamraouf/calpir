@@ -465,37 +465,41 @@ const Pricing = () => {
         {/* Navigation Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-16 animate-fade-in-up delay-300 container py-8">
           <a href="#complete-packages">
-            <Button size="lg" variant="ghost" className="text-lg px-6 py-3 rounded-2xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
-              data-[state=active]:bg-palette-orange-500 data-[state=active]:text-white data-[state=active]:shadow-lg
-              text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+            <Button size="lg" 
+              className="text-lg px-6 py-3 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
+              bg-calpir-green-100 dark:bg-calpir-green-900 text-primary dark:text-calpir-green-300 hover:bg-calpir-green-200 dark:hover:bg-calpir-green-800 shadow-md
+              data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg">
               Complete Packages
             </Button>
           </a>
           <a href="#package-add-ons">
-            <Button size="lg" variant="ghost" className="text-lg px-6 py-3 rounded-2xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
-              data-[state=active]:bg-palette-orange-500 data-[state=active]:text-white data-[state=active]:shadow-lg
-              text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+            <Button size="lg" 
+              className="text-lg px-6 py-3 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
+              bg-calpir-green-100 dark:bg-calpir-green-900 text-primary dark:text-calpir-green-300 hover:bg-calpir-green-200 dark:hover:bg-calpir-green-800 shadow-md
+              data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg">
               Package Add-ons
             </Button>
           </a>
           <a href="#individual-services">
-            <Button size="lg" variant="ghost" className="text-lg px-6 py-3 rounded-2xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
-              data-[state=active]:bg-palette-orange-500 data-[state=active]:text-white data-[state=active]:shadow-lg
-              text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+            <Button size="lg" 
+              className="text-lg px-6 py-3 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
+              bg-calpir-green-100 dark:bg-calpir-green-900 text-primary dark:text-calpir-green-300 hover:bg-calpir-green-200 dark:hover:bg-calpir-green-800 shadow-md
+              data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg">
               Individual Services
             </Button>
           </a>
           <a href="#custom-solutions">
-            <Button size="lg" variant="ghost" className="text-lg px-6 py-3 rounded-2xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
-              data-[state=active]:bg-palette-orange-500 data-[state=active]:text-white data-[state=active]:shadow-lg
-              text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+            <Button size="lg" 
+              className="text-lg px-6 py-3 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md
+              bg-calpir-green-100 dark:bg-calpir-green-900 text-primary dark:text-calpir-green-300 hover:bg-calpir-green-200 dark:hover:bg-calpir-green-800 shadow-md
+              data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg">
               Custom Solutions
             </Button>
           </a>
         </div>
 
         {/* Section 1: Complete Business Packages */}
-        <section id="complete-packages" className="mb-20 container">
+        <section id="complete-packages" className="mb-20 container scroll-mt-24">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white animate-fade-in-up delay-400">
             Complete Business Packages
           </h2>
@@ -503,7 +507,7 @@ const Pricing = () => {
         </section>
 
         {/* Section 3: Package Add-ons (Moved before Individual Services) */}
-        <section id="package-add-ons" className="mb-20 container">
+        <section id="package-add-ons" className="mb-20 container scroll-mt-24">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white animate-fade-in-up delay-1000">
             Enhance Your Package with Add-Ons
           </h2>
@@ -533,7 +537,7 @@ const Pricing = () => {
         </section>
 
         {/* Section 2: Individual Services (Moved after Package Add-ons) */}
-        <section id="individual-services" className="mb-20 container">
+        <section id="individual-services" className="mb-20 container scroll-mt-24">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white animate-fade-in-up delay-500">
             Individual Services
           </h2>
@@ -578,7 +582,7 @@ const Pricing = () => {
 
         {/* Section 4: Custom Solutions */}
         <section id="custom-solutions" className="mt-20 text-center p-8 rounded-2xl shadow-xl animate-fade-in-up delay-2000
-                    bg-gradient-to-br from-calpir-green-50 to-palette-blue-50 dark:from-calpir-green-950 dark:to-palette-blue-950 max-w-4xl mx-auto">
+                    bg-gradient-to-br from-calpir-green-50 to-palette-blue-50 dark:from-calpir-green-950 dark:to-palette-blue-950 max-w-4xl mx-auto scroll-mt-24">
           <Puzzle className="h-16 w-16 mx-auto mb-6 text-primary dark:text-calpir-green-300 animate-bounce-slow" />
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
             Custom Add-On Packages & Platform Setups Available
