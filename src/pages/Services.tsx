@@ -151,48 +151,9 @@ const servicesData = [
     ],
     iconColor: "text-primary",
   },
-  {
-    id: "basic-email-setup",
-    icon: Mail,
-    title: "Basic Email Setup",
-    investment: "$499",
-    description: "One-time setup of a foundational email marketing system for basic communication needs.",
-    details: [
-      "Basic email platform configuration",
-      "Simple email template design",
-      "Initial contact list import",
-      "Basic welcome sequence setup",
-    ],
-    iconColor: "text-calpir-green-600",
-  },
-  {
-    id: "email-marketing-3-campaigns",
-    icon: Mail,
-    title: "Email Marketing: 3 Campaigns/Month",
-    investment: "$599/month",
-    description: "Management and execution of three email marketing campaigns per month.",
-    details: [
-      "Content creation for 3 campaigns",
-      "Audience segmentation and targeting",
-      "A/B testing for optimization",
-      "Performance tracking and reporting",
-    ],
-    iconColor: "text-calpir-green-500",
-  },
-  {
-    id: "email-marketing-5-campaigns",
-    icon: Mail,
-    title: "Email Marketing: 5 Campaigns/Month",
-    investment: "$699/month",
-    description: "Management and execution of five email marketing campaigns per month with advanced strategies.",
-    details: [
-      "Content creation for 5 campaigns",
-      "Advanced audience segmentation",
-      "Comprehensive A/B testing and optimization",
-      "Detailed performance analysis and recommendations",
-    ],
-    iconColor: "text-calpir-green-400",
-  },
+  // Removed: Basic Email Setup
+  // Removed: Email Marketing: 3 Campaigns/Month
+  // Removed: Email Marketing: 5 Campaigns/Month
   {
     id: "project-management",
     icon: Briefcase,
@@ -261,6 +222,7 @@ const servicesData = [
       "Key Performance Indicator (KPI) tracking",
       "Monthly performance reports and recommendations",
     ],
+    iconColor: "text-primary",
   },
   {
     id: "analytics-monthly-insights",
@@ -290,20 +252,7 @@ const servicesData = [
     ],
     iconColor: "text-palette-blue-400",
   },
-  {
-    id: "analytics-real-time",
-    icon: BarChart2,
-    title: "Analytics Upgrades: Real-time Analytics",
-    investment: "$399/month",
-    description: "Access real-time business intelligence dashboards for immediate data insights and decision-making.",
-    details: [
-      "All features of Monthly Recommendations",
-      "Real-time data dashboard setup",
-      "Customizable metrics and visualizations",
-      "Alerts for critical changes",
-    ],
-    iconColor: "text-palette-blue-500",
-  },
+  // Removed: Analytics Upgrades: Real-time Analytics
   {
     id: "integrations",
     icon: Lightbulb,
@@ -388,48 +337,9 @@ const servicesData = [
     ],
     iconColor: "text-palette-orange-500",
   },
-  {
-    id: "time-tracking-basic-setup",
-    icon: Clock,
-    title: "Time Tracking: Basic Setup",
-    investment: "$149",
-    description: "Initial setup of a time tracking tool for small teams to monitor work hours.",
-    details: [
-      "Basic time tracking tool configuration",
-      "User setup and permissions",
-      "Simple project/task assignment",
-      "Basic time entry guidance",
-    ],
-    iconColor: "text-palette-orange-300",
-  },
-  {
-    id: "time-tracking-advanced-setup",
-    icon: Clock,
-    title: "Time Tracking: Advanced Setup & Reporting",
-    investment: "$299",
-    description: "Comprehensive setup with custom reports, integrations, and advanced features.",
-    details: [
-      "Advanced tool configuration and customization",
-      "Custom report generation and dashboards",
-      "Integration with payroll/invoicing systems",
-      "Workflow automation for time approval",
-    ],
-    iconColor: "text-palette-orange-500",
-  },
-  {
-    id: "time-tracking-team-training",
-    icon: Clock,
-    title: "Time Tracking: Team Training & Optimization",
-    investment: "$399",
-    description: "Dedicated training sessions for your team and optimization of time tracking workflows.",
-    details: [
-      "Interactive team training sessions",
-      "Best practices for accurate time entry",
-      "Workflow optimization for efficiency",
-      "Ongoing support and Q&A",
-    ],
-    iconColor: "text-palette-orange-600",
-  },
+  // Removed: Time Tracking: Basic Setup (this was already removed in previous step, but keeping it here for clarity)
+  // Removed: Time Tracking: Advanced Setup & Reporting
+  // Removed: Time Tracking: Team Training & Optimization
   {
     id: "performance-management",
     icon: TrendingUp,
@@ -514,9 +424,9 @@ const servicesData = [
     iconColor: "text-palette-purple-400",
   },
   {
-    id: "premium-support-package",
+    id: "weekly-support-package", // New service
     icon: Headphones,
-    title: "Premium Support Package",
+    title: "Weekly Support Package",
     investment: "$499/month",
     description: "Dedicated weekly calls and priority support for critical business needs.",
     details: [
@@ -584,7 +494,7 @@ const Services = () => {
         </div>
 
         <section className="mt-20 text-center p-8 rounded-2xl shadow-xl animate-fade-in-up delay-1500
-                    bg-gradient-to-br from-palette-blue-50 to-calpir-green-50 dark:from-palette-blue-950 dark:to-calpir-green-950 max-w-4xl mx-auto">
+                    bg-gradient-to-br from-palette-blue-50 to-calpir-green-50 dark:from-palette-blue-950 dark:to-palette-blue-950 max-w-4xl mx-auto">
           <Puzzle className="h-16 w-16 mx-auto mb-6 text-primary dark:text-calpir-green-300 animate-bounce-slow" />
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
             Need a Specific Platform Setup?

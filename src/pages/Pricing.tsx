@@ -92,30 +92,6 @@ const individualServicesData = [
     iconColor: "text-primary",
   },
   {
-    id: "basic-email-setup",
-    icon: Mail,
-    title: "Basic Email Setup",
-    investment: "$499",
-    description: "One-time setup of a foundational email marketing system for basic communication needs.",
-    iconColor: "text-calpir-green-600",
-  },
-  {
-    id: "email-marketing-3-campaigns",
-    icon: Mail,
-    title: "Email Marketing: 3 Campaigns/Month",
-    investment: "$599/month",
-    description: "Management and execution of three email marketing campaigns per month.",
-    iconColor: "text-calpir-green-500",
-  },
-  {
-    id: "email-marketing-5-campaigns",
-    icon: Mail,
-    title: "Email Marketing: 5 Campaigns/Month",
-    investment: "$699/month",
-    description: "Management and execution of five email marketing campaigns per month with advanced strategies.",
-    iconColor: "text-calpir-green-400",
-  },
-  {
     id: "project-management",
     icon: Briefcase,
     title: "Project Management Setup",
@@ -172,14 +148,6 @@ const individualServicesData = [
     iconColor: "text-palette-blue-400",
   },
   {
-    id: "analytics-real-time",
-    icon: BarChart2,
-    title: "Analytics Upgrades: Real-time Analytics",
-    investment: "$399/month",
-    description: "Real-time business intelligence",
-    iconColor: "text-palette-blue-500",
-  },
-  {
     id: "integrations",
     icon: Lightbulb,
     title: "Platform Integrations",
@@ -220,35 +188,19 @@ const individualServicesData = [
     iconColor: "text-primary",
   },
   {
-    id: "time-tracking-basic-setup",
+    id: "time-tracking",
     icon: Clock,
-    title: "Time Tracking: Basic Setup",
-    investment: "$149",
-    description: "Initial setup of a time tracking tool for small teams",
-    iconColor: "text-palette-orange-300",
-  },
-  {
-    id: "time-tracking-advanced-setup",
-    icon: Clock,
-    title: "Time Tracking: Advanced Setup & Reporting",
+    title: "Time Tracking System Setup",
     investment: "$299",
-    description: "Comprehensive setup with custom reports and integrations",
+    description: "Comprehensive setup of a time tracking tool with custom reports and integrations.",
     iconColor: "text-palette-orange-500",
-  },
-  {
-    id: "time-tracking-team-training",
-    icon: Clock,
-    title: "Time Tracking: Team Training & Optimization",
-    investment: "$399",
-    description: "Training sessions for your team and workflow optimization",
-    iconColor: "text-palette-orange-600",
   },
   {
     id: "performance-management",
     icon: TrendingUp,
     title: "Performance Management",
     investment: "$699",
-    description: "Goal setting, review system",
+    description: "Set up systems for employee performance tracking, reviews, and goal setting to foster growth.",
     iconColor: "text-palette-blue-600",
   },
   {
@@ -292,11 +244,11 @@ const individualServicesData = [
     iconColor: "text-palette-purple-400",
   },
   {
-    id: "premium-support-package",
+    id: "weekly-support-package", // New service
     icon: Headphones,
-    title: "Premium Support Package",
+    title: "Weekly Support Package",
     investment: "$499/month",
-    description: "Weekly calls + priority assistance",
+    description: "Dedicated weekly calls and priority support for critical business needs.",
     iconColor: "text-palette-purple-500",
   },
 ];
@@ -318,9 +270,7 @@ const addOnsCategories = [
     icon: Mail,
     iconColor: "text-palette-orange-500",
     items: [
-      { posts: "Basic Email Setup", price: "$499", description: "One-time complete email automation system" },
-      { posts: "3 Campaigns/Month", price: "$599/month", description: "Management for 3 email campaigns monthly" },
-      { posts: "5 Campaigns/Month", price: "$699/month", description: "Management for 5 email campaigns monthly" },
+      { posts: "Email Marketing System Setup", price: "$899", description: "Advanced email marketing and communication strategies with automation." },
     ],
   },
   {
@@ -330,7 +280,6 @@ const addOnsCategories = [
     items: [
       { posts: "Monthly Insights", price: "$199/month", description: "Monthly performance reports" },
       { posts: "Monthly Recommendations", price: "$249/month", description: "Detailed insights + recommendations" },
-      { posts: "Real-time Analytics", price: "$399/month", description: "Real-time business intelligence" },
     ],
   },
   {
@@ -339,7 +288,7 @@ const addOnsCategories = [
     iconColor: "text-palette-purple-400",
     items: [
       { posts: "Monthly Emails", price: "$199/month", description: "Monthly strategy emails + support" },
-      { posts: "Weekly Calls", price: "$499/month", description: "Weekly calls + priority support" },
+      { posts: "Weekly Calls", price: "$499/month", description: "Weekly calls + priority support" }, // Updated to Weekly Calls
     ],
   },
   {
@@ -407,9 +356,7 @@ const addOnsCategories = [
     icon: Clock,
     iconColor: "text-palette-orange-500",
     items: [
-      { posts: "Basic Setup", price: "$149", description: "Initial setup of a time tracking tool for small teams" },
-      { posts: "Advanced Setup & Reporting", price: "$299", description: "Comprehensive setup with custom reports and integrations" },
-      { posts: "Team Training & Optimization", price: "$399", description: "Training sessions for your team and workflow optimization" },
+      { posts: "Time Tracking System Setup", price: "$299", description: "Comprehensive setup of a time tracking tool with custom reports and integrations." },
     ],
   },
 ];

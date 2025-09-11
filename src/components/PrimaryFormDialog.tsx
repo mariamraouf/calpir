@@ -17,14 +17,11 @@ const addOnsOptions = [
   { id: "socialMediaExpansion10Posts", label: "Social Media Expansion: 10 Posts/Month ($199/month)" },
   { id: "socialMediaExpansion20Posts", label: "Social Media Expansion: 20 Posts/Month ($349/month)" },
   { id: "socialMediaExpansion30Posts", label: "Social Media Expansion: 30 Posts/Month ($499/month)" },
-  { id: "basicEmailSetup", label: "Email Marketing: Basic Setup ($499)" },
-  { id: "emailMarketing3Campaigns", label: "Email Marketing: 3 Campaigns/Month ($599/month)" },
-  { id: "emailMarketing5Campaigns", label: "Email Marketing: 5 Campaigns/Month ($699/month)" },
+  { id: "emailMarketingSystemSetup", label: "Email Marketing System Setup ($899)" }, // Updated to match individual service
   { id: "analyticsMonthlyInsights", label: "Analytics Upgrades: Monthly Insights ($199/month)" },
   { id: "analyticsMonthlyRecommendations", label: "Analytics Upgrades: Monthly Recommendations ($249/month)" },
-  { id: "analyticsRealTime", label: "Analytics Upgrades: Real-time Analytics ($399/month)" },
   { id: "monthlySupportPackage", label: "Ongoing Support: Monthly Emails ($199/month)" },
-  { id: "premiumSupportPackage", label: "Ongoing Support: Weekly Calls ($499/month)" },
+  { id: "weeklySupportPackage", label: "Ongoing Support: Weekly Calls ($499/month)" }, // New add-on
   { id: "singleRoleRecruitment", label: "Staff Recruitment (Global): 1 Role ($450)" },
   { id: "multiRoleRecruitment", label: "Staff Recruitment (Global): 2 Roles ($700)" },
   { id: "comprehensiveRecruitment", label: "Staff Recruitment (Global): Unlimited (3 months) ($4,999)" },
@@ -35,9 +32,7 @@ const addOnsOptions = [
   { id: "basicTrainingSessions", label: "Training Sessions (Per Hour - $199)" },
   { id: "customAutomations", label: "Custom Automations (For 5+ Automations - $299)" },
   { id: "securityBasicsSetup", label: "Security Basics (One-time Setup - $299)" },
-  { id: "timeTrackingBasicSetup", label: "Time Tracking: Basic Setup ($149)" },
-  { id: "timeTrackingAdvancedSetup", label: "Time Tracking: Advanced Setup & Reporting ($299)" },
-  { id: "timeTrackingTeamTraining", label: "Time Tracking: Team Training & Optimization ($399)" },
+  { id: "timeTrackingSystemSetup", label: "Time Tracking System Setup ($299)" }, // Updated to match individual service
 ];
 
 const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) => {

@@ -20,16 +20,13 @@ const addOnsOptions = [
   { id: "socialMediaExpansion20Posts", label: "Social Media Expansion: 20 Posts/Month ($349/month)", serviceId: "social-media-expansion-20-posts" },
   { id: "socialMediaExpansion30Posts", label: "Social Media Expansion: 30 Posts/Month ($499/month)", serviceId: "social-media-expansion-30-posts" },
 
-  { id: "basicEmailSetup", label: "Email Marketing: Basic Setup ($499)", serviceId: "basic-email-setup" },
-  { id: "emailMarketing3Campaigns", label: "Email Marketing: 3 Campaigns/Month ($599/month)", serviceId: "email-marketing-3-campaigns" },
-  { id: "emailMarketing5Campaigns", label: "Email Marketing: 5 Campaigns/Month ($699/month)", serviceId: "email-marketing-5-campaigns" },
+  { id: "emailMarketingSystemSetup", label: "Email Marketing System Setup ($899)", serviceId: "email-marketing-system-setup" }, // Updated to match individual service
 
   { id: "analyticsMonthlyInsights", label: "Analytics Upgrades: Monthly Insights ($199/month)", serviceId: "analytics-monthly-insights" },
   { id: "analyticsMonthlyRecommendations", label: "Analytics Upgrades: Monthly Recommendations ($249/month)", serviceId: "analytics-monthly-recommendations" },
-  { id: "analyticsRealTime", label: "Analytics Upgrades: Real-time Analytics ($399/month)", serviceId: "analytics-real-time" },
 
   { id: "monthlySupportPackage", label: "Ongoing Support: Monthly Emails ($199/month)", serviceId: "monthly-support-package" },
-  { id: "premiumSupportPackage", label: "Ongoing Support: Weekly Calls ($499/month)", serviceId: "premium-support-package" },
+  { id: "weeklySupportPackage", label: "Ongoing Support: Weekly Calls ($499/month)", serviceId: "weekly-support-package" }, // New add-on
 
   { id: "singleRoleRecruitment", label: "Staff Recruitment (Global): 1 Role ($450)", serviceId: "single-role-recruitment" },
   { id: "multiRoleRecruitment", label: "Staff Recruitment (Global): 2 Roles ($700)", serviceId: "multi-role-recruitment" },
@@ -48,9 +45,7 @@ const addOnsOptions = [
 
   { id: "securityBasicsSetup", label: "Security Basics: One-time Setup ($299)", serviceId: "security-basics-setup" },
 
-  { id: "timeTrackingBasicSetup", label: "Time Tracking: Basic Setup ($149)", serviceId: "time-tracking-basic-setup" },
-  { id: "timeTrackingAdvancedSetup", label: "Time Tracking: Advanced Setup & Reporting ($299)", serviceId: "time-tracking-advanced-setup" },
-  { id: "timeTrackingTeamTraining", label: "Time Tracking: Team Training & Optimization ($399)", serviceId: "time-tracking-team-training" },
+  { id: "timeTrackingSystemSetup", label: "Time Tracking System Setup ($299)", serviceId: "time-tracking" }, // Updated to match individual service
 ];
 
 const industryOptions = [
