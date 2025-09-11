@@ -35,7 +35,17 @@ const Index = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteF
         </div>
         <div className="animate-fade-in-up delay-1000">
           <PricingPackagesSection />
-          {/* The "Package Comparison Table" button has been removed as requested. */}
+          <div className="text-center mt-12 animate-fade-in-up delay-1100">
+            <Link to="/pricing#complete-packages">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow dark:text-calpir-green-300 dark:border-calpir-green-300 dark:hover:bg-calpir-green-700"
+              >
+                Package Comparison Table <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
         </div>
         <div className="animate-fade-in-up delay-1200">
           <AddOnsSection />
