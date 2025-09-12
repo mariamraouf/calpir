@@ -243,12 +243,12 @@ const comparisonFeatures = [
 const PackageComparisonTable = () => {
   return (
     <div className="overflow-x-auto rounded-2xl border border-palette-blue-100 dark:border-gray-700 shadow-lg bg-white dark:bg-gray-800 animate-fade-in-up delay-1000">
-      <Table className="w-full text-left table-fixed">
+      <Table className="min-w-full text-left"> {/* Changed w-full table-fixed to min-w-full */}
         <TableHeader className="bg-gray-100 dark:bg-gray-900">
           <TableRow className="border-b border-palette-blue-100 dark:border-gray-700">
-            <TableHead className="min-w-[200px] p-4 text-lg font-semibold text-gray-900 dark:text-white">Features</TableHead>
+            <TableHead className="min-w-[180px] p-4 text-lg font-semibold text-gray-900 dark:text-white">Features</TableHead> {/* Adjusted min-w */}
             {packages.map((pkg, index) => (
-              <TableHead key={index} className="p-4 text-center text-lg font-semibold text-primary dark:text-calpir-green-300">
+              <TableHead key={index} className="min-w-[120px] p-4 text-center text-lg font-semibold text-primary dark:text-calpir-green-300"> {/* Added min-w */}
                 {pkg.name.replace(" Package", "")}
               </TableHead>
             ))}
@@ -257,9 +257,9 @@ const PackageComparisonTable = () => {
         <TableBody>
           {/* Price Row */}
           <TableRow className="border-b border-palette-blue-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-            <TableCell className="p-4 font-bold text-lg text-gray-900 dark:text-white">Price</TableCell>
+            <TableCell className="min-w-[180px] p-4 font-bold text-lg text-gray-900 dark:text-white">Price</TableCell> {/* Adjusted min-w */}
             {packages.map((pkg, pkgIndex) => (
-              <TableCell key={pkgIndex} className="p-4 text-center text-2xl font-extrabold text-primary dark:text-calpir-green-300">
+              <TableCell key={pkgIndex} className="min-w-[120px] p-4 text-center text-2xl font-extrabold text-primary dark:text-calpir-green-300"> {/* Added min-w */}
                 {pkg.price}
               </TableCell>
             ))}
@@ -274,15 +274,15 @@ const PackageComparisonTable = () => {
                 </TableCell>
               </TableRow>
               {categoryGroup.features.map((featureItem, featureIndex) => (
-                <TableRow key={`${categoryGroup.key}-${featureIndex}`} className="border-b border-palette-blue-100 dark:border-gray-700 last:border-b-0 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                  <TableCell className="p-4 font-medium text-gray-800 dark:text-gray-200">{featureItem.label}</TableCell>
+                <TableRow key={`${categoryGroup.key}-${featureIndex}`} className="border-b border-palette-blue-100 dark:border-gray-700 last:border-b-0 last:pb-0 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+                  <TableCell className="min-w-[180px] p-4 font-medium text-gray-800 dark:text-gray-200">{featureItem.label}</TableCell> {/* Adjusted min-w */}
                   {packages.map((pkg, pkgIndex) => {
                     // Access the feature value from the nested package structure
                     const categoryData = pkg[categoryGroup.key as keyof Package];
                     const featureValue = categoryData ? (categoryData as any)[featureItem.key] : null;
 
                     return (
-                      <TableCell key={pkgIndex} className="p-4 text-center text-gray-700 dark:text-gray-300">
+                      <TableCell key={pkgIndex} className="min-w-[120px] p-4 text-center text-gray-700 dark:text-gray-300"> {/* Added min-w */}
                         {featureValue === true || featureValue === "✓" ? (
                           <div className="flex items-center justify-center">
                             <CheckCircle className="h-5 w-5 text-calpir-green-500" />
@@ -307,9 +307,9 @@ const PackageComparisonTable = () => {
 
           {/* Buttons Row */}
           <TableRow className="bg-gray-100 dark:bg-gray-900 border-t border-palette-blue-100 dark:border-gray-700">
-            <TableCell className="p-4"></TableCell>
+            <TableCell className="min-w-[180px] p-4"></TableCell> {/* Adjusted min-w */}
             {packages.map((pkg, pkgIndex) => (
-              <TableCell key={pkgIndex} className="p-4 text-center">
+              <TableCell key={pkgIndex} className="min-w-[120px] p-4 text-center"> {/* Added min-w */}
                 <Link to="/build-my-business">
                   <Button
                     size="lg"
