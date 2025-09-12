@@ -40,6 +40,20 @@ const servicesData = [
     iconColor: "text-palette-blue-400",
   },
   {
+    id: "ecommerce-functionality", // New service
+    icon: DollarSign,
+    title: "E-commerce Functionality",
+    investment: "$499",
+    description: "Set up a fully functional online store to sell your products or services.",
+    details: [
+      "Product catalog setup and management",
+      "Secure payment gateway integration",
+      "Shopping cart and checkout optimization",
+      "Inventory management features",
+    ],
+    iconColor: "text-calpir-green-700",
+  },
+  {
     id: "seo-optimization",
     icon: Globe,
     title: "SEO Optimization",
@@ -331,6 +345,20 @@ const servicesData = [
       "Proactive system monitoring and optimization",
     ],
     iconColor: "text-palette-purple-500",
+  },
+  {
+    id: "security-basics", // New service
+    icon: Shield,
+    title: "Security Basics Setup",
+    investment: "$299",
+    description: "Implement fundamental security measures to protect your business data and operations.",
+    details: [
+      "Password manager setup and training",
+      "Two-factor authentication (2FA) implementation",
+      "Basic data backup solutions",
+      "Security best practices guidance",
+    ],
+    iconColor: "text-palette-red-500",
   },
 ];
 
