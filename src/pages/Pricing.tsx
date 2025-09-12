@@ -462,10 +462,10 @@ const Pricing = () => {
           ]}
         />
 
-        {/* Navigation Buttons - Now Sticky */}
-        <div className="sticky top-[80px] z-40 w-full bg-background dark:bg-gray-950 py-4 shadow-sm">
-          <div className="container flex flex-col sm:flex-row items-center justify-center rounded-full bg-white dark:bg-gray-800 p-1 shadow-xl border border-gray-200 dark:border-gray-700 gap-2 sm:gap-1"> {/* Changed to flex-col sm:flex-row and adjusted gap */}
-            <a href="#complete-packages" className="w-full sm:w-auto"> {/* Added w-full sm:w-auto */}
+        {/* Navigation Buttons - Now Sticky on MD and up */}
+        <div className="md:sticky md:top-[80px] z-40 w-full bg-background dark:bg-gray-950 py-4 shadow-sm">
+          <div className="container flex flex-col sm:flex-row items-center justify-center rounded-full bg-white dark:bg-gray-800 p-1 shadow-xl border border-gray-200 dark:border-gray-700 gap-2 sm:gap-1">
+            <a href="#complete-packages" className="w-full sm:w-auto">
               <Button
                 className="w-full text-lg px-6 py-2 rounded-full transition-colors duration-200
                   bg-calpir-green-50 dark:bg-calpir-green-50
@@ -476,7 +476,7 @@ const Pricing = () => {
                 Complete Packages
               </Button>
             </a>
-            <a href="#package-add-ons" className="w-full sm:w-auto"> {/* Added w-full sm:w-auto */}
+            <a href="#package-add-ons" className="w-full sm:w-auto">
               <Button
                 className="w-full text-lg px-6 py-2 rounded-full transition-colors duration-200
                   bg-calpir-green-50 dark:bg-calpir-green-50
@@ -487,7 +487,7 @@ const Pricing = () => {
                 Package Add-ons
               </Button>
             </a>
-            <a href="#individual-services" className="w-full sm:w-auto"> {/* Added w-full sm:w-auto */}
+            <a href="#individual-services" className="w-full sm:w-auto">
               <Button
                 className="w-full text-lg px-6 py-2 rounded-full transition-colors duration-200
                   bg-calpir-green-50 dark:bg-calpir-green-50
@@ -498,7 +498,7 @@ const Pricing = () => {
                 Individual Services
               </Button>
             </a>
-            <a href="#custom-solutions" className="w-full sm:w-auto"> {/* Added w-full sm:w-auto */}
+            <a href="#custom-solutions" className="w-full sm:w-auto">
               <Button
                 className="w-full text-lg px-6 py-2 rounded-full transition-colors duration-200
                   bg-calpir-green-50 dark:bg-calpir-green-50

@@ -241,7 +241,8 @@ const comparisonFeatures = [
 ];
 
 const PackageComparisonTable = () => {
-  const renderFeatureValue = (value: string | boolean | null) => {
+  // This render function is primarily for the desktop table cells
+  const renderDesktopFeatureValue = (value: string | boolean | null) => {
     if (value === true || value === "✓") {
       return (
         <div className="flex items-center justify-center md:justify-start">
@@ -255,9 +256,8 @@ const PackageComparisonTable = () => {
         </div>
       );
     } else {
-      // For string values, only display the text, no redundant checkmark
       return (
-        <span className="text-sm text-gray-800 dark:text-gray-200 text-right sm:text-left">
+        <span className="text-sm text-gray-800 dark:text-gray-200 text-center md:text-left">
           {value}
         </span>
       );
@@ -306,7 +306,7 @@ const PackageComparisonTable = () => {
                       const featureValue = categoryData ? (categoryData as any)[featureItem.key] : null;
                       return (
                         <TableCell key={pkgIndex} className="min-w-[120px] p-4 text-center text-gray-700 dark:text-gray-300">
-                          {renderFeatureValue(featureValue)}
+                          {renderDesktopFeatureValue(featureValue)}
                         </TableCell>
                       );
                     })}
@@ -359,9 +359,15 @@ const PackageComparisonTable = () => {
                     const categoryData = pkg[categoryGroup.key as keyof Package];
                     const featureValue = categoryData ? (categoryData as any)[featureItem.key] : null;
                     return (
-                      <li key={featureIndex} className="flex flex-col items-start text-gray-700 dark:text-gray-300"> {/* Changed to flex-col items-start */}
-                        <span className="font-medium text-base text-gray-900 dark:text-white mb-1">{featureItem.label}:</span> {/* Adjusted font size and added margin */}
-                        {renderFeatureValue(featureValue)}
+                      <li key={featureIndex} className="flex items-center justify-between text-gray-700 dark:text-gray-300 py-1">
+                        <span className="font-medium text-gray-900 dark:text-white">{featureItem.label}:</span>
+                        {featureValue === true || featureValue === "✓" ? (
+                          <CheckCircle className="h-5 w-5 text-calpir-green-500 flex-shrink-0 ml-2" />
+                        ) : featureValue === false || featureValue === "" || featureValue === null ? (
+                          <XCircle className="h-5 w-5 text-palette-red-500 flex-shrink-0 ml-2" />
+                        ) : (
+                          <span className="text-sm text-gray-800 dark:text-gray-200 text-right flex-shrink-0 ml-2">{featureValue}</span>
+                        )}
                       </li>
                     );
                   })}
