@@ -464,53 +464,51 @@ const Pricing = () => {
 
         {/* Navigation Buttons - Now Sticky */}
         <div className="sticky top-[80px] z-40 w-full bg-background dark:bg-gray-950 py-4 shadow-sm">
-          <div className="container flex justify-center animate-fade-in-up delay-300">
-            <div className="inline-flex items-center justify-center rounded-full bg-white dark:bg-gray-800 p-1 shadow-xl border border-gray-200 dark:border-gray-700 gap-1">
-              <a href="#complete-packages">
-                <Button
-                  className="text-lg px-6 py-2 rounded-full transition-colors duration-200
+          <div className="container flex flex-col sm:flex-row items-center justify-center rounded-full bg-white dark:bg-gray-800 p-1 shadow-xl border border-gray-200 dark:border-gray-700 gap-2 sm:gap-1"> {/* Changed to flex-col sm:flex-row and adjusted gap */}
+            <a href="#complete-packages" className="w-full sm:w-auto"> {/* Added w-full sm:w-auto */}
+              <Button
+                className="w-full text-lg px-6 py-2 rounded-full transition-colors duration-200
                   bg-calpir-green-50 dark:bg-calpir-green-50
                   text-primary dark:text-primary
                   hover:bg-calpir-green-100 dark:hover:bg-calpir-green-200
                   data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
-                >
-                  Complete Packages
-                </Button>
-              </a>
-              <a href="#package-add-ons">
-                <Button
-                  className="text-lg px-6 py-2 rounded-full transition-colors duration-200
+              >
+                Complete Packages
+              </Button>
+            </a>
+            <a href="#package-add-ons" className="w-full sm:w-auto"> {/* Added w-full sm:w-auto */}
+              <Button
+                className="w-full text-lg px-6 py-2 rounded-full transition-colors duration-200
                   bg-calpir-green-50 dark:bg-calpir-green-50
                   text-primary dark:text-primary
                   hover:bg-calpir-green-100 dark:hover:bg-calpir-green-200
                   data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
-                >
-                  Package Add-ons
-                </Button>
-              </a>
-              <a href="#individual-services">
-                <Button
-                  className="text-lg px-6 py-2 rounded-full transition-colors duration-200
+              >
+                Package Add-ons
+              </Button>
+            </a>
+            <a href="#individual-services" className="w-full sm:w-auto"> {/* Added w-full sm:w-auto */}
+              <Button
+                className="w-full text-lg px-6 py-2 rounded-full transition-colors duration-200
                   bg-calpir-green-50 dark:bg-calpir-green-50
                   text-primary dark:text-primary
                   hover:bg-calpir-green-100 dark:hover:bg-calpir-green-200
                   data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
-                >
-                  Individual Services
-                </Button>
-              </a>
-              <a href="#custom-solutions">
-                <Button
-                  className="text-lg px-6 py-2 rounded-full transition-colors duration-200
+              >
+                Individual Services
+              </Button>
+            </a>
+            <a href="#custom-solutions" className="w-full sm:w-auto"> {/* Added w-full sm:w-auto */}
+              <Button
+                className="w-full text-lg px-6 py-2 rounded-full transition-colors duration-200
                   bg-calpir-green-50 dark:bg-calpir-green-50
                   text-primary dark:text-primary
                   hover:bg-calpir-green-100 dark:hover:bg-calpir-green-200
                   data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md"
-                >
-                  Custom Solutions
-                </Button>
-              </a>
-            </div>
+              >
+                Custom Solutions
+              </Button>
+            </a>
           </div>
         </div>
         {/* Add a div to provide spacing below the sticky nav when it's not sticking */}
@@ -538,7 +536,7 @@ const Pricing = () => {
                 </div>
                 <div className="space-y-6">
                   {category.items.map((item, itemIndex) => (
-                    <div key={itemIndex} className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${1.2 + catIndex * 0.15 + itemIndex * 0.05}s` }}>
+                    <div key={itemIndex} className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${1.2 + catIndex * 0.15 + itemIndex * 0.05}s` }}>
                       <div className="text-left mb-2 sm:mb-0 sm:mr-4">
                         <p className="text-lg font-semibold text-gray-900 dark:text-white">{item.posts}</p>
                         <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
@@ -564,11 +562,11 @@ const Pricing = () => {
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {servicesData.map((service, index) => (
-              <div key={service.id} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 animate-slide-in-left" style={{ animationDelay: `${0.7 + index * 0.05}s` }}>
+              <section key={service.id} id={service.id} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 animate-slide-in-left" style={{ animationDelay: `${0.7 + index * 0.05}s` }}>
                 <div className="flex items-center mb-6">
                   <service.icon className={`h-12 w-12 mr-4 flex-shrink-0 ${service.iconColor}`} />
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{service.title}</h3>
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{service.title}</h2>
                     <p className="text-md text-gray-600 dark:text-gray-400">{service.description}</p>
                   </div>
                 </div>
@@ -577,7 +575,7 @@ const Pricing = () => {
                 </div>
                 <ul className="list-none space-y-3 text-left mb-8">
                   {service.details.map((detail, detailIndex) => (
-                    <li key={detailIndex} className="flex items-start text-gray-700 dark:text-gray-300">
+                    <li key={detailIndex} className="flex items-start text-gray-700 dark:text-gray-300 animate-fade-in-up" style={{ animationDelay: `${0.4 + index * 0.1 + detailIndex * 0.05}s` }}>
                       <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                       <span>{detail}</span>
                     </li>
@@ -593,7 +591,7 @@ const Pricing = () => {
                     </Button>
                   </a>
                 </div>
-              </div>
+              </section>
             ))}
           </div>
         </section>

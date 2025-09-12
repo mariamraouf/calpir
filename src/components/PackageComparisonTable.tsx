@@ -255,11 +255,11 @@ const PackageComparisonTable = () => {
         </div>
       );
     } else {
+      // For string values, only display the text, no redundant checkmark
       return (
-        <div className="flex items-center justify-center md:justify-start space-x-2">
-          <CheckCircle className="h-5 w-5 text-calpir-green-500" />
-          <span className="text-sm text-gray-800 dark:text-gray-200">{value}</span>
-        </div>
+        <span className="text-sm text-gray-800 dark:text-gray-200 text-right sm:text-left">
+          {value}
+        </span>
       );
     }
   };
@@ -359,8 +359,8 @@ const PackageComparisonTable = () => {
                     const categoryData = pkg[categoryGroup.key as keyof Package];
                     const featureValue = categoryData ? (categoryData as any)[featureItem.key] : null;
                     return (
-                      <li key={featureIndex} className="flex items-center justify-between text-gray-700 dark:text-gray-300">
-                        <span className="font-medium">{featureItem.label}:</span>
+                      <li key={featureIndex} className="flex flex-col items-start text-gray-700 dark:text-gray-300"> {/* Changed to flex-col items-start */}
+                        <span className="font-medium text-base text-gray-900 dark:text-white mb-1">{featureItem.label}:</span> {/* Adjusted font size and added margin */}
                         {renderFeatureValue(featureValue)}
                       </li>
                     );
