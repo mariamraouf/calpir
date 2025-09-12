@@ -3,7 +3,6 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { MadeWithDyad } from "@/components/made-with-dyad";
 import { CheckCircle } from "lucide-react";
 import PageHeader from "@/components/PageHeader"; // Import PageHeader
 
@@ -71,7 +70,6 @@ const About = () => {
         </section>
       </main>
       <Footer />
-      <MadeWithDyad />
     </div>
   );
 };

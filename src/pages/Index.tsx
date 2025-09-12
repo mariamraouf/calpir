@@ -10,7 +10,6 @@ import AddOnsSection from "@/components/AddOnsSection";
 import PricingPackagesSection from "@/components/PricingPackagesSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
-import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Button } from "@/components/ui/button"; // Import Button
 import { Link } from "react-router-dom"; // Import Link
 import { ArrowRight } from "lucide-react"; // Import ArrowRight icon
@@ -55,7 +54,6 @@ const Index = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteF
         </div>
       </main>
       <Footer />
-      <MadeWithDyad />
     </div>
   );
 };

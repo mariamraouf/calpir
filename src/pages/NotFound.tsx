@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { MadeWithDyad } from "@/components/made-with-dyad";
 import PageHeader from "@/components/PageHeader"; // Import PageHeader
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -35,7 +34,6 @@ const NotFound = () => {
         {/* The rest of the content can be removed or kept if needed below the header */}
       </main>
       <Footer />
-      <MadeWithDyad />
     </div>
   );
 };

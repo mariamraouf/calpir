@@ -21,11 +21,14 @@ const HeroSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustom
       </video>
 
       <div className="container relative z-10 text-center">
-        <img
+        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '10px'}}>
+          <img
           src="/calpir-logo.png"
           alt="Calpir Logo"
           className="h-24 w-24 mx-auto mb-8 animate-bounce-slow"
         />
+        <p style={{fontSize: '5rem', fontWeight: 'bold'}}>Calpir</p>
+        </div>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 animate-fade-in-up">
           Launch Your Business in 7 Days
         </h1>
