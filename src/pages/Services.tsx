@@ -385,7 +385,7 @@ const Services = () => {
           </div>
         </section>
 
-        <section className="mt-20 text-center p-8 rounded-2xl shadow-xl animate-fade-in-up delay-1500
+        <section className="mt-20 mb-20 text-center p-8 rounded-2xl shadow-xl animate-fade-in-up delay-1500
                     bg-gradient-to-br from-palette-blue-50 to-calpir-green-50 dark:from-palette-blue-950 dark:to-calpir-green-950 max-w-4xl mx-auto">
           <Puzzle className="h-16 w-16 mx-auto mb-6 text-primary dark:text-calpir-green-300 animate-bounce-slow" />
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
