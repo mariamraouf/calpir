@@ -11,23 +11,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
-
-// Data for add-ons (simplified for form, full list is in AddOnsSection)
-const addOnsOptions = [
-  { id: "socialMedia10Posts", label: "Social Media Content: 10 Posts/Month ($199)" },
-  { id: "socialMedia20Posts", label: "Social Media Content: 20 Posts/Month ($349)" },
-  { id: "socialMedia30Posts", label: "Social Media Content: 30 Posts/Month ($499)" },
-  { id: "emailMarketingSetup", label: "Email Systems & Automation Setup ($499)" },
-  { id: "analyticsUpgrades", label: "Analytics Upgrades (e.g., Monthly Insights - $199)" },
-  { id: "ongoingSupport", label: "Ongoing Support (e.g., Monthly Emails - $199)" },
-  { id: "staffRecruitment", label: "Staff Recruitment (Global) (e.g., 1 Role - $449)" },
-  { id: "extraIntegrations", label: "Extra Integrations (Per Integration - $199)" },
-  { id: "websiteExpansions", label: "Website Expansions (e.g., Per Page - $199)" },
-  { id: "hrCustomizations", label: "HR Customizations (One-time Setup - $299)" },
-  { id: "trainingSessions", label: "Training Sessions (Per Hour - $199)" },
-  { id: "customAutomations", label: "Custom Automations (For 5+ Automations - $299)" },
-  { id: "securityBasics", label: "Security Basics (One-time Setup - $299)" },
-];
+import { addOnsOptions } from "@/data/addons"; // Import from central file
 
 const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
   const [formData, setFormData] = useState({
@@ -102,6 +86,18 @@ const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) =>
   const showAddOnRequirements = formData.addOnInterests.length > 0;
   const showOtherIndustryInput = formData.industry === "Other";
   const showOtherPrimaryGoalInput = formData.primaryGoals.includes("Other");
+
+  // Group add-ons by category and subcategory
+  const groupedAddOns = addOnsOptions.reduce((acc, addOn) => {
+    if (!acc[addOn.category]) {
+      acc[addOn.category] = {};
+    }
+    if (!acc[addOn.category][addOn.subcategory]) {
+      acc[addOn.category][addOn.subcategory] = [];
+    }
+    acc[addOn.category][addOn.subcategory].push(addOn);
+    return acc;
+  }, {} as Record<string, Record<string, typeof addOnsOptions>>);
 
   return (
     <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
@@ -230,18 +226,36 @@ const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) =>
         {/* Add-On Interests */}
         <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">4. Add-On Interests (Optional)</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {addOnsOptions.map((addOn) => (
-              <div key={addOn.id} className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                <Checkbox
-                  id={`addOn-${addOn.id}`}
-                  checked={formData.addOnInterests.includes(addOn.id)}
-                  onCheckedChange={(checked) => handleCheckboxChange(`addOn-${addOn.id}`, checked as boolean)}
-                />
-                <Label htmlFor={`addOn-${addOn.id}`}>{addOn.label}</Label>
-              </div>
-            ))}
-          </div>
+          {Object.entries(groupedAddOns).map(([category, subcategories]) => (
+            <div key={category} className="space-y-4 pl-4 border-l-2 border-primary/50 dark:border-calpir-green-300/50">
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{category}</h4>
+              {Object.entries(subcategories).map(([subcategory, addOns]) => (
+                <div key={subcategory} className="space-y-2 pl-4">
+                  <h5 className="text-md font-medium text-gray-700 dark:text-gray-300">{subcategory}</h5>
+                  <div className="grid grid-cols-1 gap-4">
+                    {addOns.map((addOn) => (
+                      <div key={addOn.id} className="flex items-start space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                        <Checkbox
+                          id={`addOn-${addOn.id}`}
+                          checked={formData.addOnInterests.includes(addOn.id)}
+                          onCheckedChange={(checked) => handleCheckboxChange(`addOn-${addOn.id}`, checked as boolean)}
+                          className="mt-1"
+                        />
+                        <Label htmlFor={`addOn-${addOn.id}`} className="flex flex-col flex-grow cursor-pointer">
+                          <span className="font-medium text-gray-900 dark:text-white">{addOn.label}</span>
+                          {addOn.serviceId && (
+                            <Link to={`/services#${addOn.serviceId}`} className="text-primary hover:underline text-sm" target="_blank" rel="noopener noreferrer">
+                              (Learn More)
+                            </Link>
+                          )}
+                        </Label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
           {showAddOnRequirements && (
             <div className="space-y-2 mt-4">
               <Label htmlFor="addOnRequirements" className="mt-4">Please describe any specific requirements for these add-ons (e.g., preferred platforms, specific needs).</Label>
