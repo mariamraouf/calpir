@@ -135,6 +135,9 @@ const IndividualServiceFormPage = () => {
                               <Label htmlFor={`service-${service.id}`} className="flex flex-col flex-grow cursor-pointer">
                                 <span className="font-medium text-gray-900 dark:text-white">{service.title}</span>
                                 <span className="text-sm text-gray-600 dark:text-gray-400">{service.investment}</span>
+                                <Link to={`/services#${service.id}`} className="text-primary hover:underline text-xs mt-1" target="_blank" rel="noopener noreferrer">
+                                  (Learn More)
+                                </Link>
                               </Label>
                             </div>
                           ))}
