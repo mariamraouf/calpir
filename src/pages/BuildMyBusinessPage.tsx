@@ -102,6 +102,9 @@ const BuildMyBusinessPage = () => {
     preferredPlatforms: "",
     systemPriorities: [] as string[],
     additionalDetails: "",
+    timeline: "", // Added missing property
+    contactMethod: "", // Added missing property
+    preferredTime: "", // Added missing property
     consent: false,
   });
 
@@ -136,7 +139,7 @@ const BuildMyBusinessPage = () => {
       businessType: "", industry: "", otherIndustry: "", businessStage: "", businessOperationModel: "",
       packagePreference: "", budgetRange: "", addOnInterests: [], addOnRequirements: "",
       primaryGoals: [], otherPrimaryGoal: "", currentSystems: "", preferredPlatforms: "", systemPriorities: [],
-      additionalDetails: "", consent: false,
+      additionalDetails: "", timeline: "", contactMethod: "", preferredTime: "", consent: false,
     });
   };
 
