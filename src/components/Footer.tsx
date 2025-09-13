@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Mail, Linkedin, Instagram } from "lucide-react";
+import { Mail } from "lucide-react"; // Removed Linkedin, Instagram
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
@@ -22,14 +22,7 @@ const Footer = () => {
             <p className="flex items-center">
               <Mail className="h-4 w-4 mr-2 text-primary" /> <a href="mailto:contact@calpir.com" className="hover:text-white transition-colors">contact@calpir.com</a>
             </p>
-            <div className="flex items-center space-x-4 mt-4">
-              <a href="https://www.linkedin.com/company/calpir" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="https://www.instagram.com/calpir" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-            </div>
+            {/* Removed social media icons */}
           </div>
         </div>
 
@@ -41,8 +34,8 @@ const Footer = () => {
             <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             <li><Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
             <li><Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link></li>
-            <li><Link to="/payment-terms" className="hover:text-white transition-colors">Payment Terms</Link></li> {/* New link */}
-            <li><Link to="/faq" className="hover:text-white transition-colors">FAQ</Link></li> {/* New link */}
+            {/* Removed Payment Terms link */}
+            <li><Link to="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
           </ul>
         </div>
 

@@ -36,12 +36,8 @@ const faqs = {
     },
     {
       question: "Do you offer payment plans?",
-      answer: (
-        <>
-          Yes, we typically require 50% upfront and 50% upon completion. For Ultimate packages, we offer 3-month payment plans. You can find more details on our{" "}
-          <Link to="/payment-terms" className="text-primary hover:underline">Payment Terms page</Link>.
-        </>
-      ),
+      answer:
+        "Yes, we typically require 50% upfront and 50% upon completion. For Ultimate packages, we offer 3-month payment plans. Specific terms will be detailed in your service agreement.",
     },
     {
       question: "What if I only need 2-3 services instead of a full package?",

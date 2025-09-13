@@ -15,8 +15,8 @@ import Platforms from "./pages/Platforms";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import IndividualServiceFormPage from "./pages/IndividualServiceFormPage";
-import PaymentTerms from "./pages/PaymentTerms"; // Import new page
-import FAQ from "./pages/FAQ"; // Import new page
+// import PaymentTerms from "./pages/PaymentTerms"; // Removed import
+import FAQ from "./pages/FAQ";
 import ScrollToTop from "./components/ScrollToTop";
 import React from "react";
 
@@ -42,8 +42,8 @@ const App = () => {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/individual-service-inquiry" element={<IndividualServiceFormPage />} />
-            <Route path="/payment-terms" element={<PaymentTerms />} /> {/* New route */}
-            <Route path="/faq" element={<FAQ />} /> {/* New route */}
+            {/* Removed PaymentTerms route */}
+            <Route path="/faq" element={<FAQ />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
