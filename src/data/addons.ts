@@ -5,6 +5,7 @@ export const addOnsOptions = [
   { category: "Digital Foundation Services", id: "website-expansions-per-page", label: "Website Expansions: Per Page ($199)", serviceId: "additional-website-pages" },
   { category: "Digital Foundation Services", id: "website-expansions-ecommerce", label: "Website Expansions: E-commerce Functionality ($499)", serviceId: "ecommerce-functionality" },
   { category: "Digital Foundation Services", id: "seo-optimization-addon", label: "SEO Optimization: One-time Setup ($499)", serviceId: "seo-optimization" },
+  { category: "Digital Foundation Services", id: "design-branding-package-addon", label: "Design & Branding Package ($999)", serviceId: "design-branding" }, // NEW ADD-ON
 
   // Social Media & Marketing (now a top-level category)
   { category: "Social Media & Marketing", id: "social-media-5-posts", label: "Social Media Content: 5 Posts/Month ($199)", serviceId: "social-media-setup" },

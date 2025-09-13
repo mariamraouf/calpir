@@ -31,7 +31,6 @@ const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) =>
     otherPrimaryGoal: "",
     timeline: "",
     additionalDetails: "",
-    // Removed contactMethod and preferredTime
     consent: false,
   });
 
@@ -65,7 +64,7 @@ const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) =>
     setFormData({
       fullName: "", email: "", phoneNumber: "", companyName: "", businessType: "", industry: "", otherIndustry: "",
       businessStage: "", packagePreference: "", budgetRange: "", addOnInterests: [], addOnRequirements: "",
-      primaryGoals: [], otherPrimaryGoal: "", timeline: "", additionalDetails: "", // Removed contactMethod and preferredTime
+      primaryGoals: [], otherPrimaryGoal: "", timeline: "", additionalDetails: "",
       consent: false,
     });
   };
@@ -82,6 +81,18 @@ const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) =>
     acc[addOn.category].push(addOn);
     return acc;
   }, {} as Record<string, typeof addOnsOptions>);
+
+  const projectGoalsOptions = [
+    "Establish Online Presence",
+    "Improve Operational Efficiency",
+    "Boost Marketing & Sales",
+    "Streamline HR & Talent",
+    "Enhance Data & Analytics",
+    "Launch New Product/Service",
+    "Expand Market Reach",
+    "Reduce Costs",
+    "Other",
+  ];
 
   return (
     <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
@@ -249,70 +260,16 @@ const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) =>
           <div className="space-y-2">
             <Label>Primary Goal(s) <span className="text-red-500">*</span></Label>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                <Checkbox
-                  id="goal-website-development"
-                  checked={formData.primaryGoals.includes("Website Development")}
-                  onCheckedChange={(checked) => handleCheckboxChange("Website Development", checked as boolean, "primaryGoals")}
-                />
-                <Label htmlFor="goal-website-development">Website Development</Label>
-              </div>
-              <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                <Checkbox
-                  id="goal-brand-identity"
-                  checked={formData.primaryGoals.includes("Design & Branding Package")}
-                  onCheckedChange={(checked) => handleCheckboxChange("Design & Branding Package", checked as boolean, "primaryGoals")}
-                />
-                <Label htmlFor="goal-brand-identity">Design & Branding Package</Label>
-              </div>
-              <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                <Checkbox
-                  id="goal-marketing-systems"
-                  checked={formData.primaryGoals.includes("Marketing Systems")}
-                  onCheckedChange={(checked) => handleCheckboxChange("Marketing Systems", checked as boolean, "primaryGoals")}
-                />
-                <Label htmlFor="goal-marketing-systems">Marketing Systems</Label>
-              </div>
-              <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                <Checkbox
-                  id="goal-project-management-setup"
-                  checked={formData.primaryGoals.includes("Project Management Setup")}
-                  onCheckedChange={(checked) => handleCheckboxChange("Project Management Setup", checked as boolean, "primaryGoals")}
-                />
-                <Label htmlFor="goal-project-management-setup">Project Management Setup</Label>
-              </div>
-              <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                <Checkbox
-                  id="goal-hr-legal-compliance"
-                  checked={formData.primaryGoals.includes("HR: Legal & Compliance")}
-                  onCheckedChange={(checked) => handleCheckboxChange("HR: Legal & Compliance", checked as boolean, "primaryGoals")}
-                />
-                <Label htmlFor="goal-hr-legal-compliance">HR: Legal & Compliance</Label>
-              </div>
-              <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                <Checkbox
-                  id="goal-application-tracking-system" // UPDATED ID
-                  checked={formData.primaryGoals.includes("HR: Application Tracking System")} // UPDATED LABEL
-                  onCheckedChange={(checked) => handleCheckboxChange("HR: Application Tracking System", checked as boolean, "primaryGoals")} // UPDATED LABEL
-                />
-                <Label htmlFor="goal-application-tracking-system">HR: Application Tracking System</Label> {/* UPDATED LABEL */}
-              </div>
-              <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                <Checkbox
-                  id="goal-hr-operations-payroll"
-                  checked={formData.primaryGoals.includes("HR: Operations & Payroll")}
-                  onCheckedChange={(checked) => handleCheckboxChange("HR: Operations & Payroll", checked as boolean, "primaryGoals")}
-                />
-                <Label htmlFor="goal-hr-operations-payroll">HR: Operations & Payroll</Label>
-              </div>
-              <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                <Checkbox
-                  id="goal-other"
-                  checked={formData.primaryGoals.includes("Other")}
-                  onCheckedChange={(checked) => handleCheckboxChange("Other", checked as boolean, "primaryGoals")}
-                />
-                <Label htmlFor="goal-other">Other</Label>
-              </div>
+              {projectGoalsOptions.map((goal) => (
+                <div key={goal} className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                  <Checkbox
+                    id={`goal-${goal.replace(/\s/g, '-').toLowerCase()}`}
+                    checked={formData.primaryGoals.includes(goal)}
+                    onCheckedChange={(checked) => handleCheckboxChange(goal, checked as boolean, "primaryGoals")}
+                  />
+                  <Label htmlFor={`goal-${goal.replace(/\s/g, '-').toLowerCase()}`}>{goal}</Label>
+                </div>
+              ))}
             </div>
           </div>
           {showOtherPrimaryGoalInput && (
@@ -340,8 +297,6 @@ const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) =>
             <Textarea id="additionalDetails" value={formData.additionalDetails} onChange={(e) => handleChange("additionalDetails", e.target.value)} rows={4} className="rounded-2xl" />
           </div>
         </div>
-
-        {/* Removed Consultation Preference section */}
 
         {/* Submission and Consent */}
         <div className="flex items-center space-x-2 mt-4">
