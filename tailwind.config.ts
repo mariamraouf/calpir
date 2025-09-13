@@ -20,7 +20,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Avro", ...fontFamily.sans], // Set Avro as the primary sans-serif font
+        sans: ["Inter", ...fontFamily.sans],
       },
       colors: {
         border: "hsl(var(--border))",
