@@ -1,99 +1,104 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom";
-import { Mail, Linkedin, Instagram } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Mail, Phone, MapPin } from "lucide-react"; // Removed Phone, MapPin as per request to remove address
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const navItems = [
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "About Us", href: "/about" },
+    { name: "Contact", href: "/contact" },
+  ];
+
+  const services = [
+    { name: "Website Building", href: "/services#website-building" },
+    { name: "Marketing", href: "/services#marketing" },
+    { name: "Operations", href: "/services#operations" },
+    { name: "HR & Legal", href: "/services#hr-legal" },
+    { name: "Design & Branding", href: "/services#design-branding" },
+  ];
+
   return (
-    <footer className="bg-foreground dark:bg-gray-950 text-gray-300 py-16 md:py-20">
-      <div className="container grid grid-cols-1 md:grid-cols-3 gap-12">
+    <footer className="bg-gray-800 text-gray-300 py-10">
+      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Company Info */}
-        <div className="col-span-full md:col-span-1 animate-fade-in-up">
-          <Link to="/" className="flex items-center space-x-2 font-bold text-2xl text-white mb-4 transition-transform duration-300 hover:scale-110">
-            <img src="/calpir-logo.png" alt="Calpir Logo" className="h-8 w-8" />
-            <span className="text-white">Calpir</span>
+        <div className="space-y-4">
+          <Link href="/" className="flex items-center space-x-2">
+            <img src="/logo-white.png" alt="Calpir Logo" className="h-8" />
+            <span className="text-2xl font-bold text-white">Calpir</span>
           </Link>
-          <p className="text-sm leading-relaxed mb-4">
-            Your partner in launching and scaling successful businesses with strategic operations and proven frameworks.
+          <p className="text-sm">
+            Your partner in building and scaling your business with expert solutions.
           </p>
-          <div className="space-y-2 text-sm">
-            <p className="flex items-center">
-              <Mail className="h-4 w-4 mr-2 text-primary" /> <a href="mailto:hello@calpir.com" className="hover:text-white transition-colors">hello@calpir.com</a>
-            </p>
-            <div className="flex items-center space-x-4 mt-4">
-              <a href="https://www.linkedin.com/company/calpir" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="https://www.instagram.com/calpir" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-            </div>
+          <div className="flex items-center space-x-2">
+            <Mail className="h-5 w-5" />
+            <a href="mailto:contact@calpir.com" className="hover:text-white">
+              contact@calpir.com
+            </a>
           </div>
+          {/* Removed Phone and Address as per request */}
         </div>
 
-        {/* Company Links */}
-        <div className="animate-fade-in-up delay-300">
-          <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
-          <ul className="space-y-2 text-sm">
-            <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
-            <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
-            <li><Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-            <li><Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link></li>
+        {/* Navigation */}
+        <div>
+          <h3 className="text-lg font-semibold text-white mb-4">Navigation</h3>
+          <ul className="space-y-2">
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <Link href={item.href} className="hover:text-white transition-colors duration-200">
+                  {item.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Quick Actions / Forms */}
-        <div className="animate-fade-in-up delay-400">
-          <h4 className="text-lg font-semibold text-white mb-4">Quick Actions</h4>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <Link to="/build-my-business">
-                <Button
-                  variant="link"
-                  className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
+        {/* Services */}
+        <div>
+          <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
+          <ul className="space-y-2">
+            {services.map((service) => (
+              <li key={service.name}>
+                <Link
+                  href={service.href}
+                  className="hover:text-white transition-colors duration-200"
                 >
-                  Build My Business
-                </Button>
-              </Link>
-            </li>
-            <li>
-              <Link to="/individual-service-inquiry"> {/* New link to individual service form */}
-                <Button
-                  variant="link"
-                  className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
-                >
-                  Claim an Individual Service
-                </Button>
-              </Link>
-            </li>
-            <li>
-              <Link to="/get-a-quote">
-                <Button
-                  variant="link"
-                  className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
-                >
-                  Request a Custom Set Up
-                </Button>
-              </Link>
-            </li>
-            <li>
-              <a href="https://calendly.com/your-calpir-consultation" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="link"
-                  className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
-                >
-                  Get a Free Consultation
-                </Button>
-              </a>
-            </li>
+                  {service.name}
+                </Link>
+              </li>
+            ))}
           </ul>
+        </div>
+
+        {/* Newsletter (Placeholder) */}
+        <div>
+          <h3 className="text-lg font-semibold text-white mb-4">Stay Connected</h3>
+          <p className="text-sm mb-4">
+            Subscribe to our newsletter for the latest updates and insights.
+          </p>
+          <form className="flex">
+            <input
+              type="email"
+              placeholder="Your email"
+              className="p-2 rounded-l-md bg-gray-700 border border-gray-600 text-white text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 flex-grow"
+            />
+            <button
+              type="submit"
+              className="bg-primary-500 hover:bg-primary-600 text-white p-2 rounded-r-md text-sm transition-colors duration-200"
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
       </div>
 
-      <div className="container border-t border-gray-700 mt-12 pt-8 text-center text-sm text-gray-500 animate-fade-in-up delay-500">
-        <p>© 2024 Calpir. All rights reserved. Complete Business Operations Service.</p>
+      <div className="container mx-auto px-4 mt-8 pt-8 border-t border-gray-700 text-center text-sm">
+        <p>&copy; {currentYear} Calpir. All rights reserved.</p>
       </div>
     </footer>
   );
