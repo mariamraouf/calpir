@@ -214,19 +214,19 @@ const IndividualServiceFormPage = () => {
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">1. Your Contact Information</h3>
                 <div className="space-y-2">
                   <Label htmlFor="fullName">Full Name <span className="text-red-500">*</span></Label>
-                  <Input id="fullName" value={formData.fullName} onChange={(e) => handleChange("fullName", e.target.value)} required />
+                  <Input id="fullName" value={formData.fullName} onChange={(e) => handleChange("fullName", e.target.value)} required className="rounded-2xl" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email Address <span className="text-red-500">*</span></Label>
-                  <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} required />
+                  <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} required className="rounded-2xl" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phoneNumber">Phone Number (Optional)</Label>
-                  <Input id="phoneNumber" type="tel" value={formData.phoneNumber} onChange={(e) => handleChange("phoneNumber", e.target.value)} />
+                  <Input id="phoneNumber" type="tel" value={formData.phoneNumber} onChange={(e) => handleChange("phoneNumber", e.target.value)} className="rounded-2xl" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="companyName">Company Name (Optional)</Label>
-                  <Input id="companyName" value={formData.companyName} onChange={(e) => handleChange("companyName", e.target.value)} />
+                  <Input id="companyName" value={formData.companyName} onChange={(e) => handleChange("companyName", e.target.value)} className="rounded-2xl" />
                 </div>
               </div>
 
@@ -235,7 +235,7 @@ const IndividualServiceFormPage = () => {
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">2. Select Services <span className="text-red-500">*</span></h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {servicesData.map((service) => (
-                    <div key={service.id} className="flex items-start space-x-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                    <div key={service.id} className="flex items-start space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
                       <Checkbox
                         id={`service-${service.id}`}
                         checked={formData.selectedServices.includes(service.id)}
@@ -252,7 +252,7 @@ const IndividualServiceFormPage = () => {
                 {formData.selectedServices.length > 0 && (
                   <div className="space-y-2 mt-4">
                     <Label htmlFor="serviceDetails">Please provide any specific details or requirements for your selected services.</Label>
-                    <Textarea id="serviceDetails" value={formData.serviceDetails} onChange={(e) => handleChange("serviceDetails", e.target.value)} rows={4} />
+                    <Textarea id="serviceDetails" value={formData.serviceDetails} onChange={(e) => handleChange("serviceDetails", e.target.value)} rows={4} className="rounded-2xl" />
                   </div>
                 )}
               </div>
@@ -263,7 +263,7 @@ const IndividualServiceFormPage = () => {
                 <div className="space-y-2">
                   <Label htmlFor="timeline">Desired Timeline <span className="text-red-500">*</span></Label>
                   <Select onValueChange={handleSelectChange("timeline")} value={formData.timeline} required>
-                    <SelectTrigger id="timeline" className="p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                    <SelectTrigger id="timeline" className="p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-md hover:border-primary transition-all duration-300">
                       <SelectValue placeholder="Select timeline" />
                     </SelectTrigger>
                     <SelectContent>
@@ -277,7 +277,7 @@ const IndividualServiceFormPage = () => {
                 <div className="space-y-2">
                   <Label htmlFor="budgetRange">Your Estimated Budget Range (Optional)</Label>
                   <Select onValueChange={handleSelectChange("budgetRange")} value={formData.budgetRange}>
-                    <SelectTrigger id="budgetRange" className="p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                    <SelectTrigger id="budgetRange" className="p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-md hover:border-primary transition-all duration-300">
                       <SelectValue placeholder="Select budget range" />
                     </SelectTrigger>
                     <SelectContent>
@@ -290,7 +290,7 @@ const IndividualServiceFormPage = () => {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="additionalDetails">Any Additional Details or Questions?</Label>
-                  <Textarea id="additionalDetails" value={formData.additionalDetails} onChange={(e) => handleChange("additionalDetails", e.target.value)} rows={4} />
+                  <Textarea id="additionalDetails" value={formData.additionalDetails} onChange={(e) => handleChange("additionalDetails", e.target.value)} rows={4} className="rounded-2xl" />
                 </div>
               </div>
 

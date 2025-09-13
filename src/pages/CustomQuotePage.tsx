@@ -70,19 +70,19 @@ const CustomQuotePage = () => {
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">1. Your Contact Information</h3>
                 <div className="space-y-2">
                   <Label htmlFor="fullName">Full Name <span className="text-red-500">*</span></Label>
-                  <Input id="fullName" value={formData.fullName} onChange={(e) => handleChange("fullName", e.target.value)} required />
+                  <Input id="fullName" value={formData.fullName} onChange={(e) => handleChange("fullName", e.target.value)} required className="rounded-2xl" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email Address <span className="text-red-500">*</span></Label>
-                  <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} required />
+                  <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} required className="rounded-2xl" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phoneNumber">Phone Number (Optional)</Label>
-                  <Input id="phoneNumber" type="tel" value={formData.phoneNumber} onChange={(e) => handleChange("phoneNumber", e.target.value)} />
+                  <Input id="phoneNumber" type="tel" value={formData.phoneNumber} onChange={(e) => handleChange("phoneNumber", e.target.value)} className="rounded-2xl" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="companyName">Company Name (Optional)</Label>
-                  <Input id="companyName" value={formData.companyName} onChange={(e) => handleChange("companyName", e.target.value)} />
+                  <Input id="companyName" value={formData.companyName} onChange={(e) => handleChange("companyName", e.target.value)} className="rounded-2xl" />
                 </div>
               </div>
 
@@ -92,7 +92,7 @@ const CustomQuotePage = () => {
                 <div className="space-y-2">
                   <Label htmlFor="businessType">Business Type (Optional)</Label>
                   <Select onValueChange={handleSelectChange("businessType")} value={formData.businessType}>
-                    <SelectTrigger id="businessType" className="p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                    <SelectTrigger id="businessType" className="p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-md hover:border-primary transition-all duration-300">
                       <SelectValue placeholder="Select business type" />
                     </SelectTrigger>
                     <SelectContent>
@@ -106,12 +106,12 @@ const CustomQuotePage = () => {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="customRequirements">Please describe your specific custom requirements, including any platforms or integrations needed. <span className="text-red-500">*</span></Label>
-                  <Textarea id="customRequirements" placeholder="e.g., I need a custom integration between X and Y, or a unique workflow for Z..." value={formData.customRequirements} onChange={(e) => handleChange("customRequirements", e.target.value)} rows={6} required />
+                  <Textarea id="customRequirements" placeholder="e.g., I need a custom integration between X and Y, or a unique workflow for Z..." value={formData.customRequirements} onChange={(e) => handleChange("customRequirements", e.target.value)} rows={6} required className="rounded-2xl" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="budgetRange">Your Estimated Budget Range (Optional)</Label>
                   <Select onValueChange={handleSelectChange("budgetRange")} value={formData.budgetRange}>
-                    <SelectTrigger id="budgetRange" className="p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                    <SelectTrigger id="budgetRange" className="p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-md hover:border-primary transition-all duration-300">
                       <SelectValue placeholder="Select budget range" />
                     </SelectTrigger>
                     <SelectContent>
@@ -125,7 +125,7 @@ const CustomQuotePage = () => {
                 <div className="space-y-2">
                   <Label htmlFor="timeline">Desired Timeline (Optional)</Label>
                   <Select onValueChange={handleSelectChange("timeline")} value={formData.timeline}>
-                    <SelectTrigger id="timeline" className="p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                    <SelectTrigger id="timeline" className="p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-md hover:border-primary transition-all duration-300">
                       <SelectValue placeholder="Select timeline" />
                     </SelectTrigger>
                     <SelectContent>
