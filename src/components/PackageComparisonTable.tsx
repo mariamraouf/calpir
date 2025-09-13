@@ -37,18 +37,18 @@ interface Package {
     sops: boolean;
     payroll: boolean;
     performanceManagement: boolean;
+    timeTracking: string | boolean; // Added time tracking
   };
   humanResources: {
-    employeeProfiles: boolean;
-    legalTemplates: string;
-    recruitingSupport: string;
+    legalCompliance: boolean; // New HR service
+    recruitingHiring: boolean; // New HR service
+    hrOperationsPayroll: boolean; // New HR service
+    hrFoundation: boolean; // New HR service
     singleRoleRecruitment: boolean;
     multiRoleRecruitment: boolean;
     comprehensiveRecruitment: boolean;
     advancedHrSystem: string;
     onboardingOffboardingWorkflows: string | boolean;
-    timeTracking: string | boolean;
-    timeAttendanceTracking: string | boolean;
     employeeEngagementSurveys: boolean;
   };
   training: {
@@ -81,18 +81,18 @@ const packages: Package[] = [
       sops: false,
       payroll: false,
       performanceManagement: false,
+      timeTracking: false,
     },
     humanResources: {
-      employeeProfiles: true,
-      legalTemplates: "Contract draft only",
-      recruitingSupport: "Job templates",
+      legalCompliance: false,
+      recruitingHiring: false,
+      hrOperationsPayroll: false,
+      hrFoundation: false,
       singleRoleRecruitment: false,
       multiRoleRecruitment: false,
       comprehensiveRecruitment: false,
       advancedHrSystem: "",
       onboardingOffboardingWorkflows: false,
-      timeTracking: false,
-      timeAttendanceTracking: false,
       employeeEngagementSurveys: false,
     },
     training: {
@@ -122,18 +122,18 @@ const packages: Package[] = [
       sops: true,
       payroll: false,
       performanceManagement: false,
+      timeTracking: "Basic Setup",
     },
     humanResources: {
-      employeeProfiles: true,
-      legalTemplates: "✓",
-      recruitingSupport: "Job postings on 2 global sites",
+      legalCompliance: true,
+      recruitingHiring: true,
+      hrOperationsPayroll: true,
+      hrFoundation: false, // Not the full foundation package
       singleRoleRecruitment: false,
       multiRoleRecruitment: false,
       comprehensiveRecruitment: false,
       advancedHrSystem: "ATS & talent pipeline",
       onboardingOffboardingWorkflows: true,
-      timeTracking: "Advanced timetracking with reports",
-      timeAttendanceTracking: true,
       employeeEngagementSurveys: false,
     },
     training: {
@@ -163,18 +163,18 @@ const packages: Package[] = [
       sops: true,
       payroll: true,
       performanceManagement: true,
+      timeTracking: "Advanced Tracking",
     },
     humanResources: {
-      employeeProfiles: true,
-      legalTemplates: "✓",
-      recruitingSupport: "Full strategy + sourcing for 1 global role",
+      legalCompliance: true,
+      recruitingHiring: true,
+      hrOperationsPayroll: true,
+      hrFoundation: true, // Includes full foundation
       singleRoleRecruitment: true,
       multiRoleRecruitment: false,
       comprehensiveRecruitment: false,
       advancedHrSystem: "Scalable ATS system",
       onboardingOffboardingWorkflows: true,
-      timeTracking: "Advanced timetracking with reports and dashboard",
-      timeAttendanceTracking: "Advanced Tracking",
       employeeEngagementSurveys: true,
     },
     training: {
@@ -212,22 +212,22 @@ const comparisonFeatures = [
       { key: "sops", label: "Standard Operating Procedures (SOPs)" },
       { key: "payroll", label: "Payroll" },
       { key: "performanceManagement", label: "Performance Management" },
+      { key: "timeTracking", label: "Time Tracking" }, // Added time tracking
     ],
   },
   {
     category: "Human Resources",
     key: "humanResources",
     features: [
-      { key: "employeeProfiles", label: "Employee Profiles" },
-      { key: "legalTemplates", label: "Legal Templates (Contracts, NDAs, Handbook)" },
-      { key: "recruitingSupport", label: "Recruiting Support" },
+      { key: "legalCompliance", label: "Legal & Compliance" }, // New HR service
+      { key: "recruitingHiring", label: "Recruiting & Hiring" }, // New HR service
+      { key: "hrOperationsPayroll", label: "HR Operations & Payroll" }, // New HR service
+      { key: "hrFoundation", label: "HR Foundation (Full Package)" }, // New HR service
       { key: "singleRoleRecruitment", label: "Single Role Recruitment" },
       { key: "multiRoleRecruitment", label: "Multi-Role Recruitment" },
       { key: "comprehensiveRecruitment", label: "Comprehensive Recruitment (3 months)" },
-      { key: "advancedHrSystem", label: "Advanced HR System (Applicant Tracking System - ATS)" },
+      { key: "advancedHrSystem", label: "Advanced HR System (ATS)" },
       { key: "onboardingOffboardingWorkflows", label: "Onboarding/Offboarding Workflows" },
-      { key: "timeTracking", label: "Time Tracking" },
-      { key: "timeAttendanceTracking", label: "Time/Attendance Tracking" },
       { key: "employeeEngagementSurveys", label: "Employee Engagement Surveys" },
     ],
   },
