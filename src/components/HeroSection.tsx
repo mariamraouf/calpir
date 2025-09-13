@@ -22,7 +22,7 @@ const HeroSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustom
 
       <div className="container relative z-10 text-center">
         <img
-          src="/calpir-logo.png"
+          src="/calpir-logo-updated.png"
           alt="Calpir Logo"
           className="h-24 w-24 mx-auto mb-8 animate-bounce-slow"
         />
