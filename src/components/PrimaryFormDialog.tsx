@@ -17,10 +17,10 @@ const addOnsOptions = [
   { id: "socialMedia10Posts", label: "Social Media Content: 10 Posts/Month ($199)" },
   { id: "socialMedia20Posts", label: "Social Media Content: 20 Posts/Month ($349)" },
   { id: "socialMedia30Posts", label: "Social Media Content: 30 Posts/Month ($499)" },
-  { id: "emailMarketingSetup", label: "Email Systems & Automation Setup ($499)" }, // Standardized name and pricing
+  { id: "emailMarketingSetup", label: "Email Systems & Automation Setup ($499)" },
   { id: "analyticsUpgrades", label: "Analytics Upgrades (e.g., Monthly Insights - $199)" },
   { id: "ongoingSupport", label: "Ongoing Support (e.g., Monthly Emails - $199)" },
-  { id: "staffRecruitment", label: "Staff Recruitment (Global) (e.g., 1 Role - $449)" }, // Price updated
+  { id: "staffRecruitment", label: "Staff Recruitment (Global) (e.g., 1 Role - $449)" },
   { id: "extraIntegrations", label: "Extra Integrations (Per Integration - $199)" },
   { id: "websiteExpansions", label: "Website Expansions (e.g., Per Page - $199)" },
   { id: "hrCustomizations", label: "HR Customizations (One-time Setup - $299)" },
@@ -113,93 +113,107 @@ const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) =>
       </DialogHeader>
       <form onSubmit={handleSubmit} className="grid gap-6 py-4">
         {/* Contact Information */}
-        <div className="space-y-2">
+        <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">1. Contact Information</h3>
-          <Label htmlFor="fullName">Full Name <span className="text-red-500">*</span></Label>
-          <Input id="fullName" value={formData.fullName} onChange={(e) => handleChange("fullName", e.target.value)} required />
-          <Label htmlFor="email">Email Address <span className="text-red-500">*</span></Label>
-          <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} required />
-          <Label htmlFor="phoneNumber">Phone Number (Optional)</Label>
-          <Input id="phoneNumber" type="tel" value={formData.phoneNumber} onChange={(e) => handleChange("phoneNumber", e.target.value)} />
-          <Label htmlFor="companyName">Company Name (Optional)</Label>
-          <Input id="companyName" value={formData.companyName} onChange={(e) => handleChange("companyName", e.target.value)} />
+          <div className="space-y-2">
+            <Label htmlFor="fullName">Full Name <span className="text-red-500">*</span></Label>
+            <Input id="fullName" value={formData.fullName} onChange={(e) => handleChange("fullName", e.target.value)} required />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="email">Email Address <span className="text-red-500">*</span></Label>
+            <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} required />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="phoneNumber">Phone Number (Optional)</Label>
+            <Input id="phoneNumber" type="tel" value={formData.phoneNumber} onChange={(e) => handleChange("phoneNumber", e.target.value)} />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="companyName">Company Name (Optional)</Label>
+            <Input id="companyName" value={formData.companyName} onChange={(e) => handleChange("companyName", e.target.value)} />
+          </div>
         </div>
 
         {/* Business Details */}
-        <div className="space-y-2">
+        <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">2. Business Details</h3>
-          <Label htmlFor="businessType">Business Type <span className="text-red-500">*</span></Label>
-          <Select onValueChange={handleSelectChange("businessType")} value={formData.businessType} required>
-            <SelectTrigger id="businessType">
-              <SelectValue placeholder="Select business type" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="Solo Entrepreneur">Solo Entrepreneur</SelectItem>
-              <SelectItem value="Small Startup">Small Startup</SelectItem>
-              <SelectItem value="Scaling Startup">Scaling Startup</SelectItem>
-              <SelectItem value="Funded Business">Funded Business</SelectItem>
-              <SelectItem value="Other">Other</SelectItem>
-            </SelectContent>
-          </Select>
-          <Label htmlFor="industry">Industry (Optional)</Label>
-          <Select onValueChange={handleSelectChange("industry")} value={formData.industry}>
-            <SelectTrigger id="industry">
-              <SelectValue placeholder="Select industry" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="Tech">Tech</SelectItem>
-              <SelectItem value="E-commerce">E-commerce</SelectItem>
-              <SelectItem value="Consulting">Consulting</SelectItem>
-              <SelectItem value="Creative">Creative</SelectItem>
-              <SelectItem value="Other">Other</SelectItem>
-            </SelectContent>
-          </Select>
+          <div className="space-y-2">
+            <Label htmlFor="businessType">Business Type <span className="text-red-500">*</span></Label>
+            <Select onValueChange={handleSelectChange("businessType")} value={formData.businessType} required>
+              <SelectTrigger id="businessType" className="p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                <SelectValue placeholder="Select business type" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="Solo Entrepreneur">Solo Entrepreneur</SelectItem>
+                <SelectItem value="Small Startup">Small Startup</SelectItem>
+                <SelectItem value="Scaling Startup">Scaling Startup</SelectItem>
+                <SelectItem value="Funded Business">Funded Business</SelectItem>
+                <SelectItem value="Other">Other</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="industry">Industry (Optional)</Label>
+            <Select onValueChange={handleSelectChange("industry")} value={formData.industry}>
+              <SelectTrigger id="industry" className="p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                <SelectValue placeholder="Select industry" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="Tech">Tech</SelectItem>
+                <SelectItem value="E-commerce">E-commerce</SelectItem>
+                <SelectItem value="Consulting">Consulting</SelectItem>
+                <SelectItem value="Creative">Creative</SelectItem>
+                <SelectItem value="Other">Other</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
           {showOtherIndustryInput && (
-            <>
+            <div className="space-y-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
               <Label htmlFor="otherIndustry">Please specify your industry</Label>
               <Input id="otherIndustry" value={formData.otherIndustry} onChange={(e) => handleChange("otherIndustry", e.target.value)} />
-            </>
+            </div>
           )}
-          <Label htmlFor="businessStage">Current Business Stage <span className="text-red-500">*</span></Label>
-          <Select onValueChange={handleSelectChange("businessStage")} value={formData.businessStage} required>
-            <SelectTrigger id="businessStage">
-              <SelectValue placeholder="Select business stage" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="Idea/Planning">Idea/Planning</SelectItem>
-              <SelectItem value="Early Stage (0-1 year)">Early Stage (0-1 year)</SelectItem>
-              <SelectItem value="Scaling (1-3 years)">Scaling (1-3 years)</SelectItem>
-              <SelectItem value="Established (3+ years)">Established (3+ years)</SelectItem>
-            </SelectContent>
-          </Select>
+          <div className="space-y-2">
+            <Label htmlFor="businessStage">Current Business Stage <span className="text-red-500">*</span></Label>
+            <Select onValueChange={handleSelectChange("businessStage")} value={formData.businessStage} required>
+              <SelectTrigger id="businessStage" className="p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                <SelectValue placeholder="Select business stage" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="Idea/Planning">Idea/Planning</SelectItem>
+                <SelectItem value="Early Stage (0-1 year)">Early Stage (0-1 year)</SelectItem>
+                <SelectItem value="Scaling (1-3 years)">Scaling (1-3 years)</SelectItem>
+                <SelectItem value="Established (3+ years)">Established (3+ years)</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
 
         {/* Package Selection */}
-        <div className="space-y-2">
+        <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">3. Package Preference <span className="text-red-500">*</span></h3>
-          <RadioGroup onValueChange={handleSelectChange("packagePreference")} value={formData.packagePreference} required>
-            <div className="flex items-center space-x-2">
+          <RadioGroup onValueChange={handleSelectChange("packagePreference")} value={formData.packagePreference} required className="space-y-2">
+            <div className="flex items-center space-x-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
               <RadioGroupItem value="Starter ($1,499)" id="package-starter" />
               <Label htmlFor="package-starter">Starter ($1,499)</Label>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
               <RadioGroupItem value="Growth ($2,999)" id="package-growth" />
               <Label htmlFor="package-growth">Growth ($2,999)</Label>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
               <RadioGroupItem value="Ultimate ($5,999)" id="package-ultimate" />
               <Label htmlFor="package-ultimate">Ultimate ($5,999)</Label>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
               <RadioGroupItem value="Not Sure" id="package-not-sure" />
               <Label htmlFor="package-not-sure">Not Sure</Label>
             </div>
           </RadioGroup>
           {formData.packagePreference === "Not Sure" && (
-            <>
+            <div className="space-y-2 mt-4">
               <Label htmlFor="budgetRange">What is your budget range?</Label>
               <Select onValueChange={handleSelectChange("budgetRange")} value={formData.budgetRange}>
-                <SelectTrigger id="budgetRange">
+                <SelectTrigger id="budgetRange" className="p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
                   <SelectValue placeholder="Select budget range" />
                 </SelectTrigger>
                 <SelectContent>
@@ -209,16 +223,16 @@ const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) =>
                   <SelectItem value="Custom Quote Needed">Custom Quote Needed</SelectItem>
                 </SelectContent>
               </Select>
-            </>
+            </div>
           )}
         </div>
 
         {/* Add-On Interests */}
-        <div className="space-y-2">
+        <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">4. Add-On Interests (Optional)</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {addOnsOptions.map((addOn) => (
-              <div key={addOn.id} className="flex items-center space-x-2">
+              <div key={addOn.id} className="flex items-center space-x-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
                 <Checkbox
                   id={`addOn-${addOn.id}`}
                   checked={formData.addOnInterests.includes(addOn.id)}
@@ -229,104 +243,112 @@ const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) =>
             ))}
           </div>
           {showAddOnRequirements && (
-            <>
+            <div className="space-y-2 mt-4">
               <Label htmlFor="addOnRequirements" className="mt-4">Please describe any specific requirements for these add-ons (e.g., preferred platforms, specific needs).</Label>
               <Textarea id="addOnRequirements" value={formData.addOnRequirements} onChange={(e) => handleChange("addOnRequirements", e.target.value)} rows={3} />
-            </>
+            </div>
           )}
         </div>
 
         {/* Project Goals and Timeline */}
-        <div className="space-y-2">
+        <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">5. Project Goals and Timeline <span className="text-red-500">*</span></h3>
-          <Label>Primary Goal(s) <span className="text-red-500">*</span></Label>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            <div className="flex items-center space-x-2">
-              <Checkbox
-                id="goal-website"
-                checked={formData.primaryGoals.includes("Website Development")}
-                onCheckedChange={(checked) => handleCheckboxChange("goal-website", checked as boolean)}
-              />
-              <Label htmlFor="goal-website">Website Development</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Checkbox
-                id="goal-brand"
-                checked={formData.primaryGoals.includes("Design & Branding Package")} // Standardized name
-                onCheckedChange={(checked) => handleCheckboxChange("goal-brand", checked as boolean)}
-              />
-              <Label htmlFor="goal-brand">Design & Branding Package</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Checkbox
-                id="goal-marketing"
-                checked={formData.primaryGoals.includes("Marketing Systems")}
-                onCheckedChange={(checked) => handleCheckboxChange("goal-marketing", checked as boolean)}
-              />
-              <Label htmlFor="goal-marketing">Marketing Systems</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Checkbox
-                id="goal-project"
-                checked={formData.primaryGoals.includes("Project Management Setup")}
-                onCheckedChange={(checked) => handleCheckboxChange("goal-project", checked as boolean)}
-              />
-              <Label htmlFor="goal-project">Project Management Setup</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Checkbox
-                id="goal-other"
-                checked={formData.primaryGoals.includes("Other")}
-                onCheckedChange={(checked) => handleCheckboxChange("goal-other", checked as boolean)}
-              />
-              <Label htmlFor="goal-other">Other</Label>
+          <div className="space-y-2">
+            <Label>Primary Goal(s) <span className="text-red-500">*</span></Label>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="flex items-center space-x-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                <Checkbox
+                  id="goal-website"
+                  checked={formData.primaryGoals.includes("Website Development")}
+                  onCheckedChange={(checked) => handleCheckboxChange("goal-website", checked as boolean)}
+                />
+                <Label htmlFor="goal-website">Website Development</Label>
+              </div>
+              <div className="flex items-center space-x-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                <Checkbox
+                  id="goal-brand"
+                  checked={formData.primaryGoals.includes("Design & Branding Package")}
+                  onCheckedChange={(checked) => handleCheckboxChange("goal-brand", checked as boolean)}
+                />
+                <Label htmlFor="goal-brand">Design & Branding Package</Label>
+              </div>
+              <div className="flex items-center space-x-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                <Checkbox
+                  id="goal-marketing"
+                  checked={formData.primaryGoals.includes("Marketing Systems")}
+                  onCheckedChange={(checked) => handleCheckboxChange("goal-marketing", checked as boolean)}
+                />
+                <Label htmlFor="goal-marketing">Marketing Systems</Label>
+              </div>
+              <div className="flex items-center space-x-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                <Checkbox
+                  id="goal-project"
+                  checked={formData.primaryGoals.includes("Project Management Setup")}
+                  onCheckedChange={(checked) => handleCheckboxChange("goal-project", checked as boolean)}
+                />
+                <Label htmlFor="goal-project">Project Management Setup</Label>
+              </div>
+              <div className="flex items-center space-x-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                <Checkbox
+                  id="goal-other"
+                  checked={formData.primaryGoals.includes("Other")}
+                  onCheckedChange={(checked) => handleCheckboxChange("goal-other", checked as boolean)}
+                />
+                <Label htmlFor="goal-other">Other</Label>
+              </div>
             </div>
           </div>
           {showOtherPrimaryGoalInput && (
-            <>
+            <div className="space-y-2 mt-4">
               <Label htmlFor="otherPrimaryGoal">Please specify your primary goal</Label>
               <Input id="otherPrimaryGoal" value={formData.otherPrimaryGoal} onChange={(e) => handleChange("otherPrimaryGoal", e.target.value)} />
-            </>
+            </div>
           )}
-          <Label htmlFor="timeline">Timeline <span className="text-red-500">*</span></Label>
-          <Select onValueChange={handleSelectChange("timeline")} value={formData.timeline} required>
-            <SelectTrigger id="timeline">
-              <SelectValue placeholder="Select timeline" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="Within 7 Days">Within 7 Days</SelectItem>
-              <SelectItem value="1-2 Weeks">1-2 Weeks</SelectItem>
-              <SelectItem value="1 Month">1 Month</SelectItem>
-              <SelectItem value="Flexible">Flexible</SelectItem>
-            </SelectContent>
-          </Select>
-          <Label htmlFor="additionalDetails">Additional Details (Optional)</Label>
-          <Textarea id="additionalDetails" value={formData.additionalDetails} onChange={(e) => handleChange("additionalDetails", e.target.value)} rows={4} />
+          <div className="space-y-2">
+            <Label htmlFor="timeline">Timeline <span className="text-red-500">*</span></Label>
+            <Select onValueChange={handleSelectChange("timeline")} value={formData.timeline} required>
+              <SelectTrigger id="timeline" className="p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                <SelectValue placeholder="Select timeline" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="Within 7 Days">Within 7 Days</SelectItem>
+                <SelectItem value="1-2 Weeks">1-2 Weeks</SelectItem>
+                <SelectItem value="1 Month">1 Month</SelectItem>
+                <SelectItem value="Flexible">Flexible</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="additionalDetails">Additional Details (Optional)</Label>
+            <Textarea id="additionalDetails" value={formData.additionalDetails} onChange={(e) => handleChange("additionalDetails", e.target.value)} rows={4} />
+          </div>
         </div>
 
         {/* Consultation Preference */}
-        <div className="space-y-2">
+        <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">6. Consultation Preference <span className="text-red-500">*</span></h3>
-          <RadioGroup onValueChange={handleSelectChange("contactMethod")} value={formData.contactMethod} required>
-            <div className="flex items-center space-x-2">
+          <RadioGroup onValueChange={handleSelectChange("contactMethod")} value={formData.contactMethod} required className="space-y-2">
+            <div className="flex items-center space-x-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
               <RadioGroupItem value="Email" id="contact-email" />
               <Label htmlFor="contact-email">Email</Label>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
               <RadioGroupItem value="Phone" id="contact-phone" />
               <Label htmlFor="contact-phone">Phone</Label>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
               <RadioGroupItem value="Video Call (e.g., Zoom)" id="contact-video" />
               <Label htmlFor="contact-video">Video Call (e.g., Zoom)</Label>
             </div>
           </RadioGroup>
-          <Label htmlFor="preferredTime">Preferred Time (Optional)</Label>
-          <Input id="preferredTime" placeholder="e.g., Weekdays after 2 PM EST" value={formData.preferredTime} onChange={(e) => handleChange("preferredTime", e.target.value)} />
+          <div className="space-y-2">
+            <Label htmlFor="preferredTime">Preferred Time (Optional)</Label>
+            <Input id="preferredTime" placeholder="e.g., Weekdays after 2 PM EST" value={formData.preferredTime} onChange={(e) => handleChange("preferredTime", e.target.value)} />
+          </div>
         </div>
 
         {/* Submission and Consent */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 mt-4">
           <Checkbox
             id="consent"
             checked={formData.consent}

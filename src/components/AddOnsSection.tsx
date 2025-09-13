@@ -27,9 +27,9 @@ const serviceCategories = [
         icon: Share2,
         iconColor: "text-palette-red-400",
         items: [
-          { service: "Social Media Setup", investment: "$499 for 2 platforms", description: "2-5 platforms, strategy, content calendar" }, // Standardized name and pricing
+          { service: "Social Media Setup", investment: "$499 for 2 platforms", description: "2-5 platforms, strategy, content calendar" },
           { service: "Design & Branding Package", investment: "$1,299", description: "Logo, brand guidelines, marketing materials" },
-          { service: "Email Systems & Automation Setup", investment: "$499", description: "Complete email marketing system setup" }, // Standardized name and pricing
+          { service: "Email Systems & Automation Setup", investment: "$499", description: "Complete email marketing system setup" },
         ],
       },
     ],
@@ -127,7 +127,7 @@ const AddOnsSection = () => {
           Choose individual services or enhance your package with add-ons to perfectly fit your business needs.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12 animate-fade-in-up delay-300">
-          <Link to="/services">
+          <Link to="/individual-service-inquiry"> {/* Changed to link to individual service form */}
             <Button
               size="lg"
               className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
@@ -135,20 +135,16 @@ const AddOnsSection = () => {
               View All Services
             </Button>
           </Link>
-          <Link to="/pricing#package-add-ons">
+          <a href="https://calendly.com/your-calpir-consultation" target="_blank" rel="noopener noreferrer"> {/* Changed to external link for free consultation */}
             <Button
               size="lg"
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow dark:text-calpir-green-300 dark:border-calpir-green-300 dark:hover:bg-calpir-green-700"
             >
-              View Add-ons
+              Get a Free Consultation
             </Button>
-          </Link>
+          </a>
         </div>
-
-        {/* Removed the detailed individual services section */}
-
-        {/* Removed the "Ready to build your custom solution?" section */}
       </div>
     </section>
   );

@@ -7,8 +7,8 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 import { PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Code, Shield, Layout, BookOpen, Settings, Clock, Puzzle, Globe, Palette, Briefcase, FileText, DollarSign, TrendingUp, Lightbulb, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import PackageComparisonTable from "@/components/PackageComparisonTable"; // Import the new component
-import PageHeader from "@/components/PageHeader"; // Import PageHeader
+import PackageComparisonTable from "@/components/PackageComparisonTable";
+import PageHeader from "@/components/PageHeader";
 
 // Re-using servicesData from Services.tsx for Individual Services section
 const servicesData = [
@@ -42,6 +42,20 @@ const servicesData = [
     iconColor: "text-palette-blue-400",
   },
   {
+    id: "ecommerce-functionality",
+    icon: DollarSign,
+    title: "E-commerce Functionality",
+    investment: "$499",
+    description: "Set up a fully functional online store to sell your products or services.",
+    details: [
+      "Product catalog setup and management",
+      "Secure payment gateway integration",
+      "Shopping cart and checkout optimization",
+      "Inventory management features",
+    ],
+    iconColor: "text-calpir-green-700",
+  },
+  {
     id: "seo-optimization",
     icon: Globe,
     title: "SEO Optimization",
@@ -56,10 +70,10 @@ const servicesData = [
     iconColor: "text-palette-blue-700",
   },
   {
-    id: "social-media-setup", // Standardized name
+    id: "social-media-setup",
     icon: Share2,
-    title: "Social Media Setup", // Standardized name
-    investment: "$499", // Updated pricing
+    title: "Social Media Setup",
+    investment: "$499",
     description: "Establish and manage your brand's presence across key social media platforms.",
     details: [
       "Setup on 2 platforms",
@@ -86,8 +100,8 @@ const servicesData = [
   {
     id: "email-systems",
     icon: Mail,
-    title: "Email Systems & Automation Setup", // Standardized name
-    investment: "$499", // Updated pricing
+    title: "Email Systems & Automation Setup",
+    investment: "$499",
     description: "Develop effective email marketing and communication strategies.",
     details: [
       "Email platform setup",
@@ -255,7 +269,7 @@ const servicesData = [
     id: "single-role-recruitment",
     icon: Users,
     title: "Single Role Recruitment",
-    investment: "$449", // Changed from $450 to $449
+    investment: "$449",
     description: "Assistance with recruiting for one global role, from job posting to initial screening.",
     details: [
       "Job description optimization",
@@ -269,7 +283,7 @@ const servicesData = [
     id: "multi-role-recruitment",
     icon: Users,
     title: "Multi-Role Recruitment",
-    investment: "$699", // Changed from $700 to $699
+    investment: "$699",
     description: "Comprehensive support for recruiting multiple global roles simultaneously.",
     details: [
       "Strategic recruitment planning for multiple roles",
@@ -323,7 +337,7 @@ const servicesData = [
   {
     id: "premium-support-package",
     icon: Headphones,
-    title: "Weekly Support Package", // Changed title
+    title: "Weekly Support Package",
     investment: "$499/month",
     description: "Dedicated weekly calls and priority support for critical business needs.",
     details: [
@@ -334,6 +348,20 @@ const servicesData = [
     ],
     iconColor: "text-palette-purple-500",
   },
+  {
+    id: "security-basics",
+    icon: Shield,
+    title: "Security Basics Setup",
+    investment: "$299",
+    description: "Implement fundamental security measures to protect your business data and operations.",
+    details: [
+      "Password manager setup and training",
+      "Two-factor authentication (2FA) implementation",
+      "Basic data backup solutions",
+      "Security best practices guidance",
+    ],
+    iconColor: "text-palette-red-500",
+  },
 ];
 
 
@@ -343,9 +371,9 @@ const addOnsCategories = [
     icon: Share2,
     iconColor: "text-palette-red-400",
     items: [
-      { posts: "10 Posts/Month", price: "$199", description: "Professional social media posts with graphics" },
-      { posts: "20 Posts/Month", price: "$349", description: "Enhanced content with stories and engagement" },
-      { posts: "30 Posts/Month", price: "$499", description: "Full social media management with analytics" },
+      { id: "social-media-10-posts", posts: "10 Posts/Month", price: "$199", description: "Professional social media posts with graphics" },
+      { id: "social-media-20-posts", posts: "20 Posts/Month", price: "$349", description: "Enhanced content with stories and engagement" },
+      { id: "social-media-30-posts", posts: "30 Posts/Month", price: "$499", description: "Full social media management with analytics" },
     ],
   },
   {
@@ -353,7 +381,7 @@ const addOnsCategories = [
     icon: Mail,
     iconColor: "text-palette-orange-500",
     items: [
-      { posts: "Email Systems & Automation Setup", price: "$499", description: "Develop effective email marketing and communication strategies." },
+      { id: "email-marketing-setup", posts: "Email Systems & Automation Setup", price: "$499", description: "Develop effective email marketing and communication strategies." },
     ],
   },
   {
@@ -361,9 +389,9 @@ const addOnsCategories = [
     icon: BarChart2,
     iconColor: "text-palette-blue-500",
     items: [
-      { posts: "Monthly Insights", price: "$199", description: "Monthly performance reports" },
-      { posts: "Monthly Recommendations", price: "$249", description: "Detailed insights + recommendations" },
-      { posts: "Real-time Analytics", price: "$399", description: "Real-time business intelligence" },
+      { id: "analytics-monthly-insights", posts: "Monthly Insights", price: "$199", description: "Monthly performance reports" },
+      { id: "analytics-monthly-recommendations", posts: "Monthly Recommendations", price: "$249", description: "Detailed insights + recommendations" },
+      { id: "analytics-real-time", posts: "Real-time Analytics", price: "$399", description: "Real-time business intelligence" },
     ],
   },
   {
@@ -371,8 +399,8 @@ const addOnsCategories = [
     icon: Headphones,
     iconColor: "text-palette-purple-400",
     items: [
-      { posts: "Monthly Emails", price: "$199", description: "Monthly strategy emails + support" },
-      { posts: "Weekly Calls", price: "$499", description: "Weekly calls + priority support" },
+      { id: "ongoing-support-monthly-emails", posts: "Monthly Emails", price: "$199", description: "Monthly strategy emails + support" },
+      { id: "ongoing-support-weekly-calls", posts: "Weekly Calls", price: "$499", description: "Weekly calls + priority support" },
     ],
   },
   {
@@ -380,10 +408,10 @@ const addOnsCategories = [
     icon: Users,
     iconColor: "text-primary",
     items: [
-      { posts: "1 Role", price: "$449", description: "Assistance with recruiting for one global role" }, // Changed from $450 to $449
-      { posts: "2 Roles", price: "$699", description: "Assistance with recruiting for two global roles" }, // Changed from $700 to $699
-      { posts: "3 Roles", price: "$899", description: "Assistance with recruiting for three global roles" }, // Changed from $900 to $899
-      { posts: "Unlimited (3 months)", price: "$4,999", description: "Unlimited recruitment assistance for 3 months" },
+      { id: "staff-recruitment-1-role", posts: "1 Role", price: "$449", description: "Assistance with recruiting for one global role" },
+      { id: "staff-recruitment-2-roles", posts: "2 Roles", price: "$699", description: "Assistance with recruiting for two global roles" },
+      { id: "staff-recruitment-3-roles", posts: "3 Roles", price: "$899", description: "Assistance with recruiting for three global roles" },
+      { id: "staff-recruitment-unlimited", posts: "Unlimited (3 months)", price: "$4,999", description: "Unlimited recruitment assistance for 3 months" },
     ],
   },
   {
@@ -391,7 +419,7 @@ const addOnsCategories = [
     icon: PlusCircle,
     iconColor: "text-palette-blue-600",
     items: [
-      { posts: "Per Integration", price: "$199", description: "Setup and configuration for each additional platform integration" },
+      { id: "extra-integrations-per", posts: "Per Integration", price: "$199", description: "Setup and configuration for each additional platform integration" },
     ],
   },
   {
@@ -399,8 +427,8 @@ const addOnsCategories = [
     icon: Layout,
     iconColor: "text-palette-purple-500",
     items: [
-      { posts: "Per Page", price: "$199", description: "Development for each additional website page" },
-      { posts: "E-commerce Functionality", price: "$499", description: "Setup for e-commerce capabilities" },
+      { id: "website-expansions-per-page", posts: "Per Page", price: "$199", description: "Development for each additional website page" },
+      { id: "website-expansions-ecommerce", posts: "E-commerce Functionality", price: "$499", description: "Setup for e-commerce capabilities" },
     ],
   },
   {
@@ -408,7 +436,7 @@ const addOnsCategories = [
     icon: Settings,
     iconColor: "text-palette-yellow-400",
     items: [
-      { posts: "One-time Setup", price: "$299", description: "Custom HR system setup and configuration" },
+      { id: "hr-customizations-setup", posts: "One-time Setup", price: "$299", description: "Custom HR system setup and configuration" },
     ],
   },
   {
@@ -416,7 +444,7 @@ const addOnsCategories = [
     icon: BookOpen,
     iconColor: "text-calpir-green-600",
     items: [
-      { posts: "Per Hour", price: "$199", description: "Dedicated training sessions for your team" },
+      { id: "training-sessions-per-hour", posts: "Per Hour", price: "$199", description: "Dedicated training sessions for your team" },
     ],
   },
   {
@@ -424,7 +452,7 @@ const addOnsCategories = [
     icon: Code,
     iconColor: "text-palette-orange-400",
     items: [
-      { posts: "For 5+ Automations", price: "$299", description: "Setup for 5 or more custom automation workflows" },
+      { id: "custom-automations-5-plus", posts: "For 5+ Automations", price: "$299", description: "Setup for 5 or more custom automation workflows" },
     ],
   },
   {
@@ -432,17 +460,17 @@ const addOnsCategories = [
     icon: Shield,
     iconColor: "text-palette-red-500",
     items: [
-      { posts: "One-time Setup", price: "$299", description: "Basic security configurations and recommendations" },
+      { id: "security-basics-setup", posts: "One-time Setup", price: "$299", description: "Basic security configurations and recommendations" },
     ],
   },
   {
-    name: "Time Tracking", // New Add-on Category
+    name: "Time Tracking",
     icon: Clock,
     iconColor: "text-palette-orange-500",
     items: [
-      { posts: "Basic Setup", price: "$149", description: "Initial setup of a time tracking tool for small teams" },
-      { posts: "Advanced Setup & Reporting", price: "$299", description: "Comprehensive setup with custom reports and integrations" },
-      { posts: "Team Training & Optimization", price: "$399", description: "Training sessions for your team and workflow optimization" },
+      { id: "time-tracking-basic-setup", posts: "Basic Setup", price: "$149", description: "Initial setup of a time tracking tool for small teams" },
+      { id: "time-tracking-advanced-setup", posts: "Advanced Setup & Reporting", price: "$299", description: "Comprehensive setup with custom reports and integrations" },
+      { id: "time-tracking-team-training", posts: "Team Training & Optimization", price: "$399", description: "Training sessions for your team and workflow optimization" },
     ],
   },
 ];
@@ -536,7 +564,7 @@ const Pricing = () => {
                 </div>
                 <div className="space-y-6">
                   {category.items.map((item, itemIndex) => (
-                    <div key={itemIndex} className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${1.2 + catIndex * 0.15 + itemIndex * 0.05}s` }}>
+                    <div key={item.id} className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${1.2 + catIndex * 0.15 + itemIndex * 0.05}s` }}>
                       <div className="text-left mb-2 sm:mb-0 sm:mr-4">
                         <p className="text-lg font-semibold text-gray-900 dark:text-white">{item.posts}</p>
                         <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
@@ -582,14 +610,14 @@ const Pricing = () => {
                   ))}
                 </ul>
                 <div className="text-center mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
-                  <a href="https://calendly.com/your-calpir-consultation" target="_blank" rel="noopener noreferrer">
+                  <Link to="/individual-service-inquiry">
                     <Button
                       size="lg"
                       className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
                     >
                       Get Started
                     </Button>
-                  </a>
+                  </Link>
                 </div>
               </section>
             ))}

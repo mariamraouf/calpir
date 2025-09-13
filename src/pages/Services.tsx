@@ -7,7 +7,7 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 import { CheckCircle, FileText, Layout, Palette, TrendingUp, Users, Briefcase, DollarSign, Settings, Shield, BookOpen, Lightbulb, Mail, Headphones, Puzzle, Clock, Globe, Code, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import PageHeader from "@/components/PageHeader"; // Import PageHeader
+import PageHeader from "@/components/PageHeader";
 
 const servicesData = [
   {
@@ -40,7 +40,7 @@ const servicesData = [
     iconColor: "text-palette-blue-400",
   },
   {
-    id: "ecommerce-functionality", // New service
+    id: "ecommerce-functionality",
     icon: DollarSign,
     title: "E-commerce Functionality",
     investment: "$499",
@@ -68,10 +68,10 @@ const servicesData = [
     iconColor: "text-palette-blue-700",
   },
   {
-    id: "social-media-setup", // Standardized name
+    id: "social-media-setup",
     icon: Share2,
-    title: "Social Media Setup", // Standardized name
-    investment: "$499", // Updated pricing
+    title: "Social Media Setup",
+    investment: "$499",
     description: "Establish and manage your brand's presence across key social media platforms.",
     details: [
       "Setup on 2 platforms",
@@ -98,8 +98,8 @@ const servicesData = [
   {
     id: "email-systems",
     icon: Mail,
-    title: "Email Systems & Automation Setup", // Standardized name
-    investment: "$499", // Updated pricing
+    title: "Email Systems & Automation Setup",
+    investment: "$499",
     description: "Develop effective email marketing and communication strategies.",
     details: [
       "Email platform setup",
@@ -267,7 +267,7 @@ const servicesData = [
     id: "single-role-recruitment",
     icon: Users,
     title: "Single Role Recruitment",
-    investment: "$449", // Changed from $450 to $449
+    investment: "$449",
     description: "Assistance with recruiting for one global role, from job posting to initial screening.",
     details: [
       "Job description optimization",
@@ -281,7 +281,7 @@ const servicesData = [
     id: "multi-role-recruitment",
     icon: Users,
     title: "Multi-Role Recruitment",
-    investment: "$699", // Changed from $700 to $699
+    investment: "$699",
     description: "Comprehensive support for recruiting multiple global roles simultaneously.",
     details: [
       "Strategic recruitment planning for multiple roles",
@@ -335,7 +335,7 @@ const servicesData = [
   {
     id: "premium-support-package",
     icon: Headphones,
-    title: "Weekly Support Package", // Changed title
+    title: "Weekly Support Package",
     investment: "$499/month",
     description: "Dedicated weekly calls and priority support for critical business needs.",
     details: [
@@ -347,7 +347,7 @@ const servicesData = [
     iconColor: "text-palette-purple-500",
   },
   {
-    id: "security-basics", // New service
+    id: "security-basics",
     icon: Shield,
     title: "Security Basics Setup",
     investment: "$299",
@@ -371,7 +371,7 @@ const Services = () => {
           title="Individual Business Services"
           description="Need specific business solutions without a full package? Choose from our comprehensive individual services. These services are also available as package add-ons at different pricing."
           buttons={[
-            { text: "Start My Business", href: "/build-my-business", variant: "primary" },
+            { text: "Claim Your Service", href: "/individual-service-inquiry", variant: "primary" }, {/* Updated button text and link */}
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
           ]}
         />
@@ -399,14 +399,14 @@ const Services = () => {
                   ))}
                 </ul>
                 <div className="text-center mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
-                  <a href="https://calendly.com/your-calpir-consultation" target="_blank" rel="noopener noreferrer">
+                  <Link to="/individual-service-inquiry"> {/* Updated button link */}
                     <Button
                       size="lg"
                       className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
                     >
                       Get Started
                     </Button>
-                  </a>
+                  </Link>
                 </div>
               </section>
             ))}

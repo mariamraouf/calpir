@@ -2,8 +2,8 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Mail, Linkedin, Instagram } from "lucide-react"; // Added Linkedin and Instagram icons
-import { Button } from "@/components/ui/button"; // Import Button
+import { Mail, Linkedin, Instagram } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
@@ -22,7 +22,7 @@ const Footer = () => {
             <p className="flex items-center">
               <Mail className="h-4 w-4 mr-2 text-primary" /> <a href="mailto:hello@calpir.com" className="hover:text-white transition-colors">hello@calpir.com</a>
             </p>
-            <div className="flex items-center space-x-4 mt-4"> {/* New div for social icons */}
+            <div className="flex items-center space-x-4 mt-4">
               <a href="https://www.linkedin.com/company/calpir" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
@@ -55,6 +55,16 @@ const Footer = () => {
                   className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
                 >
                   Build My Business
+                </Button>
+              </Link>
+            </li>
+            <li>
+              <Link to="/individual-service-inquiry"> {/* New link to individual service form */}
+                <Button
+                  variant="link"
+                  className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
+                >
+                  Claim an Individual Service
                 </Button>
               </Link>
             </li>

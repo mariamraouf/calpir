@@ -12,8 +12,9 @@ import Contact from "./pages/Contact";
 import BuildMyBusinessPage from "./pages/BuildMyBusinessPage";
 import CustomQuotePage from "./pages/CustomQuotePage";
 import Platforms from "./pages/Platforms";
-import PrivacyPolicy from "./pages/PrivacyPolicy"; // Import new page
-import TermsOfService from "./pages/TermsOfService"; // Import new page
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import IndividualServiceFormPage from "./pages/IndividualServiceFormPage"; // Import new page
 import ScrollToTop from "./components/ScrollToTop";
 import React from "react";
 
@@ -36,8 +37,9 @@ const App = () => {
             <Route path="/build-my-business" element={<BuildMyBusinessPage />} />
             <Route path="/get-a-quote" element={<CustomQuotePage />} />
             <Route path="/platforms" element={<Platforms />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} /> {/* New route */}
-            <Route path="/terms-of-service" element={<TermsOfService />} /> {/* New route */}
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/individual-service-inquiry" element={<IndividualServiceFormPage />} /> {/* New route */}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

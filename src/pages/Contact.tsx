@@ -10,9 +10,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { toast } from "sonner";
-import PageHeader from "@/components/PageHeader"; // Import PageHeader
+import PageHeader from "@/components/PageHeader";
 
-const Contact = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
+const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,10 +27,9 @@ const Contact = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuot
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would send this data to a backend API.
     console.log("Form submitted:", formData);
     toast.success("Your message has been sent! We'll get back to you soon.");
-    setFormData({ name: "", email: "", subject: "", message: "" }); // Clear form
+    setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
   return (
@@ -52,7 +51,7 @@ const Contact = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuot
             <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 animate-slide-in-left delay-300">
               <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Send Us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
+                <div className="space-y-2">
                   <Label htmlFor="name" className="text-gray-700 dark:text-gray-300">Name</Label>
                   <Input
                     id="name"
@@ -64,7 +63,7 @@ const Contact = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuot
                     className="mt-1 focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-200"
                   />
                 </div>
-                <div>
+                <div className="space-y-2">
                   <Label htmlFor="email" className="text-gray-700 dark:text-gray-300">Email</Label>
                   <Input
                     id="email"
@@ -76,7 +75,7 @@ const Contact = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuot
                     className="mt-1 focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-200"
                   />
                 </div>
-                <div>
+                <div className="space-y-2">
                   <Label htmlFor="subject" className="text-gray-700 dark:text-gray-300">Subject</Label>
                   <Input
                     id="subject"
@@ -88,7 +87,7 @@ const Contact = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuot
                     className="mt-1 focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-200"
                   />
                 </div>
-                <div>
+                <div className="space-y-2">
                   <Label htmlFor="message" className="text-gray-700 dark:text-gray-300">Message</Label>
                   <Textarea
                     id="message"

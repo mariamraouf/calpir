@@ -55,22 +55,22 @@ const SecondaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) 
         </DialogDescription>
       </DialogHeader>
       <form onSubmit={handleSubmit} className="grid gap-6 py-4">
-        <div>
+        <div className="space-y-2">
           <Label htmlFor="fullName">Full Name <span className="text-red-500">*</span></Label>
           <Input id="fullName" value={formData.fullName} onChange={(e) => handleChange("fullName", e.target.value)} required />
         </div>
-        <div>
+        <div className="space-y-2">
           <Label htmlFor="email">Email Address <span className="text-red-500">*</span></Label>
           <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} required />
         </div>
-        <div>
+        <div className="space-y-2">
           <Label htmlFor="phoneNumber">Phone Number (Optional)</Label>
           <Input id="phoneNumber" type="tel" value={formData.phoneNumber} onChange={(e) => handleChange("phoneNumber", e.target.value)} />
         </div>
-        <div>
+        <div className="space-y-2">
           <Label htmlFor="businessType">Business Type (Optional)</Label>
           <Select onValueChange={handleSelectChange("businessType")} value={formData.businessType}>
-            <SelectTrigger id="businessType">
+            <SelectTrigger id="businessType" className="p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
               <SelectValue placeholder="Select business type" />
             </SelectTrigger>
             <SelectContent>
@@ -82,25 +82,25 @@ const SecondaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) 
             </SelectContent>
           </Select>
         </div>
-        <div>
+        <div className="space-y-2">
           <Label>Inquiry Type <span className="text-red-500">*</span></Label>
-          <RadioGroup onValueChange={handleSelectChange("inquiryType")} value={formData.inquiryType} required>
-            <div className="flex items-center space-x-2">
+          <RadioGroup onValueChange={handleSelectChange("inquiryType")} value={formData.inquiryType} required className="space-y-2">
+            <div className="flex items-center space-x-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
               <RadioGroupItem value="Free Consultation" id="inquiry-consultation" />
               <Label htmlFor="inquiry-consultation">Free Consultation</Label>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
               <RadioGroupItem value="Custom Quote" id="inquiry-quote" />
               <Label htmlFor="inquiry-quote">Custom Quote</Label>
             </div>
           </RadioGroup>
         </div>
-        <div>
+        <div className="space-y-2">
           <Label htmlFor="briefDescription">Brief Description (Optional)</Label>
           <Textarea id="briefDescription" placeholder="Tell us about your business or what you’re looking for..." value={formData.briefDescription} onChange={(e) => handleChange("briefDescription", e.target.value)} rows={4} />
         </div>
 
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 mt-4">
           <Checkbox
             id="consent"
             checked={formData.consent}

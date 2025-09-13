@@ -209,7 +209,7 @@ const comparisonFeatures = [
       { key: "integrations", label: "Integrations" },
       { key: "analyticsReporting", label: "Analytics & Reporting" },
       { key: "businessAutomations", label: "Business Automations" },
-      { key: "sops", label: "Standard Operating Procedures (SOPs)" }, // Expanded abbreviation
+      { key: "sops", label: "Standard Operating Procedures (SOPs)" },
       { key: "payroll", label: "Payroll" },
       { key: "performanceManagement", label: "Performance Management" },
     ],
@@ -224,7 +224,7 @@ const comparisonFeatures = [
       { key: "singleRoleRecruitment", label: "Single Role Recruitment" },
       { key: "multiRoleRecruitment", label: "Multi-Role Recruitment" },
       { key: "comprehensiveRecruitment", label: "Comprehensive Recruitment (3 months)" },
-      { key: "advancedHrSystem", label: "Advanced HR System (Applicant Tracking System - ATS)" }, // Expanded abbreviation
+      { key: "advancedHrSystem", label: "Advanced HR System (Applicant Tracking System - ATS)" },
       { key: "onboardingOffboardingWorkflows", label: "Onboarding/Offboarding Workflows" },
       { key: "timeTracking", label: "Time Tracking" },
       { key: "timeAttendanceTracking", label: "Time/Attendance Tracking" },
@@ -323,7 +323,7 @@ const PackageComparisonTable = () => {
                   <Link to="/build-my-business">
                     <Button
                       size="lg"
-                      className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-10 py-4 rounded-2xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
+                      className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
                     >
                       Start My Package
                     </Button>
@@ -379,7 +379,7 @@ const PackageComparisonTable = () => {
               <Link to="/build-my-business">
                 <Button
                   size="lg"
-                  className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-10 py-4 rounded-2xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
+                  className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
                 >
                   Start My Package
                 </Button>
