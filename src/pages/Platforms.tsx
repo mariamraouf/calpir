@@ -416,9 +416,9 @@ updatedPlatformCategories.push({
 updatedPlatformCategories.push({
   name: "Design & Creative Tools",
   platforms: [
-    { name: "Canva", logo: "/logos/canva.jpeg" },
-    { name: "Figma", logo: "/logos/figma.png" },
-    { name: "Adobe Photoshop", logo: "https://logo.clearbit.com/adobe.com?size=50" },
+    { name: "Canva", logo: "/logos/canva-new.jpeg" }, // Updated to new local JPEG
+    { name: "Figma", logo: "/logos/figma-new.jpeg" }, // Updated to new local JPEG
+    { name: "Adobe Photoshop", logo: "/logos/adobe-photoshop-new.webp" }, // Updated to new local WEBP
     { name: "Adobe Illustrator", logo: "https://logo.clearbit.com/adobe.com?size=50" },
     { name: "Sketch", logo: "https://logo.clearbit.com/sketch.com?size=50" },
     { name: "InVision", logo: "https://logo.clearbit.com/invisionapp.com?size=50" },
