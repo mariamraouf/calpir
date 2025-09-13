@@ -371,7 +371,7 @@ const Services = () => {
           title="Individual Business Services"
           description="Need specific business solutions without a full package? Choose from our comprehensive individual services. These services are also available as package add-ons at different pricing."
           buttons={[
-            { text: "Claim Your Service", href: "/individual-service-inquiry", variant: "primary" }, {/* Updated button text and link */}
+            { text: "Claim Your Service", href: "/individual-service-inquiry", variant: "primary" },
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
           ]}
         />
