@@ -12,7 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "sonner";
 import PageHeader from "@/components/PageHeader";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useNavigate, useSearchParams } from "react-router-dom"; // Changed from "next/navigation"
 import { CheckCircle } from "lucide-react"; // Added this import
 
 interface Service {
@@ -234,8 +234,9 @@ const addOnsData: AddOn[] = [
 ];
 
 const BuildMyBusiness = () => {
-  const router = useRouter();
-  const searchParams = useSearchParams();
+  const navigate = useNavigate(); // Changed useRouter to useNavigate
+  const [searchParams] = useSearchParams(); // Changed from next/navigation
+
   const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [selectedAddOns, setSelectedAddOns] = useState<string[]>([]);

@@ -10,7 +10,7 @@ import PricingSection from "@/components/PricingSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ServicesOverview from "@/components/ServicesOverview";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import Link from "next/link";
+import { Link } from "react-router-dom"; // Changed from "next/link"
 
 const Index = () => {
   return (
@@ -31,7 +31,7 @@ const Index = () => {
               Our individual services allow you to pick and choose exactly what your business needs,
               from a single SEO optimization to a complete HR system setup.
             </p>
-            <Link href="/services" passHref>
+            <Link to="/services"> {/* Changed href to to, removed passHref */}
               <button className="bg-primary-500 hover:bg-primary-600 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 text-lg">
                 Explore Individual Services
               </button>

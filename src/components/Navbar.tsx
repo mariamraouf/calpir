@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom"; // Changed from "next/link"
 import { Button } from "@/components/ui/button";
 import { Menu, X, Mail } from "lucide-react";
 import { MadeWithDyad } from "./made-with-dyad";
@@ -26,11 +26,11 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "About Us", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "Home", to: "/" }, // Changed href to to
+    { name: "Services", to: "/services" },
+    { name: "Pricing", to: "/pricing" },
+    { name: "About Us", to: "/about" },
+    { name: "Contact", to: "/contact" },
   ];
 
   return (
@@ -40,7 +40,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-2"> {/* Changed href to to */}
           <img src="/logo.png" alt="Calpir Logo" className="h-8" />
           <span className="text-2xl font-bold text-gray-800">Calpir</span>
         </Link>
@@ -49,14 +49,14 @@ const Navbar = () => {
           {navItems.map((item) => (
             <Link
               key={item.name}
-              href={item.href}
+              to={item.to} // Changed href to to
               className="text-gray-600 hover:text-primary-500 transition-colors duration-200"
             >
               {item.name}
             </Link>
           ))}
           <Button asChild>
-            <Link href="/build-my-business">Build My Business</Link>
+            <Link to="/build-my-business">Build My Business</Link> {/* Changed href to to */}
           </Button>
           <a
             href="mailto:contact@calpir.com"
@@ -80,7 +80,7 @@ const Navbar = () => {
             {navItems.map((item) => (
               <Link
                 key={item.name}
-                href={item.href}
+                to={item.to} // Changed href to to
                 className="text-gray-700 hover:text-primary-500 transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
@@ -88,7 +88,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Button asChild>
-              <Link href="/build-my-business" onClick={() => setIsOpen(false)}>
+              <Link to="/build-my-business" onClick={() => setIsOpen(false)}> {/* Changed href to to */}
                 Build My Business
               </Link>
             </Button>
