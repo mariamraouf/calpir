@@ -1,50 +1,86 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { MadeWithDyad } from "@/components/made-with-dyad";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { toast } from "@/components/ui/use-toast";
+import { Checkbox } from "@/components/ui/checkbox";
+import { toast } from "sonner";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import PageHeader from "@/components/PageHeader";
 
-// Define the interface for the form data
-interface FormData {
-  fullName: string;
-  email: string;
-  phoneNumber: string;
-  companyName: string;
-  existingWebsite: string;
-  countryOfHeadquarters: string;
-  businessType: string;
-  industry: string;
-  otherIndustry: string;
-  companySize: string;
-  packagePreference: string;
-  budgetRange: string;
-  addOnInterests: string[];
-  addOnRequirements: string;
-  primaryGoals: string[];
-  otherPrimaryGoal: string;
-  currentSystems: string;
-  preferredPlatforms: string;
-  systemPriorities: string[];
-  additionalDetails: string;
-  consent: boolean;
-}
+// Data for add-ons, synchronized with Pricing.tsx and Services.tsx
+const addOnsOptions = [
+  // Digital Foundation Services
+  { category: "Digital Foundation Services", subcategory: "Website & Online Presence", id: "website-expansions-per-page", label: "Website Expansions: Per Page ($199)", serviceId: "additional-website-pages" },
+  { category: "Digital Foundation Services", subcategory: "Website & Online Presence", id: "website-expansions-ecommerce", label: "Website Expansions: E-commerce Functionality ($499)", serviceId: "ecommerce-functionality" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "social-media-10-posts", label: "Social Media Content: 10 Posts/Month ($199)", serviceId: "social-media-setup" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "social-media-20-posts", label: "Social Media Content: 20 Posts/Month ($349)", serviceId: "social-media-setup" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "social-media-30-posts", label: "Social Media Content: 30 Posts/Month ($499)", serviceId: "social-media-setup" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "email-marketing-setup", label: "Email Systems & Automation Setup ($499)", serviceId: "email-systems" },
+
+  // Operations & Management Services
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "analytics-monthly-insights", label: "Analytics Upgrades: Monthly Insights ($199)", serviceId: "analytics" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "analytics-monthly-recommendations", label: "Analytics Upgrades: Monthly Recommendations ($249)", serviceId: "analytics" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "analytics-real-time", label: "Analytics Upgrades: Real-time Analytics ($399)", serviceId: "analytics" },
+  { category: "Operations & Management Services", subcategory: "Platform & Integration Services", id: "extra-integrations-per", label: "Extra Integrations: Per Integration ($199)", serviceId: "integrations" },
+  { category: "Operations & Management Services", subcategory: "Platform & Integration Services", id: "custom-automations-5-plus", label: "Custom Automations: For 5+ Automations ($299)", serviceId: "custom-automations" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "security-basics-setup", label: "Security Basics: One-time Setup ($299)", serviceId: "security-basics" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "time-tracking-basic-setup", label: "Time Tracking: Basic Setup ($149)", serviceId: "time-tracking" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "time-tracking-advanced-setup", label: "Time Tracking: Advanced Setup & Reporting ($299)", serviceId: "time-tracking" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "time-tracking-team-training", label: "Time Tracking: Team Training & Optimization ($399)", serviceId: "time-tracking" },
+
+  // Human Resources Services
+  { category: "Human Resources Services", subcategory: "HR Foundation", id: "hr-customizations-setup", label: "HR Customizations: One-time Setup ($299)", serviceId: "hr-recruiting-system" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "staff-recruitment-1-role", label: "Staff Recruitment (Global): 1 Role ($449)", serviceId: "single-role-recruitment" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "staff-recruitment-2-roles", label: "Staff Recruitment (Global): 2 Roles ($699)", serviceId: "multi-role-recruitment" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "staff-recruitment-3-roles", label: "Staff Recruitment (Global): 3 Roles ($899)", serviceId: "multi-role-recruitment" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "staff-recruitment-unlimited", label: "Staff Recruitment (Global): Unlimited (3 months) ($4,999)", serviceId: "comprehensive-recruitment" },
+
+  // Training & Support Services
+  { category: "Training & Support Services", subcategory: "Team Development", id: "training-sessions-per-hour", label: "Training Sessions: Per Hour ($199)", serviceId: "basic-training-sessions" },
+  { category: "Training & Support Services", subcategory: "Ongoing Partnership", id: "ongoing-support-monthly-emails", label: "Ongoing Support: Monthly Emails ($199)", serviceId: "monthly-support-package" },
+  { category: "Training & Support Services", subcategory: "Ongoing Partnership", id: "ongoing-support-weekly-calls", label: "Ongoing Support: Weekly Calls ($499)", serviceId: "premium-support-package" },
+];
+
+const industryOptions = [
+  "Technology and AI",
+  "Marketing and Consulting",
+  "Retail/Wholesale",
+  "Agriculture",
+  "Construction",
+  "Manufacturing",
+  "Transportation",
+  "Finance and Insurance",
+  "Real Estate",
+  "Healthcare",
+  "Education",
+  "Hospitality",
+  "Arts and Entertainment",
+  "Other Services",
+  "Other",
+];
+
+const systemPriorities = [
+  "Organized",
+  "Automated",
+  "Limited Access",
+  "Scalable",
+  "Cost-Effective",
+  "User-Friendly",
+  "Secure",
+  "Integrated",
+  "Customizable",
+];
 
 const BuildMyBusinessPage = () => {
-  const initialFormData: FormData = {
+  const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     phoneNumber: "",
@@ -54,547 +90,427 @@ const BuildMyBusinessPage = () => {
     businessType: "",
     industry: "",
     otherIndustry: "",
-    companySize: "",
+    businessStage: "",
+    businessOperationModel: "",
     packagePreference: "",
     budgetRange: "",
-    addOnInterests: [],
+    addOnInterests: [] as string[],
     addOnRequirements: "",
-    primaryGoals: [],
+    primaryGoals: [] as string[],
     otherPrimaryGoal: "",
-    currentSystems: "",
-    preferredPlatforms: "",
-    systemPriorities: [],
+    currentSystems: "", // Added for TypeScript fix
+    preferredPlatforms: "", // Added for TypeScript fix
+    systemPriorities: [] as string[], // Added for TypeScript fix
     additionalDetails: "",
+    timeline: "",
+    contactMethod: "",
+    preferredTime: "",
     consent: false,
+  });
+
+  const handleChange = (id: string, value: string | boolean | string[]) => {
+    setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  const [formData, setFormData] = useState<FormData>(initialFormData);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  // Fix: Change the type of formErrors to allow string messages for each field
-  const [formErrors, setFormErrors] = useState<Partial<Record<keyof FormData, string>>>({});
-
-  const industries = [
-    "Technology",
-    "Healthcare",
-    "Finance",
-    "Retail",
-    "Education",
-    "Manufacturing",
-    "Hospitality",
-    "Real Estate",
-    "Marketing & Advertising",
-    "Non-profit",
-    "Other",
-  ];
-
-  const companySizes = [
-    "1-10 employees",
-    "11-50 employees",
-    "51-200 employees",
-    "201-500 employees",
-    "500+ employees",
-  ];
-
-  const packagePreferences = [
-    "Starter Package",
-    "Growth Package",
-    "Ultimate Package",
-    "Not sure yet",
-  ];
-
-  const budgetRanges = [
-    "Under $1,000",
-    "$1,000 - $3,000",
-    "$3,000 - $6,000",
-    "Over $6,000",
-    "Flexible",
-  ];
-
-  const addOnOptions = [
-    "Advanced SEO",
-    "Custom Software Development",
-    "Ongoing Marketing Support",
-    "Dedicated Account Manager",
-    "Employee Training Programs",
-    "Cybersecurity Audit",
-    "Legal & Compliance Consulting",
-    "Financial Planning & Analysis",
-  ];
-
-  const primaryGoalOptions = [
-    "Increase Revenue",
-    "Improve Efficiency",
-    "Expand Market Reach",
-    "Enhance Customer Experience",
-    "Streamline Operations",
-    "Reduce Costs",
-    "Improve Employee Satisfaction",
-    "Digital Transformation",
-    "Other",
-  ];
-
-  const systemPriorityOptions = [
-    "Ease of Use",
-    "Scalability",
-    "Cost-Effectiveness",
-    "Integration Capabilities",
-    "Security",
-    "Customization Options",
-    "Vendor Support",
-  ];
-
-  const validateForm = useCallback(() => {
-    // Fix: Change the type of errors to allow string messages
-    const errors: Partial<Record<keyof FormData, string>> = {};
-    if (!formData.fullName) errors.fullName = "Full Name is required.";
-    if (!formData.email) {
-      errors.email = "Email is required.";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.email = "Email is invalid.";
-    }
-    if (!formData.phoneNumber)
-      errors.phoneNumber = "Phone Number is required.";
-    if (!formData.companyName)
-      errors.companyName = "Company Name is required.";
-    if (!formData.countryOfHeadquarters)
-      errors.countryOfHeadquarters = "Country is required.";
-    if (!formData.businessType)
-      errors.businessType = "Business Type is required.";
-    if (!formData.industry) errors.industry = "Industry is required.";
-    if (formData.industry === "Other" && !formData.otherIndustry)
-      errors.otherIndustry = "Please specify your industry.";
-    if (!formData.companySize)
-      errors.companySize = "Company Size is required.";
-    if (!formData.packagePreference)
-      errors.packagePreference = "Package Preference is required.";
-    if (!formData.budgetRange)
-      errors.budgetRange = "Budget Range is required.";
-    if (formData.primaryGoals.length === 0)
-      errors.primaryGoals = "Please select at least one primary goal.";
-    if (
-      formData.primaryGoals.includes("Other") &&
-      !formData.otherPrimaryGoal
-    )
-      errors.otherPrimaryGoal = "Please specify your other primary goal.";
-    if (!formData.consent)
-      errors.consent = "You must consent to be contacted.";
-
-    setFormErrors(errors);
-    return Object.keys(errors).length === 0;
-  }, [formData]);
-
-  useEffect(() => {
-    // Validate form whenever formData changes, except for initial load
-    if (Object.keys(formErrors).length > 0) {
-      validateForm();
-    }
-  }, [formData, formErrors, validateForm]);
-
-  const handleChange = (
-    field: keyof FormData,
-    value: string | boolean | string[]
-  ) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+  const handleSelectChange = (id: string) => (value: string) => {
+    handleChange(id, value);
   };
 
-  const handleCheckboxChange = (
-    item: string,
-    checked: boolean,
-    field: "addOnInterests" | "primaryGoals" | "systemPriorities"
-  ) => {
-    setFormData((prev) => {
-      const currentItems = prev[field] as string[];
-      if (checked) {
-        return { ...prev, [field]: [...currentItems, item] };
-      } else {
-        return { ...prev, [field]: currentItems.filter((i) => i !== item) };
-      }
+  const handleCheckboxChange = (value: string, checked: boolean, field: "addOnInterests" | "primaryGoals" | "systemPriorities") => {
+    handleChange(
+      field,
+      checked
+        ? [...formData[field], value]
+        : formData[field].filter((item) => item !== value)
+    );
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.consent) {
+      toast.error("Please agree to the Privacy Policy and Terms of Service.");
+      return;
+    }
+    console.log("Primary Form Submitted:", formData);
+    toast.success("Your business launch inquiry has been sent! We'll be in touch soon.");
+    // Reset form
+    setFormData({
+      fullName: "", email: "", phoneNumber: "", companyName: "", existingWebsite: "", countryOfHeadquarters: "",
+      businessType: "", industry: "", otherIndustry: "", businessStage: "", businessOperationModel: "",
+      packagePreference: "", budgetRange: "", addOnInterests: [], addOnRequirements: "",
+      primaryGoals: [], otherPrimaryGoal: "", currentSystems: "", preferredPlatforms: "", systemPriorities: [],
+      additionalDetails: "", timeline: "", contactMethod: "", preferredTime: "", consent: false,
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validateForm()) {
-      toast({
-        title: "Validation Error",
-        description: "Please fill in all required fields correctly.",
-        variant: "destructive",
-      });
-      return;
-    }
+  const showAddOnRequirements = formData.addOnInterests.length > 0;
+  const showOtherIndustryInput = formData.industry === "Other";
+  const showOtherPrimaryGoalInput = formData.primaryGoals.includes("Other");
 
-    setIsSubmitting(true);
-    try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log("Form Data Submitted:", formData);
-      toast({
-        title: "Success!",
-        description: "Your request has been submitted. We'll be in touch soon!",
-        variant: "default",
-      });
-      setFormData(initialFormData); // Reset form
-    } catch (error) {
-      console.error("Submission error:", error);
-      toast({
-        title: "Submission Failed",
-        description: "There was an error submitting your request. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
+  // Group add-ons by category and subcategory
+  const groupedAddOns = addOnsOptions.reduce((acc, addOn) => {
+    if (!acc[addOn.category]) {
+      acc[addOn.category] = {};
     }
-  };
+    if (!acc[addOn.category][addOn.subcategory]) {
+      acc[addOn.category][addOn.subcategory] = [];
+    }
+    acc[addOn.category][addOn.subcategory].push(addOn);
+    return acc;
+  }, {} as Record<string, Record<string, typeof addOnsOptions>>);
+
 
   return (
-    <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8 max-w-3xl">
-      <div className="mb-8">
-        <Link to="/pricing" className="inline-flex items-center text-primary hover:text-calpir-green-700 transition-colors duration-200">
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to Pricing
-        </Link>
-      </div>
-      <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-xl border border-palette-blue-100 dark:border-gray-700">
-        <h1 className="text-4xl font-extrabold text-center text-gray-900 dark:text-white mb-4">
-          Build My Business
-        </h1>
-        <p className="text-lg text-center text-gray-600 dark:text-gray-300 mb-10">
-          Tell us about your business needs, and we'll craft the perfect solution.
-        </p>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <main className="flex-grow">
+        <PageHeader
+          title="Launch Your Dream Business"
+          description="Tell us about your business needs to get started with your custom solution."
+          buttons={[
+            { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "primary", isExternal: true },
+            { text: "View All Services", href: "/services", variant: "outline" },
+          ]}
+        />
 
-        <form onSubmit={handleSubmit} className="space-y-8">
-          {/* Contact Information */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white border-b pb-3 mb-5">
-              Contact Information
-            </h2>
-            <div>
-              <Label htmlFor="fullName">Full Name <span className="text-red-500">*</span></Label>
-              <Input
-                id="fullName"
-                type="text"
-                placeholder="John Doe"
-                value={formData.fullName}
-                onChange={(e) => handleChange("fullName", e.target.value)}
-                className="rounded-2xl"
-              />
-              {formErrors.fullName && <p className="text-red-500 text-sm mt-1">{formErrors.fullName}</p>}
-            </div>
-            <div>
-              <Label htmlFor="email">Email <span className="text-red-500">*</span></Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="john.doe@example.com"
-                value={formData.email}
-                onChange={(e) => handleChange("email", e.target.value)}
-                className="rounded-2xl"
-              />
-              {formErrors.email && <p className="text-red-500 text-sm mt-1">{formErrors.email}</p>}
-            </div>
-            <div>
-              <Label htmlFor="phoneNumber">Phone Number <span className="text-red-500">*</span></Label>
-              <Input
-                id="phoneNumber"
-                type="tel"
-                placeholder="+1 (555) 123-4567"
-                value={formData.phoneNumber}
-                onChange={(e) => handleChange("phoneNumber", e.target.value)}
-                className="rounded-2xl"
-              />
-              {formErrors.phoneNumber && <p className="text-red-500 text-sm mt-1">{formErrors.phoneNumber}</p>}
-            </div>
-          </div>
+        <section className="container py-16 md:py-24">
+          <div className="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 animate-fade-in-up delay-300">
+            <form onSubmit={handleSubmit} className="grid gap-8 py-4">
+              {/* Contact Information */}
+              <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">1. Contact Information</h3>
+                <div className="space-y-2">
+                  <Label htmlFor="fullName">Full Name <span className="text-red-500">*</span></Label>
+                  <Input id="fullName" value={formData.fullName} onChange={(e) => handleChange("fullName", e.target.value)} required className="rounded-2xl" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email Address <span className="text-red-500">*</span></Label>
+                  <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} required className="rounded-2xl" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="phoneNumber">Phone Number</Label>
+                  <Input id="phoneNumber" type="tel" value={formData.phoneNumber} onChange={(e) => handleChange("phoneNumber", e.target.value)} className="rounded-2xl" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="companyName">Company Name</Label>
+                  <Input id="companyName" value={formData.companyName} onChange={(e) => handleChange("companyName", e.target.value)} className="rounded-2xl" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="existingWebsite">Existing Website Link</Label>
+                  <Input id="existingWebsite" type="url" placeholder="https://yourwebsite.com" value={formData.existingWebsite} onChange={(e) => handleChange("existingWebsite", e.target.value)} className="rounded-2xl" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="countryOfHeadquarters">Country of Headquarters <span className="text-red-500">*</span></Label>
+                  <Input id="countryOfHeadquarters" value={formData.countryOfHeadquarters} onChange={(e) => handleChange("countryOfHeadquarters", e.target.value)} required className="rounded-2xl" />
+                </div>
+              </div>
 
-          {/* Business Details */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white border-b pb-3 mb-5">
-              Business Details
-            </h2>
-            <div>
-              <Label htmlFor="companyName">Company Name <span className="text-red-500">*</span></Label>
-              <Input
-                id="companyName"
-                type="text"
-                placeholder="Acme Corp"
-                value={formData.companyName}
-                onChange={(e) => handleChange("companyName", e.target.value)}
-                className="rounded-2xl"
-              />
-              {formErrors.companyName && <p className="text-red-500 text-sm mt-1">{formErrors.companyName}</p>}
-            </div>
-            <div>
-              <Label htmlFor="existingWebsite">Existing Website (if any)</Label>
-              <Input
-                id="existingWebsite"
-                type="url"
-                placeholder="https://www.acmecorp.com"
-                value={formData.existingWebsite}
-                onChange={(e) => handleChange("existingWebsite", e.target.value)}
-                className="rounded-2xl"
-              />
-            </div>
-            <div>
-              <Label htmlFor="countryOfHeadquarters">Country of Headquarters <span className="text-red-500">*</span></Label>
-              <Input
-                id="countryOfHeadquarters"
-                type="text"
-                placeholder="United States"
-                value={formData.countryOfHeadquarters}
-                onChange={(e) => handleChange("countryOfHeadquarters", e.target.value)}
-                className="rounded-2xl"
-              />
-              {formErrors.countryOfHeadquarters && <p className="text-red-500 text-sm mt-1">{formErrors.countryOfHeadquarters}</p>}
-            </div>
-            <div>
-              <Label htmlFor="businessType">Type of Business <span className="text-red-500">*</span></Label>
-              <Input
-                id="businessType"
-                type="text"
-                placeholder="e.g., SaaS, E-commerce, Consulting"
-                value={formData.businessType}
-                onChange={(e) => handleChange("businessType", e.target.value)}
-                className="rounded-2xl"
-              />
-              {formErrors.businessType && <p className="text-red-500 text-sm mt-1">{formErrors.businessType}</p>}
-            </div>
-            <div>
-              <Label htmlFor="industry">Industry <span className="text-red-500">*</span></Label>
-              <Select
-                onValueChange={(value) => handleChange("industry", value)}
-                value={formData.industry}
-              >
-                <SelectTrigger className="w-full rounded-2xl">
-                  <SelectValue placeholder="Select your industry" />
-                </SelectTrigger>
-                <SelectContent className="rounded-2xl">
-                  {industries.map((industry) => (
-                    <SelectItem key={industry} value={industry}>
-                      {industry}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              {formErrors.industry && <p className="text-red-500 text-sm mt-1">{formErrors.industry}</p>}
-            </div>
-            {formData.industry === "Other" && (
-              <div>
-                <Label htmlFor="otherIndustry">Please specify your industry <span className="text-red-500">*</span></Label>
-                <Input
-                  id="otherIndustry"
-                  type="text"
-                  placeholder="e.g., Aerospace, Biotechnology"
-                  value={formData.otherIndustry}
-                  onChange={(e) => handleChange("otherIndustry", e.target.value)}
-                  className="rounded-2xl"
+              {/* Business Details */}
+              <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">2. Business Details</h3>
+                <div className="space-y-2">
+                  <Label htmlFor="businessType">Business Type <span className="text-red-500">*</span></Label>
+                  <Select onValueChange={handleSelectChange("businessType")} value={formData.businessType} required>
+                    <SelectTrigger id="businessType" className="p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-md hover:border-primary transition-all duration-300">
+                      <SelectValue placeholder="Select business type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Solo Entrepreneur">Solo Entrepreneur</SelectItem>
+                      <SelectItem value="Small Startup">Small Startup</SelectItem>
+                      <SelectItem value="Scaling Startup">Scaling Startup</SelectItem>
+                      <SelectItem value="Funded Business">Funded Business</SelectItem>
+                      <SelectItem value="Other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="industry">Industry <span className="text-red-500">*</span></Label>
+                  <Select onValueChange={handleSelectChange("industry")} value={formData.industry} required>
+                    <SelectTrigger id="industry" className="p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-md hover:border-primary transition-all duration-300">
+                      <SelectValue placeholder="Select industry" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {industryOptions.map((option) => (
+                        <SelectItem key={option} value={option}>{option}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                {showOtherIndustryInput && (
+                  <div className="space-y-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                    <Label htmlFor="otherIndustry">Please specify your industry</Label>
+                    <Input id="otherIndustry" value={formData.otherIndustry} onChange={(e) => handleChange("otherIndustry", e.target.value)} className="rounded-2xl" />
+                  </div>
+                )}
+                <div className="space-y-2">
+                  <Label htmlFor="businessStage">Current Business Stage <span className="text-red-500">*</span></Label>
+                  <Select onValueChange={handleSelectChange("businessStage")} value={formData.businessStage} required>
+                    <SelectTrigger id="businessStage" className="p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-md hover:border-primary transition-all duration-300">
+                      <SelectValue placeholder="Select business stage" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Idea/Planning">Idea/Planning</SelectItem>
+                      <SelectItem value="Early Stage (0-1 year)">Early Stage (0-1 year)</SelectItem>
+                      <SelectItem value="Scaling (1-3 years)">Scaling (1-3 years)</SelectItem>
+                      <SelectItem value="Established (3+ years)">Established (3+ years)</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-2">
+                  <Label>Business Operation Model <span className="text-red-500">*</span></Label>
+                  <RadioGroup onValueChange={handleSelectChange("businessOperationModel")} value={formData.businessOperationModel} required className="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0">
+                    <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                      <RadioGroupItem value="Remote" id="op-remote" />
+                      <Label htmlFor="op-remote">Remote</Label>
+                    </div>
+                    <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                      <RadioGroupItem value="Hybrid" id="op-hybrid" />
+                      <Label htmlFor="op-hybrid">Hybrid</Label>
+                    </div>
+                    <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                      <RadioGroupItem value="On-site" id="op-on-site" />
+                      <Label htmlFor="op-on-site">On-site</Label>
+                    </div>
+                  </RadioGroup>
+                </div>
+              </div>
+
+              {/* Current & Preferred Systems */}
+              <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">3. Systems & Platforms</h3>
+                <div className="space-y-2">
+                  <Label htmlFor="currentSystems">Current Systems/Software Used</Label>
+                  <Textarea id="currentSystems" placeholder="e.g., HubSpot, ClickUp, QuickBooks" value={formData.currentSystems} onChange={(e) => handleChange("currentSystems", e.target.value)} rows={3} className="rounded-2xl" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="preferredPlatforms">Preferred Platforms/Software</Label>
+                  <Textarea id="preferredPlatforms" placeholder="e.g., Salesforce, Asana, Xero" value={formData.preferredPlatforms} onChange={(e) => handleChange("preferredPlatforms", e.target.value)} rows={3} className="rounded-2xl" />
+                </div>
+                <div className="space-y-2">
+                  <Label>Key System Priorities <span className="text-red-500">*</span></Label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {systemPriorities.map((priority) => (
+                      <div key={priority} className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                        <Checkbox
+                          id={`priority-${priority}`}
+                          checked={formData.systemPriorities.includes(priority)}
+                          onCheckedChange={(checked) => handleCheckboxChange(priority, checked as boolean, "systemPriorities")}
+                        />
+                        <Label htmlFor={`priority-${priority}`}>{priority}</Label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Package Selection */}
+              <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">4. Package Preference <span className="text-red-500">*</span></h3>
+                <RadioGroup onValueChange={handleSelectChange("packagePreference")} value={formData.packagePreference} required className="space-y-2">
+                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                    <RadioGroupItem value="Starter ($1,499)" id="package-starter" />
+                    <Label htmlFor="package-starter">Starter ($1,499)</Label>
+                  </div>
+                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                    <RadioGroupItem value="Growth ($2,999)" id="package-growth" />
+                    <Label htmlFor="package-growth">Growth ($2,999)</Label>
+                  </div>
+                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                    <RadioGroupItem value="Ultimate ($5,999)" id="package-ultimate" />
+                    <Label htmlFor="package-ultimate">Ultimate ($5,999)</Label>
+                  </div>
+                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                    <RadioGroupItem value="Not Sure" id="package-not-sure" />
+                    <Label htmlFor="package-not-sure">Not Sure</Label>
+                  </div>
+                </RadioGroup>
+                {formData.packagePreference === "Not Sure" && (
+                  <div className="space-y-2 mt-4">
+                    <Label htmlFor="budgetRange">What is your budget range?</Label>
+                    <Select onValueChange={handleSelectChange("budgetRange")} value={formData.budgetRange}>
+                      <SelectTrigger id="budgetRange" className="p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-md hover:border-primary transition-all duration-300">
+                        <SelectValue placeholder="Select budget range" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="<$2,000">&lt;$2,000</SelectItem>
+                        <SelectItem value="$2,000-$5,000">$2,000-$5,000</SelectItem>
+                        <SelectItem value="$5,000+">$5,000+</SelectItem>
+                        <SelectItem value="Custom Quote Needed">Custom Quote Needed</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                )}
+              </div>
+
+              {/* Add-On Interests */}
+              <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">5. Add-On Interests</h3>
+                {Object.entries(groupedAddOns).map(([category, subcategories]) => (
+                  <div key={category} className="space-y-4 pl-4 border-l-2 border-primary/50 dark:border-calpir-green-300/50">
+                    <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{category}</h4>
+                    {Object.entries(subcategories).map(([subcategory, addOns]) => (
+                      <div key={subcategory} className="space-y-2 pl-4">
+                        <h5 className="text-md font-medium text-gray-700 dark:text-gray-300">{subcategory}</h5>
+                        <div className="grid grid-cols-1 gap-4">
+                          {addOns.map((addOn) => (
+                            <div key={addOn.id} className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                              <Checkbox
+                                id={`addOn-${addOn.id}`}
+                                checked={formData.addOnInterests.includes(addOn.id)}
+                                onCheckedChange={(checked) => handleCheckboxChange(addOn.id, checked as boolean, "addOnInterests")}
+                              />
+                              <Label htmlFor={`addOn-${addOn.id}`} className="flex-grow">
+                                {addOn.label}
+                                {addOn.serviceId && (
+                                  <Link to={`/services#${addOn.serviceId}`} className="text-primary hover:underline ml-2 text-sm" target="_blank" rel="noopener noreferrer">
+                                    (Learn More)
+                                  </Link>
+                                )}
+                              </Label>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+                {showAddOnRequirements && (
+                  <div className="space-y-2 mt-4">
+                    <Label htmlFor="addOnRequirements">Please describe any specific requirements for these add-ons (e.g., preferred platforms, specific needs).</Label>
+                    <Textarea id="addOnRequirements" value={formData.addOnRequirements} onChange={(e) => handleChange("addOnRequirements", e.target.value)} rows={3} className="rounded-2xl" />
+                  </div>
+                )}
+              </div>
+
+              {/* Project Goals and Timeline */}
+              <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">6. Project Goals and Timeline <span className="text-red-500">*</span></h3>
+                <div className="space-y-2">
+                  <Label>Primary Goal(s) <span className="text-red-500">*</span></Label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                      <Checkbox
+                        id="goal-website-development"
+                        checked={formData.primaryGoals.includes("Website Development")}
+                        onCheckedChange={(checked) => handleCheckboxChange("Website Development", checked as boolean, "primaryGoals")}
+                      />
+                      <Label htmlFor="goal-website-development">Website Development</Label>
+                    </div>
+                    <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                      <Checkbox
+                        id="goal-brand-identity"
+                        checked={formData.primaryGoals.includes("Design & Branding Package")}
+                        onCheckedChange={(checked) => handleCheckboxChange("Design & Branding Package", checked as boolean, "primaryGoals")}
+                      />
+                      <Label htmlFor="goal-brand-identity">Design & Branding Package</Label>
+                    </div>
+                    <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                      <Checkbox
+                        id="goal-marketing-systems"
+                        checked={formData.primaryGoals.includes("Marketing Systems")}
+                        onCheckedChange={(checked) => handleCheckboxChange("Marketing Systems", checked as boolean, "primaryGoals")}
+                      />
+                      <Label htmlFor="goal-marketing-systems">Marketing Systems</Label>
+                    </div>
+                    <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                      <Checkbox
+                        id="goal-project-management-setup"
+                        checked={formData.primaryGoals.includes("Project Management Setup")}
+                        onCheckedChange={(checked) => handleCheckboxChange("Project Management Setup", checked as boolean, "primaryGoals")}
+                      />
+                      <Label htmlFor="goal-project-management-setup">Project Management Setup</Label>
+                    </div>
+                    <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                      <Checkbox
+                        id="goal-hr-operations-setup"
+                        checked={formData.primaryGoals.includes("HR & Operations Setup")}
+                        onCheckedChange={(checked) => handleCheckboxChange("HR & Operations Setup", checked as boolean, "primaryGoals")}
+                      />
+                      <Label htmlFor="goal-hr-operations-setup">HR & Operations Setup</Label>
+                    </div>
+                    <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                      <Checkbox
+                        id="goal-other"
+                        checked={formData.primaryGoals.includes("Other")}
+                        onCheckedChange={(checked) => handleCheckboxChange("Other", checked as boolean, "primaryGoals")}
+                      />
+                      <Label htmlFor="goal-other">Other</Label>
+                    </div>
+                  </div>
+                </div>
+                {showOtherPrimaryGoalInput && (
+                  <div className="space-y-2 mt-4">
+                    <Label htmlFor="otherPrimaryGoal">Please specify your primary goal</Label>
+                    <Input id="otherPrimaryGoal" value={formData.otherPrimaryGoal} onChange={(e) => handleChange("otherPrimaryGoal", e.target.value)} className="rounded-2xl" />
+                  </div>
+                )}
+                <div className="space-y-2">
+                  <Label htmlFor="timeline">Timeline <span className="text-red-500">*</span></Label>
+                  <Select onValueChange={handleSelectChange("timeline")} value={formData.timeline} required>
+                    <SelectTrigger id="timeline" className="p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-md hover:border-primary transition-all duration-300">
+                      <SelectValue placeholder="Select timeline" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Within 7 Days">Within 7 Days</SelectItem>
+                      <SelectItem value="1-2 Weeks">1-2 Weeks</SelectItem>
+                      <SelectItem value="1 Month">1 Month</SelectItem>
+                      <SelectItem value="Flexible">Flexible</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="additionalDetails">Additional Details</Label>
+                  <Textarea id="additionalDetails" value={formData.additionalDetails} onChange={(e) => handleChange("additionalDetails", e.target.value)} rows={4} className="rounded-2xl" />
+                </div>
+              </div>
+
+              {/* Consultation Preference */}
+              <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">7. Consultation Preference <span className="text-red-500">*</span></h3>
+                <RadioGroup onValueChange={handleSelectChange("contactMethod")} value={formData.contactMethod} required className="space-y-2">
+                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                    <RadioGroupItem value="Email" id="contact-email" />
+                    <Label htmlFor="contact-email">Email</Label>
+                  </div>
+                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                    <RadioGroupItem value="Phone" id="contact-phone" />
+                    <Label htmlFor="contact-phone">Phone</Label>
+                  </div>
+                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                    <RadioGroupItem value="Video Call (e.g., Zoom)" id="contact-video" />
+                    <Label htmlFor="contact-video">Video Call (e.g., Zoom)</Label>
+                  </div>
+                </RadioGroup>
+                <div className="space-y-2">
+                  <Label htmlFor="preferredTime">Preferred Time</Label>
+                  <Input id="preferredTime" placeholder="e.g., Weekdays after 2 PM EST" value={formData.preferredTime} onChange={(e) => handleChange("preferredTime", e.target.value)} className="rounded-2xl" />
+                </div>
+              </div>
+
+              {/* Submission and Consent */}
+              <div className="flex items-center space-x-2 mt-4">
+                <Checkbox
+                  id="consent"
+                  checked={formData.consent}
+                  onCheckedChange={(checked) => handleChange("consent", checked as boolean)}
+                  required
                 />
-                {formErrors.otherIndustry && <p className="text-red-500 text-sm mt-1">{formErrors.otherIndustry}</p>}
+                <Label htmlFor="consent">
+                  I agree to Calpir’s <Link to="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary hover:underline">Terms of Service</Link> <span className="text-red-500">*</span>
+                </Label>
               </div>
-            )}
-            <div>
-              <Label htmlFor="companySize">Company Size <span className="text-red-500">*</span></Label>
-              <Select
-                onValueChange={(value) => handleChange("companySize", value)}
-                value={formData.companySize}
-              >
-                <SelectTrigger className="w-full rounded-2xl">
-                  <SelectValue placeholder="Select company size" />
-                </SelectTrigger>
-                <SelectContent className="rounded-2xl">
-                  {companySizes.map((size) => (
-                    <SelectItem key={size} value={size}>
-                      {size}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              {formErrors.companySize && <p className="text-red-500 text-sm mt-1">{formErrors.companySize}</p>}
-            </div>
-          </div>
 
-          {/* Package & Budget */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white border-b pb-3 mb-5">
-              Package & Budget
-            </h2>
-            <div>
-              <Label>Preferred Package <span className="text-red-500">*</span></Label>
-              <RadioGroup
-                onValueChange={(value) => handleChange("packagePreference", value)}
-                value={formData.packagePreference}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2"
-              >
-                {packagePreferences.map((pkg) => (
-                  <div key={pkg} className="flex items-center space-x-2 p-3 border rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                    <RadioGroupItem value={pkg} id={`package-${pkg}`} />
-                    <Label htmlFor={`package-${pkg}`} className="flex-1 cursor-pointer">
-                      {pkg}
-                    </Label>
-                  </div>
-                ))}
-              </RadioGroup>
-              {formErrors.packagePreference && <p className="text-red-500 text-sm mt-1">{formErrors.packagePreference}</p>}
-            </div>
-            <div>
-              <Label>Budget Range <span className="text-red-500">*</span></Label>
-              <RadioGroup
-                onValueChange={(value) => handleChange("budgetRange", value)}
-                value={formData.budgetRange}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2"
-              >
-                {budgetRanges.map((budget) => (
-                  <div key={budget} className="flex items-center space-x-2 p-3 border rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                    <RadioGroupItem value={budget} id={`budget-${budget}`} />
-                    <Label htmlFor={`budget-${budget}`} className="flex-1 cursor-pointer">
-                      {budget}
-                    </Label>
-                  </div>
-                ))}
-              </RadioGroup>
-              {formErrors.budgetRange && <p className="text-red-500 text-sm mt-1">{formErrors.budgetRange}</p>}
-            </div>
+              <div className="mt-6">
+                <Button type="submit" className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:animate-button-glow">
+                  Start My Business
+                </Button>
+              </div>
+            </form>
           </div>
-
-          {/* Specific Needs */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white border-b pb-3 mb-5">
-              Specific Needs
-            </h2>
-            <div>
-              <Label>Primary Goals <span className="text-red-500">*</span></Label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-                {primaryGoalOptions.map((goal) => (
-                  <div key={goal} className="flex items-center space-x-2 p-3 border rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                    <Checkbox
-                      id={`goal-${goal}`}
-                      checked={formData.primaryGoals.includes(goal)}
-                      onCheckedChange={(checked) => handleCheckboxChange(goal, checked as boolean, "primaryGoals")}
-                    />
-                    <Label htmlFor={`goal-${goal}`} className="flex-1 cursor-pointer">
-                      {goal}
-                    </Label>
-                  </div>
-                ))}
-              </div>
-              {formErrors.primaryGoals && <p className="text-red-500 text-sm mt-1">{formErrors.primaryGoals}</p>}
-            </div>
-            {formData.primaryGoals.includes("Other") && (
-              <div>
-                <Label htmlFor="otherPrimaryGoal">Please specify your other primary goal <span className="text-red-500">*</span></Label>
-                <Input
-                  id="otherPrimaryGoal"
-                  type="text"
-                  placeholder="e.g., Achieve ISO certification"
-                  value={formData.otherPrimaryGoal}
-                  onChange={(e) => handleChange("otherPrimaryGoal", e.target.value)}
-                  className="rounded-2xl"
-                />
-                {formErrors.otherPrimaryGoal && <p className="text-red-500 text-sm mt-1">{formErrors.otherPrimaryGoal}</p>}
-              </div>
-            )}
-            <div>
-              <Label htmlFor="currentSystems">Current Systems/Software Used</Label>
-              <Textarea
-                id="currentSystems"
-                placeholder="e.g., HubSpot, ClickUp, QuickBooks"
-                value={formData.currentSystems}
-                onChange={(e) => handleChange("currentSystems", e.target.value)}
-                rows={3}
-                className="rounded-2xl"
-              />
-            </div>
-            <div>
-              <Label htmlFor="preferredPlatforms">Preferred Platforms/Software</Label>
-              <Textarea
-                id="preferredPlatforms"
-                placeholder="e.g., Salesforce, Asana, Xero"
-                value={formData.preferredPlatforms}
-                onChange={(e) => handleChange("preferredPlatforms", e.target.value)}
-                rows={3}
-                className="rounded-2xl"
-              />
-            </div>
-            <div>
-              <Label>System Priorities</Label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-                {systemPriorityOptions.map((priority) => (
-                  <div key={priority} className="flex items-center space-x-2 p-3 border rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                    <Checkbox
-                      id={`priority-${priority}`}
-                      checked={formData.systemPriorities.includes(priority)}
-                      onCheckedChange={(checked) => handleCheckboxChange(priority, checked as boolean, "systemPriorities")}
-                    />
-                    <Label htmlFor={`priority-${priority}`} className="flex-1 cursor-pointer">
-                      {priority}
-                    </Label>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <Label>Add-on Interests</Label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-                {addOnOptions.map((addOn) => (
-                  <div key={addOn} className="flex items-center space-x-2 p-3 border rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                    <Checkbox
-                      id={`addon-${addOn}`}
-                      checked={formData.addOnInterests.includes(addOn)}
-                      onCheckedChange={(checked) => handleCheckboxChange(addOn, checked as boolean, "addOnInterests")}
-                    />
-                    <Label htmlFor={`addon-${addOn}`} className="flex-1 cursor-pointer">
-                      {addOn}
-                    </Label>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <Label htmlFor="addOnRequirements">Specific Add-on Requirements</Label>
-              <Textarea
-                id="addOnRequirements"
-                placeholder="e.g., Need custom integration with X platform for Y add-on."
-                value={formData.addOnRequirements}
-                onChange={(e) => handleChange("addOnRequirements", e.target.value)}
-                rows={3}
-                className="rounded-2xl"
-              />
-            </div>
-            <div>
-              <Label htmlFor="additionalDetails">Additional Details or Questions</Label>
-              <Textarea
-                id="additionalDetails"
-                placeholder="Is there anything else you'd like us to know?"
-                value={formData.additionalDetails}
-                onChange={(e) => handleChange("additionalDetails", e.target.value)}
-                rows={4}
-                className="rounded-2xl"
-              />
-            </div>
-          </div>
-
-          {/* Consent */}
-          <div className="flex items-start space-x-2">
-            <Checkbox
-              id="consent"
-              checked={formData.consent}
-              onCheckedChange={(checked) => handleChange("consent", checked as boolean)}
-              className="mt-1"
-            />
-            <Label htmlFor="consent" className="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-              I consent to being contacted by Calpir regarding my business needs. <span className="text-red-500">*</span>
-            </Label>
-            {formErrors.consent && <p className="text-red-500 text-sm mt-1">{formErrors.consent}</p>}
-          </div>
-
-          <Button
-            type="submit"
-            className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? "Submitting..." : "Submit Request"}
-          </Button>
-        </form>
-      </div>
+        </section>
+      </main>
+      <Footer />
+      <MadeWithDyad />
     </div>
   );
 };
