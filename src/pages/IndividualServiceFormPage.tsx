@@ -13,7 +13,42 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
 import PageHeader from "@/components/PageHeader";
-import { servicesData } from "@/data/services"; // Import from central file
+
+// Re-using servicesData from Services.tsx for Individual Services section
+const servicesData = [
+  // Digital Foundation Services
+  { category: "Digital Foundation Services", subcategory: "Website & Online Presence", id: "website-building", title: "Website Building & Hosting", investment: "$999" },
+  { category: "Digital Foundation Services", subcategory: "Website & Online Presence", id: "additional-website-pages", title: "Additional Website Pages", investment: "$199/page" },
+  { category: "Digital Foundation Services", subcategory: "Website & Online Presence", id: "ecommerce-functionality", title: "E-commerce Functionality", investment: "$499" },
+  { category: "Digital Foundation Services", subcategory: "Website & Online Presence", id: "seo-optimization", title: "SEO Optimization", investment: "$599" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "social-media-setup", title: "Social Media Setup", investment: "$499" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "design-branding", title: "Design & Branding Package", investment: "$1,299" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "email-systems", title: "Email Systems & Automation Setup", investment: "$499" },
+
+  // Operations & Management Services
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "project-management", title: "Project Management Setup", investment: "$799" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "operations-flows", title: "Operations Flows Setup", investment: "$1,199" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "crm-setup", title: "CRM Setup & Optimization", investment: "$899" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "accounting", title: "Accounting System Setup", investment: "$699" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "analytics", title: "Analytics & Reporting", investment: "$799" },
+  { category: "Operations & Management Services", subcategory: "Platform & Integration Services", id: "integrations", title: "Platform Integrations", investment: "$199/integration" },
+  { category: "Operations & Management Services", subcategory: "Platform & Integration Services", id: "migrations", title: "Software Migrations", investment: "$599-$1,499" },
+  { category: "Operations & Management Services", subcategory: "Platform & Integration Services", id: "custom-automations", title: "Custom Automations", investment: "$299" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "security-basics", title: "Security Basics Setup", investment: "$299" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "time-tracking", title: "Time Tracking System Setup", investment: "$299" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "performance-management", title: "Performance Management", investment: "$699" },
+
+  // Human Resources Services
+  { category: "Human Resources Services", subcategory: "HR Foundation", id: "hr-recruiting-system", title: "HR & Recruiting System", investment: "$1,299" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "single-role-recruitment", title: "Single Role Recruitment", investment: "$449" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "multi-role-recruitment", title: "Multi-Role Recruitment", investment: "$699" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "comprehensive-recruitment", title: "Comprehensive Recruitment (3 months)", investment: "$4,999" },
+
+  // Training & Support Services
+  { category: "Training & Support Services", subcategory: "Team Development", id: "basic-training-sessions", title: "Basic Training Sessions", investment: "$199/hour" },
+  { category: "Training & Support Services", subcategory: "Ongoing Partnership", id: "monthly-support-package", title: "Monthly Support Package", investment: "$199/month" },
+  { category: "Training & Support Services", subcategory: "Ongoing Partnership", id: "premium-support-package", title: "Weekly Support Package", investment: "$499/month" },
+];
 
 const IndividualServiceFormPage = () => {
   const [formData, setFormData] = useState({
@@ -105,11 +140,11 @@ const IndividualServiceFormPage = () => {
                   <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} required className="rounded-2xl" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="phoneNumber">Phone Number (Optional)</Label>
+                  <Label htmlFor="phoneNumber">Phone Number</Label>
                   <Input id="phoneNumber" type="tel" value={formData.phoneNumber} onChange={(e) => handleChange("phoneNumber", e.target.value)} className="rounded-2xl" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="companyName">Company Name (Optional)</Label>
+                  <Label htmlFor="companyName">Company Name</Label>
                   <Input id="companyName" value={formData.companyName} onChange={(e) => handleChange("companyName", e.target.value)} className="rounded-2xl" />
                 </div>
               </div>
@@ -169,7 +204,7 @@ const IndividualServiceFormPage = () => {
                   </Select>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="budgetRange">Your Estimated Budget Range (Optional)</Label>
+                  <Label htmlFor="budgetRange">Your Estimated Budget Range</Label>
                   <Select onValueChange={handleSelectChange("budgetRange")} value={formData.budgetRange}>
                     <SelectTrigger id="budgetRange" className="p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-md hover:border-primary transition-all duration-300">
                       <SelectValue placeholder="Select budget range" />

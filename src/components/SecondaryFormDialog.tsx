@@ -64,11 +64,11 @@ const SecondaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) 
           <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} required className="rounded-2xl" />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="phoneNumber">Phone Number (Optional)</Label>
+          <Label htmlFor="phoneNumber">Phone Number</Label>
           <Input id="phoneNumber" type="tel" value={formData.phoneNumber} onChange={(e) => handleChange("phoneNumber", e.target.value)} className="rounded-2xl" />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="businessType">Business Type (Optional)</Label>
+          <Label htmlFor="businessType">Business Type</Label>
           <Select onValueChange={handleSelectChange("businessType")} value={formData.businessType}>
             <SelectTrigger id="businessType" className="p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-md hover:border-primary transition-all duration-300">
               <SelectValue placeholder="Select business type" />
@@ -96,7 +96,7 @@ const SecondaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) 
           </RadioGroup>
         </div>
         <div className="space-y-2">
-          <Label htmlFor="briefDescription">Brief Description (Optional)</Label>
+          <Label htmlFor="briefDescription">Brief Description</Label>
           <Textarea id="briefDescription" placeholder="Tell us about your business or what you’re looking for..." value={formData.briefDescription} onChange={(e) => handleChange("briefDescription", e.target.value)} rows={4} className="rounded-2xl" />
         </div>
 

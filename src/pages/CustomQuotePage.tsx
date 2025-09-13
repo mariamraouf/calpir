@@ -77,11 +77,11 @@ const CustomQuotePage = () => {
                   <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} required className="rounded-2xl" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="phoneNumber">Phone Number (Optional)</Label>
+                  <Label htmlFor="phoneNumber">Phone Number</Label>
                   <Input id="phoneNumber" type="tel" value={formData.phoneNumber} onChange={(e) => handleChange("phoneNumber", e.target.value)} className="rounded-2xl" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="companyName">Company Name (Optional)</Label>
+                  <Label htmlFor="companyName">Company Name</Label>
                   <Input id="companyName" value={formData.companyName} onChange={(e) => handleChange("companyName", e.target.value)} className="rounded-2xl" />
                 </div>
               </div>
@@ -90,7 +90,7 @@ const CustomQuotePage = () => {
               <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">2. Your Custom Requirements</h3>
                 <div className="space-y-2">
-                  <Label htmlFor="businessType">Business Type (Optional)</Label>
+                  <Label htmlFor="businessType">Business Type</Label>
                   <Select onValueChange={handleSelectChange("businessType")} value={formData.businessType}>
                     <SelectTrigger id="businessType" className="p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-md hover:border-primary transition-all duration-300">
                       <SelectValue placeholder="Select business type" />
@@ -109,7 +109,7 @@ const CustomQuotePage = () => {
                   <Textarea id="customRequirements" placeholder="e.g., I need a custom integration between X and Y, or a unique workflow for Z..." value={formData.customRequirements} onChange={(e) => handleChange("customRequirements", e.target.value)} rows={6} required className="rounded-2xl" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="budgetRange">Your Estimated Budget Range (Optional)</Label>
+                  <Label htmlFor="budgetRange">Your Estimated Budget Range</Label>
                   <Select onValueChange={handleSelectChange("budgetRange")} value={formData.budgetRange}>
                     <SelectTrigger id="budgetRange" className="p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-md hover:border-primary transition-all duration-300">
                       <SelectValue placeholder="Select budget range" />
@@ -123,7 +123,7 @@ const CustomQuotePage = () => {
                   </Select>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="timeline">Desired Timeline (Optional)</Label>
+                  <Label htmlFor="timeline">Desired Timeline</Label>
                   <Select onValueChange={handleSelectChange("timeline")} value={formData.timeline}>
                     <SelectTrigger id="timeline" className="p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-md hover:border-primary transition-all duration-300">
                       <SelectValue placeholder="Select timeline" />
