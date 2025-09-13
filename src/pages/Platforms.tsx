@@ -211,7 +211,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Spike", logo: "https://logo.clearbit.com/spikenow.com?size=50" },
       { name: "Superhuman", logo: "https://logo.clearbit.com/superhuman.com?size=50" },
       { name: "Hey", logo: "https://logo.clearbit.com/hey.com?size=50" },
-      { name: "Brevo", logo: "/logos/brevo-logo.svg" }, // Still local SVG
+      { name: "Brevo", logo: "/logos/brevo-logo.png" }, // Updated to local PNG
       { name: "Mailchimp", logo: "https://logo.clearbit.com/mailchimp.com?size=50" },
       { name: "Constant Contact", logo: "https://logo.clearbit.com/constantcontact.com?size=50" },
       { name: "GetResponse", logo: "https://logo.clearbit.com/getresponse.com?size=50" },
