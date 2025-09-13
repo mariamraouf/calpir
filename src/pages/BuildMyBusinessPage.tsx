@@ -20,27 +20,33 @@ const addOnsOptions = [
   // Digital Foundation Services
   { category: "Digital Foundation Services", subcategory: "Website & Online Presence", id: "website-expansions-per-page", label: "Website Expansions: Per Page ($199)", serviceId: "additional-website-pages" },
   { category: "Digital Foundation Services", subcategory: "Website & Online Presence", id: "website-expansions-ecommerce", label: "Website Expansions: E-commerce Functionality ($499)", serviceId: "ecommerce-functionality" },
-  { category: "Digital Foundation Services", subcategory: "Website & Online Presence", id: "seo-optimization-addon", label: "SEO Optimization ($499)", serviceId: "seo-optimization" },
-  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "social-media-5-posts", label: "Social Media Content: 5 Posts/Month ($199)", serviceId: "social-media-5-posts" },
-  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "social-media-10-posts", label: "Social Media Content: 10 Posts/Month ($349)", serviceId: "social-media-10-posts" },
-  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "social-media-15-posts", label: "Social Media Content: 15 Posts/Month ($649)", serviceId: "social-media-15-posts" },
-  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "email-system-setup", label: "Email System Setup ($499)", serviceId: "email-systems" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "social-media-10-posts", label: "Social Media Content: 10 Posts/Month ($199)", serviceId: "social-media-setup" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "social-media-20-posts", label: "Social Media Content: 20 Posts/Month ($349)", serviceId: "social-media-setup" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "social-media-30-posts", label: "Social Media Content: 30 Posts/Month ($499)", serviceId: "social-media-setup" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "email-marketing-setup", label: "Email Systems & Automation Setup ($499)", serviceId: "email-systems" },
 
   // Operations & Management Services
-  { category: "Operations & Management Services", subcategory: "Business Systems", id: "analytics-google-setup", label: "Analytics & Reporting (Google Analytics setup) ($699)", serviceId: "analytics" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "analytics-monthly-insights", label: "Analytics Upgrades: Monthly Insights ($199)", serviceId: "analytics" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "analytics-monthly-recommendations", label: "Analytics Upgrades: Monthly Recommendations ($249)", serviceId: "analytics" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "analytics-real-time", label: "Analytics Upgrades: Real-time Analytics ($399)", serviceId: "analytics" },
   { category: "Operations & Management Services", subcategory: "Platform & Integration Services", id: "extra-integrations-per", label: "Extra Integrations: Per Integration ($199)", serviceId: "integrations" },
-  { category: "Operations & Management Services", subcategory: "Platform & Integration Services", id: "custom-automations-3-plus", label: "Custom Automations: For 3 Automations ($299)", serviceId: "custom-automations" },
+  { category: "Operations & Management Services", subcategory: "Platform & Integration Services", id: "custom-automations-5-plus", label: "Custom Automations: For 5+ Automations ($299)", serviceId: "custom-automations" },
   { category: "Operations & Management Services", subcategory: "Business Systems", id: "security-basics-setup", label: "Security Basics: One-time Setup ($299)", serviceId: "security-basics" },
-  { category: "Operations & Management Services", subcategory: "Business Systems", id: "time-tracking-setup", label: "Time Tracking ($499)", serviceId: "time-tracking" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "time-tracking-basic-setup", label: "Time Tracking: Basic Setup ($149)", serviceId: "time-tracking" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "time-tracking-advanced-setup", label: "Time Tracking: Advanced Setup & Reporting ($299)", serviceId: "time-tracking" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "time-tracking-team-training", label: "Time Tracking: Team Training & Optimization ($399)", serviceId: "time-tracking" },
 
   // Human Resources Services
-  { category: "Human Resources Services", subcategory: "HR Foundation", id: "hr-legal-compliance", label: "Legal & Compliance ($499)", serviceId: "legal-compliance" },
-  { category: "Human Resources Services", subcategory: "HR Foundation", id: "hr-recruiting-hiring", label: "Recruiting & Hiring ($599)", serviceId: "recruiting-hiring" },
-  { category: "Human Resources Services", subcategory: "HR Foundation", id: "hr-operations-payroll", label: "HR Operations & Payroll ($799)", serviceId: "hr-operations-payroll" },
-  { category: "Human Resources Services", subcategory: "HR Foundation", id: "hr-foundation-package", label: "HR Foundation ($1,249)", serviceId: "hr-foundation" },
+  { category: "Human Resources Services", subcategory: "HR Foundation", id: "hr-customizations-setup", label: "HR Customizations: One-time Setup ($299)", serviceId: "hr-recruiting-system" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "staff-recruitment-1-role", label: "Staff Recruitment (Global): 1 Role ($449)", serviceId: "single-role-recruitment" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "staff-recruitment-2-roles", label: "Staff Recruitment (Global): 2 Roles ($699)", serviceId: "multi-role-recruitment" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "staff-recruitment-3-roles", label: "Staff Recruitment (Global): 3 Roles ($899)", serviceId: "multi-role-recruitment" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "staff-recruitment-unlimited", label: "Staff Recruitment (Global): Unlimited (3 months) ($4,999)", serviceId: "comprehensive-recruitment" },
 
   // Training & Support Services
   { category: "Training & Support Services", subcategory: "Team Development", id: "training-sessions-per-hour", label: "Training Sessions: Per Hour ($199)", serviceId: "basic-training-sessions" },
+  { category: "Training & Support Services", subcategory: "Ongoing Partnership", id: "ongoing-support-monthly-emails", label: "Ongoing Support: Monthly Emails ($199)", serviceId: "monthly-support-package" },
+  { category: "Training & Support Services", subcategory: "Ongoing Partnership", id: "ongoing-support-weekly-calls", label: "Ongoing Support: Weekly Calls ($499)", serviceId: "premium-support-package" },
 ];
 
 const industryOptions = [
@@ -414,35 +420,11 @@ const BuildMyBusinessPage = () => {
                     </div>
                     <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
                       <Checkbox
-                        id="goal-hr-legal-compliance"
-                        checked={formData.primaryGoals.includes("Legal & Compliance")}
-                        onCheckedChange={(checked) => handleCheckboxChange("Legal & Compliance", checked as boolean, "primaryGoals")}
+                        id="goal-hr-operations-setup"
+                        checked={formData.primaryGoals.includes("HR & Operations Setup")}
+                        onCheckedChange={(checked) => handleCheckboxChange("HR & Operations Setup", checked as boolean, "primaryGoals")}
                       />
-                      <Label htmlFor="goal-hr-legal-compliance">Legal & Compliance</Label>
-                    </div>
-                    <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                      <Checkbox
-                        id="goal-recruiting-hiring"
-                        checked={formData.primaryGoals.includes("Recruiting & Hiring")}
-                        onCheckedChange={(checked) => handleCheckboxChange("Recruiting & Hiring", checked as boolean, "primaryGoals")}
-                      />
-                      <Label htmlFor="goal-recruiting-hiring">Recruiting & Hiring</Label>
-                    </div>
-                    <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                      <Checkbox
-                        id="goal-hr-operations-payroll"
-                        checked={formData.primaryGoals.includes("HR Operations & Payroll")}
-                        onCheckedChange={(checked) => handleCheckboxChange("HR Operations & Payroll", checked as boolean, "primaryGoals")}
-                      />
-                      <Label htmlFor="goal-hr-operations-payroll">HR Operations & Payroll</Label>
-                    </div>
-                    <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                      <Checkbox
-                        id="goal-hr-foundation"
-                        checked={formData.primaryGoals.includes("HR Foundation")}
-                        onCheckedChange={(checked) => handleCheckboxChange("HR Foundation", checked as boolean, "primaryGoals")}
-                      />
-                      <Label htmlFor="goal-hr-foundation">HR Foundation</Label>
+                      <Label htmlFor="goal-hr-operations-setup">HR & Operations Setup</Label>
                     </div>
                     <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
                       <Checkbox
