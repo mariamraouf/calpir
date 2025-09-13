@@ -27,7 +27,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Monday.com", logo: "https://logo.clearbit.com/monday.com?size=50" },
       { name: "Trello", logo: "https://logo.clearbit.com/trello.com?size=50" },
       { name: "Jira", logo: "https://logo.clearbit.com/atlassian.com?size=50" },
-      { name: "ClickUp", logo: "/logos/clickup-logo.svg" }, // Updated to local SVG
+      { name: "ClickUp", logo: "/logos/clickup-logo.jpeg" }, // Updated to local JPEG
       { name: "Basecamp", logo: "https://logo.clearbit.com/basecamp.com?size=50" },
       { name: "Wrike", logo: "https://logo.clearbit.com/wrike.com?size=50" },
       { name: "Notion", logo: "https://logo.clearbit.com/notion.so?size=50" },
@@ -42,7 +42,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Freedcamp", logo: "https://logo.clearbit.com/freedcamp.com?size=50" },
       { name: "Paymo", logo: "https://logo.clearbit.com/paymoapp.com?size=50" },
       { name: "Avaza", logo: "https://logo.clearbit.com/avaza.com?size=50" },
-      { name: "Nifty", logo: "/logos/nifty-logo.svg" }, // Updated to local SVG
+      { name: "Nifty", logo: "/logos/nifty-logo.svg" }, // Still local SVG
       { name: "Hive", logo: "https://logo.clearbit.com/hive.com?size=50" },
       { name: "MeisterTask", logo: "https://logo.clearbit.com/meistertask.com?size=50" },
       { name: "Ganttic", logo: "https://logo.clearbit.com/ganttic.com?size=50" },
@@ -88,7 +88,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Factorial", logo: "https://logo.clearbit.com/factorialhr.com?size=50" },
       { name: "15Five", logo: "https://logo.clearbit.com/15five.com?size=50" },
       { name: "Culture Amp", logo: "https://logo.clearbit.com/cultureamp.com?size=50" },
-      { name: "Freshteam", logo: "/logos/freshteam-logo.svg" }, // Updated to local SVG
+      { name: "Freshteam", logo: "/logos/freshteam-logo.svg" }, // Still local SVG
       { name: "Lattice", logo: "https://logo.clearbit.com/lattice.com?size=50" },
       { name: "Mindbody Business", logo: "https://logo.clearbit.com/mindbodyonline.com?size=50" },
       { name: "GoCo", logo: "https://logo.clearbit.com/goco.io?size=50" },
@@ -211,7 +211,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Spike", logo: "https://logo.clearbit.com/spikenow.com?size=50" },
       { name: "Superhuman", logo: "https://logo.clearbit.com/superhuman.com?size=50" },
       { name: "Hey", logo: "https://logo.clearbit.com/hey.com?size=50" },
-      { name: "Brevo", logo: "/logos/brevo-logo.svg" }, // Updated to local SVG
+      { name: "Brevo", logo: "/logos/brevo-logo.svg" }, // Still local SVG
       { name: "Mailchimp", logo: "https://logo.clearbit.com/mailchimp.com?size=50" },
       { name: "Constant Contact", logo: "https://logo.clearbit.com/constantcontact.com?size=50" },
       { name: "GetResponse", logo: "https://logo.clearbit.com/getresponse.com?size=50" },
@@ -381,7 +381,7 @@ updatedPlatformCategories.push({
     { name: "Teamlogger", logo: "https://logo.clearbit.com/teamlogger.com?size=50" },
     { name: "Tempo", logo: "https://logo.clearbit.com/tempo.io?size=50" },
     { name: "Hubstaff", logo: "https://logo.clearbit.com/hubstaff.com?size=50" },
-    { name: "ClickUp Native Time Tracking", logo: "/logos/clickup-logo.svg" }, // Added ClickUp Native Time Tracking
+    { name: "ClickUp Native Time Tracking", logo: "/logos/clickup-logo.jpeg" }, // Added ClickUp Native Time Tracking with new JPEG
   ],
 });
 
