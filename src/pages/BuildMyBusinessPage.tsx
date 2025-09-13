@@ -98,9 +98,9 @@ const BuildMyBusinessPage = () => {
     addOnRequirements: "",
     primaryGoals: [] as string[],
     otherPrimaryGoal: "",
-    currentSystems: "",
-    preferredPlatforms: "",
-    systemPriorities: [] as string[],
+    currentSystems: "", // Added for TypeScript fix
+    preferredPlatforms: "", // Added for TypeScript fix
+    systemPriorities: [] as string[], // Added for TypeScript fix
     additionalDetails: "",
     timeline: "",
     contactMethod: "",
