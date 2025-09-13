@@ -245,19 +245,19 @@ const PackageComparisonTable = () => {
   const renderDesktopFeatureValue = (value: string | boolean | null) => {
     if (value === true || value === "✓") {
       return (
-        <div className="flex items-center justify-center md:justify-start">
+        <div className="flex items-center justify-center">
           <CheckCircle className="h-5 w-5 text-calpir-green-500" />
         </div>
       );
     } else if (value === false || value === "" || value === null) {
       return (
-        <div className="flex items-center justify-center md:justify-start">
+        <div className="flex items-center justify-center">
           <XCircle className="h-5 w-5 text-palette-red-500" />
         </div>
       );
     } else {
       return (
-        <span className="text-sm text-gray-800 dark:text-gray-200 text-center md:text-left">
+        <span className="text-sm text-gray-800 dark:text-gray-200 text-center">
           {value}
         </span>
       );
