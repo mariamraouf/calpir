@@ -104,9 +104,12 @@ const faqs = {
     },
     {
       question: "Can you work with my existing tools?",
-      answer:
-        "Absolutely. We can integrate with your current systems or recommend better alternatives if needed. Check out our extensive list of supported platforms on the " +
-        "<Link to='/platforms' className='text-primary hover:underline'>Platforms page</Link>.",
+      answer: (
+        <>
+          Absolutely. We can integrate with your current systems or recommend better alternatives if needed. Check out our extensive list of supported platforms on the{" "}
+          <Link to="/platforms" className="text-primary hover:underline">Platforms page</Link>.
+        </>
+      ),
     },
     {
       question: "I'm not tech-savvy. Will I be able to manage everything after setup?",
