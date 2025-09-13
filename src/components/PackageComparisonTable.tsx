@@ -24,8 +24,8 @@ interface Package {
     domainRegistration: boolean;
     seoOptimization: boolean;
     socialMediaSetup: string;
-    // additionalWebsitePages: string | boolean; // Removed
     ecommerceFunctionality: boolean;
+    designBranding: boolean; // NEW
   };
   businessOperations: {
     projectManagement: string;
@@ -33,16 +33,14 @@ interface Package {
     accountingSystem: string;
     platformMigration: string;
     integrations: string;
-    analyticsReporting: string;
+    // analyticsReporting: string; // Removed
     businessAutomations: string | boolean;
     sops: boolean;
     payroll: boolean;
   };
   humanResources: {
     legalCompliance: string | boolean; // NEW
-    // recruitingHiring: boolean; // Removed
     hrOperationsPayroll: boolean; // NEW
-    // hrFoundation: boolean; // Removed
   };
   training: {
     basicTrainingSessions: boolean;
@@ -61,8 +59,8 @@ const packages: Package[] = [
       domainRegistration: true,
       seoOptimization: false,
       socialMediaSetup: "2 platforms + 5 posts",
-      // additionalWebsitePages: false, // Removed
       ecommerceFunctionality: false,
+      designBranding: false, // NEW
     },
     businessOperations: {
       projectManagement: "Basic (2 workspaces)", // AMENDED
@@ -70,16 +68,14 @@ const packages: Package[] = [
       accountingSystem: "Simple invoicing",
       platformMigration: "1 platform",
       integrations: "2 connections",
-      analyticsReporting: "Monthly summary",
+      // analyticsReporting: "Monthly summary", // Removed
       businessAutomations: false,
       sops: false,
       payroll: false,
     },
     humanResources: {
       legalCompliance: "Contract Draft only", // AMENDED
-      // recruitingHiring: false, // Removed
       hrOperationsPayroll: false, // NEW
-      // hrFoundation: false, // Removed
     },
     training: {
       basicTrainingSessions: false,
@@ -95,8 +91,8 @@ const packages: Package[] = [
       domainRegistration: true,
       seoOptimization: true,
       socialMediaSetup: "4 platforms + 10 posts", // AMENDED
-      // additionalWebsitePages: false, // Removed
       ecommerceFunctionality: false,
+      designBranding: false, // NEW
     },
     businessOperations: {
       projectManagement: "Enhanced (4 workspaces)", // AMENDED
@@ -104,16 +100,14 @@ const packages: Package[] = [
       accountingSystem: "Expense tracking",
       platformMigration: "3 platforms", // AMENDED
       integrations: "3 connections", // AMENDED
-      analyticsReporting: "Monthly insights + Recommendation",
+      // analyticsReporting: "Monthly insights + Recommendation", // Removed
       businessAutomations: "Basic Automation Setup",
       sops: true,
       payroll: false,
     },
     humanResources: {
       legalCompliance: true, // NEW
-      // recruitingHiring: false, // Removed
       hrOperationsPayroll: false, // NEW
-      // hrFoundation: false, // Removed
     },
     training: {
       basicTrainingSessions: true,
@@ -129,8 +123,8 @@ const packages: Package[] = [
       domainRegistration: true,
       seoOptimization: true,
       socialMediaSetup: "5+ platforms + 15 posts", // AMENDED
-      // additionalWebsitePages: false, // Removed
       ecommerceFunctionality: true,
+      designBranding: true, // NEW
     },
     businessOperations: {
       projectManagement: "Advanced (unlimited)", // AMENDED
@@ -138,16 +132,14 @@ const packages: Package[] = [
       accountingSystem: "Forecasting tools",
       platformMigration: "Multiple platforms",
       integrations: "Unlimited",
-      analyticsReporting: "Weekly insights + Recommendation",
+      // analyticsReporting: "Weekly insights + Recommendation", // Removed
       businessAutomations: "Advanced Automation Package",
       sops: true,
       payroll: true,
     },
     humanResources: {
       legalCompliance: true, // NEW
-      // recruitingHiring: false, // Removed
       hrOperationsPayroll: true, // NEW
-      // hrFoundation: false, // Removed
     },
     training: {
       basicTrainingSessions: true,
@@ -166,8 +158,8 @@ const comparisonFeatures = [
       { key: "domainRegistration", label: "Domain Registration" },
       { key: "seoOptimization", label: "SEO Optimization" },
       { key: "socialMediaSetup", label: "Social Media Setup" },
-      // { key: "additionalWebsitePages", label: "Additional Website Pages" }, // Removed
       { key: "ecommerceFunctionality", label: "E-commerce Functionality" },
+      { key: "designBranding", label: "Design & Branding Package" }, // NEW
     ],
   },
   {
@@ -179,7 +171,7 @@ const comparisonFeatures = [
       { key: "accountingSystem", label: "Accounting System" },
       { key: "platformMigration", label: "Platform Migration" },
       { key: "integrations", label: "Integrations" },
-      { key: "analyticsReporting", label: "Analytics & Reporting" },
+      // { key: "analyticsReporting", label: "Analytics & Reporting" }, // Removed
       { key: "businessAutomations", label: "Business Automations" },
       { key: "sops", label: "Standard Operating Procedures (SOPs)" },
       { key: "payroll", label: "Payroll" },
@@ -190,9 +182,7 @@ const comparisonFeatures = [
     key: "humanResources",
     features: [
       { key: "legalCompliance", label: "Legal & Compliance" },
-      // { key: "recruitingHiring", label: "Recruiting & Hiring" }, // Removed
       { key: "hrOperationsPayroll", label: "HR Operations & Payroll" },
-      // { key: "hrFoundation", label: "HR Foundation" }, // Removed
     ],
   },
   {

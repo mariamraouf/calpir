@@ -70,8 +70,7 @@ const BuildMyBusinessPage = () => {
     systemPriorities: [] as string[],
     additionalDetails: "",
     timeline: "",
-    contactMethod: "", // Added missing property
-    preferredTime: "", // Added missing property
+    // Removed contactMethod and preferredTime
     consent: false,
   });
 
@@ -106,7 +105,8 @@ const BuildMyBusinessPage = () => {
       businessType: "", industry: "", otherIndustry: "", businessStage: "", businessOperationModel: "",
       packagePreference: "", budgetRange: "", addOnInterests: [], addOnRequirements: "",
       primaryGoals: [], otherPrimaryGoal: "", currentSystems: "", preferredPlatforms: "", systemPriorities: [],
-      additionalDetails: "", timeline: "", contactMethod: "", preferredTime: "", consent: false, // Reset added properties
+      additionalDetails: "", timeline: "", // Removed contactMethod and preferredTime
+      consent: false,
     });
   };
 
@@ -440,28 +440,7 @@ const BuildMyBusinessPage = () => {
                 </div>
               </div>
 
-              {/* Consultation Preference */}
-              <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">6. Consultation Preference <span className="text-red-500">*</span></h3>
-                <RadioGroup onValueChange={handleSelectChange("contactMethod")} value={formData.contactMethod} required className="space-y-2">
-                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                    <RadioGroupItem value="Email" id="contact-email" />
-                    <Label htmlFor="contact-email">Email</Label>
-                  </div>
-                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                    <RadioGroupItem value="Phone" id="contact-phone" />
-                    <Label htmlFor="contact-phone">Phone</Label>
-                  </div>
-                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                    <RadioGroupItem value="Video Call (e.g., Zoom)" id="contact-video" />
-                    <Label htmlFor="contact-video">Video Call (e.g., Zoom)</Label>
-                  </div>
-                </RadioGroup>
-                <div className="space-y-2">
-                  <Label htmlFor="preferredTime">Preferred Time</Label>
-                  <Input id="preferredTime" placeholder="e.g., Weekdays after 2 PM EST" value={formData.preferredTime} onChange={(e) => handleChange("preferredTime", e.target.value)} className="rounded-2xl" />
-                </div>
-              </div>
+              {/* Removed Consultation Preference section */}
 
               {/* Submission and Consent */}
               <div className="flex items-center space-x-2 mt-4">

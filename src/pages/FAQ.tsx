@@ -91,6 +91,11 @@ const faqs = {
       answer:
         "We guarantee our work for 30 days. Any setup issues are fixed free of charge during this period.",
     },
+    {
+      question: "Do all packages receive a manual on how to use the system?",
+      answer:
+        "Yes, every package includes a comprehensive manual and documentation to guide you through using your newly set up systems effectively.",
+    },
   ],
   "Business-Specific FAQs": [
     {
