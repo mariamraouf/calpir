@@ -16,131 +16,38 @@ import PageHeader from "@/components/PageHeader";
 
 // Re-using servicesData from Services.tsx for Individual Services section
 const servicesData = [
-  {
-    id: "website-building",
-    title: "Website Building & Hosting",
-    investment: "$999",
-  },
-  {
-    id: "additional-website-pages",
-    title: "Additional Website Pages",
-    investment: "$199/page",
-  },
-  {
-    id: "ecommerce-functionality",
-    title: "E-commerce Functionality",
-    investment: "$499",
-  },
-  {
-    id: "seo-optimization",
-    title: "SEO Optimization",
-    investment: "$599",
-  },
-  {
-    id: "social-media-setup",
-    title: "Social Media Setup",
-    investment: "$499",
-  },
-  {
-    id: "design-branding",
-    title: "Design & Branding Package",
-    investment: "$1,299",
-  },
-  {
-    id: "email-systems",
-    title: "Email Systems & Automation Setup",
-    investment: "$499",
-  },
-  {
-    id: "project-management",
-    title: "Project Management Setup",
-    investment: "$799",
-  },
-  {
-    id: "operations-flows",
-    title: "Operations Flows Setup",
-    investment: "$1,199",
-  },
-  {
-    id: "crm-setup",
-    title: "CRM Setup & Optimization",
-    investment: "$899",
-  },
-  {
-    id: "accounting",
-    title: "Accounting System Setup",
-    investment: "$699",
-  },
-  {
-    id: "analytics",
-    title: "Analytics & Reporting",
-    investment: "$799",
-  },
-  {
-    id: "integrations",
-    title: "Platform Integrations",
-    investment: "$199/integration",
-  },
-  {
-    id: "migrations",
-    title: "Software Migrations",
-    investment: "$599-$1,499",
-  },
-  {
-    id: "custom-automations",
-    title: "Custom Automations",
-    investment: "$299",
-  },
-  {
-    id: "hr-recruiting-system",
-    title: "HR & Recruiting System",
-    investment: "$1,299",
-  },
-  {
-    id: "time-tracking",
-    title: "Time Tracking System Setup",
-    investment: "$299",
-  },
-  {
-    id: "performance-management",
-    title: "Performance Management",
-    investment: "$699",
-  },
-  {
-    id: "single-role-recruitment",
-    title: "Single Role Recruitment",
-    investment: "$449",
-  },
-  {
-    id: "multi-role-recruitment",
-    title: "Multi-Role Recruitment",
-    investment: "$699",
-  },
-  {
-    id: "comprehensive-recruitment",
-    title: "Comprehensive Recruitment (3 months)",
-    investment: "$4,999",
-  },
-  {
-    id: "basic-training-sessions",
-    title: "Basic Training Sessions",
-    investment: "$199/hour",
-  },
-  {
-    id: "monthly-support-package",
-    title: "Monthly Support Package",
-    investment: "$199/month",
-  },
-  {
-    id: "premium-support-package",
-    title: "Weekly Support Package",
-    investment: "$499/month",
-  },
-  {
-    id: "security-basics",
-    title: "Security Basics Setup",
-    investment: "$299",
-  },
+  // Digital Foundation Services
+  { category: "Digital Foundation Services", subcategory: "Website & Online Presence", id: "website-building", title: "Website Building & Hosting", investment: "$999" },
+  { category: "Digital Foundation Services", subcategory: "Website & Online Presence", id: "additional-website-pages", title: "Additional Website Pages", investment: "$199/page" },
+  { category: "Digital Foundation Services", subcategory: "Website & Online Presence", id: "ecommerce-functionality", title: "E-commerce Functionality", investment: "$499" },
+  { category: "Digital Foundation Services", subcategory: "Website & Online Presence", id: "seo-optimization", title: "SEO Optimization", investment: "$599" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "social-media-setup", title: "Social Media Setup", investment: "$499" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "design-branding", title: "Design & Branding Package", investment: "$1,299" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "email-systems", title: "Email Systems & Automation Setup", investment: "$499" },
+
+  // Operations & Management Services
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "project-management", title: "Project Management Setup", investment: "$799" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "operations-flows", title: "Operations Flows Setup", investment: "$1,199" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "crm-setup", title: "CRM Setup & Optimization", investment: "$899" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "accounting", title: "Accounting System Setup", investment: "$699" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "analytics", title: "Analytics & Reporting", investment: "$799" },
+  { category: "Operations & Management Services", subcategory: "Platform & Integration Services", id: "integrations", title: "Platform Integrations", investment: "$199/integration" },
+  { category: "Operations & Management Services", subcategory: "Platform & Integration Services", id: "migrations", title: "Software Migrations", investment: "$599-$1,499" },
+  { category: "Operations & Management Services", subcategory: "Platform & Integration Services", id: "custom-automations", title: "Custom Automations", investment: "$299" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "security-basics", title: "Security Basics Setup", investment: "$299" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "time-tracking", title: "Time Tracking System Setup", investment: "$299" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "performance-management", title: "Performance Management", investment: "$699" },
+
+  // Human Resources Services
+  { category: "Human Resources Services", subcategory: "HR Foundation", id: "hr-recruiting-system", title: "HR & Recruiting System", investment: "$1,299" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "single-role-recruitment", title: "Single Role Recruitment", investment: "$449" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "multi-role-recruitment", title: "Multi-Role Recruitment", investment: "$699" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "comprehensive-recruitment", title: "Comprehensive Recruitment (3 months)", investment: "$4,999" },
+
+  // Training & Support Services
+  { category: "Training & Support Services", subcategory: "Team Development", id: "basic-training-sessions", title: "Basic Training Sessions", investment: "$199/hour" },
+  { category: "Training & Support Services", subcategory: "Ongoing Partnership", id: "monthly-support-package", title: "Monthly Support Package", investment: "$199/month" },
+  { category: "Training & Support Services", subcategory: "Ongoing Partnership", id: "premium-support-package", title: "Weekly Support Package", investment: "$499/month" },
 ];
 
 const IndividualServiceFormPage = () => {
@@ -193,6 +100,18 @@ const IndividualServiceFormPage = () => {
     });
   };
 
+  // Group services by category and subcategory
+  const groupedServices = servicesData.reduce((acc, service) => {
+    if (!acc[service.category]) {
+      acc[service.category] = {};
+    }
+    if (!acc[service.category][service.subcategory]) {
+      acc[service.category][service.subcategory] = [];
+    }
+    acc[service.category][service.subcategory].push(service);
+    return acc;
+  }, {} as Record<string, Record<string, typeof servicesData>>);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -233,22 +152,32 @@ const IndividualServiceFormPage = () => {
               {/* Service Selection */}
               <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">2. Select Services <span className="text-red-500">*</span></h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {servicesData.map((service) => (
-                    <div key={service.id} className="flex items-start space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                      <Checkbox
-                        id={`service-${service.id}`}
-                        checked={formData.selectedServices.includes(service.id)}
-                        onCheckedChange={(checked) => handleCheckboxChange(service.id, checked as boolean)}
-                        className="mt-1"
-                      />
-                      <Label htmlFor={`service-${service.id}`} className="flex flex-col flex-grow cursor-pointer">
-                        <span className="font-medium text-gray-900 dark:text-white">{service.title}</span>
-                        <span className="text-sm text-gray-600 dark:text-gray-400">{service.investment}</span>
-                      </Label>
-                    </div>
-                  ))}
-                </div>
+                {Object.entries(groupedServices).map(([category, subcategories]) => (
+                  <div key={category} className="space-y-4 pl-4 border-l-2 border-primary/50 dark:border-calpir-green-300/50">
+                    <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{category}</h4>
+                    {Object.entries(subcategories).map(([subcategory, services]) => (
+                      <div key={subcategory} className="space-y-2 pl-4">
+                        <h5 className="text-md font-medium text-gray-700 dark:text-gray-300">{subcategory}</h5>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          {services.map((service) => (
+                            <div key={service.id} className="flex items-start space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                              <Checkbox
+                                id={`service-${service.id}`}
+                                checked={formData.selectedServices.includes(service.id)}
+                                onCheckedChange={(checked) => handleCheckboxChange(service.id, checked as boolean)}
+                                className="mt-1"
+                              />
+                              <Label htmlFor={`service-${service.id}`} className="flex flex-col flex-grow cursor-pointer">
+                                <span className="font-medium text-gray-900 dark:text-white">{service.title}</span>
+                                <span className="text-sm text-gray-600 dark:text-gray-400">{service.investment}</span>
+                              </Label>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
                 {formData.selectedServices.length > 0 && (
                   <div className="space-y-2 mt-4">
                     <Label htmlFor="serviceDetails">Please provide any specific details or requirements for your selected services.</Label>

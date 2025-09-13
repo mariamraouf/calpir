@@ -17,52 +17,36 @@ import PageHeader from "@/components/PageHeader";
 
 // Data for add-ons, synchronized with Pricing.tsx and Services.tsx
 const addOnsOptions = [
-  // Social Media Expansion
-  { id: "social-media-10-posts", label: "Social Media Content: 10 Posts/Month ($199)", serviceId: "social-media-setup" },
-  { id: "social-media-20-posts", label: "Social Media Content: 20 Posts/Month ($349)", serviceId: "social-media-setup" },
-  { id: "social-media-30-posts", label: "Social Media Content: 30 Posts/Month ($499)", serviceId: "social-media-setup" },
+  // Digital Foundation Services
+  { category: "Digital Foundation Services", subcategory: "Website & Online Presence", id: "website-expansions-per-page", label: "Website Expansions: Per Page ($199)", serviceId: "additional-website-pages" },
+  { category: "Digital Foundation Services", subcategory: "Website & Online Presence", id: "website-expansions-ecommerce", label: "Website Expansions: E-commerce Functionality ($499)", serviceId: "ecommerce-functionality" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "social-media-10-posts", label: "Social Media Content: 10 Posts/Month ($199)", serviceId: "social-media-setup" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "social-media-20-posts", label: "Social Media Content: 20 Posts/Month ($349)", serviceId: "social-media-setup" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "social-media-30-posts", label: "Social Media Content: 30 Posts/Month ($499)", serviceId: "social-media-setup" },
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "email-marketing-setup", label: "Email Systems & Automation Setup ($499)", serviceId: "email-systems" },
 
-  // Email Marketing
-  { id: "email-marketing-setup", label: "Email Systems & Automation Setup ($499)", serviceId: "email-systems" },
+  // Operations & Management Services
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "analytics-monthly-insights", label: "Analytics Upgrades: Monthly Insights ($199)", serviceId: "analytics" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "analytics-monthly-recommendations", label: "Analytics Upgrades: Monthly Recommendations ($249)", serviceId: "analytics" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "analytics-real-time", label: "Analytics Upgrades: Real-time Analytics ($399)", serviceId: "analytics" },
+  { category: "Operations & Management Services", subcategory: "Platform & Integration Services", id: "extra-integrations-per", label: "Extra Integrations: Per Integration ($199)", serviceId: "integrations" },
+  { category: "Operations & Management Services", subcategory: "Platform & Integration Services", id: "custom-automations-5-plus", label: "Custom Automations: For 5+ Automations ($299)", serviceId: "custom-automations" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "security-basics-setup", label: "Security Basics: One-time Setup ($299)", serviceId: "security-basics" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "time-tracking-basic-setup", label: "Time Tracking: Basic Setup ($149)", serviceId: "time-tracking" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "time-tracking-advanced-setup", label: "Time Tracking: Advanced Setup & Reporting ($299)", serviceId: "time-tracking" },
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "time-tracking-team-training", label: "Time Tracking: Team Training & Optimization ($399)", serviceId: "time-tracking" },
 
-  // Analytics Upgrades
-  { id: "analytics-monthly-insights", label: "Analytics Upgrades: Monthly Insights ($199)", serviceId: "analytics" },
-  { id: "analytics-monthly-recommendations", label: "Analytics Upgrades: Monthly Recommendations ($249)", serviceId: "analytics" },
-  { id: "analytics-real-time", label: "Analytics Upgrades: Real-time Analytics ($399)", serviceId: "analytics" },
+  // Human Resources Services
+  { category: "Human Resources Services", subcategory: "HR Foundation", id: "hr-customizations-setup", label: "HR Customizations: One-time Setup ($299)", serviceId: "hr-recruiting-system" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "staff-recruitment-1-role", label: "Staff Recruitment (Global): 1 Role ($449)", serviceId: "single-role-recruitment" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "staff-recruitment-2-roles", label: "Staff Recruitment (Global): 2 Roles ($699)", serviceId: "multi-role-recruitment" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "staff-recruitment-3-roles", label: "Staff Recruitment (Global): 3 Roles ($899)", serviceId: "multi-role-recruitment" },
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "staff-recruitment-unlimited", label: "Staff Recruitment (Global): Unlimited (3 months) ($4,999)", serviceId: "comprehensive-recruitment" },
 
-  // Ongoing Support
-  { id: "ongoing-support-monthly-emails", label: "Ongoing Support: Monthly Emails ($199)", serviceId: "monthly-support-package" },
-  { id: "ongoing-support-weekly-calls", label: "Ongoing Support: Weekly Calls ($499)", serviceId: "premium-support-package" },
-
-  // Staff Recruitment (Global)
-  { id: "staff-recruitment-1-role", label: "Staff Recruitment (Global): 1 Role ($449)", serviceId: "single-role-recruitment" },
-  { id: "staff-recruitment-2-roles", label: "Staff Recruitment (Global): 2 Roles ($699)", serviceId: "multi-role-recruitment" },
-  { id: "staff-recruitment-3-roles", label: "Staff Recruitment (Global): 3 Roles ($899)", serviceId: "multi-role-recruitment" },
-  { id: "staff-recruitment-unlimited", label: "Staff Recruitment (Global): Unlimited (3 months) ($4,999)", serviceId: "comprehensive-recruitment" },
-
-  // Extra Integrations
-  { id: "extra-integrations-per", label: "Extra Integrations: Per Integration ($199)", serviceId: "integrations" },
-
-  // Website Expansions
-  { id: "website-expansions-per-page", label: "Website Expansions: Per Page ($199)", serviceId: "additional-website-pages" },
-  { id: "website-expansions-ecommerce", label: "Website Expansions: E-commerce Functionality ($499)", serviceId: "ecommerce-functionality" },
-
-  // HR Customizations
-  { id: "hr-customizations-setup", label: "HR Customizations: One-time Setup ($299)", serviceId: "hr-recruiting-system" },
-
-  // Training Sessions
-  { id: "training-sessions-per-hour", label: "Training Sessions: Per Hour ($199)", serviceId: "basic-training-sessions" },
-
-  // Custom Automations
-  { id: "custom-automations-5-plus", label: "Custom Automations: For 5+ Automations ($299)", serviceId: "custom-automations" },
-
-  // Security Basics
-  { id: "security-basics-setup", label: "Security Basics: One-time Setup ($299)", serviceId: "security-basics" },
-
-  // Time Tracking
-  { id: "time-tracking-basic-setup", label: "Time Tracking: Basic Setup ($149)", serviceId: "time-tracking" },
-  { id: "time-tracking-advanced-setup", label: "Time Tracking: Advanced Setup & Reporting ($299)", serviceId: "time-tracking" },
-  { id: "time-tracking-team-training", label: "Time Tracking: Team Training & Optimization ($399)", serviceId: "time-tracking" },
+  // Training & Support Services
+  { category: "Training & Support Services", subcategory: "Team Development", id: "training-sessions-per-hour", label: "Training Sessions: Per Hour ($199)", serviceId: "basic-training-sessions" },
+  { category: "Training & Support Services", subcategory: "Ongoing Partnership", id: "ongoing-support-monthly-emails", label: "Ongoing Support: Monthly Emails ($199)", serviceId: "monthly-support-package" },
+  { category: "Training & Support Services", subcategory: "Ongoing Partnership", id: "ongoing-support-weekly-calls", label: "Ongoing Support: Weekly Calls ($499)", serviceId: "premium-support-package" },
 ];
 
 const industryOptions = [
@@ -159,6 +143,19 @@ const BuildMyBusinessPage = () => {
   const showAddOnRequirements = formData.addOnInterests.length > 0;
   const showOtherIndustryInput = formData.industry === "Other";
   const showOtherPrimaryGoalInput = formData.primaryGoals.includes("Other");
+
+  // Group add-ons by category and subcategory
+  const groupedAddOns = addOnsOptions.reduce((acc, addOn) => {
+    if (!acc[addOn.category]) {
+      acc[addOn.category] = {};
+    }
+    if (!acc[addOn.category][addOn.subcategory]) {
+      acc[addOn.category][addOn.subcategory] = [];
+    }
+    acc[addOn.category][addOn.subcategory].push(addOn);
+    return acc;
+  }, {} as Record<string, Record<string, typeof addOnsOptions>>);
+
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -344,26 +341,36 @@ const BuildMyBusinessPage = () => {
 
               {/* Add-On Interests */}
               <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">5. Add-On Interests</h3>
-                <div className="grid grid-cols-1 gap-4">
-                  {addOnsOptions.map((addOn) => (
-                    <div key={addOn.id} className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                      <Checkbox
-                        id={`addOn-${addOn.id}`}
-                        checked={formData.addOnInterests.includes(addOn.id)}
-                        onCheckedChange={(checked) => handleCheckboxChange(addOn.id, checked as boolean, "addOnInterests")}
-                      />
-                      <Label htmlFor={`addOn-${addOn.id}`} className="flex-grow">
-                        {addOn.label}
-                        {addOn.serviceId && (
-                          <Link to={`/services#${addOn.serviceId}`} className="text-primary hover:underline ml-2 text-sm" target="_blank" rel="noopener noreferrer">
-                            (Learn More)
-                          </Link>
-                        )}
-                      </Label>
-                    </div>
-                  ))}
-                </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">5. Add-On Interests (Optional)</h3>
+                {Object.entries(groupedAddOns).map(([category, subcategories]) => (
+                  <div key={category} className="space-y-4 pl-4 border-l-2 border-primary/50 dark:border-calpir-green-300/50">
+                    <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{category}</h4>
+                    {Object.entries(subcategories).map(([subcategory, addOns]) => (
+                      <div key={subcategory} className="space-y-2 pl-4">
+                        <h5 className="text-md font-medium text-gray-700 dark:text-gray-300">{subcategory}</h5>
+                        <div className="grid grid-cols-1 gap-4">
+                          {addOns.map((addOn) => (
+                            <div key={addOn.id} className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                              <Checkbox
+                                id={`addOn-${addOn.id}`}
+                                checked={formData.addOnInterests.includes(addOn.id)}
+                                onCheckedChange={(checked) => handleCheckboxChange(addOn.id, checked as boolean, "addOnInterests")}
+                              />
+                              <Label htmlFor={`addOn-${addOn.id}`} className="flex-grow">
+                                {addOn.label}
+                                {addOn.serviceId && (
+                                  <Link to={`/services#${addOn.serviceId}`} className="text-primary hover:underline ml-2 text-sm" target="_blank" rel="noopener noreferrer">
+                                    (Learn More)
+                                  </Link>
+                                )}
+                              </Label>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
                 {showAddOnRequirements && (
                   <div className="space-y-2 mt-4">
                     <Label htmlFor="addOnRequirements">Please describe any specific requirements for these add-ons (e.g., preferred platforms, specific needs).</Label>
@@ -372,9 +379,9 @@ const BuildMyBusinessPage = () => {
                 )}
               </div>
 
-              {/* Project Goals */}
+              {/* Project Goals and Timeline */}
               <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">6. Project Goals <span className="text-red-500">*</span></h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">6. Project Goals and Timeline <span className="text-red-500">*</span></h3>
                 <div className="space-y-2">
                   <Label>Primary Goal(s) <span className="text-red-500">*</span></Label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -435,8 +442,45 @@ const BuildMyBusinessPage = () => {
                   </div>
                 )}
                 <div className="space-y-2">
-                  <Label htmlFor="additionalDetails">Additional Details</Label>
+                  <Label htmlFor="timeline">Timeline <span className="text-red-500">*</span></Label>
+                  <Select onValueChange={handleSelectChange("timeline")} value={formData.timeline} required>
+                    <SelectTrigger id="timeline" className="p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-md hover:border-primary transition-all duration-300">
+                      <SelectValue placeholder="Select timeline" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Within 7 Days">Within 7 Days</SelectItem>
+                      <SelectItem value="1-2 Weeks">1-2 Weeks</SelectItem>
+                      <SelectItem value="1 Month">1 Month</SelectItem>
+                      <SelectItem value="Flexible">Flexible</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="additionalDetails">Additional Details (Optional)</Label>
                   <Textarea id="additionalDetails" value={formData.additionalDetails} onChange={(e) => handleChange("additionalDetails", e.target.value)} rows={4} className="rounded-2xl" />
+                </div>
+              </div>
+
+              {/* Consultation Preference */}
+              <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">7. Consultation Preference <span className="text-red-500">*</span></h3>
+                <RadioGroup onValueChange={handleSelectChange("contactMethod")} value={formData.contactMethod} required className="space-y-2">
+                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                    <RadioGroupItem value="Email" id="contact-email" />
+                    <Label htmlFor="contact-email">Email</Label>
+                  </div>
+                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                    <RadioGroupItem value="Phone" id="contact-phone" />
+                    <Label htmlFor="contact-phone">Phone</Label>
+                  </div>
+                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                    <RadioGroupItem value="Video Call (e.g., Zoom)" id="contact-video" />
+                    <Label htmlFor="contact-video">Video Call (e.g., Zoom)</Label>
+                  </div>
+                </RadioGroup>
+                <div className="space-y-2">
+                  <Label htmlFor="preferredTime">Preferred Time (Optional)</Label>
+                  <Input id="preferredTime" placeholder="e.g., Weekdays after 2 PM EST" value={formData.preferredTime} onChange={(e) => handleChange("preferredTime", e.target.value)} className="rounded-2xl" />
                 </div>
               </div>
 
