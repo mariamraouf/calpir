@@ -24,7 +24,7 @@ interface Package {
     domainRegistration: boolean;
     seoOptimization: boolean;
     socialMediaSetup: string;
-    additionalWebsitePages: string | boolean;
+    // additionalWebsitePages: string | boolean; // Removed
     ecommerceFunctionality: boolean;
   };
   businessOperations: {
@@ -40,9 +40,9 @@ interface Package {
   };
   humanResources: {
     legalCompliance: boolean; // NEW
-    recruitingHiring: boolean; // NEW
+    // recruitingHiring: boolean; // Removed
     hrOperationsPayroll: boolean; // NEW
-    hrFoundation: boolean; // NEW
+    // hrFoundation: boolean; // Removed
   };
   training: {
     basicTrainingSessions: boolean;
@@ -61,7 +61,7 @@ const packages: Package[] = [
       domainRegistration: true,
       seoOptimization: false,
       socialMediaSetup: "2 platforms + 5 posts",
-      additionalWebsitePages: false,
+      // additionalWebsitePages: false, // Removed
       ecommerceFunctionality: false,
     },
     businessOperations: {
@@ -77,9 +77,9 @@ const packages: Package[] = [
     },
     humanResources: {
       legalCompliance: true, // NEW
-      recruitingHiring: false, // NEW
+      // recruitingHiring: false, // Removed
       hrOperationsPayroll: false, // NEW
-      hrFoundation: false, // NEW
+      // hrFoundation: false, // Removed
     },
     training: {
       basicTrainingSessions: false,
@@ -94,16 +94,16 @@ const packages: Package[] = [
       hostingDomain: true,
       domainRegistration: true,
       seoOptimization: true,
-      socialMediaSetup: "5 platforms + 10 posts",
-      additionalWebsitePages: "Up to 5 pages",
+      socialMediaSetup: "4 platforms + 10 posts", // AMENDED
+      // additionalWebsitePages: false, // Removed
       ecommerceFunctionality: false,
     },
     businessOperations: {
-      projectManagement: "Enhanced (5 workspaces)", // AMENDED
+      projectManagement: "Enhanced (4 workspaces)", // AMENDED
       crmSetup: "Advanced with automation",
       accountingSystem: "Expense tracking",
-      platformMigration: "2-3 platforms",
-      integrations: "5 connections",
+      platformMigration: "3 platforms", // AMENDED
+      integrations: "3 connections", // AMENDED
       analyticsReporting: "Monthly insights + Recommendation",
       businessAutomations: "Basic Automation Setup",
       sops: true,
@@ -111,9 +111,9 @@ const packages: Package[] = [
     },
     humanResources: {
       legalCompliance: true, // NEW
-      recruitingHiring: true, // NEW
+      // recruitingHiring: false, // Removed
       hrOperationsPayroll: false, // NEW
-      hrFoundation: false, // NEW
+      // hrFoundation: false, // Removed
     },
     training: {
       basicTrainingSessions: true,
@@ -128,8 +128,8 @@ const packages: Package[] = [
       hostingDomain: true,
       domainRegistration: true,
       seoOptimization: true,
-      socialMediaSetup: "5+ platforms + 20 posts",
-      additionalWebsitePages: "Unlimited pages",
+      socialMediaSetup: "5+ platforms + 15 posts", // AMENDED
+      // additionalWebsitePages: false, // Removed
       ecommerceFunctionality: true,
     },
     businessOperations: {
@@ -145,9 +145,9 @@ const packages: Package[] = [
     },
     humanResources: {
       legalCompliance: true, // NEW
-      recruitingHiring: true, // NEW
+      // recruitingHiring: false, // Removed
       hrOperationsPayroll: true, // NEW
-      hrFoundation: true, // NEW
+      // hrFoundation: false, // Removed
     },
     training: {
       basicTrainingSessions: true,
@@ -162,11 +162,11 @@ const comparisonFeatures = [
     key: "digitalPresence",
     features: [
       { key: "websiteDevelopment", label: "Website Development" },
-      { key: "hostingDomain", label: "Hosting & Domain" },
+      { key: "hostingDomain", label: "Hosting" }, // AMENDED LABEL
       { key: "domainRegistration", label: "Domain Registration" },
       { key: "seoOptimization", label: "SEO Optimization" },
       { key: "socialMediaSetup", label: "Social Media Setup" },
-      { key: "additionalWebsitePages", label: "Additional Website Pages" },
+      // { key: "additionalWebsitePages", label: "Additional Website Pages" }, // Removed
       { key: "ecommerceFunctionality", label: "E-commerce Functionality" },
     ],
   },
@@ -190,9 +190,9 @@ const comparisonFeatures = [
     key: "humanResources",
     features: [
       { key: "legalCompliance", label: "Legal & Compliance" },
-      { key: "recruitingHiring", label: "Recruiting & Hiring" },
+      // { key: "recruitingHiring", label: "Recruiting & Hiring" }, // Removed
       { key: "hrOperationsPayroll", label: "HR Operations & Payroll" },
-      { key: "hrFoundation", label: "HR Foundation" },
+      // { key: "hrFoundation", label: "HR Foundation" }, // Removed
     ],
   },
   {
