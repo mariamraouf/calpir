@@ -1,110 +1,88 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // Changed from next/link
+import React from "react";
+import { NavLink, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Mail } from "lucide-react";
-import { MadeWithDyad } from "./made-with-dyad";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { DropdownMenu, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"; // Removed DropdownMenuContent, DropdownMenuItem
+import { Menu, ChevronDown } from "lucide-react";
+// import PlatformDropdown from "./PlatformDropdown"; // Removed import
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const navItems = [
-    { name: "Home", to: "/" },
-    { name: "Services", to: "/services" },
-    { name: "Pricing", to: "/pricing" },
-    { name: "About Us", to: "/about" },
-    { name: "Contact", to: "/contact" },
+  const mainNavLinks = [
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Platforms", href: "/platforms" }, // Changed back to direct link
+    { name: "Pricing", href: "/pricing" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md" : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <Link to="/" className="flex items-center space-x-2">
-          <img src="/logo.png" alt="Calpir Logo" className="h-8" />
-          <span className="text-2xl font-bold text-gray-800">Calpir</span>
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 items-center justify-between">
+        <Link to="/" className="flex items-center space-x-2 font-bold text-lg transition-transform duration-300 hover:scale-110">
+          <img src="/calpir-logo.png" alt="Calpir Logo" className="h-8 w-8" />
+          <span className="text-foreground">Calpir</span>
         </Link>
 
-        <div className="hidden md:flex items-center space-x-6">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              to={item.to}
-              className="text-gray-600 hover:text-primary-500 transition-colors duration-200"
+        <nav className="hidden md:flex items-center space-x-6">
+          {mainNavLinks.map((link) => (
+            <NavLink
+              key={link.name}
+              to={link.href}
+              className={({ isActive }) =>
+                `relative text-base font-semibold transition-colors duration-300 hover:text-primary hover:scale-110 transform ${
+                  isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
+                } after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 hover:after:w-full after:transition-all after:duration-300`
+              }
             >
-              {item.name}
-            </Link>
+              {link.name}
+            </NavLink>
           ))}
-          <Button asChild>
-            <Link to="/build-my-business">Build My Business</Link>
-          </Button>
-          <a
-            href="mailto:contact@calpir.com"
-            className="flex items-center text-gray-600 hover:text-primary-500 transition-colors duration-200"
-          >
-            <Mail className="h-5 w-5 mr-1" />
-            contact@calpir.com
-          </a>
-        </div>
 
-        <div className="md:hidden flex items-center">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600">
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </div>
-
-      {isOpen && (
-        <div className="md:hidden bg-white shadow-lg py-4">
-          <div className="flex flex-col items-center space-y-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.to}
-                className="text-gray-700 hover:text-primary-500 transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <Button asChild>
-              <Link to="/build-my-business" onClick={() => setIsOpen(false)}>
-                Build My Business
-              </Link>
-            </Button>
-            <a
-              href="mailto:contact@calpir.com"
-              className="flex items-center text-gray-700 hover:text-primary-500 transition-colors duration-200"
-              onClick={() => setIsOpen(false)}
+          <Link to="/build-my-business">
+            <Button
+              className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
             >
-              <Mail className="h-5 w-5 mr-1" />
-              contact@calpir.com
-            </a>
-          </div>
-        </div>
-      )}
-      <MadeWithDyad />
-    </nav>
+              Get Started
+            </Button>
+          </Link>
+        </nav>
+
+        <Sheet>
+          <SheetTrigger asChild className="md:hidden">
+            <Button variant="outline" size="icon" className="transition-transform duration-300 hover:scale-110 hover:bg-gray-100 dark:hover:bg-gray-700">
+              <Menu className="h-6 w-6" />
+              <span className="sr-only">Toggle navigation menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="animate-slide-in-right">
+            <div className="flex flex-col space-y-4 pt-6">
+              {mainNavLinks.map((link) => (
+                <NavLink
+                  key={link.name}
+                  to={link.href}
+                  className={({ isActive }) =>
+                    `text-lg font-semibold hover:text-primary transition-colors duration-200 ${
+                      isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
+                    } transform hover:scale-105`
+                  }
+                >
+                  {link.name}
+                </NavLink>
+              ))}
+              <Link to="/build-my-business">
+                <Button
+                  className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
+                >
+                  Get Started
+                </Button>
+              </Link>
+            </div>
+          </SheetContent>
+        </Sheet>
+      </div>
+    </header>
   );
 };
 
