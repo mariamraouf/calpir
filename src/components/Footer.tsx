@@ -59,7 +59,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to="/individual-service-inquiry"> {/* New link to individual service form */}
+              <Link to="/individual-service-inquiry"> 
                 <Button
                   variant="link"
                   className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"

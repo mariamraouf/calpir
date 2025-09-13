@@ -1,18 +1,18 @@
 "use client";
 
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom"; 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { DropdownMenu, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"; // Removed DropdownMenuContent, DropdownMenuItem
+import { DropdownMenu, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"; 
 import { Menu, ChevronDown } from "lucide-react";
-// import PlatformDropdown from "./PlatformDropdown"; // Removed import
+
 
 const Navbar = () => {
   const mainNavLinks = [
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "Platforms", href: "/platforms" }, // Changed back to direct link
+    { name: "Platforms", href: "/platforms" }, 
     { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
   ];
