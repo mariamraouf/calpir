@@ -47,6 +47,7 @@ const groupedAddOns: Record<string, typeof addOnsOptions> = addOnsOptions.reduce
 const addOnCategoryDisplayMap: Record<string, { icon: React.ElementType, iconColor: string }> = {
   "Digital Foundation Services": { icon: Globe, iconColor: "text-palette-blue-500" },
   "Social Media & Marketing": { icon: Share2, iconColor: "text-palette-red-400" }, // NEW
+  "Social Foundation Services": { icon: Mail, iconColor: "text-primary" }, // Added for Email System Setup
   "Operations & Management Services": { icon: Briefcase, iconColor: "text-palette-orange-500" },
   "Platform & Integration Services": { icon: Lightbulb, iconColor: "text-palette-orange-400" }, // NEW
   "Human Resources Services": { icon: Users, iconColor: "text-primary" },
@@ -150,7 +151,7 @@ const Pricing = () => {
                         <div className="text-left mb-2 sm:mb-0 sm:mr-4">
                           <p className="text-lg font-semibold text-gray-900 dark:text-white">{item.label.split('(')[0].trim()}</p>
                           {item.serviceId && (
-                            <Link to={`/services#${item.serviceId}`} className="text-primary hover:underline text-sm" target="_blank" rel="noopener noreferrer">
+                            <Link to={`/services#${item.serviceId}`} className="text-primary hover:underline ml-2 text-sm" target="_blank" rel="noopener noreferrer">
                               (Learn More)
                             </Link>
                           )}
@@ -195,7 +196,7 @@ const Pricing = () => {
                   ))}
                 </ul>
                 <div className="text-center mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
-                  <Link to="/individual-service-inquiry">
+                  <Link to={`/services#${service.id}`}>
                     <Button
                       size="lg"
                       className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"

@@ -10,13 +10,13 @@ export const addOnsOptions = [
   { category: "Social Media & Marketing", id: "social-media-5-posts", label: "Social Media Content: 5 Posts/Month ($199)", serviceId: "social-media-setup" },
   { category: "Social Media & Marketing", id: "social-media-10-posts", label: "Social Media Content: 10 Posts/Month ($349)", serviceId: "social-media-setup" },
   { category: "Social Media & Marketing", id: "social-media-15-posts", label: "Social Media Content: 15 Posts/Month ($649)", serviceId: "social-media-setup" },
-  { category: "Social Media & Marketing", id: "email-marketing-setup", label: "Email System Setup ($499)", serviceId: "email-systems" },
+  { category: "Social Foundation Services", id: "email-marketing-setup", label: "Email System Setup ($499)", serviceId: "email-systems" },
 
   // Operations & Management Services (now only Business Systems)
   { category: "Operations & Management Services", id: "analytics-google-analytics-setup", label: "Analytics & Reporting (Google Analytics setup) ($699)", serviceId: "analytics" },
   { category: "Operations & Management Services", id: "security-basics-setup", label: "Security Basics: One-time Setup ($299)", serviceId: "security-basics" },
   { category: "Operations & Management Services", id: "time-tracking-setup", label: "Time Tracking: One-time Setup ($499)", serviceId: "time-tracking" },
-  { category: "Operations & Management Services", id: "sop-creation", label: "SOP Creation ($299)", serviceId: "sop-creation" }, // NEW ADD-ON
+  { category: "Operations & Management Services", id: "sop-creation", label: "Standard Operating Procedures (SOPs) ($299)", serviceId: "sop-creation" }, // NEW ADD-ON
 
   // Platform & Integration Services (now a top-level category)
   { category: "Platform & Integration Services", id: "extra-integrations-per", label: "Extra Integrations: Per Integration ($199)", serviceId: "integrations" },

@@ -176,7 +176,7 @@ export const servicesData = [
     ],
     iconColor: "text-palette-orange-500",
   },
-  { category: "Operations & Management Services", subcategory: "Business Systems", id: "sop-creation", icon: FileText, title: "SOP Creation", investment: "$299", // NEW SERVICE
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "sop-creation", icon: FileText, title: "Standard Operating Procedures (SOPs)", investment: "$299", // NEW SERVICE
     description: "Develop clear and concise Standard Operating Procedures (SOPs) to standardize your business processes.",
     details: [
       "Process documentation and mapping",
