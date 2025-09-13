@@ -3,33 +3,24 @@
 import React from "react";
 
 const integrations = [
-  // Explicitly requested and top-tier integrations
-  { name: "ClickUp", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/clickup.svg", gradient: "linear-gradient(135deg, #7B68EE, #FF6B9D)" },
-  { name: "Slack", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/slack.svg", gradient: "linear-gradient(45deg, #E01E5A, #36C5F0, #2EB67D, #ECB22E)" },
+  { name: "ClickUp", iconUrl: "/logos/clickup-logo.jpeg", gradient: "linear-gradient(135deg, #7B68EE, #FF6B9D)" },
+  { name: "Mailchimp", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/mailchimp.svg", gradient: "linear-gradient(135deg, #FFE01B, #FFD60D)" },
+  { name: "Make", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/integromat.svg", gradient: "linear-gradient(135deg, #6C5CE7, #A29BFE)" },
+  { name: "Zapier", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/zapier.svg", gradient: "linear-gradient(135deg, #FF4A00, #FF6B35)" },
+  { name: "Go Highlevel", iconUrl: "https://logo.clearbit.com/gohighlevel.com?size=50", gradient: "linear-gradient(135deg, #6A5ACD, #8A2BE2)" },
+  { name: "HubSpot", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/hubspot.svg", gradient: "linear-gradient(135deg, #FF7A59, #FF5C35)" },
   { name: "Google Workspace", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/google.svg", gradient: "linear-gradient(135deg, #4285F4, #34A853, #FBBC04)" },
   { name: "Microsoft 365", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoft365.svg", gradient: "linear-gradient(135deg, #FFB900, #0078D4)" },
+  { name: "Canva", iconUrl: "/logos/canva.jpeg", gradient: "linear-gradient(135deg, #00C4CC, #432889)" },
+  { name: "Slack", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/slack.svg", gradient: "linear-gradient(45deg, #E01E5A, #36C5F0, #2EB67D, #ECB22E)" },
+  { name: "Xero", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xero.svg", gradient: "linear-gradient(135deg, #13B5EA, #00A4DB)" },
   { name: "Calendly", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/calendly.svg", gradient: "linear-gradient(135deg, #006BFF, #0057D9)" },
-
-  // Other highly recognized platforms
-  { name: "HubSpot", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/hubspot.svg", gradient: "linear-gradient(135deg, #FF7A59, #FF5C35)" },
-  { name: "Salesforce", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/salesforce.svg", gradient: "linear-gradient(135deg, #00A1E0, #0099E0)" },
   { name: "Zoom", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/zoom.svg", gradient: "linear-gradient(135deg, #2D8CFF, #0066CC)" },
-  { name: "Notion", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/notion.svg", gradient: "linear-gradient(135deg, #000000, #37352F)" },
-  { name: "Jira", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/jira.svg", gradient: "linear-gradient(135deg, #0052CC, #2684FF)" },
   { name: "Trello", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/trello.svg", gradient: "linear-gradient(135deg, #0079BF, #026AA7)" },
   { name: "Asana", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/asana.svg", gradient: "linear-gradient(135deg, #F06A6A, #F37A7A)" },
-  { name: "Zapier", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/zapier.svg", gradient: "linear-gradient(135deg, #FF4A00, #FF6B35)" },
-  { name: "Make", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/integromat.svg", gradient: "linear-gradient(135deg, #6C5CE7, #A29BFE)" },
-  { name: "ChatGPT", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg", gradient: "linear-gradient(135deg, #10A37F, #008060)" },
-  { name: "Claude", iconUrl: "/logos/claude.svg", gradient: "linear-gradient(135deg, #8A2BE2, #9370DB)" },
-  { name: "ERP", iconUrl: "/logos/erp.svg", gradient: "linear-gradient(135deg, #795548, #A1887F)" },
-  { name: "Mailchimp", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/mailchimp.svg", gradient: "linear-gradient(135deg, #FFE01B, #FFD60D)" },
   { name: "QuickBooks", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/quickbooks.svg", gradient: "linear-gradient(135deg, #0077C5, #2CA01C)" },
-  { name: "Xero", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xero.svg", gradient: "linear-gradient(135deg, #13B5EA, #00A4DB)" },
-  { name: "Stripe", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/stripe.svg", gradient: "linear-gradient(135deg, #635BFF, #4F46E5)" },
   { name: "PayPal", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/paypal.svg", gradient: "linear-gradient(135deg, #00457C, #0070BA)" },
-  { name: "Figma", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/figma.svg", gradient: "linear-gradient(135deg, #F24E1E, #A259FF, #1ABCFE, #0ACF83, #FF7262)" },
-  { name: "LinkedIn", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg", gradient: "linear-gradient(135deg, #0A66C2, #004182)" },
+  { name: "Figma", iconUrl: "/logos/figma.png", gradient: "linear-gradient(135deg, #F24E1E, #A259FF, #1ABCFE, #0ACF83, #FF7262)" },
 ];
 
 const IntegrationsSection = () => {

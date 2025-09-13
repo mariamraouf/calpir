@@ -412,6 +412,25 @@ updatedPlatformCategories.push({
   ],
 });
 
+// Add a new "Design & Creative Tools" category
+updatedPlatformCategories.push({
+  name: "Design & Creative Tools",
+  platforms: [
+    { name: "Canva", logo: "/logos/canva.jpeg" },
+    { name: "Figma", logo: "/logos/figma.png" },
+    { name: "Adobe Photoshop", logo: "https://logo.clearbit.com/adobe.com?size=50" },
+    { name: "Adobe Illustrator", logo: "https://logo.clearbit.com/adobe.com?size=50" },
+    { name: "Sketch", logo: "https://logo.clearbit.com/sketch.com?size=50" },
+    { name: "InVision", logo: "https://logo.clearbit.com/invisionapp.com?size=50" },
+    { name: "Miro", logo: "https://logo.clearbit.com/miro.com?size=50" },
+    { name: "Whimsical", logo: "https://logo.clearbit.com/whimsical.com?size=50" },
+    { name: "Procreate", logo: "https://logo.clearbit.com/procreate.art?size=50" },
+    { name: "Affinity Designer", logo: "https://logo.clearbit.com/affinity.serif.com?size=50" },
+    { name: "GIMP", logo: "https://logo.clearbit.com/gimp.org?size=50" },
+    { name: "Inkscape", logo: "https://logo.clearbit.com/inkscape.org?size=50" },
+  ],
+});
+
 
 const Platforms = () => {
   return (
