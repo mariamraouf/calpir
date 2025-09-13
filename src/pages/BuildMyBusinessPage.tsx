@@ -315,7 +315,10 @@ const BuildMyBusinessPage = () => {
                     <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{category}</h4>
                     {Object.entries(subcategories).map(([subcategory, addOns]) => (
                       <div key={subcategory} className="space-y-2 pl-4">
-                        <h5 className="text-md font-medium text-gray-700 dark:text-gray-300">{subcategory}</h5>
+                        {/* Only show subcategory title if it's not the generic 'HR Services' */}
+                        {subcategory !== "HR Services" && (
+                          <h5 className="text-md font-medium text-gray-700 dark:text-gray-300">{subcategory}</h5>
+                        )}
                         <div className="grid grid-cols-1 gap-4">
                           {addOns.map((addOn) => (
                             <div key={addOn.id} className="flex items-start space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
@@ -396,11 +399,11 @@ const BuildMyBusinessPage = () => {
                     </div>
                     <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
                       <Checkbox
-                        id="goal-hr-recruiting-hiring"
-                        checked={formData.primaryGoals.includes("HR: Recruiting & Hiring")}
-                        onCheckedChange={(checked) => handleCheckboxChange("HR: Recruiting & Hiring", checked as boolean, "primaryGoals")}
+                        id="goal-application-tracking-system" // UPDATED ID
+                        checked={formData.primaryGoals.includes("HR: Application Tracking System")} // UPDATED LABEL
+                        onCheckedChange={(checked) => handleCheckboxChange("HR: Application Tracking System", checked as boolean, "primaryGoals")} // UPDATED LABEL
                       />
-                      <Label htmlFor="goal-hr-recruiting-hiring">HR: Recruiting & Hiring</Label>
+                      <Label htmlFor="goal-application-tracking-system">HR: Application Tracking System</Label> {/* UPDATED LABEL */}
                     </div>
                     <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
                       <Checkbox

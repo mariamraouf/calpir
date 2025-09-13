@@ -8,7 +8,7 @@ export const servicesData = [
     description: "Create a professional, high-performing website tailored to your business needs, including domain registration.",
     details: [
       "Custom website design and development",
-      "5 pages included", // AMENDED
+      "5 pages included",
       "Secure and reliable hosting solutions",
       "Domain registration and setup",
       "Responsive and mobile-friendly layouts",
@@ -59,13 +59,13 @@ export const servicesData = [
     description: "Craft a compelling brand identity that resonates with your target audience.",
     details: [
       "Logo design and brand guidelines",
-      "Marketing collateral design", // AMENDED
+      "Marketing collateral design",
       "Brand voice and messaging development",
-      "Visual Identity", // NEW
+      "Visual Identity",
     ],
     iconColor: "text-palette-purple-500",
   },
-  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "email-systems", icon: Mail, title: "Email System Setup", investment: "$499", // AMENDED TITLE & PRICE
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "email-systems", icon: Mail, title: "Email System Setup", investment: "$499",
     description: "Develop effective email marketing and communication strategies.",
     details: [
       "Email platform setup",
@@ -80,7 +80,7 @@ export const servicesData = [
   { category: "Operations & Management Services", subcategory: "Business Systems", id: "project-management", icon: Briefcase, title: "Project Management Setup", investment: "$799",
     description: "Implement robust project management systems to keep your projects on track and teams coordinated.",
     details: [
-      "Project template creation", // REMOVED "Tool selection and configuration"
+      "Project template creation",
       "Task management and tracking setup",
       "Reporting and analytics dashboards",
     ],
@@ -166,7 +166,7 @@ export const servicesData = [
     ],
     iconColor: "text-palette-red-500",
   },
-  { category: "Operations & Management Services", subcategory: "Business Systems", id: "time-tracking", icon: Clock, title: "Time Tracking System Setup", investment: "$599", // AMENDED PRICE
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "time-tracking", icon: Clock, title: "Time Tracking System Setup", investment: "$599",
     description: "Comprehensive setup of a time tracking tool with custom reports and integrations.",
     details: [
       "Time tracking tool selection and configuration",
@@ -176,9 +176,18 @@ export const servicesData = [
     ],
     iconColor: "text-palette-orange-500",
   },
-  // Removed: Performance Management
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "sop-creation", icon: FileText, title: "SOP Creation", investment: "$299", // NEW SERVICE
+    description: "Develop clear and concise Standard Operating Procedures (SOPs) to standardize your business processes.",
+    details: [
+      "Process documentation and mapping",
+      "Creation of step-by-step guides",
+      "Workflow optimization recommendations",
+      "Training material development",
+    ],
+    iconColor: "text-palette-blue-500",
+  },
 
-  // Human Resources Services (NEW STRUCTURE)
+  // Human Resources Services
   { category: "Human Resources Services", subcategory: "HR Foundation", id: "hr-legal-compliance", icon: FileText, title: "Legal & Compliance", investment: "$499",
     description: "Ensure your business is compliant with essential HR legal frameworks.",
     details: [
@@ -187,7 +196,7 @@ export const servicesData = [
     ],
     iconColor: "text-primary",
   },
-  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "hr-recruiting-hiring", icon: Users, title: "Recruiting & Hiring", investment: "$599",
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "application-tracking-system", icon: Users, title: "Application Tracking System", investment: "$599", // RENAMED
     description: "Streamline your hiring process to attract and onboard top talent.",
     details: [
       "Job descriptions, interview guides, assessment tools",
@@ -210,14 +219,11 @@ export const servicesData = [
   { category: "Human Resources Services", subcategory: "HR Foundation", id: "hr-foundation-package", icon: BookOpen, title: "HR Foundation", investment: "$1,249",
     description: "A complete HR system integration and setup for comprehensive human resource management.",
     details: [
-      "Everything from Legal & Compliance, Recruiting & Hiring, HR Operations & Payroll",
+      "Everything from Legal & Compliance, Application Tracking System, HR Operations & Payroll", // UPDATED
       "Full HR system integration & setup",
       "Custom workflow design",
       "HR dashboard & analytics setup",
     ],
     iconColor: "text-calpir-green-500",
   },
-  // Removed: Single Role Recruitment, Multi-Role Recruitment, Comprehensive Recruitment (3 months)
-
-  // Removed: Basic Training Sessions, Monthly Support Package, Premium Support Package
 ];

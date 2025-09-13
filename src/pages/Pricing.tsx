@@ -39,10 +39,18 @@ const groupedAddOns = addOnsOptions.reduce((acc, addOn) => {
   if (!acc[addOn.category]) {
     acc[addOn.category] = {};
   }
-  if (!acc[addOn.category][addOn.subcategory]) {
-    acc[addOn.category][addOn.subcategory] = [];
+  // For HR Services, we want to list them directly under the main category, not a subcategory
+  if (addOn.category === "Human Resources Services") {
+    if (!acc[addOn.category]["HR Services"]) { // Use a generic subcategory to group them for iteration
+      acc[addOn.category]["HR Services"] = [];
+    }
+    acc[addOn.category]["HR Services"].push(addOn);
+  } else {
+    if (!acc[addOn.category][addOn.subcategory]) {
+      acc[addOn.category][addOn.subcategory] = [];
+    }
+    acc[addOn.category][addOn.subcategory].push(addOn);
   }
-  acc[addOn.category][addOn.subcategory].push(addOn);
   return acc;
 }, {} as Record<string, Record<string, typeof addOnsOptions>>);
 
@@ -147,7 +155,10 @@ const Pricing = () => {
                   </div>
                   {Object.entries(subcategories).map(([subcategoryName, addOns], subCatIndex) => (
                     <div key={subcategoryName} className="mb-6 last:mb-0">
-                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 border-b pb-2">{subcategoryName}</h4>
+                      {/* Only show subcategory title if it's not the generic 'HR Services' */}
+                      {subcategoryName !== "HR Services" && (
+                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 border-b pb-2">{subcategoryName}</h4>
+                      )}
                       <div className="space-y-4">
                         {addOns.map((item, itemIndex) => (
                           <div key={item.id} className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${1.2 + catIndex * 0.15 + subCatIndex * 0.05 + itemIndex * 0.02}s` }}>
