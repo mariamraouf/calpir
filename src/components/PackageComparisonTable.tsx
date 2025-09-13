@@ -268,12 +268,12 @@ const PackageComparisonTable = () => {
     <>
       {/* Desktop View (Table) */}
       <div className="hidden md:block overflow-x-auto rounded-2xl border border-palette-blue-100 dark:border-gray-700 shadow-lg bg-white dark:bg-gray-800 animate-fade-in-up delay-1000">
-        <Table className="min-w-full text-left">
+        <Table className="min-w-full text-left table-fixed"> {/* Added table-fixed */}
           <TableHeader className="bg-gray-100 dark:bg-gray-900">
             <TableRow className="border-b border-palette-blue-100 dark:border-gray-700">
-              <TableHead className="min-w-[180px] p-4 text-lg font-semibold text-gray-900 dark:text-white">Features</TableHead>
+              <TableHead className="w-[250px] p-4 text-lg font-semibold text-gray-900 dark:text-white">Features</TableHead> {/* Fixed width for first column */}
               {packages.map((pkg, index) => (
-                <TableHead key={index} className="min-w-[120px] p-4 text-center text-lg font-semibold text-primary dark:text-calpir-green-300">
+                <TableHead key={index} className="w-1/3 p-4 text-center text-lg font-semibold text-primary dark:text-calpir-green-300"> {/* Equal width for package columns */}
                   {pkg.name.replace(" Package", "")}
                 </TableHead>
               ))}
@@ -282,9 +282,9 @@ const PackageComparisonTable = () => {
           <TableBody>
             {/* Price Row */}
             <TableRow className="border-b border-palette-blue-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-              <TableCell className="min-w-[180px] p-4 font-bold text-lg text-gray-900 dark:text-white">Price</TableCell>
+              <TableCell className="w-[250px] p-4 font-bold text-lg text-gray-900 dark:text-white">Price</TableCell>
               {packages.map((pkg, pkgIndex) => (
-                <TableCell key={pkgIndex} className="min-w-[120px] p-4 text-center text-2xl font-extrabold text-primary dark:text-calpir-green-300">
+                <TableCell key={pkgIndex} className="w-1/3 p-4 text-center text-2xl font-extrabold text-primary dark:text-calpir-green-300">
                   {pkg.price}
                 </TableCell>
               ))}
@@ -300,12 +300,12 @@ const PackageComparisonTable = () => {
                 </TableRow>
                 {categoryGroup.features.map((featureItem, featureIndex) => (
                   <TableRow key={`${categoryGroup.key}-${featureIndex}`} className="border-b border-palette-blue-100 dark:border-gray-700 last:border-b-0 last:pb-0 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                    <TableCell className="min-w-[180px] p-4 font-medium text-gray-800 dark:text-gray-200">{featureItem.label}</TableCell>
+                    <TableCell className="w-[250px] p-4 font-medium text-gray-800 dark:text-gray-200">{featureItem.label}</TableCell>
                     {packages.map((pkg, pkgIndex) => {
                       const categoryData = pkg[categoryGroup.key as keyof Package];
                       const featureValue = categoryData ? (categoryData as any)[featureItem.key] : null;
                       return (
-                        <TableCell key={pkgIndex} className="min-w-[120px] p-4 text-center text-gray-700 dark:text-gray-300">
+                        <TableCell key={pkgIndex} className="w-1/3 p-4 text-center text-gray-700 dark:text-gray-300">
                           {renderDesktopFeatureValue(featureValue)}
                         </TableCell>
                       );
@@ -317,9 +317,9 @@ const PackageComparisonTable = () => {
 
             {/* Buttons Row */}
             <TableRow className="bg-gray-100 dark:bg-gray-900 border-t border-palette-blue-100 dark:border-gray-700">
-              <TableCell className="min-w-[180px] p-4"></TableCell>
+              <TableCell className="w-[250px] p-4"></TableCell>
               {packages.map((pkg, pkgIndex) => (
-                <TableCell key={pkgIndex} className="min-w-[120px] p-4 text-center">
+                <TableCell key={pkgIndex} className="w-1/3 p-4 text-center">
                   <Link to="/build-my-business">
                     <Button
                       size="lg"
