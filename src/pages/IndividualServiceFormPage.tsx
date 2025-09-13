@@ -130,7 +130,7 @@ const IndividualServiceFormPage = () => {
             <form onSubmit={handleSubmit} className="grid gap-8 py-4">
               {/* Contact Information */}
               <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">1. Your Contact Information</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Your Contact Information</h3>
                 <div className="space-y-2">
                   <Label htmlFor="fullName">Full Name <span className="text-red-500">*</span></Label>
                   <Input id="fullName" value={formData.fullName} onChange={(e) => handleChange("fullName", e.target.value)} required className="rounded-2xl" />
@@ -151,7 +151,7 @@ const IndividualServiceFormPage = () => {
 
               {/* Service Selection */}
               <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">2. Select Services <span className="text-red-500">*</span></h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Select Services <span className="text-red-500">*</span></h3>
                 {Object.entries(groupedServices).map(([category, subcategories]) => (
                   <div key={category} className="space-y-4 pl-4 border-l-2 border-primary/50 dark:border-calpir-green-300/50">
                     <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{category}</h4>
@@ -188,7 +188,7 @@ const IndividualServiceFormPage = () => {
 
               {/* Project Timeline & Budget */}
               <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">3. Project Timeline & Budget</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Project Timeline & Budget</h3>
                 <div className="space-y-2">
                   <Label htmlFor="timeline">Desired Timeline <span className="text-red-500">*</span></Label>
                   <Select onValueChange={handleSelectChange("timeline")} value={formData.timeline} required>

@@ -103,8 +103,6 @@ const BuildMyBusinessPage = () => {
     systemPriorities: [] as string[], // Added for TypeScript fix
     additionalDetails: "",
     timeline: "",
-    contactMethod: "",
-    preferredTime: "",
     consent: false,
   });
 
@@ -139,7 +137,7 @@ const BuildMyBusinessPage = () => {
       businessType: "", industry: "", otherIndustry: "", businessStage: "", businessOperationModel: "",
       packagePreference: "", budgetRange: "", addOnInterests: [], addOnRequirements: "",
       primaryGoals: [], otherPrimaryGoal: "", currentSystems: "", preferredPlatforms: "", systemPriorities: [],
-      additionalDetails: "", timeline: "", contactMethod: "", preferredTime: "", consent: false,
+      additionalDetails: "", timeline: "", consent: false,
     });
   };
 
@@ -178,7 +176,7 @@ const BuildMyBusinessPage = () => {
             <form onSubmit={handleSubmit} className="grid gap-8 py-4">
               {/* Contact Information */}
               <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">1. Contact Information</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Contact Information</h3>
                 <div className="space-y-2">
                   <Label htmlFor="fullName">Full Name <span className="text-red-500">*</span></Label>
                   <Input id="fullName" value={formData.fullName} onChange={(e) => handleChange("fullName", e.target.value)} required className="rounded-2xl" />
@@ -207,7 +205,7 @@ const BuildMyBusinessPage = () => {
 
               {/* Business Details */}
               <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">2. Business Details</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Business Details</h3>
                 <div className="space-y-2">
                   <Label htmlFor="businessType">Business Type <span className="text-red-500">*</span></Label>
                   <Select onValueChange={handleSelectChange("businessType")} value={formData.businessType} required>
@@ -277,7 +275,7 @@ const BuildMyBusinessPage = () => {
 
               {/* Current & Preferred Systems */}
               <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">3. Systems & Platforms</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Systems & Platforms</h3>
                 <div className="space-y-2">
                   <Label htmlFor="currentSystems">Current Systems/Software Used</Label>
                   <Textarea id="currentSystems" placeholder="e.g., HubSpot, ClickUp, QuickBooks" value={formData.currentSystems} onChange={(e) => handleChange("currentSystems", e.target.value)} rows={3} className="rounded-2xl" />
@@ -305,7 +303,7 @@ const BuildMyBusinessPage = () => {
 
               {/* Package Selection */}
               <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">4. Package Preference <span className="text-red-500">*</span></h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Package Preference <span className="text-red-500">*</span></h3>
                 <RadioGroup onValueChange={handleSelectChange("packagePreference")} value={formData.packagePreference} required className="space-y-2">
                   <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
                     <RadioGroupItem value="Starter ($1,499)" id="package-starter" />
@@ -344,7 +342,7 @@ const BuildMyBusinessPage = () => {
 
               {/* Add-On Interests */}
               <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">5. Add-On Interests</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Add-On Interests</h3>
                 {Object.entries(groupedAddOns).map(([category, subcategories]) => (
                   <div key={category} className="space-y-4 pl-4 border-l-2 border-primary/50 dark:border-calpir-green-300/50">
                     <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{category}</h4>
@@ -384,7 +382,7 @@ const BuildMyBusinessPage = () => {
 
               {/* Project Goals and Timeline */}
               <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">6. Project Goals and Timeline <span className="text-red-500">*</span></h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Project Goals and Timeline <span className="text-red-500">*</span></h3>
                 <div className="space-y-2">
                   <Label>Primary Goal(s) <span className="text-red-500">*</span></Label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -461,29 +459,6 @@ const BuildMyBusinessPage = () => {
                 <div className="space-y-2">
                   <Label htmlFor="additionalDetails">Additional Details</Label>
                   <Textarea id="additionalDetails" value={formData.additionalDetails} onChange={(e) => handleChange("additionalDetails", e.target.value)} rows={4} className="rounded-2xl" />
-                </div>
-              </div>
-
-              {/* Consultation Preference */}
-              <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">7. Consultation Preference <span className="text-red-500">*</span></h3>
-                <RadioGroup onValueChange={handleSelectChange("contactMethod")} value={formData.contactMethod} required className="space-y-2">
-                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                    <RadioGroupItem value="Email" id="contact-email" />
-                    <Label htmlFor="contact-email">Email</Label>
-                  </div>
-                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                    <RadioGroupItem value="Phone" id="contact-phone" />
-                    <Label htmlFor="contact-phone">Phone</Label>
-                  </div>
-                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                    <RadioGroupItem value="Video Call (e.g., Zoom)" id="contact-video" />
-                    <Label htmlFor="contact-video">Video Call (e.g., Zoom)</Label>
-                  </div>
-                </RadioGroup>
-                <div className="space-y-2">
-                  <Label htmlFor="preferredTime">Preferred Time</Label>
-                  <Input id="preferredTime" placeholder="e.g., Weekdays after 2 PM EST" value={formData.preferredTime} onChange={(e) => handleChange("preferredTime", e.target.value)} className="rounded-2xl" />
                 </div>
               </div>
 
