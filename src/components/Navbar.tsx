@@ -4,14 +4,15 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"; // Removed DropdownMenuContent, DropdownMenuItem
 import { Menu, ChevronDown } from "lucide-react";
+import PlatformDropdown from "./PlatformDropdown"; // Import the new component
 
 const Navbar = () => {
   const mainNavLinks = [
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "Platforms", href: "/platforms" }, // New link
+    // Platforms will be a dropdown, not a direct NavLink
     { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
   ];
@@ -38,6 +39,20 @@ const Navbar = () => {
               {link.name}
             </NavLink>
           ))}
+
+          {/* Platforms Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                className="relative text-base font-semibold transition-colors duration-300 hover:text-primary hover:scale-110 transform text-foreground data-[state=open]:text-primary dark:data-[state=open]:text-calpir-green-300"
+              >
+                Platforms <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 data-[state=open]:rotate-180" />
+              </Button>
+            </DropdownMenuTrigger>
+            <PlatformDropdown />
+          </DropdownMenu>
+
           <Link to="/build-my-business">
             <Button
               className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
@@ -69,6 +84,17 @@ const Navbar = () => {
                   {link.name}
                 </NavLink>
               ))}
+              {/* Add Platforms as a simple link in mobile for now */}
+              <NavLink
+                to="/platforms"
+                className={({ isActive }) =>
+                  `text-lg font-semibold hover:text-primary transition-colors duration-200 ${
+                    isActive ? "text-primary dark:text-calpir-green-300" : "text-foreground"
+                  } transform hover:scale-105`
+                }
+              >
+                Platforms
+              </NavLink>
               <Link to="/build-my-business">
                 <Button
                   className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
