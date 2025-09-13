@@ -70,6 +70,8 @@ const BuildMyBusinessPage = () => {
     systemPriorities: [] as string[],
     additionalDetails: "",
     timeline: "",
+    contactMethod: "", // Added missing property
+    preferredTime: "", // Added missing property
     consent: false,
   });
 
@@ -104,7 +106,7 @@ const BuildMyBusinessPage = () => {
       businessType: "", industry: "", otherIndustry: "", businessStage: "", businessOperationModel: "",
       packagePreference: "", budgetRange: "", addOnInterests: [], addOnRequirements: "",
       primaryGoals: [], otherPrimaryGoal: "", currentSystems: "", preferredPlatforms: "", systemPriorities: [],
-      additionalDetails: "", timeline: "", consent: false,
+      additionalDetails: "", timeline: "", contactMethod: "", preferredTime: "", consent: false, // Reset added properties
     });
   };
 
@@ -474,13 +476,18 @@ const BuildMyBusinessPage = () => {
                 </Label>
               </div>
 
-              <DialogFooter>
+              <div className="mt-6">
                 <Button type="submit" className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:animate-button-glow">
                   Start My Business
                 </Button>
-              </DialogFooter>
+              </div>
             </form>
-          </DialogContent>
+          </div>
+        </section>
+      </main>
+      <Footer />
+      <MadeWithDyad />
+    </div>
   );
 };
 
