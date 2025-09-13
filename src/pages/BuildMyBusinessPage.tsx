@@ -46,6 +46,27 @@ const systemPriorities = [
   "Customizable",
 ];
 
+const biggestChallengeOptions = [
+  "Don't know where to start",
+  "Need a professional website",
+  "Overwhelmed by tool options",
+  "Lack of time to set everything up",
+  "Current systems are messy/inefficient",
+  "Need help with branding/marketing",
+  "Technical skills limitation",
+];
+
+const currentAssetsOptions = [
+  "Website",
+  "Business email",
+  "Social media accounts",
+  "Logo/branding",
+  "Project management system",
+  "CRM system",
+  "Accounting system",
+  "None of the above",
+];
+
 const BuildMyBusinessPage = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -59,6 +80,8 @@ const BuildMyBusinessPage = () => {
     otherIndustry: "",
     businessStage: "",
     businessOperationModel: "",
+    biggestChallenge: "", // NEW
+    currentAssets: [] as string[], // NEW
     packagePreference: "",
     budgetRange: "",
     addOnInterests: [] as string[],
@@ -81,7 +104,7 @@ const BuildMyBusinessPage = () => {
     handleChange(id, value);
   };
 
-  const handleCheckboxChange = (value: string, checked: boolean, field: "addOnInterests" | "primaryGoals" | "systemPriorities") => {
+  const handleCheckboxChange = (value: string, checked: boolean, field: "addOnInterests" | "primaryGoals" | "systemPriorities" | "currentAssets") => {
     handleChange(
       field,
       checked
@@ -102,6 +125,7 @@ const BuildMyBusinessPage = () => {
     setFormData({
       fullName: "", email: "", phoneNumber: "", companyName: "", existingWebsite: "", countryOfHeadquarters: "",
       businessType: "", industry: "", otherIndustry: "", businessStage: "", businessOperationModel: "",
+      biggestChallenge: "", currentAssets: [], // NEW
       packagePreference: "", budgetRange: "", addOnInterests: [], addOnRequirements: "",
       primaryGoals: [], otherPrimaryGoal: "", currentSystems: "", preferredPlatforms: "", systemPriorities: [],
       additionalDetails: "", timeline: "",
@@ -246,6 +270,37 @@ const BuildMyBusinessPage = () => {
                       <Label htmlFor="op-on-site">On-site</Label>
                     </div>
                   </RadioGroup>
+                </div>
+              </div>
+
+              {/* New Questions */}
+              <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Your Current Situation</h3>
+                <div className="space-y-2">
+                  <Label>What's your biggest challenge right now? <span className="text-red-500">*</span></Label>
+                  <RadioGroup onValueChange={handleSelectChange("biggestChallenge")} value={formData.biggestChallenge} required className="space-y-2">
+                    {biggestChallengeOptions.map((challenge) => (
+                      <div key={challenge} className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                        <RadioGroupItem value={challenge} id={`challenge-${challenge.replace(/\s/g, '-').toLowerCase()}`} />
+                        <Label htmlFor={`challenge-${challenge.replace(/\s/g, '-').toLowerCase()}`}>{challenge}</Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                </div>
+                <div className="space-y-2 mt-6">
+                  <Label>Do you currently have any of these? (Select all that apply)</Label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {currentAssetsOptions.map((asset) => (
+                      <div key={asset} className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                        <Checkbox
+                          id={`asset-${asset.replace(/\s/g, '-').toLowerCase()}`}
+                          checked={formData.currentAssets.includes(asset)}
+                          onCheckedChange={(checked) => handleCheckboxChange(asset, checked as boolean, "currentAssets")}
+                        />
+                        <Label htmlFor={`asset-${asset.replace(/\s/g, '-').toLowerCase()}`}>{asset}</Label>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
