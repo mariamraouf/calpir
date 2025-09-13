@@ -234,9 +234,8 @@ const addOnsData: AddOn[] = [
 ];
 
 const BuildMyBusiness = () => {
-  const navigate = useNavigate(); // Changed useRouter to useNavigate
-  const [searchParams] = useSearchParams(); // Changed from next/navigation
-
+  const navigate = useNavigate(); // Changed from useRouter
+  const searchParams = useSearchParams();
   const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [selectedAddOns, setSelectedAddOns] = useState<string[]>([]);
