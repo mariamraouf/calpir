@@ -17,6 +17,7 @@ import { CheckCircle, XCircle } from "lucide-react";
 interface Package {
   name: string;
   price: string;
+  timeline: string; // NEW
   digitalPresence: {
     websiteDevelopment: string;
     hostingDomain: boolean;
@@ -53,6 +54,7 @@ const packages: Package[] = [
   {
     name: "Starter Package",
     price: "$1,499",
+    timeline: "7 Days", // NEW
     digitalPresence: {
       websiteDevelopment: "5 pages", // AMENDED
       hostingDomain: true,
@@ -86,6 +88,7 @@ const packages: Package[] = [
   {
     name: "Growth Package",
     price: "$2,999",
+    timeline: "14 Days", // NEW
     digitalPresence: {
       websiteDevelopment: "10 pages",
       hostingDomain: true,
@@ -119,6 +122,7 @@ const packages: Package[] = [
   {
     name: "Ultimate Package",
     price: "$5,999",
+    timeline: "28 Days", // NEW
     digitalPresence: {
       websiteDevelopment: "Unlimited pages",
       hostingDomain: true,
@@ -249,6 +253,15 @@ const PackageComparisonTable = () => {
                 </TableCell>
               ))}
             </TableRow>
+            {/* Timeline Row */}
+            <TableRow className="border-b border-palette-blue-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+              <TableCell className="w-[250px] p-4 font-bold text-lg text-gray-900 dark:text-white">Launch Timeline</TableCell>
+              {packages.map((pkg, pkgIndex) => (
+                <TableCell key={pkgIndex} className="w-1/3 p-4 text-center text-lg font-semibold text-gray-800 dark:text-gray-200">
+                  {pkg.timeline}
+                </TableCell>
+              ))}
+            </TableRow>
 
             {/* Render categorized features */}
             {comparisonFeatures.map((categoryGroup, categoryIndex) => (
@@ -308,6 +321,12 @@ const PackageComparisonTable = () => {
             <p className="text-4xl font-extrabold text-center text-primary dark:text-calpir-green-300 mb-6">
               {pkg.price}
             </p>
+            <div className="mb-4">
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white border-b pb-2 mb-3">
+                Launch Timeline
+              </h4>
+              <p className="text-lg text-gray-800 dark:text-gray-200 text-center">{pkg.timeline}</p>
+            </div>
 
             {comparisonFeatures.map((categoryGroup, categoryIndex) => (
               <div key={categoryIndex} className="mb-4 last:mb-0">

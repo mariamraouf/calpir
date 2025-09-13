@@ -83,7 +83,7 @@ const IndividualServiceFormPage = () => {
       <main className="flex-grow">
         <PageHeader
           title="Claim Your Individual Service"
-          description="Select the specific services you need, and we'll help you get started quickly."
+          description="Select the specific services you need, and our experts will examine your setup and recommend accordingly to help you get started quickly."
           buttons={[
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "primary", isExternal: true },
             { text: "View All Services", href: "/services", variant: "outline" },

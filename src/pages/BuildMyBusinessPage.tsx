@@ -128,7 +128,7 @@ const BuildMyBusinessPage = () => {
       <main className="flex-grow">
         <PageHeader
           title="Launch Your Dream Business"
-          description="Tell us about your business needs to get started with your custom solution."
+          description="Tell us about your business needs, and our experts will examine your setup and recommend accordingly to get started with your custom solution."
           buttons={[
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "primary", isExternal: true },
             { text: "View All Services", href: "/services", variant: "outline" },
@@ -438,6 +438,29 @@ const BuildMyBusinessPage = () => {
                 </div>
               </div>
 
+              {/* Consultation Preference */}
+              <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">6. Consultation Preference <span className="text-red-500">*</span></h3>
+                <RadioGroup onValueChange={handleSelectChange("contactMethod")} value={formData.contactMethod} required className="space-y-2">
+                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                    <RadioGroupItem value="Email" id="contact-email" />
+                    <Label htmlFor="contact-email">Email</Label>
+                  </div>
+                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                    <RadioGroupItem value="Phone" id="contact-phone" />
+                    <Label htmlFor="contact-phone">Phone</Label>
+                  </div>
+                  <div className="flex items-center space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                    <RadioGroupItem value="Video Call (e.g., Zoom)" id="contact-video" />
+                    <Label htmlFor="contact-video">Video Call (e.g., Zoom)</Label>
+                  </div>
+                </RadioGroup>
+                <div className="space-y-2">
+                  <Label htmlFor="preferredTime">Preferred Time</Label>
+                  <Input id="preferredTime" placeholder="e.g., Weekdays after 2 PM EST" value={formData.preferredTime} onChange={(e) => handleChange("preferredTime", e.target.value)} className="rounded-2xl" />
+                </div>
+              </div>
+
               {/* Submission and Consent */}
               <div className="flex items-center space-x-2 mt-4">
                 <Checkbox
@@ -451,18 +474,13 @@ const BuildMyBusinessPage = () => {
                 </Label>
               </div>
 
-              <div className="mt-6">
+              <DialogFooter>
                 <Button type="submit" className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:animate-button-glow">
                   Start My Business
                 </Button>
-              </div>
+              </DialogFooter>
             </form>
-          </div>
-        </section>
-      </main>
-      <Footer />
-      <MadeWithDyad />
-    </div>
+          </DialogContent>
   );
 };
 

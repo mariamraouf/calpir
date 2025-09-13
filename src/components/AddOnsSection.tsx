@@ -34,7 +34,7 @@ const AddOnsSection = () => {
           Not Ready for a Full Package?
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 animate-fade-in-up delay-200">
-          Choose individual services or enhance your package with add-ons to perfectly fit your business needs.
+          Choose individual services or enhance your package with add-ons to perfectly fit your business needs. You can also explore our <Link to="/services" className="text-primary hover:underline font-semibold">individual services</Link> for specific solutions.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12 animate-fade-in-up delay-300">
           <Link to="/individual-service-inquiry">

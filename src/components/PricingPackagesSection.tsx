@@ -10,7 +10,7 @@ const packages = [
     name: "Starter Package",
     tag: "Best for Solo Entrepreneurs",
     price: "$1,499",
-    description: "Perfect for solo entrepreneurs and small startups with tight budgets.",
+    description: "Perfect for solo entrepreneurs and small startups with tight budgets. Launch in just 7 days!",
     features: [
       "Customized Website (5 pages)",
       "Basic CRM & project management",
@@ -23,12 +23,13 @@ const packages = [
       "...and more!",
     ],
     highlight: false,
+    timeline: "7 Days", // NEW
   },
   {
     name: "Growth Package",
     tag: "Most Popular",
     price: "$2,999",
-    description: "Scaling startups or businesses upgrading platforms—more depth for growth/transitions.",
+    description: "Scaling startups or businesses upgrading platforms—more depth for growth/transitions. Launch in 14 days!",
     features: [
       "Everything in Starter +",
       "Customized Website (10 pages)",
@@ -45,12 +46,13 @@ const packages = [
       "...and more!",
     ],
     highlight: true,
+    timeline: "14 Days", // NEW
   },
   {
     name: "Ultimate Package",
     tag: "Enterprise Level",
     price: "$5,999",
-    description: "Funded startups or businesses needing premium setups/migrations—advanced features, dedicated manager (1-month email/check-ins).",
+    description: "Funded startups or businesses needing premium setups/migrations—advanced features, dedicated manager (1-month email/check-ins). Launch in 28 days!",
     features: [
       "Everything in Growth +",
       "Customized Website (Unlimited pages)",
@@ -66,6 +68,7 @@ const packages = [
       "...and more!",
     ],
     highlight: false,
+    timeline: "28 Days", // NEW
   },
 ];
 
@@ -120,6 +123,10 @@ const PricingPackagesSection = () => {
                   </li>
                 )}
               </ul>
+              <div className="text-center mb-6">
+                <p className="text-lg font-semibold text-gray-900 dark:text-white">Launch Timeline:</p>
+                <p className="text-2xl font-bold text-primary dark:text-calpir-green-300">{pkg.timeline}</p>
+              </div>
 
               <Link to="/build-my-business">
                 <Button

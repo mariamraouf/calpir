@@ -217,7 +217,7 @@ const Pricing = () => {
             Custom Add-On Packages & Platform Setups Available
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-8">
-            Need something specific, or a setup for a single platform not listed? We can create custom solutions tailored to your business needs. Contact us to discuss your requirements.
+            Need something specific, or a setup for a single platform not listed? Our experts will examine your setup and recommend accordingly to create custom solutions tailored to your business needs. Contact us to discuss your requirements.
           </p>
           <Link to="/get-a-quote">
             <Button

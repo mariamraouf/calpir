@@ -20,7 +20,7 @@ const Footer = () => {
           </p>
           <div className="space-y-2 text-sm">
             <p className="flex items-center">
-              <Mail className="h-4 w-4 mr-2 text-primary" /> <a href="mailto:hello@calpir.com" className="hover:text-white transition-colors">hello@calpir.com</a>
+              <Mail className="h-4 w-4 mr-2 text-primary" /> <a href="mailto:contact@calpir.com" className="hover:text-white transition-colors">contact@calpir.com</a>
             </p>
             <div className="flex items-center space-x-4 mt-4">
               <a href="https://www.linkedin.com/company/calpir" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
@@ -59,7 +59,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to="/individual-service-inquiry"> 
+              <Link to="/individual-service-inquiry"> {/* New link to individual service form */}
                 <Button
                   variant="link"
                   className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"

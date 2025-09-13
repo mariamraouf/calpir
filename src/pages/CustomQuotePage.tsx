@@ -55,7 +55,7 @@ const CustomQuotePage = () => {
       <main className="flex-grow">
         <PageHeader
           title="Request a Custom Set Up"
-          description="Have unique business needs or require a specific platform setup not covered by our standard packages or individual services? Tell us your requirements for a tailored solution."
+          description="Have unique business needs or require a specific platform setup not covered by our standard packages or individual services? Tell us your requirements, and our experts will examine your setup and recommend accordingly for a tailored solution."
           buttons={[
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "primary", isExternal: true },
             { text: "View All Services", href: "/services", variant: "outline" },
