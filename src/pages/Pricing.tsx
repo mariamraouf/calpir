@@ -9,7 +9,7 @@ import {
   BarChart2,
   Users,
   Headphones,
-  Share2,
+  Share2, // Used for Social Media & Marketing
   Mail,
   Code,
   Shield,
@@ -18,13 +18,13 @@ import {
   Settings,
   Clock,
   Puzzle,
-  Globe,
+  Globe, // Used for Digital Foundation Services
   Palette,
-  Briefcase,
+  Briefcase, // Used for Operations & Management Services
   FileText,
   DollarSign,
   TrendingUp,
-  Lightbulb,
+  Lightbulb, // Used for Platform & Integration Services
   CheckCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -34,30 +34,21 @@ import PageHeader from "@/components/PageHeader";
 import { servicesData } from "@/data/services"; // Import from central file
 import { addOnsOptions } from "@/data/addons"; // Import from central file
 
-// Group add-ons by category and subcategory for rendering in Pricing page
-const groupedAddOns = addOnsOptions.reduce((acc, addOn) => {
+// Group add-ons directly by category for rendering in Pricing page
+const groupedAddOns: Record<string, typeof addOnsOptions> = addOnsOptions.reduce((acc, addOn) => {
   if (!acc[addOn.category]) {
-    acc[addOn.category] = {};
+    acc[addOn.category] = [];
   }
-  // For HR Services, we want to list them directly under the main category, not a subcategory
-  if (addOn.category === "Human Resources Services") {
-    if (!acc[addOn.category]["HR Services"]) { // Use a generic subcategory to group them for iteration
-      acc[addOn.category]["HR Services"] = [];
-    }
-    acc[addOn.category]["HR Services"].push(addOn);
-  } else {
-    if (!acc[addOn.category][addOn.subcategory]) {
-      acc[addOn.category][addOn.subcategory] = [];
-    }
-    acc[addOn.category][addOn.subcategory].push(addOn);
-  }
+  acc[addOn.category].push(addOn);
   return acc;
-}, {} as Record<string, Record<string, typeof addOnsOptions>>);
+}, {} as Record<string, typeof addOnsOptions>);
 
 // Map category names to icons and colors for display
 const addOnCategoryDisplayMap: Record<string, { icon: React.ElementType, iconColor: string }> = {
   "Digital Foundation Services": { icon: Globe, iconColor: "text-palette-blue-500" },
+  "Social Media & Marketing": { icon: Share2, iconColor: "text-palette-red-400" }, // NEW
   "Operations & Management Services": { icon: Briefcase, iconColor: "text-palette-orange-500" },
+  "Platform & Integration Services": { icon: Lightbulb, iconColor: "text-palette-orange-400" }, // NEW
   "Human Resources Services": { icon: Users, iconColor: "text-primary" },
   "Training & Support Services": { icon: BookOpen, iconColor: "text-calpir-green-600" },
 };
@@ -143,7 +134,7 @@ const Pricing = () => {
             Enhance Your Package with Add-Ons
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {Object.entries(groupedAddOns).map(([categoryName, subcategories], catIndex) => {
+            {Object.entries(groupedAddOns).map(([categoryName, addOns], catIndex) => {
               const displayInfo = addOnCategoryDisplayMap[categoryName];
               if (!displayInfo) return null;
 
@@ -153,29 +144,21 @@ const Pricing = () => {
                     {displayInfo.icon && <displayInfo.icon className={`h-8 w-8 mr-3 ${displayInfo.iconColor}`} />}
                     <h3 className="text-2xl font-bold text-primary dark:text-calpir-green-400">{categoryName}</h3>
                   </div>
-                  {Object.entries(subcategories).map(([subcategoryName, addOns], subCatIndex) => (
-                    <div key={subcategoryName} className="mb-6 last:mb-0">
-                      {/* Only show subcategory title if it's not the generic 'HR Services' */}
-                      {subcategoryName !== "HR Services" && (
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 border-b pb-2">{subcategoryName}</h4>
-                      )}
-                      <div className="space-y-4">
-                        {addOns.map((item, itemIndex) => (
-                          <div key={item.id} className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${1.2 + catIndex * 0.15 + subCatIndex * 0.05 + itemIndex * 0.02}s` }}>
-                            <div className="text-left mb-2 sm:mb-0 sm:mr-4">
-                              <p className="text-lg font-semibold text-gray-900 dark:text-white">{item.label.split('(')[0].trim()}</p>
-                              {item.serviceId && (
-                                <Link to={`/services#${item.serviceId}`} className="text-primary hover:underline text-sm" target="_blank" rel="noopener noreferrer">
-                                  (Learn More)
-                                </Link>
-                              )}
-                            </div>
-                            <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.label.match(/\(\$[^)]+\)/)?.[0] || ""}</span>
-                          </div>
-                        ))}
+                  <div className="space-y-4">
+                    {addOns.map((item, itemIndex) => (
+                      <div key={item.id} className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${1.2 + catIndex * 0.15 + itemIndex * 0.02}s` }}>
+                        <div className="text-left mb-2 sm:mb-0 sm:mr-4">
+                          <p className="text-lg font-semibold text-gray-900 dark:text-white">{item.label.split('(')[0].trim()}</p>
+                          {item.serviceId && (
+                            <Link to={`/services#${item.serviceId}`} className="text-primary hover:underline text-sm" target="_blank" rel="noopener noreferrer">
+                              (Learn More)
+                            </Link>
+                          )}
+                        </div>
+                        <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.label.match(/\(\$[^)]+\)/)?.[0] || ""}</span>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               );
             })}

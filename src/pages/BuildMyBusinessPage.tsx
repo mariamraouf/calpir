@@ -112,17 +112,14 @@ const BuildMyBusinessPage = () => {
   const showOtherIndustryInput = formData.industry === "Other";
   const showOtherPrimaryGoalInput = formData.primaryGoals.includes("Other");
 
-  // Group add-ons by category and subcategory
+  // Group add-ons by category (no subcategory nesting needed for this form)
   const groupedAddOns = addOnsOptions.reduce((acc, addOn) => {
     if (!acc[addOn.category]) {
-      acc[addOn.category] = {};
+      acc[addOn.category] = [];
     }
-    if (!acc[addOn.category][addOn.subcategory]) {
-      acc[addOn.category][addOn.subcategory] = [];
-    }
-    acc[addOn.category][addOn.subcategory].push(addOn);
+    acc[addOn.category].push(addOn);
     return acc;
-  }, {} as Record<string, Record<string, typeof addOnsOptions>>);
+  }, {} as Record<string, typeof addOnsOptions>);
 
 
   return (
@@ -310,37 +307,29 @@ const BuildMyBusinessPage = () => {
               {/* Add-On Interests */}
               <div className="space-y-4 pb-4 border-b border-gray-200 dark:border-gray-700">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Add-On Interests</h3>
-                {Object.entries(groupedAddOns).map(([category, subcategories]) => (
+                {Object.entries(groupedAddOns).map(([category, addOns]) => (
                   <div key={category} className="space-y-4 pl-4 border-l-2 border-primary/50 dark:border-calpir-green-300/50">
                     <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{category}</h4>
-                    {Object.entries(subcategories).map(([subcategory, addOns]) => (
-                      <div key={subcategory} className="space-y-2 pl-4">
-                        {/* Only show subcategory title if it's not the generic 'HR Services' */}
-                        {subcategory !== "HR Services" && (
-                          <h5 className="text-md font-medium text-gray-700 dark:text-gray-300">{subcategory}</h5>
-                        )}
-                        <div className="grid grid-cols-1 gap-4">
-                          {addOns.map((addOn) => (
-                            <div key={addOn.id} className="flex items-start space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
-                              <Checkbox
-                                id={`addOn-${addOn.id}`}
-                                checked={formData.addOnInterests.includes(addOn.id)}
-                                onCheckedChange={(checked) => handleCheckboxChange(addOn.id, checked as boolean, "addOnInterests")}
-                                className="mt-1"
-                              />
-                              <Label htmlFor={`addOn-${addOn.id}`} className="flex-grow">
-                                {addOn.label}
-                                {addOn.serviceId && (
-                                  <Link to={`/services#${addOn.serviceId}`} className="text-primary hover:underline ml-2 text-sm" target="_blank" rel="noopener noreferrer">
-                                    (Learn More)
-                                  </Link>
-                                )}
-                              </Label>
-                            </div>
-                          ))}
+                    <div className="grid grid-cols-1 gap-4">
+                      {addOns.map((addOn) => (
+                        <div key={addOn.id} className="flex items-start space-x-2 p-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 cursor-pointer hover:shadow-md hover:border-primary transition-all duration-300">
+                          <Checkbox
+                            id={`addOn-${addOn.id}`}
+                            checked={formData.addOnInterests.includes(addOn.id)}
+                            onCheckedChange={(checked) => handleCheckboxChange(addOn.id, checked as boolean, "addOnInterests")}
+                            className="mt-1"
+                          />
+                          <Label htmlFor={`addOn-${addOn.id}`} className="flex-grow">
+                            {addOn.label}
+                            {addOn.serviceId && (
+                              <Link to={`/services#${addOn.serviceId}`} className="text-primary hover:underline ml-2 text-sm" target="_blank" rel="noopener noreferrer">
+                                (Learn More)
+                              </Link>
+                            )}
+                          </Label>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 ))}
                 {showAddOnRequirements && (
