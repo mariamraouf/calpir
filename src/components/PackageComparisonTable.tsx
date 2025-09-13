@@ -36,20 +36,12 @@ interface Package {
     businessAutomations: string | boolean;
     sops: boolean;
     payroll: boolean;
-    performanceManagement: boolean;
   };
   humanResources: {
-    employeeProfiles: boolean;
-    legalTemplates: string;
-    recruitingSupport: string;
-    singleRoleRecruitment: boolean;
-    multiRoleRecruitment: boolean;
-    comprehensiveRecruitment: boolean;
-    advancedHrSystem: string;
-    onboardingOffboardingWorkflows: string | boolean;
-    timeTracking: string | boolean;
-    timeAttendanceTracking: string | boolean;
-    employeeEngagementSurveys: boolean;
+    legalCompliance: boolean; // NEW
+    recruitingHiring: boolean; // NEW
+    hrOperationsPayroll: boolean; // NEW
+    hrFoundation: boolean; // NEW
   };
   training: {
     basicTrainingSessions: boolean;
@@ -62,7 +54,7 @@ const packages: Package[] = [
     name: "Starter Package",
     price: "$1,499",
     digitalPresence: {
-      websiteDevelopment: "5 pages",
+      websiteDevelopment: "5 pages", // AMENDED
       hostingDomain: true,
       domainRegistration: true,
       seoOptimization: false,
@@ -71,7 +63,7 @@ const packages: Package[] = [
       ecommerceFunctionality: false,
     },
     businessOperations: {
-      projectManagement: "Basic (2 workspaces)",
+      projectManagement: "Basic (2 workspaces)", // AMENDED
       crmSetup: "Basic contact tracking",
       accountingSystem: "Simple invoicing",
       platformMigration: "1 platform",
@@ -80,20 +72,12 @@ const packages: Package[] = [
       businessAutomations: false,
       sops: false,
       payroll: false,
-      performanceManagement: false,
     },
     humanResources: {
-      employeeProfiles: true,
-      legalTemplates: "Contract draft only",
-      recruitingSupport: "Job templates",
-      singleRoleRecruitment: false,
-      multiRoleRecruitment: false,
-      comprehensiveRecruitment: false,
-      advancedHrSystem: "",
-      onboardingOffboardingWorkflows: false,
-      timeTracking: false,
-      timeAttendanceTracking: false,
-      employeeEngagementSurveys: false,
+      legalCompliance: true, // NEW
+      recruitingHiring: false, // NEW
+      hrOperationsPayroll: false, // NEW
+      hrFoundation: false, // NEW
     },
     training: {
       basicTrainingSessions: false,
@@ -112,7 +96,7 @@ const packages: Package[] = [
       ecommerceFunctionality: false,
     },
     businessOperations: {
-      projectManagement: "Enhanced (5 workspaces)",
+      projectManagement: "Enhanced (5 workspaces)", // AMENDED
       crmSetup: "Advanced with automation",
       accountingSystem: "Expense tracking",
       platformMigration: "2-3 platforms",
@@ -121,20 +105,12 @@ const packages: Package[] = [
       businessAutomations: "Basic Automation Setup",
       sops: true,
       payroll: false,
-      performanceManagement: false,
     },
     humanResources: {
-      employeeProfiles: true,
-      legalTemplates: "✓",
-      recruitingSupport: "Job postings on 2 global sites",
-      singleRoleRecruitment: false,
-      multiRoleRecruitment: false,
-      comprehensiveRecruitment: false,
-      advancedHrSystem: "ATS & talent pipeline",
-      onboardingOffboardingWorkflows: true,
-      timeTracking: "Advanced timetracking with reports",
-      timeAttendanceTracking: true,
-      employeeEngagementSurveys: false,
+      legalCompliance: true, // NEW
+      recruitingHiring: true, // NEW
+      hrOperationsPayroll: false, // NEW
+      hrFoundation: false, // NEW
     },
     training: {
       basicTrainingSessions: true,
@@ -153,7 +129,7 @@ const packages: Package[] = [
       ecommerceFunctionality: true,
     },
     businessOperations: {
-      projectManagement: "Advanced (unlimited)",
+      projectManagement: "Advanced (unlimited)", // AMENDED
       crmSetup: "Predictive automation",
       accountingSystem: "Forecasting tools",
       platformMigration: "Multiple platforms",
@@ -162,20 +138,12 @@ const packages: Package[] = [
       businessAutomations: "Advanced Automation Package",
       sops: true,
       payroll: true,
-      performanceManagement: true,
     },
     humanResources: {
-      employeeProfiles: true,
-      legalTemplates: "✓",
-      recruitingSupport: "Full strategy + sourcing for 1 global role",
-      singleRoleRecruitment: true,
-      multiRoleRecruitment: false,
-      comprehensiveRecruitment: false,
-      advancedHrSystem: "Scalable ATS system",
-      onboardingOffboardingWorkflows: true,
-      timeTracking: "Advanced timetracking with reports and dashboard",
-      timeAttendanceTracking: "Advanced Tracking",
-      employeeEngagementSurveys: true,
+      legalCompliance: true, // NEW
+      recruitingHiring: true, // NEW
+      hrOperationsPayroll: true, // NEW
+      hrFoundation: true, // NEW
     },
     training: {
       basicTrainingSessions: true,
@@ -211,24 +179,16 @@ const comparisonFeatures = [
       { key: "businessAutomations", label: "Business Automations" },
       { key: "sops", label: "Standard Operating Procedures (SOPs)" },
       { key: "payroll", label: "Payroll" },
-      { key: "performanceManagement", label: "Performance Management" },
     ],
   },
   {
-    category: "Human Resources",
+    category: "Human Resources", // NEW CATEGORY STRUCTURE
     key: "humanResources",
     features: [
-      { key: "employeeProfiles", label: "Employee Profiles" },
-      { key: "legalTemplates", label: "Legal Templates (Contracts, NDAs, Handbook)" },
-      { key: "recruitingSupport", label: "Recruiting Support" },
-      { key: "singleRoleRecruitment", label: "Single Role Recruitment" },
-      { key: "multiRoleRecruitment", label: "Multi-Role Recruitment" },
-      { key: "comprehensiveRecruitment", label: "Comprehensive Recruitment (3 months)" },
-      { key: "advancedHrSystem", label: "Advanced HR System (Applicant Tracking System - ATS)" },
-      { key: "onboardingOffboardingWorkflows", label: "Onboarding/Offboarding Workflows" },
-      { key: "timeTracking", label: "Time Tracking" },
-      { key: "timeAttendanceTracking", label: "Time/Attendance Tracking" },
-      { key: "employeeEngagementSurveys", label: "Employee Engagement Surveys" },
+      { key: "legalCompliance", label: "Legal & Compliance" },
+      { key: "recruitingHiring", label: "Recruiting & Hiring" },
+      { key: "hrOperationsPayroll", label: "HR Operations & Payroll" },
+      { key: "hrFoundation", label: "HR Foundation" },
     ],
   },
   {

@@ -8,7 +8,7 @@ export const servicesData = [
     description: "Create a professional, high-performing website tailored to your business needs, including domain registration.",
     details: [
       "Custom website design and development",
-      "5-10 pages included",
+      "5 pages included", // AMENDED
       "Secure and reliable hosting solutions",
       "Domain registration and setup",
       "Responsive and mobile-friendly layouts",
@@ -59,13 +59,13 @@ export const servicesData = [
     description: "Craft a compelling brand identity that resonates with your target audience.",
     details: [
       "Logo design and brand guidelines",
-      "Marketing collateral design",
-      "Website visual design",
+      "Marketing collateral design", // AMENDED
       "Brand voice and messaging development",
+      "Visual Identity", // NEW
     ],
     iconColor: "text-palette-purple-500",
   },
-  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "email-systems", icon: Mail, title: "Email Systems & Automation Setup", investment: "$499",
+  { category: "Digital Foundation Services", subcategory: "Social Media & Marketing", id: "email-systems", icon: Mail, title: "Email System Setup", investment: "$499", // AMENDED TITLE & PRICE
     description: "Develop effective email marketing and communication strategies.",
     details: [
       "Email platform setup",
@@ -80,8 +80,7 @@ export const servicesData = [
   { category: "Operations & Management Services", subcategory: "Business Systems", id: "project-management", icon: Briefcase, title: "Project Management Setup", investment: "$799",
     description: "Implement robust project management systems to keep your projects on track and teams coordinated.",
     details: [
-      "Tool selection and configuration",
-      "Project template creation",
+      "Project template creation", // REMOVED "Tool selection and configuration"
       "Task management and tracking setup",
       "Reporting and analytics dashboards",
     ],
@@ -167,7 +166,7 @@ export const servicesData = [
     ],
     iconColor: "text-palette-red-500",
   },
-  { category: "Operations & Management Services", subcategory: "Business Systems", id: "time-tracking", icon: Clock, title: "Time Tracking System Setup", investment: "$299",
+  { category: "Operations & Management Services", subcategory: "Business Systems", id: "time-tracking", icon: Clock, title: "Time Tracking System Setup", investment: "$599", // AMENDED PRICE
     description: "Comprehensive setup of a time tracking tool with custom reports and integrations.",
     details: [
       "Time tracking tool selection and configuration",
@@ -177,87 +176,48 @@ export const servicesData = [
     ],
     iconColor: "text-palette-orange-500",
   },
-  { category: "Operations & Management Services", subcategory: "Business Systems", id: "performance-management", icon: TrendingUp, title: "Performance Management", investment: "$699",
-    description: "Set up systems for employee performance tracking, reviews, and goal setting to foster growth.",
-    details: [
-      "Performance review system setup",
-      "Goal setting and OKR tracking",
-      "Feedback and recognition programs",
-      "Employee development plans",
-    ],
-    iconColor: "text-palette-blue-600",
-  },
+  // Removed: Performance Management
 
-  // Human Resources Services
-  { category: "Human Resources Services", subcategory: "HR Foundation", id: "hr-recruiting-system", icon: Users, title: "HR & Recruiting System", investment: "$1,299",
-    description: "Build a strong global team with our comprehensive HR and recruitment solutions.",
+  // Human Resources Services (NEW STRUCTURE)
+  { category: "Human Resources Services", subcategory: "HR Foundation", id: "hr-legal-compliance", icon: FileText, title: "Legal & Compliance", investment: "$499",
+    description: "Ensure your business is compliant with essential HR legal frameworks.",
     details: [
-      "Applicant Tracking System (ATS) setup",
-      "Contracts and NDA drafting with e-signatures",
-      "Onboarding and offboarding workflows",
-      "HR policy and compliance guidance",
+      "HR contracts, NDAs, employee handbook",
+      "Policy templates & compliance checklists",
     ],
     iconColor: "text-primary",
   },
-  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "single-role-recruitment", icon: Users, title: "Single Role Recruitment", investment: "$449",
-    description: "Assistance with recruiting for one global role, from job posting to initial screening.",
+  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "hr-recruiting-hiring", icon: Users, title: "Recruiting & Hiring", investment: "$599",
+    description: "Streamline your hiring process to attract and onboard top talent.",
     details: [
-      "Job description optimization",
-      "Posting on global job boards",
-      "Candidate sourcing and initial screening",
-      "Interview coordination and support",
+      "Job descriptions, interview guides, assessment tools",
+      "ATS setup and configuration",
+      "Onboarding workflow implementation",
     ],
     iconColor: "text-calpir-green-700",
   },
-  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "multi-role-recruitment", icon: Users, title: "Multi-Role Recruitment", investment: "$699",
-    description: "Comprehensive support for recruiting multiple global roles simultaneously.",
+  { category: "Human Resources Services", subcategory: "HR Operations", id: "hr-operations-payroll", icon: Briefcase, title: "HR Operations & Payroll", investment: "$799",
+    description: "Efficiently manage daily HR operations and payroll processes.",
     details: [
-      "Strategic recruitment planning for multiple roles",
-      "Volume candidate sourcing and management",
-      "Streamlined interview processes",
-      "Offer management and negotiation support",
+      "Payroll system setup",
+      "Benefits administration setup",
+      "Time tracking system configuration",
+      "Employee database organization",
+      "HR workflow automation setup",
     ],
     iconColor: "text-calpir-green-600",
   },
-  { category: "Human Resources Services", subcategory: "Talent Acquisition", id: "comprehensive-recruitment", icon: Users, title: "Comprehensive Recruitment (3 months)", investment: "$4,999",
-    description: "Dedicated recruitment partnership for three months, offering unlimited hiring support.",
+  { category: "Human Resources Services", subcategory: "HR Foundation", id: "hr-foundation-package", icon: BookOpen, title: "HR Foundation", investment: "$1,249",
+    description: "A complete HR system integration and setup for comprehensive human resource management.",
     details: [
-      "Full-cycle recruitment for unlimited roles",
-      "Dedicated recruitment specialist",
-      "Employer branding support",
-      "Talent pipeline development",
+      "Everything from Legal & Compliance, Recruiting & Hiring, HR Operations & Payroll",
+      "Full HR system integration & setup",
+      "Custom workflow design",
+      "HR dashboard & analytics setup",
     ],
     iconColor: "text-calpir-green-500",
   },
+  // Removed: Single Role Recruitment, Multi-Role Recruitment, Comprehensive Recruitment (3 months)
 
-  // Training & Support Services
-  { category: "Training & Support Services", subcategory: "Team Development", id: "basic-training-sessions", icon: BookOpen, title: "Basic Training Sessions", investment: "$199/hour",
-    description: "Introductory training to get your team familiar with new systems and tools.",
-    details: [
-      "1-hour live online session",
-      "Q&A and basic troubleshooting",
-      "Access to recorded session",
-    ],
-    iconColor: "text-calpir-green-600",
-  },
-  { category: "Training & Support Services", subcategory: "Ongoing Partnership", id: "monthly-support-package", icon: Headphones, title: "Monthly Support Package", investment: "$199/month",
-    description: "Ongoing email support and monthly check-ins to ensure smooth operations.",
-    details: [
-      "Priority email support",
-      "Monthly 30-minute strategy call",
-      "System health checks",
-      "Minor adjustments and updates",
-    ],
-    iconColor: "text-palette-purple-400",
-  },
-  { category: "Training & Support Services", subcategory: "Ongoing Partnership", id: "premium-support-package", icon: Headphones, title: "Weekly Support Package", investment: "$499/month",
-    description: "Dedicated weekly calls and priority support for critical business needs.",
-    details: [
-      "Dedicated support manager",
-      "Weekly 1-hour strategy calls",
-      "24/7 emergency support",
-      "Proactive system monitoring and optimization",
-    ],
-    iconColor: "text-palette-purple-500",
-  },
+  // Removed: Basic Training Sessions, Monthly Support Package, Premium Support Package
 ];

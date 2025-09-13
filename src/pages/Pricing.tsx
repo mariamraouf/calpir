@@ -4,122 +4,55 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Code, Shield, Layout, BookOpen, Settings, Clock, Puzzle, Globe, Palette, Briefcase, FileText, DollarSign, TrendingUp, Lightbulb, CheckCircle } from "lucide-react";
+import {
+  PlusCircle,
+  BarChart2,
+  Users,
+  Headphones,
+  Share2,
+  Mail,
+  Code,
+  Shield,
+  Layout,
+  BookOpen,
+  Settings,
+  Clock,
+  Puzzle,
+  Globe,
+  Palette,
+  Briefcase,
+  FileText,
+  DollarSign,
+  TrendingUp,
+  Lightbulb,
+  CheckCircle,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import PackageComparisonTable from "@/components/PackageComparisonTable";
 import PageHeader from "@/components/PageHeader";
 import { servicesData } from "@/data/services"; // Import from central file
+import { addOnsOptions } from "@/data/addons"; // Import from central file
 
-const addOnsCategories = [
-  {
-    name: "Social Media Expansion",
-    icon: Share2,
-    iconColor: "text-palette-red-400",
-    items: [
-      { id: "social-media-10-posts", posts: "10 Posts/Month", price: "$199", description: "Professional social media posts with graphics" },
-      { id: "social-media-20-posts", posts: "20 Posts/Month", price: "$349", description: "Enhanced content with stories and engagement" },
-      { id: "social-media-30-posts", posts: "30 Posts/Month", price: "$499", description: "Full social media management with analytics" },
-    ],
-  },
-  {
-    name: "Email Marketing",
-    icon: Mail,
-    iconColor: "text-palette-orange-500",
-    items: [
-      { id: "email-marketing-setup", posts: "Email Systems & Automation Setup", price: "$499", description: "Develop effective email marketing and communication strategies." },
-    ],
-  },
-  {
-    name: "Analytics Upgrades",
-    icon: BarChart2,
-    iconColor: "text-palette-blue-500",
-    items: [
-      { id: "analytics-monthly-insights", posts: "Monthly Insights", price: "$199", description: "Monthly performance reports" },
-      { id: "analytics-monthly-recommendations", posts: "Monthly Recommendations", price: "$249", description: "Detailed insights + recommendations" },
-      { id: "analytics-real-time", posts: "Real-time Analytics", price: "$399", description: "Real-time business intelligence" },
-    ],
-  },
-  {
-    name: "Ongoing Support",
-    icon: Headphones,
-    iconColor: "text-palette-purple-400",
-    items: [
-      { id: "ongoing-support-monthly-emails", posts: "Monthly Emails", price: "$199", description: "Monthly strategy emails + support" },
-      { id: "ongoing-support-weekly-calls", posts: "Weekly Calls", price: "$499", description: "Weekly calls + priority support" },
-    ],
-  },
-  {
-    name: "Staff Recruitment (Global)",
-    icon: Users,
-    iconColor: "text-primary",
-    items: [
-      { id: "staff-recruitment-1-role", posts: "1 Role", price: "$449", description: "Assistance with recruiting for one global role" },
-      { id: "staff-recruitment-2-roles", posts: "2 Roles", price: "$699", description: "Assistance with recruiting for two global roles" },
-      { id: "staff-recruitment-3-roles", posts: "3 Roles", price: "$899", description: "Assistance with recruiting for three global roles" },
-      { id: "staff-recruitment-unlimited", posts: "Unlimited (3 months)", price: "$4,999", description: "Unlimited recruitment assistance for 3 months" },
-    ],
-  },
-  {
-    name: "Extra Integrations",
-    icon: PlusCircle,
-    iconColor: "text-palette-blue-600",
-    items: [
-      { id: "extra-integrations-per", posts: "Per Integration", price: "$199", description: "Setup and configuration for each additional platform integration" },
-    ],
-  },
-  {
-    name: "Website Expansions",
-    icon: Layout,
-    iconColor: "text-palette-purple-500",
-    items: [
-      { id: "website-expansions-per-page", posts: "Per Page", price: "$199", description: "Development for each additional website page" },
-      { id: "website-expansions-ecommerce", posts: "E-commerce Functionality", price: "$499", description: "Setup for e-commerce capabilities" },
-    ],
-  },
-  {
-    name: "HR Customizations",
-    icon: Settings,
-    iconColor: "text-palette-yellow-400",
-    items: [
-      { id: "hr-customizations-setup", posts: "One-time Setup", price: "$299", description: "Custom HR system setup and configuration" },
-    ],
-  },
-  {
-    name: "Training Sessions",
-    icon: BookOpen,
-    iconColor: "text-calpir-green-600",
-    items: [
-      { id: "training-sessions-per-hour", posts: "Per Hour", price: "$199", description: "Dedicated training sessions for your team" },
-    ],
-  },
-  {
-    name: "Custom Automations",
-    icon: Code,
-    iconColor: "text-palette-orange-400",
-    items: [
-      { id: "custom-automations-5-plus", posts: "For 5+ Automations", price: "$299", description: "Setup for 5 or more custom automation workflows" },
-    ],
-  },
-  {
-    name: "Security Basics",
-    icon: Shield,
-    iconColor: "text-palette-red-500",
-    items: [
-      { id: "security-basics-setup", posts: "One-time Setup", price: "$299", description: "Basic security configurations and recommendations" },
-    ],
-  },
-  {
-    name: "Time Tracking",
-    icon: Clock,
-    iconColor: "text-palette-orange-500",
-    items: [
-      { id: "time-tracking-basic-setup", posts: "Basic Setup", price: "$149", description: "Initial setup of a time tracking tool for small teams" },
-      { id: "time-tracking-advanced-setup", posts: "Advanced Setup & Reporting", price: "$299", description: "Comprehensive setup with custom reports and integrations" },
-      { id: "time-tracking-team-training", posts: "Team Training & Optimization", price: "$399", description: "Training sessions for your team and workflow optimization" },
-    ],
-  },
-];
+// Group add-ons by category and subcategory for rendering in Pricing page
+const groupedAddOns = addOnsOptions.reduce((acc, addOn) => {
+  if (!acc[addOn.category]) {
+    acc[addOn.category] = {};
+  }
+  if (!acc[addOn.category][addOn.subcategory]) {
+    acc[addOn.category][addOn.subcategory] = [];
+  }
+  acc[addOn.category][addOn.subcategory].push(addOn);
+  return acc;
+}, {} as Record<string, Record<string, typeof addOnsOptions>>);
+
+// Map category names to icons and colors for display
+const addOnCategoryDisplayMap: Record<string, { icon: React.ElementType, iconColor: string }> = {
+  "Digital Foundation Services": { icon: Globe, iconColor: "text-palette-blue-500" },
+  "Operations & Management Services": { icon: Briefcase, iconColor: "text-palette-orange-500" },
+  "Human Resources Services": { icon: Users, iconColor: "text-primary" },
+  "Training & Support Services": { icon: BookOpen, iconColor: "text-calpir-green-600" },
+};
 
 const Pricing = () => {
   return (
@@ -196,37 +129,49 @@ const Pricing = () => {
           <PackageComparisonTable />
         </section>
 
-        {/* Section 3: Package Add-ons (Moved before Individual Services) */}
+        {/* Section 3: Package Add-ons */}
         <section id="package-add-ons" className="mb-20 container scroll-mt-24">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white animate-fade-in-up delay-1000">
             Enhance Your Package with Add-Ons
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {addOnsCategories.map((category, catIndex) => (
-              <div key={catIndex} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-110 transition-transform duration-300 hover:shadow-2xl animate-slide-in-left" style={{ animationDelay: `${1.1 + catIndex * 0.15}s` }}>
-                <div className="flex items-center mb-6">
-                  {category.icon && <category.icon className={`h-8 w-8 mr-3 ${category.iconColor}`} />}
-                  <h3 className="text-2xl font-bold text-primary dark:text-calpir-green-400">{category.name}</h3>
-                </div>
-                <div className="space-y-6">
-                  {category.items.map((item, itemIndex) => (
-                    <div key={item.id} className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${1.2 + catIndex * 0.15 + itemIndex * 0.05}s` }}>
-                      <div className="text-left mb-2 sm:mb-0 sm:mr-4">
-                        <p className="text-lg font-semibold text-gray-900 dark:text-white">{item.posts}</p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
-                      </div>
-                      <div className="flex items-center space-x-4">
-                        <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.price}</span>
+            {Object.entries(groupedAddOns).map(([categoryName, subcategories], catIndex) => {
+              const displayInfo = addOnCategoryDisplayMap[categoryName];
+              if (!displayInfo) return null;
+
+              return (
+                <div key={categoryName} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-transform duration-300 hover:shadow-2xl animate-slide-in-left" style={{ animationDelay: `${1.1 + catIndex * 0.15}s` }}>
+                  <div className="flex items-center mb-6">
+                    {displayInfo.icon && <displayInfo.icon className={`h-8 w-8 mr-3 ${displayInfo.iconColor}`} />}
+                    <h3 className="text-2xl font-bold text-primary dark:text-calpir-green-400">{categoryName}</h3>
+                  </div>
+                  {Object.entries(subcategories).map(([subcategoryName, addOns], subCatIndex) => (
+                    <div key={subcategoryName} className="mb-6 last:mb-0">
+                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 border-b pb-2">{subcategoryName}</h4>
+                      <div className="space-y-4">
+                        {addOns.map((item, itemIndex) => (
+                          <div key={item.id} className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${1.2 + catIndex * 0.15 + subCatIndex * 0.05 + itemIndex * 0.02}s` }}>
+                            <div className="text-left mb-2 sm:mb-0 sm:mr-4">
+                              <p className="text-lg font-semibold text-gray-900 dark:text-white">{item.label.split('(')[0].trim()}</p>
+                              {item.serviceId && (
+                                <Link to={`/services#${item.serviceId}`} className="text-primary hover:underline text-sm" target="_blank" rel="noopener noreferrer">
+                                  (Learn More)
+                                </Link>
+                              )}
+                            </div>
+                            <span className="text-xl font-bold text-primary dark:text-calpir-green-300">{item.label.match(/\(\$[^)]+\)/)?.[0] || ""}</span>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   ))}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
-        {/* Section 2: Individual Services (Moved after Package Add-ons) */}
+        {/* Section 2: Individual Services */}
         <section id="individual-services" className="mb-20 container scroll-mt-24">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white animate-fade-in-up delay-500">
             Individual Services
