@@ -104,9 +104,12 @@ const faqs = {
     },
     {
       question: "Can you work with my existing tools?",
-      answer:
-        "Absolutely. We can integrate with your current systems or recommend better alternatives if needed. Check out our extensive list of supported platforms on the " +
-        "<Link to='/platforms' className='text-primary hover:underline'>Platforms page</Link>.",
+      answer: (
+        <>
+          Absolutely. We can integrate with your current systems or recommend better alternatives if needed. Check out our extensive list of supported platforms on the{" "}
+          <Link to="/platforms" className="text-primary hover:underline">Platforms page</Link>.
+        </>
+      ),
     },
     {
       question: "I'm not tech-savvy. Will I be able to manage everything after setup?",
@@ -162,20 +165,20 @@ const FAQ = () => {
           ]}
         />
 
-        <section className="container py-16 md:py-24">
-          <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 animate-fade-in-up delay-300">
+        <section className="container py-12 md:py-16"> {/* Reduced vertical padding */}
+          <div className="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 animate-fade-in-up delay-300"> {/* Reduced max-width and padding */}
             {Object.entries(faqs).map(([category, items], catIndex) => (
-              <div key={category} className="mb-10 last:mb-0">
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white border-b pb-3 animate-fade-in-up" style={{ animationDelay: `${0.4 + catIndex * 0.1}s` }}>
+              <div key={category} className="mb-8 last:mb-0"> {/* Reduced bottom margin */}
+                <h2 className="text-xl md:text-2xl font-bold mb-4 text-gray-900 dark:text-white border-b pb-2 animate-fade-in-up" style={{ animationDelay: `${0.4 + catIndex * 0.1}s` }}> {/* Reduced font size and padding */}
                   {category}
                 </h2>
                 <Accordion type="single" collapsible className="w-full">
                   {items.map((faq, itemIndex) => (
                     <AccordionItem key={itemIndex} value={`item-${catIndex}-${itemIndex}`} className="border-b border-gray-200 dark:border-gray-700 animate-fade-in-up" style={{ animationDelay: `${0.5 + catIndex * 0.1 + itemIndex * 0.05}s` }}>
-                      <AccordionTrigger className="text-left text-lg font-semibold text-gray-800 dark:text-gray-200 hover:no-underline py-4">
+                      <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-gray-800 dark:text-gray-200 hover:no-underline py-3 md:py-4"> {/* Reduced font size and padding */}
                         {faq.question}
                       </AccordionTrigger>
-                      <AccordionContent className="text-gray-600 dark:text-gray-300 pb-4">
+                      <AccordionContent className="text-sm md:text-base text-gray-600 dark:text-gray-300 pb-3 md:pb-4"> {/* Reduced font size and padding */}
                         {faq.answer}
                       </AccordionContent>
                     </AccordionItem>
