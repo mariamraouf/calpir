@@ -39,7 +39,7 @@ interface Package {
     payroll: boolean;
   };
   humanResources: {
-    legalCompliance: boolean; // NEW
+    legalCompliance: string | boolean; // NEW
     // recruitingHiring: boolean; // Removed
     hrOperationsPayroll: boolean; // NEW
     // hrFoundation: boolean; // Removed
@@ -76,7 +76,7 @@ const packages: Package[] = [
       payroll: false,
     },
     humanResources: {
-      legalCompliance: true, // NEW
+      legalCompliance: "Contract Draft only", // AMENDED
       // recruitingHiring: false, // Removed
       hrOperationsPayroll: false, // NEW
       // hrFoundation: false, // Removed
