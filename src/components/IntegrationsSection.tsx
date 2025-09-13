@@ -5,8 +5,6 @@ import { Puzzle } from "lucide-react"; // Import Puzzle icon for fallback
 
 const integrations = [
   { name: "ClickUp", logo: "/logos/clickup-logo.jpeg" },
-  { name: "ClickUp", logo: "/logos/clickup-logo.jpeg" },
-  { name: "ClickUp", logo: "/logos/clickup-logo.jpeg" },
   { name: "Trello", logo: "https://logo.clearbit.com/trello.com?size=50" },
   { name: "HubSpot", logo: "https://logo.clearbit.com/hubspot.com?size=50" },
   { name: "Microsoft 365", logo: "https://logo.clearbit.com/microsoft.com?size=50" },
