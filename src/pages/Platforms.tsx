@@ -381,6 +381,7 @@ updatedPlatformCategories.push({
     { name: "Teamlogger", logo: "https://logo.clearbit.com/teamlogger.com?size=50" },
     { name: "Tempo", logo: "https://logo.clearbit.com/tempo.io?size=50" },
     { name: "Hubstaff", logo: "https://logo.clearbit.com/hubstaff.com?size=50" },
+    { name: "ClickUp Native Time Tracking", logo: "/logos/clickup-logo.svg" }, // Added ClickUp Native Time Tracking
   ],
 });
 
