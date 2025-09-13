@@ -7,7 +7,7 @@
 @layer base {
   /* Avro Font Declaration */
   @font-face {
-    font-family: 'times new roman';
+    font-family: 'Avro';
     src: url('/fonts/Avro-Regular.woff2') format('woff2'),
          url('/fonts/Avro-Regular.woff') format('woff');
     font-weight: 400;
