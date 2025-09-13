@@ -102,9 +102,9 @@ const BuildMyBusinessPage = () => {
     preferredPlatforms: "",
     systemPriorities: [] as string[],
     additionalDetails: "",
-    timeline: "", // Added missing property
-    contactMethod: "", // Added missing property
-    preferredTime: "", // Added missing property
+    timeline: "",
+    contactMethod: "",
+    preferredTime: "",
     consent: false,
   });
 
