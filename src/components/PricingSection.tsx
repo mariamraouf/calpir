@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom"; // Changed from "next/link"
+import { Link } from "react-router-dom"; // Changed from next/link
 import { CheckCircle } from "lucide-react";
 
 interface Feature {
@@ -62,7 +62,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ title, description, pac
                   ))}
                 </ul>
               </div>
-              <Link to={pkg.buttonLink}> {/* Changed href to to, removed passHref */}
+              <Link to={pkg.buttonLink}>
                 <button className="w-full bg-primary-500 hover:bg-primary-600 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300">
                   {pkg.buttonText}
                 </button>
@@ -75,7 +75,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ title, description, pac
           <p className="text-lg text-gray-700 mb-4">
             Looking for something more tailored?
           </p>
-          <Link to="/build-my-business"> {/* Changed href to to, removed passHref */}
+          <Link to="/build-my-business">
             <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-8 rounded-full transition-colors duration-300 text-lg">
               Build Your Custom Package
             </button>

@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom"; // Changed from "next/link"
+import { Link } from "react-router-dom"; // Changed from next/link
 import { Mail } from "lucide-react"; // Removed Phone, MapPin as per request to remove address
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const navItems = [
-    { name: "Home", to: "/" }, // Changed href to to
+    { name: "Home", to: "/" },
     { name: "Services", to: "/services" },
     { name: "Pricing", to: "/pricing" },
     { name: "About Us", to: "/about" },
@@ -16,11 +16,11 @@ const Footer = () => {
   ];
 
   const services = [
-    { name: "Website Building", to: "/services#website-building" }, // Changed href to to
-    { name: "Marketing", to: "/services#marketing" }, // Changed href to to
-    { name: "Operations", to: "/services#operations" }, // Changed href to to
-    { name: "HR & Legal", to: "/services#hr-legal" }, // Changed href to to
-    { name: "Design & Branding", to: "/services#design-branding" }, // Changed href to to
+    { name: "Website Building", to: "/services#website-building" },
+    { name: "Marketing", to: "/services#marketing" },
+    { name: "Operations", to: "/services#operations" },
+    { name: "HR & Legal", to: "/services#hr-legal" },
+    { name: "Design & Branding", to: "/services#design-branding" },
   ];
 
   return (
@@ -28,7 +28,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Company Info */}
         <div className="space-y-4">
-          <Link to="/" className="flex items-center space-x-2"> {/* Changed href to to */}
+          <Link to="/" className="flex items-center space-x-2">
             <img src="/logo-white.png" alt="Calpir Logo" className="h-8" />
             <span className="text-2xl font-bold text-white">Calpir</span>
           </Link>
@@ -50,7 +50,7 @@ const Footer = () => {
           <ul className="space-y-2">
             {navItems.map((item) => (
               <li key={item.name}>
-                <Link to={item.to} className="hover:text-white transition-colors duration-200"> {/* Changed href to to */}
+                <Link to={item.to} className="hover:text-white transition-colors duration-200">
                   {item.name}
                 </Link>
               </li>
@@ -65,7 +65,7 @@ const Footer = () => {
             {services.map((service) => (
               <li key={service.name}>
                 <Link
-                  to={service.to} // Changed href to to
+                  to={service.to}
                   className="hover:text-white transition-colors duration-200"
                 >
                   {service.name}

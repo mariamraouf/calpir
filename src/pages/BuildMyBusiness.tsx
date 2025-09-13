@@ -12,7 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "sonner";
 import PageHeader from "@/components/PageHeader";
-import { useNavigate, useSearchParams } from "react-router-dom"; // Changed from "next/navigation"
+import { useNavigate, useSearchParams } from "react-router-dom"; // Changed from next/navigation
 import { CheckCircle } from "lucide-react"; // Added this import
 
 interface Service {

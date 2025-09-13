@@ -14,27 +14,16 @@ const CallToActionSection = () => {
           Ready to Transform Your Business?
         </h2>
         <p className="text-lg md:text-xl max-w-3xl mx-auto mb-10 opacity-90 animate-fade-in-up delay-200">
-          Let's build the future of your business together. Get started with a free consultation today!
+          Join countless successful businesses that have partnered with us to achieve their goals.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-400">
-          <Link to="/build-my-business">
-            <Button
-              size="lg"
-              className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-10 py-4 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
-            >
-              Start My Business
-            </Button>
-          </Link>
-          <a href="https://calendly.com/your-calpir-consultation" target="_blank" rel="noopener noreferrer">
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-10 py-4 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
-            >
-              Get a Free Consultation
-            </Button>
-          </a>
-        </div>
+        <Link to="/build-my-business">
+          <Button
+            size="lg"
+            className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-10 py-4 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
+          >
+            Start Your Journey Today
+          </Button>
+        </Link>
       </div>
     </section>
   );
