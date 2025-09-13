@@ -12,7 +12,7 @@ const Footer = () => {
         {/* Company Info */}
         <div className="col-span-full md:col-span-1 animate-fade-in-up">
           <Link to="/" className="flex items-center space-x-2 font-bold text-2xl text-white mb-4 transition-transform duration-300 hover:scale-110">
-            <img src="/calpir-logo-updated.png" alt="Calpir Logo" className="h-8 w-8" />
+            <img src="/calpir-logo.png" alt="Calpir Logo" className="h-8 w-8" />
             <span className="text-white">Calpir</span>
           </Link>
           <p className="text-sm leading-relaxed mb-4">
