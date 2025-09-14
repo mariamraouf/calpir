@@ -4,46 +4,181 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { Mail, MapPin } from "lucide-react"; // Added MapPin
+import { Mail, CalendarDays, MessageSquareText, Info, Layout, DollarSign } from "lucide-react"; // Added CalendarDays, MessageSquareText, Info, Layout, DollarSign
 import PageHeader from "@/components/PageHeader";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "sonner"; // Using sonner for toasts
+
+const CALENDLY_CONSULTATION_URL = "https://calendly.com/mariam-calpir/30min";
+const BUILD_MY_BUSINESS_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7975/TZ1NJ34TI8S352Q2G5";
+
+const formSchema = z.object({
+  name: z.string().min(2, {
+    message: "Name must be at least 2 characters.",
+  }),
+  email: z.string().email({
+    message: "Please enter a valid email address.",
+  }),
+  message: z.string().min(10, {
+    message: "Message must be at least 10 characters.",
+  }),
+});
 
 const Contact = () => {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values);
+    // In a real application, you would send this data to a backend service.
+    // For now, we'll just show a toast notification.
+    toast.success("Your message has been sent!", {
+      description: "We'll get back to you as soon as possible.",
+    });
+    form.reset();
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
         <PageHeader
-          title="Get in Touch"
-          description="Got questions? Or just ready to chat about your big idea? Hit us up! Reach out to us via email or find us at our office in Bristol, UK. We're here to listen and help, no pressure."
+          title="Let's Connect & Build Something Awesome!"
+          highlightWord="Connect"
+          description="Got questions, a brilliant idea, or just want to chat about how we can supercharge your business? We're all ears! Reach out, book a call, or explore our resources. We're here to make your journey smoother and more successful."
           buttons={[
-            { text: "Start My Business", href: "/build-my-business", variant: "primary", isExternal: true },
-            { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
+            { text: "Start My Business", href: BUILD_MY_BUSINESS_URL, variant: "primary", isExternal: true },
+            { text: "Get a Free Consultation", href: CALENDLY_CONSULTATION_URL, variant: "outline", isExternal: true },
           ]}
         />
 
         <section className="container py-16 md:py-24">
-          <div className="max-w-2xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 animate-fade-in-up delay-300">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white text-center">Contact Us Directly</h2>
-            <p className="text-center text-gray-700 dark:text-gray-300 mb-8">
-              We're here to help! Reach out to us via email or find us at our office in Bristol, UK.
+          <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Options */}
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 animate-fade-in-up delay-300">
+              <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Directly Connect</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-8">
+                Whether you're ready to dive in or just have a quick question, we're here to help. Choose the best way to reach us!
+              </p>
+              <div className="space-y-6">
+                <div className="flex items-center">
+                  <Mail className="h-6 w-6 text-primary mr-4 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-gray-900 dark:text-white">Email Us Directly</p>
+                    <a href="mailto:contact@calpir.com" className="text-primary hover:underline dark:text-calpir-green-400">contact@calpir.com</a>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <CalendarDays className="h-6 w-6 text-primary mr-4 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-gray-900 dark:text-white">Book a Free Consultation</p>
+                    <a href={CALENDLY_CONSULTATION_URL} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline dark:text-calpir-green-400">Schedule a 30-min chat</a>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <MessageSquareText className="h-6 w-6 text-primary mr-4 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-gray-900 dark:text-white">Request a Custom Setup</p>
+                    <a href="https://forms.clickup.com/9015087055/f/8cnekyf-7955/T9A15GLMNY3RJ1NHH3" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline dark:text-calpir-green-400">Tell us your needs</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 animate-fade-in-up delay-400">
+              <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Send Us a Message</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-8">
+                Have a specific question or project in mind? Fill out the form below, and we'll get back to you promptly.
+              </p>
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-gray-900 dark:text-white">Your Name</FormLabel>
+                        <FormControl>
+                          <Input placeholder="John Doe" {...field} className="bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-gray-900 dark:text-white">Your Email</FormLabel>
+                        <FormControl>
+                          <Input type="email" placeholder="john.doe@example.com" {...field} className="bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-gray-900 dark:text-white">Your Message</FormLabel>
+                        <FormControl>
+                          <Textarea placeholder="Tell us about your project or question..." rows={5} {...field} className="bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <Button type="submit" className="w-full bg-primary hover:bg-calpir-green-700 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow">
+                    Send Message
+                  </Button>
+                </form>
+              </Form>
+            </div>
+          </div>
+
+          {/* Quick Links Section */}
+          <div className="max-w-4xl mx-auto mt-16 bg-gradient-to-br from-calpir-green-50 to-palette-blue-50 dark:from-calpir-green-950 dark:to-palette-blue-950 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 text-center animate-fade-in-up delay-500">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Need More Info? Quick Links!</h2>
+            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+              Explore our site for detailed information on our offerings, or find answers to common questions.
             </p>
-            <div className="space-y-6">
-              <div className="flex items-center justify-center">
-                <Mail className="h-6 w-6 text-primary mr-4" />
-                <div>
-                  <p className="font-semibold text-gray-900 dark:text-white">Email Us</p>
-                  <a href="mailto:contact@calpir.com" className="text-primary hover:underline dark:text-calpir-green-400">contact@calpir.com</a>
-                </div>
-              </div>
-              <div className="flex items-center justify-center">
-                <MapPin className="h-6 w-6 text-primary mr-4" />
-                <div>
-                  <p className="font-semibold text-gray-900 dark:text-white">Our Office</p>
-                  <p className="text-gray-700 dark:text-gray-300">123 Innovation Drive</p>
-                  <p className="text-gray-700 dark:text-gray-300">Bristol, BS1 1AA</p>
-                  <p className="text-gray-700 dark:text-gray-300">United Kingdom</p>
-                </div>
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link to="/services" className="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105">
+                <Layout className="h-8 w-8 text-palette-blue-500 mb-2" />
+                <span className="font-semibold text-gray-900 dark:text-white">Our Services</span>
+              </Link>
+              <Link to="/pricing" className="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105">
+                <DollarSign className="h-8 w-8 text-calpir-green-700 mb-2" />
+                <span className="font-semibold text-gray-900 dark:text-white">Pricing Details</span>
+              </Link>
+              <Link to="/faq" className="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105">
+                <Info className="h-8 w-8 text-palette-purple-500 mb-2" />
+                <span className="font-semibold text-gray-900 dark:text-white">Frequently Asked Questions</span>
+              </Link>
             </div>
           </div>
         </section>
