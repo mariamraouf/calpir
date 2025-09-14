@@ -113,24 +113,42 @@ const BuildMyBusinessPage = () => {
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.consent) {
       toast.error("Please agree to the Privacy Policy and Terms of Service.");
       return;
     }
-    console.log("Primary Form Submitted:", formData);
-    toast.success("Your business launch inquiry has been sent! We'll be in touch soon.");
-    // Reset form
-    setFormData({
-      fullName: "", email: "", phoneNumber: "", companyName: "", existingWebsite: "", countryOfHeadquarters: "",
-      businessType: "", industry: "", otherIndustry: "", businessStage: "", businessOperationModel: "",
-      biggestChallenge: "", currentAssets: [], // NEW
-      packagePreference: "", budgetRange: "", addOnInterests: [], addOnRequirements: "",
-      primaryGoals: [], otherPrimaryGoal: "", currentSystems: "", preferredPlatforms: "", systemPriorities: [],
-      additionalDetails: "", timeline: "",
-      consent: false,
-    });
+
+    try {
+      const response = await fetch("https://jjawywizvzkcgpbrxadl.supabase.co/functions/v1/create-clickup-task", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Failed to send inquiry.");
+      }
+
+      toast.success("Your business launch inquiry has been sent! We'll be in touch soon.");
+      // Reset form
+      setFormData({
+        fullName: "", email: "", phoneNumber: "", companyName: "", existingWebsite: "", countryOfHeadquarters: "",
+        businessType: "", industry: "", otherIndustry: "", businessStage: "", businessOperationModel: "",
+        biggestChallenge: "", currentAssets: [],
+        packagePreference: "", budgetRange: "", addOnInterests: [], addOnRequirements: "",
+        primaryGoals: [], otherPrimaryGoal: "", currentSystems: "", preferredPlatforms: "", systemPriorities: [],
+        additionalDetails: "", timeline: "",
+        consent: false,
+      });
+    } catch (error: any) {
+      console.error("Submission error:", error);
+      toast.error(error.message || "There was an error sending your inquiry. Please try again.");
+    }
   };
 
   const showAddOnRequirements = formData.addOnInterests.length > 0;
