@@ -72,7 +72,7 @@ const packages = [
   },
 ];
 
-const BUILD_MY_BUSINESS_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7975/TZ1NJ34TI8S352Q2G5";
+const CLAIM_INDIVIDUAL_SERVICE_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-8015/KLJFO48BFQXRD1HHTP";
 
 const PricingPackagesSection = () => {
   return (
@@ -130,7 +130,7 @@ const PricingPackagesSection = () => {
                 <p className="text-2xl font-bold text-primary dark:text-calpir-green-300">{pkg.timeline}</p>
               </div>
 
-              <a href={BUILD_MY_BUSINESS_URL} target="_blank" rel="noopener noreferrer">
+              <a href={CLAIM_INDIVIDUAL_SERVICE_URL} target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   className={`w-full text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow ${
