@@ -27,7 +27,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Monday.com", logo: "https://logo.clearbit.com/monday.com?size=50" },
       { name: "Trello", logo: "https://logo.clearbit.com/trello.com?size=50" },
       { name: "Jira", logo: "https://logo.clearbit.com/atlassian.com?size=50" },
-      { name: "ClickUp", logo: "/logos/clickup-new.jpeg" }, // Updated to local JPEG
+      { name: "ClickUp", logo: "/logos/clickup-logo.jpeg" }, // Updated to local JPEG
       { name: "Basecamp", logo: "https://logo.clearbit.com/basecamp.com?size=50" },
       { name: "Wrike", logo: "https://logo.clearbit.com/wrike.com?size=50" },
       { name: "Notion", logo: "https://logo.clearbit.com/notion.so?size=50" },
@@ -382,7 +382,7 @@ updatedPlatformCategories.push({
     { name: "Teamlogger", logo: "https://logo.clearbit.com/teamlogger.com?size=50" },
     { name: "Tempo", logo: "https://logo.clearbit.com/tempo.io?size=50" },
     { name: "Hubstaff", logo: "https://logo.clearbit.com/hubstaff.com?size=50" },
-    { name: "ClickUp Native Time Tracking", logo: "/logos/clickup-new.jpeg" }, // Added ClickUp Native Time Tracking with new JPEG
+    { name: "ClickUp Native Time Tracking", logo: "/logos/clickup-logo.jpeg" }, // Added ClickUp Native Time Tracking with new JPEG
   ],
 });
 
