@@ -13,6 +13,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+const REQUEST_CUSTOM_SETUP_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7955/T9A15GLMNY3RJ1NHH3";
+
 const faqs = {
   "General & Pricing FAQs": [
     {
@@ -99,7 +101,7 @@ const faqs = {
       answer: (
         <>
           Yes! We offer website migrations and improvements. This falls under our custom solutions -{" "}
-          <Link to="/get-a-quote" className="text-primary hover:underline">contact us for a quote</Link>.
+          <a href={REQUEST_CUSTOM_SETUP_URL} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">contact us for a quote</a>.
         </>
       ),
     },
@@ -144,7 +146,7 @@ const faqs = {
       answer: (
         <>
           We offer custom solutions!{" "}
-          <Link to="/get-a-quote" className="text-primary hover:underline">Contact us</Link> with your specific needs, and we'll create a tailored proposal.
+          <a href={REQUEST_CUSTOM_SETUP_URL} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Contact us</a> with your specific needs, and we'll create a tailored proposal.
         </>
       ),
     },
@@ -161,7 +163,7 @@ const FAQ = () => {
           highlightWord="Questions"
           description="Got questions? We've got answers! Here's the real talk on everything you need to know about our services, pricing, and how we roll. No corporate jargon, just straightforward info to help you out."
           buttons={[
-            { text: "Start My Business", href: "/build-my-business", variant: "primary" },
+            { text: "Start My Business", href: "/build-my-business", variant: "primary", isExternal: true },
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
           ]}
         />

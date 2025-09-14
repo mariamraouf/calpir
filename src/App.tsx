@@ -9,12 +9,9 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
-import BuildMyBusinessPage from "./pages/BuildMyBusinessPage";
-import CustomQuotePage from "./pages/CustomQuotePage";
 import Platforms from "./pages/Platforms";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
-import IndividualServiceFormPage from "./pages/IndividualServiceFormPage";
 // import PaymentTerms from "./pages/PaymentTerms"; // Removed import
 import FAQ from "./pages/FAQ";
 import ScrollToTop from "./components/ScrollToTop";
@@ -36,12 +33,10 @@ const App = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/build-my-business" element={<BuildMyBusinessPage />} />
-            <Route path="/get-a-quote" element={<CustomQuotePage />} />
+            {/* Removed routes for BuildMyBusinessPage, CustomQuotePage, IndividualServiceFormPage */}
             <Route path="/platforms" element={<Platforms />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="/individual-service-inquiry" element={<IndividualServiceFormPage />} />
             {/* Removed PaymentTerms route */}
             <Route path="/faq" element={<FAQ />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

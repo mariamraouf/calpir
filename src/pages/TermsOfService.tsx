@@ -16,7 +16,7 @@ const TermsOfService = () => {
           title="Terms of Service"
           description="Welcome to Calpir! By using our services, you're agreeing to these terms. It's all about keeping things fair and clear for everyone, so give them a read."
           buttons={[
-            { text: "Start My Business", href: "/build-my-business", variant: "primary" },
+            { text: "Start My Business", href: "/build-my-business", variant: "primary", isExternal: true },
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
           ]}
         />

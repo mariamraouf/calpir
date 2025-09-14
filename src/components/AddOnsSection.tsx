@@ -26,6 +26,8 @@ import { Link } from "react-router-dom";
 //   "Training & Support Services": { icon: BookOpen, iconColor: "text-calpir-green-600" },
 // };
 
+const CLAIM_INDIVIDUAL_SERVICE_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-8015/KLJFO48BFQXRD1HHTP";
+
 const AddOnsSection = () => {
   return (
     <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
@@ -37,14 +39,14 @@ const AddOnsSection = () => {
           No worries if a full package isn't your vibe right now! You can totally grab individual services or add on exactly what you need to your current plan. We're all about making it work for <Link to="/services" className="text-primary hover:underline font-semibold">you</Link>.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12 animate-fade-in-up delay-300">
-          <Link to="/individual-service-inquiry">
+          <a href={CLAIM_INDIVIDUAL_SERVICE_URL} target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
             >
               View All Services
             </Button>
-          </Link>
+          </a>
           <a href="https://calendly.com/mariam-calpir/30min" target="_blank" rel="noopener noreferrer"> {/* Updated to new Calendly link */}
             <Button
               size="lg"

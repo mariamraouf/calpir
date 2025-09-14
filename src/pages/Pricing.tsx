@@ -54,6 +54,8 @@ const addOnCategoryDisplayMap: Record<string, { icon: React.ElementType, iconCol
   "Training & Support Services": { icon: BookOpen, iconColor: "text-calpir-green-600" },
 };
 
+const REQUEST_CUSTOM_SETUP_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7955/T9A15GLMNY3RJ1NHH3";
+
 const Pricing = () => {
   const location = useLocation();
   const [highlightedServiceId, setHighlightedServiceId] = useState<string | null>(null);
@@ -85,7 +87,7 @@ const Pricing = () => {
           highlightWord="Pricing"
           description="Find the perfect solution for your business with our clear and flexible pricing. All packages are one-time setup/migration fees; clients are responsible for any tool subscriptions. Prices are globally affordable."
           buttons={[
-            { text: "Start My Business", href: "/build-my-business", variant: "primary" },
+            { text: "Start My Business", href: "/build-my-business", variant: "primary", isExternal: true },
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
           ]}
         />
@@ -217,14 +219,14 @@ const Pricing = () => {
                   ))}
                 </ul>
                 <div className="text-center mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
-                  <Link to={`/services#${service.id}`}> {/* Link to pricing page individual services section */}
+                  <a href={REQUEST_CUSTOM_SETUP_URL} target="_blank" rel="noopener noreferrer">
                     <Button
                       size="lg"
                       className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
                     >
                       Get Started
                     </Button>
-                  </Link>
+                  </a>
                 </div>
               </section>
             ))}
@@ -241,14 +243,14 @@ const Pricing = () => {
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-8">
             Need something specific, or a setup for a single platform not listed? Our experts will examine your setup and recommend accordingly to create custom solutions tailored to your business needs. Contact us to discuss your requirements.
           </p>
-          <Link to="/get-a-quote">
+          <a href={REQUEST_CUSTOM_SETUP_URL} target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="bg-gradient-to-r from-primary to-calpir-green-600 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
             >
               Request Custom Set Up
             </Button>
-          </Link>
+          </a>
         </section>
       </main>
       <Footer />

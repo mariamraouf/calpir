@@ -22,6 +22,32 @@ interface PageHeaderProps {
 const PageHeader = ({ title, highlightWord, description, buttons, className }: PageHeaderProps) => {
   const titleParts = highlightWord ? title.split(new RegExp(`(${highlightWord})`, 'gi')) : [title];
 
+  // Define external form URLs
+  const BUILD_MY_BUSINESS_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7975/TZ1NJ34TI8S352Q2G5";
+  const CLAIM_INDIVIDUAL_SERVICE_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-8015/KLJFO48BFQXRD1HHTP";
+  const REQUEST_CUSTOM_SETUP_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7955/T9A15GLMNY3RJ1NHH3";
+  const CALENDLY_CONSULTATION_URL = "https://calendly.com/mariam-calpir/30min";
+
+  const getButtonHref = (buttonText: string, originalHref: string) => {
+    switch (buttonText) {
+      case "Start My Business":
+        return BUILD_MY_BUSINESS_URL;
+      case "Claim an Individual Service":
+        return CLAIM_INDIVIDUAL_SERVICE_URL;
+      case "Request a Custom Set Up":
+        return REQUEST_CUSTOM_SETUP_URL;
+      case "Get a Free Consultation":
+        return CALENDLY_CONSULTATION_URL;
+      default:
+        return originalHref;
+    }
+  };
+
+  const isButtonExternal = (buttonText: string, originalHref: string) => {
+    const href = getButtonHref(buttonText, originalHref);
+    return href.startsWith("http") || href.startsWith("https");
+  };
+
   return (
     <section className={`relative w-full py-20 md:py-28 lg:py-36 bg-gray-100 dark:bg-gray-950 overflow-hidden ${className}`}>
       {/* Background pattern - using a subtle gradient for now, can be replaced with SVG if needed */}
@@ -56,9 +82,12 @@ const PageHeader = ({ title, highlightWord, description, buttons, className }: P
         </p>
         {buttons && buttons.length > 0 && (
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-400">
-            {buttons.map((button, index) => (
-              button.isExternal || button.text === "Get a Free Consultation" ? ( // Added condition for "Get a Free Consultation"
-                <a key={index} href={button.text === "Get a Free Consultation" ? "https://calendly.com/mariam-calpir/30min" : button.href} target="_blank" rel="noopener noreferrer">
+            {buttons.map((button, index) => {
+              const href = getButtonHref(button.text, button.href);
+              const external = isButtonExternal(button.text, button.href);
+
+              return external ? (
+                <a key={index} href={href} target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
                     className={`text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:animate-button-glow ${
@@ -71,7 +100,7 @@ const PageHeader = ({ title, highlightWord, description, buttons, className }: P
                   </Button>
                 </a>
               ) : (
-                <Link key={index} to={button.href}>
+                <Link key={index} to={href}>
                   <Button
                     size="lg"
                     className={`text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:animate-button-glow ${
@@ -83,8 +112,8 @@ const PageHeader = ({ title, highlightWord, description, buttons, className }: P
                     {button.text}
                   </Button>
                 </Link>
-              )
-            ))}
+              );
+            })}
           </div>
         )}
       </div>

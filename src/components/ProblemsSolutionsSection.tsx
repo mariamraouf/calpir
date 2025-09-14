@@ -38,6 +38,8 @@ const solutions = [
   { label: "1 Team", detail: "vs managing 5+ specialists" },
 ];
 
+const BUILD_MY_BUSINESS_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7975/TZ1NJ34TI8S352Q2G5";
+
 const ProblemsSolutionsSection = () => { // Removed setOpenBuildMyBusinessForm prop
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-gray-950">
@@ -90,14 +92,14 @@ const ProblemsSolutionsSection = () => { // Removed setOpenBuildMyBusinessForm p
         </div>
 
         <div className="text-center animate-bounce-pop delay-1200">
-          <Link to="/build-my-business"> {/* Changed to Link */}
+          <a href={BUILD_MY_BUSINESS_URL} target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
             >
               Start Your Startup Package Today
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </section>

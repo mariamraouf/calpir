@@ -31,7 +31,7 @@ const About = () => {
           title="About Calpir"
           description="At Calpir, we're genuinely obsessed with helping founders like you bring their big ideas to life. We've been in your shoes, navigating the startup maze, and we built Calpir to be the ultimate shortcut. Think of us as your secret weapon for launching and scaling, handling everything from operations and HR to killer websites and social media. We're talking a full setup in just 7 days for our Starter package! With our deep dive into 300+ platforms, we'll hook you up with exactly what you need, building or migrating your systems seamlessly. We're not just a service; we're your partners in making your business dreams a reality, without the usual headaches."
           buttons={[
-            { text: "Start My Business", href: "/build-my-business", variant: "primary" },
+            { text: "Start My Business", href: "/build-my-business", variant: "primary", isExternal: true },
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
           ]}
         />

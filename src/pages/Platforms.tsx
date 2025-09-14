@@ -432,6 +432,7 @@ updatedPlatformCategories.push({
   ],
 });
 
+const REQUEST_CUSTOM_SETUP_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7955/T9A15GLMNY3RJ1NHH3";
 
 const Platforms = () => {
   return (
@@ -443,7 +444,7 @@ const Platforms = () => {
           highlightWord="Master"
           description="We're basically platform wizards, fluent in a ton of industry-leading and super niche tools. Seriously, if you don't spot your go-to here, just hit us up – chances are, we've got you covered!"
           buttons={[
-            { text: "Request a Custom Set Up", href: "/get-a-quote", variant: "primary" },
+            { text: "Request a Custom Set Up", href: "/get-a-quote", variant: "primary", isExternal: true },
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
           ]}
         />
@@ -500,14 +501,14 @@ const Platforms = () => {
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
               Our expertise isn't limited to this list. If you have a specific platform or unique setup in mind, we can create a custom solution tailored just for you.
             </p>
-            <Link to="/get-a-quote">
+            <a href={REQUEST_CUSTOM_SETUP_URL} target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
                 className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
               >
                 Request a Custom Set Up
               </Button>
-            </Link>
+            </a>
           </section>
         </section>
       </main>

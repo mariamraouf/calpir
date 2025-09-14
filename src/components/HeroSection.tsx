@@ -4,6 +4,8 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom"; // Import Link
 
+const BUILD_MY_BUSINESS_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7975/TZ1NJ34TI8S352Q2G5";
+
 const HeroSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
   return (
     <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-r from-foreground to-calpir-green-900 text-white overflow-hidden">
@@ -33,14 +35,14 @@ const HeroSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustom
           We're your co-pilot, helping you craft a killer website, build a brand that pops, and set up systems that actually work. No gatekeeping, just genuine support to bring your vision to life. Check out our <Link to="/services" className="text-white underline hover:no-underline font-semibold">services</Link> to find your perfect fit.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-400">
-          <Link to="/build-my-business"> {/* Changed to Link */}
+          <a href={BUILD_MY_BUSINESS_URL} target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
             >
               Start My Business
             </Button>
-          </Link>
+          </a>
           <a href="https://calendly.com/mariam-calpir/30min" target="_blank" rel="noopener noreferrer"> {/* Updated to new Calendly link */}
             <Button
               size="lg"

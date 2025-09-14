@@ -11,6 +11,9 @@ import PageHeader from "@/components/PageHeader";
 import { servicesData } from "@/data/services";
 import PackageDetailsSection from "@/components/PackageDetailsSection"; // Import the new component
 
+const CLAIM_INDIVIDUAL_SERVICE_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-8015/KLJFO48BFQXRD1HHTP";
+const REQUEST_CUSTOM_SETUP_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7955/T9A15GLMNY3RJ1NHH3";
+
 const Services = () => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -20,7 +23,7 @@ const Services = () => {
           title="Comprehensive Business Solutions"
           description="Whether you need a complete business launch package or specific individual services, Calpir provides tailored solutions to meet your unique needs. Explore our offerings below."
           buttons={[
-            { text: "Start My Business", href: "/build-my-business", variant: "primary" },
+            { text: "Start My Business", href: "/build-my-business", variant: "primary", isExternal: true },
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
           ]}
         />
@@ -98,14 +101,14 @@ const Services = () => {
                   ))}
                 </ul>
                 <div className="text-center mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
-                  <Link to={`/pricing#${service.id}`}> {/* Link to pricing page individual services section */}
+                  <a href={CLAIM_INDIVIDUAL_SERVICE_URL} target="_blank" rel="noopener noreferrer">
                     <Button
                       size="lg"
                       className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
                     >
                       View Pricing
                     </Button>
-                  </Link>
+                  </a>
                 </div>
               </section>
             ))}
@@ -121,14 +124,14 @@ const Services = () => {
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
             If your business requires a specific platform setup or integration not explicitly listed in our packages or add-ons, we can create a custom solution tailored just for you.
           </p>
-          <Link to="/get-a-quote">
+          <a href={REQUEST_CUSTOM_SETUP_URL} target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
             >
               Request a Custom Set Up
             </Button>
-          </Link>
+          </a>
         </section>
       </main>
       <Footer />

@@ -194,6 +194,8 @@ const comparisonFeatures = [
   },
 ];
 
+const BUILD_MY_BUSINESS_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7975/TZ1NJ34TI8S352Q2G5";
+
 const PackageComparisonTable = () => {
   // This render function is primarily for the desktop table cells
   const renderDesktopFeatureValue = (value: string | boolean | null) => {
@@ -283,14 +285,14 @@ const PackageComparisonTable = () => {
               <TableCell className="w-[250px] p-4"></TableCell>
               {packages.map((pkg, pkgIndex) => (
                 <TableCell key={pkgIndex} className="w-1/3 p-4 text-center">
-                  <Link to="/build-my-business">
+                  <a href={BUILD_MY_BUSINESS_URL} target="_blank" rel="noopener noreferrer">
                     <Button
                       size="lg"
                       className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
                     >
                       Start My Package
                     </Button>
-                  </Link>
+                  </a>
                 </TableCell>
               ))}
             </TableRow>
@@ -345,14 +347,14 @@ const PackageComparisonTable = () => {
             ))}
 
             <div className="mt-8 text-center">
-              <Link to="/build-my-business">
+              <a href={BUILD_MY_BUSINESS_URL} target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
                 >
                   Start My Package
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         ))}

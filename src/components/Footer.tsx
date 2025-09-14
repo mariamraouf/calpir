@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 import { Mail } from "lucide-react"; // Removed Linkedin, Instagram
 import { Button } from "@/components/ui/button";
 
+const BUILD_MY_BUSINESS_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7975/TZ1NJ34TI8S352Q2G5";
+const CLAIM_INDIVIDUAL_SERVICE_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-8015/KLJFO48BFQXRD1HHTP";
+const REQUEST_CUSTOM_SETUP_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7955/T9A15GLMNY3RJ1NHH3";
+
 const Footer = () => {
   return (
     <footer className="bg-foreground dark:bg-gray-950 text-gray-300 py-16 md:py-20">
@@ -44,34 +48,34 @@ const Footer = () => {
           <h4 className="text-lg font-semibold text-white mb-4">Quick Actions</h4>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link to="/build-my-business">
+              <a href={BUILD_MY_BUSINESS_URL} target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="link"
                   className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
                 >
                   Build My Business
                 </Button>
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/individual-service-inquiry">
+              <a href={CLAIM_INDIVIDUAL_SERVICE_URL} target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="link"
                   className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
                 >
                   Claim an Individual Service
                 </Button>
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/get-a-quote">
+              <a href={REQUEST_CUSTOM_SETUP_URL} target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="link"
                   className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"
                 >
                   Request a Custom Set Up
                 </Button>
-              </Link>
+              </a>
             </li>
             <li>
               <a href="https://calendly.com/mariam-calpir/30min" target="_blank" rel="noopener noreferrer"> {/* Updated to new Calendly link */}

@@ -40,7 +40,7 @@ const Contact = () => {
           title="Get in Touch"
           description="Got questions? Or just ready to chat about your big idea? Hit us up! Fill out the form below, or shoot us an email. We're here to listen and help, no pressure."
           buttons={[
-            { text: "Start My Business", href: "/build-my-business", variant: "primary" },
+            { text: "Start My Business", href: "/build-my-business", variant: "primary", isExternal: true },
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
           ]}
         />
