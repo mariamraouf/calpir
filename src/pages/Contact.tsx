@@ -73,7 +73,7 @@ const Contact = () => {
         />
 
         <section className="container py-16 md:py-24">
-          <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-1 gap-12"> {/* Changed grid-cols-2 to grid-cols-1 */}
             {/* Contact Options */}
             <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 animate-fade-in-up delay-300">
               <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Directly Connect</h2>
@@ -105,59 +105,7 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 animate-fade-in-up delay-400">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Send Us a Message</h2>
-              <p className="text-gray-700 dark:text-gray-300 mb-8">
-                Have a specific question or project in mind? Fill out the form below, and we'll get back to you promptly.
-              </p>
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-gray-900 dark:text-white">Your Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="John Doe" {...field} className="bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-gray-900 dark:text-white">Your Email</FormLabel>
-                        <FormControl>
-                          <Input type="email" placeholder="john.doe@example.com" {...field} className="bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-gray-900 dark:text-white">Your Message</FormLabel>
-                        <FormControl>
-                          <Textarea placeholder="Tell us about your project or question..." rows={5} {...field} className="bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <Button type="submit" className="w-full bg-primary hover:bg-calpir-green-700 text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow">
-                    Send Message
-                  </Button>
-                </form>
-              </Form>
-            </div>
+            {/* Contact Form - REMOVED */}
           </div>
 
           {/* Quick Links Section */}
