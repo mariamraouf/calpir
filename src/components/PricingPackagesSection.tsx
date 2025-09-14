@@ -77,10 +77,10 @@ const PricingPackagesSection = () => {
     <section className="py-16 md:py-24 bg-white dark:bg-gray-950" id="pricing">
       <div className="container text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up">
-          Choose Your Launch Package
+          Find Your Perfect Launch Package (No Hidden Fees, Just Real Value)
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in-up delay-200">
-          Select the perfect package to launch your business with our proven systems and frameworks.
+          We know budgets are a thing, especially when you're starting out. That's why we've put together packages that actually make sense. Pick the one that feels right for your journey, and let's get your business off the ground with systems that truly work.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

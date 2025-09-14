@@ -59,10 +59,10 @@ const BusinessSolutionsSection = () => {
     <section className="py-16 md:py-24 bg-gray-100 dark:bg-gray-900" id="services">
       <div className="container text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up">
-          Complete Business Solutions
+          All the Business Goodies You Need to Thrive
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in-up delay-200">
-          Everything your business needs to launch successfully, from operations setup to marketing automation.
+          From getting your operations dialed in to setting up smart marketing, we've got the full spectrum covered. Think of us as your go-to crew for everything you need to launch strong and keep growing.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

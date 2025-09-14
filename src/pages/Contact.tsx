@@ -38,7 +38,7 @@ const Contact = () => {
       <main className="flex-grow">
         <PageHeader
           title="Get in Touch"
-          description="Have questions or ready to launch your business? Fill out the form below or reach out to us directly."
+          description="Got questions? Or just ready to chat about your big idea? Hit us up! Fill out the form below, or shoot us an email. We're here to listen and help, no pressure."
           buttons={[
             { text: "Start My Business", href: "/build-my-business", variant: "primary" },
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },

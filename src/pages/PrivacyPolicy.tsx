@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
       <main className="flex-grow">
         <PageHeader
           title="Privacy Policy"
-          description="Your privacy is critically important to us. This Privacy Policy outlines how Calpir collects, uses, maintains, and discloses information collected from users of the Calpir website."
+          description="Your privacy is super important to us. This policy breaks down how Calpir handles your info when you use our site, keeping things clear and secure."
           buttons={[
             { text: "Start My Business", href: "/build-my-business", variant: "primary" },
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },

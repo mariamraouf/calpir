@@ -32,10 +32,10 @@ const LaunchMethodSection = () => {
     <section className="py-16 md:py-24 bg-white dark:bg-gray-950">
       <div className="container text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up">
-          The 7-Day Launch Method
+          Our 7-Day Launch Method: Your Fast Track to Awesome
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in-up delay-200">
-          Three simple steps to transform your business idea into a fully operational company in just 7 days.
+          Ready to turn that brilliant idea into a real-deal business? We've broken it down into three super clear steps, so you can go from 'idea' to 'launched' in just one week. No stress, just progress.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

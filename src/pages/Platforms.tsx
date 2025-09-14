@@ -441,7 +441,7 @@ const Platforms = () => {
         <PageHeader
           title="Platforms We Master"
           highlightWord="Master"
-          description="Our expertise spans a vast array of industry-leading and niche platforms. If you don't see your preferred tool, just ask!"
+          description="We're basically platform wizards, fluent in a ton of industry-leading and super niche tools. Seriously, if you don't spot your go-to here, just hit us up – chances are, we've got you covered!"
           buttons={[
             { text: "Request a Custom Set Up", href: "/get-a-quote", variant: "primary" },
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },

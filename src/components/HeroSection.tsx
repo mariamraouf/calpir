@@ -27,10 +27,10 @@ const HeroSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustom
           className="h-24 w-24 mx-auto mb-8 animate-bounce-slow"
         />
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 animate-fade-in-up">
-          Launch Your Dream Business in Just 7 Days
+          Ready to build something amazing? Let's launch your dream business, together.
         </h1>
         <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-10 opacity-90 animate-fade-in-up delay-200">
-          Transform your vision into reality! We craft stunning websites, forge powerful brands, set up seamless systems, and simplify everything with smart automation. Explore our complete packages or pick <Link to="/services" className="text-white underline hover:no-underline font-semibold">individual services</Link> to perfectly fit your needs.
+          We get it – starting a business is a whole journey. We're here to be the co-pilot we wish we had, helping you craft a killer website, build a brand that pops, and set up systems that actually work. No gatekeeping, just genuine support to bring your vision to life. Check out our packages or mix-and-match <Link to="/services" className="text-white underline hover:no-underline font-semibold">individual services</Link> to find your perfect fit.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-400">
           <Link to="/build-my-business"> {/* Changed to Link */}

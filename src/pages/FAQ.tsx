@@ -132,7 +132,7 @@ const faqs = {
     {
       question: "Why should I choose Calpir over other business setup services?",
       answer:
-        "Our team isn't just another agency - we're startup veterans who've been in the trenches. Each specialist has years of hands-on experience launching businesses globally, and we've combined our expertise into one powerhouse team. While others are still figuring things out, we've already perfected the 7-day launch method with 300+ platform integrations and saved our clients over $500K in setup costs.",
+        "Our team isn't just another agency - we're startup veterans who've been in the trenches. Each specialist has years of hands-on experience launching businesses globally, and we've combined our expertise into one powerhouse team. While others are still figuring things out, we've already perfected the 7-day launch method with 300+ platform integrations and saved our clients over $500K in setup costs. We're genuinely here to see you win, not just profit off your dreams.",
     },
     {
       question: "Can I start with a smaller package and add more later?",
@@ -159,7 +159,7 @@ const FAQ = () => {
         <PageHeader
           title="Frequently Asked Questions"
           highlightWord="Questions"
-          description="Find quick answers to common questions about our services, pricing, process, and more."
+          description="Got questions? We've got answers! Here's the real talk on everything you need to know about our services, pricing, and how we roll. No corporate jargon, just straightforward info to help you out."
           buttons={[
             { text: "Start My Business", href: "/build-my-business", variant: "primary" },
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },

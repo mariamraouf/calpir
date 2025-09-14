@@ -54,8 +54,8 @@ const CustomQuotePage = () => {
       <Navbar />
       <main className="flex-grow">
         <PageHeader
-          title="Unlock Your Custom Solution"
-          description="Got unique business needs or a specific platform setup not covered by our standard offerings? Share your vision, and our experts will meticulously examine your requirements, providing tailored recommendations for a custom-built solution that perfectly fits."
+          title="Got a Unique Vision? Let's Build Your Custom Solution!"
+          description="If your business has specific needs or a platform setup that's a bit outside our usual packages, no stress! Share your vision with us, and our experts will dive deep to craft a custom-built solution that's perfectly tailored to you. We're all about making your unique ideas happen."
           buttons={[
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "primary", isExternal: true },
             { text: "View All Services", href: "/services", variant: "outline" },

@@ -11,10 +11,10 @@ const CtaSection = () => { // Removed setOpenBuildMyBusinessForm prop
       <div className="container">
         <Rocket className="h-20 w-20 mx-auto mb-6 text-white animate-bounce-slow" />
         <h2 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight animate-fade-in-up">
-          Ready to Launch Your Dream Business?
+          Feeling that spark? Let's turn your dream business into a reality!
         </h2>
         <p className="text-lg md:text-xl max-w-3xl mx-auto mb-10 opacity-90 animate-fade-in-up delay-200">
-          Join hundreds of successful entrepreneurs who chose Calpir Solutions to transform their ideas into thriving businesses in just 7 days.
+          Seriously, we're so ready to help you build something incredible. Join the crew of awesome entrepreneurs who've teamed up with Calpir to go from 'idea' to 'thriving business' in just 7 days. Your success is our success, no cap.
         </p>
         <Link to="/build-my-business"> {/* Changed to Link */}
           <Button

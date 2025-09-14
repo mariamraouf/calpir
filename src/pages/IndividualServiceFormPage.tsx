@@ -82,8 +82,8 @@ const IndividualServiceFormPage = () => {
       <Navbar />
       <main className="flex-grow">
         <PageHeader
-          title="Empower Your Business with Individual Services"
-          description="Need a targeted boost for your business? Select the specific services you require, and our experts will meticulously examine your current setup, providing tailored recommendations to help you achieve your goals with precision and speed."
+          title="Just Need a Specific Boost? Grab Individual Services Here!"
+          description="Need a targeted solution for your business without committing to a full package? No problem! Pick the exact services you need, and our experts will dive in to give you tailored recommendations and get things set up with precision and speed. We're here to help you tackle those specific goals."
           buttons={[
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "primary", isExternal: true },
             { text: "View All Services", href: "/services", variant: "outline" },

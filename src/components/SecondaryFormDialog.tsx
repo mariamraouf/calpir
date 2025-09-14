@@ -51,7 +51,7 @@ const SecondaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) 
       <DialogHeader>
         <DialogTitle className="text-2xl font-bold text-gray-900 dark:text-white">Get a Free Consultation / Custom Quote</DialogTitle>
         <DialogDescription className="text-gray-600 dark:text-gray-300">
-          Tell us a bit about what you need, and we'll be in touch.
+          Ready to chat about your business? Tell us a bit about what you're looking for, and we'll be in touch to help you out. No pressure, just good vibes.
         </DialogDescription>
       </DialogHeader>
       <form onSubmit={handleSubmit} className="grid gap-6 py-4">

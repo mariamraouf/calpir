@@ -26,7 +26,7 @@ const NotFound = () => {
         <PageHeader
           title="404 Page Not Found"
           highlightWord="404"
-          description="Oops! The page you are looking for does not exist. It might have been moved or deleted."
+          description="Whoops! Looks like you've stumbled onto a page that isn't here. No stress, it happens! The page might have moved or decided to go on a little adventure."
           buttons={[
             { text: "Return to Home", href: "/", variant: "primary" },
             { text: "Contact Support", href: "/contact", variant: "outline" },

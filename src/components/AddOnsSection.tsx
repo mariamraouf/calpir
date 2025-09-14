@@ -31,10 +31,10 @@ const AddOnsSection = () => {
     <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up">
-          Not Ready for a Full Package?
+          Just Need a Little Something Extra? Or Not Ready for a Full Package?
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 animate-fade-in-up delay-200">
-          Choose individual services or enhance your package with add-ons to perfectly fit your business needs. You can also explore our <Link to="/services" className="text-primary hover:underline font-semibold">individual services</Link> for specific solutions.
+          No worries if a full package isn't your vibe right now! You can totally grab individual services or add on exactly what you need to your current plan. We're all about making it work for <Link to="/services" className="text-primary hover:underline font-semibold">you</Link>.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12 animate-fade-in-up delay-300">
           <Link to="/individual-service-inquiry">

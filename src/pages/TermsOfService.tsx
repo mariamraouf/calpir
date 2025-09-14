@@ -14,7 +14,7 @@ const TermsOfService = () => {
       <main className="flex-grow">
         <PageHeader
           title="Terms of Service"
-          description="Welcome to Calpir. By accessing or using our services, you agree to be bound by these Terms of Service. Please read them carefully."
+          description="Welcome to Calpir! By using our services, you're agreeing to these terms. It's all about keeping things fair and clear for everyone, so give them a read."
           buttons={[
             { text: "Start My Business", href: "/build-my-business", variant: "primary" },
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
