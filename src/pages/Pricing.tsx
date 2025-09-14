@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
@@ -28,7 +28,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import PackageComparisonTable from "@/components/PackageComparisonTable";
 import PageHeader from "@/components/PageHeader";
 import { servicesData } from "@/data/services"; // Import from central file
@@ -55,6 +55,27 @@ const addOnCategoryDisplayMap: Record<string, { icon: React.ElementType, iconCol
 };
 
 const Pricing = () => {
+  const location = useLocation();
+  const [highlightedServiceId, setHighlightedServiceId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.substring(1); // Remove '#'
+      setHighlightedServiceId(id);
+
+      // Scroll to the element
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        // Remove highlight after a delay
+        const timer = setTimeout(() => {
+          setHighlightedServiceId(null);
+        }, 2000); // 2 seconds for the glow effect
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [location.hash]);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -147,7 +168,7 @@ const Pricing = () => {
                   </div>
                   <div className="space-y-4">
                     {addOns.map((item, itemIndex) => (
-                      <div key={item.id} className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up" style={{ animationDelay: `${1.2 + catIndex * 0.15 + itemIndex * 0.02}s` }}>
+                      <div key={item.id} id={item.serviceId} className={`flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0 animate-fade-in-up ${highlightedServiceId === item.serviceId ? 'highlight-glow' : ''}`} style={{ animationDelay: `${1.2 + catIndex * 0.15 + itemIndex * 0.02}s` }}>
                         <div className="text-left mb-2 sm:mb-0 sm:mr-4">
                           <p className="text-lg font-semibold text-gray-900 dark:text-white">{item.label.split('(')[0].trim()}</p>
                           {item.serviceId && (
@@ -176,7 +197,7 @@ const Pricing = () => {
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {servicesData.map((service, index) => (
-              <section key={service.id} id={service.id} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 animate-slide-in-left" style={{ animationDelay: `${0.7 + index * 0.05}s` }}>
+              <section key={service.id} id={service.id} className={`bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 animate-slide-in-left ${highlightedServiceId === service.id ? 'highlight-glow' : ''}`} style={{ animationDelay: `${0.7 + index * 0.05}s` }}>
                 <div className="flex items-center mb-6">
                   <service.icon className={`h-12 w-12 mr-4 flex-shrink-0 ${service.iconColor}`} />
                   <div>
@@ -196,7 +217,7 @@ const Pricing = () => {
                   ))}
                 </ul>
                 <div className="text-center mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
-                  <Link to={`/services#${service.id}`}>
+                  <Link to={`/services#${service.id}`}> {/* Link to pricing page individual services section */}
                     <Button
                       size="lg"
                       className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"

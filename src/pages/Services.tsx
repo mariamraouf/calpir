@@ -98,7 +98,7 @@ const Services = () => {
                   ))}
                 </ul>
                 <div className="text-center mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
-                  <Link to={`/services#${service.id}`}> {/* Link to pricing page individual services section */}
+                  <Link to={`/pricing#${service.id}`}> {/* Link to pricing page individual services section */}
                     <Button
                       size="lg"
                       className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
@@ -119,7 +119,7 @@ const Services = () => {
             Need a Specific Setup?
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            If your business requires a specific platform setup or integration not explicitly listed in our packages or add-ons, we can still help! Our team specializes in tailoring solutions to your unique needs.
+            If your business requires a specific platform setup or integration not explicitly listed in our packages or add-ons, we can create a custom solution tailored just for you.
           </p>
           <Link to="/get-a-quote">
             <Button

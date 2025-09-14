@@ -213,8 +213,8 @@ const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) =>
                   <SelectItem value="$5,000+">$5,000+</SelectItem>
                   <SelectItem value="Custom Quote Needed">Custom Quote Needed</SelectItem>
                 </SelectContent>
-              </Select>
-            </div>
+            </Select>
+          </div>
           )}
         </div>
 
@@ -236,7 +236,7 @@ const PrimaryFormDialog = ({ setOpen }: { setOpen: (open: boolean) => void }) =>
                     <Label htmlFor={`addOn-${addOn.id}`} className="flex-grow">
                       {addOn.label}
                       {addOn.serviceId && (
-                        <Link to={`/services#${addOn.serviceId}`} className="text-primary hover:underline ml-2 text-sm" target="_blank" rel="noopener noreferrer">
+                        <Link to={`/pricing#${addOn.serviceId}`} className="text-primary hover:underline ml-2 text-sm" target="_blank" rel="noopener noreferrer">
                           (Learn More)
                         </Link>
                       )}
