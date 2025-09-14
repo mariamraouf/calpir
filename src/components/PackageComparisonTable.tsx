@@ -229,7 +229,7 @@ const PackageComparisonTable = () => {
             <TableRow className="border-b border-palette-blue-100 dark:border-gray-700">
               <TableHead className="w-[250px] p-4 text-lg font-semibold text-gray-900 dark:text-white">Features</TableHead> {/* Fixed width for first column */}
               {packages.map((pkg, index) => (
-                <TableHead key={index} className="w-1/3 p-4 text-center text-lg font-semibold text-primary dark:text-calpir-green-300"> {/* Equal width for package columns */}
+                <TableHead key={index} id={pkg.name.toLowerCase().replace(/\s/g, '-') + '-pricing'} className="w-1/3 p-4 text-center text-lg font-semibold text-primary dark:text-calpir-green-300"> {/* Equal width for package columns */}
                   {pkg.name.replace(" Package", "")}
                 </TableHead>
               ))}
@@ -305,6 +305,7 @@ const PackageComparisonTable = () => {
         {packages.map((pkg, pkgIndex) => (
           <div
             key={pkgIndex}
+            id={pkg.name.toLowerCase().replace(/\s/g, '-') + '-pricing'} // Add ID for mobile view as well
             className="flex flex-col p-6 rounded-2xl shadow-lg border-2 border-primary bg-white dark:bg-gray-800"
           >
             <h3 className="text-2xl font-bold mb-2 text-center text-primary dark:text-calpir-green-300">

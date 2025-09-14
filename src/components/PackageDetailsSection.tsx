@@ -22,7 +22,7 @@ const packages = [
     ],
     highlight: false,
     timeline: "7 Days",
-    pricingAnchor: "complete-packages", // Anchor for pricing page
+    pricingAnchor: "starter-package-pricing", // Updated anchor for Starter Package
   },
   {
     name: "Growth Package",
@@ -44,7 +44,7 @@ const packages = [
     ],
     highlight: true,
     timeline: "14 Days",
-    pricingAnchor: "complete-packages", // Anchor for pricing page
+    pricingAnchor: "growth-package-pricing", // Updated anchor for Growth Package
   },
   {
     name: "Ultimate Package",
@@ -65,7 +65,7 @@ const packages = [
     ],
     highlight: false,
     timeline: "28 Days",
-    pricingAnchor: "complete-packages", // Anchor for pricing page
+    pricingAnchor: "ultimate-package-pricing", // Updated anchor for Ultimate Package
   },
 ];
 
