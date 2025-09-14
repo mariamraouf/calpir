@@ -55,6 +55,7 @@ const addOnCategoryDisplayMap: Record<string, { icon: React.ElementType, iconCol
 };
 
 const REQUEST_CUSTOM_SETUP_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7955/T9A15GLMNY3RJ1NHH3";
+const CLAIM_INDIVIDUAL_SERVICE_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-8015/KLJFO48BFQXRD1HHTP"; // Added this constant
 
 const Pricing = () => {
   const location = useLocation();
@@ -219,7 +220,7 @@ const Pricing = () => {
                   ))}
                 </ul>
                 <div className="text-center mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
-                  <a href={REQUEST_CUSTOM_SETUP_URL} target="_blank" rel="noopener noreferrer">
+                  <a href={CLAIM_INDIVIDUAL_SERVICE_URL} target="_blank" rel="noopener noreferrer">
                     <Button
                       size="lg"
                       className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
