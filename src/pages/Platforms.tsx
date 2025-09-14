@@ -199,11 +199,12 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Google Workspace", logo: "https://logo.clearbit.com/workspace.google.com?size=50" },
       { name: "Microsoft 365", logo: "https://logo.clearbit.com/microsoft.com?size=50" },
       { name: "Slack", logo: "https://logo.clearbit.com/slack.com?size=50" },
-      { name: "Zoom", logo: "/logos/zoom.png" },
+      { name: "Zoom", logo: "/logos/zoom.png" }, // Keeping local path as it exists
+      { name: "Google Meets", logo: "https://logo.clearbit.com/meet.google.com?size=50" }, // Added
+      { name: "Microsoft Teams", logo: "https://logo.clearbit.com/teams.microsoft.com?size=50" }, // Added
       { name: "Zoho Mail", logo: "https://logo.clearbit.com/zoho.com?size=50" },
       { name: "ProtonMail", logo: "https://logo.clearbit.com/proton.me?size=50" },
       { name: "Front", logo: "https://logo.clearbit.com/frontapp.com?size=50" },
-      { name: "Discord", logo: "https://logo.clearbit.com/discord.com?size=50" },
       { name: "Twist", logo: "https://logo.clearbit.com/twist.com?size=50" },
       { name: "Flock", logo: "https://logo.clearbit.com/flock.com?size=50" },
       { name: "Rocket.Chat", logo: "https://logo.clearbit.com/rocket.chat?size=50" },
@@ -214,6 +215,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Hey", logo: "https://logo.clearbit.com/hey.com?size=50" },
       { name: "Brevo", logo: "/logos/brevo-logo.png" }, // Updated to local PNG
       { name: "Mailchimp", logo: "https://logo.clearbit.com/mailchimp.com?size=50" },
+      { name: "Klaviyo", logo: "https://logo.clearbit.com/klaviyo.com?size=50" }, // Added
       { name: "Constant Contact", logo: "https://logo.clearbit.com/constantcontact.com?size=50" },
       { name: "GetResponse", logo: "https://logo.clearbit.com/getresponse.com?size=50" },
       { name: "ActiveCampaign", logo: "https://logo.clearbit.com/activecampaign.com?size=50" },
@@ -239,16 +241,11 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Facebook", logo: "https://logo.clearbit.com/facebook.com?size=50" },
       { name: "X", logo: "https://logo.clearbit.com/x.com?size=50" },
       { name: "LinkedIn", logo: "https://logo.clearbit.com/linkedin.com?size=50" },
-      { name: "TikTok", logo: "https://logo.clearbit.com/tiktok.com?size=50" },
       { name: "YouTube", logo: "https://logo.clearbit.com/youtube.com?size=50" },
       { name: "Pinterest", logo: "https://logo.clearbit.com/pinterest.com?size=50" },
-      { name: "Snapchat", logo: "https://logo.clearbit.com/snapchat.com?size=50" },
-      { name: "Reddit", logo: "https://logo.clearbit.com/reddit.com?size=50" },
       { name: "Twitter", logo: "https://logo.clearbit.com/twitter.com?size=50" },
       { name: "Threads", logo: "https://logo.clearbit.com/threads.net?size=50" },
       { name: "WhatsApp Business", logo: "https://logo.clearbit.com/whatsapp.com?size=50" },
-      { name: "Telegram", logo: "https://logo.clearbit.com/telegram.org?size=50" },
-      { name: "Discord", logo: "https://logo.clearbit.com/discord.com?size=50" },
       { name: "Vimeo", logo: "https://logo.clearbit.com/vimeo.com?size=50" },
       { name: "Patreon", logo: "https://logo.clearbit.com/patreon.com?size=50" },
     ],
@@ -357,9 +354,12 @@ const platformsToRemove = [
   "DeskTrack",
   "FreeAccountingSoftware",
   "Quora",
-  "Twitch",
-  "Clubhouse",
-  "Medium",
+  // Removed from Social Media Platforms as requested
+  "Telegram",
+  "Discord",
+  "Snapchat",
+  "TikTok",
+  "Reddit",
   "Google Search Console",
   "Docupilot",
 ];
@@ -417,9 +417,9 @@ updatedPlatformCategories.push({
 updatedPlatformCategories.push({
   name: "Design & Creative Tools",
   platforms: [
-    { name: "Canva", logo: "/logos/canva-new.jpeg" }, // Updated to new local JPEG
-    { name: "Figma", logo: "/logos/figma-new.jpeg" }, // Updated to new local JPEG
-    { name: "Adobe Photoshop", logo: "/logos/adobe-photoshop-new.webp" }, // Updated to new local WEBP
+    { name: "Canva", logo: "/logos/canva.jpeg" }, // Corrected to existing local JPEG
+    { name: "Figma", logo: "/logos/figma.png" }, // Corrected to existing local PNG
+    { name: "Adobe Photoshop", logo: "/logos/adobe-photoshop-new.webp" }, // Path already correct
     { name: "Adobe Illustrator", logo: "https://logo.clearbit.com/adobe.com?size=50" },
     { name: "Sketch", logo: "https://logo.clearbit.com/sketch.com?size=50" },
     { name: "InVision", logo: "https://logo.clearbit.com/invisionapp.com?size=50" },
