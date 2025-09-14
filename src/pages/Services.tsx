@@ -101,14 +101,14 @@ const Services = () => {
                   ))}
                 </ul>
                 <div className="text-center mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
-                  <a href={CLAIM_INDIVIDUAL_SERVICE_URL} target="_blank" rel="noopener noreferrer">
+                  <Link to={`/pricing#${service.id}`}>
                     <Button
                       size="lg"
                       className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
                     >
                       View Pricing
                     </Button>
-                  </a>
+                  </Link>
                 </div>
               </section>
             ))}
