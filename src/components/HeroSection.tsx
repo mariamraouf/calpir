@@ -4,9 +4,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom"; // Import Link
 
-const BUILD_MY_BUSINESS_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7975/TZ1NJ34TI8S352Q2G5";
-
-const HeroSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
+const HeroSection = () => {
   return (
     <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-r from-foreground to-calpir-green-900 text-white overflow-hidden">
       {/* Video Background */}
@@ -29,28 +27,28 @@ const HeroSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustom
           className="h-24 w-24 mx-auto mb-8 animate-bounce-slow"
         />
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 animate-fade-in-up">
-          Launch your dream business, together.
+          Launch your business the right way.
         </h1>
         <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-10 opacity-90 animate-fade-in-up delay-200">
-          We're your co-pilot, helping you craft a killer website, build a brand that pops, and set up systems that actually work. No gatekeeping, just genuine support to bring your vision to life. Check out our <Link to="/services" className="text-white underline hover:no-underline font-semibold">services</Link> to find your perfect fit.
+          Choose our complete business launch package for everything you need to get started, or select individual services to fill specific gaps. From professional websites to brand development to business systems that actually work - we provide personalized support whether you're starting from scratch or scaling up.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-400">
-          <a href={BUILD_MY_BUSINESS_URL} target="_blank" rel="noopener noreferrer">
+          <Link to="/pricing#complete-packages">
             <Button
               size="lg"
               className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
             >
-              Start My Business
+              Browse Full Packages
             </Button>
-          </a>
-          <a href="https://calendly.com/mariam-calpir/30min" target="_blank" rel="noopener noreferrer"> {/* Updated to new Calendly link */}
+          </Link>
+          <Link to="/services#individual-services-section">
             <Button
               size="lg"
               className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
             >
-              Get a Free Consultation
+              Check Individual Services
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
       {/* Background shapes for visual interest */}
