@@ -74,7 +74,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <a href="https://calendly.com/your-calpir-consultation" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/mariam-calpir/30min" target="_blank" rel="noopener noreferrer"> {/* Updated to new Calendly link */}
                 <Button
                   variant="link"
                   className="p-0 h-auto text-gray-300 hover:text-white transition-colors justify-start text-sm"

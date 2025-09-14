@@ -45,7 +45,7 @@ const AddOnsSection = () => {
               View All Services
             </Button>
           </Link>
-          <a href="https://calendly.com/your-calpir-consultation" target="_blank" rel="noopener noreferrer">
+          <a href="https://calendly.com/mariam-calpir/30min" target="_blank" rel="noopener noreferrer"> {/* Updated to new Calendly link */}
             <Button
               size="lg"
               variant="outline"

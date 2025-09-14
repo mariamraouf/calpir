@@ -57,8 +57,8 @@ const PageHeader = ({ title, highlightWord, description, buttons, className }: P
         {buttons && buttons.length > 0 && (
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-400">
             {buttons.map((button, index) => (
-              button.isExternal ? (
-                <a key={index} href={button.href} target="_blank" rel="noopener noreferrer">
+              button.isExternal || button.text === "Get a Free Consultation" ? ( // Added condition for "Get a Free Consultation"
+                <a key={index} href={button.text === "Get a Free Consultation" ? "https://calendly.com/mariam-calpir/30min" : button.href} target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
                     className={`text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:animate-button-glow ${
