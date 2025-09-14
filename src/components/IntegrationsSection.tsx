@@ -12,7 +12,6 @@ const integrations = [
   { name: "Xero", logo: "https://logo.clearbit.com/xero.com?size=50" },
   { name: "Slack", logo: "https://logo.clearbit.com/slack.com?size=50" },
   { name: "Mailchimp", logo: "https://logo.clearbit.com/mailchimp.com?size=50" },
-  { name: "ClickUp", logo: "/logos/clickup-logo.jpeg" }, // Second ClickUp entry, now spaced
   { name: "Zapier", logo: "https://logo.clearbit.com/zapier.com?size=50" },
   { name: "Make.com", logo: "https://logo.clearbit.com/make.com?size=50" },
   { name: "Zoho", logo: "https://logo.clearbit.com/zoho.com?size=50" },
@@ -22,7 +21,6 @@ const integrations = [
   { name: "Asana", logo: "https://logo.clearbit.com/asana.com?size=50" },
   { name: "Stripe", logo: "https://logo.clearbit.com/stripe.com?size=50" },
   { name: "Quickbooks", logo: "https://logo.clearbit.com/quickbooks.intuit.com?size=50" },
-  { name: "ClickUp", logo: "/logos/clickup-logo.jpeg" }, // Third ClickUp entry, now spaced
 ];
 
 const IntegrationsSection = () => {
