@@ -16,7 +16,7 @@ const integrations = [
   { name: "Make.com", logo: "https://logo.clearbit.com/make.com?size=50" },
   { name: "Zoho", logo: "https://logo.clearbit.com/zoho.com?size=50" },
   { name: "Go Highlevel", logo: "https://logo.clearbit.com/gohighlevel.com?size=50" },
-  { name: "Zoom", logo: "https://logo.clearbit.com/zoom.us?size=50" },
+  { name: "Zoom", logo: "/logos/zoom.png" },
   { name: "ChatGPT", logo: "https://logo.clearbit.com/openai.com?size=50" },
   { name: "Calendly", logo: "https://logo.clearbit.com/calendly.com?size=50" },
   { name: "Asana", logo: "https://logo.clearbit.com/asana.com?size=50" },

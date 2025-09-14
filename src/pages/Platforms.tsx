@@ -199,7 +199,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Google Workspace", logo: "https://logo.clearbit.com/workspace.google.com?size=50" },
       { name: "Microsoft 365", logo: "https://logo.clearbit.com/microsoft.com?size=50" },
       { name: "Slack", logo: "https://logo.clearbit.com/slack.com?size=50" },
-      { name: "Zoom", logo: "https://logo.clearbit.com/zoom.us?size=50" },
+      { name: "Zoom", logo: "/logos/zoom.png" },
       { name: "Zoho Mail", logo: "https://logo.clearbit.com/zoho.com?size=50" },
       { name: "ProtonMail", logo: "https://logo.clearbit.com/proton.me?size=50" },
       { name: "Front", logo: "https://logo.clearbit.com/frontapp.com?size=50" },
