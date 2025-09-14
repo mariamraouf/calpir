@@ -22,6 +22,8 @@ const integrations = [
   { name: "Asana", logo: "https://logo.clearbit.com/asana.com?size=50" },
   { name: "Stripe", logo: "https://logo.clearbit.com/stripe.com?size=50" },
   { name: "Quickbooks", logo: "https://logo.clearbit.com/quickbooks.intuit.com?size=50" },
+  { name: "Figma", logo: "/logos/figma-new.jpeg" },
+  { name: "Canva", logo: "/logos/canva-new.jpeg" },
 ];
 
 const IntegrationsSection = () => {

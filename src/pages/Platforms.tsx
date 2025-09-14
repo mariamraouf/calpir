@@ -190,6 +190,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Zoho Expense", logo: "https://logo.clearbit.com/zoho.com?size=50" },
       { name: "Fyle", logo: "https://logo.clearbit.com/fylehq.com?size=50" },
       { name: "EasyBooks", logo: "https://logo.clearbit.com/easybooksapp.com?size=50" },
+      { name: "Stripe", logo: "https://logo.clearbit.com/stripe.com?size=50" },
     ],
   },
   {
