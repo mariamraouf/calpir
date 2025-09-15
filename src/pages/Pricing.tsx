@@ -3,34 +3,17 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-<<<<<<< HEAD
-import { PlusCircle, BarChart2, Users, Headphones, Share2, Mail, Code, Shield, Layout, BookOpen, Settings, Clock, Puzzle, Globe, Palette, Briefcase, FileText, DollarSign, TrendingUp, Lightbulb, CheckCircle } from "lucide-react";
-=======
-import { MadeWithDyad } from "@/components/made-with-dyad";
 import {
-  PlusCircle,
-  BarChart2,
   Users,
-  Headphones,
   Share2, // Used for Social Media & Marketing
   Mail,
-  Code,
-  Shield,
-  Layout,
   BookOpen,
-  Settings,
-  Clock,
   Puzzle,
   Globe, // Used for Digital Foundation Services
-  Palette,
   Briefcase, // Used for Operations & Management Services
-  FileText,
-  DollarSign,
-  TrendingUp,
   Lightbulb, // Used for Platform & Integration Services
   CheckCircle,
 } from "lucide-react";
->>>>>>> upstream/main
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import PackageComparisonTable from "@/components/PackageComparisonTable";

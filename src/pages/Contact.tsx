@@ -1,31 +1,16 @@
 "use client";
 
-import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-<<<<<<< HEAD
-=======
-import { MadeWithDyad } from "@/components/made-with-dyad";
-import { Mail, CalendarDays, MessageSquareText, Info, Layout, DollarSign } from "lucide-react"; // Added CalendarDays, MessageSquareText, Info, Layout, DollarSign
-import PageHeader from "@/components/PageHeader";
->>>>>>> upstream/main
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+// Removed unused imports from "@/components/ui/form"
 import { toast } from "sonner"; // Using sonner for toasts
 import LocalBusinessSchema from "@/components/LocalBusinessSchema"; // Import the new schema component
+import { Mail, CalendarDays, Layout, DollarSign, Info, MessageSquareText } from "lucide-react";
+import PageHeader from "@/components/PageHeader";
 
 const CALENDLY_CONSULTATION_URL = "https://calendly.com/mariam-calpir/30min";
 const BUILD_MY_BUSINESS_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7975/TZ1NJ34TI8S352Q2G5";

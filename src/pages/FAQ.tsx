@@ -3,7 +3,6 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Link } from "react-router-dom";
 import PageHeader from "@/components/PageHeader";
 import {
@@ -166,7 +165,18 @@ const FAQ = () => {
       name: faq.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: typeof faq.answer === 'string' ? faq.answer : (faq.answer as any).props.children.map((child: any) => typeof child === 'string' ? child : child.props.children).flat().join(''),
+        text:
+          typeof faq.answer === 'string'
+            ? faq.answer
+            : React.Children.toArray((faq.answer as React.ReactElement).props.children)
+                .map((child) =>
+                  typeof child === 'string'
+                    ? child
+                    : (React.isValidElement(child) && typeof child.props.children === 'string')
+                    ? child.props.children
+                    : ''
+                )
+                .join(''),
       },
     }))
   );
@@ -221,7 +231,6 @@ const FAQ = () => {
         </section>
       </main>
       <Footer />
-      <MadeWithDyad />
     </div>
   );
 };
