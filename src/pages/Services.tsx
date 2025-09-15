@@ -10,13 +10,33 @@ import { Link } from "react-router-dom";
 import PageHeader from "@/components/PageHeader";
 import { servicesData } from "@/data/services";
 import PackageDetailsSection from "@/components/PackageDetailsSection"; // Import the new component
+import ServiceSchema from "@/components/ServiceSchema"; // Import the new schema component
+import BreadcrumbSchema from "@/components/BreadcrumbSchema"; // Import the new schema component
 
 const CLAIM_INDIVIDUAL_SERVICE_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-8015/KLJFO48BFQXRD1HHTP";
 const REQUEST_CUSTOM_SETUP_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7955/T9A15GLMNY3RJ1NHH3";
 
 const Services = () => {
+  const breadcrumbItems = [
+    { name: "Home", item: "https://www.calpir.com/" },
+    { name: "Services", item: "https://www.calpir.com/services" },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
+      <BreadcrumbSchema items={breadcrumbItems} />
+      {servicesData.map((service) => (
+        <ServiceSchema
+          key={service.id}
+          serviceType={service.title}
+          name={service.title}
+          description={service.description}
+          providerName="Calpir"
+          providerUrl="https://www.calpir.com"
+          price={service.investment.replace(/[^0-9.]/g, '')} // Extract numeric part
+          url={`https://www.calpir.com/services#${service.id}`}
+        />
+      ))}
       <Navbar />
       <main className="flex-grow">
         <PageHeader

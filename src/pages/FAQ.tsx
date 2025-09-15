@@ -12,6 +12,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema"; // Import the new schema component
 
 const REQUEST_CUSTOM_SETUP_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7955/T9A15GLMNY3RJ1NHH3";
 
@@ -154,8 +155,35 @@ const faqs = {
 };
 
 const FAQ = () => {
+  const breadcrumbItems = [
+    { name: "Home", item: "https://www.calpir.com/" },
+    { name: "FAQ", item: "https://www.calpir.com/faq" },
+  ];
+
+  const faqSchemaItems = Object.values(faqs).flatMap(categoryItems =>
+    categoryItems.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: typeof faq.answer === 'string' ? faq.answer : (faq.answer as any).props.children.map((child: any) => typeof child === 'string' ? child : child.props.children).flat().join(''),
+      },
+    }))
+  );
+
   return (
     <div className="min-h-screen flex flex-col">
+      <BreadcrumbSchema items={breadcrumbItems} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqSchemaItems,
+          }),
+        }}
+      />
       <Navbar />
       <main className="flex-grow">
         <PageHeader

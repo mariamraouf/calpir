@@ -6,10 +6,17 @@ import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Link } from "react-router-dom";
 import PageHeader from "@/components/PageHeader"; // Import PageHeader
+import BreadcrumbSchema from "@/components/BreadcrumbSchema"; // Import the new schema component
 
 const TermsOfService = () => {
+  const breadcrumbItems = [
+    { name: "Home", item: "https://www.calpir.com/" },
+    { name: "Terms of Service", item: "https://www.calpir.com/terms-of-service" },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
+      <BreadcrumbSchema items={breadcrumbItems} />
       <Navbar />
       <main className="flex-grow">
         <PageHeader

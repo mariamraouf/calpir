@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { CheckCircle } from "lucide-react";
 import PageHeader from "@/components/PageHeader"; // Import PageHeader
+import BreadcrumbSchema from "@/components/BreadcrumbSchema"; // Import the new schema component
 
 const About = () => {
   const coreServices = [
@@ -23,8 +24,14 @@ const About = () => {
     "Marketing", // Added Marketing
   ];
 
+  const breadcrumbItems = [
+    { name: "Home", item: "https://www.calpir.com/" },
+    { name: "About Us", item: "https://www.calpir.com/about" },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
+      <BreadcrumbSchema items={breadcrumbItems} />
       <Navbar />
       <main className="flex-grow">
         <PageHeader

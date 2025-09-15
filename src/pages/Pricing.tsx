@@ -33,6 +33,8 @@ import PackageComparisonTable from "@/components/PackageComparisonTable";
 import PageHeader from "@/components/PageHeader";
 import { servicesData } from "@/data/services"; // Import from central file
 import { addOnsOptions } from "@/data/addons"; // Import from central file
+import OfferCatalogSchema from "@/components/OfferCatalogSchema"; // Import the new schema component
+import BreadcrumbSchema from "@/components/BreadcrumbSchema"; // Import the new schema component
 
 // Group add-ons directly by category for rendering in Pricing page
 const groupedAddOns: Record<string, typeof addOnsOptions> = addOnsOptions.reduce((acc, addOn) => {
@@ -79,8 +81,56 @@ const Pricing = () => {
     }
   }, [location.hash]);
 
+  const packagesForSchema = [
+    {
+      name: "Starter Package",
+      description: "Complete business setup for solo entrepreneurs, launched in 7 days.",
+      price: "1499",
+      url: "https://www.calpir.com/pricing#starter-package-pricing",
+    },
+    {
+      name: "Growth Package",
+      description: "Comprehensive business setup for scaling startups, launched in 14 days.",
+      price: "2999",
+      url: "https://www.calpir.com/pricing#growth-package-pricing",
+    },
+    {
+      name: "Ultimate Package",
+      description: "Enterprise-level business setup for funded startups, launched in 28 days.",
+      price: "5999",
+      url: "https://www.calpir.com/pricing#ultimate-package-pricing",
+    },
+  ];
+
+  const individualServicesForSchema = servicesData.map(service => ({
+    name: service.title,
+    description: service.description,
+    price: service.investment.replace(/[^0-9.]/g, ''),
+    url: `https://www.calpir.com/pricing#${service.id}`,
+  }));
+
+  const addOnsForSchema = addOnsOptions.map(addOn => ({
+    name: addOn.label.split('(')[0].trim(),
+    description: `Add-on service: ${addOn.label.split('(')[0].trim()}`,
+    price: addOn.label.match(/\(\$([^)]+)\)/)?.[1]?.replace(/,/g, '') || '',
+    url: `https://www.calpir.com/pricing#${addOn.serviceId}`,
+  }));
+
+  const breadcrumbItems = [
+    { name: "Home", item: "https://www.calpir.com/" },
+    { name: "Pricing", item: "https://www.calpir.com/pricing" },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
+      <BreadcrumbSchema items={breadcrumbItems} />
+      <OfferCatalogSchema
+        name="Calpir Business Services Pricing"
+        description="Transparent pricing for Calpir's complete business launch packages and individual services for startups and entrepreneurs."
+        providerName="Calpir"
+        providerUrl="https://www.calpir.com"
+        offerItems={[...packagesForSchema, ...individualServicesForSchema, ...addOnsForSchema]}
+      />
       <Navbar />
       <main className="flex-grow">
         <PageHeader

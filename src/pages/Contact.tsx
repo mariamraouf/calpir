@@ -22,6 +22,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner"; // Using sonner for toasts
+import LocalBusinessSchema from "@/components/LocalBusinessSchema"; // Import the new schema component
 
 const CALENDLY_CONSULTATION_URL = "https://calendly.com/mariam-calpir/30min";
 const BUILD_MY_BUSINESS_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7975/TZ1NJ34TI8S352Q2G5";
@@ -60,6 +61,25 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <LocalBusinessSchema
+        name="Calpir"
+        image="https://www.calpir.com/calpir-logo.png"
+        url="https://www.calpir.com"
+        telephone="+1-555-CALPIR" // Placeholder, replace with actual
+        streetAddress="123 Business Lane" // Placeholder, replace with actual
+        addressLocality="Startup City" // Placeholder, replace with actual
+        addressRegion="ST" // Placeholder, replace with actual
+        postalCode="12345" // Placeholder, replace with actual
+        addressCountry="US" // Placeholder, replace with actual
+        priceRange="$1499 - $5999"
+        openingHours={[
+          { dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "17:00" }
+        ]}
+        areaServed={["Global"]} // Adjust if specific cities are targeted
+        hasMap="https://www.google.com/maps/place/Calpir" // Placeholder, link to GMB map
+        ratingValue="4.9" // Placeholder, based on actual reviews
+        reviewCount="75" // Placeholder, based on actual reviews
+      />
       <Navbar />
       <main className="flex-grow">
         <PageHeader
