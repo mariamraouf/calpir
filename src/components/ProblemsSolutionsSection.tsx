@@ -38,6 +38,8 @@ const solutions = [
   { label: "1 Team", detail: "vs managing 5+ specialists" },
 ];
 
+const BUILD_MY_BUSINESS_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7975/TZ1NJ34TI8S352Q2G5";
+
 const ProblemsSolutionsSection = () => { // Removed setOpenBuildMyBusinessForm prop
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-gray-950">
@@ -45,12 +47,10 @@ const ProblemsSolutionsSection = () => { // Removed setOpenBuildMyBusinessForm p
         {/* Problems Section */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-up">
-            We Know How Hard It Is for Startups
+            Starting a business? Yeah, we know the struggle is real.
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200">
-            Building a business from scratch is expensive, time-consuming, and overwhelming. You need to hire multiple specialists, coordinate different systems, and spend months just to get basic operations running.
-            <br /><br />
-            Choose complete packages or individual services that fit your budget, and our team provides cost-saving tips and efficient setup for your chosen solution.
+            Seriously, launching something from scratch can feel like a wild ride. Between the endless costs, the time suck of setting everything up, and trying to wrangle a bunch of different people and tools, it's a lot. We've been there. That's why we're all about making it simpler, whether you go for a full package or just need a few key services. We'll even share our best tips to keep things lean and efficient.
           </p>
         </div>
 
@@ -71,10 +71,10 @@ const ProblemsSolutionsSection = () => { // Removed setOpenBuildMyBusinessForm p
         {/* Solutions Section */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white animate-bounce-pop delay-600">
-            We Make It Easy for You
+            So, how about we make this easy for you?
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10 animate-bounce-pop delay-700">
-            Instead of hiring 5+ different specialists and spending months coordinating everything, get your complete business setup in just 7 days with our proven systems and experienced team.
+            Forget the headache of juggling a million freelancers and spending months just getting off the ground. We're your dedicated team, ready to get your entire business humming in just 7 days with our tried-and-true systems. We're genuinely hyped to see you win.
           </p>
         </div>
 
@@ -92,14 +92,14 @@ const ProblemsSolutionsSection = () => { // Removed setOpenBuildMyBusinessForm p
         </div>
 
         <div className="text-center animate-bounce-pop delay-1200">
-          <Link to="/build-my-business"> {/* Changed to Link */}
+          <a href={BUILD_MY_BUSINESS_URL} target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
             >
               Start Your Startup Package Today
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </section>

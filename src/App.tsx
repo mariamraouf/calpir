@@ -9,11 +9,11 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
-import BuildMyBusinessPage from "./pages/BuildMyBusinessPage";
-import CustomQuotePage from "./pages/CustomQuotePage";
 import Platforms from "./pages/Platforms";
-import PrivacyPolicy from "./pages/PrivacyPolicy"; // Import new page
-import TermsOfService from "./pages/TermsOfService"; // Import new page
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+// import PaymentTerms from "./pages/PaymentTerms"; // Removed import
+import FAQ from "./pages/FAQ";
 import ScrollToTop from "./components/ScrollToTop";
 import React from "react";
 
@@ -33,11 +33,12 @@ const App = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/build-my-business" element={<BuildMyBusinessPage />} />
-            <Route path="/get-a-quote" element={<CustomQuotePage />} />
+            {/* Removed routes for BuildMyBusinessPage, CustomQuotePage, IndividualServiceFormPage */}
             <Route path="/platforms" element={<Platforms />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} /> {/* New route */}
-            <Route path="/terms-of-service" element={<TermsOfService />} /> {/* New route */}
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            {/* Removed PaymentTerms route */}
+            <Route path="/faq" element={<FAQ />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

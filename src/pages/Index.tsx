@@ -13,10 +13,18 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button"; // Import Button
 import { Link } from "react-router-dom"; // Import Link
 import { ArrowRight } from "lucide-react"; // Import ArrowRight icon
+import OrganizationSchema from "@/components/SchemaMarkup"; // Import the new schema component
 
 const Index = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
   return (
     <div className="min-h-screen flex flex-col">
+      <OrganizationSchema
+        name="Calpir"
+        url="https://www.calpir.com"
+        logo="https://www.calpir.com/calpir-logo.png"
+        contactEmail="contact@calpir.com"
+        socialLinks={["https://www.linkedin.com/company/calpir"]} // Replace with actual social links
+      />
       <Navbar />
       <main className="flex-grow">
         <HeroSection />

@@ -4,7 +4,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom"; // Import Link
 
-const HeroSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
+const HeroSection = () => {
   return (
     <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-r from-foreground to-calpir-green-900 text-white overflow-hidden">
       {/* Video Background */}
@@ -30,28 +30,28 @@ const HeroSection = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustom
         <p style={{fontSize: '5rem', fontWeight: 'bold'}}>Calpir</p>
         </div>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 animate-fade-in-up">
-          Launch Your Business in 7 Days
+          Launch your business the right way.
         </h1>
         <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-10 opacity-90 animate-fade-in-up delay-200">
-          Start your business the right way! We create sleek websites, develop strong branding, set up efficient systems, and simplify everything with automation. Turn your vision into reality using our proven methods.
+          Choose our complete business launch package for everything you need to get started, or select individual services to fill specific gaps. From professional websites to brand development to business systems that actually work - we provide personalized support whether you're starting from scratch or scaling up.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-400">
-          <Link to="/build-my-business"> {/* Changed to Link */}
+          <Link to="/pricing#complete-packages">
             <Button
               size="lg"
               className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
             >
-              Start My Business
+              Browse Full Packages
             </Button>
           </Link>
-          <a href="https://calendly.com/your-calpir-consultation" target="_blank" rel="noopener noreferrer"> {/* Changed to external link */}
+          <Link to="/services#individual-services-section">
             <Button
               size="lg"
               className="bg-white text-primary hover:bg-gray-100 hover:text-primary text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:animate-button-glow"
             >
-              Get a Free Consultation
+              Check Individual Services
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
       {/* Background shapes for visual interest */}

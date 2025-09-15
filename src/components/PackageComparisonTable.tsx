@@ -17,14 +17,15 @@ import { CheckCircle, XCircle } from "lucide-react";
 interface Package {
   name: string;
   price: string;
+  timeline: string; // NEW
   digitalPresence: {
     websiteDevelopment: string;
     hostingDomain: boolean;
     domainRegistration: boolean;
     seoOptimization: boolean;
     socialMediaSetup: string;
-    additionalWebsitePages: string | boolean;
     ecommerceFunctionality: boolean;
+    designBranding: boolean; // NEW
   };
   businessOperations: {
     projectManagement: string;
@@ -32,26 +33,16 @@ interface Package {
     accountingSystem: string;
     platformMigration: string;
     integrations: string;
-    analyticsReporting: string;
+    // analyticsReporting: string; // Removed
     businessAutomations: string | boolean;
     sops: boolean;
     payroll: boolean;
-    performanceManagement: boolean;
   };
   humanResources: {
-    employeeProfiles: boolean;
-    legalTemplates: string;
-    recruitingSupport: string;
-    singleRoleRecruitment: boolean;
-    multiRoleRecruitment: boolean;
-    comprehensiveRecruitment: boolean;
-    advancedHrSystem: string;
-    onboardingOffboardingWorkflows: string | boolean;
-    timeTracking: string | boolean;
-    timeAttendanceTracking: string | boolean;
-    employeeEngagementSurveys: boolean;
+    legalCompliance: string | boolean; // NEW
+    hrOperationsPayroll: boolean; // NEW
   };
-  training: { // Only basic training sessions remain
+  training: {
     basicTrainingSessions: boolean;
   };
 }
@@ -61,39 +52,30 @@ const packages: Package[] = [
   {
     name: "Starter Package",
     price: "$1,499",
+    timeline: "7 Days", // NEW
     digitalPresence: {
-      websiteDevelopment: "5 pages",
+      websiteDevelopment: "5 pages", // AMENDED
       hostingDomain: true,
       domainRegistration: true,
       seoOptimization: false,
       socialMediaSetup: "2 platforms + 5 posts",
-      additionalWebsitePages: false,
       ecommerceFunctionality: false,
+      designBranding: false, // NEW
     },
     businessOperations: {
-      projectManagement: "Basic (2 workspaces)",
+      projectManagement: "Basic (2 workspaces)", // AMENDED
       crmSetup: "Basic contact tracking",
       accountingSystem: "Simple invoicing",
       platformMigration: "1 platform",
       integrations: "2 connections",
-      analyticsReporting: "Monthly summary",
+      // analyticsReporting: "Monthly summary", // Removed
       businessAutomations: false,
       sops: false,
       payroll: false,
-      performanceManagement: false,
     },
     humanResources: {
-      employeeProfiles: true,
-      legalTemplates: "Contract draft only",
-      recruitingSupport: "Job templates",
-      singleRoleRecruitment: false,
-      multiRoleRecruitment: false,
-      comprehensiveRecruitment: false,
-      advancedHrSystem: "",
-      onboardingOffboardingWorkflows: false,
-      timeTracking: false,
-      timeAttendanceTracking: false,
-      employeeEngagementSurveys: false,
+      legalCompliance: "Contract Draft only", // AMENDED
+      hrOperationsPayroll: false, // NEW
     },
     training: {
       basicTrainingSessions: false,
@@ -102,39 +84,30 @@ const packages: Package[] = [
   {
     name: "Growth Package",
     price: "$2,999",
+    timeline: "14 Days", // NEW
     digitalPresence: {
       websiteDevelopment: "10 pages",
       hostingDomain: true,
       domainRegistration: true,
       seoOptimization: true,
-      socialMediaSetup: "5 platforms + 10 posts",
-      additionalWebsitePages: "Up to 5 pages",
+      socialMediaSetup: "4 platforms + 10 posts", // AMENDED
       ecommerceFunctionality: false,
+      designBranding: false, // NEW
     },
     businessOperations: {
-      projectManagement: "Enhanced (5 workspaces)",
+      projectManagement: "Enhanced (4 workspaces)", // AMENDED
       crmSetup: "Advanced with automation",
       accountingSystem: "Expense tracking",
-      platformMigration: "2-3 platforms",
-      integrations: "5 connections",
-      analyticsReporting: "Monthly insights + Recommendation",
+      platformMigration: "3 platforms", // AMENDED
+      integrations: "3 connections", // AMENDED
+      // analyticsReporting: "Monthly insights + Recommendation", // Removed
       businessAutomations: "Basic Automation Setup",
       sops: true,
       payroll: false,
-      performanceManagement: false,
     },
     humanResources: {
-      employeeProfiles: true,
-      legalTemplates: "✓",
-      recruitingSupport: "Job postings on 2 global sites",
-      singleRoleRecruitment: false,
-      multiRoleRecruitment: false,
-      comprehensiveRecruitment: false,
-      advancedHrSystem: "ATS & talent pipeline",
-      onboardingOffboardingWorkflows: true,
-      timeTracking: "Advanced timetracking with reports",
-      timeAttendanceTracking: true,
-      employeeEngagementSurveys: false,
+      legalCompliance: true, // NEW
+      hrOperationsPayroll: false, // NEW
     },
     training: {
       basicTrainingSessions: true,
@@ -143,39 +116,30 @@ const packages: Package[] = [
   {
     name: "Ultimate Package",
     price: "$5,999",
+    timeline: "28 Days", // NEW
     digitalPresence: {
       websiteDevelopment: "Unlimited pages",
       hostingDomain: true,
       domainRegistration: true,
       seoOptimization: true,
-      socialMediaSetup: "5+ platforms + 20 posts",
-      additionalWebsitePages: "Unlimited pages",
+      socialMediaSetup: "5+ platforms + 15 posts", // AMENDED
       ecommerceFunctionality: true,
+      designBranding: true, // NEW
     },
     businessOperations: {
-      projectManagement: "Advanced (unlimited)",
+      projectManagement: "Advanced (unlimited)", // AMENDED
       crmSetup: "Predictive automation",
       accountingSystem: "Forecasting tools",
       platformMigration: "Multiple platforms",
       integrations: "Unlimited",
-      analyticsReporting: "Weekly insights + Recommendation",
+      // analyticsReporting: "Weekly insights + Recommendation", // Removed
       businessAutomations: "Advanced Automation Package",
       sops: true,
       payroll: true,
-      performanceManagement: true,
     },
     humanResources: {
-      employeeProfiles: true,
-      legalTemplates: "✓",
-      recruitingSupport: "Full strategy + sourcing for 1 global role",
-      singleRoleRecruitment: true,
-      multiRoleRecruitment: false,
-      comprehensiveRecruitment: false,
-      advancedHrSystem: "Scalable ATS system",
-      onboardingOffboardingWorkflows: true,
-      timeTracking: "Advanced timetracking with reports and dashboard",
-      timeAttendanceTracking: "Advanced Tracking",
-      employeeEngagementSurveys: true,
+      legalCompliance: true, // NEW
+      hrOperationsPayroll: true, // NEW
     },
     training: {
       basicTrainingSessions: true,
@@ -190,12 +154,12 @@ const comparisonFeatures = [
     key: "digitalPresence",
     features: [
       { key: "websiteDevelopment", label: "Website Development" },
-      { key: "hostingDomain", label: "Hosting & Domain" },
+      { key: "hostingDomain", label: "Hosting" }, // AMENDED LABEL
       { key: "domainRegistration", label: "Domain Registration" },
       { key: "seoOptimization", label: "SEO Optimization" },
       { key: "socialMediaSetup", label: "Social Media Setup" },
-      { key: "additionalWebsitePages", label: "Additional Website Pages" },
       { key: "ecommerceFunctionality", label: "E-commerce Functionality" },
+      { key: "designBranding", label: "Design & Branding Package" }, // NEW
     ],
   },
   {
@@ -207,28 +171,18 @@ const comparisonFeatures = [
       { key: "accountingSystem", label: "Accounting System" },
       { key: "platformMigration", label: "Platform Migration" },
       { key: "integrations", label: "Integrations" },
-      { key: "analyticsReporting", label: "Analytics & Reporting" },
+      // { key: "analyticsReporting", label: "Analytics & Reporting" }, // Removed
       { key: "businessAutomations", label: "Business Automations" },
-      { key: "sops", label: "Standard Operating Procedures (SOPs)" }, // Expanded abbreviation
+      { key: "sops", label: "Standard Operating Procedures (SOPs)" },
       { key: "payroll", label: "Payroll" },
-      { key: "performanceManagement", label: "Performance Management" },
     ],
   },
   {
-    category: "Human Resources",
+    category: "Human Resources", // NEW CATEGORY STRUCTURE
     key: "humanResources",
     features: [
-      { key: "employeeProfiles", label: "Employee Profiles" },
-      { key: "legalTemplates", label: "Legal Templates (Contracts, NDAs, Handbook)" },
-      { key: "recruitingSupport", label: "Recruiting Support" },
-      { key: "singleRoleRecruitment", label: "Single Role Recruitment" },
-      { key: "multiRoleRecruitment", label: "Multi-Role Recruitment" },
-      { key: "comprehensiveRecruitment", label: "Comprehensive Recruitment (3 months)" },
-      { key: "advancedHrSystem", label: "Advanced HR System (Applicant Tracking System - ATS)" }, // Expanded abbreviation
-      { key: "onboardingOffboardingWorkflows", label: "Onboarding/Offboarding Workflows" },
-      { key: "timeTracking", label: "Time Tracking" },
-      { key: "timeAttendanceTracking", label: "Time/Attendance Tracking" },
-      { key: "employeeEngagementSurveys", label: "Employee Engagement Surveys" },
+      { key: "legalCompliance", label: "Legal & Compliance" },
+      { key: "hrOperationsPayroll", label: "HR Operations & Payroll" },
     ],
   },
   {
@@ -240,90 +194,173 @@ const comparisonFeatures = [
   },
 ];
 
-const PackageComparisonTable = () => {
-  return (
-    <div className="overflow-x-auto rounded-2xl border border-palette-blue-100 dark:border-gray-700 shadow-lg bg-white dark:bg-gray-800 animate-fade-in-up delay-1000">
-      <Table className="w-full text-left table-fixed">
-        <TableHeader className="bg-gray-100 dark:bg-gray-900">
-          <TableRow className="border-b border-palette-blue-100 dark:border-gray-700">
-            <TableHead className="min-w-[200px] p-4 text-lg font-semibold text-gray-900 dark:text-white">Features</TableHead>
-            {packages.map((pkg, index) => (
-              <TableHead key={index} className="p-4 text-center text-lg font-semibold text-primary dark:text-calpir-green-300">
-                {pkg.name.replace(" Package", "")}
-              </TableHead>
-            ))}
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {/* Price Row */}
-          <TableRow className="border-b border-palette-blue-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-            <TableCell className="p-4 font-bold text-lg text-gray-900 dark:text-white">Price</TableCell>
-            {packages.map((pkg, pkgIndex) => (
-              <TableCell key={pkgIndex} className="p-4 text-center text-2xl font-extrabold text-primary dark:text-calpir-green-300">
-                {pkg.price}
-              </TableCell>
-            ))}
-          </TableRow>
+const CLAIM_INDIVIDUAL_SERVICE_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-8015/KLJFO48BFQXRD1HHTP";
 
-          {/* Render categorized features */}
-          {comparisonFeatures.map((categoryGroup, categoryIndex) => (
-            <React.Fragment key={categoryIndex}>
-              <TableRow className="bg-gray-50 dark:bg-gray-900 border-b border-palette-blue-100 dark:border-gray-700">
-                <TableCell colSpan={packages.length + 1} className="p-4 text-xl font-bold text-gray-900 dark:text-white">
-                  {categoryGroup.category}
+const PackageComparisonTable = () => {
+  // This render function is primarily for the desktop table cells
+  const renderDesktopFeatureValue = (value: string | boolean | null) => {
+    if (value === true || value === "✓") {
+      return (
+        <div className="flex items-center justify-center">
+          <CheckCircle className="h-5 w-5 text-calpir-green-500" />
+        </div>
+      );
+    } else if (value === false || value === "" || value === null) {
+      return (
+        <div className="flex items-center justify-center">
+          <XCircle className="h-5 w-5 text-palette-red-500" />
+        </div>
+      );
+    } else {
+      return (
+        <span className="text-sm text-gray-800 dark:text-gray-200 text-center">
+          {value}
+        </span>
+      );
+    }
+  };
+
+  return (
+    <>
+      {/* Desktop View (Table) */}
+      <div className="hidden md:block overflow-x-auto rounded-2xl border border-palette-blue-100 dark:border-gray-700 shadow-lg bg-white dark:bg-gray-800 animate-fade-in-up delay-1000">
+        <Table className="min-w-full text-left table-fixed"> {/* Added table-fixed */}
+          <TableHeader className="bg-gray-100 dark:bg-gray-900">
+            <TableRow className="border-b border-palette-blue-100 dark:border-gray-700">
+              <TableHead className="w-[250px] p-4 text-lg font-semibold text-gray-900 dark:text-white">Features</TableHead> {/* Fixed width for first column */}
+              {packages.map((pkg, index) => (
+                <TableHead key={index} id={pkg.name.toLowerCase().replace(/\s/g, '-') + '-pricing'} className="w-1/3 p-4 text-center text-lg font-semibold text-primary dark:text-calpir-green-300"> {/* Equal width for package columns */}
+                  {pkg.name.replace(" Package", "")}
+                </TableHead>
+              ))}
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {/* Price Row */}
+            <TableRow className="border-b border-palette-blue-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+              <TableCell className="w-[250px] p-4 font-bold text-lg text-gray-900 dark:text-white">Price</TableCell>
+              {packages.map((pkg, pkgIndex) => (
+                <TableCell key={pkgIndex} className="w-1/3 p-4 text-center text-2xl font-extrabold text-primary dark:text-calpir-green-300">
+                  {pkg.price}
                 </TableCell>
-              </TableRow>
-              {categoryGroup.features.map((featureItem, featureIndex) => (
-                <TableRow key={`${categoryGroup.key}-${featureIndex}`} className="border-b border-palette-blue-100 dark:border-gray-700 last:border-b-0 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                  <TableCell className="p-4 font-medium text-gray-800 dark:text-gray-200">{featureItem.label}</TableCell>
-                  {packages.map((pkg, pkgIndex) => {
-                    // Access the feature value from the nested package structure
+              ))}
+            </TableRow>
+            {/* Timeline Row */}
+            <TableRow className="border-b border-palette-blue-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+              <TableCell className="w-[250px] p-4 font-bold text-lg text-gray-900 dark:text-white">Launch Timeline</TableCell>
+              {packages.map((pkg, pkgIndex) => (
+                <TableCell key={pkgIndex} className="w-1/3 p-4 text-center text-lg font-semibold text-gray-800 dark:text-gray-200">
+                  {pkg.timeline}
+                </TableCell>
+              ))}
+            </TableRow>
+
+            {/* Render categorized features */}
+            {comparisonFeatures.map((categoryGroup, categoryIndex) => (
+              <React.Fragment key={categoryIndex}>
+                <TableRow className="bg-gray-50 dark:bg-gray-900 border-b border-palette-blue-100 dark:border-gray-700">
+                  <TableCell colSpan={packages.length + 1} className="p-4 text-xl font-bold text-gray-900 dark:text-white">
+                    {categoryGroup.category}
+                  </TableCell>
+                </TableRow>
+                {categoryGroup.features.map((featureItem, featureIndex) => (
+                  <TableRow key={`${categoryGroup.key}-${featureIndex}`} className="border-b border-palette-blue-100 dark:border-gray-700 last:border-b-0 last:pb-0 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+                    <TableCell className="w-[250px] p-4 font-medium text-gray-800 dark:text-gray-200">{featureItem.label}</TableCell>
+                    {packages.map((pkg, pkgIndex) => {
+                      const categoryData = pkg[categoryGroup.key as keyof Package];
+                      const featureValue = categoryData ? (categoryData as any)[featureItem.key] : null;
+                      return (
+                        <TableCell key={pkgIndex} className="w-1/3 p-4 text-center text-gray-700 dark:text-gray-300">
+                          {renderDesktopFeatureValue(featureValue)}
+                        </TableCell>
+                      );
+                    })}
+                  </TableRow>
+                ))}
+              </React.Fragment>
+            ))}
+
+            {/* Buttons Row */}
+            <TableRow className="bg-gray-100 dark:bg-gray-900 border-t border-palette-blue-100 dark:border-gray-700">
+              <TableCell className="w-[250px] p-4"></TableCell>
+              {packages.map((pkg, pkgIndex) => (
+                <TableCell key={pkgIndex} className="w-1/3 p-4 text-center">
+                  <a href={CLAIM_INDIVIDUAL_SERVICE_URL} target="_blank" rel="noopener noreferrer">
+                    <Button
+                      size="lg"
+                      className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
+                    >
+                      Start My Package
+                    </Button>
+                  </a>
+                </TableCell>
+              ))}
+            </TableRow>
+          </TableBody>
+        </Table>
+      </div>
+
+      {/* Mobile View (Stacked Cards) */}
+      <div className="block md:hidden space-y-8 animate-fade-in-up delay-1000">
+        {packages.map((pkg, pkgIndex) => (
+          <div
+            key={pkgIndex}
+            id={pkg.name.toLowerCase().replace(/\s/g, '-') + '-pricing'} // Add ID for mobile view as well
+            className="flex flex-col p-6 rounded-2xl shadow-lg border-2 border-primary bg-white dark:bg-gray-800"
+          >
+            <h3 className="text-2xl font-bold mb-2 text-center text-primary dark:text-calpir-green-300">
+              {pkg.name}
+            </h3>
+            <p className="text-4xl font-extrabold text-center text-primary dark:text-calpir-green-300 mb-6">
+              {pkg.price}
+            </p>
+            <div className="mb-4">
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white border-b pb-2 mb-3">
+                Launch Timeline
+              </h4>
+              <p className="text-lg text-gray-800 dark:text-gray-200 text-center">{pkg.timeline}</p>
+            </div>
+
+            {comparisonFeatures.map((categoryGroup, categoryIndex) => (
+              <div key={categoryIndex} className="mb-4 last:mb-0">
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white border-b pb-2 mb-3">
+                  {categoryGroup.category}
+                </h4>
+                <ul className="space-y-2">
+                  {categoryGroup.features.map((featureItem, featureIndex) => {
                     const categoryData = pkg[categoryGroup.key as keyof Package];
                     const featureValue = categoryData ? (categoryData as any)[featureItem.key] : null;
-
                     return (
-                      <TableCell key={pkgIndex} className="p-4 text-center text-gray-700 dark:text-gray-300">
+                      <li key={featureIndex} className="flex items-center justify-between text-gray-700 dark:text-gray-300 py-1">
+                        <span className="font-medium text-gray-900 dark:text-white">{featureItem.label}:</span>
                         {featureValue === true || featureValue === "✓" ? (
-                          <div className="flex items-center justify-center">
-                            <CheckCircle className="h-5 w-5 text-calpir-green-500" />
-                          </div>
+                          <CheckCircle className="h-5 w-5 text-calpir-green-500 flex-shrink-0 ml-2" />
                         ) : featureValue === false || featureValue === "" || featureValue === null ? (
-                          <div className="flex items-center justify-center">
-                            <XCircle className="h-5 w-5 text-palette-red-500" />
-                          </div>
+                          <XCircle className="h-5 w-5 text-palette-red-500 flex-shrink-0 ml-2" />
                         ) : (
-                          <div className="flex items-center justify-center space-x-2">
-                            <CheckCircle className="h-5 w-5 text-calpir-green-500" />
-                            <span className="text-sm text-gray-800 dark:text-gray-200">{featureValue}</span>
-                          </div>
+                          <span className="text-sm text-gray-800 dark:text-gray-200 text-right flex-shrink-0 ml-2">{featureValue}</span>
                         )}
-                      </TableCell>
+                      </li>
                     );
                   })}
-                </TableRow>
-              ))}
-            </React.Fragment>
-          ))}
-
-          {/* Buttons Row */}
-          <TableRow className="bg-gray-100 dark:bg-gray-900 border-t border-palette-blue-100 dark:border-gray-700">
-            <TableCell className="p-4"></TableCell>
-            {packages.map((pkg, pkgIndex) => (
-              <TableCell key={pkgIndex} className="p-4 text-center">
-                <Link to="/build-my-business">
-                  <Button
-                    size="lg"
-                    className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-10 py-4 rounded-2xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
-                  >
-                    Start My Package
-                  </Button>
-                </Link>
-              </TableCell>
+                </ul>
+              </div>
             ))}
-          </TableRow>
-        </TableBody>
-      </Table>
-    </div>
+
+            <div className="mt-8 text-center">
+              <a href={CLAIM_INDIVIDUAL_SERVICE_URL} target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="lg"
+                  className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:animate-button-glow"
+                >
+                  Start My Package
+                </Button>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

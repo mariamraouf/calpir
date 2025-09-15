@@ -5,17 +5,24 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import PageHeader from "@/components/PageHeader"; // Import PageHeader
+import BreadcrumbSchema from "@/components/BreadcrumbSchema"; // Import the new schema component
 
 const TermsOfService = () => {
+  const breadcrumbItems = [
+    { name: "Home", item: "https://www.calpir.com/" },
+    { name: "Terms of Service", item: "https://www.calpir.com/terms-of-service" },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
+      <BreadcrumbSchema items={breadcrumbItems} />
       <Navbar />
       <main className="flex-grow">
         <PageHeader
           title="Terms of Service"
-          description="Welcome to Calpir. By accessing or using our services, you agree to be bound by these Terms of Service. Please read them carefully."
+          description="Welcome to Calpir! By using our services, you're agreeing to these terms. It's all about keeping things fair and clear for everyone, so give them a read."
           buttons={[
-            { text: "Start My Business", href: "/build-my-business", variant: "primary" },
+            { text: "Start My Business", href: "/build-my-business", variant: "primary", isExternal: true },
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
           ]}
         />
@@ -70,7 +77,7 @@ const TermsOfService = () => {
 
             <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">9. Contact Information</h2>
             <p className="mb-4">
-              If you have any questions about these Terms, please contact us at <a href="mailto:hello@calpir.com" className="text-primary hover:underline">hello@calpir.com</a>.
+              If you have any questions about these Terms, please contact us at <a href="mailto:contact@calpir.com" className="text-primary hover:underline">contact@calpir.com</a>.
             </p>
 
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-8 italic">

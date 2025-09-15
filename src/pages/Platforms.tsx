@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Puzzle } from "lucide-react";
 import PageHeader from "@/components/PageHeader"; // Import PageHeader
+import BreadcrumbSchema from "@/components/BreadcrumbSchema"; // Import the new schema component
 
 interface Platform {
   name: string;
@@ -26,7 +27,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Monday.com", logo: "https://logo.clearbit.com/monday.com?size=50" },
       { name: "Trello", logo: "https://logo.clearbit.com/trello.com?size=50" },
       { name: "Jira", logo: "https://logo.clearbit.com/atlassian.com?size=50" },
-      { name: "ClickUp", logo: "https://logo.clearbit.com/clickup.com?size=50" },
+      { name: "ClickUp", logo: "/logos/clickup-logo.jpeg" }, // Updated to local JPEG
       { name: "Basecamp", logo: "https://logo.clearbit.com/basecamp.com?size=50" },
       { name: "Wrike", logo: "https://logo.clearbit.com/wrike.com?size=50" },
       { name: "Notion", logo: "https://logo.clearbit.com/notion.so?size=50" },
@@ -41,7 +42,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Freedcamp", logo: "https://logo.clearbit.com/freedcamp.com?size=50" },
       { name: "Paymo", logo: "https://logo.clearbit.com/paymoapp.com?size=50" },
       { name: "Avaza", logo: "https://logo.clearbit.com/avaza.com?size=50" },
-      { name: "Nifty", logo: "https://logo.clearbit.com/nifty.pm?size=50" },
+      { name: "Nifty", logo: "/logos/nifty-logo.svg" }, // Still local SVG
       { name: "Hive", logo: "https://logo.clearbit.com/hive.com?size=50" },
       { name: "MeisterTask", logo: "https://logo.clearbit.com/meistertask.com?size=50" },
       { name: "Ganttic", logo: "https://logo.clearbit.com/ganttic.com?size=50" },
@@ -87,7 +88,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Factorial", logo: "https://logo.clearbit.com/factorialhr.com?size=50" },
       { name: "15Five", logo: "https://logo.clearbit.com/15five.com?size=50" },
       { name: "Culture Amp", logo: "https://logo.clearbit.com/cultureamp.com?size=50" },
-      { name: "Freshteam", logo: "https://logo.clearbit.com/freshteam.com?size=50" },
+      { name: "Freshteam", logo: "/logos/freshteam-logo.svg" }, // Still local SVG
       { name: "Lattice", logo: "https://logo.clearbit.com/lattice.com?size=50" },
       { name: "Mindbody Business", logo: "https://logo.clearbit.com/mindbodyonline.com?size=50" },
       { name: "GoCo", logo: "https://logo.clearbit.com/goco.io?size=50" },
@@ -189,6 +190,7 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Zoho Expense", logo: "https://logo.clearbit.com/zoho.com?size=50" },
       { name: "Fyle", logo: "https://logo.clearbit.com/fylehq.com?size=50" },
       { name: "EasyBooks", logo: "https://logo.clearbit.com/easybooksapp.com?size=50" },
+      { name: "Stripe", logo: "https://logo.clearbit.com/stripe.com?size=50" },
     ],
   },
   {
@@ -197,11 +199,12 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Google Workspace", logo: "https://logo.clearbit.com/workspace.google.com?size=50" },
       { name: "Microsoft 365", logo: "https://logo.clearbit.com/microsoft.com?size=50" },
       { name: "Slack", logo: "https://logo.clearbit.com/slack.com?size=50" },
-      { name: "Zoom", logo: "https://logo.clearbit.com/zoom.us?size=50" },
+      { name: "Zoom", logo: "/logos/zoom.png" }, // Keeping local path as it exists
+      { name: "Google Meets", logo: "https://logo.clearbit.com/meet.google.com?size=50" }, // Added
+      { name: "Microsoft Teams", logo: "https://logo.clearbit.com/teams.microsoft.com?size=50" }, // Added
       { name: "Zoho Mail", logo: "https://logo.clearbit.com/zoho.com?size=50" },
       { name: "ProtonMail", logo: "https://logo.clearbit.com/proton.me?size=50" },
       { name: "Front", logo: "https://logo.clearbit.com/frontapp.com?size=50" },
-      { name: "Discord", logo: "https://logo.clearbit.com/discord.com?size=50" },
       { name: "Twist", logo: "https://logo.clearbit.com/twist.com?size=50" },
       { name: "Flock", logo: "https://logo.clearbit.com/flock.com?size=50" },
       { name: "Rocket.Chat", logo: "https://logo.clearbit.com/rocket.chat?size=50" },
@@ -210,8 +213,9 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Spike", logo: "https://logo.clearbit.com/spikenow.com?size=50" },
       { name: "Superhuman", logo: "https://logo.clearbit.com/superhuman.com?size=50" },
       { name: "Hey", logo: "https://logo.clearbit.com/hey.com?size=50" },
-      { name: "Brevo", logo: "https://logo.clearbit.com/brevo.com?size=50" },
+      { name: "Brevo", logo: "/logos/brevo-logo.png" }, // Updated to local PNG
       { name: "Mailchimp", logo: "https://logo.clearbit.com/mailchimp.com?size=50" },
+      { name: "Klaviyo", logo: "https://logo.clearbit.com/klaviyo.com?size=50" }, // Added
       { name: "Constant Contact", logo: "https://logo.clearbit.com/constantcontact.com?size=50" },
       { name: "GetResponse", logo: "https://logo.clearbit.com/getresponse.com?size=50" },
       { name: "ActiveCampaign", logo: "https://logo.clearbit.com/activecampaign.com?size=50" },
@@ -237,16 +241,11 @@ const initialPlatformCategories: PlatformCategory[] = [
       { name: "Facebook", logo: "https://logo.clearbit.com/facebook.com?size=50" },
       { name: "X", logo: "https://logo.clearbit.com/x.com?size=50" },
       { name: "LinkedIn", logo: "https://logo.clearbit.com/linkedin.com?size=50" },
-      { name: "TikTok", logo: "https://logo.clearbit.com/tiktok.com?size=50" },
       { name: "YouTube", logo: "https://logo.clearbit.com/youtube.com?size=50" },
       { name: "Pinterest", logo: "https://logo.clearbit.com/pinterest.com?size=50" },
-      { name: "Snapchat", logo: "https://logo.clearbit.com/snapchat.com?size=50" },
-      { name: "Reddit", logo: "https://logo.clearbit.com/reddit.com?size=50" },
       { name: "Twitter", logo: "https://logo.clearbit.com/twitter.com?size=50" },
       { name: "Threads", logo: "https://logo.clearbit.com/threads.net?size=50" },
       { name: "WhatsApp Business", logo: "https://logo.clearbit.com/whatsapp.com?size=50" },
-      { name: "Telegram", logo: "https://logo.clearbit.com/telegram.org?size=50" },
-      { name: "Discord", logo: "https://logo.clearbit.com/discord.com?size=50" },
       { name: "Vimeo", logo: "https://logo.clearbit.com/vimeo.com?size=50" },
       { name: "Patreon", logo: "https://logo.clearbit.com/patreon.com?size=50" },
     ],
@@ -355,9 +354,12 @@ const platformsToRemove = [
   "DeskTrack",
   "FreeAccountingSoftware",
   "Quora",
-  "Twitch",
-  "Clubhouse",
-  "Medium",
+  // Removed from Social Media Platforms as requested
+  "Telegram",
+  "Discord",
+  "Snapchat",
+  "TikTok",
+  "Reddit",
   "Google Search Console",
   "Docupilot",
 ];
@@ -380,6 +382,7 @@ updatedPlatformCategories.push({
     { name: "Teamlogger", logo: "https://logo.clearbit.com/teamlogger.com?size=50" },
     { name: "Tempo", logo: "https://logo.clearbit.com/tempo.io?size=50" },
     { name: "Hubstaff", logo: "https://logo.clearbit.com/hubstaff.com?size=50" },
+    { name: "ClickUp Native Time Tracking", logo: "/logos/clickup-logo.jpeg" }, // Added ClickUp Native Time Tracking with new JPEG
   ],
 });
 
@@ -410,18 +413,44 @@ updatedPlatformCategories.push({
   ],
 });
 
+// Add a new "Design & Creative Tools" category
+updatedPlatformCategories.push({
+  name: "Design & Creative Tools",
+  platforms: [
+    { name: "Canva", logo: "/logos/canva.jpeg" }, // Corrected to existing local JPEG
+    { name: "Figma", logo: "/logos/figma.png" }, // Corrected to existing local PNG
+    { name: "Adobe Photoshop", logo: "/logos/adobe-photoshop-new.webp" }, // Path already correct
+    { name: "Adobe Illustrator", logo: "https://logo.clearbit.com/adobe.com?size=50" },
+    { name: "Sketch", logo: "https://logo.clearbit.com/sketch.com?size=50" },
+    { name: "InVision", logo: "https://logo.clearbit.com/invisionapp.com?size=50" },
+    { name: "Miro", logo: "https://logo.clearbit.com/miro.com?size=50" },
+    { name: "Whimsical", logo: "https://logo.clearbit.com/whimsical.com?size=50" },
+    { name: "Procreate", logo: "https://logo.clearbit.com/procreate.art?size=50" },
+    { name: "Affinity Designer", logo: "https://logo.clearbit.com/affinity.serif.com?size=50" },
+    { name: "GIMP", logo: "https://logo.clearbit.com/gimp.org?size=50" },
+    { name: "Inkscape", logo: "https://logo.clearbit.com/inkscape.org?size=50" },
+  ],
+});
+
+const REQUEST_CUSTOM_SETUP_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7955/T9A15GLMNY3RJ1NHH3";
 
 const Platforms = () => {
+  const breadcrumbItems = [
+    { name: "Home", item: "https://www.calpir.com/" },
+    { name: "Platforms", item: "https://www.calpir.com/platforms" },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
+      <BreadcrumbSchema items={breadcrumbItems} />
       <Navbar />
       <main className="flex-grow">
         <PageHeader
           title="Platforms We Master"
           highlightWord="Master"
-          description="Our expertise spans a vast array of industry-leading and niche platforms. If you don't see your preferred tool, just ask!"
+          description="We're basically platform wizards, fluent in a ton of industry-leading and super niche tools. Seriously, if you don't spot your go-to here, just hit us up – chances are, we've got you covered!"
           buttons={[
-            { text: "Request a Custom Set Up", href: "/get-a-quote", variant: "primary" },
+            { text: "Request a Custom Set Up", href: "/get-a-quote", variant: "primary", isExternal: true },
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
           ]}
         />
@@ -478,14 +507,14 @@ const Platforms = () => {
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
               Our expertise isn't limited to this list. If you have a specific platform or unique setup in mind, we can create a custom solution tailored just for you.
             </p>
-            <Link to="/get-a-quote">
+            <a href={REQUEST_CUSTOM_SETUP_URL} target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
                 className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:animate-button-glow"
               >
                 Request a Custom Set Up
               </Button>
-            </Link>
+            </a>
           </section>
         </section>
       </main>

@@ -1,35 +1,26 @@
 "use client";
 
 import React from "react";
+import { Puzzle } from "lucide-react"; // Import Puzzle icon for fallback
 
 const integrations = [
-  // Explicitly requested and top-tier integrations
-  { name: "ClickUp", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/clickup.svg", gradient: "linear-gradient(135deg, #7B68EE, #FF6B9D)" },
-  { name: "Slack", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/slack.svg", gradient: "linear-gradient(45deg, #E01E5A, #36C5F0, #2EB67D, #ECB22E)" },
-  { name: "Google Workspace", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/google.svg", gradient: "linear-gradient(135deg, #4285F4, #34A853, #FBBC04)" },
-  { name: "Microsoft 365", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoft365.svg", gradient: "linear-gradient(135deg, #FFB900, #0078D4)" },
-  { name: "Calendly", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/calendly.svg", gradient: "linear-gradient(135deg, #006BFF, #0057D9)" },
-
-  // Other highly recognized platforms
-  { name: "HubSpot", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/hubspot.svg", gradient: "linear-gradient(135deg, #FF7A59, #FF5C35)" },
-  { name: "Salesforce", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/salesforce.svg", gradient: "linear-gradient(135deg, #00A1E0, #0099E0)" },
-  { name: "Zoom", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/zoom.svg", gradient: "linear-gradient(135deg, #2D8CFF, #0066CC)" },
-  { name: "Notion", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/notion.svg", gradient: "linear-gradient(135deg, #000000, #37352F)" },
-  { name: "Jira", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/jira.svg", gradient: "linear-gradient(135deg, #0052CC, #2684FF)" },
-  { name: "Trello", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/trello.svg", gradient: "linear-gradient(135deg, #0079BF, #026AA7)" },
-  { name: "Asana", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/asana.svg", gradient: "linear-gradient(135deg, #F06A6A, #F37A7A)" },
-  { name: "Zapier", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/zapier.svg", gradient: "linear-gradient(135deg, #FF4A00, #FF6B35)" },
-  { name: "Make", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/integromat.svg", gradient: "linear-gradient(135deg, #6C5CE7, #A29BFE)" },
-  { name: "ChatGPT", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg", gradient: "linear-gradient(135deg, #10A37F, #008060)" },
-  { name: "Claude", iconUrl: "/logos/claude.svg", gradient: "linear-gradient(135deg, #8A2BE2, #9370DB)" },
-  { name: "ERP", iconUrl: "/logos/erp.svg", gradient: "linear-gradient(135deg, #795548, #A1887F)" },
-  { name: "Mailchimp", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/mailchimp.svg", gradient: "linear-gradient(135deg, #FFE01B, #FFD60D)" },
-  { name: "QuickBooks", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/quickbooks.svg", gradient: "linear-gradient(135deg, #0077C5, #2CA01C)" },
-  { name: "Xero", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xero.svg", gradient: "linear-gradient(135deg, #13B5EA, #00A4DB)" },
-  { name: "Stripe", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/stripe.svg", gradient: "linear-gradient(135deg, #635BFF, #4F46E5)" },
-  { name: "PayPal", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/paypal.svg", gradient: "linear-gradient(135deg, #00457C, #0070BA)" },
-  { name: "Figma", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/figma.svg", gradient: "linear-gradient(135deg, #F24E1E, #A259FF, #1ABCFE, #0ACF83, #FF7262)" },
-  { name: "LinkedIn", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg", gradient: "linear-gradient(135deg, #0A66C2, #004182)" },
+  { name: "ClickUp", logo: "/logos/clickup-logo.jpeg" },
+  { name: "Trello", logo: "https://logo.clearbit.com/trello.com?size=50" },
+  { name: "HubSpot", logo: "https://logo.clearbit.com/hubspot.com?size=50" },
+  { name: "Microsoft 365", logo: "https://logo.clearbit.com/microsoft.com?size=50" },
+  { name: "Google Workspace", logo: "https://logo.clearbit.com/workspace.google.com?size=50" },
+  { name: "Xero", logo: "https://logo.clearbit.com/xero.com?size=50" },
+  { name: "Slack", logo: "https://logo.clearbit.com/slack.com?size=50" },
+  { name: "Mailchimp", logo: "https://logo.clearbit.com/mailchimp.com?size=50" },
+  { name: "Zapier", logo: "https://logo.clearbit.com/zapier.com?size=50" },
+  { name: "Make.com", logo: "https://logo.clearbit.com/make.com?size=50" },
+  { name: "Zoho", logo: "https://logo.clearbit.com/zoho.com?size=50" },
+  { name: "Go Highlevel", logo: "https://logo.clearbit.com/gohighlevel.com?size=50" },
+  { name: "ChatGPT", logo: "https://logo.clearbit.com/openai.com?size=50" },
+  { name: "Calendly", logo: "https://logo.clearbit.com/calendly.com?size=50" },
+  { name: "Asana", logo: "https://logo.clearbit.com/asana.com?size=50" },
+  { name: "Stripe", logo: "https://logo.clearbit.com/stripe.com?size=50" },
+  { name: "Quickbooks", logo: "https://logo.clearbit.com/quickbooks.intuit.com?size=50" },
 ];
 
 const IntegrationsSection = () => {
@@ -50,16 +41,22 @@ const IntegrationsSection = () => {
                 key={index}
                 className="flex-shrink-0 w-32 md:w-40 p-4 flex flex-col items-center justify-center text-center mx-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-110"
               >
-                <div
-                  className="h-10 w-10 mb-2"
-                  style={{
-                    background: integration.gradient,
-                    WebkitMask: `url(${integration.iconUrl}) no-repeat center`,
-                    mask: `url(${integration.iconUrl}) no-repeat center`,
-                    WebkitMaskSize: 'contain',
-                    maskSize: 'contain',
-                  }}
-                ></div>
+                {integration.logo ? (
+                  <img
+                    src={integration.logo}
+                    alt={integration.name}
+                    title={integration.name}
+                    className="h-10 w-10 mb-2 object-contain filter grayscale-0 opacity-100 hover:grayscale hover:opacity-60 transition-all duration-300"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null; // Prevent infinite loop if placeholder also fails
+                      e.currentTarget.src = 'https://via.placeholder.com/50?text=Logo'; // Fallback to a generic placeholder
+                    }}
+                  />
+                ) : (
+                  <div className="h-10 w-10 mb-2 flex items-center justify-center text-gray-500 dark:text-gray-400">
+                    <Puzzle className="h-8 w-8" /> {/* Placeholder icon */}
+                  </div>
+                )}
                 <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{integration.name}</span>
               </div>
             ))}

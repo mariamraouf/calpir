@@ -5,17 +5,24 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom"; // Import Link
 import PageHeader from "@/components/PageHeader"; // Import PageHeader
+import BreadcrumbSchema from "@/components/BreadcrumbSchema"; // Import the new schema component
 
 const PrivacyPolicy = () => {
+  const breadcrumbItems = [
+    { name: "Home", item: "https://www.calpir.com/" },
+    { name: "Privacy Policy", item: "https://www.calpir.com/privacy-policy" },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
+      <BreadcrumbSchema items={breadcrumbItems} />
       <Navbar />
       <main className="flex-grow">
         <PageHeader
           title="Privacy Policy"
-          description="Your privacy is critically important to us. This Privacy Policy outlines how Calpir collects, uses, maintains, and discloses information collected from users of the Calpir website."
+          description="Your privacy is super important to us. This policy breaks down how Calpir handles your info when you use our site, keeping things clear and secure."
           buttons={[
-            { text: "Start My Business", href: "/build-my-business", variant: "primary" },
+            { text: "Start My Business", href: "/build-my-business", variant: "primary", isExternal: true },
             { text: "Get a Free Consultation", href: "https://calendly.com/your-calpir-consultation", variant: "outline", isExternal: true },
           ]}
         />

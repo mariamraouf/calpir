@@ -1,17 +1,19 @@
 "use client";
 
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom"; 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"; 
 import { Menu, ChevronDown } from "lucide-react";
+
+const BUILD_MY_BUSINESS_URL = "https://forms.clickup.com/9015087055/f/8cnekyf-7975/TZ1NJ34TI8S352Q2G5";
 
 const Navbar = () => {
   const mainNavLinks = [
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "Platforms", href: "/platforms" }, // New link
+    { name: "Platforms", href: "/platforms" }, 
     { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
   ];
@@ -38,13 +40,14 @@ const Navbar = () => {
               {link.name}
             </NavLink>
           ))}
-          <Link to="/build-my-business">
+
+          <a href={BUILD_MY_BUSINESS_URL} target="_blank" rel="noopener noreferrer">
             <Button
               className="bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
             >
               Get Started
             </Button>
-          </Link>
+          </a>
         </nav>
 
         <Sheet>
@@ -69,13 +72,13 @@ const Navbar = () => {
                   {link.name}
                 </NavLink>
               ))}
-              <Link to="/build-my-business">
+              <a href={BUILD_MY_BUSINESS_URL} target="_blank" rel="noopener noreferrer">
                 <Button
                   className="w-full bg-primary hover:bg-calpir-green-700 text-white hover:text-white hover:animate-button-glow transform hover:scale-110"
                 >
                   Get Started
                 </Button>
-              </Link>
+              </a>
             </div>
           </SheetContent>
         </Sheet>
