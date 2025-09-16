@@ -417,11 +417,11 @@ updatedPlatformCategories.push({
 updatedPlatformCategories.push({
   name: "Design & Creative Tools",
   platforms: [
-    { name: "Canva", logo: "/logos/canva.jpeg" }, // Corrected to existing local JPEG
-    { name: "Figma", logo: "/logos/figma.png" }, // Corrected to existing local PNG
-    { name: "Adobe Photoshop", logo: "/logos/adobe-photoshop-new.webp" }, // Path already correct
-    { name: "Adobe Illustrator", logo: "https://logo.clearbit.com/adobe.com?size=50" },
-    { name: "Sketch", logo: "https://logo.clearbit.com/sketch.com?size=50" },
+    { name: "Canva", logo: "https://logo.clearbit.com/canva.com?size=50" }, // Corrected to existing local JPEG
+    { name: "Figma", logo: "https://logo.clearbit.com/figma.com?size=50" }, // Corrected to existing local PNG
+    { name: "Adobe Photoshop", logo: "https://logodownload.org/wp-content/uploads/2019/10/adobe-photoshop-logo-0.png" }, // Path already correct
+    { name: "Adobe Illustrator", logo: "https://logodownload.org/wp-content/uploads/2017/04/adobe-Illustrator-logo-0-1.png" },
+    { name: "Sketch", logo: "https://png.klev.club/uploads/posts/2024-05/png-klev-club-01cg-p-skretch-png-4.png" },
     { name: "InVision", logo: "https://logo.clearbit.com/invisionapp.com?size=50" },
     { name: "Miro", logo: "https://logo.clearbit.com/miro.com?size=50" },
     { name: "Whimsical", logo: "https://logo.clearbit.com/whimsical.com?size=50" },
