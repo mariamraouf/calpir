@@ -1,5 +1,9 @@
+// STEP 4B: Replace your ENTIRE src/pages/Index.tsx with this code
+// This just adds the Helmet for SEO - keeps all your existing components
+
 "use client";
 
+import { Helmet } from "react-helmet-async"; // ✅ NEW: Add this import
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import IntegrationsSection from "@/components/IntegrationsSection";
@@ -10,22 +14,38 @@ import AddOnsSection from "@/components/AddOnsSection";
 import PricingPackagesSection from "@/components/PricingPackagesSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button"; // Import Button
-import { Link } from "react-router-dom"; // Import Link
-import { ArrowRight } from "lucide-react"; // Import ArrowRight icon
-import OrganizationSchema from "@/components/SchemaMarkup"; // Import the new schema component
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import OrganizationSchema from "@/components/SchemaMarkup";
 
-const Index = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteForm props
+const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      {/* ✅ NEW: SEO Meta Tags - This fixes your title/description issues */}
+      <Helmet>
+        <title>Calpir - Launch Your Startup in 7 Days | New Business Setup</title>
+        <meta 
+          name="description" 
+          content="Launch your startup fast! Complete new business setup packages for entrepreneurs. Website development, CRM, automation starting at $1,499. Free consultation." 
+        />
+        <meta 
+          name="keywords" 
+          content="startup website launch, new business setup, launch startup website, startup website development, startup operations setup, new business launch package, startup CRM setup, launch business fast, entrepreneur services" 
+        />
+        <link rel="canonical" href="https://www.calpir.com" />
+      </Helmet>
+
       <OrganizationSchema
         name="Calpir"
         url="https://www.calpir.com"
         logo="https://www.calpir.com/calpir-logo.png"
         contactEmail="contact@calpir.com"
-        socialLinks={["https://www.linkedin.com/company/calpir"]} // Replace with actual social links
+        socialLinks={["https://www.linkedin.com/company/calpir"]}
       />
+      
       <Navbar />
+      
       <main className="flex-grow">
         <HeroSection />
         <div className="animate-fade-in-up delay-200">
@@ -42,7 +62,7 @@ const Index = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteF
         </div>
         <div className="animate-fade-in-up delay-1000">
           <PricingPackagesSection />
-          <div className="text-center mt-8 mb-8 animate-fade-in-up delay-1100"> {/* Adjusted mt-12 to mt-8 and mb-16 to mb-8 */}
+          <div className="text-center mt-8 mb-8 animate-fade-in-up delay-1100">
             <Link to="/pricing#complete-packages">
               <Button
                 size="lg"
@@ -56,11 +76,11 @@ const Index = () => { // Removed setOpenBuildMyBusinessForm, setOpenCustomQuoteF
         <div className="animate-fade-in-up delay-1200">
           <AddOnsSection />
         </div>
-        {/* The "Build My Package" section has been moved into AddOnsSection.tsx */}
         <div className="animate-fade-in-up delay-1400">
           <CtaSection />
         </div>
       </main>
+      
       <Footer />
     </div>
   );
